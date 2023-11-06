@@ -8,7 +8,7 @@
         Title="Вход" MaxHeight="500" 
         WindowStyle="None"
        PreviewMouseLeftButtonDown="dragWindows"
-        MinHeight="500" MinWidth="400" MaxWidth="400" AllowsTransparency="True">
+        MinHeight="500" MinWidth="400" MaxWidth="450" AllowsTransparency="True">
     <Window.Template>
         <ControlTemplate TargetType="Window">
             <Border CornerRadius="150" BorderThickness="1" Padding="50">
@@ -68,28 +68,28 @@
         </StackPanel>
 
         <StackPanel VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="2" >
-            <TextBlock FontSize="13"  Background="Transparent" FontWeight="Bold"  Text="Логин" />
+            <TextBlock FontSize="13"  Background="Transparent" FontWeight="Bold"  Foreground="White" Text="Логин" />
 
             
             <TextBox   Height="20"/>
         </StackPanel>
         <StackPanel  VerticalAlignment="Top"
                     Grid.Column="1" Grid.Row="4" >
-            <TextBlock FontSize="13"  Background="Transparent" FontWeight="Bold"  Text="Пароль"/>
+            <TextBlock FontSize="13"  Background="Transparent" FontWeight="Bold" Foreground="White" Text="Пароль"/>
             <TextBox Height="20"/>
         </StackPanel>
         <StackPanel 
                     VerticalAlignment="Center" Grid.Column="1" Grid.Row="6" >
-            <Button FontSize="15"  Background="Transparent" BorderBrush="Transparent" 
+            <Button FontSize="15"  Background="Transparent"  Foreground="White" BorderBrush="Transparent" 
                      Content="Войти" Click="PerexodUser" />
-            <Button Background="Transparent" BorderBrush="Transparent" 
+            <Button Background="Transparent"  Foreground="White" BorderBrush="Transparent" 
                        Content="Нет аккаунта? " Click="PerehodRegistr"/>
            
         </StackPanel>
 
        
         <StackPanel HorizontalAlignment="Left" Grid.Column="1" Grid.Row="5"  >
-            <TextBlock Text="Запомнить меня" Margin="5,5,10,0" />
+            <TextBlock Text="Запомнить меня"  Foreground="White" Margin="5,5,10,0" />
         </StackPanel>
         <Button Width="100" Content="Войти в Админа" Click="PerexodAdmin" />
         <Button Width="100" Grid.Column="1" Content="Войти в Гостя" Click="PerexodGost" />
