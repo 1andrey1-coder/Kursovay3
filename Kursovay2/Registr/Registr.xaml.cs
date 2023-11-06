@@ -31,5 +31,10 @@ namespace Kursovay2.Registr
             this.Close();
 
         }
+
+        private void dragWindows(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }

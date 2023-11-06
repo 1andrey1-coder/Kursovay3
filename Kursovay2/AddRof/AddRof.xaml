@@ -5,11 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.AddRof"
         mc:Ignorable="d"
-        Title="Окно для добавления" Height="450" Width="600">
+        Title="Окно для добавления" MinHeight="370" MinWidth="670" Height="450" Width="900">
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition MaxWidth="135"/>
+            <ColumnDefinition MaxWidth="175"/>
+            <ColumnDefinition MaxWidth="120"/>
+            <ColumnDefinition MaxWidth="120"/>
+            <ColumnDefinition MaxWidth="120"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -17,12 +21,95 @@
             <RowDefinition Height="100"/>
             <RowDefinition />
         </Grid.RowDefinitions>
+        <StackPanel Margin="5" Grid.Row="0" Grid.Column="0" Grid.RowSpan="55">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#ffd700" Offset="0.1"/>
+                    <GradientStop Color="Firebrick" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+        </StackPanel>
+        <StackPanel Margin="5" Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="6">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#ffd700" Offset="0.1"/>
+                    <GradientStop Color="Firebrick" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+        </StackPanel>
+        <StackPanel Margin="5" VerticalAlignment="Center" Grid.Column="0">
+            <Button Content="Вернуться обратно" Click="ClickObratAdmin"/>
+            
+        </StackPanel>
+       
+        <StackPanel Margin="10" Orientation="Horizontal"
+           VerticalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="4" Grid.Column="1">
+            <TextBlock VerticalAlignment="Center" Text="Выбор статуса(популярное/забытое/легендарное)"/>
+            <ComboBox Margin="5" Width="100" />
+        </StackPanel>
 
-        <StackPanel Grid.Column="0">
-            
+
+        <StackPanel HorizontalAlignment="Left"
+            VerticalAlignment="Center" Grid.Row="1" Grid.Column="1">
+                <TextBlock  Text="Кнопки для выбора тэга и т.д."/>
         </StackPanel>
-        <StackPanel Grid.Column="1">
-            
+
+        <StackPanel Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"  Grid.Row="1" Grid.Column="2">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Тэг" />
+                <ComboBox Width="100" Margin="0,0,0,10" />
+                <TextBlock Text="Шутка(жанр)" />
+                <ComboBox Width="100" />
+            </StackPanel>
+           
         </StackPanel>
+
+        <StackPanel Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="3">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Начало(тип)" />
+                <ComboBox Width="100" Margin="0,0,0,10" />
+                <TextBlock Text="Шайтан(вид)" />
+                <ComboBox Width="100"/>
+            </StackPanel>
+
+        </StackPanel>
+
+
+        <StackPanel Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"  Grid.Row="1" Grid.Column="4">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Завершение" />
+                <ComboBox Width="100" Margin="0,0,0,10" />
+                <TextBlock Text="Статус" />
+                <ComboBox Width="100"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <ScrollViewer HorizontalScrollBarVisibility="Auto"
+               Grid.Row="2" Grid.ColumnSpan="6" Grid.Column="1" >
+
+            <ListView 
+       ItemsSource="{Binding stagesRof}" 
+       SelectedItem="{Binding SelectedStage}" Margin="5">
+
+                
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Тэг" Width="35" />
+
+                        <GridViewColumn Header="Ебанное начало" Width="110" 
+                         />
+                        <GridViewColumn Header="Ахуенное завершение" Width="140"
+                         />
+                        <GridViewColumn Header="Название шутки/рофла" Width="150"
+                         DisplayMemberBinding="{Binding Title}"/>
+                        <GridViewColumn Header="Ответсвенный шайтан" Width="150"
+                         />
+                        <GridViewColumn Header="Статус бумбастик" Width="100"
+                         />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </ScrollViewer>
     </Grid>
 </Window>

@@ -23,5 +23,12 @@ namespace Kursovay2.AddRof
         {
             InitializeComponent();
         }
+
+        private void ClickObratAdmin(object sender, RoutedEventArgs e)
+        {
+            Admin.Admin admin = new Admin.Admin();
+            admin.Show();
+            this.Close();
+        }
     }
 }

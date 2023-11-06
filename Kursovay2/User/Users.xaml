@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.User"
         mc:Ignorable="d"
-           Title="Окно для пользователя" Height="450" Width="800">
+           Title="Окно для пользователя" MinHeight="250" Height="450"  Width="900">
 
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.35*" />
+            <ColumnDefinition Width="220" />
             <ColumnDefinition  />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -51,7 +51,8 @@
             <Button Content="Горячии влажные мужики" Height="20"/>
         
         </StackPanel>
-        <StackPanel Grid.Row="0" Orientation="Horizontal"
+      
+        <StackPanel  Grid.Row="0" Orientation="Horizontal"
             Grid.ColumnSpan="2" Grid.Column="1"
             Margin="5">
             <StackPanel.Background>
