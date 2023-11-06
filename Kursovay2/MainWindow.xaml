@@ -75,7 +75,8 @@
         </StackPanel>
         <StackPanel  VerticalAlignment="Top"
                     Grid.Column="1" Grid.Row="4" >
-            <TextBlock FontSize="13"  Background="Transparent" FontWeight="Bold" Foreground="White" Text="Пароль"/>
+            <TextBlock FontSize="13"  Background="Transparent"
+                       FontWeight="Bold" Foreground="White" Text="Пароль"/>
             <TextBox Height="20"/>
         </StackPanel>
         <StackPanel 
