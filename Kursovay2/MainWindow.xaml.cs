@@ -60,5 +60,10 @@ namespace Kursovay2
             Registr.Registr registr = new Registr.Registr();
             registr.Show();
         }
+
+        private void dragWindows(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }
