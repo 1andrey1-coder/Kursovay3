@@ -8,6 +8,7 @@
         Title="Окно для добавления" MinHeight="370" MinWidth="670" Height="450" Width="900">
     <Grid>
 
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition MaxWidth="135"/>
             <ColumnDefinition MaxWidth="175"/>
