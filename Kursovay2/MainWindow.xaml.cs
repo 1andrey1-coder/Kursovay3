@@ -29,36 +29,40 @@ namespace Kursovay2
 
         private void PerexodUser(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+           
             User.Users user = new User.Users();
             user.Show();
-           
+            this.Close();
+
 
         }
 
-        
+
 
         private void PerexodAdmin(object sender, RoutedEventArgs e)
         {
-            this.Hide();
             Admin.Admin admin = new Admin.Admin();
             admin.Show();
+            this.Close();
+
         }
 
         private void PerexodGost(object sender, RoutedEventArgs e)
         {
-            this.Hide();
 
             Gost.Gost gost = new Gost.Gost();
             gost.Show();
+            this.Close();
+
         }
 
         private void PerehodRegistr(object sender, RoutedEventArgs e)
         {
-            this.Hide();
 
             Registr.Registr registr = new Registr.Registr();
             registr.Show();
+            this.Close();
+
         }
 
         private void dragWindows(object sender, MouseButtonEventArgs e)

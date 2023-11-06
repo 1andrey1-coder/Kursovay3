@@ -66,16 +66,19 @@ namespace Kursovay2.Admin
 
         private void ClickAdminToMainWindow(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+            
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
+            this.Close();
+
         }
 
         private void ClickAddRof(object sender, RoutedEventArgs e)
         {
-            this.Hide();
             AddRof.AddRof addRof = new AddRof.AddRof();
             addRof.Show();
+            this.Close();
+
         }
     }
 }

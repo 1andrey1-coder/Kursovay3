@@ -26,10 +26,10 @@ namespace Kursovay2.Registr
 
         private void PerehodMainWindow(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
+            this.Close();
+
         }
     }
 }

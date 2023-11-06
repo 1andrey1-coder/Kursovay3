@@ -55,9 +55,10 @@ namespace Kursovay2.User
 
         private void ClickUserToMainWindow(object sender, RoutedEventArgs e)
         {
-            
+          
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
+            this.Close();
         }
     }
 }
