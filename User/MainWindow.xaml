@@ -1,0 +1,77 @@
+﻿<Window x:Class="User.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:User"
+        mc:Ignorable="d"
+        Title="Окно для пользователя" Height="450" Width="800">
+   
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.25*" />
+            <ColumnDefinition  />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--шапка-->
+        <StackPanel Grid.Column="0" Grid.RowSpan="3"
+               Margin="5" Orientation="Vertical">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Firebrick" Offset="0.1"/>
+                    <GradientStop Color="Violet" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <!--Имя пользователя-->
+            <TextBlock Text="{Binding p.UserName}" HorizontalAlignment="Center"/>
+            <TextBlock Text="{Binding p.UserLastName}" HorizontalAlignment="Center"/>
+            <TextBlock Text="{Binding p.UserMiddleName}" HorizontalAlignment="Center"/>
+            <!--Имя пользователя-->
+            <Menu>
+                <MenuItem Header="Меню"  >
+                    <MenuItem Header="Мемы" Click="ClickMem"/>
+                    <MenuItem Header="Новости" Click="ClickNews"/>
+                    <MenuItem Header="Ностальгия" Click="ClickNostal"/>
+                    <MenuItem Header="Мейбл" Click="ClickMebl"/>
+                </MenuItem>
+            </Menu>
+            <Button Margin="0,10,0,2" Content="Локальная история" Click="ClickLokInf"/>
+            <Button Content="В главных ролях" Click="ClickRole"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Orientation="Horizontal"
+                Grid.ColumnSpan="2" Grid.Column="1"
+                Margin="5">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Firebrick" Offset="0.3"/>
+                    <GradientStop Color="Violet" Offset="2"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <StackPanel Margin="0,0,5,0" Orientation="Vertical">
+                <TextBlock Text="Поиск"/>
+                <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Width="200" Height="22" />
+            </StackPanel>
+            <StackPanel Margin="0,0,5,0" Orientation="Vertical"
+                        
+                        Width="159"
+                        >
+                <TextBlock HorizontalAlignment="Center" Text="Сортировка по Эпичности" />
+                <ComboBox ItemsSource="{Binding Sorting, UpdateSourceTrigger=PropertyChanged}" 
+                      SelectedItem="{Binding SelectedSorting, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="75">
+                <TextBlock Text="Жанр" HorizontalAlignment="Center"/>
+                <ComboBox ItemsSource="{Binding Types, UpdateSourceTrigger=PropertyChanged}" 
+                      SelectedItem="{Binding SelectedType, UpdateSourceTrigger=PropertyChanged}"
+                      DisplayMemberPath="Type1"/>
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</Window>
