@@ -61,9 +61,10 @@ namespace Kursovay2.Gost
 
         private void ClickGostToMainWindow(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+           
             MainWindow mainWindow  = new MainWindow();
             mainWindow.Show();
+            this.Close();
         }
     }
 }

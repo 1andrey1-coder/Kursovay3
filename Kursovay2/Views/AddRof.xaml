@@ -76,7 +76,8 @@
         </StackPanel>
 
 
-        <StackPanel Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"  Grid.Row="1" Grid.Column="4">
+        <StackPanel Margin="5,0,5,0" VerticalAlignment="Center"
+                    HorizontalAlignment="Left"  Grid.Row="1" Grid.Column="4">
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Завершение" />
                 <ComboBox Width="100" Margin="0,0,0,10" />
@@ -85,7 +86,10 @@
             </StackPanel>
 
         </StackPanel>
-
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"
+                    Grid.Row="1" Grid.Column="5">
+            <Button Content="Добавить Шутку/Рофл" Width="150" Click="AddRof2"/>
+        </StackPanel>
         <ScrollViewer HorizontalScrollBarVisibility="Auto"
                Grid.Row="2" Grid.ColumnSpan="6" Grid.Column="1" >
 
@@ -93,8 +97,16 @@
        ItemsSource="{Binding stagesRof}" 
        SelectedItem="{Binding SelectedStage}" Margin="5">
 
-                
+                <ListView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Описание шутки" Click="Opisania"/>
+                        <MenuItem Header="Сохранить" Click="ClickSave"/>
+                        <MenuItem Header="Детальное редактирование" Click="ClickDopRedactor"/>
+                        <MenuItem Header="Удалить" Click="ClickDelete"/>
+                    </ContextMenu>
+                </ListView.ContextMenu>
                 <ListView.View>
+                    
                     <GridView>
                         <GridViewColumn Header="Тэг" Width="35" />
 
@@ -106,11 +118,14 @@
                          DisplayMemberBinding="{Binding Title}"/>
                         <GridViewColumn Header="Ответсвенный шайтан" Width="150"
                          />
-                        <GridViewColumn Header="Статус бумбастик" Width="100"
+                        <GridViewColumn Header="Статус бумбастик" Width="120"
                          />
                     </GridView>
                 </ListView.View>
             </ListView>
         </ScrollViewer>
+
+
+      
     </Grid>
 </Window>

@@ -30,5 +30,33 @@ namespace Kursovay2.AddRof
             admin.Show();
             this.Close();
         }
+
+        private void ClickSave(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClickDopRedactor(object sender, RoutedEventArgs e)
+        {
+            Views.DopRedactor dopRedactor = new Views.DopRedactor();
+            dopRedactor.Show();
+            this.Close();
+
+        }
+
+        private void ClickDelete(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddRof2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Opisania(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
