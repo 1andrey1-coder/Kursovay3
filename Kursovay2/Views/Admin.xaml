@@ -43,11 +43,9 @@
                
             </Menu>
 
-            <Button Click="ButtonCheckAllRof" Height="25">
-                <Button.Content >
-                    <TextBlock HorizontalAlignment="Center">Все Шутки/Рофлы</TextBlock>
-                </Button.Content>
-            </Button>
+            
+           <Button  Content="Все Шутки/Рофлы" Click="AllRof"/>
+            
             <Button Content="Данные Пользователей" Click="ButtonClient"/>
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="1"
@@ -67,7 +65,7 @@
                      Width="400" />
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="5">
-                <TextBlock Text="Сортировка" />
+                <TextBlock Text="Сортировка по тэгу" />
                 <ComboBox ItemsSource="{Binding Sorting, UpdateSourceTrigger=PropertyChanged}"  
             Width="120" 
             SelectedItem="{Binding SelectedSorting, UpdateSourceTrigger=PropertyChanged}" Height="17">

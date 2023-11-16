@@ -45,7 +45,7 @@
         </StackPanel>
 
         <StackPanel MaxWidth="150" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">
-            <Button Content="Вернуться обратно" Click="Cli"/>
+            <Button Content="Вернуться обратно" Click="ClickObrat"/>
         </StackPanel>
 
 
