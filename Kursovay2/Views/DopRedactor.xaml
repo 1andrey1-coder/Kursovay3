@@ -5,22 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.Views"
         mc:Ignorable="d"
-        Title="Окно для детальное редактирование" Height="450" Width="800">
+        Title="Окно для детальное редактирование" Height="550" Width="850">
     <Grid>
 
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition MaxWidth="135"/>
             <ColumnDefinition MaxWidth="175"/>
+            <ColumnDefinition MaxWidth="60"/>
             <ColumnDefinition MaxWidth="120"/>
-            <ColumnDefinition MaxWidth="120"/>
-            <ColumnDefinition MaxWidth="160"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition MaxWidth="130"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="80" />
+            <RowDefinition MaxHeight="100"/>
+            <RowDefinition MaxHeight="100"/>
+            <RowDefinition MaxHeight="80" />
             <RowDefinition />
         </Grid.RowDefinitions>
         <StackPanel Margin="5" Grid.Row="0" Grid.Column="0" Grid.RowSpan="55">
@@ -56,7 +57,7 @@
             <TextBlock Margin="5" Text="Описание " HorizontalAlignment="Center" />
             <TextBox Height="150"/>
         </StackPanel>
-        <StackPanel Margin="0,5,0,0" VerticalAlignment="Top" Grid.Row="1" Grid.Column="4">
+        <StackPanel Width="110" Margin="0,5,0,0" VerticalAlignment="Top" Grid.Row="1" Grid.Column="4">
             <ComboBox  />
         </StackPanel>
 
@@ -66,7 +67,7 @@
         </StackPanel>
          
         
-        <ScrollViewer Height="150" VerticalAlignment="Bottom" HorizontalScrollBarVisibility="Auto"
+        <ScrollViewer Height="250" VerticalAlignment="Top" HorizontalScrollBarVisibility="Auto"
            Grid.Row="3" Grid.ColumnSpan="6" Grid.Column="1" >
 
             <ListView 

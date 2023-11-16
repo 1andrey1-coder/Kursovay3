@@ -41,6 +41,7 @@ namespace Kursovay2.Admin
 
         private void ButtonClient(object sender, RoutedEventArgs e)
         {
+            
             Views.Clients clients = new Views.Clients();
             clients.Show();
             this.Close();
@@ -85,7 +86,9 @@ namespace Kursovay2.Admin
 
         private void AllRof(object sender, RoutedEventArgs e)
         {
-
+            Views.AllRof allRof = new Views.AllRof();   
+            allRof.Show();
+            this.Close();
         }
     }
 }
