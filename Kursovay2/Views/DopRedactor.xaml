@@ -18,7 +18,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
+            <RowDefinition Height="100"/>
             <RowDefinition Height="100"/>
             <RowDefinition Height="100" />
             <RowDefinition />
@@ -40,10 +40,15 @@
             </StackPanel.Background>
         </StackPanel>
         <StackPanel Margin="5" VerticalAlignment="Center" Grid.Column="0">
+            <TextBlock Text="{Binding p.UserName}" HorizontalAlignment="Center" FontSize="16"/>
+            <TextBlock Text="{Binding p.UserLastName}" HorizontalAlignment="Center" FontSize="16"/>
+            <TextBlock Text="{Binding p.UserMiddleName}" HorizontalAlignment="Center" FontSize="16"/>
             <Button Content="Вернуться обратно" Click="ClickObratAddRof"/>
 
         </StackPanel>
-
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"   Grid.Row="0" Grid.ColumnSpan="5"   Grid.Column="1">
+            <TextBlock Text="Ахуенное не вьебенное шоу"/>
+        </StackPanel>
 
 
         <StackPanel  VerticalAlignment="Top" 

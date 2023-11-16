@@ -28,12 +28,9 @@
                 </LinearGradientBrush>
             </StackPanel.Background>
             <StackPanel Margin="5" >
-                <TextBlock Text="{Binding p.UserName}"  
-                  HorizontalAlignment="Center" FontSize="16"/>
-                <TextBlock Text="{Binding p.UserLastName}" 
-                  HorizontalAlignment="Center" FontSize="16"/>
-                <TextBlock Text="{Binding p.UserMiddleName}" 
-                  HorizontalAlignment="Center" FontSize="16"/>
+                <TextBlock Text="{Binding p.UserName}" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBlock Text="{Binding p.UserLastName}" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBlock Text="{Binding p.UserMiddleName}" HorizontalAlignment="Center" FontSize="16"/>
                 <Button Content="Вернуться  на залуп экран вход" 
                         Click="ClickAdminToMainWindow"/>
             </StackPanel>
