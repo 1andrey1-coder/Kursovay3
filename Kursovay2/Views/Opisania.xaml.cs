@@ -26,7 +26,9 @@ namespace Kursovay2.Views
 
         private void ClickObrat(object sender, RoutedEventArgs e)
         {
-
+            AddRof.AddRof addRof = new AddRof.AddRof();
+            addRof.Show();
+            this.Close();
         }
     }
 }

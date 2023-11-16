@@ -56,7 +56,9 @@ namespace Kursovay2.AddRof
 
         private void Opisania(object sender, RoutedEventArgs e)
         {
-
+            Views.Opisania opisania = new Views.Opisania();
+            opisania.Show();
+            this.Close();
         }
     }
 }
