@@ -1,0 +1,23 @@
+﻿<Page x:Class="Kursovay2.Views.Dibor"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kursovay2.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="Окно для выборки куда идем">
+
+    <Grid>
+        <StackPanel  Background="Gainsboro" Width="120" Orientation="Vertical" HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <StackPanel Width="100" Margin="10" Background="GhostWhite" HorizontalAlignment="Center">
+
+                <Button  HorizontalAlignment="Center" Margin="0,5,0,5" Width="100" Content="Шутки/Рофлы"/>
+                <Button  HorizontalAlignment="Center" Margin="0,0,0,5" Width="100" Content="Экзотика"/>
+                <Button  HorizontalAlignment="Center" Margin="0,0,0,5" Width="100" Content="Игры"/>
+                <Button  HorizontalAlignment="Center" Margin="0,0,0,5" Width="100" Content="Локальное"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
