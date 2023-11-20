@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Kursovay2"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+       
     </Application.Resources>
 </Application>

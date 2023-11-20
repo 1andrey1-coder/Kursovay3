@@ -7,8 +7,10 @@
         mc:Ignorable="d"
         Title="Окно для локальной истории" Height="450" Width="800">
     <Grid>
-        
-        
-        
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"  Width="130">
+            <Button Height="30" Content="Вернуться обратно" Click="VernutObrat" />
+        </StackPanel>
+
     </Grid>
 </Window>

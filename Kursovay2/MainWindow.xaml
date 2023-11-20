@@ -8,7 +8,7 @@
         Title="Вход" MaxHeight="500" 
         WindowStyle="None"
        MouseLeftButtonDown="dragWindows"
-        MinHeight="450" MinWidth="400" MaxWidth="450" AllowsTransparency="True">
+        MinHeight="450" MinWidth="400" MaxWidth="450" AllowsTransparency="True" >
     <Window.Template>
         <ControlTemplate TargetType="Window">
             <Border CornerRadius="150" BorderThickness="1" Padding="50">

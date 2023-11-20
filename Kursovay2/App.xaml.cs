@@ -13,5 +13,19 @@ namespace Kursovay2
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            EventManager.RegisterClassHandler(typeof(Window), Window.LoadedEvent, 
+                new RoutedEventHandler(WindowLoadedHandler));
+        }
+
+        private void WindowLoadedHandler(object sender, RoutedEventArgs e)
+        {
+            var window = (Window)sender;
+            window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+        }
+
+
     }
 }

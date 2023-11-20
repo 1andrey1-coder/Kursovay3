@@ -1,5 +1,4 @@
-﻿using Kursovay2.User;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,19 +15,19 @@ using System.Windows.Shapes;
 namespace Kursovay2.Views
 {
     /// <summary>
-    /// Логика взаимодействия для HistoryRole.xaml
+    /// Логика взаимодействия для Legend.xaml
     /// </summary>
-    public partial class HistoryRole : Window
+    public partial class Legend : Window
     {
-        public HistoryRole()
+        public Legend()
         {
             InitializeComponent();
         }
 
         private void VernutObrat(object sender, RoutedEventArgs e)
         {
-            Users users = new Users();
-            users.Show();
+            Gost.Gost gost = new Gost.Gost();
+            gost.Show();
             this.Close();
         }
     }

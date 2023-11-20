@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursovay2.User;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,13 @@ namespace Kursovay2.Views
         public LokInf()
         {
             InitializeComponent();
+        }
+
+        private void VernutObrat(object sender, RoutedEventArgs e)
+        {
+            Users users = new Users();
+            users.Show();
+            this.Close();
         }
     }
 }

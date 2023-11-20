@@ -26,11 +26,7 @@ namespace Kursovay2.User
       
 
 
-        private void ClickLokInf(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+       
 
         private void ClickUserToMainWindow(object sender, RoutedEventArgs e)
         {
@@ -40,19 +36,33 @@ namespace Kursovay2.User
             this.Close();
         }
 
+
+        private void ClickLokInf(object sender, RoutedEventArgs e)
+        {
+            Views.LokInf lokInf = new Views.LokInf();
+            lokInf.Show();
+            this.Close();
+        }
+
         private void ClickHistoryRole(object sender, RoutedEventArgs e)
         {
-
+            Views.HistoryRole historyRole = new Views.HistoryRole();
+            historyRole.Show();
+            this.Close();
         }
 
         private void ClickAdmini(object sender, RoutedEventArgs e)
         {
-
+            Views.Admini_We_ admini_We_ = new Views.Admini_We_();
+            admini_We_.Show();
+            this.Close();
         }
 
         private void ClickGey(object sender, RoutedEventArgs e)
         {
-
+            Views.Gey gey = new Views.Gey();
+            gey.Show();
+            this.Close();   
         }
 
         private void ClickNewMemNow(object sender, RoutedEventArgs e)
