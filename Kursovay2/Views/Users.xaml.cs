@@ -23,35 +23,14 @@ namespace Kursovay2.User
         {
             InitializeComponent();
         }
-        private void ClickMem(object sender, RoutedEventArgs e)
-        {
+      
 
-        }
-
-        private void ClickNews(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ClickNostal(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ClickMebl(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void ClickLokInf(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void ClickRole(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void ClickUserToMainWindow(object sender, RoutedEventArgs e)
         {
@@ -60,5 +39,49 @@ namespace Kursovay2.User
             mainWindow.Show();
             this.Close();
         }
+
+        private void ClickHistoryRole(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClickAdmini(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClickGey(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClickNewMemNow(object sender, RoutedEventArgs e)
+        {
+            Views.NewMemNow newMemNow = new Views.NewMemNow();
+            newMemNow.Show();
+            this.Close();
+        }
+
+        private void ClickNews(object sender, RoutedEventArgs e)
+        {
+            Views.News news = new Views.News();
+            news.Show();
+            this.Close();
+        }
+
+        private void ClickNostal(object sender, RoutedEventArgs e)
+        {
+            Views.Nostal nostal = new Views.Nostal();
+            nostal.Show();
+            this.Close();
+        }
+
+        private void ClickMebl(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+
     }
 }

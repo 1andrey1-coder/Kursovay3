@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.Views"
         mc:Ignorable="d"
-        Title="Окно для описание каждой шутки" MinHeight="350" MinWidth="500" 
+        Title="Окно для описание каждой шутки" MinHeight="350" MinWidth="700" 
         >
     <Grid>
 
@@ -14,6 +14,7 @@
             <ColumnDefinition MaxWidth="180"/>
 
             <ColumnDefinition MaxWidth="600"/>
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*" />
@@ -22,19 +23,33 @@
         </Grid.RowDefinitions>
 
 
-        <StackPanel Margin="5" VerticalAlignment="Center" Grid.Column="0">
-            <Button Content="Вернуться обратно" Click="ClickObrat"/>
 
+        <StackPanel Margin="5" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2">
+            <TextBlock Text="Картинка (шутки/рофла) " HorizontalAlignment="Center"/>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="200"> 
+                     <Image Source="{Binding Image}" />
+            </StackPanel>
         </StackPanel>
-
 
 
         <StackPanel  VerticalAlignment="Top" 
-                  Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2"  Grid.Column="1" >
+                  Grid.Row="1"  Grid.RowSpan="2"  Grid.Column="1" >
             <TextBlock Margin="5" Text="Описание шутки" HorizontalAlignment="Center" />
-            <TextBlock Height="350"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                
+                    <TextBlock Text="{Binding TextRof}" Height="350"/>
+            </ScrollViewer>
         </StackPanel>
-
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center"
+                    Grid.Row="0" Grid.Column="2">
+            <TextBlock  Margin="0,0,5,0" Text="Тэг: " />
+            <TextBlock  Text="{Binding Teg}" />
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal"
+                    Grid.Column="1" Grid.Row="0">
+            <TextBlock  Margin="0,0,5,0" Text="Название: "/>
+            <TextBlock  Text="{Binding Title}"/>
+        </StackPanel>
         <StackPanel Margin="5" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3">
             <StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -44,12 +59,15 @@
             </StackPanel.Background>
         </StackPanel>
 
+
         <StackPanel MaxWidth="150" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">
             <Button Content="Вернуться обратно" Click="ClickObrat"/>
         </StackPanel>
 
+        <StackPanel Margin="5" VerticalAlignment="Center" Grid.Column="0">
+            <Button Content="Вернуться обратно" Click="ClickObrat"/>
 
-
+        </StackPanel>
 
     </Grid>
 </Window>

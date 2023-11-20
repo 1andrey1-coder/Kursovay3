@@ -24,25 +24,7 @@ namespace Kursovay2.Gost
             InitializeComponent();
         }
 
-        private void ClickMem(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ClickNews(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ClickNostalGame(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ClickMebl(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
 
         private void ClickModno(object sender, RoutedEventArgs e)
         {
@@ -65,6 +47,26 @@ namespace Kursovay2.Gost
             MainWindow mainWindow  = new MainWindow();
             mainWindow.Show();
             this.Close();
+        }
+
+        private void ClickNewMemNow(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClickNews(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClickNostal(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClickMebl(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

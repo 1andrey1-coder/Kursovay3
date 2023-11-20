@@ -90,5 +90,12 @@ namespace Kursovay2.Admin
             allRof.Show();
             this.Close();
         }
+
+        private void ClickRedagturaRof(object sender, RoutedEventArgs e)
+        {
+            Views.DopRedactor dopRedactor = new Views.DopRedactor();
+            dopRedactor.Show();
+            this.Close();
+        }
     }
 }

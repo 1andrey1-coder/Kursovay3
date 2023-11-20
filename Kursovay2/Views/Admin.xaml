@@ -36,7 +36,7 @@
             </StackPanel>
             <Menu>
                 <MenuItem Header="Меню" >
-                    <MenuItem Header="Новая шутка/рофл" Click="ClickAddNewRof"/>
+                    <MenuItem Header="Новая шутка/рофл" Click="ClickAddRof"/>
                     <MenuItem Header="Редактировать текущую шутку/рофл" Click="ClickEditRof"/>
                     <MenuItem Header="История шуток/рофлов" Click="ClickHistoryRof" />
                 </MenuItem>
@@ -81,10 +81,7 @@
                         MinWidth="100" Text="Шутки/Рофлы" FontSize="15"
                    HorizontalAlignment="Center"/>
 
-            <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center"
-                        Orientation="Horizontal">
-                <Button Content="Окно добавление шутки/рофла" Width="190" Click="ClickAddRof"/>
-            </StackPanel>
+          
             
             
         </StackPanel>
@@ -103,6 +100,7 @@
                     <MenuItem Header="Сменить статус на: завершено" Click="ClickStatuseDone"/>
                     <MenuItem Header="Сменить статус на: ожидает" Click="ClickStatuseAwaiting"/>
                     <MenuItem Header="Сменить статус на: в процессе" Click="ClickStatuseInProgress"/>
+                    <MenuItem Header="Редактировать шутку/рофл" Click="ClickRedagturaRof"/>
                 </ContextMenu>
             </ListView.ContextMenu>
             <ListView.View>

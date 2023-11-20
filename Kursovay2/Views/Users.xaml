@@ -39,16 +39,16 @@
             <!--Имя пользователя-->
             <Menu>
                 <MenuItem Header="Меню"  >
-                    <MenuItem Header="Мемы" Click="ClickMem"/>
+                    <MenuItem Header="Мемы" Click="ClickNewMemNow"/>
                     <MenuItem Header="Новости" Click="ClickNews"/>
                     <MenuItem Header="Ностальгия" Click="ClickNostal"/>
                     <MenuItem Header="Залупа Мейбл" Click="ClickMebl"/>
                 </MenuItem>
             </Menu>
             <Button Margin="0,10,0,2" Content="Локальная история" Click="ClickLokInf"/>
-            <Button Content="История шуток/рофлов" Height="20" Click="ClickRole"/>
-            <Button Content="В главных ролях" Height="20" />
-            <Button Content="Горячии влажные мужики" Height="20"/>
+            <Button Content="История шуток/рофлов" Height="20" Click="ClickHistoryRole"/>
+            <Button Content="В главных ролях" Height="20" Click="ClickAdmini" />
+            <Button Content="Горячии влажные мужики" Height="20" Click="ClickGey"/>
         
         </StackPanel>
       
