@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursovay2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +18,12 @@ namespace Kursovay2.AddRof
     /// <summary>
     /// Логика взаимодействия для AddRof.xaml
     /// </summary>
-    public partial class AddRof : Window
+    public partial class AddRof : ClassWindow
     {
-        public AddRof()
+        public AddRof() : base()
         {
             InitializeComponent();
+
         }
 
         private void ClickObratAdmin(object sender, RoutedEventArgs e)

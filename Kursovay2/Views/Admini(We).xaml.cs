@@ -1,4 +1,5 @@
-﻿using Kursovay2.User;
+﻿using Kursovay2.Models;
+using Kursovay2.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,11 +19,12 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Admini_We_.xaml
     /// </summary>
-    public partial class Admini_We_ : Window
+    public partial class Admini_We_ : ClassWindow
     {
-        public Admini_We_()
+        public Admini_We_(): base()
         {
             InitializeComponent();
+
         }
 
         private void VernutObrat(object sender, RoutedEventArgs e)

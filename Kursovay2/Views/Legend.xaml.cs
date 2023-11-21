@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursovay2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +18,12 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Legend.xaml
     /// </summary>
-    public partial class Legend : Window
+    public partial class Legend : ClassWindow
     {
-        public Legend()
+        public Legend() : base()
         {
             InitializeComponent();
+
         }
 
         private void VernutObrat(object sender, RoutedEventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursovay2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +18,12 @@ namespace Kursovay2.Admin
     /// <summary>
     /// Логика взаимодействия для Admin.xaml
     /// </summary>
-    public partial class Admin : Window
+    public partial class Admin : ClassWindow
     {
-        public Admin()
+        public Admin() : base()
         {
             InitializeComponent();
+
         }
 
         private void ClickAddNewRof(object sender, RoutedEventArgs e)

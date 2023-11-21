@@ -1,4 +1,5 @@
-﻿using Kursovay2.User;
+﻿using Kursovay2.Models;
+using Kursovay2.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,11 +19,12 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Gey.xaml
     /// </summary>
-    public partial class Gey : Window
+    public partial class Gey : ClassWindow
     {
-        public Gey()
+        public Gey() : base()
         {
             InitializeComponent();
+
         }
 
         private void VernutObrat(object sender, RoutedEventArgs e)

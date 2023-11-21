@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursovay2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,16 +18,12 @@ namespace Kursovay2.User
     /// <summary>
     /// Логика взаимодействия для Users.xaml
     /// </summary>
-    public partial class Users : Window
+    public partial class Users : ClassWindow
     {
-        public Users()
+        public Users(): base()
         {
-            InitializeComponent();
+            InitializeComponent();  
         }
-      
-
-
-       
 
         private void ClickUserToMainWindow(object sender, RoutedEventArgs e)
         {

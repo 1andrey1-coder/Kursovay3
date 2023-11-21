@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursovay2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +18,12 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Clients.xaml
     /// </summary>
-    public partial class Clients : Window
+    public partial class Clients : ClassWindow
     {
-        public Clients()
+        public Clients() : base()
         {
             InitializeComponent();
+
         }
 
         private void ClickObrat(object sender, RoutedEventArgs e)

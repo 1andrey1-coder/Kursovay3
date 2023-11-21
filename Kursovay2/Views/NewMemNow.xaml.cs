@@ -1,4 +1,5 @@
-﻿using Kursovay2.User;
+﻿using Kursovay2.Models;
+using Kursovay2.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,11 +19,12 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для NewMemNow.xaml
     /// </summary>
-    public partial class NewMemNow : Window
+    public partial class NewMemNow : ClassWindow
     {
-        public NewMemNow()
+        public NewMemNow() : base()
         {
             InitializeComponent();
+
         }
 
         private void VernutObrat(object sender, RoutedEventArgs e)

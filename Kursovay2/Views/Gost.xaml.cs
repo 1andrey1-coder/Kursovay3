@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursovay2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,14 +18,15 @@ namespace Kursovay2.Gost
     /// <summary>
     /// Логика взаимодействия для Gost.xaml
     /// </summary>
-    public partial class Gost : Window
+    public partial class Gost : ClassWindow
     {
-        public Gost()
+        public Gost() : base()
         {
             InitializeComponent();
+
         }
 
-       
+
 
         private void ClickModno(object sender, RoutedEventArgs e)
         {

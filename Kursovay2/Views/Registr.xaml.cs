@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursovay2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,12 +18,14 @@ namespace Kursovay2.Registr
     /// <summary>
     /// Логика взаимодействия для Registr.xaml
     /// </summary>
-    public partial class Registr : Window
+    public partial class Registr : ClassWindow
     {
-        public Registr()
+        public Registr(): base() 
         {
             InitializeComponent();
+
         }
+       
 
         private void PerehodMainWindow(object sender, RoutedEventArgs e)
         {

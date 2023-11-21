@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursovay2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +18,12 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для DopRedactor.xaml
     /// </summary>
-    public partial class DopRedactor : Window
+    public partial class DopRedactor : ClassWindow
     {
-        public DopRedactor()
+        public DopRedactor() : base()
         {
             InitializeComponent();
+
         }
 
         private void ClickObratAddRof(object sender, RoutedEventArgs e)
