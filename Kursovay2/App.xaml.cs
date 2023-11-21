@@ -13,18 +13,31 @@ namespace Kursovay2
     /// </summary>
     public partial class App : Application
     {
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            base.OnStartup(e);
-            EventManager.RegisterClassHandler(typeof(Window), Window.LoadedEvent, 
-                new RoutedEventHandler(WindowLoadedHandler));
-        }
+        // зайти на сайт online-fonts.com
+        // слева зайти в languages и выбрать русский язык
+        // в name можно ввести:
 
-        private void WindowLoadedHandler(object sender, RoutedEventArgs e)
-        {
-            var window = (Window)sender;
-            window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-        }
+        // для выделения и больших не членов а штук:
+        // CONFUSION GIRL [RUS BY aLiNcE]
+        // Adventure(RUS BY LYAJKA)
+        // Adventure Subtitles(RUS BY LYAJKA)
+        // Ganesha Type 
+        // Antropos Freefont
+        // Morice Bejar
+        //
+        //
+        //
+        // для основного текста и кнопок:
+        // Arian AMU
+        // Super Webcomic Bros.
+        //
+        //
+        //
+        //
+        //
+        //
+        //
+
 
 
     }
