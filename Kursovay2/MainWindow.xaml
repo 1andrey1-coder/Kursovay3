@@ -1,8 +1,9 @@
-﻿<Window x:Class="Kursovay2.MainWindow"
+﻿<model:ClassWindow x:Class="Kursovay2.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:model="clr-namespace:Kursovay2.Models"
         xmlns:local="clr-namespace:Kursovay2"
         mc:Ignorable="d"
         Title="Вход" MaxHeight="500" 
@@ -70,7 +71,7 @@
         <StackPanel VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="2" >
             <TextBlock FontSize="13"  Background="Transparent" FontWeight="Bold"  Foreground="White" Text="Логин" />
 
-            
+
             <TextBox   Height="20"/>
         </StackPanel>
         <StackPanel  VerticalAlignment="Top"
@@ -85,10 +86,10 @@
                      Content="Войти" Click="PerexodUser" />
             <Button Background="Transparent"  Foreground="White" BorderBrush="Transparent" 
                        Content="Нет аккаунта? " Click="PerehodRegistr"/>
-           
+
         </StackPanel>
 
-       
+
         <StackPanel HorizontalAlignment="Left" Grid.Column="1" Grid.Row="5"  >
             <TextBlock Text="Запомнить меня"  Foreground="White" Margin="5,5,10,0" />
         </StackPanel>
@@ -96,4 +97,4 @@
         <Button Width="100" Grid.Column="1" Content="Войти в Гостя" Click="PerexodGost" />
     </Grid>
 
-</Window>
+</model:ClassWindow>
