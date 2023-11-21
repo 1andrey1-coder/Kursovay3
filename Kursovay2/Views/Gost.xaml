@@ -26,10 +26,9 @@
                 </LinearGradientBrush>
             </StackPanel.Background>
             <!--Имя гостя-->
-            <StackPanel Margin="5" >
-
-           
-                <Button Content="Вернуться  на залуп экран вход" 
+            <StackPanel Margin="5" Orientation="Vertical"  >
+                <TextBlock Margin="5" HorizontalAlignment="Center" Text="Гость " />
+                <Button Content="Выйти  на залуп экран вход" 
                       Click="ClickGostToMainWindow"/>
             </StackPanel>
             <!--Имя гостя-->

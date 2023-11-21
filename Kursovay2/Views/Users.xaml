@@ -33,7 +33,7 @@
                 <TextBlock Text="{Binding p.UserName}" HorizontalAlignment="Center" FontSize="16"/>
                 <TextBlock Text="{Binding p.UserLastName}" HorizontalAlignment="Center" FontSize="16"/>
                 <TextBlock Text="{Binding p.UserMiddleName}" HorizontalAlignment="Center" FontSize="16"/>
-                <Button Content="Вернуться на залуп экран вход" 
+                <Button  Content="Выйти на залуп экран вход" 
            Click="ClickUserToMainWindow"/>
             </StackPanel>
             <!--Имя пользователя-->

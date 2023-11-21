@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.Views"
         mc:Ignorable="d"
-        Title="Окно для горячих Men" Height="450" Width="800">
+        Title="Окно для влыжных Men" Height="450" Width="800">
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"  Width="130">
             <Button Height="30" Content="Вернуться обратно" Click="VernutObrat" />
