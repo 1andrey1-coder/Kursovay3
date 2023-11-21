@@ -24,5 +24,7 @@ namespace Kursovay2.Views
         {
             InitializeComponent();
         }
+
+       
     }
 }
