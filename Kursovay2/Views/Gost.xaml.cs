@@ -57,7 +57,9 @@ namespace Kursovay2.Gost
 
         private void ClickNewMemNow(object sender, RoutedEventArgs e)
         {
-
+            Views.NewMemNow newMemNow = new Views.NewMemNow();
+            newMemNow.Show();
+            this.Close();
         }
 
         private void ClickNewsGost(object sender, RoutedEventArgs e)
@@ -69,7 +71,9 @@ namespace Kursovay2.Gost
 
         private void ClickNostal(object sender, RoutedEventArgs e)
         {
-
+            Views.Nostal nostal = new Views.Nostal();
+            nostal.Show();
+            this.Close();
         }
 
         private void ClickMebl(object sender, RoutedEventArgs e)
