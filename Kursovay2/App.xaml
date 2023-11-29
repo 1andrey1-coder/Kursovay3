@@ -5,7 +5,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <Style x:Key="Grid" TargetType="Grid">
-            <Setter Property="Grid.Background" Value="#1b70c4"/>
+            <Setter Property="Grid.Background" Value="#6195c9"/>
         </Style>
 
   
