@@ -5,11 +5,9 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <Style x:Key="Grid" TargetType="Grid">
-            <Setter Property="Grid.Background" Value="DarkOrange"/>
+            <Setter Property="Grid.Background" Value="#1b70c4"/>
         </Style>
 
-        <Style x:Key="StackPanel" TargetType="StackPanel" >
-            <Setter Property="Background" Value="DarkOrange"/>
-        </Style>
+  
     </Application.Resources>
 </Application>
