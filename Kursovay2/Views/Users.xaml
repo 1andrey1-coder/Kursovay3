@@ -46,9 +46,9 @@
                 </MenuItem>
             </Menu>
             <Button Margin="0,10,0,2" Content="Локальная история" Click="ClickLokInf"/>
-            <Button Content="История шуток/рофлов" Height="20" Click="ClickHistoryRole"/>
-            <Button Content="В главных ролях" Height="20" Click="ClickAdmini" />
-            <Button Content="Горячии влажные мужики" Height="20" Click="ClickGey"/>
+            <Button Content="История шуток/рофлов" Click="ClickHistoryRole"/>
+            <Button Content="В главных ролях"  Click="ClickAdmini" />
+            <Button Content="Горячии влажные мужики" Click="ClickGey"/>
         
         </StackPanel>
       
