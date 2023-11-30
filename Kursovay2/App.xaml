@@ -7,7 +7,10 @@
         <Style x:Key="Grid" TargetType="Grid">
             <Setter Property="Grid.Background" Value="#6195c9"/>
         </Style>
-
-  
+       
+        <Style x:Name="Button" TargetType="Button">
+            <Setter Property="Background" Value="	#b5c7e7" />
+        </Style>
+      
     </Application.Resources>
 </Application>
