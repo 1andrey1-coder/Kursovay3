@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Kursovay2.Admin"
         mc:Ignorable="d"
         Title="Окно для Админа" MinHeight="450" MinWidth="750" Width="900" >
-    <Grid>
+    <Grid Style="{StaticResource Grid}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition MaxWidth="200"/>
             <ColumnDefinition Width="250" />
@@ -21,12 +21,12 @@
        
         <StackPanel Grid.Column="0" Grid.RowSpan="3" 
                  Margin="5" >
-            <StackPanel.Background>
+            <!--<StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#ffd700" Offset="0.1"/>
                     <GradientStop Color="Firebrick" Offset="1"/>
                 </LinearGradientBrush>
-            </StackPanel.Background>
+            </StackPanel.Background>-->
             <StackPanel Margin="5" >
                 <TextBlock Text="{Binding p.UserName}" HorizontalAlignment="Center" FontSize="16"/>
                 <TextBlock Text="{Binding p.UserLastName}" HorizontalAlignment="Center" FontSize="16"/>
@@ -51,12 +51,12 @@
         <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="1"
                  Margin="5"
                 Orientation="Horizontal">
-            <StackPanel.Background>
+            <!--<StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#ffd700" Offset="0.3"/>
                     <GradientStop Color="Firebrick" Offset="1"/>
                 </LinearGradientBrush>
-            </StackPanel.Background>
+            </StackPanel.Background>-->
           
             <StackPanel Orientation="Vertical" Margin="5" Width="215">
                 <TextBlock HorizontalAlignment="Left"

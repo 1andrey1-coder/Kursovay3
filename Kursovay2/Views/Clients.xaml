@@ -36,7 +36,7 @@
             </Border>
         </DataTemplate>
     </Window.Resources>
-    <Grid>
+    <Grid Style="{StaticResource Grid}">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition MaxWidth="135"/>
@@ -47,12 +47,12 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <StackPanel Margin="5" Grid.Row="0" Grid.Column="0" Grid.RowSpan="55">
-            <StackPanel.Background>
+            <!--<StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#ffd700" Offset="0.1"/>
                     <GradientStop Color="Firebrick" Offset="1"/>
                 </LinearGradientBrush>
-            </StackPanel.Background>
+            </StackPanel.Background>-->
         </StackPanel>
 
         <StackPanel Margin="5" VerticalAlignment="Bottom" Grid.Column="0">

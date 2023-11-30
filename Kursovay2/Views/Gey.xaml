@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Kursovay2.Views"
         mc:Ignorable="d"
         Title="Окно для влыжных Men" Height="450" Width="800">
-    <Grid>
+    <Grid Style="{StaticResource Grid}">
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"  Width="130">
             <Button Height="30" Content="Вернуться обратно" Click="VernutObrat" />
         </StackPanel>

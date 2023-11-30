@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Окно для описание каждой шутки" MinHeight="350" MinWidth="700" 
         >
-    <Grid>
+    <Grid Style="{StaticResource Grid}">
 
 
         <Grid.ColumnDefinitions>
@@ -51,12 +51,12 @@
             <TextBlock  Text="{Binding Title}"/>
         </StackPanel>
         <StackPanel Margin="5" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3">
-            <StackPanel.Background>
+            <!--<StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#ffd700" Offset="0.1"/>
                     <GradientStop Color="Firebrick" Offset="1"/>
                 </LinearGradientBrush>
-            </StackPanel.Background>
+            </StackPanel.Background>-->
         </StackPanel>
 
 

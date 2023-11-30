@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Kursovay2.Views"
         mc:Ignorable="d"
         Title="Окно для детальное редактирование" Height="550" Width="850">
-    <Grid>
+    <Grid Style="{StaticResource Grid}">
 
 
         <Grid.ColumnDefinitions>
@@ -25,20 +25,20 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <StackPanel Margin="5" Grid.Row="0" Grid.Column="0" Grid.RowSpan="55">
-            <StackPanel.Background>
+            <!--<StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#ffd700" Offset="0.1"/>
                     <GradientStop Color="Firebrick" Offset="1"/>
                 </LinearGradientBrush>
-            </StackPanel.Background>
+            </StackPanel.Background>-->
         </StackPanel>
         <StackPanel Margin="5" Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="6">
-            <StackPanel.Background>
+            <!--<StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#ffd700" Offset="0.1"/>
                     <GradientStop Color="Firebrick" Offset="1"/>
                 </LinearGradientBrush>
-            </StackPanel.Background>
+            </StackPanel.Background>-->
         </StackPanel>
         <StackPanel Margin="5" VerticalAlignment="Center" Grid.Column="0">
             <TextBlock Text="{Binding p.UserName}" HorizontalAlignment="Center" FontSize="16"/>
