@@ -113,7 +113,7 @@
                                 />
                     <GridViewColumn Header="Название шутки/рофла" Width="150"
                                 DisplayMemberBinding="{Binding Title}"/>
-                    <GridViewColumn Header="Ответсвенный шайтан" Width="150"
+                    <GridViewColumn Header="Ответсвенное описание" Width="150"
                                 />
                     <GridViewColumn Header="Статус бумбастик" Width="100"
                                 />
