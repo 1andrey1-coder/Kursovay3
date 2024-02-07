@@ -19,7 +19,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для News.xaml
     /// </summary>
-    public partial class News : ClassWindow
+    public partial class News : Window
     {
         public News() : base()
         {

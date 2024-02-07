@@ -18,7 +18,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для NewsGost.xaml
     /// </summary>
-    public partial class NewsGost : ClassWindow
+    public partial class NewsGost : Window
     {
         public NewsGost() : base()
         {

@@ -19,7 +19,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Gey.xaml
     /// </summary>
-    public partial class Gey : ClassWindow
+    public partial class Gey : Window
     {
         public Gey() : base()
         {

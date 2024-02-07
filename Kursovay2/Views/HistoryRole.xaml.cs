@@ -19,7 +19,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для HistoryRole.xaml
     /// </summary>
-    public partial class HistoryRole : ClassWindow
+    public partial class HistoryRole : Window
     {
         public HistoryRole() : base()
         {

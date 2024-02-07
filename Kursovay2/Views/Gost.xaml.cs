@@ -18,7 +18,7 @@ namespace Kursovay2.Gost
     /// <summary>
     /// Логика взаимодействия для Gost.xaml
     /// </summary>
-    public partial class Gost : ClassWindow
+    public partial class Gost : Window
     {
         public Gost() : base()
         {

@@ -18,7 +18,7 @@ namespace Kursovay2.Admin
     /// <summary>
     /// Логика взаимодействия для Admin.xaml
     /// </summary>
-    public partial class Admin : ClassWindow
+    public partial class Admin : Window
     {
         public Admin() : base()
         {

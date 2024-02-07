@@ -10,29 +10,38 @@ namespace Kursovay2.mvvm
     public class CommandVM : ICommand
     {
 
-        private readonly Action action;
-        private readonly Func<bool> condition;
+        private readonly Action<object> _executeAction;
+        private readonly Predicate<object> _canExecuteAction;
 
-        public CommandVM(Action action,
-            Func<bool> condition)
+        //Constructors
+        public CommandVM(Action<object> executeAction)
         {
-            this.action = action;
-            this.condition = condition;
+            _executeAction = executeAction;
+            _canExecuteAction = null;
         }
-        public event EventHandler? CanExecuteChanged
+
+        public CommandVM(Action<object> executeAction, Predicate<object> canExecuteAction)
+        {
+            _executeAction = executeAction;
+            _canExecuteAction = canExecuteAction;
+        }
+
+        //Events
+        public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public bool CanExecute(object? parameter)
+        //Methods
+        public bool CanExecute(object parameter)
         {
-            return condition();
+            return _canExecuteAction == null ? true : _canExecuteAction(parameter);
         }
 
-        public void Execute(object? parameter)
+        public void Execute(object parameter)
         {
-            action();
+            _executeAction(parameter);
         }
     }
 }

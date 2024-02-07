@@ -19,7 +19,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Nostal.xaml
     /// </summary>
-    public partial class Nostal : ClassWindow
+    public partial class Nostal : Window
     {
         public Nostal() : base()
         {

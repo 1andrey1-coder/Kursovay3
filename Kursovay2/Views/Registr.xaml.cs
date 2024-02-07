@@ -18,7 +18,7 @@ namespace Kursovay2.Registr
     /// <summary>
     /// Логика взаимодействия для Registr.xaml
     /// </summary>
-    public partial class Registr : ClassWindow
+    public partial class Registr : Window
     {
         public Registr(): base() 
         {
@@ -38,6 +38,16 @@ namespace Kursovay2.Registr
         private void dragWindows(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
         }
     }
 }

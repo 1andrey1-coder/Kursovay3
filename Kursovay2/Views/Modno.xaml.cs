@@ -18,7 +18,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Modno.xaml
     /// </summary>
-    public partial class Modno : ClassWindow
+    public partial class Modno : Window
     {
         public Modno() : base()
         {

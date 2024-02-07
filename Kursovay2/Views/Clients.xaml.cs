@@ -18,7 +18,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Clients.xaml
     /// </summary>
-    public partial class Clients : ClassWindow
+    public partial class Clients : Window
     {
         public Clients() : base()
         {

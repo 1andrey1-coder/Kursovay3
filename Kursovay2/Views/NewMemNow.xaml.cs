@@ -19,7 +19,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для NewMemNow.xaml
     /// </summary>
-    public partial class NewMemNow : ClassWindow
+    public partial class NewMemNow : Window
     {
         public NewMemNow() : base()
         {

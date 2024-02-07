@@ -18,7 +18,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для AllRof.xaml
     /// </summary>
-    public partial class AllRof : ClassWindow
+    public partial class AllRof : Window
     {
         public AllRof() : base()
         {

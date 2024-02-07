@@ -18,7 +18,7 @@ namespace Kursovay2.User
     /// <summary>
     /// Логика взаимодействия для Users.xaml
     /// </summary>
-    public partial class Users : ClassWindow
+    public partial class Users : Window
     {
         public Users(): base()
         {

@@ -18,7 +18,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Opisania.xaml
     /// </summary>
-    public partial class Opisania : ClassWindow
+    public partial class Opisania : Window
     {
         public Opisania() : base()
         {

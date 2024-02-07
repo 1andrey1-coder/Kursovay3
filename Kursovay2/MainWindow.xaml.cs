@@ -21,7 +21,7 @@ namespace Kursovay2
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : ClassWindow
+    public partial class MainWindow : Window
     {
         public MainWindow(): base() 
         {
@@ -69,6 +69,16 @@ namespace Kursovay2
         private void dragWindows(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
         }
     }
 }

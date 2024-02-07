@@ -18,7 +18,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для NoModno.xaml
     /// </summary>
-    public partial class NoModno : ClassWindow
+    public partial class NoModno : Window
     {
         public NoModno() : base()
         {

@@ -18,7 +18,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Legend.xaml
     /// </summary>
-    public partial class Legend : ClassWindow
+    public partial class Legend : Window
     {
         public Legend() : base()
         {

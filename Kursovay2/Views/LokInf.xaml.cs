@@ -19,7 +19,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для LokInf.xaml
     /// </summary>
-    public partial class LokInf : ClassWindow
+    public partial class LokInf : Window
     {
         public LokInf() : base()
         {

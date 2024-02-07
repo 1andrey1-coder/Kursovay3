@@ -18,7 +18,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для DopRedactor.xaml
     /// </summary>
-    public partial class DopRedactor : ClassWindow
+    public partial class DopRedactor : Window
     {
         public DopRedactor() : base()
         {

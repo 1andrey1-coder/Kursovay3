@@ -19,7 +19,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Admini_We_.xaml
     /// </summary>
-    public partial class Admini_We_ : ClassWindow
+    public partial class Admini_We_ : Window
     {
         public Admini_We_(): base()
         {

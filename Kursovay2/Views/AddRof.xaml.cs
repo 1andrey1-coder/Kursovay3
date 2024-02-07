@@ -18,7 +18,7 @@ namespace Kursovay2.AddRof
     /// <summary>
     /// Логика взаимодействия для AddRof.xaml
     /// </summary>
-    public partial class AddRof : ClassWindow
+    public partial class AddRof : Window
     {
         public AddRof() : base()
         {
