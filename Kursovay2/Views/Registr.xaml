@@ -83,9 +83,9 @@
                 VerticalAlignment="Center" Grid.Column="1" Grid.Row="7" >
             <Button FontSize="15"
                 Background="Transparent" 
-                    Foreground="White" BorderBrush="Transparent" Content="Регистрация" />
+                     BorderBrush="Transparent" Content="Регистрация" />
             <Button  VerticalAlignment="Center" 
-                     Background="Transparent"  Foreground="White" BorderBrush="Transparent" 
+                     Background="Transparent"   BorderBrush="Transparent" 
                     Content="Вернуться в Логин  " Click="PerehodMainWindow"
                    />            
         </StackPanel>

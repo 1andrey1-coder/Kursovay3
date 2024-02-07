@@ -82,9 +82,9 @@
         </StackPanel>
         <StackPanel 
                     VerticalAlignment="Center" Grid.Column="1" Grid.Row="6" >
-            <Button FontSize="15"  Background="Transparent"  Foreground="White" BorderBrush="Transparent" 
+            <Button FontSize="15"  Background="Transparent"  BorderBrush="Transparent" 
                      Content="Войти" Click="PerexodUser" />
-            <Button Background="Transparent"  Foreground="White" BorderBrush="Transparent" 
+            <Button Background="Transparent"   BorderBrush="Transparent" 
                        Content="Нет аккаунта? " Click="PerehodRegistr"/>
 
         </StackPanel>
