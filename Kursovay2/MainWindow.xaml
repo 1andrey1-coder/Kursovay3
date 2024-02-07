@@ -87,6 +87,7 @@
             <Button Background="Transparent"   BorderBrush="Transparent" 
                        Content="Нет аккаунта? " Click="PerehodRegistr"/>
 
+            
         </StackPanel>
 
 
