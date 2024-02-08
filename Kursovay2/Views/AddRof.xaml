@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.AddRof"
         mc:Ignorable="d"
-        Title="Окно для добавления" MinHeight="370" MinWidth="670" Height="450" Width="900">
-    <Grid Style="{StaticResource Grid}">
+        Title="Окно для добавления" MinHeight="370" MinWidth="670" Height="450" Width="900" >
+    <Border Style="{StaticResource Border}">
+        <Grid  >
 
+        
+            
+        
         
         <Grid.ColumnDefinitions>
             <ColumnDefinition MaxWidth="135"/>
@@ -105,9 +109,9 @@
                         <MenuItem Header="Удалить" Click="ClickDelete"/>
                     </ContextMenu>
                 </ListView.ContextMenu>
-                <ListView.View>
+                <ListView.View >
                     
-                    <GridView>
+                    <GridView >
                         <GridViewColumn Header="Тэг" Width="35" />
 
                         <GridViewColumn Header="Ебанное начало" Width="110" 
@@ -128,4 +132,5 @@
 
       
     </Grid>
+    </Border>
 </Window>
