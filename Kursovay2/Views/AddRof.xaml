@@ -97,7 +97,7 @@
         <ScrollViewer HorizontalScrollBarVisibility="Auto"
                Grid.Row="2" Grid.ColumnSpan="6" Grid.Column="1" >
 
-            <ListView 
+            <ListView  
        ItemsSource="{Binding stagesRof}" 
        SelectedItem="{Binding SelectedStage}" Margin="5">
 
@@ -111,7 +111,7 @@
                 </ListView.ContextMenu>
                 <ListView.View >
                     
-                    <GridView >
+                    <GridView  >
                         <GridViewColumn Header="Тэг" Width="35" />
 
                         <GridViewColumn Header="Ебанное начало" Width="110" 
@@ -119,7 +119,7 @@
                         <GridViewColumn Header="Ахуенное завершение" Width="140"
                          />
                         <GridViewColumn Header="Название шутки/рофла" Width="150"
-                         DisplayMemberBinding="{Binding Title}"/>
+                         />
                         <GridViewColumn Header="Ответсвенный шайтан" Width="150"
                          />
                         <GridViewColumn Header="Статус бумбастик" Width="120"

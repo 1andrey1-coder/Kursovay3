@@ -35,7 +35,8 @@
             </Style.Triggers>
         </Style>
 
-        <Style TargetType="Border">
+        <Style TargetType="Window">
+         
             <!--<Setter Property="BorderBrush">
                 <Setter.Value>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -62,15 +63,16 @@
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
-            <Setter Property="BorderThickness" Value="1"/>
-            
-            
-            
-            
+            <Setter Property="BorderThickness" Value="4"/>
+           
+           
+           
+
+
         </Style>
-        <Style TargetType="GridViewColumnHeader">
-            <Setter Property="BorderBrush" Value="White"/>
-            <Setter Property="BorderThickness" Value="1"/>
+        <Style x:Key="Style" TargetType="GridViewColumnHeader">
+           
+            <Setter Property="BorderThickness" Value="0"/>
         </Style>
         
         <Style TargetType="TextBlock">
@@ -88,26 +90,7 @@
             </Setter>
         </Style>
         
-        <!--<Style TargetType="Window">
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Style.Triggers>
-                        <DataTrigger
-                            Binding="{Binding RelativeSource={RelativeSource 
-                            AncestorType=GridViewColumnHeader}}" Value="False">
-                            <Setter Property="Background">
-                                <Setter.Value>
-                                    <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                                        <GradientStop Color="#060531" Offset="0"/>
-                                        <GradientStop Color="#1B1448" Offset="1"/>
-                                    </LinearGradientBrush>
-                                </Setter.Value>
-                            </Setter>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </Style.Resources>
-        </Style>-->
+      
         
 
         <!--<Border.BorderBrush>

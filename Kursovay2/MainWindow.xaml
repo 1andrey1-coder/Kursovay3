@@ -11,7 +11,7 @@
         MinHeight="450" MinWidth="400" MaxWidth="450"
         AllowsTransparency="True" WindowStartupLocation="CenterScreen"  >
 
-    <Border Style="{StaticResource Border}" CornerRadius="12">
+    <Border Style="{StaticResource Border}" >
         <Border.Background>
             <ImageBrush ImageSource="/Images/back-image.jpg"
                      Stretch="None"/>
