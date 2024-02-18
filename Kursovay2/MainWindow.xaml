@@ -6,12 +6,11 @@
         xmlns:local="clr-namespace:Kursovay2"
         mc:Ignorable="d"
         Title="Вход" MaxHeight="500" 
-        WindowStyle="None"
+     
         MouseLeftButtonDown="dragWindows"
-        MinHeight="450" MinWidth="400" MaxWidth="450"
-        AllowsTransparency="True" WindowStartupLocation="CenterScreen"  >
+        MinHeight="450" MinWidth="400" MaxWidth="450">
 
-    <Border Style="{StaticResource Border}" >
+    <Border >
         <Border.Background>
             <ImageBrush ImageSource="/Images/back-image.jpg"
                      Stretch="None"/>
@@ -22,13 +21,13 @@
          Opacity="0.95">
             
             <!--стиль-->
-            <!--<Border.BorderBrush>
+            <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="#462AD8" Offset="0"/>
                     <GradientStop Color="#DA34AE" Offset="0.75"/>
                     <GradientStop Color="#8A16C1" Offset="1"/>
                 </LinearGradientBrush>
-            </Border.BorderBrush>-->
+            </Border.BorderBrush>
 
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">

@@ -18,9 +18,9 @@ namespace Kursovay2.Admin
     /// <summary>
     /// Логика взаимодействия для Admin.xaml
     /// </summary>
-    public partial class Admin : Window
+    public partial class Admin : Page
     {
-        public Admin() : base()
+        public Admin()
         {
             InitializeComponent();
 
@@ -45,8 +45,8 @@ namespace Kursovay2.Admin
         {
             
             Views.Clients clients = new Views.Clients();
-            clients.Show();
-            this.Close();
+            //clients.Show();
+            //this.Close();
         }
 
         private void ClickStatuseDone(object sender, RoutedEventArgs e)
@@ -73,31 +73,31 @@ namespace Kursovay2.Admin
         {
             
             MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+            //mainWindow.Show();
+            //this.Close();
 
         }
 
         private void ClickAddRof(object sender, RoutedEventArgs e)
         {
             AddRof.AddRof addRof = new AddRof.AddRof();
-            addRof.Show();
-            this.Close();
+            //addRof.Show();
+            //this.Close();
 
         }
 
         private void AllRof(object sender, RoutedEventArgs e)
         {
             Views.AllRof allRof = new Views.AllRof();   
-            allRof.Show();
-            this.Close();
+            //allRof.Show();
+            //this.Close();
         }
 
         private void ClickRedagturaRof(object sender, RoutedEventArgs e)
         {
             Views.DopRedactor dopRedactor = new Views.DopRedactor();
-            dopRedactor.Show();
-            this.Close();
+            //dopRedactor.Show();
+            //this.Close();
         }
     }
 }

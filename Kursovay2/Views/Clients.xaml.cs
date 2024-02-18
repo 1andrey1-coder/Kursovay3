@@ -18,9 +18,9 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Clients.xaml
     /// </summary>
-    public partial class Clients : Window
+    public partial class Clients : Page
     {
-        public Clients() : base()
+        public Clients()
         {
             InitializeComponent();
 
@@ -29,8 +29,8 @@ namespace Kursovay2.Views
         private void ClickObrat(object sender, RoutedEventArgs e)
         {
             Admin.Admin admin = new Admin.Admin();
-            admin.Show();
-            this.Close();   
+            //admin.Show();
+            //this.Close();   
         }
     }
 }

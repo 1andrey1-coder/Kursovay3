@@ -18,9 +18,9 @@ namespace Kursovay2.User
     /// <summary>
     /// Логика взаимодействия для Users.xaml
     /// </summary>
-    public partial class Users : Window
+    public partial class Users : Page
     {
-        public Users(): base()
+        public Users()
         {
             InitializeComponent();  
         }
@@ -29,58 +29,58 @@ namespace Kursovay2.User
         {
           
             MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+            //mainWindow.Show();
+            //this.Close();
         }
 
 
         private void ClickLokInf(object sender, RoutedEventArgs e)
         {
             Views.LokInf lokInf = new Views.LokInf();
-            lokInf.Show();
-            this.Close();
+            //lokInf.Show();
+            //this.Close();
         }
 
         private void ClickHistoryRole(object sender, RoutedEventArgs e)
         {
             Views.HistoryRole historyRole = new Views.HistoryRole();
-            historyRole.Show();
-            this.Close();
+            //historyRole.Show();
+            //this.Close();
         }
 
         private void ClickAdmini(object sender, RoutedEventArgs e)
         {
             Views.Admini_We_ admini_We_ = new Views.Admini_We_();
-            admini_We_.Show();
-            this.Close();
+            //admini_We_.Show();
+            //this.Close();
         }
 
         private void ClickGey(object sender, RoutedEventArgs e)
         {
             Views.Gey gey = new Views.Gey();
-            gey.Show();
-            this.Close();   
+            //gey.Show();
+            //this.Close();   
         }
 
         private void ClickNewMemNow(object sender, RoutedEventArgs e)
         {
             Views.NewMemNow newMemNow = new Views.NewMemNow();
-            newMemNow.Show();
-            this.Close();
+            //newMemNow.Show();
+            //this.Close();
         }
 
         private void ClickNews(object sender, RoutedEventArgs e)
         {
             Views.News news = new Views.News();
-            news.Show();
-            this.Close();
+            //news.Show();
+            //this.Close();
         }
 
         private void ClickNostal(object sender, RoutedEventArgs e)
         {
             Views.Nostal nostal = new Views.Nostal();
-            nostal.Show();
-            this.Close();
+            //nostal.Show();
+            //this.Close();
         }
 
         private void ClickMebl(object sender, RoutedEventArgs e)

@@ -10,9 +10,9 @@ namespace Kursovay2.Static
 {
     internal class PageNavigator
     {
-        private static ClassWindow currentPage;
+        private static Page currentPage;
 
-        public static ClassWindow CurrentPage
+        public static Page CurrentPage
         {
             get => currentPage;
             set
@@ -22,6 +22,6 @@ namespace Kursovay2.Static
             }
         }
 
-        public static event EventHandler<ClassWindow> CurrentPageChanged;
+        public static event EventHandler<Page> CurrentPageChanged;
     }
 }

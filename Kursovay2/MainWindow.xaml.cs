@@ -23,7 +23,7 @@ namespace Kursovay2
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(): base() 
+        public MainWindow() 
         {
             InitializeComponent();
         }
@@ -32,8 +32,8 @@ namespace Kursovay2
         {
            
             User.Users user = new User.Users();
-            user.Show();
-            this.Close();
+            //user.Show();
+            //this.Close();
 
 
         }
@@ -43,8 +43,8 @@ namespace Kursovay2
         private void PerexodAdmin(object sender, RoutedEventArgs e)
         {
             Admin.Admin admin = new Admin.Admin();
-            admin.Show();
-            this.Close();
+            //admin.Show();
+            //this.Close();
 
         }
 
@@ -52,8 +52,8 @@ namespace Kursovay2
         {
 
             Gost.Gost gost = new Gost.Gost();
-            gost.Show();
-            this.Close();
+            //gost.Show();
+            //this.Close();
 
         }
 
@@ -61,8 +61,8 @@ namespace Kursovay2
         {
 
             Registr.Registr registr = new Registr.Registr();
-            registr.Show();
-            this.Close();
+            //registr.Show();
+            //this.Close();
 
         }
 
@@ -78,6 +78,7 @@ namespace Kursovay2
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
+
             WindowState = WindowState.Minimized;
         }
     }

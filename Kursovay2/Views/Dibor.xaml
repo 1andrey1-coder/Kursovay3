@@ -7,21 +7,38 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
       Title="Окно для выборки куда идем">
+    <Border  CornerRadius="10"                    
+     BorderThickness="2"
+     Opacity="1">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#462AD8" Offset="0"/>
+                <GradientStop Color="#DA34AE" Offset="0.75"/>
+                <GradientStop Color="#8A16C1" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
 
-    <Grid Style="{StaticResource Grid}">
-        
-        <StackPanel  Background="Gainsboro" Width="120" Orientation="Vertical" HorizontalAlignment="Center"
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#060531" Offset="0"/>
+                <GradientStop Color="#1B1448" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+
+            <StackPanel  Background="#1B1448"  Width="120" Orientation="Vertical" HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-            <TextBlock Margin="0,5,0,0" HorizontalAlignment="Center" Text="Куда идем босс?"/>
-            <StackPanel Width="100" Margin="10" Background="GhostWhite" HorizontalAlignment="Center">
+                <TextBlock Margin="0,5,0,0" HorizontalAlignment="Center" Text="Куда идем босс?"/>
+                <StackPanel Width="100" Margin="10" Background="#1B1448" HorizontalAlignment="Center">
 
-                <Button  HorizontalAlignment="Center" Margin="0,5,0,5" Width="100" Content="Шутки/Рофлы" />
-                <Button  HorizontalAlignment="Center" Margin="0,0,0,5" Width="100" Content="Экзотика"/>
-                <Button  HorizontalAlignment="Center" Margin="0,0,0,5" Width="100" Content="Игры"/>
-                <Button  HorizontalAlignment="Center" Margin="0,0,0,5" Width="100" Content="Локальное"/>
+                    <Button  HorizontalAlignment="Center" Margin="0,5,0,5" Width="100" Content="Шутки/Рофлы" />
+                    <Button  HorizontalAlignment="Center" Margin="0,0,0,5" Width="100" Content="Экзотика"/>
+                    <Button  HorizontalAlignment="Center" Margin="0,0,0,5" Width="100" Content="Игры"/>
+                    <Button  HorizontalAlignment="Center" Margin="0,0,0,5" Width="100" Content="Локальное"/>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
 
-     
-    </Grid>
+
+        </Grid>
+    </Border>
 </Page>

@@ -18,9 +18,9 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для DopRedactor.xaml
     /// </summary>
-    public partial class DopRedactor : Window
+    public partial class DopRedactor : Page
     {
-        public DopRedactor() : base()
+        public DopRedactor() 
         {
             InitializeComponent();
 
@@ -29,8 +29,8 @@ namespace Kursovay2.Views
         private void ClickObratAddRof(object sender, RoutedEventArgs e)
         {
             AddRof.AddRof addRof = new AddRof.AddRof();
-            addRof.Show();
-            this.Close();
+            //addRof.Show();
+            //this.Close();
         }
 
         private void ClickSave(object sender, RoutedEventArgs e)

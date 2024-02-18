@@ -1,4 +1,4 @@
-﻿<Window  xmlns:model="clr-namespace:Kursovay2.Models" x:Class="Kursovay2.Admin.Admin"
+﻿<Page  xmlns:model="clr-namespace:Kursovay2.Models" x:Class="Kursovay2.Admin.Admin"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,25 @@
         xmlns:local="clr-namespace:Kursovay2.Admin"
         mc:Ignorable="d"
         Title="Окно для Админа" MinHeight="450" MinWidth="750" Width="900" >
-    <Grid Style="{StaticResource Grid}">
+    <Border  CornerRadius="10"                    
+         BorderThickness="2"
+         Opacity="0.95">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#462AD8" Offset="0"/>
+                <GradientStop Color="#DA34AE" Offset="0.75"/>
+                <GradientStop Color="#8A16C1" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#060531" Offset="0"/>
+                <GradientStop Color="#1B1448" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+    
+    <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition MaxWidth="200"/>
             <ColumnDefinition Width="250" />
@@ -125,4 +143,5 @@
         <!--инф о тсадии-->
         
     </Grid>
-</Window>
+    </Border>
+</Page>

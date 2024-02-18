@@ -7,7 +7,9 @@
         <Style x:Key="Grid" TargetType="Grid">
             <Setter Property="Grid.Background" Value="#6195c9"/>
         </Style>
-       
+     
+         
+        
         <!--<Style x:Name="Button" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
@@ -36,7 +38,7 @@
         </Style>
 
         
-        <Style TargetType="Window">
+        <Style TargetType="Page">
          
             <!--<Setter Property="BorderBrush">
                 <Setter.Value>
@@ -55,7 +57,16 @@
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>-->
-            <Setter Property="BorderBrush">
+            
+           
+                
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="Images/back-image.jpg"/>
+                    </Setter.Value>
+                </Setter>
+         
+            <!--<Setter Property="BorderBrush">
                 <Setter.Value>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                         <GradientStop Color="#462AD8" Offset="0"/>
@@ -64,7 +75,7 @@
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
-            <Setter Property="BorderThickness" Value="4"/>
+            <Setter Property="BorderThickness" Value="4"/>-->
            
            
            
@@ -107,9 +118,9 @@
                 <GradientStop Color="#060531" Offset="0"/>
                 <GradientStop Color="#1B1448" Offset="1"/>
             </LinearGradientBrush>
-        </Border.Background>-->
+        </Border.Background>
 
-        <!--<Border.Background>
+        <Border.Background>
             <ImageBrush ImageSource="/Images/back-image.jpg"
                Stretch="None"/>
         </Border.Background>-->

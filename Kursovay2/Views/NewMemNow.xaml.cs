@@ -19,9 +19,9 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для NewMemNow.xaml
     /// </summary>
-    public partial class NewMemNow : Window
+    public partial class NewMemNow : Page
     {
-        public NewMemNow() : base()
+        public NewMemNow() 
         {
             InitializeComponent();
 
@@ -30,8 +30,8 @@ namespace Kursovay2.Views
         private void VernutObrat(object sender, RoutedEventArgs e)
         {
            Users users = new Users();
-            users.Show();
-            this.Close();
+            //users.Show();
+            //this.Close();
 
         }
     }

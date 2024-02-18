@@ -19,9 +19,9 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для HistoryRole.xaml
     /// </summary>
-    public partial class HistoryRole : Window
+    public partial class HistoryRole : Page
     {
-        public HistoryRole() : base()
+        public HistoryRole()
         {
             InitializeComponent();
 
@@ -30,8 +30,8 @@ namespace Kursovay2.Views
         private void VernutObrat(object sender, RoutedEventArgs e)
         {
             Users users = new Users();
-            users.Show();
-            this.Close();
+            //users.Show();
+            //this.Close();
         }
     }
 }

@@ -18,9 +18,9 @@ namespace Kursovay2.AddRof
     /// <summary>
     /// Логика взаимодействия для AddRof.xaml
     /// </summary>
-    public partial class AddRof : Window
+    public partial class AddRof : Page
     {
-        public AddRof() : base()
+        public AddRof()
         {
             InitializeComponent();
 
@@ -29,8 +29,8 @@ namespace Kursovay2.AddRof
         private void ClickObratAdmin(object sender, RoutedEventArgs e)
         {
             Admin.Admin admin = new Admin.Admin();
-            admin.Show();
-            this.Close();
+            //admin.Show();
+            //this.Close();
         }
 
         private void ClickSave(object sender, RoutedEventArgs e)
@@ -41,8 +41,8 @@ namespace Kursovay2.AddRof
         private void ClickDopRedactor(object sender, RoutedEventArgs e)
         {
             Views.DopRedactor dopRedactor = new Views.DopRedactor();
-            dopRedactor.Show();
-            this.Close();
+            //dopRedactor.Show();
+            //this.Close();
 
         }
 
@@ -59,8 +59,8 @@ namespace Kursovay2.AddRof
         private void Opisania(object sender, RoutedEventArgs e)
         {
             Views.Opisania opisania = new Views.Opisania();
-            opisania.Show();
-            this.Close();
+            //opisania.Show();
+            //this.Close();
         }
     }
 }

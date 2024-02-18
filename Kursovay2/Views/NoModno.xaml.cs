@@ -18,9 +18,9 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для NoModno.xaml
     /// </summary>
-    public partial class NoModno : Window
+    public partial class NoModno : Page
     {
-        public NoModno() : base()
+        public NoModno()
         {
             InitializeComponent();
 
@@ -29,8 +29,8 @@ namespace Kursovay2.Views
         private void VernutObrat(object sender, RoutedEventArgs e)
         {
            Gost.Gost gost = new Gost.Gost();
-            gost.Show();
-            this.Close();
+            //gost.Show();
+            //this.Close();
         }
     }
 }

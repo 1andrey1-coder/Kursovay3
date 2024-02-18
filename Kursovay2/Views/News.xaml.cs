@@ -19,9 +19,9 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для News.xaml
     /// </summary>
-    public partial class News : Window
+    public partial class News : Page
     {
-        public News() : base()
+        public News()
         {
             InitializeComponent();
 
@@ -30,8 +30,8 @@ namespace Kursovay2.Views
         private void VernutObrat(object sender, RoutedEventArgs e)
         {
             Users users = new Users();
-            users.Show();
-            this.Close();
+            //users.Show();
+            //this.Close();
         }
     }
 }

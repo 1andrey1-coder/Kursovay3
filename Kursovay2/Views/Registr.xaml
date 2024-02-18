@@ -1,4 +1,4 @@
-﻿<Window xmlns:model="clr-namespace:Kursovay2.Models" x:Class="Kursovay2.Registr.Registr"
+﻿<Page xmlns:model="clr-namespace:Kursovay2.Models" x:Class="Kursovay2.Registr.Registr"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:Kursovay2.Registr"
         mc:Ignorable="d"
         Title="Окно для Регистрации" MaxHeight="500" 
-        WindowStyle="None"
+     
        MouseLeftButtonDown="dragWindows"
-        MinHeight="450" MinWidth="450" MaxWidth="450" AllowsTransparency="True">
+        MinHeight="450" MinWidth="450" MaxWidth="450" >
 
 
 
@@ -388,4 +388,4 @@
     
     </Grid>-->
 
-</Window>
+</Page>
