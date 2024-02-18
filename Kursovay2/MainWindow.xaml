@@ -5,10 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:local="clr-namespace:Kursovay2"
         mc:Ignorable="d"
-        Title="Вход" MaxHeight="500" 
-     
+        Title="Вход" MaxHeight="550" 
         MouseLeftButtonDown="dragWindows"
-        MinHeight="450" MinWidth="400" MaxWidth="450">
+        MinHeight="450"  MinWidth="400" MaxWidth="450" WindowStartupLocation="CenterScreen">
 
     <Border >
         <Border.Background>
@@ -224,16 +223,7 @@
                          Cursor="Hand"                           
                          Margin="0,30,0,0">
 
-                        <!--<Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#462AD8"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#28AEED"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>-->
+                        
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -247,7 +237,29 @@
                         </Button.Template>
                     </Button>
 
-                    <StackPanel Orientation="Horizontal"
+                    <StackPanel>
+                        <StackPanel>
+                            <Button Content="РЕГИСТРАЦИЯ" x:Name="btnRegister" 
+                         Command="{Binding RegisterCommand}"
+                         BorderThickness="0"
+                       
+                         FontSize="12"
+                         FontFamily="Montserrat"
+                         Cursor="Hand"                           
+                         Margin="0,10,0,0">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="150" Height="40"
+                                                CornerRadius="20"
+                                                Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+                                                 HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"
                              HorizontalAlignment="Center"
                              Margin="0,15,0,0">
 
@@ -256,7 +268,7 @@
                             FontSize="12"
                             FontWeight="Medium"
                             FontFamily="Montserrat"/>
-
+                        
                         <TextBlock Text="Перезагрузить"
                             Foreground="White"
                             FontSize="12"
@@ -264,7 +276,9 @@
                             FontFamily="Montserrat"
                             Cursor="Hand"
                             Margin="8,0,0,0"/>
-
+                      
+                    </StackPanel>
+                       
                     </StackPanel>
 
                 </StackPanel>

@@ -76,10 +76,15 @@ namespace Kursovay2
             Application.Current.Shutdown();
         }
 
+        //private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        //{
+
+        //    WindowState = WindowState.Minimized;
+        //}
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
-
-            WindowState = WindowState.Minimized;
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow.Close();
         }
     }
 }
