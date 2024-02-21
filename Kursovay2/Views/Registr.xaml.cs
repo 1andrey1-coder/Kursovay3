@@ -18,7 +18,7 @@ namespace Kursovay2.Registr
     /// <summary>
     /// Логика взаимодействия для Registr.xaml
     /// </summary>
-    public partial class Registr : Page
+    public partial class Registr : Window
     {
         public Registr() 
         {
@@ -30,14 +30,14 @@ namespace Kursovay2.Registr
         private void PerehodMainWindow(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
-            //mainWindow.Show();
-            //this.Close();
+            mainWindow.Show();
+            this.Close();
 
         }
 
         private void dragWindows(object sender, MouseButtonEventArgs e)
         {
-            //this.DragMove();
+            this.DragMove();
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -47,7 +47,7 @@ namespace Kursovay2.Registr
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
-            //WindowState = WindowState.Minimized;
+            WindowState = WindowState.Minimized;
         }
     }
 }

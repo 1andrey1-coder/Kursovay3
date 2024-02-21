@@ -18,7 +18,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для AllRof.xaml
     /// </summary>
-    public partial class AllRof : Page
+    public partial class AllRof : Window
     {
         public AllRof()
         {
@@ -29,8 +29,8 @@ namespace Kursovay2.Views
         private void ClickObrat(object sender, RoutedEventArgs e)
         {
             Admin.Admin admin = new Admin.Admin();
-            //admin.Show();
-            //this.Close();
+            admin.Show();
+            this.Close();
         }
 
         private void Opisania(object sender, RoutedEventArgs e)

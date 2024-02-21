@@ -18,7 +18,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Modno.xaml
     /// </summary>
-    public partial class Modno : Page
+    public partial class Modno : Window
     {
         public Modno()
         {
@@ -29,8 +29,8 @@ namespace Kursovay2.Views
         private void VernutObrat(object sender, RoutedEventArgs e)
         {
            Gost.Gost gost = new Gost.Gost();
-            //gost.Show();
-            //this.Close();
+            gost.Show();
+            this.Close();
         }
     }
 }

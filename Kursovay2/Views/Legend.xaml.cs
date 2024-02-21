@@ -18,7 +18,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Legend.xaml
     /// </summary>
-    public partial class Legend : Page
+    public partial class Legend : Window
     {
         public Legend()
         {
@@ -29,8 +29,8 @@ namespace Kursovay2.Views
         private void VernutObrat(object sender, RoutedEventArgs e)
         {
             Gost.Gost gost = new Gost.Gost();
-            //gost.Show();
-            //this.Close();
+            gost.Show();
+            this.Close();
         }
     }
 }

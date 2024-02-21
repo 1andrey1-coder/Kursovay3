@@ -1,4 +1,4 @@
-﻿<Page  xmlns:model="clr-namespace:Kursovay2.Models" x:Class="Kursovay2.Admin.Admin"
+﻿<Window  xmlns:model="clr-namespace:Kursovay2.Models" x:Class="Kursovay2.Admin.Admin"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,142 +6,149 @@
         xmlns:local="clr-namespace:Kursovay2.Admin"
         mc:Ignorable="d"
         Title="Окно для Админа" MinHeight="450" MinWidth="750" Width="900" >
-    <Border  CornerRadius="10"                    
-         BorderThickness="2"
-         Opacity="0.95">
-        <Border.BorderBrush>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="#462AD8" Offset="0"/>
-                <GradientStop Color="#DA34AE" Offset="0.75"/>
-                <GradientStop Color="#8A16C1" Offset="1"/>
-            </LinearGradientBrush>
-        </Border.BorderBrush>
+    <Border>
 
         <Border.Background>
-            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                <GradientStop Color="#060531" Offset="0"/>
-                <GradientStop Color="#1B1448" Offset="1"/>
-            </LinearGradientBrush>
+            <ImageBrush ImageSource="/Images/back-image.jpg"
+                     Stretch="None"/>
         </Border.Background>
-    
-    <Grid >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition MaxWidth="200"/>
-            <ColumnDefinition Width="250" />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-       
-       
-        <StackPanel Grid.Column="0" Grid.RowSpan="3" 
+        <Border  CornerRadius="10"                    
+         BorderThickness="2"
+         Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#060531" Offset="0"/>
+                    <GradientStop Color="#1B1448" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="200"/>
+                    <ColumnDefinition Width="250" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+
+                <StackPanel Grid.Column="0" Grid.RowSpan="3" 
                  Margin="5" >
-            <!--<StackPanel.Background>
+                    <!--<StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#ffd700" Offset="0.1"/>
                     <GradientStop Color="Firebrick" Offset="1"/>
                 </LinearGradientBrush>
             </StackPanel.Background>-->
-            <StackPanel Margin="5" >
-                <TextBlock Text="{Binding p.UserName}" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBlock Text="{Binding p.UserLastName}" HorizontalAlignment="Center" FontSize="16"/>
-                <TextBlock Text="{Binding p.UserMiddleName}" HorizontalAlignment="Center" FontSize="16"/>
-                <Button  Content="Выйти на залуп экран вход" 
+                    <StackPanel Margin="5" >
+                        <TextBlock Text="{Binding p.UserName}" HorizontalAlignment="Center" FontSize="16"/>
+                        <TextBlock Text="{Binding p.UserLastName}" HorizontalAlignment="Center" FontSize="16"/>
+                        <TextBlock Text="{Binding p.UserMiddleName}" HorizontalAlignment="Center" FontSize="16"/>
+                        <Button  Content="Выйти на залуп экран вход" 
                         Click="ClickAdminToMainWindow"/>
-            </StackPanel>
-            <Menu>
-                <MenuItem Header="Меню" >
-                    <MenuItem Header="Новая шутка/рофл" Click="ClickAddRof"/>
-                    <MenuItem Header="Редактировать текущую шутку/рофл" Click="ClickEditRof"/>
-                    <MenuItem Header="История шуток/рофлов" Click="ClickHistoryRof" />
-                </MenuItem>
-               
-            </Menu>
+                    </StackPanel>
+                    <Menu>
+                        <MenuItem Header="Меню" >
+                            <MenuItem Header="Новая шутка/рофл" Click="ClickAddRof"/>
+                            <MenuItem Header="Редактировать текущую шутку/рофл" Click="ClickEditRof"/>
+                            <MenuItem Header="История шуток/рофлов" Click="ClickHistoryRof" />
+                        </MenuItem>
 
-            
-           <Button  Content="Все Шутки/Рофлы" Click="AllRof"/>
-            
-            <Button Content="Данные Пользователей" Click="ButtonClient"/>
-        </StackPanel>
-        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="1"
+                    </Menu>
+
+
+                    <Button  Content="Все Шутки/Рофлы" Click="AllRof"/>
+
+                    <Button Content="Данные Пользователей" Click="ButtonClient"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="1"
                  Margin="5"
                 Orientation="Horizontal">
-            <!--<StackPanel.Background>
+                    <!--<StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#ffd700" Offset="0.3"/>
                     <GradientStop Color="Firebrick" Offset="1"/>
                 </LinearGradientBrush>
             </StackPanel.Background>-->
-          
-            <StackPanel Orientation="Vertical" Margin="5" Width="215">
-                <TextBlock HorizontalAlignment="Left"
+
+                    <StackPanel Orientation="Vertical" Margin="5" Width="215">
+                        <TextBlock HorizontalAlignment="Left"
                            Text="Поиск по названии шутки: " />
-                <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                        <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
                      Width="400" />
-            </StackPanel>
-            <StackPanel Orientation="Vertical" Margin="5">
-                <TextBlock Text="Сортировка по жанру" />
-                <ComboBox ItemsSource="{Binding Sorting, UpdateSourceTrigger=PropertyChanged}"  
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="5">
+                        <TextBlock Text="Сортировка по жанру" />
+                        <ComboBox ItemsSource="{Binding Sorting, UpdateSourceTrigger=PropertyChanged}"  
             Width="120" 
             SelectedItem="{Binding SelectedSorting, UpdateSourceTrigger=PropertyChanged}" Height="17">
 
-                </ComboBox>
-            </StackPanel>
-           
-        </StackPanel>
-        <!--инф о шутки-->
-        <StackPanel VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"
+                        </ComboBox>
+                    </StackPanel>
+
+                </StackPanel>
+                <!--инф о шутки-->
+                <StackPanel VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"
                  Orientation="Vertical" Margin="5">
-            <TextBlock  
+                    <TextBlock  
                         MinWidth="100" Text="Шутки/Рофлы" FontSize="15"
                    HorizontalAlignment="Center"/>
 
-          
-            
-            
-        </StackPanel>
-      
 
 
-        <ScrollViewer HorizontalScrollBarVisibility="Auto"
+
+                </StackPanel>
+
+
+
+                <ScrollViewer HorizontalScrollBarVisibility="Auto"
                       Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" >
-            
-        <ListView 
+
+                    <ListView 
               ItemsSource="{Binding stagesRof}" 
               SelectedItem="{Binding SelectedStage}" Margin="5">
 
-            <ListView.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="Сменить статус на: завершено" Click="ClickStatuseDone"/>
-                    <MenuItem Header="Сменить статус на: ожидает" Click="ClickStatuseAwaiting"/>
-                    <MenuItem Header="Сменить статус на: в процессе" Click="ClickStatuseInProgress"/>
-                    <MenuItem Header="Редактировать шутку/рофл" Click="ClickRedagturaRof"/>
-                </ContextMenu>
-            </ListView.ContextMenu>
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Тэг" Width="35" />
-                    
-                     <GridViewColumn Header="Ебанное начало" Width="110" 
-                                />
-                    <GridViewColumn Header="Ахуенное завершение" Width="140"
-                                />
-                    <GridViewColumn Header="Название шутки/рофла" Width="150"
-                                DisplayMemberBinding="{Binding Title}"/>
-                    <GridViewColumn Header="Ответсвенное описание" Width="150"
-                                />
-                    <GridViewColumn Header="Статус бумбастик" Width="100"
-                                />
-                </GridView>
-            </ListView.View>
-        </ListView>
-        </ScrollViewer>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Сменить статус на: завершено" Click="ClickStatuseDone"/>
+                                <MenuItem Header="Сменить статус на: ожидает" Click="ClickStatuseAwaiting"/>
+                                <MenuItem Header="Сменить статус на: в процессе" Click="ClickStatuseInProgress"/>
+                                <MenuItem Header="Редактировать шутку/рофл" Click="ClickRedagturaRof"/>
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Тэг" Width="35" />
 
-        <!--инф о тсадии-->
-        
-    </Grid>
+                                <GridViewColumn Header="Ебанное начало" Width="110" 
+                                />
+                                <GridViewColumn Header="Ахуенное завершение" Width="140"
+                                />
+                                <GridViewColumn Header="Название шутки/рофла" Width="150"
+                                DisplayMemberBinding="{Binding Title}"/>
+                                <GridViewColumn Header="Ответсвенное описание" Width="150"
+                                />
+                                <GridViewColumn Header="Статус бумбастик" Width="100"
+                                />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </ScrollViewer>
+
+                <!--инф о тсадии-->
+
+            </Grid>
+        </Border>
     </Border>
-</Page>
+</Window>

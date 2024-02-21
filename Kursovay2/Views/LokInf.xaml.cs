@@ -19,7 +19,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для LokInf.xaml
     /// </summary>
-    public partial class LokInf : Page
+    public partial class LokInf : Window
     {
         public LokInf() 
         {
@@ -30,8 +30,8 @@ namespace Kursovay2.Views
         private void VernutObrat(object sender, RoutedEventArgs e)
         {
             Users users = new Users();
-            //users.Show();
-            //this.Close();
+            users.Show();
+            this.Close();
         }
     }
 }

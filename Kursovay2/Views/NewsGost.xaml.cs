@@ -18,7 +18,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для NewsGost.xaml
     /// </summary>
-    public partial class NewsGost : Page
+    public partial class NewsGost : Window
     {
         public NewsGost() 
         {
@@ -29,8 +29,8 @@ namespace Kursovay2.Views
         private void VernutObrat(object sender, RoutedEventArgs e)
         {
             Gost.Gost gost = new Gost.Gost();
-            //gost.Show();
-            //this.Close();
+            gost.Show();
+            this.Close();
         }
     }
 }

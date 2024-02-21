@@ -19,7 +19,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Admini_We_.xaml
     /// </summary>
-    public partial class Admini_We_ : Page
+    public partial class Admini_We_ : Window
     {
         public Admini_We_()
         {
@@ -30,8 +30,8 @@ namespace Kursovay2.Views
         private void VernutObrat(object sender, RoutedEventArgs e)
         {
             Users users = new Users();
-            //users.Show();
-            //this.Close();
+            users.Show();
+            this.Close();
         }
     }
 }

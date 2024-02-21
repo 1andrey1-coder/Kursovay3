@@ -19,7 +19,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Nostal.xaml
     /// </summary>
-    public partial class Nostal : Page
+    public partial class Nostal : Window
     {
         public Nostal()         
         {
@@ -30,8 +30,8 @@ namespace Kursovay2.Views
         private void VernutObrat(object sender, RoutedEventArgs e)
         {
             Users users = new Users();
-            //users.Show();
-            //this.Close();
+            users.Show();
+            this.Close();
         }
     }
 }

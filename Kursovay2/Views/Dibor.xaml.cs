@@ -18,7 +18,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Dibor.xaml
     /// </summary>
-    public partial class Dibor : Page
+    public partial class Dibor : Window
     {
         public Dibor()
         {

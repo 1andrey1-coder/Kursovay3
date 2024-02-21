@@ -19,7 +19,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Gey.xaml
     /// </summary>
-    public partial class Gey : Page
+    public partial class Gey : Window
     {
         public Gey() 
         {
@@ -30,8 +30,8 @@ namespace Kursovay2.Views
         private void VernutObrat(object sender, RoutedEventArgs e)
         {
             Users users = new Users();
-            //users.Show();
-            //this.Close();
+            users.Show();
+            this.Close();
         }
     }
 }

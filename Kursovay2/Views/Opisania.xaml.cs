@@ -18,7 +18,7 @@ namespace Kursovay2.Views
     /// <summary>
     /// Логика взаимодействия для Opisania.xaml
     /// </summary>
-    public partial class Opisania : Page
+    public partial class Opisania : Window
     {
         public Opisania()
         {
@@ -29,8 +29,8 @@ namespace Kursovay2.Views
         private void ClickObrat(object sender, RoutedEventArgs e)
         {
             AddRof.AddRof addRof = new AddRof.AddRof();
-            //addRof.Show();
-            //this.Close();
+            addRof.Show();
+            this.Close();
         }
     }
 }
