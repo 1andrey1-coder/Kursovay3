@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kursovay3Api", "Kursovay3Api\Kursovay3Api.csproj", "{1EA7F72D-DFA8-4CF3-BDDE-87ADC8389696}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiDB", "ApiDB\ApiDB.csproj", "{EE88E1FE-009D-41F6-A88F-63CF294E7491}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EA7F72D-DFA8-4CF3-BDDE-87ADC8389696}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EA7F72D-DFA8-4CF3-BDDE-87ADC8389696}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EA7F72D-DFA8-4CF3-BDDE-87ADC8389696}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EA7F72D-DFA8-4CF3-BDDE-87ADC8389696}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE88E1FE-009D-41F6-A88F-63CF294E7491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE88E1FE-009D-41F6-A88F-63CF294E7491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE88E1FE-009D-41F6-A88F-63CF294E7491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE88E1FE-009D-41F6-A88F-63CF294E7491}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5052A424-77DC-4573-95D8-B6C73E2A7B6B}
+	EndGlobalSection
+EndGlobal

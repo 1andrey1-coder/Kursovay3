@@ -1,0 +1,6 @@
+@Kursovay3Api_HostAddress = http://localhost:5122
+
+GET {{Kursovay3Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
