@@ -34,8 +34,8 @@ namespace Kursovay3Api.Controllers
                     LoginId = login.LoginId,
                     LoginName = login.LoginName,
                     LoginPassword = login.LoginPassword,
-                    RoleId = login.RoleId
-                    // Add any other properties you want to include in the LoginUserDTO
+                  
+                   
                 };
 
                 return Ok(loginUserDTO);
@@ -50,13 +50,13 @@ namespace Kursovay3Api.Controllers
 
         }
         [HttpPost("Register")]
-        public async Task<ActionResult<LoginUserDTO>> PostRegister(LoginUserDTO registerUser)
+        public async Task<ActionResult<LoginUser>> PostRegister(LoginUserDTO registerUser)
         {
             try
             {
                 // Проверка наличия пользователя с таким логином
                 var existingUser = _memContext.LoginUsers.
-                    FirstOrDefault(u => u.LoginName == registerUser.LoginName);
+                    FirstOrDefaultAsync(u => u.LoginName == registerUser.LoginName);
 
                 if (existingUser != null)
                 {
@@ -73,13 +73,13 @@ namespace Kursovay3Api.Controllers
                 _memContext.LoginUsers.Add(newUser);
                 await _memContext.SaveChangesAsync();
 
-                // Возвращаем созданный объект в виде DTO для отправки ответа клиенту
+                //Возвращаем созданный объект в виде DTO для отправки ответа клиенту
                 var loginUserDTO = new LoginUserDTO
                 {
                     LoginId = newUser.LoginId,
                     LoginName = newUser.LoginName,
                     LoginPassword = newUser.LoginPassword,
-                  
+
                 };
 
                 return Ok(loginUserDTO);
