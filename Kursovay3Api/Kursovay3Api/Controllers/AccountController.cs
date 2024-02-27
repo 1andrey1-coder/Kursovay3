@@ -4,6 +4,7 @@ using Azure.Messaging;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Win32;
 
 namespace Kursovay3Api.Controllers
 {
@@ -50,39 +51,43 @@ namespace Kursovay3Api.Controllers
 
         }
         [HttpPost("Register")]
-        public async Task<ActionResult<LoginUser>> PostRegister(LoginUserDTO registerUser)
+        public async Task<ActionResult<LoginUserDTO>> PostRegister(RegisterDTO registerUser)
         {
             try
             {
                 // Проверка наличия пользователя с таким логином
-                var existingUser = _memContext.LoginUsers.
-                    FirstOrDefaultAsync(u => u.LoginName == registerUser.LoginName);
+                var ProverkaUser = _memContext.LoginUsers.
+                    FirstOrDefaultAsync(u => u.LoginName == registerUser.Login);
 
-                if (existingUser != null)
+                if (ProverkaUser != null)
                 {
                     return BadRequest("Пользователь с таким логином уже существует");
                 }
-
-                // Создание нового объекта LoginUser и добавление его в контекст
-                var newUser = new LoginUser
+                else
                 {
-                    LoginName = registerUser.LoginName,
-                    LoginPassword = registerUser.LoginPassword,
-                };
+                    // Создание нового объекта LoginUser и добавление его в контекст
+                    var newUser = new LoginUser
+                    {
+                        LoginName = registerUser.Login,
+                        LoginPassword = registerUser.Password,
+                    };
 
-                _memContext.LoginUsers.Add(newUser);
-                await _memContext.SaveChangesAsync();
+                    _memContext.LoginUsers.Add(newUser);
+                    await _memContext.SaveChangesAsync();
 
-                //Возвращаем созданный объект в виде DTO для отправки ответа клиенту
-                var loginUserDTO = new LoginUserDTO
-                {
-                    LoginId = newUser.LoginId,
-                    LoginName = newUser.LoginName,
-                    LoginPassword = newUser.LoginPassword,
+                    //Возвращаем созданный объект в виде DTO для отправки ответа клиенту
+                    var loginUserDTO = new LoginUserDTO
+                    {
+                        LoginId = newUser.LoginId,
+                        LoginName = newUser.LoginName,
+                        LoginPassword = newUser.LoginPassword,
 
-                };
+                    };
 
-                return Ok(loginUserDTO);
+                    return Ok(loginUserDTO);
+                }
+
+                
             }
             catch (Exception ex)
             {
