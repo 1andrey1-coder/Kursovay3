@@ -87,13 +87,15 @@ namespace Kursovay3Api.Controllers
                     return Ok(loginUserDTO);
                 }
 
-                
+
             }
             catch (Exception ex)
             {
 
                 return StatusCode(500, "Произошла ошибка при регистрации пользователя");
             }
+
+
         }
     }
 }
