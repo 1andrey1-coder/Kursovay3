@@ -86,6 +86,7 @@ namespace Kursovay3Api.Controllers
             }
             catch (Exception ex)
             {
+
                 return StatusCode(500, "Произошла ошибка при регистрации пользователя");
             }
         }
