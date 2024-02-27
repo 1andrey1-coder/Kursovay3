@@ -23,31 +23,72 @@ namespace Kursovay3Api.Controllers
         [HttpPost("Login")]
         public async Task<ActionResult<LoginUserDTO>> PostLogin(string Login, string password)
         {
-            
-                var login = _memContext.LoginUsers.FirstOrDefault(
-                    s=>s.LoginName == Login && s.LoginPassword==password);
 
-                if (login != null)
+            var login = _memContext.LoginUsers.FirstOrDefault(
+                s => s.LoginName == Login && s.LoginPassword == password);
+
+            if (login != null)
+            {
+                var loginUserDTO = new LoginUserDTO
                 {
-                    var loginUserDTO = new LoginUserDTO
-                    {
-                        LoginId = login.LoginId,
-                        LoginName = login.LoginName,
-                        LoginPassword = login.LoginPassword,
-                        RoleId = login.RoleId
-                        // Add any other properties you want to include in the LoginUserDTO
-                    };
-                   
-                    return Ok(loginUserDTO);
-                }
-                else
+                    LoginId = login.LoginId,
+                    LoginName = login.LoginName,
+                    LoginPassword = login.LoginPassword,
+                    RoleId = login.RoleId
+                    // Add any other properties you want to include in the LoginUserDTO
+                };
+
+                return Ok(loginUserDTO);
+            }
+            else
+            {
+                return NotFound();
+            }
+
+
+
+
+        }
+        [HttpPost("Register")]
+        public async Task<ActionResult<LoginUserDTO>> PostRegister(LoginUserDTO registerUser)
+        {
+            try
+            {
+                // Проверка наличия пользователя с таким логином
+                var existingUser = _memContext.LoginUsers.
+                    FirstOrDefault(u => u.LoginName == registerUser.LoginName);
+
+                if (existingUser != null)
                 {
-                    return NotFound();
+                    return BadRequest("Пользователь с таким логином уже существует");
                 }
 
-            
-            
-            
+                // Создание нового объекта LoginUser и добавление его в контекст
+                var newUser = new LoginUser
+                {
+                    LoginName = registerUser.LoginName,
+                    LoginPassword = registerUser.LoginPassword,
+                };
+
+                _memContext.LoginUsers.Add(newUser);
+                await _memContext.SaveChangesAsync();
+
+                // Возвращаем созданный объект в виде DTO для отправки ответа клиенту
+                var loginUserDTO = new LoginUserDTO
+                {
+                    LoginId = newUser.LoginId,
+                    LoginName = newUser.LoginName,
+                    LoginPassword = newUser.LoginPassword,
+                  
+                };
+
+                return Ok(loginUserDTO);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Произошла ошибка при регистрации пользователя");
+            }
         }
     }
 }
+
