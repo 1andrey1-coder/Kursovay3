@@ -160,7 +160,7 @@
                             Margin="0,35,0,0"/>
 
                     <TextBox x:Name="txtLogin"
-                          Text="{Binding LoginName, UpdateSourceTrigger=PropertyChanged}"
+                          Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"
                           FontSize="13"
                           FontWeight="Medium"
                           FontFamily="Montserrat"                            
@@ -187,7 +187,9 @@
                             FontFamily="Montserrat"                             
                             Margin="0,15,0,0"/>
 
-                    <PasswordBox x:Name="txtPassword"                             
+                    <TextBox x:Name="txtPassword"
+                          Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"
+                         
                          FontSize="13"
                          FontWeight="Medium"
                          FontFamily="Montserrat"                            
@@ -198,12 +200,12 @@
                          VerticalContentAlignment="Center"                          
                          Padding="20,0,0,0">
 
-                        <PasswordBox.Background>
+                        <TextBox.Background>
                             <ImageBrush ImageSource="Images/key-icon.png"
                                     Stretch="None"
                                     AlignmentX="Left"/>
-                        </PasswordBox.Background>
-                    </PasswordBox>
+                        </TextBox.Background>
+                    </TextBox>
 
                     <TextBlock Text="{Binding ErrorMessage}"
                             Foreground="#D7596D"
@@ -214,7 +216,7 @@
                             TextWrapping="Wrap"/>
 
                     <Button x:Name="btnLogin" 
-                         Command="{Binding LoginCommand}"
+                            Click="SingIn"
                          BorderThickness="0"
                          Content="ВХОД"
                          Foreground="White"

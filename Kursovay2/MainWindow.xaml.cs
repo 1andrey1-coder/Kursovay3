@@ -1,4 +1,5 @@
-﻿using Kursovay2.Models;
+﻿using Kursovay2.API;
+using Kursovay2.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
@@ -23,10 +24,43 @@ namespace Kursovay2
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow() 
+     
+
+        public string Login { get; set; }
+        public string Password { get; set; }
+
+        public MainWindow()
         {
             InitializeComponent();
+            DataContext = this;
         }
+        private async void SingIn(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var user = await Client.Instance.UserLogin(Login, Password);
+                Admin.Admin admin = new Admin.Admin();
+                admin.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void PerexodUser(object sender, RoutedEventArgs e)
         {
