@@ -22,7 +22,7 @@ namespace Kursovay3Api.Controllers
 
 
         [HttpPost("Login")]
-        public async Task<ActionResult<LoginUserDTO>> PostLogin(string Login, string password)
+        public ActionResult<LoginUserDTO> PostLogin(string Login, string password)
         {
 
             var login = _memContext.LoginUsers.FirstOrDefault(
@@ -30,20 +30,21 @@ namespace Kursovay3Api.Controllers
 
             if (login != null)
             {
-                var loginUserDTO = new LoginUserDTO
+                return new LoginUserDTO
                 {
                     LoginId = login.LoginId,
                     LoginName = login.LoginName,
                     LoginPassword = login.LoginPassword,
+                    
                   
                    
                 };
 
-                return Ok(loginUserDTO);
+                
             }
             else
             {
-                return NotFound();
+                return BadRequest("Логин/пароль неправильный");
             }
 
 
@@ -56,7 +57,7 @@ namespace Kursovay3Api.Controllers
             try
             {
                 // Проверка наличия пользователя с таким логином
-                var ProverkaUser = _memContext.LoginUsers.
+                var ProverkaUser = await _memContext.LoginUsers.
                     FirstOrDefaultAsync(u => u.LoginName == registerUser.Login);
 
                 if (ProverkaUser != null)
@@ -70,6 +71,7 @@ namespace Kursovay3Api.Controllers
                     {
                         LoginName = registerUser.Login,
                         LoginPassword = registerUser.Password,
+                        RoleId = registerUser.RoleId,
                     };
 
                     _memContext.LoginUsers.Add(newUser);
@@ -81,6 +83,7 @@ namespace Kursovay3Api.Controllers
                         LoginId = newUser.LoginId,
                         LoginName = newUser.LoginName,
                         LoginPassword = newUser.LoginPassword,
+                        RoleId = newUser.RoleId,
 
                     };
 
