@@ -1,4 +1,5 @@
 using ApiDB.DB;
+using ApiDB.DTO;
 
 var builder = WebApplication.CreateBuilder(args);
 

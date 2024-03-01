@@ -1,10 +1,9 @@
 ﻿using ApiDB.DB;
 using ApiDB.DTO;
-using Azure.Messaging;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Win32;
+
 
 namespace Kursovay3Api.Controllers
 {
@@ -22,7 +21,7 @@ namespace Kursovay3Api.Controllers
 
 
         [HttpPost("Login")]
-        public ActionResult<LoginUserDTO> PostLogin(string Login, string password)
+        public  ActionResult<LoginUserDTO> PostLogin(string Login, string password)
         {
 
             var login = _memContext.LoginUsers.FirstOrDefault(
@@ -35,6 +34,7 @@ namespace Kursovay3Api.Controllers
                     LoginId = login.LoginId,
                     LoginName = login.LoginName,
                     LoginPassword = login.LoginPassword,
+                    RoleId = login.RoleId,  
                     
                   
                    
@@ -71,7 +71,7 @@ namespace Kursovay3Api.Controllers
                     {
                         LoginName = registerUser.Login,
                         LoginPassword = registerUser.Password,
-                        RoleId = registerUser.RoleId,
+                      
                     };
 
                     _memContext.LoginUsers.Add(newUser);
@@ -83,7 +83,7 @@ namespace Kursovay3Api.Controllers
                         LoginId = newUser.LoginId,
                         LoginName = newUser.LoginName,
                         LoginPassword = newUser.LoginPassword,
-                        RoleId = newUser.RoleId,
+                      
 
                     };
 
