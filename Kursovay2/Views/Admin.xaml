@@ -58,7 +58,7 @@
                         <Button  Content="Выйти на залуп экран вход" 
                         Click="ClickAdminToMainWindow"/>
                     </StackPanel>
-                    <Menu>
+                    <Menu Background="DarkGray">
                         <MenuItem Header="Меню" >
                             <MenuItem Header="Новая шутка/рофл" Click="ClickAddRof"/>
                             <MenuItem Header="Редактировать текущую шутку/рофл" Click="ClickEditRof"/>

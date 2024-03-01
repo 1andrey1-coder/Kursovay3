@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:local="clr-namespace:Kursovay2"
         mc:Ignorable="d"
-        Title="Вход" MaxHeight="550" 
+        Title="Вход" MaxHeight="600" 
         MouseLeftButtonDown="dragWindows"
         MinHeight="450"  MinWidth="400" MaxWidth="450" WindowStartupLocation="CenterScreen">
 

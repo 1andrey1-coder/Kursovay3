@@ -88,7 +88,7 @@
         </Style>
         
         <Style TargetType="TextBlock">
-            <Setter Property="Foreground" Value="DarkGray"/>
+            <Setter Property="Foreground" Value="White"/>
         </Style>
         
         <Style x:Key="Border" TargetType="Border">

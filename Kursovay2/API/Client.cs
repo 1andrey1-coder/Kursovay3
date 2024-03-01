@@ -50,7 +50,7 @@ namespace Kursovay2.API
             HttpResponseMessage response = await httpClient.PostAsync("Account/Login", httpContent);
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception("Неверный логин/пароль");
+                throw new Exception("Логин/пароль неправильный");
             }
 
             var userAnswer = JsonConvert.DeserializeObject<LoginUserDTO>(await response.Content.ReadAsStringAsync());
