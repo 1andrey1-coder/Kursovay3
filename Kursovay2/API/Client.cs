@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Kursovay2.API
 {
@@ -50,7 +51,31 @@ namespace Kursovay2.API
             HttpResponseMessage response = await httpClient.PostAsync("Account/Login", httpContent);
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception("Логин/пароль неправильный");
+                MessageBox.Show("Логин/пароль неправильный","Неудачный вход", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            var userAnswer = JsonConvert.DeserializeObject<LoginUserDTO>(await response.Content.ReadAsStringAsync());
+            return userAnswer;
+        }
+
+
+
+        public async Task<LoginUserDTO> UserRegister(string login, string password)
+        {
+            var RegisterUser = new Register
+            {
+                Login = login,
+                Password = password,
+
+
+            };
+            var jsonContent = JsonConvert.SerializeObject(RegisterUser);
+            var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await httpClient.PostAsync("Account/Register", httpContent);
+            if (!response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Пользователь с таким логином уже существует",
+                    "Неудачная регистрация", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             var userAnswer = JsonConvert.DeserializeObject<LoginUserDTO>(await response.Content.ReadAsStringAsync());
@@ -60,8 +85,9 @@ namespace Kursovay2.API
 
 
 
-
-
-
     }
+
+
+
 }
+

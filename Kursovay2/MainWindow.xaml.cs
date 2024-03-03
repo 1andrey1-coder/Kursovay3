@@ -41,6 +41,7 @@ namespace Kursovay2
                 var user = await Client.Instance.UserLogin(Login, Password);
                 Admin.Admin admin = new Admin.Admin();
                 admin.Show();
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -49,15 +50,6 @@ namespace Kursovay2
 
 
         }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -110,15 +102,22 @@ namespace Kursovay2
             Application.Current.Shutdown();
         }
 
-        //private void btnMinimize_Click(object sender, RoutedEventArgs e)
-        //{
-
-        //    WindowState = WindowState.Minimized;
-        //}
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
-            Window parentWindow = Window.GetWindow(this);
-            parentWindow.Close();
+
+            WindowState = WindowState.Minimized;
+        }
+        //private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Window parentWindow = Window.GetWindow(this);
+        //    parentWindow.Close();
+        //}
+
+        private void RegisterShow(object sender, RoutedEventArgs e)
+        {
+            Registr.Registr registr = new Registr.Registr();
+            registr.Show();
+            this.Close();
         }
     }
 }

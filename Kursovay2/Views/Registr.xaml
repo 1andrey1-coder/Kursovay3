@@ -5,10 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.Registr"
         mc:Ignorable="d"
-        Title="Окно для Регистрации" MaxHeight="500" 
-     
-       MouseLeftButtonDown="dragWindows"
-        MinHeight="450" MinWidth="450" MaxWidth="450" >
+        Title="Окно для Регистрации" MaxHeight="600" 
+        MouseLeftButtonDown="dragWindows"
+        MinHeight="450"  MinWidth="400" MaxWidth="450" WindowStartupLocation="CenterScreen" >
 
 
 
@@ -162,7 +161,7 @@
                          Margin="0,35,0,0"/>
 
                     <TextBox x:Name="txtUser"
-                       Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                       Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"
                        FontSize="13"
                        FontWeight="Medium"
                        FontFamily="Montserrat"                            
@@ -189,7 +188,9 @@
                          FontFamily="Montserrat"                             
                          Margin="0,15,0,0"/>
 
-                    <PasswordBox x:Name="txtPassword"                             
+                    <TextBox x:Name="PasswordBox"
+                    Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"
+                                                     
                       FontSize="13"
                       FontWeight="Medium"
                       FontFamily="Montserrat"                            
@@ -200,19 +201,21 @@
                       VerticalContentAlignment="Center"                          
                       Padding="20,0,0,0">
 
-                        <PasswordBox.Background>
+                        <TextBox.Background>
                             <ImageBrush ImageSource="/Images/key-icon.png"
                                  Stretch="None"
                                  AlignmentX="Left"/>
-                        </PasswordBox.Background>
-                    </PasswordBox>
+                        </TextBox.Background>
+                    </TextBox>
                     <TextBlock Text="Повторите пароль"
                              Foreground="DarkGray"
                              FontSize="12"
                              FontWeight="Medium"
                              FontFamily="Montserrat"                             
                              Margin="0,15,0,0"/>
-                    <PasswordBox x:Name="txtPasswordPovtor"                             
+                    <TextBox x:Name="ConfirmPasswordBox"
+                            Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"
+                                                                                 
                             FontSize="13"
                             FontWeight="Medium"
                             FontFamily="Montserrat"                            
@@ -223,12 +226,12 @@
                             VerticalContentAlignment="Center"                          
                             Padding="20,0,0,0">
 
-                        <PasswordBox.Background>
+                        <TextBox.Background>
                             <ImageBrush ImageSource="/Images/key-icon.png"
                                 Stretch="None"
                                 AlignmentX="Left"/>
-                        </PasswordBox.Background>
-                    </PasswordBox>
+                        </TextBox.Background>
+                    </TextBox>
 
                     <TextBlock Text="{Binding ErrorMessage}"
                          Foreground="#D7596D"
@@ -239,7 +242,7 @@
                          TextWrapping="Wrap"/>
 
                     <Button x:Name="btnRegister" 
-                      Command="{Binding RegisterCommand}"
+                     Click="SingUp"
                       BorderThickness="0"
                       Content="РЕГИСТРАЦИЯ"
                       Foreground="White"

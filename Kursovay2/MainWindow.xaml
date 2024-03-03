@@ -242,7 +242,7 @@
                     <StackPanel>
                         <StackPanel>
                             <Button Content="РЕГИСТРАЦИЯ" x:Name="btnRegister" 
-                         Command="{Binding RegisterCommand}"
+                         Click="RegisterShow"
                          BorderThickness="0"
                        
                          FontSize="12"

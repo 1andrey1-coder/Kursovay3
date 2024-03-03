@@ -1,4 +1,6 @@
-﻿using Kursovay2.Models;
+﻿using Kursovay2.API;
+using Kursovay2.Models;
+using Kursovay2.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,12 +22,41 @@ namespace Kursovay2.Registr
     /// </summary>
     public partial class Registr : Window
     {
+        public string Login { get; set; }
+        public string Password { get; set; }
+
         public Registr() 
         {
             InitializeComponent();
 
         }
-       
+
+        private async void SingUp(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                //if (PasswordBox != ConfirmPasswordBox)
+                //{
+                //    MessageBox.Show("Пароли не совпадают", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                //    return;
+                //}
+
+                var user = await Client.Instance.UserRegister(Login, Password);
+                MainWindow mainWindow = new MainWindow();
+                MessageBox.Show("Вы зарегистрировались", "Успешная регистрация", MessageBoxButton.OK, MessageBoxImage.None);
+                mainWindow.Show();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+
+
+
 
         private void PerehodMainWindow(object sender, RoutedEventArgs e)
         {
