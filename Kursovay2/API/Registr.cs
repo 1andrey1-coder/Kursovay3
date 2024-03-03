@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace Kursovay2.API
 {
-    public class Register
+    public class Registr
     {
-        public int Id { get; set; }
-
+       
         public string? Login { get; set; }
 
         public string? Password { get; set; }
-
-        public int RoleId { get; set; }
+       
     }
 }
