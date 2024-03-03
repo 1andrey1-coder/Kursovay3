@@ -1,4 +1,5 @@
-﻿using ApiDB.DB;
+﻿using ApiDB;
+using ApiDB.DB;
 using ApiDB.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -142,5 +143,64 @@ namespace Kursovay2Api2._0.Controllers
 
             //return null;
         }
+
+
+        [HttpGet("Rofl")]
+        public ActionResult<RoflDTO> GetBrawlerById(string name)
+        {
+            var user = _memContext.Rofls.FirstOrDefault(r => r.RoflName == name);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            // Создаем экземпляр DTO и заполняем его данными из найденного пользователя
+            var roflDto = new RoflDTO
+            {
+                RoflName = user.RoflName,
+                TegId = user.TegId,
+                RoflDateTime = user.RoflDateTime,
+                RoflEndId = user.RoflEndId,
+                RoflGenreId = user.RoflGenreId,
+                RoflId = user.RoflId,
+                RoflImage = user.RoflImage,
+                RoflOpisanie = user.RoflOpisanie,
+                RoflStartId = user.RoflStartId,
+                RoflStatusId = user.RoflStatusId,
+            };
+
+            return roflDto;
+        }
+        //// Создаем словари для соответствия цифровых значений и текстовых представлений
+        //Dictionary<int, string> statusDict = new Dictionary<int, string>
+        //{
+        //    { 1, "Active" },
+        //    { 2, "Inactive" },
+        //    // добавьте остальные статусы
+        //};
+
+        //// Здесь также можно создать словари для других полей (genre, start и т.д.)
+
+        //// Получаем текстовое представление для каждого поля
+        //string status = statusDict.ContainsKey(user.RoflStatusId) ? statusDict[user.RoflStatusId] : "Unknown";
+        //// Аналогично для остальных полей
+
+        //// Создаем экземпляр DTO и заполняем его данными из найденного пользователя
+        //var roflDto = new RoflDTO
+        //{
+        //    RoflName = user.RoflName,
+        //    RoflDateTime = user.RoflDateTime,
+        //    RoflEndId = $"{user.RoflEndId} - {endDict[user.RoflEndId]}",
+        //    RoflGenreId = $"{user.RoflGenreId} - {genreDict[user.RoflGenreId]}",
+        //    RoflId = user.RoflId,
+        //    RoflImage = user.RoflImage,
+        //    RoflOpisanie = user.RoflOpisanie,
+        //    RoflStartId = $"{user.RoflStartId} - {startDict[user.RoflStartId]}",
+        //    RoflStatusId = $"{user.RoflStatusId} - {status}",
+        //};
+
+        //return roflDto;
+
     }
 }
