@@ -45,7 +45,7 @@ namespace Kursovay2.Registr
                 MainWindow mainWindow = new MainWindow();
                 MessageBox.Show("Вы зарегистрировались", "Успешная регистрация", MessageBoxButton.OK, MessageBoxImage.None);
                 mainWindow.Show();
-                this.Close();
+                Close();
             }
             catch (Exception ex)
             {

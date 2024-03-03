@@ -207,7 +207,7 @@
                                  AlignmentX="Left"/>
                         </TextBox.Background>
                     </TextBox>
-                    <TextBlock Text="Повторите пароль"
+                    <!--<TextBlock Text="Повторите пароль"
                              Foreground="DarkGray"
                              FontSize="12"
                              FontWeight="Medium"
@@ -231,7 +231,7 @@
                                 Stretch="None"
                                 AlignmentX="Left"/>
                         </TextBox.Background>
-                    </TextBox>
+                    </TextBox>-->
 
                     <TextBlock Text="{Binding ErrorMessage}"
                          Foreground="#D7596D"
