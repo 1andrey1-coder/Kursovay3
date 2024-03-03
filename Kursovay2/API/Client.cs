@@ -14,7 +14,7 @@ namespace Kursovay2.API
 
         private Client()
         {
-            httpClient.BaseAddress = new Uri(@"https://localhost:7219/api/");
+            httpClient.BaseAddress = new Uri(@"https://localhost:7189/api/");
         }
         static Client instance = new();
         public static Client Instance

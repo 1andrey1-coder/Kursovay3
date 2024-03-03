@@ -188,7 +188,7 @@
                             Margin="0,15,0,0"/>
 
                     <TextBox x:Name="txtPassword"
-                          Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"
+                          Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"
                          
                          FontSize="13"
                          FontWeight="Medium"
