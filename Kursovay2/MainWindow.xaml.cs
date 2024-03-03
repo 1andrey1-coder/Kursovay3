@@ -1,5 +1,6 @@
 ﻿using Kursovay2.API;
 using Kursovay2.Models;
+using Kursovay2.User;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
@@ -39,9 +40,26 @@ namespace Kursovay2
             try
             {
                 var user = await Client.Instance.UserLogin(Login, Password);
-                Admin.Admin admin = new Admin.Admin();
-                admin.Show();
-                this.Close();
+                if (user.RoleId == 2)
+                {
+                    Users users = new Users();
+                    users.Show();
+                    this.Close();
+                }
+                else if (user.RoleId == 1)
+                {
+                    Admin.Admin adminWindow = new Admin.Admin();
+                    adminWindow.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Логин/пароль неправильный", "Неудачный вход", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+               
+                //Admin.Admin admin = new Admin.Admin();
+                //admin.Show();
+               
             }
             catch (Exception ex)
             {

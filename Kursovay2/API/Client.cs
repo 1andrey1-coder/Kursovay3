@@ -70,6 +70,7 @@ namespace Kursovay2.API
 
 
             };
+            //
             var jsonContent = JsonConvert.SerializeObject(RegisterUser);
             var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
             HttpResponseMessage response = await httpClient.PostAsync("Account/Register", httpContent);
