@@ -62,6 +62,7 @@ namespace Kursovay2.API
 
         public async Task<LoginUserDTO> UserRegister(string login, string password)
         {
+            //почему то null
             var RegisterUser = new Registr
             {
                 Login = login,
