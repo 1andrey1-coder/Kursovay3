@@ -246,7 +246,7 @@
                     <StackPanel>
                         <StackPanel>
                             <Button Content="РЕГИСТРАЦИЯ" x:Name="btnRegister" 
-                      Click="RegisterShow"
+                     Command="{Binding SingUp}"
                       BorderThickness="0"
                     
                       FontSize="12"
