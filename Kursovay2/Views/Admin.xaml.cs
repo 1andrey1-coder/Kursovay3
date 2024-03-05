@@ -31,7 +31,7 @@ namespace Kursovay2.Admin
         {
             InitializeComponent();
             timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 50);
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
             timer.Tick += Timer_Tick;
 
             panelWidth = sidePanel.Width; 
@@ -52,7 +52,7 @@ namespace Kursovay2.Admin
             else
             {
                 sidePanel.Width -= 1;
-                if (sidePanel.Width <= 25)
+                if (sidePanel.Width <= 35)
                 {
                     timer.Stop();
                     hidden = true;
