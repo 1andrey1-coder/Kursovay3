@@ -1,8 +1,4 @@
-﻿using Kursovay2.API;
-using Kursovay2.Models;
-using Kursovay2.User;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,30 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 
 namespace Kursovay2
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Page
+    public partial class MainWindow : Window
     {
-     
-
-
         public MainWindow()
         {
             InitializeComponent();
-            
         }
-       
+
 
         private void PerexodUser(object sender, RoutedEventArgs e)
         {
-           
+
             User.Users user = new User.Users();
             //user.Show();
             //this.Close();
@@ -101,6 +91,6 @@ namespace Kursovay2
             //this.Close();
         }
 
-       
+
     }
 }
