@@ -25,7 +25,7 @@ namespace Kursovay2.mvvm.VM
         public LoginVM()
         {
 
-            SingIn =new CommandVM(() =>
+            SingIn = new CommandVM(() =>
             {
                 try
                 {
@@ -60,10 +60,6 @@ namespace Kursovay2.mvvm.VM
             }
             );
         }
-        //private async void SingIn(object sender, RoutedEventArgs e)
-        //{
-           
-//       
-        //}
+   
     }
 }
