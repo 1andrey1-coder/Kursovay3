@@ -36,14 +36,14 @@ namespace Kursovay2.mvvm.VM
                     {
                         Users users = new Users();
                         users.Show();
-                        OnClose();
+                       
 
                     }
                     else if (user.Id == 1)
                     {
                         Admin.Admin adminWindow = new Admin.Admin();
                         adminWindow.Show();
-                        OnClose();
+                        
 
                     }
                     else

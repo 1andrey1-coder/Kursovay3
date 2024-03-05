@@ -16,12 +16,13 @@ namespace Kursovay2.mvvm
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
 
         public event EventHandler OnPageClose;
+      
 
         public void OnClose()
         {
             OnPageClose?.Invoke(this, EventArgs.Empty);
         }
-
+        
     }
 
 }
