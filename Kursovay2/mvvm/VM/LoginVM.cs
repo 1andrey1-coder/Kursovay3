@@ -1,6 +1,5 @@
 ﻿using Kursovay2.API;
 using Kursovay2.User;
-using Kursovay2.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using Kursovay2.mvvm;
+using Kursovay2.Views;
 
 namespace Kursovay2.mvvm.VM
 {
@@ -21,7 +22,7 @@ namespace Kursovay2.mvvm.VM
             this.passwordBox = passwordBox;
         }
         public CommandVM SingIn { get; set; }
-
+      
         public LoginVM()
         {
 
@@ -29,14 +30,14 @@ namespace Kursovay2.mvvm.VM
             {
                 try
                 {
-                    var user = await Client.Instance.UserLogin(login, passwordBox.Password);
-                    if (user.RoleId == 2)
+                    var user = Client.Instance.UserLogin(login, passwordBox.Password);
+                    if (user.Id== 2)
                     {
                         Users users = new Users();
                         users.Show();
 
                     }
-                    else if (user.RoleId == 1)
+                    else if (user.Id == 1)
                     {
                         Admin.Admin adminWindow = new Admin.Admin();
                         adminWindow.Show();

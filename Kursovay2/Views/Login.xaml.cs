@@ -87,7 +87,7 @@ namespace Kursovay2.Views
         //private void btnMinimize_Click(object sender, RoutedEventArgs e)
         //{
 
-        //    //WindowState = WindowState.Minimized;
+        //    WindowState = WindowState.Minimized;
         //}
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {

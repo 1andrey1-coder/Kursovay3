@@ -7,41 +7,49 @@ using System.Windows.Input;
 
 namespace Kursovay2.mvvm
 {
-    public class CommandVM : ICommand
-    {
 
-        private readonly Action<object> _executeAction;
-        private readonly Predicate<object> _canExecuteAction;
-
-        //Constructors
-        public CommandVM(Action<object> executeAction)
+        public class CommandVM : ICommand
         {
-            _executeAction = executeAction;
-            _canExecuteAction = null;
+            Action action;
+
+            public CommandVM(Action action)
+            {
+                this.action = action;
+            }
+
+            public event EventHandler? CanExecuteChanged;
+
+            public bool CanExecute(object? parameter)
+            {
+                return true;
+            }
+
+            public void Execute(object? parameter)
+            {
+                action();
+            }
         }
 
-        public CommandVM(Action<object> executeAction, Predicate<object> canExecuteAction)
+        public class CommandVM<T> : ICommand where T : class
         {
-            _executeAction = executeAction;
-            _canExecuteAction = canExecuteAction;
-        }
+            Action<T> action;
 
-        //Events
-        public event EventHandler CanExecuteChanged
-        {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
-        }
+            public CommandVM(Action<T> action)
+            {
+                this.action = action;
+            }
 
-        //Methods
-        public bool CanExecute(object parameter)
-        {
-            return _canExecuteAction == null ? true : _canExecuteAction(parameter);
-        }
+            public event EventHandler? CanExecuteChanged;
 
-        public void Execute(object parameter)
-        {
-            _executeAction(parameter);
+            public bool CanExecute(object? parameter)
+            {
+                return true;
+            }
+
+            public void Execute(object? parameter)
+            {
+                action((T)parameter);
+            }
         }
-    }
+    
 }
