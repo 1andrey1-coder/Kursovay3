@@ -37,8 +37,10 @@ namespace Kursovay2.mvvm.VM
                     var user = await Client.Instance.UserLogin(login, passwordBox.Password);
                     if (user.RoleId == 1)
                     {
-                        Admin.Admin adminWindow = new Admin.Admin();
-                        adminWindow.Show();
+                        Modno modno = new Modno();
+                        modno.Show();
+                        //Admin.Admin adminWindow = new Admin.Admin();
+                        //adminWindow.Show();
                     }
                     if  (user.RoleId == 2)
                     {

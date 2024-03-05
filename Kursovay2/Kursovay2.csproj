@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="icons\home.png" />
+    <None Remove="icons\menu.png" />
+    <None Remove="icons\msg.png" />
+    <None Remove="icons\sent.png" />
+    <None Remove="icons\setting.png" />
+    <None Remove="icons\spam.png" />
     <None Remove="Images\back-image.jpg" />
     <None Remove="Images\key-icon.png" />
     <None Remove="Images\logo.png" />
@@ -24,6 +30,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="icons\home.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\menu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\msg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\sent.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\setting.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\spam.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\back-image.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
