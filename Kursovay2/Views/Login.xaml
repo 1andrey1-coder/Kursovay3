@@ -163,7 +163,7 @@
                          FontFamily="Montserrat"                             
                          Margin="0,35,0,0"/>
 
-                    <TextBox x:Name="txtLogin"
+                    <TextBox x:Name="loginBox"
                        Text="{Binding login, UpdateSourceTrigger=PropertyChanged}"
                        FontSize="13"
                        FontWeight="Medium"

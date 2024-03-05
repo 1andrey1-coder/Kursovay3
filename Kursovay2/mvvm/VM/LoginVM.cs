@@ -17,10 +17,13 @@ namespace Kursovay2.mvvm.VM
         public string login { get; set; }
 
         PasswordBox passwordBox;
+       
+
         internal void RegisterPassBox(PasswordBox passwordBox)
         {
             this.passwordBox = passwordBox;
         }
+        
         public CommandVM SingIn { get; set; }
         public CommandVM SingUp { get; set; }
       
