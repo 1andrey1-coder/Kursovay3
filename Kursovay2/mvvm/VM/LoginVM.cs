@@ -1,5 +1,6 @@
 ﻿using Kursovay2.API;
 using Kursovay2.User;
+using Kursovay2.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,39 +20,50 @@ namespace Kursovay2.mvvm.VM
         {
             this.passwordBox = passwordBox;
         }
+        public CommandVM SingIn { get; set; }
 
-        private async void SingIn(object sender, RoutedEventArgs e)
+        public LoginVM()
         {
-            try
+
+            SingIn =new CommandVM(() =>
             {
-                var user = await Client.Instance.UserLogin(login, passwordBox.Password);
-                if (user.RoleId == 2)
+                try
                 {
-                    Users users = new Users();
-                    users.Show();
+                    var user = await Client.Instance.UserLogin(login, passwordBox.Password);
+                    if (user.RoleId == 2)
+                    {
+                        Users users = new Users();
+                        users.Show();
+
+                    }
+                    else if (user.RoleId == 1)
+                    {
+                        Admin.Admin adminWindow = new Admin.Admin();
+                        adminWindow.Show();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Логин/пароль неправильный", "Неудачный вход", 
+                            MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+
+                  
 
                 }
-                else if (user.RoleId == 1)
+                catch (Exception ex)
                 {
-                    Admin.Admin adminWindow = new Admin.Admin();
-                    adminWindow.Show();
-
+                    MessageBox.Show(ex.Message);
                 }
-                else
-                {
-                    MessageBox.Show("Логин/пароль неправильный", "Неудачный вход", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-
-                //Admin.Admin admin = new Admin.Admin();
-                //admin.Show();
+            
 
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-
+            );
         }
+        //private async void SingIn(object sender, RoutedEventArgs e)
+        //{
+           
+//       
+        //}
     }
 }

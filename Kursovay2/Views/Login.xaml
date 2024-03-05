@@ -220,7 +220,7 @@
                          TextWrapping="Wrap"/>
 
                     <Button x:Name="btnLogin" 
-                         Click="SingIn"
+                       Command="{Binding SingIn}"
                       BorderThickness="0"
                       Content="ВХОД"
                       Foreground="White"
