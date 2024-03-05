@@ -14,7 +14,7 @@ namespace Kursovay2.API
 
         public string? LoginPassword { get; set; }
 
-        public int? RoleId { get; set; }
+        public int RoleId { get; set; }
 
 
     }

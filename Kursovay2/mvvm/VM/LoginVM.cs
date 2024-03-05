@@ -30,25 +30,24 @@ namespace Kursovay2.mvvm.VM
         public LoginVM()
         {
 
-            SingIn = new CommandVM(() =>
+            SingIn = new CommandVM(async () =>
             {
                 try
                 {
-                    var user = Client.Instance.UserLogin(login, passwordBox.Password);
-                    if (user.Id == 2)
-                    {
-                        Users users = new Users();
-                        users.Show();
-                       
-
-                    }
-                    else if (user.Id == 1)
+                    var user = await Client.Instance.UserLogin(login, passwordBox.Password);
+                    if (user.RoleId == 1)
                     {
                         Admin.Admin adminWindow = new Admin.Admin();
                         adminWindow.Show();
-                        
-
                     }
+                    if  (user.RoleId == 2)
+                    {
+                        Users userWindow = new Users();
+                        userWindow.Show();
+                    }
+                    //Admin.Admin adminWindow = new Admin.Admin();
+                    //adminWindow.Show();
+                   
                     else
                     {
                         MessageBox.Show("Логин/пароль неправильный", "Неудачный вход",
@@ -69,7 +68,7 @@ namespace Kursovay2.mvvm.VM
             {
                 Registr.Registr registr = new Registr.Registr();
                 registr.Show();
-                OnClose();
+                Application.Current.MainWindow.Close();
             });
         }
    

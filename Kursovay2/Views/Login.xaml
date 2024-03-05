@@ -9,12 +9,12 @@
         DataContext="{DynamicResource loginVM}"
       Title="Login" 
       MouseLeftButtonDown="dragWindows"
-      MinHeight="450" MaxHeight="600"  MinWidth="400" MaxWidth="450">
+      MinHeight="450" MaxHeight="600"  MinWidth="400" MaxWidth="450" >
     <Page.Resources>
         <vm:LoginVM x:Key="loginVM"/>
     </Page.Resources>
-    <Border >
-        <Border.Background>
+    <Border CornerRadius="10">
+        <Border.Background >
             <ImageBrush ImageSource="D:\GitHub\Kursovay2\Images\back-image.jpg"
                   Stretch="None"/>
         </Border.Background>
@@ -285,13 +285,15 @@
 
                         </StackPanel>
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                            <TextBlock Text="Войти как гость"
+                            <Button  Background="Transparent"     Content="Войти как гость"
                                              Foreground="White"
                                              FontSize="12"
                                              FontWeight="Medium"
+                                             BorderBrush="Transparent"
                                              FontFamily="Montserrat"
                                              Cursor="Hand"
-                                             Margin="8,0,0,0"/>
+                                             Margin="8,0,0,0"
+                                            Click="PerexodGost"/>
                         </StackPanel>
                     </StackPanel>
 

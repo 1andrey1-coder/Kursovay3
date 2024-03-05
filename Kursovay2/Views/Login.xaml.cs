@@ -4,6 +4,7 @@ using Kursovay2.mvvm.VM;
 using Kursovay2.User;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,7 +36,6 @@ namespace Kursovay2.Views
 
 
 
-
         private void PerexodUser(object sender, RoutedEventArgs e)
         {
 
@@ -60,8 +60,8 @@ namespace Kursovay2.Views
         {
 
             Gost.Gost gost = new Gost.Gost();
-            //gost.Show();
-            //this.Close();
+            gost.Show();
+            Window.GetWindow(this).Close();
 
         }
 
@@ -92,7 +92,7 @@ namespace Kursovay2.Views
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
             Window parentWindow = Window.GetWindow(this);
-            parentWindow.Close();
+            parentWindow.WindowState = WindowState.Minimized;
         }
 
         private void RegisterShow(object sender, RoutedEventArgs e)

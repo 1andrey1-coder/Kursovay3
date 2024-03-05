@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Kursovay2.API;
+using Kursovay2.Views;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,8 +27,9 @@ namespace Kursovay2
             InitializeComponent();
         }
 
+       
 
-        
+
 
         private void dragWindows(object sender, MouseButtonEventArgs e)
         {
