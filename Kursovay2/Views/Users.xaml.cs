@@ -29,7 +29,7 @@ namespace Kursovay2.User
         {
           
             MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            //mainWindow.Show();
             this.Close();
         }
 

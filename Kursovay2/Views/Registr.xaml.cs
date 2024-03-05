@@ -41,10 +41,10 @@ namespace Kursovay2.Registr
                 //    return;
                 //}
 
-                var user = await Client.Instance.UserRegister(Login, Password);
+                var user = await Client.Instance.UserRegister(Login, txtPassword.Password);
                 MainWindow mainWindow = new MainWindow();
                 MessageBox.Show("Вы зарегистрировались", "Успешная регистрация", MessageBoxButton.OK, MessageBoxImage.None);
-                mainWindow.Show();
+                //mainWindow.Show();
                 Close();
             }
             catch (Exception ex)
@@ -61,7 +61,7 @@ namespace Kursovay2.Registr
         private void PerehodMainWindow(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            //mainWindow.Show();
             this.Close();
 
         }

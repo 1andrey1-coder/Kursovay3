@@ -1,7 +1,5 @@
 ﻿using Kursovay2.API;
-using Kursovay2.Models;
 using Kursovay2.User;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,27 +15,63 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
-namespace Kursovay2
+namespace Kursovay2.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для Login.xaml
     /// </summary>
-    public partial class MainWindow : Page
+    public partial class Login : Page
     {
-     
-
-
-        public MainWindow()
+        public Login()
         {
             InitializeComponent();
-            
+            DataContext = this;
         }
-       
+
+        public string login { get; set; }
+        public string Password { get; set; }
+
+      
+        private async void SingIn(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var user = await Client.Instance.UserLogin(login, txtPassword.Password);
+                if (user.RoleId == 2)
+                {
+                    Users users = new Users();
+                    users.Show();
+
+                }
+                else if (user.RoleId == 1)
+                {
+                    Admin.Admin adminWindow = new Admin.Admin();
+                    adminWindow.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("Логин/пароль неправильный", "Неудачный вход", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+                //Admin.Admin admin = new Admin.Admin();
+                //admin.Show();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+
+
+
 
         private void PerexodUser(object sender, RoutedEventArgs e)
         {
-           
+
             User.Users user = new User.Users();
             //user.Show();
             //this.Close();
@@ -90,8 +124,8 @@ namespace Kursovay2
         //}
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
-            //Window parentWindow = Window.GetWindow(this);
-            //parentWindow.Close();
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow.Close();
         }
 
         private void RegisterShow(object sender, RoutedEventArgs e)
@@ -101,6 +135,6 @@ namespace Kursovay2
             //this.Close();
         }
 
-       
+
     }
 }

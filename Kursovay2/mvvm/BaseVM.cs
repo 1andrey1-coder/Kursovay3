@@ -11,7 +11,17 @@ namespace Kursovay2.mvvm
     public class BaseVM : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
+
         public void Signal([CallerMemberName] string prop = null)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+
+        public event EventHandler OnPageClose;
+
+        internal void OnClose()
+        {
+            OnPageClose?.Invoke(this, EventArgs.Empty);
+        }
+
     }
+
 }

@@ -188,8 +188,8 @@
                          FontFamily="Montserrat"                             
                          Margin="0,15,0,0"/>
 
-                    <TextBox x:Name="PasswordBox"
-                    Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"
+                    <PasswordBox x:Name="txtPassword"
+                    
                                                      
                       FontSize="13"
                       FontWeight="Medium"
@@ -201,12 +201,12 @@
                       VerticalContentAlignment="Center"                          
                       Padding="20,0,0,0">
 
-                        <TextBox.Background>
+                        <PasswordBox.Background>
                             <ImageBrush ImageSource="/Images/key-icon.png"
                                  Stretch="None"
                                  AlignmentX="Left"/>
-                        </TextBox.Background>
-                    </TextBox>
+                        </PasswordBox.Background>
+                    </PasswordBox>
                     <!--<TextBlock Text="Повторите пароль"
                              Foreground="DarkGray"
                              FontSize="12"

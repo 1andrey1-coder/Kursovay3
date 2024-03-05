@@ -53,7 +53,7 @@ namespace Kursovay2.Gost
         {
            
             MainWindow mainWindow  = new MainWindow();
-            mainWindow.Show();
+            //mainWindow.Show();
             this.Close();
         }
 

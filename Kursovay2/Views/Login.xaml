@@ -1,0 +1,373 @@
+﻿<Page x:Class="Kursovay2.Views.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kursovay2.Views"
+      mc:Ignorable="d" 
+     
+      Title="Login" MaxHeight="600" 
+      MouseLeftButtonDown="dragWindows"
+      MinHeight="450"  MinWidth="400" MaxWidth="450">
+
+    <Border >
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/back-image.jpg"
+                  Stretch="None"/>
+        </Border.Background>
+
+        <Border CornerRadius="10"                    
+      BorderThickness="2"
+      Opacity="0.95">
+
+            <!--стиль-->
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#060531" Offset="0"/>
+                    <GradientStop Color="#1B1448" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <!--стиль-->
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="ЭТО ВХОД ЕБА РОТ"
+                         Foreground="DarkGray"
+                         FontSize="10"
+                         FontFamily="Montserrat"
+                         Grid.Column="0"
+                         VerticalAlignment="Center"
+                         Margin="10,0,0,0"/>
+
+                    <Button x:Name="btnMinimize"                           
+                      BorderThickness="0"
+                      Content="-"
+                      Foreground="White"
+                      FontSize="16"
+                      FontFamily="Montserrat"
+                      Cursor="Hand"
+                      Grid.Column="1"
+                      Click="btnMinimize_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#28AEED"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                  CornerRadius="9"
+                                  Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                    <Button x:Name="btnClose"                          
+                      BorderThickness="0"
+                      Content="X"
+                      Foreground="White"
+                      FontSize="12"
+                      FontFamily="Montserrat"
+                      Cursor="Hand"
+                      Grid.Column="2"
+                      Click="btnClose_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#DA34AE"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#C62DAE"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                  CornerRadius="9"
+                                  Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+
+                <StackPanel Width="220"
+                      Grid.Row="1"
+                      Orientation="Vertical"
+                      Margin="0,35,0,0">
+
+                    <Image Source="/Images/logo.png"
+                     Width="100" Height="100"/>
+
+                    <TextBlock Text="Билли Харингтон"
+                         Foreground="White"
+                         FontSize="25"
+                         FontWeight="Medium"
+                         FontFamily="Montserrat"
+                         HorizontalAlignment="Center"/>
+
+                    <TextBlock Text="Влажные мужики"
+                         Foreground="LightGray"
+                         FontSize="12"
+                         FontWeight="Medium"
+                         FontFamily="Montserrat"
+                         TextWrapping="Wrap"
+                         TextAlignment="Center"
+                         Margin="0,5,0,0"/>
+
+
+                    <TextBlock Text="Логин"
+                         Foreground="DarkGray"
+                         FontSize="12"
+                         FontWeight="Medium"
+                         FontFamily="Montserrat"                             
+                         Margin="0,35,0,0"/>
+
+                    <TextBox x:Name="txtLogin"
+                       Text="{Binding login, UpdateSourceTrigger=PropertyChanged}"
+                       FontSize="13"
+                       FontWeight="Medium"
+                       FontFamily="Montserrat"                            
+                       Foreground="White"
+                       CaretBrush="LightGray"
+                       BorderBrush="DarkGray"
+                       BorderThickness="0,0,0,2"
+                       Height="28"
+                       VerticalContentAlignment="Center"
+                       Margin="0,5,0,0"
+                       Padding="20,0,0,0">
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Images/user-icon.png"
+                                  Stretch="None"
+                                  AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <TextBlock Text="Пароль"
+                         Foreground="DarkGray"
+                         FontSize="12"
+                         FontWeight="Medium"
+                         FontFamily="Montserrat"                             
+                         Margin="0,15,0,0"/>
+
+                    <PasswordBox x:Name="txtPassword"
+                      
+                      
+                      FontSize="13"
+                      FontWeight="Medium"
+                      FontFamily="Montserrat"                            
+                      Foreground="White"
+                      CaretBrush="LightGray"
+                      BorderBrush="DarkGray"
+                      BorderThickness="0,0,0,2"                           
+                      VerticalContentAlignment="Center"                          
+                      Padding="20,0,0,0">
+                      
+                        <PasswordBox.Background>
+                            <ImageBrush ImageSource="D:\GitHub\Kursovay2\Images\key-icon.png"
+                                 Stretch="None"
+                                 AlignmentX="Left"/>
+                        </PasswordBox.Background>
+                    </PasswordBox>
+
+                    <TextBlock Text="{Binding ErrorMessage}"
+                         Foreground="#D7596D"
+                         FontSize="12"
+                         FontWeight="Medium"
+                         FontFamily="Montserrat"                             
+                         Margin="0,10,0,0"
+                         TextWrapping="Wrap"/>
+
+                    <Button x:Name="btnLogin" 
+                         Click="SingIn"
+                      BorderThickness="0"
+                      Content="ВХОД"
+                      Foreground="White"
+                      FontSize="12"
+                      FontFamily="Montserrat"
+                      Cursor="Hand"                           
+                      Margin="0,30,0,0">
+
+
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="40"
+                                  CornerRadius="20"
+                                  Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <StackPanel>
+                        <StackPanel>
+                            <Button Content="РЕГИСТРАЦИЯ" x:Name="btnRegister" 
+                      Click="RegisterShow"
+                      BorderThickness="0"
+                    
+                      FontSize="12"
+                      FontFamily="Montserrat"
+                      Cursor="Hand"                           
+                      Margin="0,10,0,0">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="150" Height="40"
+                                             CornerRadius="20"
+                                             Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"
+                          HorizontalAlignment="Center"
+                          Margin="0,15,0,0">
+
+                            <TextBlock Text="Забыли пароль?"
+                         Foreground="DarkGray"
+                         FontSize="12"
+                         FontWeight="Medium"
+                         FontFamily="Montserrat"/>
+
+                            <TextBlock Text="Перезагрузить"
+                         Foreground="White"
+                         FontSize="12"
+                         FontWeight="Medium"
+                         FontFamily="Montserrat"
+                         Cursor="Hand"
+                         Margin="8,0,0,0"/>
+
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                            <TextBlock Text="Войти как гость"
+                                             Foreground="White"
+                                             FontSize="12"
+                                             FontWeight="Medium"
+                                             FontFamily="Montserrat"
+                                             Cursor="Hand"
+                                             Margin="8,0,0,0"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                </StackPanel>
+
+            </Grid>
+
+        </Border>
+
+    </Border>
+
+
+
+
+    <!--<Window.Template>
+     <ControlTemplate TargetType="Window">
+         <Border CornerRadius="150" BorderThickness="1" Padding="50">
+             <Border.Background>
+                 <ImageBrush >
+                     <ImageBrush.ImageSource>
+                         <DrawingImage>
+                             <DrawingImage.Drawing>
+                                 <GeometryDrawing Brush="Red"  Geometry="F1 M313.96,362.443 C313.56072,357.53677 155.4282,190.39017 151.251,186.787 136.794,200.425 108.103,231.747 106.731,231.974 105.303,232.211 60.253358,190.30337 60.9186,186.287 62.203,178.532 159.0473,82.870106 160.79,82.3495 162.18983,81.93141 233.738,95.2458 233.699,99.287 233.661,103.146 179.333,156.336 178.28,158.287 177.835,159.113 349.77991,331.20416 353.412,331.787 356.47259,337.05585 363.659,320.849&#xd;&#xa;366.77,314.287 373.013,301.119 376.849,286.945 379.78,272.787 380.59078,268.87042 385.88248,249.51464 385.59874,230.62573 385.28637,209.83061 379.34674,189.52641 379.25,189.287 377.589,185.178 363.773,144.067 354.505,129.287 341.539,108.607 324.736,90.2432 308.429,71.787 298.356,60.3876 286.193,50.6559 273.681,41.662 272.55,40.8491 255.907,26.3728 249.831,21.787 241.332,15.373&#xd;&#xa;221.83166,4.7285359 224.556,2.28699 224.39063,-4.7803022 240.348,3.44189 247.71,5.94324 260.311,10.224 272.744,15.0719 284.634,20.8859 313.105,34.8079 340.284,51.5482 364.84,71.0057 371.662,76.4105 377.178,83.1307 383.346,89.1932 404.908,110.384 422.317,136.025 433.906,163.287 441.737,181.707 446.183,201.372 449.607,220.954 451.036,229.121 453.14243,236.95595 453.37796,245.23206&#xd;&#xa;453.54268,251.02016 453.91178,257.81443 453.77465,263.6271 453.75449,264.4816 453.14603,281.90814 451.54798,290.24252 451.3763,291.13791 450.308,299.819 449.044,303.287 448.727,304.158 444.434,319.558 444.109,320.787 441.749,329.691 438.532,338.433 434.502,346.787 430.615,354.845 426.64,362.953 421.385,370.287 417.504,375.703 412.562,380.489 409.36,386.287 419.439,396.037 451.507,424.76&#xd;&#xa;452.025,431.287 452.413,436.166 418.442,469.567 412.01,467.224 406.93,465.374 369.52,420.53 367.557,419.787 363.979,418.433 343.801,429.948 336.75,431.256 335.37771,431.51027 320.31032,435.31315 319.46602,435.55933 319.45697,435.56196 304.756,436.295 296.152,436.637 283.5,437.139 251.192,433.37 249.831,433.006 217.388,424.318 185.882,410.752 158.141,392.662 147.544,385.752&#xd;&#xa;137.451,378.169 127.4,370.568 124.081,368.058 121.129,365.138 117.861,362.568 116.462,361.469 109.23558,367.96138 109.53058,371.80038 109.96558,377.45038 112.14664,386.58494 108.94006,391.54981 105.39694,397.03577 101.23857,400.02827 100.37752,399.96161 90.929198,399.23015 84.019435,392.19773 83.252435,393.01273 79.302935,397.20573 78.129033,404.2816 75.870933,409.4706 71.572333,419.3496 69.6773,425.863 63.8833,435.037&#xd;&#xa;55.0899,448.96 41.8006,463.228 25.1105,467.068 19.9485,468.256 13.8199,468.499 9.21051,466.006 4.73383,463.584 2.58296,458.331 0.730515,453.787 0.730515,453.787 -0.797928,442.38 0.896133,437.287 4.44899,426.606 11.1756,416.825 18.8499,408.287 25.229,401.19 33.1195,395.37 41.0105,389.787 47.8863,384.922 53.089827,383.27679 59.631627,378.01779 61.984427,376.12679 67.8898,372.196&#xd;&#xa;67.6761,369.287 67.2171,363.037 63.593,356.25 66.318,350.537 68.3592,346.258 72.1836,341.725 77.0505,340.756 81.2059,339.928 85.6987,342.582 89.7705,341.443 90.8889,341.13 99.3572,330.562 101.961,327.287 103.868,324.888 105.705,320.636 108.851,321.068 110.547,321.302 141.71018,337.57216 142.241,337.818 156.729,344.53 171.112,351.578 186.23,356.912 196.629,360.581&#xd;&#xa;207.136,364.239 218.03,366.256 218.898,366.416 236.27046,369.99958 237.11,370.224 241.869,371.501 254.662,371.948 256.19,372.224 260.623,373.027 319.46602,364.85139 313.96,362.443 z"/>
+                             </DrawingImage.Drawing>
+                         </DrawingImage>
+                     </ImageBrush.ImageSource>
+                 </ImageBrush>
+             </Border.Background>
+             <ContentPresenter/>
+         </Border>
+     </ControlTemplate>
+ </Window.Template>
+ <Grid>
+     <Grid.ColumnDefinitions>
+         <ColumnDefinition/>
+         <ColumnDefinition MaxWidth="200"/>
+         <ColumnDefinition/>
+
+     </Grid.ColumnDefinitions>
+
+     <Grid.RowDefinitions>
+         <RowDefinition Height="0.1*"/>
+         <RowDefinition/>
+         <RowDefinition MaxHeight="40"/>
+         <RowDefinition MaxHeight="10"/>
+         <RowDefinition MaxHeight="40"/>
+         <RowDefinition MaxHeight="40"/>
+         <RowDefinition MaxHeight="50"/>
+         <RowDefinition />
+         <RowDefinition Height="0.1*"/>
+
+     </Grid.RowDefinitions>
+
+     <StackPanel VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="2" >
+         <TextBlock FontSize="13"  Background="Transparent" FontWeight="Bold"  Foreground="White" Text="Логин" />
+
+
+         <TextBox   Height="20"/>
+     </StackPanel>
+     <StackPanel  VerticalAlignment="Top"
+                 Grid.Column="1" Grid.Row="4" >
+         <TextBlock FontSize="13"  Background="Transparent"
+                    FontWeight="Bold" Foreground="White" Text="Пароль"/>
+         <TextBox Height="20"/>
+     </StackPanel>
+     <StackPanel 
+                 VerticalAlignment="Center" Grid.Column="1" Grid.Row="6" >
+         <Button FontSize="15"  Background="Transparent"  BorderBrush="Transparent" 
+                  Content="Войти" Click="PerexodUser" />
+         <Button Background="Transparent"   BorderBrush="Transparent" 
+                    Content="Нет аккаунта? " Click="PerehodRegistr"/>
+
+     </StackPanel>
+
+
+     <StackPanel HorizontalAlignment="Left" Grid.Column="1" Grid.Row="5"  >
+         <TextBlock Text="Запомнить меня"  Foreground="White" Margin="5,5,10,0" />
+     </StackPanel>
+     <Button Width="100" Content="Войти в Админа" Click="PerexodAdmin" />
+     <Button Width="100" Grid.Column="1" Content="Войти в Гостя" Click="PerexodGost" />
+ </Grid>-->
+</Page>

@@ -63,15 +63,7 @@ namespace Kursovay2.API
         public async Task<LoginUserDTO> UserRegister(string login, string password)
         {
             //почему то null
-            if (login == null)
-            {
-                throw new ArgumentNullException(nameof(login));
-            }
-
-            if (password == null)
-            {
-                throw new ArgumentNullException(nameof(password));
-            }
+       
             var RegisterUser = new Registr
             {
                 Login = login,

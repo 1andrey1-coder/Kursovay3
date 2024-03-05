@@ -73,7 +73,7 @@ namespace Kursovay2.Admin
         {
             
             MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            //mainWindow.Show();
             this.Close();
 
         }
