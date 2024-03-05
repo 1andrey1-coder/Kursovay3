@@ -17,7 +17,7 @@ namespace Kursovay2.mvvm
 
         public event EventHandler OnPageClose;
 
-        internal void OnClose()
+        public void OnClose()
         {
             OnPageClose?.Invoke(this, EventArgs.Empty);
         }

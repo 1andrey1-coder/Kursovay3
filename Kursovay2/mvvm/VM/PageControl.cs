@@ -33,7 +33,7 @@ namespace Kursovay2.mvvm.VM
             return instance;
         }
 
-        internal void OnAppClose(object sender, ExitEventArgs e)
+        public void OnAppClose(object sender, ExitEventArgs e)
         {
             ((BaseVM)CurrentPage.DataContext).OnClose();
         }

@@ -1,4 +1,6 @@
 ﻿using Kursovay2.API;
+using Kursovay2.mvvm;
+using Kursovay2.mvvm.VM;
 using Kursovay2.User;
 using System;
 using System.Collections.Generic;
@@ -25,46 +27,12 @@ namespace Kursovay2.Views
         public Login()
         {
             InitializeComponent();
-            DataContext = this;
+            //DataContext = this;
+            var vm = (LoginVM)DataContext;
+            vm.RegisterPassBox(passwordBox);
         }
 
-        public string login { get; set; }
-        public string Password { get; set; }
-
-      
-        private async void SingIn(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                var user = await Client.Instance.UserLogin(login, txtPassword.Password);
-                if (user.RoleId == 2)
-                {
-                    Users users = new Users();
-                    users.Show();
-
-                }
-                else if (user.RoleId == 1)
-                {
-                    Admin.Admin adminWindow = new Admin.Admin();
-                    adminWindow.Show();
-
-                }
-                else
-                {
-                    MessageBox.Show("Логин/пароль неправильный", "Неудачный вход", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-
-                //Admin.Admin admin = new Admin.Admin();
-                //admin.Show();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-
-        }
+       
 
 
 
