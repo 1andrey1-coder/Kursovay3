@@ -17,6 +17,16 @@ namespace Kursovay2Api2._0.Controllers
             _memContext = userService;
         }
 
+        [HttpGet("Name")]
+        public ActionResult<string> GetUserName()
+        {
+           
+            // Получение имени пользователя из контекста аутентификации
+            var userName = User.Identity.Name;
+
+            return userName;
+        }
+
         [HttpPost("Login")]
         public ActionResult<LoginUserDTO> GetActionLogin(UserLoginDTO userData)
         {

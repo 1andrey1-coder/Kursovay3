@@ -1,7 +1,9 @@
 ﻿using Kursovay2.Models;
+using Kursovay2.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,11 +27,26 @@ namespace Kursovay2.Admin
 
         double panelWidth;
         bool hidden;
+        private async void ShowUserName()
+        {
+            HttpClient client = new HttpClient();
 
+            client.BaseAddress = new Uri(@"https://localhost:7189/api/");
 
+            HttpResponseMessage response = await client.GetAsync("Account/Name");
+
+            if (response.IsSuccessStatusCode)
+            {
+                string userName = await response.Content.ReadAsStringAsync();
+                textBlockUserName.Text = userName; // выводим имя пользователя в TextBlock
+            }
+        }
+       
+      
         public Admin()
         {
             InitializeComponent();
+            ShowUserName();
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
             timer.Tick += Timer_Tick;
@@ -118,8 +135,8 @@ namespace Kursovay2.Admin
         private void ClickAdminToMainWindow(object sender, RoutedEventArgs e)
         {
             
-            MainWindow mainWindow = new MainWindow();
-            //mainWindow.Show();
+            Login login = new Login();
+            login.Show();
             this.Close();
 
         }
