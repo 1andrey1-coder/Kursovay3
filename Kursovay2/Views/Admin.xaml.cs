@@ -136,7 +136,7 @@ namespace Kursovay2.Admin
         {
             
             Login login = new Login();
-            login.Show();
+            //login.Show();
             this.Close();
 
         }
