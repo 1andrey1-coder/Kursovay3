@@ -77,7 +77,11 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                 <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="D:\GitHub\Kursovay2\icons\home.png" Height="20" VerticalAlignment="Center"/>
-                                        <TextBlock Margin="15 0 0 0" Text="Админка" VerticalAlignment="Center"/>
+                                        <Button Margin="15 0 0 0" Content="Админка"
+                                                VerticalAlignment="Center"
+                                                Background="Transparent"
+                                                BorderBrush="Transparent"
+                                                Click="ClickAdminToMainWindow"/>
                                     </StackPanel>
                                 </ListViewItem>
                                 <ListViewItem Height="30">

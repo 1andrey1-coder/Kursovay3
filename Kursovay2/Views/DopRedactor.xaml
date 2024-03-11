@@ -84,13 +84,22 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                 <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="D:\GitHub\Kursovay2\icons\home.png" Height="20" VerticalAlignment="Center"/>
-                                        <TextBlock Margin="15 0 0 0" Text="Админка" VerticalAlignment="Center"/>
+                                        <Button Margin="15 0 0 0" Content="Админка" 
+                                                VerticalAlignment="Center"
+                                                 Background="Transparent"
+                                                 BorderBrush="Transparent"
+                                                 Click="AdminWindow"/>
                                     </StackPanel>
                                 </ListViewItem>
                                 <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="D:\GitHub\Kursovay2\icons\user.png" Height="20" VerticalAlignment="Center"/>
-                                        <TextBlock Margin="15 0 0 0" Text="Добавление шутки" VerticalAlignment="Center"/>
+                                        <Button Margin="15 0 0 0" 
+                                                Content="Добавление шутки" 
+                                                VerticalAlignment="Center"
+                                                Background="Transparent"
+                                                BorderBrush="Transparent"
+                                                Click="ClickObratAddRof"/>
                                     </StackPanel>
                                 </ListViewItem>
                                 <ListViewItem Height="30">
@@ -123,7 +132,8 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                     </Grid>
 
                 </StackPanel>
-                <ScrollViewer Margin="0 0 0 0" Height="200" VerticalAlignment="Bottom" HorizontalScrollBarVisibility="Auto"
+                <ScrollViewer  Margin="0 200 0 0" Height="300" VerticalAlignment="Center" 
+                               HorizontalScrollBarVisibility="Auto"
         Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" >
 
                     <ListView 
@@ -154,7 +164,10 @@ SelectedItem="{Binding SelectedStage}" Margin="5">
                         </ListView.View>
                     </ListView>
                 </ScrollViewer>
-                <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" Orientation="Horizontal">
+                <Grid Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"
+                            VerticalAlignment="Top">
+                    
+                <StackPanel Orientation="Horizontal">
 
 
                 <StackPanel>
@@ -178,6 +191,8 @@ SelectedItem="{Binding SelectedStage}" Margin="5">
                         </ScrollViewer>
                     </StackPanel>
                 </StackPanel>
+                </Grid>
+
             </Grid>
         </Border>
     </Border>
