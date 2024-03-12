@@ -70,7 +70,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                 <Button HorizontalAlignment="Right" Height="25" 
     VerticalAlignment="Top" Background="Transparent" 
     BorderBrush="Transparent" Click="Button_Click">
-                                    <Image Source="D:\GitHub\Kursovay2\icons\menu.png"/>
+                                    <Image Source="\icons\menu.png"/>
                                 </Button>
                                 <!--сделать вывод того кто зашел-->
                             </Grid>
@@ -83,7 +83,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
   BorderBrush="Transparent" Background="Transparent" FontWeight="Bold">
                                 <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
-                                        <Image Source="D:\GitHub\Kursovay2\icons\home.png" Height="20" VerticalAlignment="Center"/>
+                                        <Image Source="\icons\home.png" Height="20" VerticalAlignment="Center"/>
                                         <Button Margin="15 0 0 0" Content="Админка" 
                                                 VerticalAlignment="Center"
                                                  Background="Transparent"
@@ -93,7 +93,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                 </ListViewItem>
                                 <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
-                                        <Image Source="D:\GitHub\Kursovay2\icons\user.png" Height="20" VerticalAlignment="Center"/>
+                                        <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
                                         <Button Margin="15 0 0 0" 
                                                 Content="Добавление шутки" 
                                                 VerticalAlignment="Center"
@@ -104,7 +104,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                 </ListViewItem>
                                 <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
-                                        <Image Source="D:\GitHub\Kursovay2\icons\close2.png" Height="20"
+                                        <Image Source="\icons\close2.png" Height="20"
                    VerticalAlignment="Center" />
                                         <Button Margin="15 0 0 0" Background="Transparent"
                     BorderBrush="Transparent"
@@ -121,7 +121,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
     </ListViewItem>-->
                                 <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
-                                        <Image Source="D:\GitHub\Kursovay2\icons\setting.png" Height="20" VerticalAlignment="Center"/>
+                                        <Image Source="\icons\setting.png" Height="20" VerticalAlignment="Center"/>
                                         <TextBlock Margin="15 0 0 0" Text="Настройки" VerticalAlignment="Center"/>
                                     </StackPanel>
                                 </ListViewItem>
