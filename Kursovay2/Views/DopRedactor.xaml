@@ -87,6 +87,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="\icons\home.png" Height="20" VerticalAlignment="Center"/>
                                         <Button Margin="15 0 0 0" Content="Админка" 
+                                                Style="{StaticResource ButtonGost}"
                                                 VerticalAlignment="Center"
                                                  Background="Transparent"
                                                  BorderBrush="Transparent"
@@ -98,6 +99,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                         <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
                                         <Button Margin="15 0 0 0" 
                                                 Content="Добавление шутки" 
+                                                Style="{StaticResource ButtonGost}"
                                                 VerticalAlignment="Center"
                                                 Background="Transparent"
                                                 BorderBrush="Transparent"
@@ -108,7 +110,8 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="\icons\close2.png" Height="20"
                    VerticalAlignment="Center" />
-                                        <Button Margin="15 0 0 0" Background="Transparent"
+                                            <Button Margin="15 0 0 0" Background="Transparent"
+                                                    Style="{StaticResource ButtonGost}"
                     BorderBrush="Transparent"
                     Content="Выйти"
                     VerticalAlignment="Center"
@@ -150,18 +153,25 @@ SelectedItem="{Binding SelectedStage}" Margin="5">
                         </ListView.ContextMenu>
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Тэг" Width="35" />
+                                <GridViewColumn Header="Тэг" Width="35"  
+                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
+                              />
 
                                 <GridViewColumn Header="Ебанное начало" Width="110" 
-                  />
-                                <GridViewColumn Header="Ахуенное завершение" Width="140"
-                  />
-                                <GridViewColumn Header="Название шутки/рофла" Width="150"
-                  DisplayMemberBinding="{Binding Title}"/>
-                                <GridViewColumn Header="Ответсвенное описание" Width="150"
-                  />
-                                <GridViewColumn Header="Статус бумбастик" Width="100"
-                  />
+                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+/>
+                                <GridViewColumn Header="Ахуенное завершение" Width="140" 
+                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+/>
+                                <GridViewColumn Header="Название шутки/рофла" Width="150" 
+                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+DisplayMemberBinding="{Binding Title}"/>
+                                <GridViewColumn Header="Ответсвенное описание" Width="150" 
+                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+/>
+                                <GridViewColumn Header="Статус бумбастик" Width="100" 
+                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+/>
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -174,7 +184,7 @@ SelectedItem="{Binding SelectedStage}" Margin="5">
 
                 <StackPanel>
                        
-                    <TextBlock Margin="5" Text="Описание " HorizontalAlignment="Center" />
+                    <TextBlock Foreground="White" Margin="5" Text="Описание " HorizontalAlignment="Center" />
                         <ScrollViewer HorizontalScrollBarVisibility="Auto"
                                       VerticalScrollBarVisibility="Auto">
                             <TextBox Height="200" Width="350"/>
@@ -186,7 +196,7 @@ SelectedItem="{Binding SelectedStage}" Margin="5">
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock Margin="5" Text="Изменение содержимого" />
+                    <TextBlock Margin="5" Text="Изменение содержимого" Foreground="White" />
                         <ScrollViewer HorizontalScrollBarVisibility="Auto"
               VerticalScrollBarVisibility="Auto">
                             <TextBox Height="200" Width="200"/>

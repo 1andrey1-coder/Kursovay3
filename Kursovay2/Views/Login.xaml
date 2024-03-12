@@ -139,7 +139,7 @@
                     <Image Source="/Images/logo.png"
                      Width="100" Height="100"/>
 
-                    <TextBlock Text="Билли Харингтон"
+                    <TextBlock Text="Старший стиль"
                          Foreground="White"
                          FontSize="25"
                          FontWeight="Medium"
@@ -246,7 +246,7 @@
                     <StackPanel>
                         <StackPanel>
                             <Button Content="РЕГИСТРАЦИЯ" x:Name="btnRegister" 
-                     Command="{Binding SingUp}"
+                     Command="{Binding SingUp}" Foreground="White"
                       BorderThickness="0"
                     
                       FontSize="12"
