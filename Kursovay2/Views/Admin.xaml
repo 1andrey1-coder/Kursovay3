@@ -86,7 +86,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                 </ListViewItem>
                                 <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
-                                        <Image Source="D:\GitHub\Kursovay2\icons\user.png" Height="20" VerticalAlignment="Center"/>
+                                        <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
                                         <TextBlock Margin="15 0 0 0" Text="Пользователи" VerticalAlignment="Center"/>
                                     </StackPanel>
                                 </ListViewItem>
