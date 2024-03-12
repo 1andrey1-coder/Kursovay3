@@ -40,20 +40,22 @@ namespace Kursovay2.mvvm.VM
 
                         Admin.Admin adminWindow = new Admin.Admin();
                         adminWindow.Show();
+                        Application.Current.MainWindow.Close();
                     }
                     if  (user.RoleId == 2)
                     {
                         Users userWindow = new Users();
                         userWindow.Show();
+                        Application.Current.MainWindow.Close();
                     }
                     //Admin.Admin adminWindow = new Admin.Admin();
                     //adminWindow.Show();
                    
-                    else
-                    {
-                        MessageBox.Show("Логин/пароль неправильный", "Неудачный вход",
-                            MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
+                    //else
+                    //{
+                    //    MessageBox.Show("Логин/пароль неправильный", "Неудачный вход",
+                    //        MessageBoxButton.OK, MessageBoxImage.Error);
+                    //}
 
 
 

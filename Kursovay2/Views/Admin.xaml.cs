@@ -135,7 +135,7 @@ namespace Kursovay2.Admin
         private void ClickAdminToMainWindow(object sender, RoutedEventArgs e)
         {
             
-            Admin admin = new Admin();
+            MainWindow admin = new MainWindow();
             admin.Show();
             this.Close();
 

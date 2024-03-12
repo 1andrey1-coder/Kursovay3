@@ -38,6 +38,7 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
+                    <RowDefinition Height="230"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
@@ -132,7 +133,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                     </Grid>
 
                 </StackPanel>
-                <ScrollViewer  Margin="0 200 0 0" Height="300" VerticalAlignment="Center" 
+                <ScrollViewer 
                                HorizontalScrollBarVisibility="Auto"
         Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" >
 
@@ -164,8 +165,8 @@ SelectedItem="{Binding SelectedStage}" Margin="5">
                         </ListView.View>
                     </ListView>
                 </ScrollViewer>
-                <Grid Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"
-                            VerticalAlignment="Top">
+                <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"
+                            >
                     
                 <StackPanel Orientation="Horizontal">
 
@@ -175,7 +176,7 @@ SelectedItem="{Binding SelectedStage}" Margin="5">
                     <TextBlock Margin="5" Text="Описание " HorizontalAlignment="Center" />
                         <ScrollViewer HorizontalScrollBarVisibility="Auto"
                                       VerticalScrollBarVisibility="Auto">
-                            <TextBox Height="150" Width="350"/>
+                            <TextBox Height="200" Width="350"/>
 
                         </ScrollViewer>
                 </StackPanel>
@@ -187,11 +188,11 @@ SelectedItem="{Binding SelectedStage}" Margin="5">
                     <TextBlock Margin="5" Text="Изменение содержимого" />
                         <ScrollViewer HorizontalScrollBarVisibility="Auto"
               VerticalScrollBarVisibility="Auto">
-                            <TextBox Height="150" Width="200"/>
+                            <TextBox Height="200" Width="200"/>
                         </ScrollViewer>
                     </StackPanel>
                 </StackPanel>
-                </Grid>
+                </StackPanel>
 
             </Grid>
         </Border>

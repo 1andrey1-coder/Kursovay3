@@ -99,7 +99,7 @@ namespace Kursovay2.Views
         {
             Registr.Registr registr = new Registr.Registr();
             registr.Show();
-            //this.Close();
+            Application.Current.MainWindow.Close();
         }
 
 
