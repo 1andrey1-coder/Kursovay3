@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.Gost"
         mc:Ignorable="d"
-        Title="Окно для гостя" MinHeight="450" MinWidth="750" Width="800">
+        Title="Окно для гостя" MinHeight="450" MinWidth="750" Width="800"
+         WindowStartupLocation="CenterScreen">
     <Border>
 
         <Border.Background>

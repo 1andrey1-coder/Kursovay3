@@ -9,7 +9,8 @@
         mc:Ignorable="d"
         DataContext="{DynamicResource mainVM}"
        
-        Title="MainWindow" MinHeight="450" MaxHeight="600"  MinWidth="400" MaxWidth="450">
+        Title="MainWindow" MinHeight="450" MaxHeight="600"  MinWidth="400" MaxWidth="450" 
+        WindowStartupLocation="CenterScreen">
     <Window.Resources >
         <vm:MainVM x:Key="mainVM"/>
        

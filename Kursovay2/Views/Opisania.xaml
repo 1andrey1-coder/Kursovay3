@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.Views"
         mc:Ignorable="d"
-        Title="Окно для описание каждой шутки" MinHeight="350" MinWidth="700" >
+        Title="Окно для описание каждой шутки" MinHeight="350" MinWidth="700" 
+        WindowStartupLocation="CenterScreen">
     <Border>
 
         <Border.Background>

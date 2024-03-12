@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.Admin"
         mc:Ignorable="d"
-        Title="Окно для Админа" MinHeight="450" MinWidth="750" Width="900" >
+        Title="Окно для Админа" MinHeight="450" MinWidth="750" Width="900" 
+         WindowStartupLocation="CenterScreen">
     <Border CornerRadius="10">
         <Border.Background>
             <ImageBrush ImageSource="/Images/back-image.jpg"
