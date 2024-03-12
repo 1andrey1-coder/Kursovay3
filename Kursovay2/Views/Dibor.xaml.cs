@@ -25,6 +25,9 @@ namespace Kursovay2.Views
             InitializeComponent();
         }
 
-       
+        private void Rofl(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

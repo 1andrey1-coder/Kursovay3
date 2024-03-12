@@ -38,10 +38,10 @@
                     <TextBlock Margin="0,5,0,0" HorizontalAlignment="Center" Text="Куда идем босс?"/>
                     <StackPanel Width="100" Margin="10" Background="#1B1448" HorizontalAlignment="Center">
 
-                        <Button  HorizontalAlignment="Center" Margin="0,5,0,5" Width="100" Content="Шутки/Рофлы" />
-                        <Button  HorizontalAlignment="Center" Margin="0,0,0,5" Width="100" Content="Экзотика"/>
-                        <Button  HorizontalAlignment="Center" Margin="0,0,0,5" Width="100" Content="Игры"/>
-                        <Button  HorizontalAlignment="Center" Margin="0,0,0,5" Width="100" Content="Локальное"/>
+                        <Button  HorizontalAlignment="Center" Margin="0,5,0,5" Width="100" Content="Шутки/Рофлы" Click="Rofl" />
+                        <Button  HorizontalAlignment="Center" Margin="0,0,0,5" Width="100" Content="Экзотика" Background="Gray"/>
+                        <Button  HorizontalAlignment="Center" Margin="0,0,0,5" Width="100" Content="Игры" Background="Gray"/>
+                        <Button  HorizontalAlignment="Center" Margin="0,0,0,5" Width="100" Content="Локальное" Background="Gray"/>
                     </StackPanel>
                 </StackPanel>
 
