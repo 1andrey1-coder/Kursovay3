@@ -139,7 +139,7 @@
                     <Image Source="/Images/logo.png"
                      Width="100" Height="100"/>
 
-                    <TextBlock Text="Старший стиль"
+                    <TextBlock Text="Словарь слэнга"
                          Foreground="White"
                          FontSize="25"
                          FontWeight="Medium"
