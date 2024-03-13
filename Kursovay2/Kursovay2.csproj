@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="icons\aboutpng.png" />
     <None Remove="icons\close2.png" />
     <None Remove="icons\home.png" />
     <None Remove="icons\menu.png" />
@@ -32,6 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="icons\aboutpng.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="icons\close2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
