@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Kursovay2.Gost
 {
@@ -20,10 +21,52 @@ namespace Kursovay2.Gost
     /// </summary>
     public partial class Gost : Window
     {
+        DispatcherTimer timer;
+        double panelWidth;
+        bool hidden;
         public Gost() 
         {
             InitializeComponent();
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
+            timer.Tick += Timer_Tick;
 
+            panelWidth = sidePanel.Width;
+
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (hidden)
+            {
+                sidePanel.Width += 1;
+                if (sidePanel.Width >= panelWidth)
+                {
+                    timer.Stop();
+                    hidden = false;
+                }
+            }
+            else
+            {
+                sidePanel.Width -= 1;
+                if (sidePanel.Width <= 35)
+                {
+                    timer.Stop();
+                    hidden = true;
+                }
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            timer.Start();
+        }
+
+        private void PanelHeader_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
 
 
@@ -83,6 +126,23 @@ namespace Kursovay2.Gost
 
         }
 
-        
+        private void ClickGostWindow(object sender, RoutedEventArgs e)
+        {
+            Gost gost = new Gost();
+            gost.Show();
+            this.Close();
+        }
+
+        private void ClickToMainWindow(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void ClickOpisaniaRof(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
