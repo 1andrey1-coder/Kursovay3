@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.User"
         mc:Ignorable="d"
-           Title="Окно для пользователя" MinHeight="250" Height="450"  Width="900"
+           Title="Окно для пользователя" MinHeight="450" Height="450" MinWidth="750" Width="900" 
          WindowStartupLocation="CenterScreen">
 
 
@@ -197,24 +197,24 @@ SelectedItem="{Binding SelectedStage}" Margin="5">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Тэг" Width="35"  
-                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
-                                                />
+                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
+                              />
 
-                                <GridViewColumn Header="Ебанное начало" Width="110" 
-                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-                  />
-                                <GridViewColumn Header="Ахуенное завершение" Width="140" 
-                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-                  />
+                                <GridViewColumn Header="Автор" Width="110" 
+                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+/>
+                                <GridViewColumn Header="Завершение шутки" Width="140" 
+                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+/>
                                 <GridViewColumn Header="Название шутки/рофла" Width="150" 
-                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-                  DisplayMemberBinding="{Binding Title}"/>
-                                <GridViewColumn Header="Ответсвенное описание" Width="150" 
-                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-                  />
-                                <GridViewColumn Header="Статус бумбастик" Width="100" 
-                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-                  />
+                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+DisplayMemberBinding="{Binding Title}"/>
+                                <GridViewColumn Header="Небольшое описание" Width="150" 
+                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+/>
+                                <GridViewColumn Header="Статус" Width="100" 
+                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+/>
                             </GridView>
                         </ListView.View>
                     </ListView>
