@@ -15,7 +15,7 @@
     </Page.Resources>
     <Border CornerRadius="10">
         <Border.Background >
-            <ImageBrush ImageSource="D:\GitHub\Kursovay2\Images\back-image.jpg"
+            <ImageBrush ImageSource="\Images\back-image.jpg"
                   Stretch="None"/>
         </Border.Background>
 
@@ -178,7 +178,7 @@
                        Padding="20,0,0,0">
 
                         <TextBox.Background>
-                            <ImageBrush ImageSource="D:\GitHub\Kursovay2\Images\user-icon.png"
+                            <ImageBrush ImageSource="\Images\user-icon.png"
                                   Stretch="None"
                                   AlignmentX="Left"/>
                         </TextBox.Background>
@@ -205,7 +205,7 @@
                       Padding="20,0,0,0">
                       
                         <PasswordBox.Background>
-                            <ImageBrush ImageSource="D:\GitHub\Kursovay2\Images\key-icon.png"
+                            <ImageBrush ImageSource="\Images\key-icon.png"
                                  Stretch="None"
                                  AlignmentX="Left"/>
                         </PasswordBox.Background>

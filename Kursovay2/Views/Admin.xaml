@@ -35,18 +35,52 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="70"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Column="1" Grid.Row="0">
-                    <Grid  x:Name="panelHeader" VerticalAlignment="Top" 
-                  Height="50" Background="Transparent"
+                    <Grid Margin="0 0 0 0"  x:Name="panelHeader" VerticalAlignment="Top" 
+                   Background="Transparent"
           MouseDown="PanelHeader_MouseDown">
                         <!--сделать поиск и фильтрацию-->
-                        <StackPanel Grid.Column="1" Grid.Row="0"  Orientation="Horizontal" HorizontalAlignment="Center" 
-        VerticalAlignment="Center">
+                        <StackPanel Grid.Column="1" Grid.Row="0"
+                                    Orientation="Horizontal" HorizontalAlignment="Left" 
+                                    VerticalAlignment="Center">
 
+
+
+                            <StackPanel VerticalAlignment="Bottom"  Margin="0 25 0 0" 
+                                        Orientation="Horizontal" HorizontalAlignment="Left">
+
+                                <StackPanel Margin="5" Orientation="Vertical" >
+                                    <TextBlock Text="Поиск по тегу шутки:" Foreground="White"/>
+                                    <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Width="200" Height="22" />
+                                </StackPanel>
+                                <StackPanel Margin="5" Orientation="Vertical"
+  
+  Width="159"
+  >
+                                    <TextBlock HorizontalAlignment="Center" Text="Сортировка по Эпичности" Foreground="White" />
+                                    <ComboBox ItemsSource="{Binding Sorting, UpdateSourceTrigger=PropertyChanged}" 
+SelectedItem="{Binding SelectedSorting, UpdateSourceTrigger=PropertyChanged}"/>
+                                </StackPanel>
+
+                                <StackPanel Margin="5" Orientation="Vertical" Width="75" >
+                                    <TextBlock Text="Жанр" HorizontalAlignment="Center" Foreground="White" />
+                                    <ComboBox ItemsSource="{Binding Types, UpdateSourceTrigger=PropertyChanged}" 
+SelectedItem="{Binding SelectedType, UpdateSourceTrigger=PropertyChanged}"
+DisplayMemberPath="Type1"/>
+                                </StackPanel>
+                            </StackPanel>
+
+
+
+
+                        </StackPanel>
+
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  VerticalAlignment="Top">
 
                             <TextBlock  Text="Берлога: " HorizontalAlignment="Center" 
         VerticalAlignment="Center" FontFamily="Century Gothic"
@@ -55,7 +89,8 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                    VerticalAlignment="Center" FontFamily="Century Gothic"
                    FontSize="20" FontWeight="Bold" Foreground="White"/>
                         </StackPanel>
-                        <!--сделать поиск и фильтрацию-->
+                    
+                    <!--сделать поиск и фильтрацию-->
                     </Grid>
                     
                     

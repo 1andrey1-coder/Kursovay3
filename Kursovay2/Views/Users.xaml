@@ -48,7 +48,8 @@
                    Background="Transparent"
           MouseDown="PanelHeader_MouseDown">
                         <!--сделать поиск и фильтрацию-->
-                        <StackPanel Grid.Column="1" Grid.Row="0"  Orientation="Horizontal" HorizontalAlignment="Left" 
+                        <StackPanel Grid.Column="1" Grid.Row="0" 
+                                    Orientation="Horizontal" HorizontalAlignment="Left" 
         VerticalAlignment="Center">
 
 
@@ -56,7 +57,7 @@
 
 
 
-                            <StackPanel VerticalAlignment="Bottom" Margin="0 25 0 0" Orientation="Horizontal">
+                        <StackPanel VerticalAlignment="Bottom" Margin="0 25 0 0" Orientation="Horizontal">
                                 
                         <StackPanel Margin="5" Orientation="Vertical" >
                             <TextBlock Text="Поиск по тегу шутки:" Foreground="White"/>
