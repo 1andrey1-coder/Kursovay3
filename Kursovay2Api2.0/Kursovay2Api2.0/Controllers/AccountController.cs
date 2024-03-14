@@ -200,6 +200,7 @@ namespace Kursovay2Api2._0.Controllers
                     RoleId = user.RoleId,
                 };
 
+
                 return Ok(userDTO);
             }
             else
