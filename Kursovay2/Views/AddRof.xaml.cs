@@ -1,4 +1,5 @@
-﻿using Kursovay2.Models;
+﻿using Kursovay2.API;
+using Kursovay2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,8 @@ namespace Kursovay2.AddRof
     /// </summary>
     public partial class AddRof : Window
     {
+        private readonly LoginUserDTO user;
+
         public AddRof()
         {
             InitializeComponent();
@@ -28,7 +31,7 @@ namespace Kursovay2.AddRof
 
         private void ClickObratAdmin(object sender, RoutedEventArgs e)
         {
-            Admin.Admin admin = new Admin.Admin();
+            Admin.Admin admin = new Admin.Admin(user);
             admin.Show();
             this.Close();
         }

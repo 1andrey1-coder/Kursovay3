@@ -1,4 +1,5 @@
-﻿using Kursovay2.Models;
+﻿using Kursovay2.API;
+using Kursovay2.Models;
 using Kursovay2.User;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,8 @@ namespace Kursovay2.Views
     /// </summary>
     public partial class Admini_We_ : Window
     {
+        private readonly LoginUserDTO user;
+
         public Admini_We_()
         {
             InitializeComponent();
@@ -29,7 +32,7 @@ namespace Kursovay2.Views
 
         private void VernutObrat(object sender, RoutedEventArgs e)
         {
-            Users users = new Users();
+            Users users = new Users(user);
             users.Show();
             this.Close();
         }

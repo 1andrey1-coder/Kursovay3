@@ -89,7 +89,7 @@
                             <TextBlock  Text="Берлога: " HorizontalAlignment="Center" 
  VerticalAlignment="Center" FontFamily="Century Gothic"
 FontSize="20" FontWeight="Bold" Foreground="White"/>
-                            <TextBlock  Text="{Binding LogiName}" HorizontalAlignment="Center" 
+                            <Label x:Name="labelUser"  Content="{Binding LogiName}" HorizontalAlignment="Center" 
  VerticalAlignment="Center" FontFamily="Century Gothic"
 FontSize="20" FontWeight="Bold" Foreground="White"/>
                         </StackPanel>

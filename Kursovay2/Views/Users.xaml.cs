@@ -1,4 +1,5 @@
-﻿using Kursovay2.Models;
+﻿using Kursovay2.API;
+using Kursovay2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,16 +25,39 @@ namespace Kursovay2.User
         DispatcherTimer timer;
         double panelWidth;
         bool hidden;
-        public Users()
+        private readonly LoginUserDTO user;
+        public Users(LoginUserDTO user)
         {
-            InitializeComponent(); timer = new DispatcherTimer();
+            InitializeComponent();
+            this.user = user;
+
+            DisplayUserInfo();
+            timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
             timer.Tick += Timer_Tick;
 
             panelWidth = sidePanel.Width;
 
         }
+        private async void DisplayUserInfo()
+        {
+            LoginUserDTO login1 = await Client.Instance.GetUser(user.LoginId);
 
+            if (login1 != null)
+            {
+
+                labelUser.Content = login1.LoginName;
+            }
+            else
+            {
+                labelUser.Content = "User not found";
+            }
+
+
+
+
+
+        }
         private void Timer_Tick(object sender, EventArgs e)
         {
             if (hidden)
@@ -71,8 +95,8 @@ namespace Kursovay2.User
         private void ClickUserToMainWindow(object sender, RoutedEventArgs e)
         {
           
-            User.Users user = new User.Users();
-            user.Show();
+            User.Users user2 = new User.Users(user);
+            user2.Show();
             this.Close();
         }
 

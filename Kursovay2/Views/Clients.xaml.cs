@@ -1,4 +1,5 @@
-﻿using Kursovay2.Models;
+﻿using Kursovay2.API;
+using Kursovay2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,8 @@ namespace Kursovay2.Views
     /// </summary>
     public partial class Clients : Window
     {
+        private readonly LoginUserDTO user;
+
         public Clients()
         {
             InitializeComponent();
@@ -28,7 +31,7 @@ namespace Kursovay2.Views
 
         private void ClickObrat(object sender, RoutedEventArgs e)
         {
-            Admin.Admin admin = new Admin.Admin();
+            Admin.Admin admin = new Admin.Admin(user);
             admin.Show();
             this.Close();
         }

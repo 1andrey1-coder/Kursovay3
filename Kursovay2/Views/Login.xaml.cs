@@ -25,6 +25,8 @@ namespace Kursovay2.Views
     /// </summary>
     public partial class Login : Page
     {
+        private readonly LoginUserDTO user;
+
         public Login()
         {
             InitializeComponent();
@@ -39,7 +41,7 @@ namespace Kursovay2.Views
         private void PerexodUser(object sender, RoutedEventArgs e)
         {
 
-            User.Users user = new User.Users();
+            User.Users user2 = new User.Users(user);
             //user.Show();
             //this.Close();
 
@@ -50,7 +52,7 @@ namespace Kursovay2.Views
 
         private void PerexodAdmin(object sender, RoutedEventArgs e)
         {
-            Admin.Admin admin = new Admin.Admin();
+            Admin.Admin admin = new Admin.Admin(user);
             //admin.Show();
             //this.Close();
 

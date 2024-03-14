@@ -85,7 +85,7 @@ DisplayMemberPath="Type1"/>
                             <TextBlock  Text="Берлога: " HorizontalAlignment="Center" 
         VerticalAlignment="Center" FontFamily="Century Gothic"
 FontSize="20" FontWeight="Bold" Foreground="White"/>
-                            <TextBlock Name="textBlockUserName" Text="{Binding LoginName}" HorizontalAlignment="Center" 
+                            <Label x:Name="textBlockUserName" Content="{Binding LoginName}" HorizontalAlignment="Center" 
                    VerticalAlignment="Center" FontFamily="Century Gothic"
                    FontSize="20" FontWeight="Bold" Foreground="White"/>
                         </StackPanel>

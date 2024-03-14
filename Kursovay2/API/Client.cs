@@ -86,7 +86,34 @@ namespace Kursovay2.API
         }
 
 
-     
+        public async Task<LoginUserDTO> GetUser(int id)
+        {
+
+            //var UserID = new StudentUserDTO { Id = studentUserDTO };
+            HttpResponseMessage responseId = await httpClient.GetAsync($"Account/Login/{id}");
+
+
+            //HttpResponseMessage response = await responseId.Content.ReadAsStringAsync();
+
+
+
+            //MessageBox.Show($"Ошибка при выполнении запроса. Код ошибки: {responseId.StatusCode}");
+
+
+            if (!responseId.IsSuccessStatusCode)
+            {
+                throw new Exception("Failed to retrieve user information");
+            }
+            var content = await responseId.Content.ReadAsStringAsync();
+            var userAnswer = JsonConvert.DeserializeObject<LoginUserDTO>(content);
+
+
+            return userAnswer;
+
+
+
+
+        }
 
     }
 

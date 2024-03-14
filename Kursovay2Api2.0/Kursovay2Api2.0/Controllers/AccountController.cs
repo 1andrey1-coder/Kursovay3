@@ -182,6 +182,31 @@ namespace Kursovay2Api2._0.Controllers
 
             return roflDto;
         }
+
+
+
+        [HttpGet("Login/{id}")]
+        public ActionResult<LoginUserDTO> GetUser(int id)
+        {
+            LoginUser user = _memContext.LoginUsers.FirstOrDefault(u => u.LoginId == id);
+
+
+            if (user != null)
+            {
+                LoginUserDTO userDTO = new LoginUserDTO
+                {
+                    LoginId = user.LoginId,
+                    LoginName = user.LoginName,
+                    RoleId = user.RoleId,
+                };
+
+                return Ok(userDTO);
+            }
+            else
+            {
+                return NotFound(); // Возвращаем ошибку 404 если пользователя не найден
+            }
+        }
         //// Создаем словари для соответствия цифровых значений и текстовых представлений
         //Dictionary<int, string> statusDict = new Dictionary<int, string>
         //{
