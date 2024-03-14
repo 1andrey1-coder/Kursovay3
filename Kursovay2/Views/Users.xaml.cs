@@ -142,5 +142,10 @@ namespace Kursovay2.User
         {
 
         }
+
+        private void Podskaska(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

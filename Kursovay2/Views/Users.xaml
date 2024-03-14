@@ -174,7 +174,15 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                         <TextBlock Margin="15 0 0 0" Text="Настройки" VerticalAlignment="Center"/>
                                     </StackPanel>
                                 </ListViewItem>
-                            </ListView>
+                                    <ListViewItem Height="30">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="\icons\aboutpng.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Margin="15 0 0 0" Foreground="White" Background="Transparent"
+                BorderBrush="Transparent"
+                Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListViewItem>
+                                </ListView>
                             </ScrollViewer>
 
                         </StackPanel>
