@@ -61,8 +61,8 @@
 
 
             <Setter Property="Background">
-                <Setter.Value>
-                    <ImageBrush ImageSource="Images/back-image.jpg" Stretch="Fill" />
+                <Setter.Value >
+                    <ImageBrush ImageSource="Images/дед.jpg" Stretch="Fill" />
                 </Setter.Value>
             </Setter>
 

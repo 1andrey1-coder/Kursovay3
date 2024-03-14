@@ -11,10 +11,10 @@
 
 
 
-    <Border CornerRadius="10">
-        <Border.Background>
-            <ImageBrush ImageSource="/Images/back-image.jpg"
-             Stretch="None"/>
+    <Border CornerRadius="10" >
+        <Border.Background >
+            <ImageBrush  ImageSource="/Images/дед.jpg"
+             Stretch="Fill"/>
         </Border.Background>
         <Border  CornerRadius="10"                    
  BorderThickness="2"
