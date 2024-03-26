@@ -82,7 +82,7 @@ DisplayMemberPath="Type1"/>
 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  VerticalAlignment="Top">
 
-                            <TextBlock  Text="Берлога: " HorizontalAlignment="Center" 
+                            <TextBlock  Text="Берлога:" HorizontalAlignment="Center" 
         VerticalAlignment="Center" FontFamily="Century Gothic"
 FontSize="20" FontWeight="Bold" Foreground="White"/>
                             <Label x:Name="textBlockUserName" Content="{Binding LoginName}" HorizontalAlignment="Center" 
@@ -107,6 +107,9 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                 </Button>
                                 <!--сделать вывод того кто зашел-->
                             </Grid>
+                            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                
+                           
                             <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"
   FontFamily="Century Gothic" FontSize="14" Foreground="White" 
   BorderBrush="Transparent" Background="Transparent" FontWeight="Bold">
@@ -126,8 +129,18 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                         <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
                                         <TextBlock Margin="15 0 0 0" Text="Пользователи" VerticalAlignment="Center"/>
                                     </StackPanel>
-                                </ListViewItem>
-                                <ListViewItem Height="30">
+                                    </ListViewItem>
+                                    <ListViewItem Height="30">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Margin="15 0 0 0"      
+                                                    Background="Transparent"
+                                                    Foreground="White"
+                                                    BorderBrush="Transparent"
+                                                    Content="Все шутки" Click="AllRof" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListViewItem>
+                                    <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
                                         <TextBlock Margin="15 0 0 0" Text="История шуток" VerticalAlignment="Center"/>
@@ -155,11 +168,12 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="\icons\close2.png" Height="20"
                    VerticalAlignment="Center" />
-                                        <Button Margin="15 0 0 0" Style="{StaticResource ButtonGost}" Background="Transparent"
+                                        <Button Margin="15 0 0 0" Style="{StaticResource ButtonGost}" 
+                                                Background="Transparent"
                     BorderBrush="Transparent"
                     Content="Выйти"
                     VerticalAlignment="Center"
-                    Click="ClickAdminToMainWindow"/>
+                    Click="ClickToMainWindow"/>
                                     </StackPanel>
                                 </ListViewItem>
                                 <!--<ListViewItem Height="30">
@@ -176,6 +190,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                 </ListViewItem>
                                 
                             </ListView>
+                            </ScrollViewer>
                         </StackPanel>
 
                     </Grid>

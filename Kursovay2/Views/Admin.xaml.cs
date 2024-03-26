@@ -144,7 +144,7 @@ namespace Kursovay2.Admin
         private void ClickAdminToMainWindow(object sender, RoutedEventArgs e)
         {
             
-            MainWindow admin = new MainWindow();
+            Admin admin = new Admin(user);
             admin.Show();
             this.Close();
 
@@ -160,7 +160,7 @@ namespace Kursovay2.Admin
 
         private void AllRof(object sender, RoutedEventArgs e)
         {
-            Views.AllRof allRof = new Views.AllRof();
+            AllRof allRof = new AllRof();
             allRof.Show();
             this.Close();
         }
@@ -169,6 +169,13 @@ namespace Kursovay2.Admin
         {
             Views.DopRedactor dopRedactor = new Views.DopRedactor();
             dopRedactor.Show();
+            this.Close();
+        }
+
+        private void ClickToMainWindow(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
     }
