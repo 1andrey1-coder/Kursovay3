@@ -152,6 +152,12 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                         </StackPanel>
                                     </ListViewItem>
                                     <ListViewItem Height="30">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
+                                            <TextBlock Margin="15 0 0 0" Text="Легенды" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListViewItem>
+                                    <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="\icons\close2.png" Height="20"
                    VerticalAlignment="Center" />
