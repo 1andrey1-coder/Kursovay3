@@ -22,6 +22,7 @@ namespace Kursovay2.Views
         public BigPodskaska()
         {
             InitializeComponent();
+
         }
     }
 }
