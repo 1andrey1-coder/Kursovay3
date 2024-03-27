@@ -4,6 +4,8 @@ using ApiDB.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
+using XSystem.Security.Cryptography;
 
 namespace Kursovay2Api2._0.Controllers
 {
@@ -25,6 +27,49 @@ namespace Kursovay2Api2._0.Controllers
             var userName = User.Identity.Name;
 
             return userName;
+        }
+
+        //[HttpPost]
+        //public async Task<IActionResult> RegisterUser(LoginUserDTO userDto)
+        //{
+        //    var user = new LoginUser
+        //    {
+        //        LoginName = userDto.LoginName,
+        //        Mail = userDto.Mail,
+        //        RoleId = 2
+        //    };
+
+        //    var password = GenerateRandomPassword();
+
+        //    user.LoginPassword = HashPassword(password); // Хэшируем пароль перед сохранением в базу данных
+
+        //    _memContext.LoginUsers.Add(user);
+        //    _memContext.SaveChanges();
+
+        //    // Отправляем пароль на почту
+        //    var emailService = new EmailService();
+        //    await emailService.SendEmailAsync(userDto.Mail, "Регистрация", $"Ваш пароль: {password}");
+
+        //    return Ok();
+        //}
+
+        private string GenerateRandomPassword()
+        {
+            string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            var random = new Random();
+            var password = new string(
+                Enumerable.Repeat(chars, 8)
+                          .Select(s => s[random.Next(s.Length)])
+                          .ToArray());
+            return password;
+        }
+
+        private string HashPassword(string password)
+        {
+            var sha256 = new SHA256Managed();
+            byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+            byte[] hashedPasswordBytes = sha256.ComputeHash(passwordBytes);
+            return Convert.ToBase64String(hashedPasswordBytes);
         }
 
         [HttpPost("Login")]
@@ -54,6 +99,7 @@ namespace Kursovay2Api2._0.Controllers
         {
             try
             {
+
                 // Проверка наличия пользователя с таким логином
                 var ProverkaUser = await _memContext.LoginUsers.
                     FirstOrDefaultAsync(u => u.LoginName == registerUser.Login);
@@ -62,33 +108,73 @@ namespace Kursovay2Api2._0.Controllers
                 {
                     return BadRequest("Пользователь с таким логином уже существует");
                 }
-                else
+
+                var user = new LoginUser
                 {
-                    // Создание нового объекта LoginUser и добавление его в контекст
-                    var newUser = new LoginUser
-                    {
-                        LoginId = registerUser.Id,
-                        LoginName = registerUser.Login,
-                        LoginPassword = registerUser.Password,
-                        RoleId = 2
+                    LoginId = registerUser.Id,
+                    LoginName = registerUser.Login,
+                    Mail = registerUser.Mail,
+                    RoleId = 2
+                };
 
-                    };
+                var password = GenerateRandomPassword();
 
+                user.LoginPassword = HashPassword(password); // Хэшируем пароль перед сохранением в базу данных
 
-                    _memContext.LoginUsers.Add(newUser);
-                    await _memContext.SaveChangesAsync();
-
-                    //Возвращаем созданный объект в виде DTO для отправки ответа клиенту
+                _memContext.LoginUsers.Add(user);
+                _memContext.SaveChanges();
+                //Возвращаем созданный объект в виде DTO для отправки ответа клиенту
                     var loginUserDTO = new LoginUserDTO
                     {
-                        LoginId = newUser.LoginId,
-                        LoginName = newUser.LoginName,
-                        LoginPassword = newUser.LoginPassword,
-                        RoleId = newUser.RoleId
+                        LoginId = user.LoginId,
+                        LoginName = user.LoginName,
+                        LoginPassword = user.LoginPassword,
+                        Mail = registerUser.Mail,
+                        RoleId = user.RoleId
                     };
 
-                    return Ok(loginUserDTO);
-                }
+              
+                // Отправляем пароль на почту
+                var emailService = new EmailService();
+                await emailService.SendEmailAsync(registerUser.Mail, "Регистрация", $"Ваш пароль: {password}");
+
+                return Ok(loginUserDTO);
+
+                //// Проверка наличия пользователя с таким логином
+                //var ProverkaUser = await _memContext.LoginUsers.
+                //    FirstOrDefaultAsync(u => u.LoginName == registerUser.Login);
+
+                //if (ProverkaUser != null)
+                //{
+                //    return BadRequest("Пользователь с таким логином уже существует");
+                //}
+                //else
+                //{
+                //    // Создание нового объекта LoginUser и добавление его в контекст
+                //    var newUser = new LoginUser
+                //    {
+                //        LoginId = registerUser.Id,
+                //        LoginName = registerUser.Login,
+                //        LoginPassword = registerUser.Password,
+                //        RoleId = 2
+
+                //    };
+
+
+                //    _memContext.LoginUsers.Add(newUser);
+                //    await _memContext.SaveChangesAsync();
+
+                //    //Возвращаем созданный объект в виде DTO для отправки ответа клиенту
+                //    var loginUserDTO = new LoginUserDTO
+                //    {
+                //        LoginId = newUser.LoginId,
+                //        LoginName = newUser.LoginName,
+                //        LoginPassword = newUser.LoginPassword,
+                //        RoleId = newUser.RoleId
+                //    };
+
+                //    return Ok(loginUserDTO);
+                //}
 
 
             }
@@ -208,35 +294,7 @@ namespace Kursovay2Api2._0.Controllers
                 return NotFound(); // Возвращаем ошибку 404 если пользователя не найден
             }
         }
-        //// Создаем словари для соответствия цифровых значений и текстовых представлений
-        //Dictionary<int, string> statusDict = new Dictionary<int, string>
-        //{
-        //    { 1, "Active" },
-        //    { 2, "Inactive" },
-        //    // добавьте остальные статусы
-        //};
-
-        //// Здесь также можно создать словари для других полей (genre, start и т.д.)
-
-        //// Получаем текстовое представление для каждого поля
-        //string status = statusDict.ContainsKey(user.RoflStatusId) ? statusDict[user.RoflStatusId] : "Unknown";
-        //// Аналогично для остальных полей
-
-        //// Создаем экземпляр DTO и заполняем его данными из найденного пользователя
-        //var roflDto = new RoflDTO
-        //{
-        //    RoflName = user.RoflName,
-        //    RoflDateTime = user.RoflDateTime,
-        //    RoflEndId = $"{user.RoflEndId} - {endDict[user.RoflEndId]}",
-        //    RoflGenreId = $"{user.RoflGenreId} - {genreDict[user.RoflGenreId]}",
-        //    RoflId = user.RoflId,
-        //    RoflImage = user.RoflImage,
-        //    RoflOpisanie = user.RoflOpisanie,
-        //    RoflStartId = $"{user.RoflStartId} - {startDict[user.RoflStartId]}",
-        //    RoflStatusId = $"{user.RoflStatusId} - {status}",
-        //};
-
-        //return roflDto;
+    
 
     }
 }

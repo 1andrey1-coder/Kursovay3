@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using ApiDB.DB;
 
-namespace ApiDB.DB;
+namespace ApiDB;
 
 public partial class LoginUser
 {
@@ -12,6 +13,8 @@ public partial class LoginUser
     public string? LoginPassword { get; set; }
 
     public int? RoleId { get; set; }
+
+    public string? Mail { get; set; }
 
     public virtual Role? Role { get; set; }
 }
