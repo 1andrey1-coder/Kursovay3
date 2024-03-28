@@ -4,6 +4,7 @@ using ApiDB.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Mail;
 using System.Text;
 using XSystem.Security.Cryptography;
 
@@ -102,7 +103,7 @@ namespace Kursovay2Api2._0.Controllers
 
                 // Проверка наличия пользователя с таким логином
                 var ProverkaUser = await _memContext.LoginUsers.
-                    FirstOrDefaultAsync(u => u.LoginName == registerUser.Login);
+                    FirstOrDefaultAsync(u => u.Mail == registerUser.Mail);
 
                 if (ProverkaUser != null)
                 {
@@ -135,8 +136,12 @@ namespace Kursovay2Api2._0.Controllers
 
               
                 // Отправляем пароль на почту
-                var emailService = new EmailService();
-                await emailService.SendEmailAsync(registerUser.Mail, "Регистрация", $"Ваш пароль: {password}");
+                //СингТон
+                var emailService = new SmtpClient();
+                emailService.Host = "smtp.mail.ru";
+                emailService.Port = 465;
+                emailService.Credentials = new System.Net.NetworkCredential("from mail", "pass");
+                await emailService.SendMailAsync("from mail", registerUser.Mail, "Регистрация", $"Ваш пароль: {password}");
 
                 return Ok(loginUserDTO);
 
