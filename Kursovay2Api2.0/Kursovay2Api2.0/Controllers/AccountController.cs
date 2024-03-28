@@ -15,9 +15,12 @@ namespace Kursovay2Api2._0.Controllers
     public class AccountController : ControllerBase
     {
         private readonly MemContext _memContext;
-        public AccountController(MemContext userService)
+        private readonly MailService mail;
+
+        public AccountController(MemContext userService, MailService mail)
         {
             _memContext = userService;
+            this.mail = mail;
         }
 
         [HttpGet("Name")]
@@ -137,11 +140,8 @@ namespace Kursovay2Api2._0.Controllers
               
                 // Отправляем пароль на почту
                 //СингТон
-                var emailService = new SmtpClient();
-                emailService.Host = "smtp.mail.ru";
-                emailService.Port = 465;
-                emailService.Credentials = new System.Net.NetworkCredential("from mail", "pass");
-                await emailService.SendMailAsync("from mail", registerUser.Mail, "Регистрация", $"Ваш пароль: {password}");
+               
+                await mail.SendMailAsync("from mail", registerUser.Mail, "Регистрация", $"Ваш пароль: {password}");
 
                 return Ok(loginUserDTO);
 
