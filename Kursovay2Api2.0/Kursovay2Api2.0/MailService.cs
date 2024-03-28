@@ -6,7 +6,8 @@ public class MailService
     public MailService()
     {
         emailService.Host = "smtp.mail.ru";
-        emailService.Port = 465;
+        emailService.Port = 587;
+        //465
         emailService.Credentials = new System.Net.NetworkCredential("from mail", "pass");
     }
 
