@@ -121,6 +121,7 @@ namespace Kursovay2Api2._0.Controllers
                     RoleId = 2
                 };
 
+
                 var password = GenerateRandomPassword();
 
                 user.LoginPassword = HashPassword(password); // Хэшируем пароль перед сохранением в базу данных
