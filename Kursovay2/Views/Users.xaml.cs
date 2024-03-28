@@ -122,19 +122,19 @@ namespace Kursovay2.User
             this.Close();
         }
 
-        private void ClickGey(object sender, RoutedEventArgs e)
-        {
-            Views.Gey gey = new Views.Gey();
-            gey.Show();
-            this.Close();
-        }
+        //private void ClickGey(object sender, RoutedEventArgs e)
+        //{
+        //    Views.Gey gey = new Views.Gey();
+        //    gey.Show();
+        //    this.Close();
+        //}
 
-        private void ClickNewMemNow(object sender, RoutedEventArgs e)
-        {
-            Views.NewMemNow newMemNow = new Views.NewMemNow();
-            newMemNow.Show();
-            this.Close();
-        }
+        //private void ClickNewMemNow(object sender, RoutedEventArgs e)
+        //{
+        //    Views.NewMemNow newMemNow = new Views.NewMemNow();
+        //    newMemNow.Show();
+        //    this.Close();
+        //}
 
         private void ClickNews(object sender, RoutedEventArgs e)
         {

@@ -7,11 +7,10 @@
         mc:Ignorable="d"
         Title="Окно для не модного сейчас" Height="450" Width="800"
          WindowStartupLocation="CenterScreen">
-    <Border>
-
+    <Border CornerRadius="10">
         <Border.Background>
             <ImageBrush ImageSource="/Images/дед.jpg"
-                     Stretch="Fill"/>
+             Stretch="Fill"/>
         </Border.Background>
         <Border  CornerRadius="10"                    
  BorderThickness="2"
@@ -31,10 +30,140 @@
                 </LinearGradientBrush>
             </Border.Background>
             <Grid >
-                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"  Width="130">
-                    <Button Height="30" Content="Вернуться обратно" Click="VernutObrat" />
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Column="1" Grid.Row="0">
+                    <Grid  x:Name="panelHeader" VerticalAlignment="Top" 
+                   Background="Transparent"
+          MouseDown="PanelHeader_MouseDown">
+                        <!--сделать поиск и фильтрацию-->
+                        <StackPanel Grid.Column="1" Grid.Row="0" 
+                                    Orientation="Horizontal" HorizontalAlignment="Left" 
+        VerticalAlignment="Center">
+
+
+
+
+
+
+                            <StackPanel VerticalAlignment="Bottom" Margin="0 25 0 0" Orientation="Horizontal">
+
+                                <StackPanel Margin="5" Orientation="Vertical" >
+                                    <TextBlock Text="Поиск по названию:" Foreground="White"/>
+                                    <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Width="200" Height="22" />
+                                </StackPanel>
+
+                            </StackPanel>
+
+
+
+
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  VerticalAlignment="Top">
+
+                            <TextBlock  Text="Берлога:" HorizontalAlignment="Center" 
+        VerticalAlignment="Center" FontFamily="Century Gothic"
+FontSize="20" FontWeight="Bold" Foreground="White"/>
+                            <Label x:Name="textBlockUserName" Content="{Binding LoginName}" HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" FontFamily="Century Gothic"
+                   FontSize="20" FontWeight="Bold" Foreground="White"/>
+                        </StackPanel>
+                        <!--сделать поиск и фильтрацию-->
+                    </Grid>
+
+
                 </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="0"  >
+                    <Grid x:Name="sidePanel" Background="Transparent" HorizontalAlignment="Left" Width="150">
+                        <StackPanel>
+                            <Grid Height="50" Background="Transparent">
+                                <!--сделать вывод того кто зашел-->
+                                <Button HorizontalAlignment="Right" Height="25" 
+    VerticalAlignment="Top" Background="Transparent" 
+    BorderBrush="Transparent" Click="Button_Click">
+                                    <Image Source="\icons\menu.png"/>
+                                </Button>
+                                <!--сделать вывод того кто зашел-->
+                            </Grid>
+
+                            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+
+                                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+  FontFamily="Century Gothic" FontSize="14" Foreground="White" 
+  BorderBrush="Transparent" Background="Transparent" FontWeight="Bold">
+
+                                    <ListViewItem Height="30">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="\icons\home.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Margin="15 0 0 0" Content="Главная" 
+             Style="{StaticResource ButtonGost}"
+             VerticalAlignment="Center"
+             Background="Transparent"
+             BorderBrush="Transparent"
+             Click="ClickGostWindow"/>
+                                        </StackPanel>
+                                    </ListViewItem>
+
+                                    <ListViewItem Height="30">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="\icons\close2.png" Height="20"
+                   VerticalAlignment="Center" />
+                                            <Button Margin="15 0 0 0" Style="{StaticResource ButtonGost}" Background="Transparent"
+                    BorderBrush="Transparent"
+                    Content="Выйти"
+                    VerticalAlignment="Center"
+                    Click="ClickToAdmin"/>
+                                        </StackPanel>
+                                    </ListViewItem>
+                                    <!--<ListViewItem Height="30">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="D:\GitHub\Kursovay2\icons\spam.png" Height="20" VerticalAlignment="Center"/>
+            <TextBlock Margin="15 0 0 0" Text="Spam" VerticalAlignment="Center"/>
+        </StackPanel>
+    </ListViewItem>-->
+                                    <ListViewItem Height="30">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="\icons\setting.png" Height="20" VerticalAlignment="Center"/>
+                                            <TextBlock Margin="15 0 0 0" Text="Настройки" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListViewItem>
+                                    <ListViewItem Height="30">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="\icons\aboutpng.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Margin="15 0 0 0" Foreground="White" Background="Transparent"
+BorderBrush="Transparent"
+Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListViewItem>
+                                </ListView>
+                            </ScrollViewer>
+
+                        </StackPanel>
+
+                    </Grid>
+
+                </StackPanel>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
+        Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" >
+
+                    <!--Сделать в виде карточек, вывод всех шуток-->
+
+
+
+
+
+
+
+                </ScrollViewer>
             </Grid>
         </Border>
     </Border>
+
 </Window>

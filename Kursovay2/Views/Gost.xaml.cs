@@ -101,19 +101,19 @@ namespace Kursovay2.Gost
             this.Close();
         }
 
-        private void ClickNewMemNow(object sender, RoutedEventArgs e)
-        {
-            Views.NewMemNow newMemNow = new Views.NewMemNow();
-            newMemNow.Show();
-            this.Close();
-        }
+        //private void ClickNewMemNow(object sender, RoutedEventArgs e)
+        //{
+        //    Views.NewMemNow newMemNow = new Views.NewMemNow();
+        //    newMemNow.Show();
+        //    this.Close();
+        //}
 
-        private void ClickNewsGost(object sender, RoutedEventArgs e)
-        {
-            Views.NewsGost news = new Views.NewsGost();
-            news.Show();
-            this.Close();
-        }
+        //private void ClickNewsGost(object sender, RoutedEventArgs e)
+        //{
+        //    Views.NewsGost news = new Views.NewsGost();
+        //    news.Show();
+        //    this.Close();
+        //}
 
         private void ClickNostal(object sender, RoutedEventArgs e)
         {
