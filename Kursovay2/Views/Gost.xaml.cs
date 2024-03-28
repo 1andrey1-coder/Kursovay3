@@ -115,12 +115,12 @@ namespace Kursovay2.Gost
         //    this.Close();
         //}
 
-        private void ClickNostal(object sender, RoutedEventArgs e)
-        {
-            Views.Nostal nostal = new Views.Nostal();
-            nostal.Show();
-            this.Close();
-        }
+        //private void ClickNostal(object sender, RoutedEventArgs e)
+        //{
+        //    Views.Nostal nostal = new Views.Nostal();
+        //    nostal.Show();
+        //    this.Close();
+        //}
 
         private void ClickMebl(object sender, RoutedEventArgs e)
         {

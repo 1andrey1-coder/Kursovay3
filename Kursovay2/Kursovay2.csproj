@@ -18,7 +18,9 @@
     <None Remove="icons\spam.png" />
     <None Remove="icons\user.png" />
     <None Remove="Images\back-image.jpg" />
+    <None Remove="Images\gmail.png" />
     <None Remove="Images\key-icon.png" />
+    <None Remove="Images\key.png" />
     <None Remove="Images\logo.png" />
     <None Remove="Images\user-icon.png" />
     <None Remove="Images\дед.jpg" />
@@ -64,7 +66,13 @@
     <Resource Include="Images\back-image.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\gmail.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\key-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\key.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\logo.png">

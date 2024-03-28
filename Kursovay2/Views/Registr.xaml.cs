@@ -23,7 +23,7 @@ namespace Kursovay2.Registr
     public partial class Registr : Window
     {
         public string Login { get; set; }
-        public string Password { get; set; }
+        public string Mail { get; set; }
 
         public Registr() 
         {
@@ -41,7 +41,7 @@ namespace Kursovay2.Registr
                 //    return;
                 //}
 
-                var user = await Client.Instance.UserRegister(txtUser.Text, txtPassword.Password);
+                var user = await Client.Instance.UserRegister(txtMail.Text, txtLogin.Text);
                 MainWindow mainWindow = new MainWindow();
                 MessageBox.Show("Вы зарегистрировались", "Успешная регистрация",
                     MessageBoxButton.OK, MessageBoxImage.Information);

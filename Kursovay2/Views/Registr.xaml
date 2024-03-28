@@ -137,14 +137,14 @@
                     <Image Source="/Images/logo.png"
                      Width="100" Height="100"/>
 
-                    <TextBlock Text="Билли Харингтон"
+                    <TextBlock Text="Словарь слэнга"
                          Foreground="White"
                          FontSize="25"
                          FontWeight="Medium"
                          FontFamily="Montserrat"
                          HorizontalAlignment="Center"/>
 
-                    <TextBlock Text="Влажная регистрация"
+                    <TextBlock Text="Регистрация"
                          Foreground="LightGray"
                          FontSize="12"
                          FontWeight="Medium"
@@ -154,15 +154,15 @@
                          Margin="0,5,0,0"/>
 
 
-                    <TextBlock Text="Логин"
+                    <TextBlock Text="Почта"
                          Foreground="DarkGray"
                          FontSize="12"
                          FontWeight="Medium"
                          FontFamily="Montserrat"                             
                          Margin="0,35,0,0"/>
 
-                    <TextBox x:Name="txtUser"
-                       Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"
+                    <TextBox x:Name="txtMail"
+                       Text="{Binding Mail, UpdateSourceTrigger=PropertyChanged}"
                        FontSize="13"
                        FontWeight="Medium"
                        FontFamily="Montserrat"                            
@@ -173,25 +173,25 @@
                        Height="28"
                        VerticalContentAlignment="Center"
                        Margin="0,5,0,0"
-                       Padding="20,0,0,0">
+                       Padding="20,0,0,0" >
 
                         <TextBox.Background>
-                            <ImageBrush ImageSource="/Images/user-icon.png"
+                            <ImageBrush ImageSource="/Images/gmail.png"
                                   Stretch="None"
                                   AlignmentX="Left"/>
                         </TextBox.Background>
                     </TextBox>
 
-                    <TextBlock Text="Пароль"
+                    <TextBlock Text="Логин"
                          Foreground="DarkGray"
                          FontSize="12"
                          FontWeight="Medium"
                          FontFamily="Montserrat"                             
                          Margin="0,15,0,0"/>
 
-                    <PasswordBox x:Name="txtPassword"
+                    <TextBox x:Name="txtLogin"
                     
-                                                     
+                      Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"                              
                       FontSize="13"
                       FontWeight="Medium"
                       FontFamily="Montserrat"                            
@@ -200,14 +200,15 @@
                       BorderBrush="DarkGray"
                       BorderThickness="0,0,0,2"                           
                       VerticalContentAlignment="Center"                          
-                      Padding="20,0,0,0">
+                      Padding="20,0,0,0"
+                      Height="28">
 
-                        <PasswordBox.Background>
-                            <ImageBrush ImageSource="/Images/key-icon.png"
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Images/key.png"
                                  Stretch="None"
                                  AlignmentX="Left"/>
-                        </PasswordBox.Background>
-                    </PasswordBox>
+                        </TextBox.Background>
+                    </TextBox>
                     <!--<TextBlock Text="Повторите пароль"
                              Foreground="DarkGray"
                              FontSize="12"
