@@ -78,5 +78,20 @@ namespace Kursovay2.Views
             users.Show();
             this.Close();
         }
+
+        private void ClickGostWindow(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClickToMainWindow(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Podskaska(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

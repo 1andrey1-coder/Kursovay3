@@ -88,5 +88,10 @@ namespace Kursovay2.Views
         {
 
         }
+
+        private void ClickGostWindow(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
