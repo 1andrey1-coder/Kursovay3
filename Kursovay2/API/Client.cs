@@ -34,12 +34,12 @@ namespace Kursovay2.API
 
         //private readonly HttpClient _httpClient;
 
-        public async Task<LoginUserDTO> UserLogin(string login, string password)
+        public async Task<LoginUserDTO> UserLogin(string login, string mail)
         {
             var loginuUser = new LoginName
             {
                 Login = login,
-                Password = password
+                Mail = mail
             };
             //Это хрень передает данные обратно в Api
             //("UserBank/GetAccountLogin", httpContent) 
