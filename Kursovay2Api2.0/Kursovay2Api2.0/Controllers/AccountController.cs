@@ -142,7 +142,7 @@ namespace Kursovay2Api2._0.Controllers
                 // Отправляем пароль на почту
                 //СингТон
                
-                await mail.SendMailAsync("from mail", registerUser.Mail, "Регистрация", $"Ваш пароль: {password}");
+                await mail.SendMailAsync("ilchenkor17@mail.ru", registerUser.Mail, "Регистрация", $"Ваш пароль: {password}");
 
                 return Ok(loginUserDTO);
 
