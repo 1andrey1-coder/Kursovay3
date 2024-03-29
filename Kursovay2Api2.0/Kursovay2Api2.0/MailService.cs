@@ -8,7 +8,7 @@ public class MailService
         emailService.Host = "smtp.mail.ru";
         emailService.Port = 465;
         //587
-        emailService.Credentials = new System.Net.NetworkCredential("ilchenkor17@mail.ru", "Myl1ttledvmk3003@");
+        emailService.Credentials = new System.Net.NetworkCredential("ilchenkor17@mail.ru", "EHCtSAuDaeqR3WhBsyfT");
     }
 
     internal async Task SendMailAsync(string v1, string? mail, string v2, string v3)
