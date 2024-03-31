@@ -67,7 +67,7 @@ namespace Kursovay2Api2._0.Controllers
                           .ToArray());
             return password;
         }
-
+        //хэширую пароль в бд
         private string HashPassword(string password)
         {
             var sha256 = new SHA256Managed();
@@ -75,15 +75,17 @@ namespace Kursovay2Api2._0.Controllers
             byte[] hashedPasswordBytes = sha256.ComputeHash(passwordBytes);
             return Convert.ToBase64String(hashedPasswordBytes);
         }
-        private string DecryptHashedPassword(string hashedPassword)
-        {
-            byte[] hashedPasswordBytes = Convert.FromBase64String(hashedPassword);
+        //получаю хэшированый пароль и делаю обратное хеширование
+        //private string DecryptHashedPassword(string hashedPassword)
+        //{
+        //    byte[] hashedPasswordBytes = Convert.FromBase64String(hashedPassword);
 
-            var sha256 = new SHA256Managed();
-            byte[] decryptedPasswordBytes = sha256.ComputeHash(hashedPasswordBytes);
+        //    var sha256 = new SHA256Managed();
+        //    byte[] decryptedPasswordBytes = sha256.ComputeHash(hashedPasswordBytes);
 
-            return Encoding.UTF8.GetString(decryptedPasswordBytes);
-        }
+        //    return Encoding.UTF8.GetString(decryptedPasswordBytes);
+        //}
+
         //public static bool VerifyPassword(string inputPassword, string storedPassword)
         //{
         //    return HashPassword(inputPassword) == storedPassword;
@@ -91,10 +93,11 @@ namespace Kursovay2Api2._0.Controllers
         [HttpPost("Login")]
         public ActionResult<LoginUserDTO> GetActionLogin(UserLoginDTO userData)
         {
-            var user = _memContext.LoginUsers.FirstOrDefault(u => u.Mail == userData.Mail 
-            && u.LoginPassword == userData.Password);
+            var hashedPassword = HashPassword(userData.Password);
+            var user = _memContext.LoginUsers.FirstOrDefault(u => u.Mail == userData.Mail
+            && u.LoginPassword == hashedPassword); // предполагается, что в базе сохраняется хэшированный пароль
 
-            if (user != null && DecryptHashedPassword(userData.Password) == user.LoginPassword)
+            if (user != null)
             {
                 return new LoginUserDTO
                 {
@@ -103,13 +106,12 @@ namespace Kursovay2Api2._0.Controllers
                     LoginId = user.LoginId,
                     RoleId = user.RoleId,
                 };
-
             }
             else
             {
                 return BadRequest("Логин/пароль неправильный");
             }
-            
+
         }
         //Nwgf1pr9 16 юзер пароль
         [HttpPost("Register")]

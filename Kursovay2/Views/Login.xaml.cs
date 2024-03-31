@@ -31,7 +31,7 @@ namespace Kursovay2.Views
         {
             InitializeComponent();
             var vm = (LoginVM)DataContext;
-            //vm.RegisterPassBox(loginBox);
+            vm.RegisterPassBox(passwordBox);
         }
 
        

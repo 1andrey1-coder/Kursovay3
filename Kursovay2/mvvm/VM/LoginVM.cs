@@ -15,16 +15,16 @@ namespace Kursovay2.mvvm.VM
     public class LoginVM:BaseVM
     {
         public string mail { get; set; }
-        public string login { get; set; }
+        //public string login { get; set; }
 
-        //PasswordBox loginBox;
-       
+        PasswordBox passwordBox;
 
-        //internal void RegisterPassBox(PasswordBox passwordBox)
-        //{
-        //    this.loginBox = passwordBox;
-        //}
-        
+
+        internal void RegisterPassBox(PasswordBox passwordBox)
+        {
+            this.passwordBox = passwordBox;
+        }
+
         public CommandVM SingIn { get; set; }
         public CommandVM SingUp { get; set; }
       
@@ -35,7 +35,7 @@ namespace Kursovay2.mvvm.VM
             {
                 try
                 {
-                    var user = await Client.Instance.UserLogin(mail, login);
+                    var user = await Client.Instance.UserLogin(mail, passwordBox.Password);
                     if (user.RoleId == 1)
                     {
 
