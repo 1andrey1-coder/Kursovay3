@@ -23,6 +23,7 @@ namespace Kursovay2.mvvm.VM
         internal void RegisterPassBox(PasswordBox passwordBox)
         {
             this.passwordBox = passwordBox;
+          
         }
 
         public CommandVM SingIn { get; set; }
@@ -35,7 +36,7 @@ namespace Kursovay2.mvvm.VM
             {
                 try
                 {
-                    var user = await Client.Instance.UserLogin(mail, passwordBox.Password);
+                    var user = await Client.Instance.UserLogin(passwordBox.Password, mail);
                     if (user.RoleId == 1)
                     {
 
