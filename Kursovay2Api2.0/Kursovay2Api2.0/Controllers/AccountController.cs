@@ -76,13 +76,17 @@ namespace Kursovay2Api2._0.Controllers
             return Convert.ToBase64String(hashedPasswordBytes);
         }
 
+        //public static bool VerifyPassword(string inputPassword, string storedPassword)
+        //{
+        //    return HashPassword(inputPassword) == storedPassword;
+        //}
         [HttpPost("Login")]
         public ActionResult<LoginUserDTO> GetActionLogin(UserLoginDTO userData)
         {
             var user = _memContext.LoginUsers.FirstOrDefault(u => u.Mail == userData.Mail 
             && u.LoginPassword == userData.Password);
 
-            if (user != null)
+            if (user != null && HashPassword(userData.Password) == user.LoginPassword)
             {
                 return new LoginUserDTO
                 {
@@ -97,8 +101,9 @@ namespace Kursovay2Api2._0.Controllers
             {
                 return BadRequest("Логин/пароль неправильный");
             }
-
+            
         }
+        //Nwgf1pr9 16 юзер пароль
         [HttpPost("Register")]
         public async Task<ActionResult<LoginUserDTO>> GetActionRegister(RegisterDTO registerUser)
         {
