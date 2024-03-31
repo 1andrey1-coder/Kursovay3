@@ -79,13 +79,14 @@ namespace Kursovay2Api2._0.Controllers
         [HttpPost("Login")]
         public ActionResult<LoginUserDTO> GetActionLogin(UserLoginDTO userData)
         {
-            var user = _memContext.LoginUsers.FirstOrDefault(u => u.LoginName == userData.Login && u.LoginPassword == userData.Password);
+            var user = _memContext.LoginUsers.FirstOrDefault(u => u.Mail == userData.Mail 
+            && u.LoginPassword == userData.Password);
 
             if (user != null)
             {
                 return new LoginUserDTO
                 {
-                    LoginName = user.LoginName,
+                    Mail = user.Mail,
                     LoginPassword = user.LoginPassword,
                     LoginId = user.LoginId,
                     RoleId = user.RoleId,
