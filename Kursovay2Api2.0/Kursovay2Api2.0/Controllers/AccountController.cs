@@ -1,7 +1,7 @@
 ﻿using ApiDB;
 using ApiDB.DB;
 using ApiDB.DTO;
-using Microsoft.AspNetCore.Http;
+using EmailSenderSMTP;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net.Mail;
@@ -161,11 +161,15 @@ namespace Kursovay2Api2._0.Controllers
                         RoleId = user.RoleId
                     };
 
-              
+
                 // Отправляем пароль на почту
                 //СингТон
-               
-                await mail.Send("ilchenkor17@mail.ru", registerUser.Mail, "Регистрация", $"Ваш пароль: {password}");
+
+
+                MailMessage message = EmailMessageService.sender.CreateMailMessageBodyIsText("Словарь сленга", registerUser.Mail, "Регистрация", $"Ваш пароль: {password}");
+                EmailMessageService.sender.SendMail(message);
+                
+                //await mail.Send("ilchenkor17@mail.ru", registerUser.Mail, "Регистрация", $"Ваш пароль: {password}");
 
                 return Ok(loginUserDTO);
 
