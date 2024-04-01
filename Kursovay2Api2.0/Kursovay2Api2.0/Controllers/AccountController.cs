@@ -338,7 +338,7 @@ namespace Kursovay2Api2._0.Controllers
 
             if (user == null)
             {
-                return NotFound("User not found");
+                return NotFound("Почта не найдена");
             }
 
             // Генерация нового пароля
