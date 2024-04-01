@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Kursovay2.Views"
         mc:Ignorable="d"
         Title="Подсказка" MinHeight="250" Height="250" MinWidth="250" Width="400" 
-         WindowStartupLocation="CenterScreen">
+         WindowStartupLocation="CenterScreen"
+        WindowStyle="None" AllowsTransparency="True">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

@@ -10,7 +10,8 @@
         DataContext="{DynamicResource mainVM}"
        
         Title="MainWindow" MinHeight="450" MaxHeight="600"  MinWidth="400" MaxWidth="450" 
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" AllowsTransparency="True">
     <Window.Resources >
         <vm:MainVM x:Key="mainVM"/>
        

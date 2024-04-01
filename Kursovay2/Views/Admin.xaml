@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Kursovay2.Admin"
         mc:Ignorable="d"
         Title="Окно для Админа" MinHeight="450" Height="450" MinWidth="750" Width="900" 
-         WindowStartupLocation="CenterScreen">
+         WindowStartupLocation="CenterScreen"
+         WindowStyle="None" AllowsTransparency="True">
     <Border CornerRadius="10">
         <Border.Background>
             <ImageBrush ImageSource="/Images/дед.jpg"

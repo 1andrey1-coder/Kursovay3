@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Kursovay2.Views"
         mc:Ignorable="d"
         Title="Окно с данными о всех клиентах" Height="450" Width="800"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" AllowsTransparency="True">
 
 
     <Border CornerRadius="10">

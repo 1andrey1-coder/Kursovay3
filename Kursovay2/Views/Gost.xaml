@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Kursovay2.Gost"
         mc:Ignorable="d"
         Title="Окно для гостя" MinHeight="450" Height="450" MinWidth="750" Width="900" 
-         WindowStartupLocation="CenterScreen">
+         WindowStartupLocation="CenterScreen"
+         WindowStyle="None" AllowsTransparency="True">
 
 
 

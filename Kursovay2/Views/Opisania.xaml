@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Kursovay2.Views"
         mc:Ignorable="d"
         Title="Окно для описание каждой шутки" MinHeight="350" MinWidth="700" 
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None" AllowsTransparency="True">
 
 
 

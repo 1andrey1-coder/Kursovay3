@@ -9,7 +9,7 @@
         DataContext="{DynamicResource loginVM}"
       Title="Login" 
       MouseLeftButtonDown="dragWindows"
-      MinHeight="450" MaxHeight="600"  MinWidth="400" MaxWidth="450" >
+      MinHeight="450" MaxHeight="600"  MinWidth="400" MaxWidth="450"  >
     <Page.Resources>
         <vm:LoginVM x:Key="loginVM"/>
     </Page.Resources>
@@ -270,7 +270,7 @@
                           HorizontalAlignment="Center"
                           Margin="0,15,0,0">
 
-                        <Button HorizontalAlignment="Center" Content="Забыли пароль?"
+                        <Button HorizontalAlignment="Center" Content="Сброс пароля"
                                 Click="SabilParol"
                                 Background="Transparent" 
                                 Foreground="White"

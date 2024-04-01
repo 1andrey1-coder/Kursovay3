@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Kursovay2.AddRof"
         mc:Ignorable="d"
         Title="Окно для добавления" MinHeight="370" MinWidth="670" Height="450" Width="900"
-         WindowStartupLocation="CenterScreen">
+         WindowStartupLocation="CenterScreen"
+         WindowStyle="None" AllowsTransparency="True">
     <Border>
         
         <Border.Background>
