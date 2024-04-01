@@ -99,7 +99,7 @@
             <Setter Property="Foreground" Value="White"/>
         </Style>-->
         
-        <Style x:Key="Border" TargetType="Border">
+        <!--<Style x:Key="Border" TargetType="Border">
             <Setter  Property="Background">
                 <Setter.Value>
                     <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
@@ -108,7 +108,7 @@
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
-        </Style>
+        </Style>-->
 
         <!--серый цвет для текста в ListView-->
         <Style x:Key="GreyHeaderStyle" TargetType="GridViewColumnHeader">
