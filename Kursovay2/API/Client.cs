@@ -115,6 +115,30 @@ namespace Kursovay2.API
 
         }
 
+        public async Task<LoginUserDTO> UserReset(string mail)
+        {
+            var loginuUser = new LoginName
+            {
+                Mail = mail
+            };
+            //Это хрень передает данные обратно в Api
+            //("UserBank/GetAccountLogin", httpContent) 
+            //Account - контроллер
+            //Login - метод
+            //httpContent - цепляем для проверки в самом Api
+            var jsonContent = JsonConvert.SerializeObject(loginuUser);
+            var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await httpClient.PostAsync("Account/reset", httpContent);
+            if (!response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Почты не существует", "Неудачный вход", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            var userAnswer = JsonConvert.DeserializeObject<LoginUserDTO>(await response.Content.ReadAsStringAsync());
+            return userAnswer;
+        }
+       
+
     }
 
 

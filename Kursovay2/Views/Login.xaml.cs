@@ -104,9 +104,11 @@ namespace Kursovay2.Views
             Application.Current.MainWindow.Close();
         }
 
-        private void SabilParol(object sender, RoutedEventArgs e)
+        private void ResetParol(object sender, RoutedEventArgs e)
         {
-
+            ResetPassword resetPassword = new ResetPassword();
+            resetPassword.Show();
+            Application.Current.MainWindow.Close();
         }
     }
 }

@@ -271,7 +271,7 @@
                           Margin="0,15,0,0">
 
                         <Button HorizontalAlignment="Center" Content="Сброс пароля"
-                                Click="SabilParol"
+                                Click="ResetParol"
                                 Background="Transparent" 
                                 Foreground="White"
                                 FontSize="12" 
