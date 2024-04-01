@@ -19,6 +19,7 @@ namespace Kursovay2Api2._0.Controllers
 
         public AccountController(MemContext userService, MailService mail)
         {
+            //MemContext.OnConfigurate(userService);
             _memContext = userService;
             this.mail = mail;
         }

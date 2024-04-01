@@ -12,6 +12,7 @@ builder.Services.AddSwaggerGen();
 //база данных
 builder.Services.AddSingleton<MailService>();
 builder.Services.AddDbContext<MemContext>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -15,6 +15,14 @@ public partial class MemContext : DbContext
         : base(options)
     {
     }
+    //public static void OnConfigurate(MemContext context)
+    //{
+    //    if(context.Database != null)
+    //    {
+    //        context.Database.EnsureDeleted();
+    //    }
+    //    context.Database.EnsureCreated();
+    //}
 
     public virtual DbSet<End> Ends { get; set; }
 
