@@ -8,7 +8,8 @@ public class MailService
     {
         emailService.Host = "smtp.mail.ru";
         emailService.Port = 587;
-        //465
+        //465 - обычное защищенное соединение
+        //587 - антиспам для почт(чтобы не закинуло в спам сообщения) защищенное соединение
         emailService.Credentials = new NetworkCredential("ilchenkor17@mail.ru", "uCqVJebBv08tMGaAdquM");
         emailService.EnableSsl = true;
     }

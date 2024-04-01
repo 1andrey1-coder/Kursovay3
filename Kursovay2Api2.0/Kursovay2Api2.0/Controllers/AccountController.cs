@@ -75,6 +75,7 @@ namespace Kursovay2Api2._0.Controllers
             byte[] hashedPasswordBytes = sha256.ComputeHash(passwordBytes);
             return Convert.ToBase64String(hashedPasswordBytes);
         }
+
         //получаю хэшированый пароль и делаю обратное хеширование
         //private string DecryptHashedPassword(string hashedPassword)
         //{
@@ -90,6 +91,7 @@ namespace Kursovay2Api2._0.Controllers
         //{
         //    return HashPassword(inputPassword) == storedPassword;
         //}
+
         [HttpPost("Login")]
         public ActionResult<LoginUserDTO> GetActionLogin(UserLoginDTO userData)
         {
@@ -113,7 +115,11 @@ namespace Kursovay2Api2._0.Controllers
             }
 
         }
-        //Nwgf1pr9 16 юзер пароль
+
+        // 16 юзер
+        //Nwgf1pr9 - Пароль
+        //o - Логин
+
         [HttpPost("Register")]
         public async Task<ActionResult<LoginUserDTO>> GetActionRegister(RegisterDTO registerUser)
         {
@@ -126,7 +132,7 @@ namespace Kursovay2Api2._0.Controllers
 
                 if (ProverkaUser != null)
                 {
-                    return BadRequest("Пользователь с таким логином уже существует");
+                    return BadRequest("Пользователь с такой почтой уже существует");
                 }
 
                 var user = new LoginUser

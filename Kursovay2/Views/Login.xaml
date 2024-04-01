@@ -270,20 +270,14 @@
                           HorizontalAlignment="Center"
                           Margin="0,15,0,0">
 
-                            <TextBlock Text="Забыли пароль?"
+                            <TextBlock HorizontalAlignment="Center" Text="Забыли пароль?"
                          Foreground="DarkGray"
                          FontSize="12"
                          FontWeight="Medium"
-                         FontFamily="Montserrat"/>
-
-                            <TextBlock Text="Перезагрузить"
-                         Foreground="White"
-                         FontSize="12"
-                         FontWeight="Medium"
                          FontFamily="Montserrat"
-                         Cursor="Hand"
-                         Margin="8,0,0,0"/>
+                         Margin="0,0,0,0"/>
 
+                       
                         </StackPanel>
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                             <Button  Background="Transparent"     Content="Войти как гость"
@@ -293,7 +287,7 @@
                                              BorderBrush="Transparent"
                                              FontFamily="Montserrat"
                                              Cursor="Hand"
-                                             Margin="8,0,0,0"
+                                             Margin="0,0,0,0"
                                             Click="PerexodGost"/>
                         </StackPanel>
                     </StackPanel>
