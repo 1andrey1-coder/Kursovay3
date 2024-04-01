@@ -166,7 +166,8 @@ namespace Kursovay2Api2._0.Controllers
                 //СингТон
 
 
-                MailMessage message = EmailMessageService.sender.CreateMailMessageBodyIsText("Словарь сленга", registerUser.Mail, "Регистрация", $"Ваш пароль: {password}");
+                MailMessage message = EmailMessageService.sender.CreateMailMessageBodyIsText
+                    ("Словарь сленга", registerUser.Mail, "Регистрация", $"Ваш пароль: {password}");
                 EmailMessageService.sender.SendMail(message);
                 
                 //await mail.Send("ilchenkor17@mail.ru", registerUser.Mail, "Регистрация", $"Ваш пароль: {password}");
