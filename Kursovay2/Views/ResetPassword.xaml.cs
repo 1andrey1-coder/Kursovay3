@@ -33,16 +33,12 @@ namespace Kursovay2.Views
         {
             try
             {
-                //if (PasswordBox != ConfirmPasswordBox)
-                //{
-                //    MessageBox.Show("Пароли не совпадают", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                //    return;
-                //}
-
                 var user = await Client.Instance.UserReset(txtMail.Text);
-                MainWindow mainWindow = new MainWindow();
                 MessageBox.Show("Вы сбросили пароль для вашей почты", "Новый пароль отправлен вам на почту",
                 MessageBoxButton.OK, MessageBoxImage.Information);
+                MainWindow mainWindow = new MainWindow();
+              
+              
                 mainWindow.Show();
                 Close();
             }

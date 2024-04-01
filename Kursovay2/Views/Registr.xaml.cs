@@ -43,7 +43,7 @@ namespace Kursovay2.Registr
 
                 var user = await Client.Instance.UserRegister(txtLogin.Text, txtMail.Text);
                 MainWindow mainWindow = new MainWindow();
-                MessageBox.Show("Вы зарегистрировались", "Успешная регистрация",
+                MessageBox.Show("Вы зарегистрировались", "Пароль отправлен вам на почту",
                     MessageBoxButton.OK, MessageBoxImage.Information);
                 mainWindow.Show();
                 Close();
