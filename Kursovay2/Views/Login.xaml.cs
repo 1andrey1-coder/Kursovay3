@@ -104,6 +104,9 @@ namespace Kursovay2.Views
             Application.Current.MainWindow.Close();
         }
 
+        private void SabilParol(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }

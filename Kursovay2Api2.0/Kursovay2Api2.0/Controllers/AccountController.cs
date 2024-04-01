@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net.Mail;
 using System.Text;
+using XAct.Users;
 using XSystem.Security.Cryptography;
 
 namespace Kursovay2Api2._0.Controllers
@@ -329,7 +330,61 @@ namespace Kursovay2Api2._0.Controllers
                 return NotFound(); // Возвращаем ошибку 404 если пользователя не найден
             }
         }
-    
 
+        [HttpPost("reset")]
+        public async Task<IActionResult> ResetPassword(ResetDTO resetUser)
+        {
+            var user = await _memContext.LoginUsers.FirstOrDefaultAsync(u => u.Mail == resetUser.Mail);
+
+            if (user == null)
+            {
+                return NotFound("User not found");
+            }
+
+            // Генерация нового пароля
+            var newPassword = GeneratePassword();
+            user.LoginPassword = HashPassword(newPassword);
+            //user.LoginPassword = newPassword;
+
+            _memContext.Entry(user).State = EntityState.Modified;
+            await _memContext.SaveChangesAsync();
+
+            // Отправка нового пароля на почту (реализация этой функции опускается)
+            await mail.Send("slovarsleng@mail.ru", resetUser.Mail, "Регистрация в Словаре сленга"
+                 , $"Ваш пароль: {newPassword}");
+
+            return Ok("Пароль был сброшен и обновлен");
+        }
+
+
+
+        //одна из вариаций сброса пароля
+
+        //[HttpPost("CreateNewPasswordMine")]
+        //public async Task<IActionResult> CreateNewPassword([FromBody] LoginUserDTO user)
+        //{
+        //    // Проверка наличия пользователя в базе данных
+        //    var existingUser = await _memContext.LoginUsers.FirstOrDefaultAsync(u => u.LoginName == user.LoginName);
+
+        //    if (existingUser == null)
+        //    {
+        //        return NotFound("User not found");
+        //    }
+
+        //    existingUser.LoginPassword = user.LoginPassword;
+
+        //    _memContext.Entry(existingUser).State = EntityState.Modified;
+        //    await _memContext.SaveChangesAsync();
+
+        //    return Ok("Password updated successfully");
+        //}
+
+        private string GeneratePassword()
+        {
+            // Генерация случайного пароля (можно использовать любой другой метод)
+            return Guid.NewGuid().ToString().Substring(0, 8);
+        }
     }
+
+    
 }
