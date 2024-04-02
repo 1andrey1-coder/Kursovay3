@@ -55,7 +55,7 @@
                         <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="ЭТО ВХОД ЕБА РОТ"
+                    <TextBlock Text="ВХОД"
                          Foreground="DarkGray"
                          FontSize="10"
                          FontFamily="Montserrat"
