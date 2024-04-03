@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static System.Runtime.CompilerServices.RuntimeHelpers;
 
 namespace Kursovay2.Views
 {
@@ -28,19 +29,27 @@ namespace Kursovay2.Views
             InitializeComponent();
            
         }
+       
+
 
         private async void Reset(object sender, RoutedEventArgs e)
         {
             try
             {
-                var user = await Client.Instance.UserReset(txtMail.Text);
-                MessageBox.Show("Вы сбросили пароль для вашей почты", "Новый пароль отправлен вам на почту",
-                MessageBoxButton.OK, MessageBoxImage.Information);
-                MainWindow mainWindow = new MainWindow();
-              
-              
-                mainWindow.Show();
-                Close();
+                CodeСonfirmation codeСonfirmation = new CodeСonfirmation();
+                codeСonfirmation.ShowDialog();
+
+                if (codeСonfirmation.Success)
+                {
+                    var user = await Client.Instance.UserReset(txtMail.Text);
+                    MessageBox.Show("Вы сбросили пароль для вашей почты", "Новый пароль отправлен вам на почту",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    Close();
+                }
+
+
             }
             catch (Exception ex)
             {
