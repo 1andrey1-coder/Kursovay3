@@ -4,6 +4,7 @@ using ApiDB.DTO;
 using EmailSenderSMTP;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Net.Mail;
 using System.Text;
 using XAct.Users;
@@ -77,7 +78,11 @@ namespace Kursovay2Api2._0.Controllers
             byte[] hashedPasswordBytes = sha256.ComputeHash(passwordBytes);
             return Convert.ToBase64String(hashedPasswordBytes);
         }
-
+        private string GeneratePassword()
+        {
+            // Генерация случайного пароля (можно использовать любой другой метод)
+            return Guid.NewGuid().ToString().Substring(0, 8);
+        }
         //получаю хэшированый пароль и делаю обратное хеширование
         //private string DecryptHashedPassword(string hashedPassword)
         //{
@@ -342,7 +347,7 @@ namespace Kursovay2Api2._0.Controllers
             }
 
             // Генерация нового пароля
-            var newPassword = GeneratePassword();
+            var newPassword = GenerateRandomPassword();
             user.LoginPassword = HashPassword(newPassword);
             //user.LoginPassword = newPassword;
 
@@ -379,12 +384,74 @@ namespace Kursovay2Api2._0.Controllers
         //    return Ok("Password updated successfully");
         //}
 
-        private string GeneratePassword()
+
+
+
+
+        //Отправка генерирумоего кода 
+        //[HttpPost]
+        //public async Task<IActionResult> SendEmail([FromBody] RegisterDTO registerUser)
+        //{
+        //    try
+        //    {
+        //        await mail.Send("slovarsleng@mail.ru", registerUser.Mail, "Потверждение сброса пароля"
+        //           , $"Ваш код: {code}");
+        //        return BadRequest();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, "Произошла ошибка при отправки");
+        //    }
+
+
+
+        //}
+
+        [HttpPost("generate")]
+        public async Task<IActionResult> GenerateCode(string email)
         {
-            // Генерация случайного пароля (можно использовать любой другой метод)
-            return Guid.NewGuid().ToString().Substring(0, 8);
+            //string code = GenerateRandomCode(); // Генерация случайного кода
+
+            //SendCodeByEmail(email, code); // Отправка кода на email
+            //await mail.Send2(email, code);
+
+
+
+            // Генерация нового кода
+            var code = GenerateRandomCode();
+
+            // Отправка нового пароля на почту (реализация этой функции опускается)
+            await mail.Send("slovarsleng@mail.ru", email, "Потверждение почты для сброса пароля в Словаре сленга"
+                 , $"Ваш код потверждения: {code}");
+
+            return Ok("Код был отправлен на почту");
+
+
         }
+
+        private string GenerateRandomCode()
+        {
+            Random random = new Random();
+            int code = random.Next(1000, 9999); // Генерация случайного четырехзначного числа
+            return code.ToString();
+        }
+
+        //private void SendCodeByEmail(string email, string code)
+        //{
+        //    MailMessage mail = new MailMessage("slovarsleng@mail.ru", email);
+        //    SmtpClient client = new SmtpClient("smtp.mail.ru");
+
+        //    mail.Subject = "Ваш код подтверждения";
+        //    mail.Body = $"Ваш код подтверждения: {code}";
+
+        //    client.Send(mail);
+        //}
+
+        
     }
 
-    
+
 }
+
+    
+

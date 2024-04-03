@@ -19,8 +19,11 @@ public class MailService
          emailService.Send(v1, mail, v2, v3);
     }
 
+    internal async Task Send2(string v1, string? mail, string v2, string v3)
+    {
+        emailService.Send(v1, mail, v2, v3);
+    }
 
 
 
-    
 }
