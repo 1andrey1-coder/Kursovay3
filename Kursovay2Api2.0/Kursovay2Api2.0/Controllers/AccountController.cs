@@ -363,60 +363,10 @@ namespace Kursovay2Api2._0.Controllers
 
 
 
-        //одна из вариаций сброса пароля
-
-        //[HttpPost("CreateNewPasswordMine")]
-        //public async Task<IActionResult> CreateNewPassword([FromBody] LoginUserDTO user)
-        //{
-        //    // Проверка наличия пользователя в базе данных
-        //    var existingUser = await _memContext.LoginUsers.FirstOrDefaultAsync(u => u.LoginName == user.LoginName);
-
-        //    if (existingUser == null)
-        //    {
-        //        return NotFound("User not found");
-        //    }
-
-        //    existingUser.LoginPassword = user.LoginPassword;
-
-        //    _memContext.Entry(existingUser).State = EntityState.Modified;
-        //    await _memContext.SaveChangesAsync();
-
-        //    return Ok("Password updated successfully");
-        //}
-
-
-
-
-
-        //Отправка генерирумоего кода 
-        //[HttpPost]
-        //public async Task<IActionResult> SendEmail([FromBody] RegisterDTO registerUser)
-        //{
-        //    try
-        //    {
-        //        await mail.Send("slovarsleng@mail.ru", registerUser.Mail, "Потверждение сброса пароля"
-        //           , $"Ваш код: {code}");
-        //        return BadRequest();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, "Произошла ошибка при отправки");
-        //    }
-
-
-
-        //}
-
         [HttpPost("generate")]
         public async Task<IActionResult> GenerateCode(string email)
         {
-            //string code = GenerateRandomCode(); // Генерация случайного кода
-
-            //SendCodeByEmail(email, code); // Отправка кода на email
-            //await mail.Send2(email, code);
-
-
-
+            
             // Генерация нового кода
             var code = GenerateRandomCode();
 
@@ -436,17 +386,7 @@ namespace Kursovay2Api2._0.Controllers
             return code.ToString();
         }
 
-        //private void SendCodeByEmail(string email, string code)
-        //{
-        //    MailMessage mail = new MailMessage("slovarsleng@mail.ru", email);
-        //    SmtpClient client = new SmtpClient("smtp.mail.ru");
-
-        //    mail.Subject = "Ваш код подтверждения";
-        //    mail.Body = $"Ваш код подтверждения: {code}";
-
-        //    client.Send(mail);
-        //}
-
+       
         
     }
 
