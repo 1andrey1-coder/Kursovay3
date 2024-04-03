@@ -139,6 +139,25 @@ namespace Kursovay2.API
         }
        
 
+        public async Task<int> ConfirmationCode(int code)
+        {
+
+            var codeUser = new CodeInt
+            {
+                Code = code
+            };
+            var jsonContent = JsonConvert.SerializeObject(codeUser);
+            var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await httpClient.PostAsync("Account/GenerateCode", httpContent);
+            if (!response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Кода такого не существует", "Неудачный потверждение", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            var userAnswer = JsonConvert.DeserializeObject<int>(await response.Content.ReadAsStringAsync());
+            return userAnswer;
+        }
+
     }
 
 

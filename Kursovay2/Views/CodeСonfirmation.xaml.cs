@@ -20,36 +20,33 @@ namespace Kursovay2.Views
     /// </summary>
     public partial class CodeСonfirmation : Window
     {
-        string generatedCode; // пример сгенерированного кода
+        int generatedCode;
+         
         public CodeСonfirmation()
         {
             InitializeComponent();
-            generatedCode = GenerateRandomCode(); // пример сгенерированного кода
-            // отправил на почту
+            generatedCode = Client.Instance.ConfirmationCode(); 
 
         }
         public string Mail { get; set; }
         public bool Success { get; internal set; }
 
-        private string GenerateRandomCode()
-        {
-            string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-            var random = new Random();
-            var password = new string(
-                Enumerable.Repeat(chars, 8)
-                          .Select(s => s[random.Next(s.Length)])
-                          .ToArray());
-            return password;
-        }
+        //private string GenerateRandomCode()
+        //{
+        //    string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        //    var random = new Random();
+        //    var password = new string(
+        //        Enumerable.Repeat(chars, 8)
+        //                  .Select(s => s[random.Next(s.Length)])
+        //                  .ToArray());
+        //    return password;
+        //}
 
 
         private async void CheckCode(object sender, RoutedEventArgs e)
         {
             // Получаем введенный пользователем код
-            string enteredCode = txtCode.Text;
-
-            // Логика для проверки кода сравнение с отправленным на почту кодом
-            
+            int enteredCode = Convert.ToInt32(txtCode.Text);
 
             if (enteredCode == generatedCode)
             {
