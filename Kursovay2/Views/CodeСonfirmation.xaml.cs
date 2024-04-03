@@ -25,7 +25,8 @@ namespace Kursovay2.Views
         public CodeСonfirmation()
         {
             InitializeComponent();
-            generatedCode = Client.Instance.ConfirmationCode(); 
+
+            generatedCode = Client.Instance.ConfirmationCode(int); 
 
         }
         public string Mail { get; set; }

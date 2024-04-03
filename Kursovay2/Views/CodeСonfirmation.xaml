@@ -9,8 +9,9 @@
     <Grid VerticalAlignment="Center" HorizontalAlignment="Center" >
         
         <StackPanel HorizontalAlignment="Center">
-            
-            <TextBox HorizontalAlignment="Center" x:Name="txtCode"  />
+
+            <TextBox HorizontalAlignment="Center" Text="{Binding Code,
+                UpdateSourceTrigger=PropertyChanged}" x:Name="txtCode"  />
             <Button   Content="Проверить код" Click="CheckCode"/>
         </StackPanel>
     </Grid>
