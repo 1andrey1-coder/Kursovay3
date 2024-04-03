@@ -196,6 +196,23 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                     
                     
                 </StackPanel>
+                
+                <!--Шапка профиля-->
+                <StackPanel Grid.Row="0" Grid.Column="0" >
+                    <Grid Height="70" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel  Grid.Column="1" VerticalAlignment="Bottom" >
+                            <StackPanel >
+                                <Label Content="Ваш провиль" Foreground="White"  />
+                                <Button Content="Профиль" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+                
                 <StackPanel Grid.Row="1" Grid.Column="0"  >
                     <Grid x:Name="sidePanel" Background="Transparent" HorizontalAlignment="Left" Width="150">
                         <StackPanel>
