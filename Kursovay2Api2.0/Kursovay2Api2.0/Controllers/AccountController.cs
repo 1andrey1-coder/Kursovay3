@@ -363,14 +363,14 @@ namespace Kursovay2Api2._0.Controllers
 
 
 
-        [HttpPost("generate")]
+        [HttpPost("GenerateCode")]
         public async Task<IActionResult> GenerateCode(string email)
         {
             
             // Генерация нового кода
             var code = GenerateRandomCode();
 
-            // Отправка нового пароля на почту (реализация этой функции опускается)
+            // Отправка нового кода на почту
             await mail.Send("slovarsleng@mail.ru", email, "Потверждение почты для сброса пароля в Словаре сленга"
                  , $"Ваш код потверждения: {code}");
 
