@@ -20,15 +20,16 @@ namespace Kursovay2.Views
     /// </summary>
     public partial class CodeСonfirmation : Window
     {
-        int generatedCode;
+        string generatedCode;
          
         public CodeСonfirmation()
         {
             InitializeComponent();
 
-            generatedCode = Client.Instance.ConfirmationCode(int); 
+            //generatedCode = Client.Instance.GetGeneratedCode(txtCode.Text);
 
         }
+
         public string Mail { get; set; }
         public bool Success { get; internal set; }
 
@@ -46,8 +47,9 @@ namespace Kursovay2.Views
 
         private async void CheckCode(object sender, RoutedEventArgs e)
         {
+            generatedCode = await Client.Instance.GetGeneratedCode();
             // Получаем введенный пользователем код
-            int enteredCode = Convert.ToInt32(txtCode.Text);
+            string enteredCode = txtCode.Text;
 
             if (enteredCode == generatedCode)
             {

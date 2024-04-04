@@ -139,25 +139,46 @@ namespace Kursovay2.API
         }
        
 
-        public async Task<int> ConfirmationCode(int code)
-        {
+        //public async Task<int> ConfirmationCode(int code)
+        //{
 
-            var codeUser = new CodeInt
+        //    var codeUser = new CodeInt
+        //    {
+        //        Code = code
+        //    };
+        //    var jsonContent = JsonConvert.SerializeObject(codeUser);
+        //    var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+        //    HttpResponseMessage response = await httpClient.PostAsync("Account/GenerateCode", httpContent);
+        //    if (!response.IsSuccessStatusCode)
+        //    {
+        //        MessageBox.Show("Кода такого не существует", "Неудачный потверждение", MessageBoxButton.OK, MessageBoxImage.Error);
+        //    }
+
+        //    var userAnswer = JsonConvert.DeserializeObject<int>(await response.Content.ReadAsStringAsync());
+        //    return userAnswer;
+        //}
+        
+        public async Task<string> GetGeneratedCode()
+        {
+            string apiUrl = @"https://localhost:7189/api/"; 
+            string generatedCode = null;
+
+            using (HttpClient client = new HttpClient())
             {
-                Code = code
-            };
-            var jsonContent = JsonConvert.SerializeObject(codeUser);
-            var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await httpClient.PostAsync("Account/GenerateCode", httpContent);
-            if (!response.IsSuccessStatusCode)
-            {
-                MessageBox.Show("Кода такого не существует", "Неудачный потверждение", MessageBoxButton.OK, MessageBoxImage.Error);
+                HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    generatedCode = await response.Content.ReadAsStringAsync();
+                }
+                else
+                {
+                    MessageBox.Show("Кода такого не существует", "Неудачный потверждение", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
 
-            var userAnswer = JsonConvert.DeserializeObject<int>(await response.Content.ReadAsStringAsync());
-            return userAnswer;
+            return generatedCode;
         }
-
     }
 
 

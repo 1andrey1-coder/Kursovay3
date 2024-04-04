@@ -8,6 +8,6 @@ namespace Kursovay2.API
 {
     public class CodeInt
     {
-        public int Code;
+        public string Code;
     }
 }
