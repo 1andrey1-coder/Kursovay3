@@ -368,26 +368,35 @@ namespace Kursovay2Api2._0.Controllers
         {
             
             // Генерация нового кода
-            var code = GenerateRandomCode();
+            var code = GenerateRandomCode2();
 
             // Отправка нового кода на почту
             await mail.Send("slovarsleng@mail.ru", email, "Потверждение почты для сброса пароля в Словаре сленга"
                  , $"Ваш код потверждения: {code}");
 
-            return Ok("Код был отправлен на почту");
+            return Ok($"Код был отправлен на почту - {code}");
 
 
         }
 
-        private string GenerateRandomCode()
+        //private string GenerateRandomCode()
+        //{
+        //    Random random = new Random();
+        //    int code = random.Next(1000, 9999); // Генерация случайного четырехзначного числа
+        //    return code.ToString();
+        //}
+
+        private string GenerateRandomCode2()
         {
-            Random random = new Random();
-            int code = random.Next(1000, 9999); // Генерация случайного четырехзначного числа
-            return code.ToString();
+            string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var random = new Random();
+            var password = new string(
+                Enumerable.Repeat(chars, 4)
+                          .Select(s => s[random.Next(s.Length)])
+                          .ToArray());
+            return password.ToString();
         }
 
-       
-        
     }
 
 
