@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Kursovay2.Views;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -139,24 +140,7 @@ namespace Kursovay2.API
         }
        
 
-        //public async Task<int> ConfirmationCode(int code)
-        //{
-
-        //    var codeUser = new CodeInt
-        //    {
-        //        Code = code
-        //    };
-        //    var jsonContent = JsonConvert.SerializeObject(codeUser);
-        //    var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
-        //    HttpResponseMessage response = await httpClient.PostAsync("Account/GenerateCode", httpContent);
-        //    if (!response.IsSuccessStatusCode)
-        //    {
-        //        MessageBox.Show("Кода такого не существует", "Неудачный потверждение", MessageBoxButton.OK, MessageBoxImage.Error);
-        //    }
-
-        //    var userAnswer = JsonConvert.DeserializeObject<int>(await response.Content.ReadAsStringAsync());
-        //    return userAnswer;
-        //}
+    
         
 
         public async Task<string> GetGeneratedCode()
@@ -179,6 +163,21 @@ namespace Kursovay2.API
             }
 
             return generatedCode;
+        }
+
+
+        public async Task<string> GetGeneratedCode2()
+        {
+            string code = "";
+            HttpResponseMessage response = await httpClient.GetAsync("Account/GenerateCode2");
+            // адрес метода в API, который возвращает сгенерированный код
+
+            if (response.IsSuccessStatusCode)
+            {
+                code = await response.Content.ReadAsStringAsync();
+            }
+
+            return code;
         }
     }
 
