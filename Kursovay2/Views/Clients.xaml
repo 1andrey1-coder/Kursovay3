@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Окно с данными о всех клиентах" Height="450" Width="800"
         WindowStartupLocation="CenterScreen"
-        WindowStyle="None" AllowsTransparency="True">
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent">
 
 
     <Border CornerRadius="10">

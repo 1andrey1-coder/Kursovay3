@@ -9,14 +9,14 @@
         DataContext="{DynamicResource loginVM}"
       Title="Login" 
       MouseLeftButtonDown="dragWindows"
-      MinHeight="450" MaxHeight="600"  MinWidth="400" MaxWidth="450"  >
+      MinHeight="450" MaxHeight="600"  MinWidth="400" MaxWidth="450" Background="Transparent"  >
     <Page.Resources>
         <vm:LoginVM x:Key="loginVM"/>
     </Page.Resources>
     <Border CornerRadius="10">
         <Border.Background >
             <ImageBrush ImageSource="\Images\дед.jpg"
-                  Stretch="None"/>
+                  Stretch="UniformToFill"/>
         </Border.Background>
 
         <Border CornerRadius="10"                    
