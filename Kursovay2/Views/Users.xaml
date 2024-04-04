@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="Окно для пользователя" MinHeight="450" Height="450" MinWidth="750" Width="900" 
          WindowStartupLocation="CenterScreen"
-         WindowStyle="None" AllowsTransparency="True" >
+         WindowStyle="None" AllowsTransparency="True" Background="Transparent" >
 
 
 
 
-    <Border CornerRadius="10" >
+    <Border CornerRadius="10">
         
         <Border.Background >
             <ImageBrush  ImageSource="/Images/дед.jpg"
@@ -288,7 +288,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                     </Grid>
 
                 </StackPanel>
-                <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                <ScrollViewer Margin="0 0 5 5" HorizontalScrollBarVisibility="Auto"
         Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" >
 
                     <ListView 
