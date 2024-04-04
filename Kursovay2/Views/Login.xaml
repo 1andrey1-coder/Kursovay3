@@ -139,7 +139,7 @@
                     <Image Source="/Images/logo2.png"
                      Width="100" Height="100"/>
 
-                    <TextBlock Text="Словарь слэнга"
+                    <TextBlock Text="Словарь Слэнга"
                          Foreground="White"
                          FontSize="25"
                          FontWeight="Medium"

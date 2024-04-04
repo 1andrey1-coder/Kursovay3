@@ -60,7 +60,7 @@
                                 <ColumnDefinition Width="5"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="Окно Легенд"
+                            <TextBlock Text="Окно Самых запоминающихся шуток"
    Foreground="DarkGray"
    FontSize="10"
    FontFamily="Montserrat"
