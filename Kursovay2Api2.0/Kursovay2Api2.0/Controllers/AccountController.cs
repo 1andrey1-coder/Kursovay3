@@ -390,28 +390,28 @@ namespace Kursovay2Api2._0.Controllers
             return password.ToString();
         }
 
-        [HttpGet("GenerateCode")]
-        public async Task<IActionResult> GenerateCode3(string email)
-        {
-            // Генерируем случайный код (например, строку из символов)
-            string generatedCode = GenerateRandomCode();
+        //[HttpGet("GenerateCode")]
+        //public async Task<IActionResult> GenerateCode3(string email)
+        //{
+        //    // Генерируем случайный код (например, строку из символов)
+        //    string generatedCode = GenerateRandomCode();
 
-            await mail.Send("slovarsleng@mail.ru", email, "Потверждение почты для сброса пароля в Словаре сленга"
-                 , $"Ваш код потверждения: {generatedCode}");
-            return Ok(new { code = generatedCode });
-        }
+        //    await mail.Send("slovarsleng@mail.ru", email, "Потверждение почты для сброса пароля в Словаре сленга"
+        //         , $"Ваш код потверждения: {generatedCode}");
+        //    return Ok(new { code = generatedCode });
+        //}
        
     
-        private string GenerateRandomCode()
-        {
-            // Генерация случайного кода
-            Random random = new Random();
-            const string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            var code = new string(Enumerable.Repeat(characters, 6)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
+        //private string GenerateRandomCode()
+        //{
+        //    // Генерация случайного кода
+        //    Random random = new Random();
+        //    const string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        //    var code = new string(Enumerable.Repeat(characters, 6)
+        //      .Select(s => s[random.Next(s.Length)]).ToArray());
 
-            return code;
-        }
+        //    return code;
+        //}
 
     }
 
