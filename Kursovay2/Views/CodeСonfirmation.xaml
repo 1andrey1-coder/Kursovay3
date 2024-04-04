@@ -9,10 +9,11 @@
          WindowStartupLocation="CenterScreen"
          WindowStyle="None" AllowsTransparency="True">
     
-    <Border VerticalAlignment="Center" HorizontalAlignment="Center" Height="91" Width="175" >
-        <Border.Background>
+    <Border VerticalAlignment="Center" HorizontalAlignment="Center" Height="91" Width="175" CornerRadius="10">
+        <Border.Background >
             <ImageBrush ImageSource="/Images/дед.jpg"
-            Stretch="Fill"/>
+            Stretch="Fill"   />
+           
         </Border.Background>
         <Border  CornerRadius="10"                    
 BorderThickness="2"

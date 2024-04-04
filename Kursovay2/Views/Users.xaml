@@ -13,10 +13,12 @@
 
 
     <Border CornerRadius="10" >
+        
         <Border.Background >
             <ImageBrush  ImageSource="/Images/дед.jpg"
              Stretch="Fill"/>
         </Border.Background>
+        
         <Border  CornerRadius="10"                    
  BorderThickness="2"
  Opacity="0.95">
