@@ -8,13 +8,39 @@
         Title="CodeСonfirmation" Height="250" Width="300" Background="Transparent"
          WindowStartupLocation="CenterScreen"
          WindowStyle="None" AllowsTransparency="True">
-    <Grid VerticalAlignment="Center" HorizontalAlignment="Center" >
-        
-        <StackPanel HorizontalAlignment="Center">
+    
+    <Border VerticalAlignment="Center" HorizontalAlignment="Center" Height="91" Width="175" >
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/дед.jpg"
+            Stretch="Fill"/>
+        </Border.Background>
+        <Border  CornerRadius="10"                    
+BorderThickness="2"
+Opacity="0.95" >
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
 
-            <TextBox HorizontalAlignment="Center" Text="{Binding Code,
+            <Border.Background >
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#060531" Offset="0"/>
+                    <GradientStop Color="#1B1448" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <TextBox Width="70"  Margin="0 0 0 10" HorizontalAlignment="Center" Text="{Binding Code,
                 UpdateSourceTrigger=PropertyChanged}" x:Name="txtCode"  />
-            <Button   Content="Проверить код" Click="CheckCode"/>
-        </StackPanel>
-    </Grid>
+                <Button 
+                    Foreground="White"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    Content="Проверить код" Click="CheckCode"/>
+            </StackPanel>
+        </Border>
+    </Border>
 </Window>
