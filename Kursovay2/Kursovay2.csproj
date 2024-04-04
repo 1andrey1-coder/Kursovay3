@@ -78,9 +78,6 @@
     <Resource Include="Images\gmail.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\ImageNull.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Images\ImageNull2png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

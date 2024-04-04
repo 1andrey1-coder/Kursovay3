@@ -15,6 +15,7 @@
             Stretch="Fill"   />
            
         </Border.Background>
+        
         <Border  CornerRadius="10"                    
 BorderThickness="2"
 Opacity="0.95" >
@@ -32,16 +33,96 @@ Opacity="0.95" >
                     <GradientStop Color="#1B1448" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid >
+                <StackPanel Orientation="Vertical">
+                    
+               
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 0 10">
+                    <Button x:Name="btnMinimize"  
+                            Margin=" 0 0 5 0"
+BorderThickness="0"
+Content="-"
+Foreground="White"
+FontSize="16"
+FontFamily="Montserrat"
+Cursor="Hand"
+Grid.Column="1"
+Click="btnMinimize_Click">
 
-                <TextBox Width="70"  Margin="0 0 0 10" HorizontalAlignment="Center" Text="{Binding Code,
-                UpdateSourceTrigger=PropertyChanged}" x:Name="txtCode"  />
-                <Button 
-                    Foreground="White"
-                    Background="Transparent"
-                    BorderBrush="Transparent"
-                    Content="Проверить код" Click="CheckCode"/>
-            </StackPanel>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#28AEED"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+            CornerRadius="9"
+            Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                    <Button x:Name="btnClose"                          
+BorderThickness="0"
+Content="X"
+Foreground="White"
+FontSize="12"
+FontFamily="Montserrat"
+Cursor="Hand"
+Grid.Column="2"
+Click="btnClose_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#DA34AE"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#C62DAE"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+            CornerRadius="9"
+            Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    
+                
+                
+                    <TextBox Width="70"  Margin="0 0 0 10" HorizontalAlignment="Center" Text="{Binding Code,
+                    UpdateSourceTrigger=PropertyChanged}" x:Name="txtCode"  />
+                    <Button 
+                        Foreground="White"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Content="Проверить код" Click="CheckCode"/>
+                
+                </StackPanel>
+                </StackPanel>
+            </Grid>
+            
         </Border>
+        
     </Border>
 </Window>
