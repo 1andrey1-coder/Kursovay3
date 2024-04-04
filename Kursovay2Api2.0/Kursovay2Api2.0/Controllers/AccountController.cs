@@ -374,7 +374,7 @@ namespace Kursovay2Api2._0.Controllers
             await mail.Send("slovarsleng@mail.ru", email, "Потверждение почты для сброса пароля в Словаре сленга"
                  , $"Ваш код потверждения: {code}");
 
-            return Ok($"Код был отправлен на почту - {code}");
+            return Ok($"Код: {code} был отправлен на почту ");
 
 
         }
