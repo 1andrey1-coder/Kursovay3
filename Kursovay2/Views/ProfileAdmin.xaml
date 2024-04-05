@@ -138,17 +138,20 @@ Click="btnClose_Click">
                             <Image Source="\Images\ImageNull2png"/>
                     </StackPanel>
                 </Border>
-
+                <!--шапка-->
                 <Grid Grid.Row="1" Grid.ColumnSpan="12" Grid.Column="1">
                     <Label Content="Редактирование профиля" FontSize="22" HorizontalAlignment="Center" Foreground="White"/>
                 </Grid>
+                <!--шапка-->
+                
+                <!--Логин-->
                 <Grid Grid.Row="2" Grid.Column="1" >
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
                     <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
-                        <Label Margin="0 0 0 5" Content="Редактировать имя" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
+                        <Label Margin="0 0 0 5" Content="Редактировать Логин" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
                         <TextBox Width="200" />
                     </StackPanel>
                     <StackPanel  VerticalAlignment="Top" Grid.Row="1">
@@ -174,7 +177,76 @@ Click="btnClose_Click">
                     </StackPanel>
                         
                 </Grid>
+                <!--Логин-->
                 
+                <!--Почта-->
+                <Grid Grid.Row="2" Grid.Column="2" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
+                        <Label Margin="0 0 0 5" Content="Редактировать Почку" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
+                        <TextBox Width="200" />
+                    </StackPanel>
+                    <StackPanel  VerticalAlignment="Top" Grid.Row="1">
+
+
+                        <StackPanel Height="45" Width="150">
+
+                            <Button Content="Измененить почту" 
+                   BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="150" Height="30"
+                               CornerRadius="15"
+                               Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                </Grid>
+                <!--Почта-->
+
+                <Grid Grid.Row="3" Grid.Column="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
+                        <Label Margin="0 0 0 5" Content="Редактировать Пароль" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
+                        <TextBox Width="200" />
+                    </StackPanel>
+                    <StackPanel  VerticalAlignment="Top" Grid.Row="1">
+
+
+                        <StackPanel Height="45" Width="150">
+
+                            <Button Content="Измененить пароль" 
+   BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="150" Height="30"
+               CornerRadius="15"
+               Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+                HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                </Grid>
+
             </Grid>
 
         </Border>
