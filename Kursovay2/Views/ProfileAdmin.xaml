@@ -36,7 +36,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>    
                     <RowDefinition  Height="50"/>    
-                    <RowDefinition />    
+                    <RowDefinition Height="90"/>    
                     <RowDefinition/>    
                     <RowDefinition Height="100"/>   
                     <RowDefinition />   
@@ -46,7 +46,20 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-            <Grid  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="12" VerticalAlignment="Top">
+                <Button HorizontalAlignment="Left" Height="30" Width="100" Content="Вернуться" 
+                        Grid.Column="0" Grid.Row="1" Foreground="White" BorderBrush="Transparent"  >
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="30"
+              CornerRadius="15"
+              Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+               HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Grid  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="12" VerticalAlignment="Top">
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -148,10 +161,10 @@ Click="btnClose_Click">
                 <Grid Grid.Row="2" Grid.Column="1" >
                     <Grid.RowDefinitions>
                         <RowDefinition/>
-                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="32"/>
                     </Grid.RowDefinitions>
                     <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
-                        <Label Margin="0 0 0 5" Content="Редактировать Логин" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
+                        <Label FontWeight="Bold" Margin="0 0 0 5" Content="Редактировать Логин" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
                         <TextBox Width="200" />
                     </StackPanel>
                     <StackPanel  VerticalAlignment="Top" Grid.Row="1">
@@ -159,7 +172,7 @@ Click="btnClose_Click">
                             
                         <StackPanel Height="45" Width="150">
 
-                            <Button Content="Измененить имя" 
+                            <Button Margin="0 0 0 5" Content="Измененить логин" 
                                 BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
@@ -183,10 +196,10 @@ Click="btnClose_Click">
                 <Grid Grid.Row="2" Grid.Column="2" >
                     <Grid.RowDefinitions>
                         <RowDefinition/>
-                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="32"/>
                     </Grid.RowDefinitions>
                     <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
-                        <Label Margin="0 0 0 5" Content="Редактировать Почку" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
+                        <Label FontWeight="Bold" Margin="0 0 0 5" Content="Редактировать Почку" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
                         <TextBox Width="200" />
                     </StackPanel>
                     <StackPanel  VerticalAlignment="Top" Grid.Row="1">
@@ -217,10 +230,10 @@ Click="btnClose_Click">
                 <Grid Grid.Row="3" Grid.Column="1" >
                     <Grid.RowDefinitions>
                         <RowDefinition/>
-                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="32"/>
                     </Grid.RowDefinitions>
                     <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
-                        <Label Margin="0 0 0 5" Content="Редактировать Пароль" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
+                        <Label FontWeight="Bold" Margin="0 0 0 5" Content="Редактировать Пароль" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
                         <TextBox Width="200" />
                     </StackPanel>
                     <StackPanel  VerticalAlignment="Top" Grid.Row="1">
@@ -247,6 +260,26 @@ Click="btnClose_Click">
 
                 </Grid>
 
+                <Grid Margin="0 20 0 0" Grid.Row="4" Grid.RowSpan="5" Grid.Column="0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition/>
+                        
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="0">
+                        <Label Content="Логин: " Foreground="White" FontWeight="Bold" />
+                        <TextBlock Text="{Binding LoginName}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1">
+                        <Label Content="Почта: " Foreground="White" FontWeight="Bold" />
+                        <TextBlock Text="{Binding Mail}" />
+                    </StackPanel>
+                  
+                </Grid>
+                
+                
             </Grid>
 
         </Border>
