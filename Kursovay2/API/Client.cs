@@ -166,15 +166,16 @@ namespace Kursovay2.API
         }
 
 
-        public async Task<string> GetGeneratedCode2()
+        public async Task<string> GetGeneratedCode2(string mail)
         {
             string code = "";
-            HttpResponseMessage response = await httpClient.GetAsync("Account/GenerateCode2");
+            HttpResponseMessage response = await httpClient.GetAsync($"Account/GenerateCode2?email={mail}");
             // адрес метода в API, который возвращает сгенерированный код
-
-            if (response.IsSuccessStatusCode)
+            code = await response.Content.ReadAsStringAsync();
+            if (!response.IsSuccessStatusCode)
             {
-                code = await response.Content.ReadAsStringAsync();
+                MessageBox.Show(code);
+                code = null;
             }
 
             return code;

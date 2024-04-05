@@ -36,7 +36,7 @@ namespace Kursovay2.Views
         {
             try
             {
-                CodeСonfirmation codeСonfirmation = new CodeСonfirmation();
+                CodeСonfirmation codeСonfirmation = new CodeСonfirmation(txtMail.Text);
                 codeСonfirmation.ShowDialog();
 
                 if (codeСonfirmation.Success)

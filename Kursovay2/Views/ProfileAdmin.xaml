@@ -5,8 +5,178 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.Views"
         mc:Ignorable="d"
-        Title="ProfileAdmin" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Профиль Админа" MinHeight="450" Height="450" MinWidth="750" Width="900" 
+         WindowStartupLocation="CenterScreen"
+         WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+
+    <Border CornerRadius="10">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/дед.jpg"
+             Stretch="Fill"/>
+        </Border.Background>
+        <Border  CornerRadius="10"                    
+ BorderThickness="2"
+ Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#060531" Offset="0"/>
+                    <GradientStop Color="#1B1448" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <!--Шапка-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>    
+                    <RowDefinition  Height="50"/>    
+                    <RowDefinition />    
+                    <RowDefinition/>    
+                    <RowDefinition Height="100"/>   
+                    <RowDefinition />   
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            <Grid  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="12" VerticalAlignment="Top">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Окно Профиля Админа"
+   Foreground="DarkGray"
+   FontSize="10"
+   FontFamily="Montserrat"
+   Grid.Column="0"
+   VerticalAlignment="Center"
+   Margin="10,0,0,0"/>
+
+                <Button x:Name="btnMinimize"                           
+BorderThickness="0"
+Content="-"
+Foreground="White"
+FontSize="16"
+FontFamily="Montserrat"
+Cursor="Hand"
+Grid.Column="1"
+Click="btnMinimize_Click">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#28AEED"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#278BEF"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="18" Height="18"
+            CornerRadius="9"
+            Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+
+                <Button x:Name="btnClose"                          
+BorderThickness="0"
+Content="X"
+Foreground="White"
+FontSize="12"
+FontFamily="Montserrat"
+Cursor="Hand"
+Grid.Column="2"
+Click="btnClose_Click">
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#DA34AE"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#C62DAE"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="18" Height="18"
+            CornerRadius="9"
+            Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                </Grid>
+
+                <Border Grid.Row="2" Grid.RowSpan="2" Grid.Column="0"  CornerRadius="120" BorderBrush="Gray" 
+                       BorderThickness="2" Background="Transparent">
+                    
+                    <StackPanel>
+                            <Image Source="\Images\ImageNull2png"/>
+                    </StackPanel>
+                </Border>
+
+                <Grid Grid.Row="1" Grid.ColumnSpan="12" Grid.Column="1">
+                    <Label Content="Редактирование профиля" FontSize="22" HorizontalAlignment="Center" Foreground="White"/>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
+                        <Label Margin="0 0 0 5" Content="Редактировать имя" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
+                        <TextBox Width="200" />
+                    </StackPanel>
+                    <StackPanel  VerticalAlignment="Top" Grid.Row="1">
+                      
+                            
+                        <StackPanel Height="45" Width="150">
+
+                            <Button Content="Измененить имя" 
+                                BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="150" Height="30"
+                                            CornerRadius="15"
+                                            Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+                                             HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </StackPanel>
+                        
+                    </StackPanel>
+                        
+                </Grid>
+                
+            </Grid>
+
+        </Border>
+    </Border>
 </Window>

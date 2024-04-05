@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Окно для Админа" MinHeight="450" Height="450" MinWidth="750" Width="900" 
          WindowStartupLocation="CenterScreen"
-         WindowStyle="None" AllowsTransparency="True">
+         WindowStyle="None" AllowsTransparency="True" Background="Transparent">
     
     <Border CornerRadius="10">
         <Border.Background>

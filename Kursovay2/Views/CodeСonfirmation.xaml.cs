@@ -21,13 +21,13 @@ namespace Kursovay2.Views
     public partial class CodeСonfirmation : Window
     {
         string generatedCode;
-         
-        public CodeСonfirmation()
+        private readonly string email;
+
+        public CodeСonfirmation(string email)
         {
             InitializeComponent();
-
-            //generatedCode = Client.Instance.GetGeneratedCode(txtCode.Text);
-
+            this.email = email;
+            //generatedCode = Client.Instance.GetGeneratedCode2();
         }
 
         public string Mail { get; set; }
@@ -48,7 +48,7 @@ namespace Kursovay2.Views
         private async void CheckCode(object sender, RoutedEventArgs e)
         {  
             // Получаем код с сервера 
-            generatedCode = await Client.Instance.GetGeneratedCode2();
+            generatedCode = await Client.Instance.GetGeneratedCode2(email);
             // Получаем введенный пользователем код
             string enteredCode = txtCode.Text;
 
@@ -66,7 +66,9 @@ namespace Kursovay2.Views
         }
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+           
+            Close();
+            //Application.Current.Shutdown();
         }
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
