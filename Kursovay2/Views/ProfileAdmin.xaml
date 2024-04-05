@@ -165,7 +165,15 @@ Click="btnClose_Click">
                     </Grid.RowDefinitions>
                     <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
                         <Label FontWeight="Bold" Margin="0 0 0 5" Content="Редактировать Логин" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
-                        <TextBox Width="200" />
+                        <TextBox Width="200" >
+                            <TextBox.Template>
+                                <ControlTemplate>
+                                    <Border CornerRadius="15"  BorderThickness="1" BorderBrush="White">
+                                        <ScrollViewer Margin="0 0 0 0" x:Name="PART_ContentHost" />
+                                    </Border>
+                                </ControlTemplate>
+                            </TextBox.Template>
+                        </TextBox>
                     </StackPanel>
                     <StackPanel  VerticalAlignment="Top" Grid.Row="1">
                       
