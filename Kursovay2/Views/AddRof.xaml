@@ -43,6 +43,8 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="70"/>
                     <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="130"/>
                 </Grid.RowDefinitions>
 
 
@@ -154,29 +156,6 @@ Click="btnClose_Click">
 
 
 
-                            <StackPanel VerticalAlignment="Bottom"  Margin="0 25 0 0" 
-                                        Orientation="Horizontal" HorizontalAlignment="Left">
-
-                                <StackPanel Margin="5" Orientation="Vertical" >
-                                    <TextBlock Text="Поиск по тегу шутки:" Foreground="White"/>
-                                    <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Width="200" Height="22" />
-                                </StackPanel>
-                                <StackPanel Margin="5" Orientation="Vertical"
-  
-  Width="159"
-  >
-                                    <TextBlock HorizontalAlignment="Center" Text="Сортировка по Эпичности" Foreground="White" />
-                                    <ComboBox ItemsSource="{Binding Sorting, UpdateSourceTrigger=PropertyChanged}" 
-SelectedItem="{Binding SelectedSorting, UpdateSourceTrigger=PropertyChanged}"/>
-                                </StackPanel>
-
-                                <StackPanel Margin="5" Orientation="Vertical" Width="75" >
-                                    <TextBlock Text="Жанр" HorizontalAlignment="Center" Foreground="White" />
-                                    <ComboBox ItemsSource="{Binding Types, UpdateSourceTrigger=PropertyChanged}" 
-SelectedItem="{Binding SelectedType, UpdateSourceTrigger=PropertyChanged}"
-DisplayMemberPath="Type1"/>
-                                </StackPanel>
-                            </StackPanel>
 
 
 
@@ -207,21 +186,11 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <StackPanel  Grid.Column="1" VerticalAlignment="Bottom" >
-                            <StackPanel Margin="0 0 10 10 " HorizontalAlignment="Center">
 
-                                <Button Background="Transparent"  BorderBrush="Transparent"
-                                        Foreground="White" Content="Профиль" />
-                            </StackPanel>
-                        </StackPanel>
-                        <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Bottom"
-                                    HorizontalAlignment="Center">
-                            <Image  Source="\Images\ImageNull2png"/>
-                        </StackPanel>
                     </Grid>
                 </StackPanel>
 
-                <StackPanel Grid.Row="1" Grid.Column="0"  >
+                <StackPanel Grid.RowSpan="3" Grid.Row="1" Grid.Column="0"  >
                     <Grid x:Name="sidePanel" Background="Transparent" HorizontalAlignment="Left" Width="150">
                         <StackPanel>
                             <Grid Height="50" Background="Transparent">
@@ -250,72 +219,16 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                                 Click="ClickAdminToMainWindow"/>
                                         </StackPanel>
                                     </ListViewItem>
-                                    <ListViewItem Height="30">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
-                                            <TextBlock Margin="15 0 0 0" Text="Пользователи" VerticalAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListViewItem>
-                                    <ListViewItem Height="30">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
-                                            <Button Margin="15 0 0 0"      
-                Background="Transparent"
-                Foreground="White"
-                BorderBrush="Transparent"
-                Content="Добавить шутку" Click="ClickAddRof" VerticalAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListViewItem>
-                                    <ListViewItem Height="30">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
-                                            <Button Margin="15 0 0 0"      
-                                                    Background="Transparent"
-                                                    Foreground="White"
-                                                    BorderBrush="Transparent"
-                                                    Content="Все шутки" Click="AllRof" VerticalAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListViewItem>
-                                    <ListViewItem Height="30">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
-                                            <TextBlock Margin="15 0 0 0" Text="История шуток" VerticalAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListViewItem>
-                                    <ListViewItem Height="30">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
-                                            <TextBlock Margin="15 0 0 0" Text="Локальные шутки" VerticalAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListViewItem>
-                                    <ListViewItem Height="30">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
-                                            <TextBlock Margin="15 0 0 0" Text="Модно" VerticalAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListViewItem>
-                                    <ListViewItem Height="30">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
-                                            <TextBlock Margin="15 0 0 0" Text="Вышло из моды" VerticalAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListViewItem>
-                                    <ListViewItem Height="30">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
-                                            <TextBlock Margin="15 0 0 0" Text="Легенды" VerticalAlignment="Center"/>
-                                        </StackPanel>
-                                    </ListViewItem>
+
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="\icons\close2.png" Height="20"
                    VerticalAlignment="Center" />
-                                            <Button Margin="15 0 0 0" Style="{StaticResource ButtonGost}" 
-                                                Background="Transparent"
+                                            <Button Margin="15 0 0 0" Style="{StaticResource ButtonGost}" Background="Transparent"
                     BorderBrush="Transparent"
-                    Content="Выйти"
+                    Content="Вернуться"
                     VerticalAlignment="Center"
-                    Click="ClickToMainWindow"/>
+                    Click="ClickToAdmin"/>
                                         </StackPanel>
                                     </ListViewItem>
                                     <!--<ListViewItem Height="30">
@@ -330,7 +243,14 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                             <TextBlock Margin="15 0 0 0" Text="Настройки" VerticalAlignment="Center"/>
                                         </StackPanel>
                                     </ListViewItem>
-
+                                    <ListViewItem Height="30">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="\icons\aboutpng.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Margin="15 0 0 0" Foreground="White" Background="Transparent"
+BorderBrush="Transparent"
+Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListViewItem>
                                 </ListView>
                             </ScrollViewer>
                         </StackPanel>
@@ -338,10 +258,10 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                     </Grid>
 
                 </StackPanel>
-                <ScrollViewer HorizontalScrollBarVisibility="Auto"
-        Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" >
+                <ScrollViewer  HorizontalScrollBarVisibility="Auto"
+        Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1" >
 
-                    <ListView 
+                    <ListView  
 ItemsSource="{Binding stagesRof}" 
 SelectedItem="{Binding SelectedStage}" Margin="5">
 
@@ -378,6 +298,48 @@ SelectedItem="{Binding SelectedStage}" Margin="5">
                         </ListView.View>
                     </ListView>
                 </ScrollViewer>
+
+                <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        
+                    </Grid.ColumnDefinitions>
+                
+                        
+                    <StackPanel Margin="10" Orientation="Horizontal"
+VerticalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="4" Grid.Column="1">
+                        <TextBlock Foreground="White" VerticalAlignment="Center" Text="Выбор статуса(популярное/забытое/легендарное)"/>
+                        <ComboBox Margin="5" Width="100" />
+                    </StackPanel>
+
+
+                    <StackPanel HorizontalAlignment="Left"
+ VerticalAlignment="Center" Grid.Row="1" Grid.Column="1">
+                        <TextBlock Foreground="White"  Text="Кнопки для выбора тэга и т.д."/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"  Grid.Row="1" Grid.Column="2">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Foreground="White" Text="Тэг" />
+                            <ComboBox Width="100" Margin="0,0,0,10" />
+                            <TextBlock Foreground="White" Text="Шутка(жанр)" />
+                            <ComboBox Width="100" />
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <StackPanel Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="3">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Foreground="White" Text="Начало(тип)" />
+                            <ComboBox Width="100" Margin="0,0,0,10" />
+
+                        </StackPanel>
+
+                    </StackPanel>
+                   
+                </Grid>
             </Grid>
 
 

@@ -31,7 +31,8 @@ namespace Kursovay2.AddRof
 
         private void ClickObratAdmin(object sender, RoutedEventArgs e)
         {
-            Admin.Admin admin = new Admin.Admin(user);
+            Admin.Admin admin = new Admin.Admin();
+            //Admin.Admin admin = new Admin.Admin(user);
             admin.Show();
             this.Close();
         }
@@ -64,6 +65,16 @@ namespace Kursovay2.AddRof
             Views.Opisania opisania = new Views.Opisania();
             opisania.Show();
             this.Close();
+        }
+
+        private void ClickToAdmin(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Podskaska(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
