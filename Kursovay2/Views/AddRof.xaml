@@ -294,7 +294,7 @@ SelectedItem="{Binding SelectedStage}" Margin="5">
 
                 <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="140"/>
                         <ColumnDefinition Width="120"/>
                         <ColumnDefinition Width="100"/>
                         <ColumnDefinition/>
@@ -310,7 +310,10 @@ SelectedItem="{Binding SelectedStage}" Margin="5">
                     <!--Типы-->
                     <StackPanel Margin="10" Orientation="Horizontal"
 VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0">
-                        <TextBlock Foreground="White" VerticalAlignment="Center" Text="Тэг"/>
+                        <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
+                            
+                                <TextBlock Margin="10" Foreground="White" VerticalAlignment="Center" Text="Тэг"/>
+                        </Border>
                       
                     </StackPanel>
 
@@ -318,7 +321,10 @@ VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column
                     <StackPanel Margin="5,0,5,0" VerticalAlignment="Center" Orientation="Horizontal"
                                 HorizontalAlignment="Center"  Grid.Row="2" Grid.Column="0">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Foreground="White" Text="Выбор статуса" />
+                            <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
+
+                                <TextBlock Margin="10" Foreground="White" Text="Выбор статуса" />
+                            </Border>
                            
                          
                         </StackPanel>
@@ -327,7 +333,10 @@ VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column
 
                     <StackPanel  Orientation="Horizontal"
 VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0">
-                        <TextBlock Foreground="White" Text="Завершение шутки" />
+                        <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
+                            
+                            <TextBlock Margin="10" Foreground="White" Text="Завершение шутки" />
+                        </Border>
                         
                     </StackPanel>
 
@@ -352,6 +361,46 @@ VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column
                         <ComboBox Width="100"  />
                     </StackPanel>
                     <!--ComboBox-->
+
+                    <!--Автор и описание-->
+                    <StackPanel Grid.Row="0" Grid.RowSpan="2" Grid.Column="3">
+                        
+                    
+                    <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3">
+                        <Label FontWeight="Bold" Margin="0 0 0 5" Content="Написать автора" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
+                        <TextBox Width="200" >
+                            <TextBox.Template>
+                                <ControlTemplate>
+                                    <Border CornerRadius="10" Height="20" Margin="0 0 0 5" BorderThickness="1" Background="White" BorderBrush="White">
+                                        <ScrollViewer Margin="0 0 0 0" x:Name="PART_ContentHost" />
+                                    </Border>
+                                </ControlTemplate>
+                            </TextBox.Template>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel  VerticalAlignment="Top" Grid.Row="1">
+
+
+                        <StackPanel Height="45" Width="150" >
+
+                            <Button Margin="0 0 0 5" Content="Внести данные" 
+             BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="150" Height="30"
+                         CornerRadius="15"
+                         Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </StackPanel>
+
+                    </StackPanel>
+                    </StackPanel>
+                    <!--Автор и описание-->
                 </Grid>
             </Grid>
 
