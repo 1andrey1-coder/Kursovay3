@@ -168,8 +168,20 @@ namespace Kursovay2.API
 
         public async Task<string> GetGeneratedCode2(string mail)
         {
+
+            //var loginuUser = new LoginName
+            //{
+            //    Mail = mail
+
+            //};
+            //var jsonContent = JsonConvert.SerializeObject(loginuUser);
+            //var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+
             string code = "";
+            //HttpResponseMessage response = await httpClient.PostAsync($"Account/GenerateCode2", httpContent);
             HttpResponseMessage response = await httpClient.GetAsync($"Account/GenerateCode2?email={mail}");
+
             // адрес метода в API, который возвращает сгенерированный код
             code = await response.Content.ReadAsStringAsync();
             if (!response.IsSuccessStatusCode)
