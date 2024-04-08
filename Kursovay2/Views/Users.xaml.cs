@@ -93,7 +93,8 @@ namespace Kursovay2.User
         private void ClickUserToMainWindow(object sender, RoutedEventArgs e)
         {
           
-            User.Users user2 = new User.Users(user);
+            User.Users user2 = new User.Users();
+            //User.Users user2 = new User.Users(user);
             user2.Show();
             this.Close();
         }

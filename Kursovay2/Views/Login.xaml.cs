@@ -1,4 +1,5 @@
 ﻿using Kursovay2.API;
+using Kursovay2.Models;
 using Kursovay2.mvvm;
 using Kursovay2.mvvm.VM;
 using Kursovay2.User;
@@ -41,7 +42,8 @@ namespace Kursovay2.Views
         private void PerexodUser(object sender, RoutedEventArgs e)
         {
 
-            User.Users user2 = new User.Users(user);
+            User.Users user2 = new User.Users();
+            //User.Users user2 = new User.Users(user);
             //user.Show();
             //this.Close();
 
@@ -52,7 +54,8 @@ namespace Kursovay2.Views
 
         private void PerexodAdmin(object sender, RoutedEventArgs e)
         {
-            Admin.Admin admin = new Admin.Admin(user);
+            Admin.Admin admin = new Admin.Admin();
+            //Admin.Admin admin = new Admin.Admin(user);
             //admin.Show();
             //this.Close();
 

@@ -258,6 +258,16 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
                                             <Button Margin="15 0 0 0"      
+                Background="Transparent"
+                Foreground="White"
+                BorderBrush="Transparent"
+                Content="Добавить шутку" Click="ClickAddRof" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListViewItem>
+                                    <ListViewItem Height="30">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Margin="15 0 0 0"      
                                                     Background="Transparent"
                                                     Foreground="White"
                                                     BorderBrush="Transparent"

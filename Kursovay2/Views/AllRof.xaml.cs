@@ -73,7 +73,8 @@ namespace Kursovay2.Views
         }
         private void ClickObrat(object sender, RoutedEventArgs e)
         {
-            Admin.Admin admin = new Admin.Admin(user);
+            Admin.Admin admin = new Admin.Admin();
+            //Admin.Admin admin = new Admin.Admin(user);
             admin.Show();
             this.Close();
         }
