@@ -30,11 +30,10 @@ namespace Kursovay2.Admin
         double panelWidth;
         bool hidden;
 
-        private readonly LoginUserDTO user;
-        public Admin(LoginUserDTO user)
+        
+        public Admin()
         {
             InitializeComponent();
-            this.user = user;
 
             DisplayUserInfo();
             timer = new DispatcherTimer();
@@ -46,7 +45,8 @@ namespace Kursovay2.Admin
         }
         private async void DisplayUserInfo()
         {
-            LoginUserDTO login1 = await Client.Instance.GetUser(user.LoginId);
+         
+            LoginUserDTO login1 = await Client.Instance.GetUser(SingleProfle.user.LoginId);
 
             if (login1 != null)
             {

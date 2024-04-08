@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Kursovay2.mvvm;
 using Kursovay2.Views;
+using Kursovay2.Models;
 
 namespace Kursovay2.mvvm.VM
 {
@@ -37,16 +38,17 @@ namespace Kursovay2.mvvm.VM
                 try
                 {
                     var user = await Client.Instance.UserLogin(passwordBox.Password, mail);
+                    SingleProfle.user = user;
                     if (user.RoleId == 1)
                     {
 
-                        Admin.Admin adminWindow = new Admin.Admin(user);
+                        Admin.Admin adminWindow = new Admin.Admin();
                         adminWindow.Show();
                         Application.Current.MainWindow.Close();
                     }
                     if  (user.RoleId == 2)
                     {
-                        Users userWindow = new Users(user);
+                        Users userWindow = new Users();
                         userWindow.Show();
                         Application.Current.MainWindow.Close();
                     }
