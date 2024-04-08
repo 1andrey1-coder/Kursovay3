@@ -76,5 +76,32 @@ namespace Kursovay2.AddRof
         {
 
         }
+
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow.WindowState = WindowState.Minimized;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClickAdminToMainWindow(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PanelHeader_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

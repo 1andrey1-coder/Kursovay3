@@ -369,7 +369,7 @@ namespace Kursovay2Api2._0.Controllers
             try
             {
                 // Генерация нового кода
-                var code = GenerateRandomCode2();
+                var code = GenerateRandomCode();
 
                 // Отправка нового кода на почту
                 await mail.Send("slovarsleng@mail.ru", email, "Потверждение почты для сброса пароля в Словаре сленга"
@@ -379,21 +379,21 @@ namespace Kursovay2Api2._0.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);  
+                return BadRequest("Код неверный");  
             }
 
         }
 
-        private string GenerateRandomCode2()
-        {
-            string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            var random = new Random();
-            var password = new string(
-                Enumerable.Repeat(chars, 4)
-                          .Select(s => s[random.Next(s.Length)])
-                          .ToArray());
-            return password.ToString();
-        }
+        //private string GenerateRandomCode2()
+        //{
+        //    string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        //    var random = new Random();
+        //    var password = new string(
+        //        Enumerable.Repeat(chars, 4)
+        //                  .Select(s => s[random.Next(s.Length)])
+        //                  .ToArray());
+        //    return password.ToString();
+        //}
 
         //[HttpGet("GenerateCode")]
         //public async Task<IActionResult> GenerateCode3(string email)
@@ -405,18 +405,18 @@ namespace Kursovay2Api2._0.Controllers
         //         , $"Ваш код потверждения: {generatedCode}");
         //    return Ok(new { code = generatedCode });
         //}
-       
-    
-        //private string GenerateRandomCode()
-        //{
-        //    // Генерация случайного кода
-        //    Random random = new Random();
-        //    const string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        //    var code = new string(Enumerable.Repeat(characters, 6)
-        //      .Select(s => s[random.Next(s.Length)]).ToArray());
 
-        //    return code;
-        //}
+
+        private string GenerateRandomCode()
+        {
+            // Генерация случайного кода
+            Random random = new Random();
+            const string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var code = new string(Enumerable.Repeat(characters, 4)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+
+            return code;
+        }
 
     }
 

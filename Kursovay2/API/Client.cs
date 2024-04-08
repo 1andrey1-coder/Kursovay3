@@ -143,27 +143,27 @@ namespace Kursovay2.API
     
         
 
-        public async Task<string> GetGeneratedCode()
-        {
-            string apiUrl = @"https://localhost:7189/api/"; 
-            string generatedCode = null;
+        //public async Task<string> GetGeneratedCode()
+        //{
+        //    string apiUrl = @"https://localhost:7189/api/"; 
+        //    string generatedCode = null;
 
-            using (HttpClient client = new HttpClient())
-            {
-                HttpResponseMessage response = await client.GetAsync(apiUrl);
+        //    using (HttpClient client = new HttpClient())
+        //    {
+        //        HttpResponseMessage response = await client.GetAsync(apiUrl);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    generatedCode = await response.Content.ReadAsStringAsync();
-                }
-                else
-                {
-                    MessageBox.Show("Кода такого не существует", "Неудачный потверждение", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
+        //        if (response.IsSuccessStatusCode)
+        //        {
+        //            generatedCode = await response.Content.ReadAsStringAsync();
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Кода такого не существует", "Неудачный потверждение", MessageBoxButton.OK, MessageBoxImage.Error);
+        //        }
+        //    }
 
-            return generatedCode;
-        }
+        //    return generatedCode;
+        //}
 
 
         public async Task<string> GetGeneratedCode2(string mail)
@@ -177,6 +177,7 @@ namespace Kursovay2.API
                 MessageBox.Show(code);
                 code = null;
             }
+            
 
             return code;
         }

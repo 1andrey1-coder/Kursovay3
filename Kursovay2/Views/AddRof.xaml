@@ -265,14 +265,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
 ItemsSource="{Binding stagesRof}" 
 SelectedItem="{Binding SelectedStage}" Margin="5">
 
-                        <ListView.ContextMenu>
-                            <ContextMenu>
-                                <MenuItem Header="Сменить статус на: завершено" Click="ClickStatuseDone"/>
-                                <MenuItem Header="Сменить статус на: ожидает" Click="ClickStatuseAwaiting"/>
-                                <MenuItem Header="Сменить статус на: в процессе" Click="ClickStatuseInProgress"/>
-                                <MenuItem Header="Редактировать шутку/рофл" Click="ClickRedagturaRof"/>
-                            </ContextMenu>
-                        </ListView.ContextMenu>
+                       
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Тэг" Width="35"  
