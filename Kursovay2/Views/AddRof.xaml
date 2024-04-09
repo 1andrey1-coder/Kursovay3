@@ -297,7 +297,7 @@ SelectedItem="{Binding SelectedStage}" Margin="5">
                         <ColumnDefinition Width="140"/>
                         <ColumnDefinition Width="120"/>
                         <ColumnDefinition Width="100"/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="210"/>
                         <ColumnDefinition/>
                         
                     </Grid.ColumnDefinitions>
@@ -363,7 +363,7 @@ VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column
                     <!--ComboBox-->
 
                     <!--Автор и описание-->
-                    <StackPanel Grid.Row="0" Grid.RowSpan="2" Grid.Column="3">
+                    <StackPanel  Grid.Row="0" Grid.RowSpan="2" Grid.Column="3">
                         
                     
                     <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3">
