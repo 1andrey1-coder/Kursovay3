@@ -403,15 +403,16 @@ VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column
                     </StackPanel>
 
 
-                    <StackPanel  Grid.Row="0" Grid.RowSpan="2" Grid.Column="4">
+                    <StackPanel  Grid.Row="0" Grid.RowSpan="3" Grid.Column="4">
 
 
                         <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3">
-                            <Label FontWeight="Bold" Margin="0 0 0 5" Content="Написать автора" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
-                            <TextBox Width="200" >
+                            <Label FontWeight="Bold" Margin="0 0 0 10" Content="Небольшое описание" 
+                                   Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
+                            <TextBox  Width="200" Height="100">
                                 <TextBox.Template>
                                     <ControlTemplate>
-                                        <Border CornerRadius="10" Height="20" Margin="0 0 0 5" BorderThickness="1" Background="White" BorderBrush="White">
+                                        <Border CornerRadius="10" Height="100" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
                                             <ScrollViewer Margin="0 0 0 0" x:Name="PART_ContentHost" />
                                         </Border>
                                     </ControlTemplate>
