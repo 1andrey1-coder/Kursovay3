@@ -324,10 +324,62 @@ namespace Kursovay2Api2._0.Controllers
             return code;
         }
 
+
+
+        //Вывод всего
+        //[HttpGet("RoflList")]
+        //public async Task<ActionResult<IEnumerable<Rofl>>> GetRofls()
+        //{
+        //    return await _memContext.Rofls.ToListAsync();
+        //}
+        //Вывод всего
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Rofl>>> GetRofls()
+        {
+            return await _memContext.Rofls.ToListAsync();
+        }
+
+        // GET: api/Rofl/{id}
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Rofl>> GetRofl(int id)
+        {
+            var rofl = await _memContext.Rofls.FindAsync(id);
+
+            if (rofl == null)
+            {
+                return NotFound();
+            }
+
+            return rofl;
+        }
+
+        // GET: api/Rofl/GetRoflDetails/{id}
+        [HttpGet("GetRoflDetails/{id}")]
+        public async Task<ActionResult<RoflDTO>> GetRoflDetails(int id)
+        {
+            var rofl = await _memContext.Rofls.Include(r => r.RoflDetails).FirstOrDefaultAsync(r => r.Id == id);
+
+            if (rofl == null)
+            {
+                return NotFound();
+            }
+
+            var roflDetails = new RoflDTO
+            {
+                RoflId = rofl.Id,
+                RoflName = rofl.Name,
+                RoflOpisanie = rofl.Description,
+                TegName = rofl.RoflDetails.Teg.Name
+            };
+
+            return roflDetails;
+        }
     }
-
-
 }
+
+
+
 
     
 
