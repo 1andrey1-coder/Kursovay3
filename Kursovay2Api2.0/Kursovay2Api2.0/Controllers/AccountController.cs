@@ -335,7 +335,7 @@ namespace Kursovay2Api2._0.Controllers
         //работает как надо
         //в RoflDTO заменил у TegId int? на TefDTO
         [HttpGet("RoflList")]
-        public IActionResult RoflList(string name)
+        public async Task<ActionResult<IEnumerable<Rofl>>> RoflList(string name)
         {
             var rofl = _memContext.Rofls.FirstOrDefault(r => r.RoflName == name);
 
