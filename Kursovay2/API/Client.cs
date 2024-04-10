@@ -67,7 +67,7 @@ namespace Kursovay2.API
         public async Task<LoginUserDTO> UserRegister(string login, string mail)
         {
             //почему то null
-       
+
             var RegisterUser = new Registr
             {
                 Login = login,
@@ -141,10 +141,10 @@ namespace Kursovay2.API
             var userAnswer = JsonConvert.DeserializeObject<LoginUserDTO>(await response.Content.ReadAsStringAsync());
             return userAnswer;
         }
-       
 
-    
-        
+
+
+
 
         //public async Task<string> GetGeneratedCode()
         //{
@@ -177,25 +177,32 @@ namespace Kursovay2.API
             //    Mail = mail
 
             //};
-            //var jsonContent = JsonConvert.SerializeObject(loginuUser);
-            //var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
-
-
             string code = "";
+            var jsonContent = JsonConvert.SerializeObject(code);
+            var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+
             //HttpResponseMessage response = await httpClient.PostAsync($"Account/GenerateCode2", httpContent);
-            HttpResponseMessage response = await httpClient.GetAsync($"Account/GenerateCode?email={mail}");
+            HttpResponseMessage response = await httpClient.PostAsync($"Account/GenerateCode?mail={mail}",
+                httpContent);
 
             // адрес метода в API, который возвращает сгенерированный код
             code = await response.Content.ReadAsStringAsync();
             if (!response.IsSuccessStatusCode)
             {
-                MessageBox.Show(code);
+
+                MessageBox.Show($"Код: {code} не был успешно сгенерирован. Ошибка: {response.ReasonPhrase}");
                 code = null;
             }
-            
+            else
+            {
+                MessageBox.Show("Ошибка при получении кода");
+            }
+
 
             return code;
         }
+        //ilchenkor1135@suz-ppk.ru
         public async Task<LoginUserDTO> PostSmsEmail(string mail)
         {
             var loginuUser = new LoginName
@@ -216,14 +223,40 @@ namespace Kursovay2.API
         }
 
 
+        public static async Task<bool> VerifyCode(string email, string code)
+        {
+            using (var client = new HttpClient())
+            {
+                var verificationData = new ResetDTO
+                {
+                    Mail = email,
+                    Code = code
+                };
 
+                var json = JsonConvert.SerializeObject(verificationData);
+                var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync("Account/VerifyCode", data);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    // Обработка случаев, когда проверка не прошла
+                    return false;
+                }
+            }
+        }
         public async Task GetListRofl()
         {
 
         }
+
     }
 
 
 
-}
+} 
 

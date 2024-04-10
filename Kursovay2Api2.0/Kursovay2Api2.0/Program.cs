@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //база данных
 builder.Services.AddSingleton<MailService>();
+builder.Services.AddSingleton<CodeRequest>();
 builder.Services.AddDbContext<MemContext>();
 
 var app = builder.Build();

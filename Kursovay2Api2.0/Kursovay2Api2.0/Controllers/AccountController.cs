@@ -18,12 +18,14 @@ namespace Kursovay2Api2._0.Controllers
     {
         private readonly MemContext _memContext;
         private readonly MailService mail;
+        private readonly CodeRequest codeRequest;
 
-        public AccountController(MemContext userService, MailService mail)
+        public AccountController(MemContext userService, MailService mail, CodeRequest code)
         {
             //MemContext.OnConfigurate(userService);
             _memContext = userService;
             this.mail = mail;
+            this.codeRequest = code;
         }
 
         [HttpGet("Name")]
@@ -140,7 +142,7 @@ namespace Kursovay2Api2._0.Controllers
                 //    ("Словарь сленга", registerUser.Mail, "Регистрация", $"Ваш пароль: {password}");
                 //EmailMessageService.sender.SendMail(message);
 
-                await mail.Send("slovarsleng@mail.ru", registerUser.Mail, "Регистрация в Словаре сленга"
+                await mail.Send(registerUser.Mail, "Регистрация в Словаре сленга"
                     , $"Ваш пароль: {password}");
 
                 return Ok(loginUserDTO);
@@ -284,10 +286,26 @@ namespace Kursovay2Api2._0.Controllers
             await _memContext.SaveChangesAsync();
 
             // Отправка нового пароля на почту (реализация этой функции опускается)
-            await mail.Send("slovarsleng@mail.ru", resetUser.Mail, "Регистрация в Словаре сленга"
+            await mail.Send( resetUser.Mail, "Регистрация в Словаре сленга"
                  , $"Ваш пароль: {newPassword}");
 
             return Ok("Пароль был сброшен и обновлен");
+        }
+
+
+
+        [HttpPost("VerifyCode")]
+        public IActionResult VerifyCode([FromBody] ResetDTO model)
+        {
+            // Ваша логика проверки кода здесь
+            if (model.Code == codeRequest.GetCode(model.Mail)) // Пример проверки кода
+            {
+                return Ok(new { message = "Код подтвержден" });
+            }
+            else
+            {
+                return BadRequest(new { error = "Неверный код" });
+            }
         }
 
 
@@ -305,10 +323,10 @@ namespace Kursovay2Api2._0.Controllers
                 }
                 // Генерация нового кода
                 var code = GenerateRandomCode();
-
+                codeRequest.SetCode(user.Mail, code);
                 // Отправка нового кода на почту
-                await mail.Send("slovarsleng@mail.ru", resetUser.Mail, "Потверждение почты для сброса пароля в Словаре сленга"
-                     , $"Ваш код потверждения: {code}");
+                await mail.Send(resetUser.Mail, "Потверждение почты для сброса пароля в Словаре сленга"
+                    , $"Ваш код потверждения: {code}");
 
                 return Ok(code);
             }

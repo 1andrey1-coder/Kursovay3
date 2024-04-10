@@ -9,5 +9,6 @@ namespace Kursovay2.API
     public class ResetDTO
     {
         public string? Mail { get; set; }
+        public string? Code { get; set; }
     }
 }
