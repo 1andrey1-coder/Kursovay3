@@ -69,7 +69,9 @@ namespace Kursovay2.AddRof
 
         private void ClickToAdmin(object sender, RoutedEventArgs e)
         {
-
+            Admin.Admin admin = (Admin.Admin)sender;
+            admin.Show();
+            this.Close();
         }
 
         private void Podskaska(object sender, RoutedEventArgs e)

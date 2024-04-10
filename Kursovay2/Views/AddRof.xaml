@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Окно для добавления"  MinHeight="450" Height="450" MinWidth="750" Width="900" 
       WindowStartupLocation="CenterScreen"
-      WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+      WindowStyle="None" AllowsTransparency="False" Background="Transparent">
 
 
 
@@ -208,17 +208,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                 <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"
   FontFamily="Century Gothic" FontSize="14" Foreground="White" 
   BorderBrush="Transparent" Background="Transparent" FontWeight="Bold">
-                                    <ListViewItem Height="30">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\home.png" Height="20" VerticalAlignment="Center"/>
-                                            <Button Margin="15 0 0 0" Content="Админка" 
-                                                Style="{StaticResource ButtonGost}"
-                                                VerticalAlignment="Center"
-                                                Background="Transparent"
-                                                BorderBrush="Transparent"
-                                                Click="ClickAdminToMainWindow"/>
-                                        </StackPanel>
-                                    </ListViewItem>
+                                   
 
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
