@@ -103,5 +103,10 @@ namespace Kursovay2.AddRof
         {
 
         }
+
+        private void ResetName(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

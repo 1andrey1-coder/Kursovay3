@@ -292,16 +292,22 @@ namespace Kursovay2Api2._0.Controllers
 
 
 
-        [HttpPost("GenerateCode2")]
-        public async Task<IActionResult> GenerateCode(string email)
+        [HttpPost("GenerateCode")]
+        public async Task<IActionResult> GenerateCode(ResetDTO resetUser)
         {
             try
             {
+                var user = await _memContext.LoginUsers.FirstOrDefaultAsync(u => u.Mail == resetUser.Mail);
+
+                if (user == null)
+                {
+                    return NotFound("Почта не найдена");
+                }
                 // Генерация нового кода
                 var code = GenerateRandomCode();
 
                 // Отправка нового кода на почту
-                await mail.Send("slovarsleng@mail.ru", email, "Потверждение почты для сброса пароля в Словаре сленга"
+                await mail.Send("slovarsleng@mail.ru", resetUser.Mail, "Потверждение почты для сброса пароля в Словаре сленга"
                      , $"Ваш код потверждения: {code}");
 
                 return Ok(code);

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -168,7 +169,7 @@ namespace Kursovay2.API
         //}
 
 
-        public async Task<string> GetGeneratedCode2(string mail)
+        public async Task<string> GetGeneratedCode(string mail)
         {
 
             //var loginuUser = new LoginName
@@ -182,7 +183,7 @@ namespace Kursovay2.API
 
             string code = "";
             //HttpResponseMessage response = await httpClient.PostAsync($"Account/GenerateCode2", httpContent);
-            HttpResponseMessage response = await httpClient.GetAsync($"Account/GenerateCode2?email={mail}");
+            HttpResponseMessage response = await httpClient.GetAsync($"Account/GenerateCode?email={mail}");
 
             // адрес метода в API, который возвращает сгенерированный код
             code = await response.Content.ReadAsStringAsync();
@@ -195,6 +196,26 @@ namespace Kursovay2.API
 
             return code;
         }
+        public async Task<LoginUserDTO> PostSmsEmail(string mail)
+        {
+            var loginuUser = new LoginName
+            {
+                Mail = mail
+            };
+            //httpContent - цепляем для проверки в самом Api
+            var jsonContent = JsonConvert.SerializeObject(loginuUser);
+            var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await httpClient.PostAsync($"Account/GenerateCode", httpContent);
+            if (!response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Почты не существует", "Неудачный вход", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            var userAnswer = JsonConvert.DeserializeObject<LoginUserDTO>(await response.Content.ReadAsStringAsync());
+            return userAnswer;
+        }
+
+
 
         public async Task GetListRofl()
         {
