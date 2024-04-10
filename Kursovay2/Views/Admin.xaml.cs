@@ -51,11 +51,11 @@ namespace Kursovay2.Admin
 
         private async void LoadData()
         {
-            List<RoflDTO> rofls = await Client.Instance.GetListRofl();
+            List<RoflDTO> Rofl = await Client.Instance.GetListRofl();
 
-            if (rofls != null)
+            if (Rofl != null)
             {
-                AdminListView.ItemsSource = rofls;
+                AdminListView.ItemsSource = Rofl;
             }
             else
             {

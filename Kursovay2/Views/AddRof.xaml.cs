@@ -22,13 +22,26 @@ namespace Kursovay2.AddRof
     public partial class AddRof : Window
     {
         private readonly LoginUserDTO user;
+        public RoflDTO SelectRofl { get; set; }
 
         public AddRof()
         {
             InitializeComponent();
-
+            LoadData();
         }
+        private async void LoadData()
+        {
+            List<RoflDTO> Rofl = await Client.Instance.GetListRofl();
 
+            if (Rofl != null)
+            {
+                AdminListView.ItemsSource = Rofl;
+            }
+            else
+            {
+                MessageBox.Show("Failed to load data from API");
+            }
+        }
         private void ClickObratAdmin(object sender, RoutedEventArgs e)
         {
             Admin.Admin admin = new Admin.Admin();
