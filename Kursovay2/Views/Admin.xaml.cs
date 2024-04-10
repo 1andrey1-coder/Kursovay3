@@ -4,6 +4,7 @@ using Kursovay2.User;
 using Kursovay2.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -29,7 +30,7 @@ namespace Kursovay2.Admin
 
         double panelWidth;
         bool hidden;
-
+        public ObservableCollection<RoflDTO> Rofl { get; set; }
         public RoflDTO SelectRofl {  get; set; }
         public Admin()
         {
@@ -209,6 +210,11 @@ namespace Kursovay2.Admin
         {
             Window parentWindow = Window.GetWindow(this);
             parentWindow.WindowState = WindowState.Minimized;
+        }
+
+        private void ClickDeleteRof(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
