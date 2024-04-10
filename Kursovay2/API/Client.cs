@@ -38,6 +38,7 @@ namespace Kursovay2.API
 
         //private readonly HttpClient _httpClient;
 
+        
         public async Task<LoginUserDTO> UserLogin(string password, string mail)
         {
             var loginuUser = new LoginName
@@ -146,28 +147,9 @@ namespace Kursovay2.API
 
 
 
-        //public async Task<string> GetGeneratedCode()
-        //{
-        //    string apiUrl = @"https://localhost:7189/api/"; 
-        //    string generatedCode = null;
 
-        //    using (HttpClient client = new HttpClient())
-        //    {
-        //        HttpResponseMessage response = await client.GetAsync(apiUrl);
-
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            generatedCode = await response.Content.ReadAsStringAsync();
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Кода такого не существует", "Неудачный потверждение", MessageBoxButton.OK, MessageBoxImage.Error);
-        //        }
-        //    }
-
-        //    return generatedCode;
-        //}
-
+      
+ 
 
         public async Task<string> GetGeneratedCode(string mail, string code)
         {
@@ -183,7 +165,7 @@ namespace Kursovay2.API
 
 
             //HttpResponseMessage response = await httpClient.PostAsync($"Account/GenerateCode2", httpContent);
-            HttpResponseMessage response = await httpClient.PostAsync($"Account/VerifyCode?code={code}",
+            HttpResponseMessage response = await httpClient.PostAsync($"Account/VerifyCode",
                 httpContent);
 
             // адрес метода в API, который возвращает сгенерированный код
@@ -203,7 +185,7 @@ namespace Kursovay2.API
             return userAnswer;
             //return code;
         }
-        //ilchenkor1135@suz-ppk.ru
+       
         public async Task<LoginUserDTO> PostSmsEmail(string mail)
         {
             var loginuUser = new LoginName
@@ -251,9 +233,54 @@ namespace Kursovay2.API
             }
         }
 
-        public async Task GetListRofl()
-        {
+        //public async Task<List<RoflDTO>> GetListRofl()
+        //{
+        //    try
+        //    {
+        //        var response = await httpClient.GetAsync("Account/RoflList");
+        //        if(response.IsSuccessStatusCode)
+        //        {
+        //            var content = await response.Content.ReadAsStringAsync();
+        //            return JsonConvert.DeserializeObject<List<RoflDTO>>(content);
+        //        }
 
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //        return null;
+        //    }
+        //    return null;
+
+        //}
+
+
+        //ilchenkor1135@suz-ppk.ru
+        //YPwYBwyp
+        //Failed to load data from API
+        public async Task<List<RoflDTO>> GetListRofl()
+        {
+            try
+            {
+                var response = await httpClient.GetAsync("Account/RoflList");
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<List<RoflDTO>>(content);
+                }
+                else
+                {
+
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
+          
+
+            return null;
         }
 
     }

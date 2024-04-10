@@ -130,6 +130,26 @@ namespace Kursovay2Api2._0.Controllers
         //         , $"Ваш код потверждения: {generatedCode}");
         //    return Ok(new { code = generatedCode });
         //}
+        //public async Task<string> GetGeneratedCode()
+        //{
+        //    string apiUrl = @"https://localhost:7189/api/"; 
+        //    string generatedCode = null;
 
+        //    using (HttpClient client = new HttpClient())
+        //    {
+        //        HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+        //        if (response.IsSuccessStatusCode)
+        //        {
+        //            generatedCode = await response.Content.ReadAsStringAsync();
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Кода такого не существует", "Неудачный потверждение", MessageBoxButton.OK, MessageBoxImage.Error);
+        //        }
+        //    }
+
+        //    return generatedCode;
+        //}
     }
 }

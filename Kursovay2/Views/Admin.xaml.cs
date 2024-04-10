@@ -30,13 +30,14 @@ namespace Kursovay2.Admin
         double panelWidth;
         bool hidden;
 
-        
+        public RoflDTO SelectRofl {  get; set; }
         public Admin()
         {
             InitializeComponent();
             //для отображения данных
-            Loaded += async (sender, e) => await Client.Instance.GetListRofl();
-           
+            LoadData();
+
+
 
             DisplayUserInfo();
             timer = new DispatcherTimer();
@@ -46,6 +47,23 @@ namespace Kursovay2.Admin
             panelWidth = sidePanel.Width; 
 
         }
+
+
+        private async void LoadData()
+        {
+            List<RoflDTO> rofls = await Client.Instance.GetListRofl();
+
+            if (rofls != null)
+            {
+                AdminListView.ItemsSource = rofls;
+            }
+            else
+            {
+                MessageBox.Show("Failed to load data from API");
+            }
+        }
+
+
         private async void DisplayUserInfo()
         {
          
