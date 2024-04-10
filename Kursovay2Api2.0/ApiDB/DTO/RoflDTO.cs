@@ -18,7 +18,7 @@ public class RoflDTO
 
     public string? RoflOpisanie { get; set; }
 
-    public int? RoflStatusId { get; set; }
+    public string? RoflStatusId { get; set; }
 
     public string? RoflGenreId { get; set; }
 

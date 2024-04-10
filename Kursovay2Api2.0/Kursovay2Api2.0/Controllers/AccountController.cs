@@ -338,7 +338,7 @@ namespace Kursovay2Api2._0.Controllers
         //работает как надо
         //в RoflDTO заменил у TegId int? на TefDTO
         [HttpGet("RoflList")]
-        public IActionResult GetRoflWithTeg(string name)
+        public IActionResult RoflList(string name)
         {
             var rofl = _memContext.Rofls.FirstOrDefault(r => r.RoflName == name);
 
@@ -349,6 +349,9 @@ namespace Kursovay2Api2._0.Controllers
 
             var teg = _memContext.Tegs.FirstOrDefault(t => t.TegId == rofl.TegId);
             var gender = _memContext.Genres.FirstOrDefault(t => t.GenreId == rofl.RoflGenreId);
+            var start = _memContext.Starts.FirstOrDefault(t => t.StartId == rofl.RoflStartId);
+            var status = _memContext.Statuses.FirstOrDefault(t => t.StatusId == rofl.RoflStatusId);
+            var end = _memContext.Ends.FirstOrDefault(t => t.EndId == rofl.RoflEndId);
 
             //var tegid = new TegDTO
             //{
@@ -362,11 +365,11 @@ namespace Kursovay2Api2._0.Controllers
                 RoflId = rofl.RoflId,
                 TegId = teg.TegName,
                 RoflGenreId = gender.GenreName,
-                //RoflStartId = rofl.RoflStatus.StatusName,
-                //RoflEndId = rofl.RoflEnd.EndName,
-                //RoflOpisanie = rofl.RoflOpisanie,
-                //RoflDateTime = rofl.RoflDateTime,
-                //RoflImage = rofl.RoflImage,
+                RoflStartId = start.StartName,
+                RoflStatusId = status.StatusName,
+                RoflEndId = end.EndName,
+                RoflOpisanie = rofl.RoflOpisanie,
+                RoflImage = rofl.RoflImage,
 
             };
 
