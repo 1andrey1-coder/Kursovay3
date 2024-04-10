@@ -169,21 +169,21 @@ namespace Kursovay2.API
         //}
 
 
-        public async Task<string> GetGeneratedCode(string mail)
+        public async Task<string> GetGeneratedCode(string mail, string code)
         {
 
-            //var loginuUser = new LoginName
-            //{
-            //    Mail = mail
-
-            //};
-            string code = "";
-            var jsonContent = JsonConvert.SerializeObject(code);
+            var emailcode = new ResetDTO
+            {
+                Mail = mail,
+                Code = code
+            };
+            //string code = "";
+            var jsonContent = JsonConvert.SerializeObject(emailcode);
             var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
 
             //HttpResponseMessage response = await httpClient.PostAsync($"Account/GenerateCode2", httpContent);
-            HttpResponseMessage response = await httpClient.PostAsync($"Account/GenerateCode?mail={mail}",
+            HttpResponseMessage response = await httpClient.PostAsync($"Account/VerifyCode?code={code}",
                 httpContent);
 
             // адрес метода в API, который возвращает сгенерированный код
@@ -199,8 +199,9 @@ namespace Kursovay2.API
                 MessageBox.Show("Ошибка при получении кода");
             }
 
-
-            return code;
+            var userAnswer = JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
+            return userAnswer;
+            //return code;
         }
         //ilchenkor1135@suz-ppk.ru
         public async Task<LoginUserDTO> PostSmsEmail(string mail)

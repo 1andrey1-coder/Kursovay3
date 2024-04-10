@@ -36,7 +36,7 @@ namespace Kursovay2.Views
         {
             try
             {
-               await Client.Instance.PostSmsEmail(txtMail.Text);
+                Client.Instance.PostSmsEmail(txtMail.Text);
 
                 CodeСonfirmation codeСonfirmation = new CodeСonfirmation(txtMail.Text);
                 codeСonfirmation.ShowDialog();
