@@ -213,34 +213,7 @@ namespace Kursovay2Api2._0.Controllers
         }
 
 
-        //[HttpGet("Rofl")]
-        //public ActionResult<RoflDTO> GetBrawlerById(string name)
-        //{
-        //    var user = _memContext.Rofls.FirstOrDefault(r => r.RoflName == name);
-
-        //    if (user == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    // Создаем экземпляр DTO и заполняем его данными из найденного пользователя
-        //    var roflDto = new RoflDTO
-        //    {
-        //        RoflName = user.RoflName,
-        //        //TegId = user.TegId,
-        //        RoflDateTime = user.RoflDateTime,
-        //        RoflEndId = user.RoflEndId,
-        //        RoflGenreId = user.RoflGenreId,
-        //        RoflId = user.RoflId,
-        //        RoflImage = user.RoflImage,
-        //        RoflOpisanie = user.RoflOpisanie,
-        //        RoflStartId = user.RoflStartId,
-        //        RoflStatusId = user.RoflStatusId,
-        //    };
-
-        //    return roflDto;
-        //}
-
+       
 
 
         [HttpGet("Login/{id}")]
@@ -351,11 +324,11 @@ namespace Kursovay2Api2._0.Controllers
 
 
         //Вывод всего
-        //[HttpGet("RoflList")]
-        //public async Task<ActionResult<IEnumerable<Rofl>>> GetRofls()
-        //{
-        //    return await _memContext.Rofls.ToListAsync();
-        //}
+        [HttpGet("RoflListAll")]
+        public async Task<ActionResult<IEnumerable<Rofl>>> GetRofls()
+        {
+            return await _memContext.Rofls.ToListAsync();
+        }
         //Вывод всего
 
 

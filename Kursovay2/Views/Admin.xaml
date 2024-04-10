@@ -356,7 +356,7 @@ SelectedItem="{Binding SelectRofl}" Margin="5">
                             <GridView>
                                 <GridViewColumn Header="Тэг" Width="35"  
                                                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
-                                                DisplayMemberBinding="{Binding Teg}" />
+                                                DisplayMemberBinding="{Binding TegId}" />
 
                                 <!--<GridViewColumn Header="Автор" Width="110" 
                                                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"

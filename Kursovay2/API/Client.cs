@@ -262,7 +262,7 @@ namespace Kursovay2.API
         {
             try
             {
-                var response = await httpClient.GetAsync("Account/RoflList");
+                var response = await httpClient.GetAsync("Account/RoflListAll");
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
