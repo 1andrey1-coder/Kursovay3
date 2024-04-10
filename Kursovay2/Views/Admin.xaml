@@ -339,7 +339,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                 <ScrollViewer HorizontalScrollBarVisibility="Auto"
         Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" >
 
-                    <ListView 
+                    <ListView x:Name="AdminListView"
 ItemsSource="{Binding stagesRof}" 
 SelectedItem="{Binding SelectedStage}" Margin="5">
 
@@ -353,7 +353,7 @@ SelectedItem="{Binding SelectedStage}" Margin="5">
                         </ListView.ContextMenu>
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Тэг" Width="35"  
+                                <GridViewColumn Header="Тэг" Width="35"   
                                                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
                                                 />
 

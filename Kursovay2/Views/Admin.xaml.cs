@@ -34,6 +34,9 @@ namespace Kursovay2.Admin
         public Admin()
         {
             InitializeComponent();
+            //для отображения данных
+            Loaded += async (sender, e) => await Client.Instance.GetListRofl();
+           
 
             DisplayUserInfo();
             timer = new DispatcherTimer();

@@ -370,6 +370,7 @@ namespace Kursovay2Api2._0.Controllers
                 RoflEndId = end.EndName,
                 RoflOpisanie = rofl.RoflOpisanie,
                 RoflImage = rofl.RoflImage,
+                RoflDateTime = rofl.RoflDateTime,
 
             };
 

@@ -7,6 +7,8 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Xml.Linq;
 
 namespace Kursovay2.API
 {
@@ -192,6 +194,11 @@ namespace Kursovay2.API
             
 
             return code;
+        }
+
+        public async Task GetListRofl()
+        {
+
         }
     }
 
