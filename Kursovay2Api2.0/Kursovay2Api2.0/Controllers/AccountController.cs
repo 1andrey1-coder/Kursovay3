@@ -211,33 +211,33 @@ namespace Kursovay2Api2._0.Controllers
         }
 
 
-        [HttpGet("Rofl")]
-        public ActionResult<RoflDTO> GetBrawlerById(string name)
-        {
-            var user = _memContext.Rofls.FirstOrDefault(r => r.RoflName == name);
+        //[HttpGet("Rofl")]
+        //public ActionResult<RoflDTO> GetBrawlerById(string name)
+        //{
+        //    var user = _memContext.Rofls.FirstOrDefault(r => r.RoflName == name);
 
-            if (user == null)
-            {
-                return NotFound();
-            }
+        //    if (user == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            // Создаем экземпляр DTO и заполняем его данными из найденного пользователя
-            var roflDto = new RoflDTO
-            {
-                RoflName = user.RoflName,
-                TegId = user.TegId,
-                RoflDateTime = user.RoflDateTime,
-                RoflEndId = user.RoflEndId,
-                RoflGenreId = user.RoflGenreId,
-                RoflId = user.RoflId,
-                RoflImage = user.RoflImage,
-                RoflOpisanie = user.RoflOpisanie,
-                RoflStartId = user.RoflStartId,
-                RoflStatusId = user.RoflStatusId,
-            };
+        //    // Создаем экземпляр DTO и заполняем его данными из найденного пользователя
+        //    var roflDto = new RoflDTO
+        //    {
+        //        RoflName = user.RoflName,
+        //        //TegId = user.TegId,
+        //        RoflDateTime = user.RoflDateTime,
+        //        RoflEndId = user.RoflEndId,
+        //        RoflGenreId = user.RoflGenreId,
+        //        RoflId = user.RoflId,
+        //        RoflImage = user.RoflImage,
+        //        RoflOpisanie = user.RoflOpisanie,
+        //        RoflStartId = user.RoflStartId,
+        //        RoflStatusId = user.RoflStatusId,
+        //    };
 
-            return roflDto;
-        }
+        //    return roflDto;
+        //}
 
 
 
@@ -334,49 +334,48 @@ namespace Kursovay2Api2._0.Controllers
         //}
         //Вывод всего
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Rofl>>> GetRofls()
-        {
-            return await _memContext.Rofls.ToListAsync();
-        }
 
-        // GET: api/Rofl/{id}
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Rofl>> GetRofl(int id)
+        //работает как надо
+        //в RoflDTO заменил у TegId int? на TefDTO
+        [HttpGet("RoflList")]
+        public IActionResult GetRoflWithTeg(string name)
         {
-            var rofl = await _memContext.Rofls.FindAsync(id);
+            var rofl = _memContext.Rofls.FirstOrDefault(r => r.RoflName == name);
 
             if (rofl == null)
             {
                 return NotFound();
             }
 
-            return rofl;
-        }
+            var teg = _memContext.Tegs.FirstOrDefault(t => t.TegId == rofl.TegId);
+            var gender = _memContext.Genres.FirstOrDefault(t => t.GenreId == rofl.RoflGenreId);
 
-        // GET: api/Rofl/GetRoflDetails/{id}
-        [HttpGet("GetRoflDetails/{id}")]
-        public async Task<ActionResult<RoflDTO>> GetRoflDetails(int id)
-        {
-            var rofl = await _memContext.Rofls.Include(r => r.RoflDetails).FirstOrDefaultAsync(r => r.Id == id);
+            //var tegid = new TegDTO
+            //{
+            //    TegId = teg.TegId,
+            //    TegName = teg.TegName
+            //};
 
-            if (rofl == null)
+            var roflDTO = new RoflDTO
             {
-                return NotFound();
-            }
+                RoflName = rofl.RoflName,
+                RoflId = rofl.RoflId,
+                TegId = teg.TegName,
+                RoflGenreId = gender.GenreName,
+                //RoflStartId = rofl.RoflStatus.StatusName,
+                //RoflEndId = rofl.RoflEnd.EndName,
+                //RoflOpisanie = rofl.RoflOpisanie,
+                //RoflDateTime = rofl.RoflDateTime,
+                //RoflImage = rofl.RoflImage,
 
-            var roflDetails = new RoflDTO
-            {
-                RoflId = rofl.Id,
-                RoflName = rofl.Name,
-                RoflOpisanie = rofl.Description,
-                TegName = rofl.RoflDetails.Teg.Name
             };
 
-            return roflDetails;
+            return Ok(roflDTO);
         }
+        //работает как надо
     }
 }
+
 
 
 
