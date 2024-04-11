@@ -151,40 +151,7 @@ namespace Kursovay2.API
       
  
 
-        public async Task<string> GetGeneratedCode(string mail, string code)
-        {
-
-            var emailcode = new ResetDTO
-            {
-                Mail = mail,
-                Code = code
-            };
-            //string code = "";
-            var jsonContent = JsonConvert.SerializeObject(emailcode);
-            var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
-
-
-            //HttpResponseMessage response = await httpClient.PostAsync($"Account/GenerateCode2", httpContent);
-            HttpResponseMessage response = await httpClient.PostAsync($"Account/VerifyCode",
-                httpContent);
-
-            // адрес метода в API, который возвращает сгенерированный код
-            code = await response.Content.ReadAsStringAsync();
-            if (!response.IsSuccessStatusCode)
-            {
-
-                MessageBox.Show($"Код: {code} не был успешно сгенерирован. Ошибка: {response.ReasonPhrase}");
-                code = null;
-            }
-            else
-            {
-                MessageBox.Show("Ошибка при получении кода");
-            }
-
-            var userAnswer = JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
-            return userAnswer;
-            //return code;
-        }
+        
        
         public async Task<LoginUserDTO> PostSmsEmail(string mail)
         {
@@ -206,32 +173,7 @@ namespace Kursovay2.API
         }
 
 
-        public static async Task<bool> VerifyCode(string email, string code)
-        {
-            using (var client = new HttpClient())
-            {
-                var verificationData = new ResetDTO
-                {
-                    Mail = email,
-                    Code = code
-                };
-
-                var json = JsonConvert.SerializeObject(verificationData);
-                var data = new StringContent(json, Encoding.UTF8, "application/json");
-
-                var response = await client.PostAsync("Account/VerifyCode", data);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    return true;
-                }
-                else
-                {
-                    // Обработка случаев, когда проверка не прошла
-                    return false;
-                }
-            }
-        }
+        
 
         //public async Task<List<RoflDTO>> GetListRofl()
         //{
@@ -282,6 +224,68 @@ namespace Kursovay2.API
 
             return null;
         }
+
+        public async Task<bool> VerifyCode(string email, string code)
+        {
+            using (var client = new HttpClient())
+            {
+                var verificationData = new ResetDTO
+                {
+                    Mail = email,
+                    Code = code
+                };
+
+                var json = JsonConvert.SerializeObject(verificationData);
+                var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync("Account/VerifyCode", data);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    // Обработка случаев, когда проверка не прошла
+                    return false;
+                }
+            }
+        }
+        public async Task<bool> GetGeneratedCode(string mail, string code)
+        {
+
+            var emailcode = new ResetDTO
+            {
+                Mail = mail,
+                Code = code
+            };
+            //string code = "";
+            var jsonContent = JsonConvert.SerializeObject(emailcode);
+            var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+
+            //HttpResponseMessage response = await httpClient.PostAsync($"Account/GenerateCode2", httpContent);
+            HttpResponseMessage response = await httpClient.PostAsync($"Account/VerifyCode",
+                httpContent);
+
+            // адрес метода в API, который возвращает сгенерированный код
+            code = await response.Content.ReadAsStringAsync();
+            if (!response.IsSuccessStatusCode)
+            {
+
+                MessageBox.Show($"Код: {code} не был успешно сгенерирован. Ошибка: {response.ReasonPhrase}");
+                code = null;
+            }
+            else
+            {
+                MessageBox.Show("Ошибка при получении кода");
+            }
+
+            var userAnswer = JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
+            return userAnswer;
+            //return code;
+        }
+
 
     }
 

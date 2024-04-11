@@ -48,11 +48,10 @@ namespace Kursovay2.Views
         private async void CheckCode(object sender, RoutedEventArgs e)
         {  
             // Получаем код с сервера 
-            generatedCode = await Client.Instance.GetGeneratedCode(txtCode.Text, email);
+            bool result = await Client.Instance.GetGeneratedCode(email,txtCode.Text);
             // Получаем введенный пользователем код
-            string enteredCode = txtCode.Text;
 
-            if (enteredCode == generatedCode)
+            if (result)
             {
                 Success = true;
                 Close();
