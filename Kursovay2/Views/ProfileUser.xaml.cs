@@ -36,5 +36,9 @@ namespace Kursovay2.Views
             parentWindow.WindowState = WindowState.Minimized;
         }
 
+        private void ResetName(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

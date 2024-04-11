@@ -24,6 +24,6 @@ public class RoflDTO
 
     public DateTime? RoflDateTime { get; set; }
 
-    public byte[]? RoflImage { get; set; }
+    //public byte[]? RoflImage { get; set; }
 
 }

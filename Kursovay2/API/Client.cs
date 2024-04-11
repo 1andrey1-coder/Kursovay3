@@ -281,7 +281,7 @@ namespace Kursovay2.API
                 MessageBox.Show("Ошибка при получении кода");
             }
 
-            var userAnswer = JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
+            var userAnswer = JsonConvert.DeserializeObject<bool>(await response.Content.ReadAsStringAsync());
             return userAnswer;
             //return code;
         }

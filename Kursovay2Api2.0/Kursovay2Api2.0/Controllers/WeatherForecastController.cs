@@ -1,3 +1,4 @@
+using ApiDB;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Kursovay2Api2._0.Controllers
@@ -29,6 +30,41 @@ namespace Kursovay2Api2._0.Controllers
             })
             .ToArray();
         }
+
+
+
+
+
+        //Редактирование работает
+
+
+        //[HttpPut("{id}")]
+        //public IActionResult UpdateItem(int id, [FromBody] RoflDTO updatedItem)
+        //{
+        //    var item = _memContext.Rofls.FirstOrDefault(i => i.RoflId == id);
+
+        //    if (item == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    item.RoflName = updatedItem.RoflName;
+        //    item.RoflOpisanie = updatedItem.RoflOpisanie;
+
+
+        //    _memContext.SaveChanges();
+
+        //    return NoContent();
+        //}
+
+        //Редактирование работает
+
+
+
+
+
+
+
 
 
         //[HttpPost]

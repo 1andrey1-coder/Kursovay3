@@ -349,8 +349,8 @@ namespace Kursovay2Api2._0.Controllers
                 RoflStatusId = rofl.RoflStatus.StatusName,
                 RoflEndId = rofl.RoflEnd.EndName,
                 RoflOpisanie = rofl.RoflOpisanie,
-                RoflImage = rofl.RoflImage,
                 RoflDateTime = rofl.RoflDateTime,
+                //RoflImage = rofl.RoflImage,
 
             });
             return Ok(result);
@@ -388,82 +388,29 @@ namespace Kursovay2Api2._0.Controllers
 
         }
 
-        [HttpPut("PutRofl")]
-        public async Task<ActionResult<IEnumerable<RoflDTO>>> PutRofl(int id, RoflDTO rofl)
+        [HttpPut("{id}")]
+        public IActionResult UpdateItem(int id, [FromBody] RoflDTO updatedItem)
         {
-            // Проверка, что переданные данные валидны
-            if (!ModelState.IsValid)
+            var item = _memContext.Rofls.FirstOrDefault(i => i.RoflId == id);
+
+            if (item == null)
             {
-                return BadRequest(ModelState);
+                return NotFound();
             }
 
-            // Поиск существующей шутки в базе данных
-            //var existingRofl = await _memContext.Rofls.FirstOrDefaultAsync(s => s.RoflId == id);
-
-            //if (existingRofl == null)
-            //{
-            //    return NotFound();
-            //}
-            var rofls = _memContext.Rofls.Include(s => s.RoflGenre).Include(s => s.RoflStart).
-               Include(s => s.RoflEnd).Include(s => s.RoflStatus).Include(s => s.Teg).ToList();
-            var result = rofls.Select(rofl => new RoflDTO
-            {
-                RoflName = rofl.RoflName,
-                RoflId = rofl.RoflId,
-                TegId = rofl.Teg.TegName,
-                RoflGenreId = rofl.RoflGenre.GenreName,
-                RoflStartId = rofl.RoflStart.StartName,
-                RoflStatusId = rofl.RoflStatus.StatusName,
-                RoflEndId = rofl.RoflEnd.EndName,
-                RoflOpisanie = rofl.RoflOpisanie,
-                RoflImage = rofl.RoflImage,
-                RoflDateTime = rofl.RoflDateTime,
-
-            });
-          
-            // Обновление свойств существующей шутки
-            //existingRofl.RoflName = rofl.RoflName;
-            //existingRofl.RoflOpisanie = rofl.RoflOpisanie;
-            //existingRofl.RoflStatusId = rofl.RoflStartId;
-            //existingRofl.RoflEndId = rofl.RoflEndId;
-            //existingRofl.RoflGenreId = rofl.RoflGenreId;
-            //existingRofl.RoflDateTime = rofl.RoflDateTime;
-            //existingRofl.RoflStartId = rofl.RoflStartId;
-            //existingRofl.RoflImage = rofl.RoflImage;
+            item.RoflName = updatedItem.RoflName;
+            item.RoflOpisanie = updatedItem.RoflOpisanie;
           
 
 
-            _memContext.Entry(result).State = EntityState.Modified;
+            _memContext.SaveChanges();
 
-            try
-            {
-                // Сохранение изменений в базе данных
-                await _memContext.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!DishExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            // Возвращение обновленного объекта
-            return Ok(result);
-            //return NoContent();
-        }
-
-        private bool DishExists(int id)
-        {
-            return (_memContext.Rofls?.Any(e => e.RoflId == id)).GetValueOrDefault();
+            return NoContent();
         }
     }
-    
 }
+    
+
 
 
    
