@@ -333,46 +333,28 @@ namespace Kursovay2Api2._0.Controllers
 
 
         //работает как надо
-        //в RoflDTO заменил у TegId int? на TefDTO
+        
         [HttpGet("RoflList")]
-        public async Task<ActionResult<IEnumerable<Rofl>>> RoflList(string name)
+        public async Task<ActionResult<IEnumerable<RoflDTO>>> RoflList()
         {
-            var rofl = _memContext.Rofls.FirstOrDefault(r => r.RoflName == name);
-
-            if (rofl == null)
-            {
-                return NotFound();
-            }
-
-            var teg = _memContext.Tegs.FirstOrDefault(t => t.TegId == rofl.TegId);
-            var gender = _memContext.Genres.FirstOrDefault(t => t.GenreId == rofl.RoflGenreId);
-            var start = _memContext.Starts.FirstOrDefault(t => t.StartId == rofl.RoflStartId);
-            var status = _memContext.Statuses.FirstOrDefault(t => t.StatusId == rofl.RoflStatusId);
-            var end = _memContext.Ends.FirstOrDefault(t => t.EndId == rofl.RoflEndId);
-
-            //var tegid = new TegDTO
-            //{
-            //    TegId = teg.TegId,
-            //    TegName = teg.TegName
-            //};
-
-
-            var roflDTO = new RoflDTO
+            var rofls = _memContext.Rofls.Include(s => s.RoflGenre).Include(s => s.RoflStart).
+                Include(s => s.RoflEnd).Include(s => s.RoflStatus).Include(s => s.Teg).ToList();
+            var result = rofls.Select(rofl => new RoflDTO
             {
                 RoflName = rofl.RoflName,
                 RoflId = rofl.RoflId,
-                TegId = teg.TegName,
-                RoflGenreId = gender.GenreName,
-                RoflStartId = start.StartName,
-                RoflStatusId = status.StatusName,
-                RoflEndId = end.EndName,
+                TegId = rofl.Teg.TegName,
+                RoflGenreId = rofl.RoflGenre.GenreName,
+                RoflStartId = rofl.RoflStart.StartName,
+                RoflStatusId = rofl.RoflStatus.StatusName,
+                RoflEndId = rofl.RoflEnd.EndName,
                 RoflOpisanie = rofl.RoflOpisanie,
                 RoflImage = rofl.RoflImage,
                 RoflDateTime = rofl.RoflDateTime,
 
-            };
-
-            return Ok(roflDTO);
+            });
+            return Ok(result);
+           
         }
         //работает как надо
 
