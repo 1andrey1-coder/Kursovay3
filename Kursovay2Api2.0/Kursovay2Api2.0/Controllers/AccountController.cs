@@ -360,26 +360,43 @@ namespace Kursovay2Api2._0.Controllers
 
 
         [HttpPost("AddRofl")]
-        public async void AddRofl(RoflDTO rofl)
+        public async Task<IActionResult> AddRofl(RoflDTO rofl)
         {
            
           
 
         }
         [HttpDelete("DeleteRofl")]
-        public async void DeleteRofl(RoflDTO rofl)
+        public async Task<IActionResult> DeleteRofl(int id)
         {
-
+            if (_memContext.Rofls == null)
+            {
+                return NotFound();
+            }
+            var rofl = await _memContext.Rofls.FindAsync(id);
+            if (rofl == null)
+            {
+                return NotFound();
+            }
+            var rofls = _memContext.Rofls.Where(s => s.RoflId == id).ToList();
+            _memContext.Rofls.RemoveRange(rofls);
+            _memContext.Rofls.Remove(rofl);
+            await _memContext.SaveChangesAsync();
+            return NoContent();
 
 
         }
 
         [HttpPut("PutRofl")]
-        public async void PutRofl(RoflDTO rofl)
+        public async Task<ActionResult<RoflDTO>> PutRofl(int id, RoflDTO rofl)
         {
 
 
 
+
+
+
+            return null;
         }
 
 
