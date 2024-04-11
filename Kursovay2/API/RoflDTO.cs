@@ -10,23 +10,24 @@ namespace Kursovay2.API
     {
         public int RoflId { get; set; }
 
-        public string? TegId { get; set; }
+        public int? TegId { get; set; }
 
-        public string? RoflStartId { get; set; }
+        public int? RoflStartId { get; set; }
 
-        public string? RoflEndId { get; set; }
+        public int? RoflEndId { get; set; }
 
         public string? RoflName { get; set; }
 
         public string? RoflOpisanie { get; set; }
 
-        public string? RoflStatusId { get; set; }
+        public int? RoflStatusId { get; set; }
 
-        public string? RoflGenreId { get; set; }
+        public int? RoflGenreId { get; set; }
 
         public DateTime? RoflDateTime { get; set; }
 
         public byte[]? RoflImage { get; set; }
+
 
     }
 }
