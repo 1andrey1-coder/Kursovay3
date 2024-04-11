@@ -9,6 +9,7 @@ using System;
 using System.Net.Mail;
 using System.Text;
 using XAct;
+using XAct.Domain.Repositories;
 using XAct.Users;
 using XSystem.Security.Cryptography;
 
@@ -364,7 +365,26 @@ namespace Kursovay2Api2._0.Controllers
         [HttpPost("AddRofl")]
         public async Task<IActionResult> AddRofl(RoflDTO rofl)
         {
-            return null;
+            if (rofl != null)
+            {
+                // Create new Rofl object
+                Rofl newRofl = new Rofl
+                {
+                    RoflName = rofl.RoflName,
+                    RoflOpisanie = rofl.RoflOpisanie,
+                 
+                };
+
+                // Add the new Rofl to the database
+                _memContext.Rofls.Add(newRofl);
+                await _memContext.SaveChangesAsync();
+
+                return Ok("Rofl added successfully");
+            }
+            else
+            {
+                return BadRequest("Invalid Rofl data");
+            }
         }
 
         [HttpDelete("DeleteRofl")]
