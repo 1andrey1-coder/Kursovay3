@@ -324,11 +324,11 @@ namespace Kursovay2Api2._0.Controllers
 
 
         //Вывод всего
-        [HttpGet("RoflListAll")]
-        public async Task<ActionResult<IEnumerable<Rofl>>> GetRofls()
-        {
-            return await _memContext.Rofls.ToListAsync();
-        }
+        //[HttpGet("RoflListAll")]
+        //public async Task<ActionResult<IEnumerable<Rofl>>> GetRofls()
+        //{
+        //    return await _memContext.Rofls.ToListAsync();
+        //}
         //Вывод всего
 
 
@@ -363,8 +363,8 @@ namespace Kursovay2Api2._0.Controllers
         public async Task<IActionResult> AddRofl(RoflDTO rofl)
         {
             return null;
-
         }
+
         [HttpDelete("DeleteRofl")]
         public async Task<IActionResult> DeleteRofl(int id)
         {
@@ -373,10 +373,12 @@ namespace Kursovay2Api2._0.Controllers
                 return NotFound();
             }
             var rofl = await _memContext.Rofls.FindAsync(id);
+
             if (rofl == null)
             {
                 return NotFound();
             }
+
             var rofls = _memContext.Rofls.Where(s => s.RoflId == id).ToList();
             _memContext.Rofls.RemoveRange(rofls);
             _memContext.Rofls.Remove(rofl);
@@ -387,7 +389,7 @@ namespace Kursovay2Api2._0.Controllers
         }
 
         [HttpPut("PutRofl")]
-        public async Task<ActionResult<RoflDTO>> PutRofl(int id, RoflDTO rofl)
+        public async Task<ActionResult<IEnumerable<RoflDTO>>> PutRofl(int id, RoflDTO rofl)
         {
             // Проверка, что переданные данные валидны
             if (!ModelState.IsValid)
