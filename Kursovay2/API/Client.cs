@@ -251,40 +251,40 @@ namespace Kursovay2.API
                 }
             }
         }
-        public async Task<bool> GetGeneratedCode(string mail, string code)
-        {
+        //public async Task<string> GetGeneratedCode(string mail, string code)
+        //{
 
-            var emailcode = new ResetDTO
-            {
-                Mail = mail,
-                Code = code
-            };
-            //string code = "";
-            var jsonContent = JsonConvert.SerializeObject(emailcode);
-            var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+        //    var emailcode = new ResetDTO
+        //    {
+        //        Mail = mail,
+        //        Code = code
+        //    };
+        //    //string code = "";
+        //    var jsonContent = JsonConvert.SerializeObject(emailcode);
+        //    var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
 
-            //HttpResponseMessage response = await httpClient.PostAsync($"Account/GenerateCode2", httpContent);
-            HttpResponseMessage response = await httpClient.PostAsync($"Account/VerifyCode",
-                httpContent);
+        //    //HttpResponseMessage response = await httpClient.PostAsync($"Account/GenerateCode2", httpContent);
+        //    HttpResponseMessage response = await httpClient.PostAsync($"Account/VerifyCode",
+        //        httpContent);
 
-            // адрес метода в API, который возвращает сгенерированный код
-            code = await response.Content.ReadAsStringAsync();
-            if (!response.IsSuccessStatusCode)
-            {
+        //    // адрес метода в API, который возвращает сгенерированный код
+        //    code = await response.Content.ReadAsStringAsync();
+        //    if (!response.IsSuccessStatusCode)
+        //    {
 
-                MessageBox.Show($"Код: {code} не был успешно сгенерирован. Ошибка: {response.ReasonPhrase}");
-                code = null;
-            }
-            else
-            {
-                MessageBox.Show("Ошибка при получении кода");
-            }
+        //        MessageBox.Show($"Код: {code} не был успешно сгенерирован. Ошибка: {response.ReasonPhrase}");
+        //        code = null;
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Ошибка при получении кода");
+        //    }
 
-            var userAnswer = JsonConvert.DeserializeObject<bool>(await response.Content.ReadAsStringAsync());
-            return userAnswer;
-            //return code;
-        }
+        //    var userAnswer = JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
+        //    return userAnswer;
+        //    return code;
+        //}
 
 
     }
