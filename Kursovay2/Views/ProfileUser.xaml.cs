@@ -23,5 +23,18 @@ namespace Kursovay2.Views
         {
             InitializeComponent();
         }
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+
+            Close();
+            //Application.Current.Shutdown();
+        }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow.WindowState = WindowState.Minimized;
+        }
+
     }
 }
