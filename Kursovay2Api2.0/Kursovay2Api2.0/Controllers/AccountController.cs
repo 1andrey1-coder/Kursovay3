@@ -358,7 +358,31 @@ namespace Kursovay2Api2._0.Controllers
         }
         //работает как надо
 
-    
+
+        [HttpPost("AddRofl")]
+        public async void AddRofl(RoflDTO rofl)
+        {
+           
+          
+
+        }
+        [HttpDelete("DeleteRofl")]
+        public async void DeleteRofl(RoflDTO rofl)
+        {
+
+
+
+        }
+
+        [HttpPut("PutRofl")]
+        public async void PutRofl(RoflDTO rofl)
+        {
+
+
+
+        }
+
+
     }
 }
 
