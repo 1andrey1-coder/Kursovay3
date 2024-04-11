@@ -31,14 +31,14 @@ namespace Kursovay2Api2._0.Controllers
         [HttpGet("Name")]
         public ActionResult<string> GetUserName()
         {
-           
+
             // Получение имени пользователя из контекста аутентификации
             var userName = User.Identity.Name;
 
             return userName;
         }
 
-        
+
 
         private string GenerateRandomPassword()
         {
@@ -63,7 +63,7 @@ namespace Kursovay2Api2._0.Controllers
             // Генерация случайного пароля (можно использовать любой другой метод)
             return Guid.NewGuid().ToString().Substring(0, 8);
         }
-     
+
 
         [HttpPost("Login")]
         public ActionResult<LoginUserDTO> GetActionLogin(UserLoginDTO userData)
@@ -124,14 +124,14 @@ namespace Kursovay2Api2._0.Controllers
                 _memContext.LoginUsers.Add(user);
                 _memContext.SaveChanges();
                 //Возвращаем созданный объект в виде DTO для отправки ответа клиенту
-                    var loginUserDTO = new LoginUserDTO
-                    {
-                        LoginId = user.LoginId,
-                        LoginName = user.LoginName,
-                        LoginPassword = user.LoginPassword,
-                        Mail = registerUser.Mail,
-                        RoleId = user.RoleId
-                    };
+                var loginUserDTO = new LoginUserDTO
+                {
+                    LoginId = user.LoginId,
+                    LoginName = user.LoginName,
+                    LoginPassword = user.LoginPassword,
+                    Mail = registerUser.Mail,
+                    RoleId = user.RoleId
+                };
 
 
                 // Отправляем пароль на почту
@@ -213,7 +213,7 @@ namespace Kursovay2Api2._0.Controllers
         }
 
 
-       
+
 
 
         [HttpGet("Login/{id}")]
@@ -259,7 +259,7 @@ namespace Kursovay2Api2._0.Controllers
             await _memContext.SaveChangesAsync();
 
             // Отправка нового пароля на почту (реализация этой функции опускается)
-            await mail.Send( resetUser.Mail, "Регистрация в Словаре сленга"
+            await mail.Send(resetUser.Mail, "Регистрация в Словаре сленга"
                  , $"Ваш пароль: {newPassword}");
 
             return Ok("Пароль был сброшен и обновлен");
@@ -305,7 +305,7 @@ namespace Kursovay2Api2._0.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest("Код неверный");  
+                return BadRequest("Код неверный");
             }
 
         }
@@ -333,7 +333,7 @@ namespace Kursovay2Api2._0.Controllers
 
 
         //работает как надо
-        
+
         [HttpGet("RoflList")]
         public async Task<ActionResult<IEnumerable<RoflDTO>>> RoflList()
         {
@@ -354,7 +354,7 @@ namespace Kursovay2Api2._0.Controllers
 
             });
             return Ok(result);
-           
+
         }
         //работает как надо
 
@@ -362,8 +362,7 @@ namespace Kursovay2Api2._0.Controllers
         [HttpPost("AddRofl")]
         public async Task<IActionResult> AddRofl(RoflDTO rofl)
         {
-           
-          
+            return null;
 
         }
         [HttpDelete("DeleteRofl")]
@@ -390,18 +389,82 @@ namespace Kursovay2Api2._0.Controllers
         [HttpPut("PutRofl")]
         public async Task<ActionResult<RoflDTO>> PutRofl(int id, RoflDTO rofl)
         {
+            // Проверка, что переданные данные валидны
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            // Поиск существующей шутки в базе данных
+            //var existingRofl = await _memContext.Rofls.FirstOrDefaultAsync(s => s.RoflId == id);
+
+            //if (existingRofl == null)
+            //{
+            //    return NotFound();
+            //}
+            var rofls = _memContext.Rofls.Include(s => s.RoflGenre).Include(s => s.RoflStart).
+               Include(s => s.RoflEnd).Include(s => s.RoflStatus).Include(s => s.Teg).ToList();
+            var result = rofls.Select(rofl => new RoflDTO
+            {
+                RoflName = rofl.RoflName,
+                RoflId = rofl.RoflId,
+                TegId = rofl.Teg.TegName,
+                RoflGenreId = rofl.RoflGenre.GenreName,
+                RoflStartId = rofl.RoflStart.StartName,
+                RoflStatusId = rofl.RoflStatus.StatusName,
+                RoflEndId = rofl.RoflEnd.EndName,
+                RoflOpisanie = rofl.RoflOpisanie,
+                RoflImage = rofl.RoflImage,
+                RoflDateTime = rofl.RoflDateTime,
+
+            });
+          
+            // Обновление свойств существующей шутки
+            //existingRofl.RoflName = rofl.RoflName;
+            //existingRofl.RoflOpisanie = rofl.RoflOpisanie;
+            //existingRofl.RoflStatusId = rofl.RoflStartId;
+            //existingRofl.RoflEndId = rofl.RoflEndId;
+            //existingRofl.RoflGenreId = rofl.RoflGenreId;
+            //existingRofl.RoflDateTime = rofl.RoflDateTime;
+            //existingRofl.RoflStartId = rofl.RoflStartId;
+            //existingRofl.RoflImage = rofl.RoflImage;
+          
 
 
+            _memContext.Entry(result).State = EntityState.Modified;
 
+            try
+            {
+                // Сохранение изменений в базе данных
+                await _memContext.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!DishExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-
-
-            return null;
+            // Возвращение обновленного объекта
+            return Ok(result);
+            //return NoContent();
         }
 
-
+        private bool DishExists(int id)
+        {
+            return (_memContext.Rofls?.Any(e => e.RoflId == id)).GetValueOrDefault();
+        }
     }
+    
 }
+
+
+   
 
 
 
