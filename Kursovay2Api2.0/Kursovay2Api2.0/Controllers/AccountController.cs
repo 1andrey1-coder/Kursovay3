@@ -342,6 +342,7 @@ namespace Kursovay2Api2._0.Controllers
         {
             var rofls = _memContext.Rofls.Include(s => s.RoflGenre).Include(s => s.RoflStart).
                 Include(s => s.RoflEnd).Include(s => s.RoflStatus).Include(s => s.Teg).ToList();
+
             var result = rofls.Select(rofl => new RoflDTO
             {
                 RoflName = rofl.RoflName,
@@ -410,7 +411,7 @@ namespace Kursovay2Api2._0.Controllers
 
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("PutRofl/{id}")]
         public IActionResult UpdateItem(int id, [FromBody] RoflDTO updatedItem)
         {
             var item = _memContext.Rofls.FirstOrDefault(i => i.RoflId == id);
@@ -422,7 +423,8 @@ namespace Kursovay2Api2._0.Controllers
 
             item.RoflName = updatedItem.RoflName;
             item.RoflOpisanie = updatedItem.RoflOpisanie;
-          
+            //item.RoflEndId = updatedItem.RoflEndId;
+
 
 
             _memContext.SaveChanges();
