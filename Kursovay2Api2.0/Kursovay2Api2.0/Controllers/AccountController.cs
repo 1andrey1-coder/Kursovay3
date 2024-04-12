@@ -388,6 +388,7 @@ namespace Kursovay2Api2._0.Controllers
             }
         }
 
+
         [HttpDelete("DeleteRofl")]
         public async Task<IActionResult> DeleteRofl(int id)
         {
