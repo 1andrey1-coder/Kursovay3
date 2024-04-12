@@ -42,6 +42,7 @@ namespace Kursovay2.Views
                 codeСonfirmation.ShowDialog();
                
 
+
                 if (codeСonfirmation.Success)
                 {
                     var user = await Client.Instance.UserReset(txtMail.Text);
