@@ -12,7 +12,8 @@ public class RoflDTO
 
     public string? RoflStartId { get; set; }
 
-    public string? RoflEndId { get; set; }
+    public int? RoflEndId { get; set; }
+    public string? RoflEnd { get; set; }
 
     public string? RoflName { get; set; }
 

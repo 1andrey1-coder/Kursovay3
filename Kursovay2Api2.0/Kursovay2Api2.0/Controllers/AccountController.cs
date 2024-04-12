@@ -351,7 +351,8 @@ namespace Kursovay2Api2._0.Controllers
                 RoflGenreId = rofl.RoflGenre.GenreName,
                 RoflStartId = rofl.RoflStart.StartName,
                 RoflStatusId = rofl.RoflStatus.StatusName,
-                RoflEndId = rofl.RoflEnd.EndName,
+                RoflEndId = rofl.RoflEnd.EndId,
+                RoflEnd = rofl.RoflEnd.EndName,
                 RoflOpisanie = rofl.RoflOpisanie,
                 RoflDateTime = rofl.RoflDateTime,
                 //RoflImage = rofl.RoflImage,
@@ -415,7 +416,7 @@ namespace Kursovay2Api2._0.Controllers
         [HttpPut("PutRofl/{id}")]
         public IActionResult UpdateItem(int id, [FromBody] RoflDTO updatedItem)
         {
-            var item = _memContext.Rofls.FirstOrDefault(i => i.RoflId == id);
+            var item = _memContext.Rofls.Include(s=>s.RoflEnd).FirstOrDefault(i => i.RoflId == id);
 
             if (item == null)
             {
@@ -424,9 +425,8 @@ namespace Kursovay2Api2._0.Controllers
 
             item.RoflName = updatedItem.RoflName;
             item.RoflOpisanie = updatedItem.RoflOpisanie;
-            //item.RoflEndId = updatedItem.RoflEndId;
-
-
+            item.RoflEndId = updatedItem.RoflEndId;
+            item.RoflEnd = _memContext.Ends.FirstOrDefault(i => i.EndId == updatedItem.RoflEndId);
 
             _memContext.SaveChanges();
 
