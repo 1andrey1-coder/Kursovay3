@@ -40,6 +40,7 @@ namespace Kursovay2.Views
 
                 CodeСonfirmation codeСonfirmation = new CodeСonfirmation(txtMail.Text);
                 codeСonfirmation.ShowDialog();
+               
 
                 if (codeСonfirmation.Success)
                 {
@@ -48,7 +49,7 @@ namespace Kursovay2.Views
                     MessageBoxButton.OK, MessageBoxImage.Information);
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
-                    Close();
+                    Close(); 
                 }
 
 

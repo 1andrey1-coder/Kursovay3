@@ -262,7 +262,7 @@ namespace Kursovay2Api2._0.Controllers
             await _memContext.SaveChangesAsync();
 
             // Отправка нового пароля на почту (реализация этой функции опускается)
-            await mail.Send(resetUser.Mail, "Регистрация в Словаре сленга"
+            await mail.Send(resetUser.Mail, "Новый пароль в Словаре сленга"
                  , $"Ваш пароль: {newPassword}");
 
             return Ok("Пароль был сброшен и обновлен");
