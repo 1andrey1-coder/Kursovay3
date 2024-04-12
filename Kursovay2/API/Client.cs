@@ -199,7 +199,7 @@ namespace Kursovay2.API
 
         //ilchenkor1135@suz-ppk.ru
         //YPwYBwyp Дома
-        //LfA3rM77 колледж
+        //eHzxEAGf колледж
         //Failed to load data from API
         public async Task<List<RoflDTO>> GetListRofl()
         {
