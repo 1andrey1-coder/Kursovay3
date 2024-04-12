@@ -26,7 +26,7 @@ public partial class MemContext : DbContext
     //    context.Database.EnsureCreated();
     //}
 
-    //(server=192.168.200.35;password=64457;user=user43;database=user43;TrustServerCertificate=true"); колледж
+    //("server=192.168.200.35;password=64457;user=user43;database=user43;TrustServerCertificate=true"); колледж
     //("server=LAPTOP-2R2MGI84\\SQLEXPRESS;password=admin;user=admin;database=mem;TrustServerCertificate=true"); дома
     public virtual DbSet<End> Ends { get; set; }
 

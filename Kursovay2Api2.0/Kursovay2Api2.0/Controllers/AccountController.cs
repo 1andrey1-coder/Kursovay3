@@ -283,7 +283,8 @@ namespace Kursovay2Api2._0.Controllers
                 return BadRequest(new { error = "Неверный код" });
             }
         }
-
+        //ilchenkor1135@suz-ppk.ru
+        //YPwYBwyp
 
 
         [HttpPost("GenerateCode")]

@@ -173,7 +173,7 @@ namespace Kursovay2.API
         }
 
 
-        
+
 
         //public async Task<List<RoflDTO>> GetListRofl()
         //{
@@ -198,7 +198,8 @@ namespace Kursovay2.API
 
 
         //ilchenkor1135@suz-ppk.ru
-        //YPwYBwyp
+        //YPwYBwyp Дома
+        //LfA3rM77 колледж
         //Failed to load data from API
         public async Task<List<RoflDTO>> GetListRofl()
         {
@@ -227,8 +228,7 @@ namespace Kursovay2.API
 
         public async Task<bool> VerifyCode(string email, string code)
         {
-            using (var client = new HttpClient())
-            {
+            
                 var verificationData = new ResetDTO
                 {
                     Mail = email,
@@ -238,7 +238,7 @@ namespace Kursovay2.API
                 var json = JsonConvert.SerializeObject(verificationData);
                 var data = new StringContent(json, Encoding.UTF8, "application/json");
 
-                var response = await client.PostAsync("Account/VerifyCode", data);
+                var response = await httpClient.PostAsync("Account/VerifyCode", data);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -249,7 +249,7 @@ namespace Kursovay2.API
                     // Обработка случаев, когда проверка не прошла
                     return false;
                 }
-            }
+            
         }
         //public async Task<string> GetGeneratedCode(string mail, string code)
         //{
