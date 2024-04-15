@@ -54,7 +54,7 @@
                     <Button.Content>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="\Icons\ReturnWindow.png"  Width="20" Height="20" Margin="0,0,5,0"/>
-                            <TextBlock Text="Вернуться"/>
+                            <TextBlock Text="Вернуться" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button.Content>
                     <Button.Template>
@@ -166,7 +166,7 @@ Click="btnClose_Click">
                         <Label.Content>
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="\Icons\Edit.png"  Width="20" Height="20" Margin="0,0,5,0"/>
-                                <TextBlock Text="Редактирование профиля"/>
+                                <TextBlock Text="Редактирование профиля" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Label.Content>
                     </Label>
@@ -211,7 +211,7 @@ Click="btnClose_Click">
                                 <Button.Content>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="\Icons\Change.png"  Width="20" Height="20" Margin="0,0,5,0"/>
-                                        <TextBlock Text="Измененить логин"/>
+                                        <TextBlock Text="Измененить логин" VerticalAlignment="Center"/>
                                     </StackPanel>
                                 </Button.Content>
                             </Button>
@@ -260,7 +260,7 @@ Click="btnClose_Click">
                                 <Button.Content>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="\Icons\Change.png"  Width="20" Height="20" Margin="0,0,5,0"/>
-                                        <TextBlock Text="Измененить почту"/>
+                                        <TextBlock Text="Измененить почту" VerticalAlignment="Center"/>
                                     </StackPanel>
                                 </Button.Content>
                             </Button>
@@ -310,7 +310,7 @@ Click="btnClose_Click">
                                 <Button.Content>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="\Icons\Change.png"  Width="20" Height="20" Margin="0,0,5,0"/>
-                                        <TextBlock Text="Измененить пароль"/>
+                                        <TextBlock Text="Измененить пароль" VerticalAlignment="Center"/>
                                     </StackPanel>
                                 </Button.Content>
                             </Button>
