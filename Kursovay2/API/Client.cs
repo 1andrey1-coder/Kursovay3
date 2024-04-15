@@ -120,7 +120,7 @@ namespace Kursovay2.API
 
         }
 
-        public async Task<LoginUserDTO> UserReset(string mail)
+        public async Task? UserReset(string mail)
         {
             var loginuUser = new LoginName
             {
@@ -135,25 +135,10 @@ namespace Kursovay2.API
             var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
             HttpResponseMessage response = await httpClient.PostAsync("Account/reset", httpContent);
             if (!response.IsSuccessStatusCode)
-            {
                 MessageBox.Show("Почты не существует", "Неудачный вход", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-
-            var userAnswer = JsonConvert.DeserializeObject<LoginUserDTO>(await response.Content.ReadAsStringAsync());
-            return userAnswer;
         }
 
-
-
-
-
-
-      
- 
-
-        
-       
-        public async Task<LoginUserDTO> PostSmsEmail(string mail)
+        public async Task<LoginUserDTO>? PostSmsEmail(string mail)
         {
             var loginuUser = new LoginName
             {
@@ -168,8 +153,7 @@ namespace Kursovay2.API
                 MessageBox.Show("Почты не существует", "Неудачный вход", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            var userAnswer = JsonConvert.DeserializeObject<LoginUserDTO>(await response.Content.ReadAsStringAsync());
-            return userAnswer;
+            return null;
         }
      
         //Failed to load data from API
@@ -207,10 +191,10 @@ namespace Kursovay2.API
                     Code = code
                 };
 
-                var json = JsonConvert.SerializeObject(verificationData);
-                var data = new StringContent(json, Encoding.UTF8, "application/json");
+            //var json = JsonConvert.SerializeObject(verificationData);
+            //var data = new StringContent(json, Encoding.UTF8, "application/json");
 
-                var response = await httpClient.PostAsync("Account/VerifyCode", data);
+            var response = await httpClient.PostAsJsonAsync("Account/VerifyCode", verificationData);
 
                 if (response.IsSuccessStatusCode)
                 {

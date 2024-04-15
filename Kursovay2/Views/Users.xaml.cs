@@ -181,5 +181,10 @@ namespace Kursovay2.User
             Window parentWindow = Window.GetWindow(this);
             parentWindow.WindowState = WindowState.Minimized;
         }
+
+        private void AllRof(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

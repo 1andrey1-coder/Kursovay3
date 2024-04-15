@@ -305,7 +305,7 @@ namespace Kursovay2Api2._0.Controllers
                 await mail.Send(resetUser.Mail, "Потверждение почты для сброса пароля в Словаре сленга"
                     , $"Ваш код потверждения: {code}");
 
-                return Ok(code);
+                return Ok();
             }
             catch (Exception ex)
             {

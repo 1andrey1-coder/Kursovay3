@@ -116,5 +116,30 @@ namespace Kursovay2.Views
             Window parentWindow = Window.GetWindow(this);
             parentWindow.WindowState = WindowState.Minimized;
         }
+
+        private void ClickDeleteRof(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClickStatuseAwaiting(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClickStatuseDone(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClickStatuseInProgress(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClickRedagturaRof(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -106,5 +106,10 @@ namespace Kursovay2.Views
             Window parentWindow = Window.GetWindow(this);
             parentWindow.WindowState = WindowState.Minimized;
         }
+
+        private void ClickToAdmiWindow(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

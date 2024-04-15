@@ -45,7 +45,7 @@ namespace Kursovay2.Views
 
                 if (codeСonfirmation.Success)
                 {
-                    var user = await Client.Instance.UserReset(txtMail.Text);
+                    await Client.Instance.UserReset(txtMail.Text);
                     //MessageBox.Show("Вы сбросили пароль для вашей почты", "Новый пароль отправлен вам на почту",
                     //MessageBoxButton.OK, MessageBoxImage.Information);
                     MainWindow mainWindow = new MainWindow();
