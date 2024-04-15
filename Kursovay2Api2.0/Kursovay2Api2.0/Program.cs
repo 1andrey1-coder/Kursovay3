@@ -1,4 +1,3 @@
-using ApiDB;
 using ApiDB.DB;
 
 var builder = WebApplication.CreateBuilder(args);

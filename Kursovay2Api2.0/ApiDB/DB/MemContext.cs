@@ -1,32 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using ApiDB.DB;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApiDB;
+namespace ApiDB.DB;
 
 public partial class MemContext : DbContext
 {
     public MemContext()
     {
-        //Database.EnsureCreated();
     }
 
     public MemContext(DbContextOptions<MemContext> options)
         : base(options)
     {
-        //Database.EnsureCreated();
     }
-    //public static void OnConfigurate(MemContext context)
-    //{
-    //    if (context.Database != null)
-    //    {
-    //        context.Database.EnsureDeleted();
-    //    }
-    //    context.Database.EnsureCreated();
-    //}
 
-  
     public virtual DbSet<End> Ends { get; set; }
 
     public virtual DbSet<Genre> Genres { get; set; }
