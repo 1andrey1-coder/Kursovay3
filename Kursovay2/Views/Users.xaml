@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.User"
         mc:Ignorable="d"
-        Title="Окно для пользователя" MinHeight="450" Height="450" MinWidth="750" Width="900" 
+        Title="Окно для пользователя" MinHeight="450" Height="500" MinWidth="750" Width="900" 
          WindowStartupLocation="CenterScreen"
          WindowStyle="None" AllowsTransparency="True" Background="Transparent" >
 
@@ -219,39 +219,49 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                                 Click="ClickUserToMainWindow"/>
                                     </StackPanel>
                                 </ListViewItem>
-                                <ListViewItem Height="30">
+                                    <ListViewItem Height="30">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="\icons\Rofl.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Margin="15 0 0 0"      
+                Background="Transparent"
+                Foreground="White"
+                BorderBrush="Transparent"
+                Content="Все шутки" Click="AllRof" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListViewItem>
+                                    <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
-                                        <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
+                                        <Image Source="\icons\History.png" Height="20" VerticalAlignment="Center"/>
                                         <TextBlock Margin="15 0 0 0" Text="История шуток" VerticalAlignment="Center"/>
                                     </StackPanel>
                                 </ListViewItem>
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
+                                            <Image Source="\icons\Local.png" Height="20" VerticalAlignment="Center"/>
                                             <TextBlock Margin="15 0 0 0" Text="Локальные шутки" VerticalAlignment="Center"/>
                                         </StackPanel>
                                     </ListViewItem>
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
+                                            <Image Source="\icons\Star.png" Height="20" VerticalAlignment="Center"/>
                                             <TextBlock Margin="15 0 0 0" Text="Модно" VerticalAlignment="Center"/>
                                         </StackPanel>
                                     </ListViewItem>
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
+                                            <Image Source="\icons\Return.png" Height="20" VerticalAlignment="Center"/>
                                             <TextBlock Margin="15 0 0 0" Text="Вышло из моды" VerticalAlignment="Center"/>
                                         </StackPanel>
                                     </ListViewItem>
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
+                                            <Image Source="\icons\Diamond.png" Height="20" VerticalAlignment="Center"/>
                                             <TextBlock Margin="15 0 0 0" Text="Легенды" VerticalAlignment="Center"/>
                                         </StackPanel>
                                     </ListViewItem>
                                     <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
-                                        <Image Source="\icons\close2.png" Height="20"
+                                        <Image Source="\icons\Out.png" Height="20"
                    VerticalAlignment="Center" />
                                         <Button Margin="15 0 0 0" Style="{StaticResource ButtonGost}" Background="Transparent"
                     BorderBrush="Transparent"
