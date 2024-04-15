@@ -1,12 +1,16 @@
 ﻿using Kursovay2.API;
 using Kursovay2.Models;
+using Kursovay2.Views;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -26,7 +30,7 @@ namespace Kursovay2.AddRof
 
         public RoflDTO SelectRofl { get; set; }
 
-        
+
         public AddRof()
         {
             InitializeComponent();
@@ -141,9 +145,12 @@ namespace Kursovay2.AddRof
 
         }
 
-        private void ResetName(object sender, RoutedEventArgs e)
+        private async void AddName(object sender, RoutedEventArgs e)
         {
+            string selectedData = AdminComboBoxTeg.SelectedItem.ToString();
+            await Client.Instance.SendUserData(selectedData);
 
         }
     }
 }
+

@@ -223,7 +223,30 @@ namespace Kursovay2.API
                 return null;
             }
         }
+        public async Task<RoflDTO> SendUserData(int combobox)
+        {
+            var Combobox= new RoflDTO
+            {
+                TegId = combobox,
+                RoflStartId = combobox,
+                RoflEndId = combobox,
+                RoflStatusId = combobox,
+            };
+            // Отправка данных в контроллер через API
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/AddRofl", Combobox);
 
+            if (response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Данные успешно добавлены в базу данных");
+            }
+            else
+            {
+                MessageBox.Show("Ошибка при добавлении данных в базу данных");
+            }
+
+            return null;
+
+        }
         //ilchenkor1135@suz-ppk.ru
         //6qRSZY9Y Дома
         //eHzxEAGf колледж
