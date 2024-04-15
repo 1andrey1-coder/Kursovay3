@@ -11,10 +11,14 @@
   <ItemGroup>
     <None Remove="icons\aboutpng.png" />
     <None Remove="icons\AddUser.png" />
+    <None Remove="icons\allUser.png" />
     <None Remove="icons\close2.png" />
-    <None Remove="icons\home.png" />
+    <None Remove="icons\History.png" />
+    <None Remove="icons\Home.png" />
+    <None Remove="icons\Local.png" />
     <None Remove="icons\menu.png" />
     <None Remove="icons\msg.png" />
+    <None Remove="icons\Rofl.png" />
     <None Remove="icons\sent.png" />
     <None Remove="icons\setting.png" />
     <None Remove="icons\spam.png" />
@@ -52,16 +56,28 @@
     <Resource Include="icons\AddUser.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="icons\allUser.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="icons\close2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="icons\home.png">
+    <Resource Include="icons\History.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\Home.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\Local.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="icons\menu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="icons\msg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\Rofl.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="icons\sent.png">
