@@ -43,9 +43,10 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Column="1" Grid.Row="0">
-                    <Grid  x:Name="panelHeader" VerticalAlignment="Top" 
+                    <Grid Margin="0 0 0 0"  x:Name="panelHeader" VerticalAlignment="Top" 
                    Background="Transparent"
           MouseDown="PanelHeader_MouseDown">
+
 
 
 
@@ -55,10 +56,11 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition Width="25"/>
                                 <ColumnDefinition Width="25"/>
+                                <ColumnDefinition Width="25"/>
                                 <ColumnDefinition Width="5"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="Окно всех клиентов"
+                            <TextBlock Text="Окно Всех пользователей"
    Foreground="DarkGray"
    FontSize="10"
    FontFamily="Montserrat"
@@ -99,6 +101,39 @@ Click="btnMinimize_Click">
                                 </Button.Template>
 
                             </Button>
+                            <Button x:Name="btnMaximized"                           
+BorderThickness="0"
+Content="▢"
+Foreground="White"
+FontSize="16"
+FontFamily="Montserrat"
+Cursor="Hand"
+Grid.Column="2"
+Click="btnMax_Click">
+
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#28AEED"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#278BEF"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="18" Height="18"
+            CornerRadius="9"
+            Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+
+                            </Button>
 
                             <Button x:Name="btnClose"                          
 BorderThickness="0"
@@ -107,7 +142,7 @@ Foreground="White"
 FontSize="12"
 FontFamily="Montserrat"
 Cursor="Hand"
-Grid.Column="2"
+Grid.Column="3"
 Click="btnClose_Click">
 
                                 <Button.Style>
@@ -134,47 +169,41 @@ Click="btnClose_Click">
                             </Button>
                         </Grid>
 
+
+
+
+
+
+
+
+
                         <!--сделать поиск и фильтрацию-->
-                        <StackPanel Grid.Column="1" Grid.Row="0" 
+                        <StackPanel Grid.Column="1" Grid.Row="0"
                                     Orientation="Horizontal" HorizontalAlignment="Left" 
-        VerticalAlignment="Center">
+                                    VerticalAlignment="Center">
 
 
 
-
-
-
-                            <StackPanel VerticalAlignment="Bottom" Margin="0 25 0 0" Orientation="Horizontal">
+                            <StackPanel VerticalAlignment="Bottom"  Margin="0 25 0 0" 
+                                        Orientation="Horizontal" HorizontalAlignment="Left">
 
                                 <StackPanel Margin="5" Orientation="Vertical" >
-                                    <TextBlock Text="Поиск по Логину:" Foreground="White"/>
-                                    <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Width="200" Height="22" >
+                                    <TextBlock Text="Поиск по тегу шутки:" Foreground="White"/>
+                                    <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                                             Width="200" Height="22" >
                                         <TextBox.Template>
-                                                <ControlTemplate>
-                                                    <Border CornerRadius="10" Height="20" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
-                                                        <ScrollViewer Margin="0 0 0 0" x:Name="PART_ContentHost" />
-                                                    </Border>
-                                                </ControlTemplate>
-                                            </TextBox.Template>
-                                        
+                                            <ControlTemplate>
+                                                <Border CornerRadius="10" Height="20" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
+                                                    <ScrollViewer Margin="0 0 0 0" x:Name="PART_ContentHost" />
+                                                </Border>
+                                            </ControlTemplate>
+                                        </TextBox.Template>
                                     </TextBox>
+
                                 </StackPanel>
-                                
                             </StackPanel>
-
-
-
-
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  VerticalAlignment="Top">
 
-                            <TextBlock  Text="Словарь Слэнг:" HorizontalAlignment="Center" 
-        VerticalAlignment="Center" FontFamily="Century Gothic"
-FontSize="20" FontWeight="Bold" Foreground="White"/>
-                            <Label x:Name="textBlockUserName" Content="{Binding LoginName}" HorizontalAlignment="Center" 
-                   VerticalAlignment="Center" FontFamily="Century Gothic"
-                   FontSize="20" FontWeight="Bold" Foreground="White"/>
-                        </StackPanel>
                         <!--сделать поиск и фильтрацию-->
                     </Grid>
 

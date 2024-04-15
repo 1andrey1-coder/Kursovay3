@@ -246,7 +246,7 @@
 
                     <StackPanel>
                         <StackPanel>
-                            <Button Content="РЕГИСТРАЦИЯ" x:Name="btnRegister" 
+                            <Button  x:Name="btnRegister" 
                      Command="{Binding SingUp}" Foreground="White"
                       BorderThickness="0"
                     
@@ -264,6 +264,12 @@
                                         </Border>
                                     </ControlTemplate>
                                 </Button.Template>
+                                <Button.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="\Icons\RegisterUser.png"  Width="20" Height="20" Margin="0,0,5,0"/>
+                                        <TextBlock Text="РЕГИСТРАЦИЯ" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </Button.Content>
                             </Button>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal"

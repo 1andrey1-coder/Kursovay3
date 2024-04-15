@@ -103,7 +103,7 @@ Click="btnMinimize_Click">
                                 </Button.Template>
 
                             </Button>
-                            <Button x:Name="btnMax"                           
+                            <Button x:Name="btnMaximized"                           
 BorderThickness="0"
 Content="▢"
 Foreground="White"
@@ -111,7 +111,7 @@ FontSize="16"
 FontFamily="Montserrat"
 Cursor="Hand"
 Grid.Column="2"
-Click="btnMinimize_Click">
+Click="btnMax_Click">
 
                                 <Button.Style>
                                     <Style TargetType="Button">

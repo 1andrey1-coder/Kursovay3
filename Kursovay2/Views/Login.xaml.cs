@@ -113,5 +113,10 @@ namespace Kursovay2.Views
             resetPassword.Show();
             Application.Current.MainWindow.Close();
         }
+        private void btnMax_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow.WindowState = WindowState.Maximized;
+        }
     }
 }

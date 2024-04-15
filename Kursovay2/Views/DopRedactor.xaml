@@ -45,9 +45,12 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Column="1" Grid.Row="0">
-                    <Grid  x:Name="panelHeader" VerticalAlignment="Top" 
-                  Height="50" Background="Transparent"
+                    <Grid Margin="0 0 0 0"  x:Name="panelHeader" VerticalAlignment="Top" 
+                   Background="Transparent"
           MouseDown="PanelHeader_MouseDown">
+
+
+
 
                         <Grid  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top">
 
@@ -55,10 +58,11 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition Width="25"/>
                                 <ColumnDefinition Width="25"/>
+                                <ColumnDefinition Width="25"/>
                                 <ColumnDefinition Width="5"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="Окно детального редактирования"
+                            <TextBlock Text="Окно Детального редактирование"
    Foreground="DarkGray"
    FontSize="10"
    FontFamily="Montserrat"
@@ -99,6 +103,39 @@ Click="btnMinimize_Click">
                                 </Button.Template>
 
                             </Button>
+                            <Button x:Name="btnMaximized"                           
+BorderThickness="0"
+Content="▢"
+Foreground="White"
+FontSize="16"
+FontFamily="Montserrat"
+Cursor="Hand"
+Grid.Column="2"
+Click="btnMax_Click">
+
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#28AEED"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#278BEF"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="18" Height="18"
+            CornerRadius="9"
+            Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+
+                            </Button>
 
                             <Button x:Name="btnClose"                          
 BorderThickness="0"
@@ -107,7 +144,7 @@ Foreground="White"
 FontSize="12"
 FontFamily="Montserrat"
 Cursor="Hand"
-Grid.Column="2"
+Grid.Column="3"
 Click="btnClose_Click">
 
                                 <Button.Style>
@@ -137,18 +174,21 @@ Click="btnClose_Click">
 
 
 
+
+
+
+
+
                         <!--сделать поиск и фильтрацию-->
-                        <StackPanel Grid.Column="1" Grid.Row="0"  Orientation="Horizontal" HorizontalAlignment="Center" 
-        VerticalAlignment="Center">
+                        <StackPanel Grid.Column="1" Grid.Row="0"
+                                    Orientation="Horizontal" HorizontalAlignment="Left" 
+                                    VerticalAlignment="Center">
 
 
-                            <TextBlock  Text="Словарь Слэнг: " HorizontalAlignment="Center" 
-        VerticalAlignment="Center" FontFamily="Century Gothic"
-FontSize="20" FontWeight="Bold" Foreground="White"/>
-                            <TextBlock Name="textBlockUserName" Text="{Binding LoginName}" HorizontalAlignment="Center" 
-                   VerticalAlignment="Center" FontFamily="Century Gothic"
-                   FontSize="20" FontWeight="Bold" Foreground="White"/>
+
+
                         </StackPanel>
+
                         <!--сделать поиск и фильтрацию-->
                     </Grid>
 

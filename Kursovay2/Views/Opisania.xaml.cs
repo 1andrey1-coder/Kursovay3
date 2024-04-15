@@ -102,6 +102,11 @@ namespace Kursovay2.Views
             Window parentWindow = Window.GetWindow(this);
             parentWindow.WindowState = WindowState.Minimized;
         }
+        private void btnMax_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow.WindowState = WindowState.Maximized;
+        }
 
     }
 }

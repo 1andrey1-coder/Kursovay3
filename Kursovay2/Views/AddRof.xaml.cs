@@ -151,6 +151,12 @@ namespace Kursovay2.AddRof
             await Client.Instance.SendUserData(selectedData);
 
         }
+
+        private void btnMax_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow.WindowState = WindowState.Maximized;
+        }
     }
 }
 
