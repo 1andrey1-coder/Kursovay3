@@ -86,7 +86,20 @@ namespace Kursovay2.Views
 
         private void ClickToAdmin(object sender, RoutedEventArgs e)
         {
-            //смотрит если роль админ то в админку если клиент то в клиента
+            SingleProfle.user = user;
+            if (user.RoleId == 1)
+            {
+
+                Admin.Admin adminWindow = new Admin.Admin();
+                adminWindow.Show();
+                Application.Current.MainWindow.Close();
+            }
+            if (user.RoleId == 2)
+            {
+                Users userWindow = new Users();
+                userWindow.Show();
+                Application.Current.MainWindow.Close();
+            }
         }
     
 
