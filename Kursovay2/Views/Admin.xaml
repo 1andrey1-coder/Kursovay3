@@ -395,6 +395,7 @@ SelectedItem="{Binding SelectRofl}" Margin="5">
                         </ListView.View>
                     </ListView>
                 </ScrollViewer>
+                
             </Grid>
 
 
