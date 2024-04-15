@@ -12,6 +12,7 @@
     <None Remove="icons\aboutpng.png" />
     <None Remove="icons\AddUser.png" />
     <None Remove="icons\allUser.png" />
+    <None Remove="icons\Change.png" />
     <None Remove="icons\close2.png" />
     <None Remove="icons\Diamond.png" />
     <None Remove="icons\History.png" />
@@ -63,6 +64,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="icons\allUser.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\Change.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="icons\close2.png">

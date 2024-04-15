@@ -48,7 +48,7 @@
                 </Grid.ColumnDefinitions>
                 
                
-                <Button HorizontalAlignment="Left" Height="30" Width="100" 
+                <Button HorizontalAlignment="Left" Height="35" Width="100" 
                         Grid.Column="0" Grid.Row="1" Foreground="White" BorderBrush="Transparent"  >
                     <Button.Content>
                         <StackPanel Orientation="Horizontal">
@@ -58,7 +58,7 @@
                     </Button.Content>
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
-                            <Border Width="100" Height="30"
+                            <Border Width="100" Height="35"
               CornerRadius="15"
               Background="{TemplateBinding Background}">
                                 <ContentPresenter VerticalAlignment="Center"
@@ -188,7 +188,7 @@ Click="btnClose_Click">
                             
                         <StackPanel Height="45" Width="150">
 
-                            <Button Margin="0 0 0 5" Content="Измененить логин" 
+                            <Button Margin="0 0 0 5"
                                 BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
@@ -200,6 +200,12 @@ Click="btnClose_Click">
                                         </Border>
                                     </ControlTemplate>
                                 </Button.Template>
+                                <Button.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="\Icons\Change.png"  Width="20" Height="20" Margin="0,0,5,0"/>
+                                        <TextBlock Text="Измененить логин"/>
+                                    </StackPanel>
+                                </Button.Content>
                             </Button>
                         </StackPanel>
                         
@@ -231,7 +237,7 @@ Click="btnClose_Click">
 
                         <StackPanel Height="45" Width="150">
 
-                            <Button Content="Измененить почту" 
+                            <Button
                    BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
@@ -243,6 +249,12 @@ Click="btnClose_Click">
                                         </Border>
                                     </ControlTemplate>
                                 </Button.Template>
+                                <Button.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="\Icons\Change.png"  Width="20" Height="20" Margin="0,0,5,0"/>
+                                        <TextBlock Text="Измененить почту"/>
+                                    </StackPanel>
+                                </Button.Content>
                             </Button>
                         </StackPanel>
 
@@ -275,7 +287,7 @@ Click="btnClose_Click">
 
                         <StackPanel Height="45" Width="150">
 
-                            <Button Content="Измененить пароль" 
+                            <Button 
    BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
@@ -287,6 +299,12 @@ Click="btnClose_Click">
                                         </Border>
                                     </ControlTemplate>
                                 </Button.Template>
+                                <Button.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="\Icons\Change.png"  Width="20" Height="20" Margin="0,0,5,0"/>
+                                        <TextBlock Text="Измененить пароль"/>
+                                    </StackPanel>
+                                </Button.Content>
                             </Button>
                         </StackPanel>
 
