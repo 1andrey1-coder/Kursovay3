@@ -304,7 +304,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                 </ListViewItem>
                                 <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
-                                        <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
+                                        <Image Source="\icons\Return.png" Height="20" VerticalAlignment="Center"/>
                                         <TextBlock Margin="15 0 0 0" Text="Вышло из моды" VerticalAlignment="Center"/>
                                     </StackPanel>
                                 </ListViewItem>
@@ -316,7 +316,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                     </ListViewItem>
                                     <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
-                                        <Image Source="\icons\close2.png" Height="20"
+                                        <Image Source="\icons\Out.png" Height="20"
                    VerticalAlignment="Center" />
                                         <Button Margin="15 0 0 0" Style="{StaticResource ButtonGost}" 
                                                 Background="Transparent"
