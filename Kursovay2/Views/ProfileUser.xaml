@@ -77,7 +77,7 @@
                         <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="Окно Профиля Админа"
+                    <TextBlock Text="Окно Профиля Пользователя"
    Foreground="DarkGray"
    FontSize="10"
    FontFamily="Montserrat"
