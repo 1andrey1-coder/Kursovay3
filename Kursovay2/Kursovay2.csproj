@@ -23,6 +23,7 @@
     <None Remove="icons\msg.png" />
     <None Remove="icons\New.png" />
     <None Remove="icons\Out.png" />
+    <None Remove="icons\RegisterUser.png" />
     <None Remove="icons\Return.png" />
     <None Remove="icons\ReturnWindow.png" />
     <None Remove="icons\Rofl.png" />
@@ -98,6 +99,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="icons\Out.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\RegisterUser.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="icons\Return.png">
