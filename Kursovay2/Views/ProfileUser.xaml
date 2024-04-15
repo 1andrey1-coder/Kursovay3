@@ -9,6 +9,7 @@
          WindowStartupLocation="CenterScreen"
          WindowStyle="None" AllowsTransparency="True" Background="Transparent">
 
+
     <Border CornerRadius="10">
         <Border.Background>
             <ImageBrush ImageSource="/Images/дед.jpg"
@@ -36,8 +37,8 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
                     <RowDefinition  Height="50"/>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition/>
                     <RowDefinition Height="100"/>
                     <RowDefinition />
                 </Grid.RowDefinitions>
@@ -46,11 +47,19 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button HorizontalAlignment="Left" Height="30" Width="100" Content="Вернуться" 
+
+
+                <Button HorizontalAlignment="Left" Height="35" Width="100" 
                         Grid.Column="0" Grid.Row="1" Foreground="White" BorderBrush="Transparent"  >
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="\Icons\ReturnWindow.png"  Width="20" Height="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Вернуться"/>
+                        </StackPanel>
+                    </Button.Content>
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
-                            <Border Width="100" Height="30"
+                            <Border Width="100" Height="35"
               CornerRadius="15"
               Background="{TemplateBinding Background}">
                                 <ContentPresenter VerticalAlignment="Center"
@@ -180,7 +189,7 @@ Click="btnClose_Click">
 
                         <StackPanel Height="45" Width="150">
 
-                            <Button Margin="0 0 0 5" Content="Измененить логин" 
+                            <Button Margin="0 0 0 5"
                                 BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
@@ -192,6 +201,12 @@ Click="btnClose_Click">
                                         </Border>
                                     </ControlTemplate>
                                 </Button.Template>
+                                <Button.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="\Icons\Change.png"  Width="20" Height="20" Margin="0,0,5,0"/>
+                                        <TextBlock Text="Измененить логин"/>
+                                    </StackPanel>
+                                </Button.Content>
                             </Button>
                         </StackPanel>
 
@@ -223,7 +238,7 @@ Click="btnClose_Click">
 
                         <StackPanel Height="45" Width="150">
 
-                            <Button Content="Измененить почту" 
+                            <Button
                    BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
@@ -235,6 +250,12 @@ Click="btnClose_Click">
                                         </Border>
                                     </ControlTemplate>
                                 </Button.Template>
+                                <Button.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="\Icons\Change.png"  Width="20" Height="20" Margin="0,0,5,0"/>
+                                        <TextBlock Text="Измененить почту"/>
+                                    </StackPanel>
+                                </Button.Content>
                             </Button>
                         </StackPanel>
 
@@ -250,7 +271,7 @@ Click="btnClose_Click">
                     </Grid.RowDefinitions>
 
 
-                    <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0" Height="65">
+                    <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
                         <Label FontWeight="Bold" Margin="0 0 0 5" Content="Редактировать Пароль" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
                         <TextBox Width="200" >
                             <TextBox.Template>
@@ -262,12 +283,12 @@ Click="btnClose_Click">
                             </TextBox.Template>
                         </TextBox>
                     </StackPanel>
-                    <StackPanel  VerticalAlignment="Top" Margin="0 0 0 0" Grid.Row="1">
+                    <StackPanel  VerticalAlignment="Top" Grid.Row="1">
 
 
                         <StackPanel Height="45" Width="150">
 
-                            <Button Content="Измененить пароль" 
+                            <Button 
    BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
@@ -279,6 +300,12 @@ Click="btnClose_Click">
                                         </Border>
                                     </ControlTemplate>
                                 </Button.Template>
+                                <Button.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="\Icons\Change.png"  Width="20" Height="20" Margin="0,0,5,0"/>
+                                        <TextBlock Text="Измененить пароль"/>
+                                    </StackPanel>
+                                </Button.Content>
                             </Button>
                         </StackPanel>
 
@@ -296,11 +323,11 @@ Click="btnClose_Click">
 
                     <StackPanel Orientation="Horizontal" Grid.Row="0">
                         <Label Content="Логин: " Foreground="White" FontWeight="Bold" />
-                        <TextBlock Text="{Binding LoginName}" />
+                        <TextBlock Background="White" Text="{Binding LoginName}" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="1">
                         <Label Content="Почта: " Foreground="White" FontWeight="Bold" />
-                        <TextBlock Text="{Binding Mail}" />
+                        <TextBlock Background="White" Text="{Binding Mail}" />
                     </StackPanel>
 
                 </Grid>
