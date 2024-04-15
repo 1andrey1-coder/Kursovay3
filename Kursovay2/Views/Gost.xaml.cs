@@ -1,4 +1,5 @@
 ﻿using Kursovay2.Models;
+using Kursovay2.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -160,6 +161,13 @@ namespace Kursovay2.Gost
         {
             Window parentWindow = Window.GetWindow(this);
             parentWindow.WindowState = WindowState.Minimized;
+        }
+
+        private void ClickNew(object sender, RoutedEventArgs e)
+        {
+            News news = new News();
+            news.Show();
+            this.Close();
         }
     }
 }

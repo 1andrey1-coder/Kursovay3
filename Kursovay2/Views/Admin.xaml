@@ -261,7 +261,11 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                 <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="\icons\allUser.png" Height="20" VerticalAlignment="Center"/>
-                                        <TextBlock Margin="15 0 0 0" Text="Пользователи" VerticalAlignment="Center"/>
+                                            <Button Margin="15 0 0 0"      
+                Background="Transparent"
+                Foreground="White"
+                BorderBrush="Transparent"
+                                              Click="AllUser"      Content="Пользователи" VerticalAlignment="Center"/>
                                     </StackPanel>
                                     </ListViewItem>
                                     <ListViewItem Height="30">

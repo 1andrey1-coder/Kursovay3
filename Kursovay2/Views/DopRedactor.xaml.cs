@@ -101,8 +101,8 @@ namespace Kursovay2.Views
 
         private void ClickAdminToMainWindow(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            Admin.Admin admin = new Admin.Admin();
+            admin.Show();
             Close();
         }
 

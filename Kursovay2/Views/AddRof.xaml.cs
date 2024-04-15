@@ -25,8 +25,8 @@ namespace Kursovay2.AddRof
         private RoflDTO selectTeg;
 
         public RoflDTO SelectRofl { get; set; }
-     
 
+        
         public AddRof()
         {
             InitializeComponent();

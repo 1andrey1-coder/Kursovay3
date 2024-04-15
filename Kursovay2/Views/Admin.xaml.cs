@@ -32,6 +32,7 @@ namespace Kursovay2.Admin
         bool hidden;
         public ObservableCollection<RoflDTO> Rofl { get; set; }
         public RoflDTO SelectRofl {  get; set; }
+
         public Admin()
         {
             InitializeComponent();
@@ -135,14 +136,6 @@ namespace Kursovay2.Admin
 
         }
 
-        private void ButtonClient(object sender, RoutedEventArgs e)
-        {
-            
-            Views.Clients clients = new Views.Clients();
-            clients.Show();
-            this.Close();
-        }
-
         private void ClickStatuseDone(object sender, RoutedEventArgs e)
         {
 
@@ -174,6 +167,7 @@ namespace Kursovay2.Admin
 
         private void ClickAddRof(object sender, RoutedEventArgs e)
         {
+
             AddRof.AddRof addRof = new AddRof.AddRof();
             addRof.Show();
             this.Close();
@@ -215,6 +209,13 @@ namespace Kursovay2.Admin
         private void ClickDeleteRof(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void AllUser(object sender, RoutedEventArgs e)
+        {
+            Views.Clients clients = new Views.Clients();
+            clients.Show();
+            this.Close();
         }
     }
 }

@@ -84,14 +84,11 @@ namespace Kursovay2.Views
 
         }
 
-        private void ClickGostWindow(object sender, RoutedEventArgs e)
+        private void ClickToAdminWindow(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void ClickToMainWindow(object sender, RoutedEventArgs e)
-        {
-
+            Admin.Admin admin = new Admin.Admin();    
+            admin.Show();
+            this.Close();
         }
 
         private void Podskaska(object sender, RoutedEventArgs e)

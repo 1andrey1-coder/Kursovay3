@@ -173,20 +173,10 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                             <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"
   FontFamily="Century Gothic" FontSize="14" Foreground="White" 
   BorderBrush="Transparent" Background="Transparent" FontWeight="Bold">
+                                
                                 <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
-                                        <Image Source="\icons\home.png" Height="20" VerticalAlignment="Center"/>
-                                        <Button Margin="15 0 0 0" Content="Админка" 
-                                                Style="{StaticResource ButtonGost}"
-                                                VerticalAlignment="Center"
-                                                 Background="Transparent"
-                                                 BorderBrush="Transparent"
-                                                 Click="AdminWindow"/>
-                                    </StackPanel>
-                                </ListViewItem>
-                                <ListViewItem Height="30">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Image Source="\icons\user.png" Height="20" VerticalAlignment="Center"/>
+                                        <Image Source="\icons\AddUser.png" Height="20" VerticalAlignment="Center"/>
                                         <Button Margin="15 0 0 0" 
                                                 Content="Добавление шутки" 
                                                 Style="{StaticResource ButtonGost}"
@@ -231,37 +221,44 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                HorizontalScrollBarVisibility="Auto"
         Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" >
 
-                    <ListView 
-ItemsSource="{Binding stagesRof}" 
-SelectedItem="{Binding SelectedStage}" Margin="5">
+                    <ListView x:Name="AdminListView"
+ItemsSource="{Binding Rofl}" 
+SelectedItem="{Binding SelectRofl}" Margin="5">
 
                         <ListView.ContextMenu>
                             <ContextMenu>
-                                <MenuItem Header="Сохранить" Click="ClickSave"/>
-                                <MenuItem Header="Удалить" Click="ClickDelete"/>
+                                <MenuItem Header="Сменить статус на: завершено" Click="ClickStatuseDone"/>
+                                <MenuItem Header="Сменить статус на: ожидает" Click="ClickStatuseAwaiting"/>
+                                <MenuItem Header="Сменить статус на: в процессе" Click="ClickStatuseInProgress"/>
+                                <MenuItem Header="Редактировать шутку" Click="ClickRedagturaRof"/>
+                                <MenuItem Header="Удалить шутку" Click="ClickDeleteRof"/>
                             </ContextMenu>
                         </ListView.ContextMenu>
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Тэг" Width="35"  
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
-                              />
+                                <GridViewColumn Header="Тэг" Width="75"  
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
+                                                DisplayMemberBinding="{Binding Teg}" />
 
-                                <GridViewColumn Header="Ебанное начало" Width="110" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
-                                <GridViewColumn Header="Ахуенное завершение" Width="140" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
+                                <!--<GridViewColumn Header="Автор" Width="110" 
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+                                                DisplayMemberBinding="{Binding Teg}" />-->
+
+                                <GridViewColumn Header="Завершение шутки" Width="140" 
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+                                                DisplayMemberBinding="{Binding RoflEnd}" />
+
                                 <GridViewColumn Header="Название шутки/рофла" Width="150" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-DisplayMemberBinding="{Binding Title}"/>
-                                <GridViewColumn Header="Ответсвенное описание" Width="150" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
-                                <GridViewColumn Header="Статус бумбастик" Width="100" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+                                                DisplayMemberBinding="{Binding RoflName}" />
+
+                                <GridViewColumn Header="Небольшое описание" Width="150" 
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+                                                DisplayMemberBinding="{Binding RoflOpisanie}" />
+
+                                <GridViewColumn Header="Статус" Width="100" 
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+                                                DisplayMemberBinding="{Binding RoflStatus}" />
                             </GridView>
                         </ListView.View>
                     </ListView>
