@@ -362,7 +362,7 @@ HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1">
                     <!--ComboBox-->
                     <StackPanel HorizontalAlignment="Center" 
                          VerticalAlignment="Center" Grid.Row="0" Grid.Column="2">
-                        <ComboBox Width="100" x:Name="AdminComboBoxTeg"  />
+                        <ComboBox Width="100" x:Name="AdminComboBoxTeg" Text="{Binding TegId}"  />
                     </StackPanel>
 
                   

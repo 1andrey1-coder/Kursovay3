@@ -171,35 +171,7 @@ namespace Kursovay2.API
             var userAnswer = JsonConvert.DeserializeObject<LoginUserDTO>(await response.Content.ReadAsStringAsync());
             return userAnswer;
         }
-
-
-
-
-        //public async Task<List<RoflDTO>> GetListRofl()
-        //{
-        //    try
-        //    {
-        //        var response = await httpClient.GetAsync("Account/RoflList");
-        //        if(response.IsSuccessStatusCode)
-        //        {
-        //            var content = await response.Content.ReadAsStringAsync();
-        //            return JsonConvert.DeserializeObject<List<RoflDTO>>(content);
-        //        }
-
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //        return null;
-        //    }
-        //    return null;
-
-        //}
-
-
-        //ilchenkor1135@suz-ppk.ru
-        //6qRSZY9Y Дома
-        //eHzxEAGf колледж
+     
         //Failed to load data from API
         public async Task<List<RoflDTO>> GetListRofl()
         {
@@ -251,42 +223,26 @@ namespace Kursovay2.API
                 }
             
         }
-        //public async Task<string> GetGeneratedCode(string mail, string code)
-        //{
+        public async Task<List<RoflDTO>> GetComboBox()
+        {
 
-        //    var emailcode = new ResetDTO
-        //    {
-        //        Mail = mail,
-        //        Code = code
-        //    };
-        //    //string code = "";
-        //    var jsonContent = JsonConvert.SerializeObject(emailcode);
-        //    var httpContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await httpClient.GetAsync("Account/RoflList");
 
+            if (response.IsSuccessStatusCode)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+                List<RoflDTO> comboBoxData = JsonConvert.DeserializeObject<List<RoflDTO>>(json);
+                return comboBoxData;
+            }
+            else
+            {
+                return null;
+            }
+        }
 
-        //    //HttpResponseMessage response = await httpClient.PostAsync($"Account/GenerateCode2", httpContent);
-        //    HttpResponseMessage response = await httpClient.PostAsync($"Account/VerifyCode",
-        //        httpContent);
-
-        //    // адрес метода в API, который возвращает сгенерированный код
-        //    code = await response.Content.ReadAsStringAsync();
-        //    if (!response.IsSuccessStatusCode)
-        //    {
-
-        //        MessageBox.Show($"Код: {code} не был успешно сгенерирован. Ошибка: {response.ReasonPhrase}");
-        //        code = null;
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Ошибка при получении кода");
-        //    }
-
-        //    var userAnswer = JsonConvert.DeserializeObject<string>(await response.Content.ReadAsStringAsync());
-        //    return userAnswer;
-        //    return code;
-        //}
-
-
+        //ilchenkor1135@suz-ppk.ru
+        //6qRSZY9Y Дома
+        //eHzxEAGf колледж
     }
 
 

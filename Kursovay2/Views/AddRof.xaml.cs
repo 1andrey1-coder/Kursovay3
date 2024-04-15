@@ -27,8 +27,24 @@ namespace Kursovay2.AddRof
         public AddRof()
         {
             InitializeComponent();
+            FillComboBox();
             LoadData();
         }
+
+        private async void FillComboBox()
+        {
+            List<string> comboBoxData = await Client.Instance.GetComboBox();
+
+            if (comboBoxData != null)
+            {
+                foreach (string item in comboBoxData)
+                {
+                    AdminComboBoxTeg.Items.Add(item);
+                }
+            }
+        }
+
+
         private async void LoadData()
         {
             List<RoflDTO> Rofl = await Client.Instance.GetListRofl();
