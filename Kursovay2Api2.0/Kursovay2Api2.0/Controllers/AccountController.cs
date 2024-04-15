@@ -348,15 +348,18 @@ namespace Kursovay2Api2._0.Controllers
             {
                 RoflName = rofl.RoflName,
                 RoflId = rofl.RoflId,
-                TegId = rofl.Teg.TegName,
-                RoflGenreId = rofl.RoflGenre.GenreName,
-                RoflStartId = rofl.RoflStart.StartName,
-                RoflStatusId = rofl.RoflStatus.StatusName,
+                TegId = rofl.Teg.TegId,
+                RoflGenreId = rofl.RoflGenre.GenreId,
+                RoflStartId = rofl.RoflStart.StartId,
+                RoflStatusId = rofl.RoflStatus.StatusId,
                 RoflEndId = rofl.RoflEnd.EndId,
                 RoflEnd = rofl.RoflEnd.EndName,
                 RoflOpisanie = rofl.RoflOpisanie,
                 RoflDateTime = rofl.RoflDateTime,
                 //RoflImage = rofl.RoflImage,
+
+                //как было
+          
 
             });
             return Ok(result);
@@ -375,6 +378,7 @@ namespace Kursovay2Api2._0.Controllers
                 {
                     RoflName = rofl.RoflName,
                     RoflOpisanie = rofl.RoflOpisanie,
+                    RoflGenre = rofl.RoflGenre,
                  
                 };
 
@@ -426,9 +430,13 @@ namespace Kursovay2Api2._0.Controllers
 
             item.RoflName = updatedItem.RoflName;
             item.RoflOpisanie = updatedItem.RoflOpisanie;
-            item.RoflEndId = updatedItem.RoflEndId;
-            item.RoflEnd = _memContext.Ends.FirstOrDefault(i => i.EndId == updatedItem.RoflEndId);
-
+            //item.RoflEndId = updatedItem.RoflEndId;
+            item.RoflEnd = _memContext.Ends.FirstOrDefault(i => i.EndId == updatedItem.RoflEndId);          
+            item.RoflGenre = _memContext.Genres.FirstOrDefault(i => i.GenreId == updatedItem.RoflGenreId);          
+            item.RoflStatus = _memContext.Statuses.FirstOrDefault(i => i.StatusId == updatedItem.RoflStatusId);          
+            item.RoflStart = _memContext.Starts.FirstOrDefault(i => i.StartId == updatedItem.RoflStartId);
+            item.Teg = _memContext.Tegs.FirstOrDefault(i => i.TegId == updatedItem.TegId);
+            item.RoflDateTime = updatedItem.RoflDateTime;
             _memContext.SaveChanges();
 
             return NoContent();
