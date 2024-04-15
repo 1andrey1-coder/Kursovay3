@@ -40,6 +40,9 @@ namespace Kursovay2.AddRof
                 foreach (RoflDTO item in comboBoxData)
                 {
                     AdminComboBoxTeg.Items.Add(item);
+                    AdminComboBoxStart.Items.Add(item);
+                    AdminComboBoxEnd.Items.Add(item);
+                    AdminComboBoxStatus.Items.Add(item);
                 }
             }
         }

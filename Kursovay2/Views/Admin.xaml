@@ -374,7 +374,7 @@ SelectedItem="{Binding SelectRofl}" Margin="5">
                                 
                                 <GridViewColumn Header="Завершение шутки" Width="140" 
                                                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-                                                DisplayMemberBinding="{Binding EndName}" />  
+                                                DisplayMemberBinding="{Binding RoflEnd}" />  
                                 
                                 <GridViewColumn Header="Название шутки/рофла" Width="150" 
                                                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"

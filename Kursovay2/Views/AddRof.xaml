@@ -264,14 +264,14 @@ SelectedItem="{Binding SelectRofl}"  Margin="5">
                                 
                                 <GridViewColumn Header="Начало" Width="60"  
 HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
-DisplayMemberBinding="{Binding RoflStartId}" />
+DisplayMemberBinding="{Binding RoflStart}" />
                                 <!--<GridViewColumn Header="Автор" Width="110" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
                 DisplayMemberBinding="{Binding Teg}" />-->
 
                                 <GridViewColumn Header="Завершение шутки" Width="140" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-                DisplayMemberBinding="{Binding RoflEndId}" />
+                DisplayMemberBinding="{Binding RoflEnd}" />
 
                                 <GridViewColumn Header="Название шутки/рофла" Width="150" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
@@ -283,7 +283,7 @@ DisplayMemberBinding="{Binding RoflStartId}" />
 
                                 <GridViewColumn Header="Статус" Width="100" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-                DisplayMemberBinding="{Binding RoflStatusId}" />
+                DisplayMemberBinding="{Binding RoflStatus}" />
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -369,19 +369,19 @@ HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1">
                     <StackPanel HorizontalAlignment="Center" 
                                 VerticalAlignment="Center"
                                 Grid.Row="1" Grid.Column="2">
-                        <ComboBox Width="100"  />
+                        <ComboBox Width="100" x:Name="AdminComboBoxStart" DisplayMemberPath="RoflStart" />
                     </StackPanel>
 
                     <StackPanel HorizontalAlignment="Center" 
                             VerticalAlignment="Center"
                             Grid.Row="2" Grid.Column="2">
-                        <ComboBox Width="100"  />
+                        <ComboBox Width="100"  x:Name="AdminComboBoxEnd" DisplayMemberPath="RoflEnd" />
                     </StackPanel>
 
                     <StackPanel HorizontalAlignment="Center" 
                             VerticalAlignment="Center"
                             Grid.Row="3" Grid.Column="2">
-                        <ComboBox Width="100"  />
+                        <ComboBox Width="100" x:Name="AdminComboBoxStatus" DisplayMemberPath="RoflStatus" />
                     </StackPanel>
 
                     <!--ComboBox-->
