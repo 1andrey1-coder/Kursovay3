@@ -34,20 +34,20 @@
             <!--Шапка-->
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>    
-                    <RowDefinition  Height="50"/>    
-                    <RowDefinition Height="90"/>    
-                    <RowDefinition/>    
-                    <RowDefinition Height="100"/>   
-                    <RowDefinition />   
+                    <RowDefinition Height="30"/>
+                    <RowDefinition  Height="50"/>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                
-               
+
+
                 <Button HorizontalAlignment="Left" Height="35" Width="100" 
                         Grid.Column="0" Grid.Row="1" Foreground="White" BorderBrush="Transparent"  >
                     <Button.Content>
@@ -69,14 +69,14 @@
                 </Button>
                 <Grid  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="12" VerticalAlignment="Top">
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="25"/>
-                    <ColumnDefinition Width="25"/>
-                    <ColumnDefinition Width="5"/>
-                </Grid.ColumnDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
 
-                <TextBlock Text="Окно Профиля Админа"
+                    <TextBlock Text="Окно Профиля Пользователя"
    Foreground="DarkGray"
    FontSize="10"
    FontFamily="Montserrat"
@@ -84,7 +84,7 @@
    VerticalAlignment="Center"
    Margin="10,0,0,0"/>
 
-                <Button x:Name="btnMinimize"                           
+                    <Button x:Name="btnMinimize"                           
 BorderThickness="0"
 Content="-"
 Foreground="White"
@@ -94,31 +94,31 @@ Cursor="Hand"
 Grid.Column="1"
 Click="btnMinimize_Click">
 
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Background" Value="#28AEED"/>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#278BEF"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#28AEED"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
 
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border Width="18" Height="18"
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
             CornerRadius="9"
             Background="{TemplateBinding Background}">
-                                <ContentPresenter VerticalAlignment="Center"
+                                    <ContentPresenter VerticalAlignment="Center"
                           HorizontalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
 
-                </Button>
+                    </Button>
 
-                <Button x:Name="btnClose"                          
+                    <Button x:Name="btnClose"                          
 BorderThickness="0"
 Content="X"
 Foreground="White"
@@ -128,35 +128,35 @@ Cursor="Hand"
 Grid.Column="2"
 Click="btnClose_Click">
 
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Background" Value="#DA34AE"/>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#C62DAE"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#DA34AE"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#C62DAE"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
 
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border Width="18" Height="18"
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
             CornerRadius="9"
             Background="{TemplateBinding Background}">
-                                <ContentPresenter VerticalAlignment="Center"
+                                    <ContentPresenter VerticalAlignment="Center"
                           HorizontalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </Grid>
 
                 <Border Grid.Row="2" Grid.RowSpan="2" Grid.Column="0"  CornerRadius="120" BorderBrush="Gray" 
                        BorderThickness="2" Background="Transparent">
-                    
+
                     <StackPanel>
-                            <Image Source="\Images\ImageNull2png"/>
+                        <Image Source="\Images\ImageNull2png"/>
                     </StackPanel>
                 </Border>
                 <!--шапка-->
@@ -171,7 +171,7 @@ Click="btnClose_Click">
                     </Label>
                 </Grid>
                 <!--шапка-->
-                
+
                 <!--Логин-->
                 <Grid Grid.Row="2" Grid.Column="1" >
                     <Grid.RowDefinitions>
@@ -191,8 +191,8 @@ Click="btnClose_Click">
                         </TextBox>
                     </StackPanel>
                     <StackPanel  VerticalAlignment="Top" Grid.Row="1">
-                      
-                            
+
+
                         <StackPanel Height="45" Width="150">
 
                             <Button Margin="0 0 0 5"
@@ -215,12 +215,12 @@ Click="btnClose_Click">
                                 </Button.Content>
                             </Button>
                         </StackPanel>
-                        
+
                     </StackPanel>
-                        
+
                 </Grid>
                 <!--Логин-->
-                
+
                 <!--Почта-->
                 <Grid Grid.Row="2" Grid.Column="2" >
                     <Grid.RowDefinitions>
@@ -275,8 +275,8 @@ Click="btnClose_Click">
                         <RowDefinition/>
                         <RowDefinition Height="32"/>
                     </Grid.RowDefinitions>
-                    
-                    
+
+
                     <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
                         <Label FontWeight="Bold" Margin="0 0 0 5" Content="Редактировать Пароль" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
                         <TextBox Width="200" >
@@ -324,7 +324,7 @@ Click="btnClose_Click">
                         <RowDefinition Height="30"/>
                         <RowDefinition Height="30"/>
                         <RowDefinition/>
-                        
+
                     </Grid.RowDefinitions>
 
                     <StackPanel Orientation="Horizontal" Grid.Row="0">
@@ -335,10 +335,10 @@ Click="btnClose_Click">
                         <Label Content="Почта: " Foreground="White" FontWeight="Bold" />
                         <TextBlock Background="White" Text="{Binding Mail}" />
                     </StackPanel>
-                  
+
                 </Grid>
-                
-                
+
+
             </Grid>
 
         </Border>

@@ -436,49 +436,50 @@ HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1">
                         <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3">
                             <Label FontWeight="Bold" Margin="0 0 0 10" Content="Небольшое описание" 
                                    Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
-                            <TextBox  Width="200" Height="100">
+                            <TextBox  Width="200" Height="120" x:Name="AddMinOpisania">
                                 <TextBox.Template>
                                     <ControlTemplate>
-                                        <Border CornerRadius="10" Height="100" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
+                                        <Border CornerRadius="10" Height="120" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
                                             <ScrollViewer Margin="0 0 0 0" x:Name="PART_ContentHost" />
                                         </Border>
                                     </ControlTemplate>
                                 </TextBox.Template>
                             </TextBox>
                         </StackPanel>
-                        <StackPanel  VerticalAlignment="Top" Grid.Row="1">
+                        
+                    </StackPanel>
+                    <StackPanel  Grid.Row="3" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="5"  VerticalAlignment="Top" >
 
 
-                            <StackPanel Height="45" Width="150" >
+                        <StackPanel Height="45" Width="150" >
 
-                                <Button Margin="0 0 0 5" Content="Внести данные" 
+                            <Button Margin="0 0 0 5" Content="Внести данные" 
 BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <Border Width="150" Height="30"
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="150" Height="30"
             CornerRadius="15"
             Background="{TemplateBinding Background}">
-                                                <ContentPresenter VerticalAlignment="Center"
+                                            <ContentPresenter VerticalAlignment="Center"
              HorizontalAlignment="Center"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                            </StackPanel>
-
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
                         </StackPanel>
+
                     </StackPanel>
                     <!--Описание-->
                     
                     <!--Название шутки-->
 
-                    <StackPanel Margin="5 0 0 0"  Grid.Row="0" Grid.RowSpan="3" Grid.Column="5" Grid.ColumnSpan="5" >
+                    <StackPanel Margin="5 0 0 0" VerticalAlignment="Center" Grid.Row="0" Grid.RowSpan="2"  Grid.Column="5" Grid.ColumnSpan="5" >
 
 
                         <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3">
-                            <Label FontWeight="Bold" Margin="0 0 0 10" Content="Название шутки" 
+                            <Label FontWeight="Bold" Margin="0 0 0 5" Content="Название шутки" 
                                    Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
-                            <TextBox  Width="200" Height="25">
+                            <TextBox  Width="200" Height="25" x:Name="AddNameRofl">
                                 <TextBox.Template>
                                     <ControlTemplate>
                                         <Border CornerRadius="10" Height="25" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
@@ -488,27 +489,7 @@ BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
                                 </TextBox.Template>
                             </TextBox>
                         </StackPanel>
-                        <StackPanel  VerticalAlignment="Top" Grid.Row="1">
-
-
-                            <StackPanel Height="45" Width="150" >
-
-                                <Button Margin="0 0 0 5" Content="Внести данные" 
-BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <Border Width="150" Height="30"
-            CornerRadius="15"
-            Background="{TemplateBinding Background}">
-                                                <ContentPresenter VerticalAlignment="Center"
-             HorizontalAlignment="Center"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                            </StackPanel>
-
-                        </StackPanel>
+                       
                     </StackPanel>
                     <!--Название шутки-->
                     
