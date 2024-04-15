@@ -378,8 +378,12 @@ namespace Kursovay2Api2._0.Controllers
                 {
                     RoflName = rofl.RoflName,
                     RoflOpisanie = rofl.RoflOpisanie,
-                    RoflGenre = rofl.RoflGenre,
-                 
+                    RoflGenreId = rofl.RoflGenreId,
+                    RoflEndId = rofl.RoflEndId,
+                    RoflStartId = rofl.RoflStartId,
+                    RoflStatusId = rofl.RoflStatusId,
+                    TegId = rofl.TegId,
+                    RoflDateTime = rofl.RoflDateTime,
                 };
 
                 // Add the new Rofl to the database
