@@ -261,14 +261,17 @@ SelectedItem="{Binding SelectRofl}"  Margin="5">
                                 <GridViewColumn Header="Тэг" Width="35"  
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
                 DisplayMemberBinding="{Binding Teg}" />
-
+                                
+                                <GridViewColumn Header="Начало" Width="60"  
+HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
+DisplayMemberBinding="{Binding RoflStartId}" />
                                 <!--<GridViewColumn Header="Автор" Width="110" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
                 DisplayMemberBinding="{Binding Teg}" />-->
 
                                 <GridViewColumn Header="Завершение шутки" Width="140" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-                DisplayMemberBinding="{Binding RoflStartId}" />
+                DisplayMemberBinding="{Binding RoflEndId}" />
 
                                 <GridViewColumn Header="Название шутки/рофла" Width="150" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
@@ -276,7 +279,7 @@ SelectedItem="{Binding SelectRofl}"  Margin="5">
 
                                 <GridViewColumn Header="Небольшое описание" Width="150" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-                DisplayMemberBinding="{Binding RoflOpisanie}" />
+                DisplayMemberBinding="{Binding RoflMinOpisanie}" />
 
                                 <GridViewColumn Header="Статус" Width="100" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
@@ -305,26 +308,18 @@ SelectedItem="{Binding SelectRofl}"  Margin="5">
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <!--Типы-->
+
+
+
+
+
+
                     <StackPanel Margin="10" Orientation="Horizontal"
 VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1">
                         <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
-                            
-                                <TextBlock Margin="10" Foreground="White" VerticalAlignment="Center" Text="Тэг"/>
+
+                            <TextBlock Margin="10" Foreground="White" VerticalAlignment="Center" Text="Тэг"/>
                         </Border>
-                      
-                    </StackPanel>
-
-
-                    <StackPanel Margin="5,0,5,0" VerticalAlignment="Center" Orientation="Horizontal"
-                                HorizontalAlignment="Center"  Grid.Row="2" Grid.Column="1">
-                        <StackPanel Orientation="Horizontal">
-                            <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
-
-                                <TextBlock Margin="10" Foreground="White" Text="Выбор статуса" />
-                            </Border>
-                           
-                         
-                        </StackPanel>
 
                     </StackPanel>
 
@@ -332,21 +327,45 @@ VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column
 VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1">
                         <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
                             
-                            <TextBlock Margin="10" Foreground="White" Text="Завершение шутки" />
+                            <TextBlock Margin="10" Foreground="White" Text="Начало шутки" />
                         </Border>
                         
                     </StackPanel>
-
                     
-                    <!--Типы-->
-                    <!--ComboBox-->
-                   
-                    <StackPanel HorizontalAlignment="Center" 
-                                VerticalAlignment="Center"
-                                Grid.Row="2" Grid.Column="2">
-                        <ComboBox Width="100"  />
+                    <StackPanel Margin="5,0,5,0" VerticalAlignment="Center" Orientation="Horizontal"
+             HorizontalAlignment="Center"  Grid.Row="2" Grid.Column="1">
+                        <StackPanel Orientation="Horizontal">
+                            <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
+
+                                <TextBlock Margin="10" Foreground="White" Text="Завершение шутки" />
+                            </Border>
+
+
+                        </StackPanel>
+
+                    </StackPanel>
+                    
+                    <StackPanel Margin="5,0,5,0" VerticalAlignment="Center" Orientation="Horizontal"
+HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1">
+                        <StackPanel Orientation="Horizontal">
+                            <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
+
+                                <TextBlock Margin="10" Foreground="White" Text="Выбор статуса" />
+                            </Border>
+
+
+                        </StackPanel>
+
                     </StackPanel>
 
+                    <!--Типы-->
+                    <!--ComboBox-->
+                    <StackPanel HorizontalAlignment="Center" 
+                         VerticalAlignment="Center" Grid.Row="0" Grid.Column="2">
+                        <ComboBox Width="100" x:Name="AdminComboBoxTeg"  />
+                    </StackPanel>
+
+                  
                     <StackPanel HorizontalAlignment="Center" 
                                 VerticalAlignment="Center"
                                 Grid.Row="1" Grid.Column="2">
@@ -354,10 +373,22 @@ VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column
                     </StackPanel>
 
                     <StackPanel HorizontalAlignment="Center" 
-                                VerticalAlignment="Center" Grid.Row="0" Grid.Column="2">
-                        <ComboBox Width="100" x:Name="AdminComboBoxTeg"  />
+                            VerticalAlignment="Center"
+                            Grid.Row="2" Grid.Column="2">
+                        <ComboBox Width="100"  />
                     </StackPanel>
+
+                    <StackPanel HorizontalAlignment="Center" 
+                            VerticalAlignment="Center"
+                            Grid.Row="3" Grid.Column="2">
+                        <ComboBox Width="100"  />
+                    </StackPanel>
+
                     <!--ComboBox-->
+                  
+
+
+
 
                     <!--Автор и описание-->
                     <!--<StackPanel  Grid.Row="0" Grid.RowSpan="2" Grid.Column="3">
