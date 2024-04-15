@@ -364,9 +364,9 @@ SelectedItem="{Binding SelectRofl}" Margin="5">
                         </ListView.ContextMenu>
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Тэг" Width="35"  
+                                <GridViewColumn Header="Тэг" Width="75"  
                                                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
-                                                DisplayMemberBinding="{Binding TegId}" />
+                                                DisplayMemberBinding="{Binding Teg}" />
 
                                 <!--<GridViewColumn Header="Автор" Width="110" 
                                                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
@@ -374,7 +374,7 @@ SelectedItem="{Binding SelectRofl}" Margin="5">
                                 
                                 <GridViewColumn Header="Завершение шутки" Width="140" 
                                                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-                                                DisplayMemberBinding="{Binding RoflStartId}" />  
+                                                DisplayMemberBinding="{Binding EndName}" />  
                                 
                                 <GridViewColumn Header="Название шутки/рофла" Width="150" 
                                                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
@@ -386,7 +386,7 @@ SelectedItem="{Binding SelectRofl}" Margin="5">
                                 
                                 <GridViewColumn Header="Статус" Width="100" 
                                                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-                                                DisplayMemberBinding="{Binding RoflStatusId}" />
+                                                DisplayMemberBinding="{Binding RoflStatus}" />
                             </GridView>
                         </ListView.View>
                     </ListView>

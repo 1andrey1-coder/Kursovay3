@@ -33,11 +33,11 @@ namespace Kursovay2.AddRof
 
         private async void FillComboBox()
         {
-            List<string> comboBoxData = await Client.Instance.GetComboBox();
+            List<RoflDTO> comboBoxData = await Client.Instance.GetComboBox();
 
             if (comboBoxData != null)
             {
-                foreach (string item in comboBoxData)
+                foreach (RoflDTO item in comboBoxData)
                 {
                     AdminComboBoxTeg.Items.Add(item);
                 }
