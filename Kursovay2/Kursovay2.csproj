@@ -19,8 +19,10 @@
     <None Remove="icons\Local.png" />
     <None Remove="icons\menu.png" />
     <None Remove="icons\msg.png" />
+    <None Remove="icons\New.png" />
     <None Remove="icons\Out.png" />
     <None Remove="icons\Return.png" />
+    <None Remove="icons\ReturnWindow.png" />
     <None Remove="icons\Rofl.png" />
     <None Remove="icons\sent.png" />
     <None Remove="icons\setting.png" />
@@ -84,10 +86,16 @@
     <Resource Include="icons\msg.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="icons\New.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="icons\Out.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="icons\Return.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\ReturnWindow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="icons\Rofl.png">

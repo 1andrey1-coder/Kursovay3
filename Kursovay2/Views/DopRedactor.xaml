@@ -198,12 +198,12 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                 </ListViewItem>
                                 <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
-                                        <Image Source="\icons\close2.png" Height="20"
+                                            <Image Source="\icons\ReturnWindow.png" Height="20"
                    VerticalAlignment="Center" />
                                             <Button Margin="15 0 0 0" Background="Transparent"
                                                     Style="{StaticResource ButtonGost}"
                     BorderBrush="Transparent"
-                    Content="Выйти"
+                    Content="Вернуться"
                     VerticalAlignment="Center"
                     Click="ClickAdminToMainWindow"/>
                                     </StackPanel>

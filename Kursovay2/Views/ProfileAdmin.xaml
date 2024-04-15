@@ -46,8 +46,16 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button HorizontalAlignment="Left" Height="30" Width="100" Content="Вернуться" 
+                
+               
+                <Button HorizontalAlignment="Left" Height="30" Width="100" 
                         Grid.Column="0" Grid.Row="1" Foreground="White" BorderBrush="Transparent"  >
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="\Icons\ReturnWindow.png"  Width="20" Height="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Вернуться"/>
+                        </StackPanel>
+                    </Button.Content>
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border Width="100" Height="30"
