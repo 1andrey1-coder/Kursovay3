@@ -22,7 +22,10 @@ namespace Kursovay2.AddRof
     public partial class AddRof : Window
     {
         private readonly LoginUserDTO user;
+        private RoflDTO selectTeg;
+
         public RoflDTO SelectRofl { get; set; }
+     
 
         public AddRof()
         {
@@ -101,7 +104,7 @@ namespace Kursovay2.AddRof
 
         private void ClickToAdmin(object sender, RoutedEventArgs e)
         {
-            Admin.Admin admin = (Admin.Admin)sender;
+            Admin.Admin admin = new Admin.Admin();
             admin.Show();
             this.Close();
         }
