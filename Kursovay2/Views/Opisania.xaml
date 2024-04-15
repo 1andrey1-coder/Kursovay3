@@ -188,17 +188,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
   FontFamily="Century Gothic" FontSize="14" Foreground="White" 
   BorderBrush="Transparent" Background="Transparent" FontWeight="Bold">
 
-                                    <ListViewItem Height="30">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\home.png" Height="20" VerticalAlignment="Center"/>
-                                            <Button Margin="15 0 0 0" Content="Главная" 
-             Style="{StaticResource ButtonGost}"
-             VerticalAlignment="Center"
-             Background="Transparent"
-             BorderBrush="Transparent"
-             Click="ClickGostWindow"/>
-                                        </StackPanel>
-                                    </ListViewItem>
+                                    
 
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">

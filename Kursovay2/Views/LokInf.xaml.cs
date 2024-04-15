@@ -87,7 +87,7 @@ namespace Kursovay2.Views
 
         private void ClickToMainWindow(object sender, RoutedEventArgs e)
         {
-
+            //смотрит если роль админ то в админку если клиент то в клиента
         }
 
         private void Podskaska(object sender, RoutedEventArgs e)

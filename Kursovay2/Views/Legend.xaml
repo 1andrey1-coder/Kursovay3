@@ -152,7 +152,15 @@ Click="btnClose_Click">
 
                                 <StackPanel Margin="5" Orientation="Vertical" >
                                     <TextBlock Text="Поиск по тегу шутки:" Foreground="White"/>
-                                    <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Width="200" Height="22" />
+                                    <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Width="200" Height="22" >
+                                        <TextBox.Template>
+                                            <ControlTemplate>
+                                                <Border CornerRadius="10" Height="20" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
+                                                    <ScrollViewer Margin="0 0 0 0" x:Name="PART_ContentHost" />
+                                                </Border>
+                                            </ControlTemplate>
+                                        </TextBox.Template>
+                                    </TextBox>
                                 </StackPanel>
                                 <StackPanel Margin="5" Orientation="Vertical"
          

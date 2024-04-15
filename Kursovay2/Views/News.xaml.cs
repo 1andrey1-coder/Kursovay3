@@ -86,8 +86,9 @@ namespace Kursovay2.Views
 
         private void ClickToAdmin(object sender, RoutedEventArgs e)
         {
-
+            //смотрит если роль админ то в админку если клиент то в клиента
         }
+    
 
         private void Podskaska(object sender, RoutedEventArgs e)
         {
@@ -103,6 +104,11 @@ namespace Kursovay2.Views
         {
             Window parentWindow = Window.GetWindow(this);
             parentWindow.WindowState = WindowState.Minimized;
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
