@@ -162,7 +162,14 @@ Click="btnClose_Click">
                 </Border>
                 <!--шапка-->
                 <Grid Grid.Row="1" Grid.ColumnSpan="12" Grid.Column="1">
-                    <Label Content="Редактирование профиля" FontSize="22" HorizontalAlignment="Center" Foreground="White"/>
+                    <Label FontSize="22" HorizontalAlignment="Center" Foreground="White">
+                        <Label.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="\Icons\Edit.png"  Width="20" Height="20" Margin="0,0,5,0"/>
+                                <TextBlock Text="Редактирование профиля"/>
+                            </StackPanel>
+                        </Label.Content>
+                    </Label>
                 </Grid>
                 <!--шапка-->
 

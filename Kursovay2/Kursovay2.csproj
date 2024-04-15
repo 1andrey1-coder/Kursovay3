@@ -15,6 +15,7 @@
     <None Remove="icons\Change.png" />
     <None Remove="icons\close2.png" />
     <None Remove="icons\Diamond.png" />
+    <None Remove="icons\Edit.png" />
     <None Remove="icons\History.png" />
     <None Remove="icons\Home.png" />
     <None Remove="icons\Local.png" />
@@ -73,6 +74,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="icons\Diamond.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\Edit.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="icons\History.png">
