@@ -357,7 +357,7 @@ namespace Kursovay2Api2._0.Controllers
                 RoflDateTime = rofl.RoflDateTime,
                 //RoflImage = rofl.RoflImage,
 
-                //как было
+               
           
 
             });
