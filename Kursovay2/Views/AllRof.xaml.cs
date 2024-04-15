@@ -109,7 +109,9 @@ namespace Kursovay2.Views
 
         private void ClickToAdmiWindow(object sender, RoutedEventArgs e)
         {
-
+            Admin.Admin admin = new Admin.Admin();
+            admin.Show();
+            this.Close();
         }
     }
 }
