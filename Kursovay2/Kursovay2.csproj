@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="icons\aboutpng.png" />
+    <None Remove="icons\AddUser.png" />
     <None Remove="icons\close2.png" />
     <None Remove="icons\home.png" />
     <None Remove="icons\menu.png" />
@@ -17,7 +18,7 @@
     <None Remove="icons\sent.png" />
     <None Remove="icons\setting.png" />
     <None Remove="icons\spam.png" />
-    <None Remove="icons\user.png" />
+    <None Remove="icons\User.png" />
     <None Remove="Images\back-image.jpg" />
     <None Remove="Images\gmail.png" />
     <None Remove="Images\ImageNull.png" />
@@ -48,6 +49,9 @@
     <Resource Include="icons\aboutpng.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="icons\AddUser.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="icons\close2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -69,7 +73,7 @@
     <Resource Include="icons\spam.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="icons\user.png">
+    <Resource Include="icons\User.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\back-image.jpg">
