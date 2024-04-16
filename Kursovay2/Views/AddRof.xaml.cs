@@ -89,17 +89,17 @@ namespace Kursovay2.AddRof
             //await Client.Instance.SendUserData(Data);
 
             string selectedData1 = AdminComboBoxTeg.SelectedItem.ToString();
-            //string selectedData2 = AdminComboBoxStatus.SelectedItem.ToString();
-            //string selectedData3 = AdminComboBoxStart.SelectedItem.ToString();
-            //string selectedData4 = AdminComboBoxEnd.SelectedItem.ToString();
+            string selectedData2 = AdminComboBoxStatus.SelectedItem.ToString();
+            string selectedData3 = AdminComboBoxStart.SelectedItem.ToString();
+            string selectedData4 = AdminComboBoxEnd.SelectedItem.ToString();
 
 
-            int data1 = Convert.ToInt32(selectedData1);
 
-            await Client.Instance.SendUserData(data1);
-            //await Client.Instance.SendUserData(selectedData2);
-            //await Client.Instance.SendUserData(selectedData3);
-            //await Client.Instance.SendUserData(selectedData4);
+
+            await Client.Instance.SendUserData(selectedData1);
+            await Client.Instance.SendUserData(selectedData2);
+            await Client.Instance.SendUserData(selectedData3);
+            await Client.Instance.SendUserData(selectedData4);
 
         }
 
