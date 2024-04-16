@@ -228,9 +228,9 @@ namespace Kursovay2.API
             var Combobox= new RoflDTO
             {
                 Teg = combobox,
-                RoflStart = combobox,
-                RoflEnd = combobox,
-                RoflStatus = combobox,
+                //RoflStart = combobox,
+                //RoflEnd = combobox,
+                //RoflStatus = combobox,
             };
             // Отправка данных в контроллер через API
             HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/AddRofl", Combobox);
@@ -249,7 +249,7 @@ namespace Kursovay2.API
         }
         //ilchenkor1135@suz-ppk.ru
         //6qRSZY9Y Дома
-        //eHzxEAGf колледж
+        //OHniPj3C колледж
     }
 
 

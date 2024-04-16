@@ -1,4 +1,5 @@
 ﻿using Kursovay2.Models;
+using Kursovay2.User;
 using Kursovay2.Views;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace Kursovay2.Gost
     /// </summary>
     public partial class Gost : Window
     {
+        
         DispatcherTimer timer;
         double panelWidth;
         bool hidden;
@@ -165,6 +167,7 @@ namespace Kursovay2.Gost
 
         private void ClickNew(object sender, RoutedEventArgs e)
         {
+            
             News news = new News();
             news.Show();
             this.Close();

@@ -12,6 +12,7 @@ using System.Security.Claims;
 using System.Text;
 using XAct;
 using XAct.Domain.Repositories;
+using XAct.Messages;
 using XAct.Users;
 using XSystem.Security.Cryptography;
 
@@ -346,25 +347,31 @@ namespace Kursovay2Api2._0.Controllers
             var rofls = _memContext.Rofls.Include(s => s.RoflGenre).Include(s => s.RoflStart).
                 Include(s => s.RoflEnd).Include(s => s.RoflStatus).Include(s => s.Teg).ToList();
 
-            var result = rofls.Select(rofl => new RoflDTO
-            {
-                RoflName = rofl.RoflName,
-                RoflId = rofl.RoflId,
-                Teg = rofl.Teg.TegName,
-                RoflGenre = rofl.RoflGenre.GenreName,
-                RoflStart = rofl.RoflStart.StartName,
-                RoflStatus = rofl.RoflStatus.StatusName,
-                RoflEnd = rofl.RoflEnd.EndName,
-                RoflOpisanie = rofl.RoflOpisanie,
-                RoflDateTime = rofl.RoflDateTime,
-                //RoflImage = rofl.RoflImage,
+            
 
-               
+                var result = rofls.Select(rofl => new RoflDTO
+                {
+                    RoflName = rofl.RoflName,
+                    RoflId = rofl.RoflId,
+                    Teg = rofl.Teg.TegName,
+                    RoflGenre = rofl.RoflGenre.GenreName,
+                    RoflStart = rofl.RoflStart.StartName,
+                    RoflStatus = rofl.RoflStatus.StatusName,
+                    RoflEnd = rofl.RoflEnd.EndName,
+                    RoflOpisanie = rofl.RoflOpisanie,
+                    RoflDateTime = rofl.RoflDateTime,
+                    //RoflImage = rofl.RoflImage,
 
-          
 
-            });
-            return Ok(result);
+
+
+
+                });
+                return Ok(result);
+            
+           
+            
+           
 
         }
         //работает как надо

@@ -87,6 +87,13 @@ namespace Kursovay2.Views
         private void ClickToAdmin(object sender, RoutedEventArgs e)
         {
             SingleProfle.user = user;
+            if (user.RoleId == -1)
+            {
+                Gost.Gost gost = new Gost.Gost();
+                gost.Show();
+                Application.Current.MainWindow.Close();
+            }
+
             if (user.RoleId == 1)
             {
 
@@ -100,6 +107,9 @@ namespace Kursovay2.Views
                 userWindow.Show();
                 Application.Current.MainWindow.Close();
             }
+            
+
+            
         }
     
 
