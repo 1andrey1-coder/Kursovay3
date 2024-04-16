@@ -15,6 +15,7 @@ using XAct.Domain.Repositories;
 using XAct.Messages;
 using XAct.Users;
 using XSystem.Security.Cryptography;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Kursovay2Api2._0.Controllers
 {
@@ -390,6 +391,23 @@ namespace Kursovay2Api2._0.Controllers
         //работает как надо
 
         //кнопки
+
+
+        //[HttpPost]
+        //public async Task<ActionResult> PostImage([FromBody] Rofl image)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    _memContext.Rofls.Add(image);
+        //    await _memContext.SaveChangesAsync();
+
+        //    return CreatedAtAction("GetImage", new { id = image.RoflImage }, image);
+        //}
+
+
         [HttpPost("AddRofl")]
         public async Task<IActionResult> AddRofl(RoflDTO rofl)
         {
