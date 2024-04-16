@@ -271,9 +271,9 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                 <ScrollViewer  HorizontalScrollBarVisibility="Auto"
         Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1" >
 
-                    <ListView x:Name="AdminListView"
+                    <ListView Margin="0 0 0 10" x:Name="AdminListView"
 ItemsSource="{Binding Rofl}" 
-SelectedItem="{Binding SelectRofl}"  Margin="5">
+SelectedItem="{Binding SelectRofl}"  >
 
                        
                         <ListView.View>
@@ -309,6 +309,9 @@ DisplayMemberBinding="{Binding RoflStart}" />
                     </ListView>
                 </ScrollViewer>
 
+                <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+                    
+               
                 <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50"/>
@@ -515,12 +518,14 @@ BorderBrush="Transparent" Foreground="White" Click="AddName" Height="30">
                     <!--Название шутки-->
                     
                 </Grid>
+                </Border>
             </Grid>
+       
 
 
 
 
-<!--Старое-->
+        <!--Старое-->
 
 
             <!--<Border>
