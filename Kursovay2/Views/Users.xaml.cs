@@ -188,8 +188,18 @@ namespace Kursovay2.User
         }
         private void btnMax_Click(object sender, RoutedEventArgs e)
         {
-            Window parentWindow = Window.GetWindow(this);
-            parentWindow.WindowState = WindowState.Maximized;
+            //Window parentWindow = Window.GetWindow(this);
+            //parentWindow.WindowState = WindowState.Maximized;
+            if (WindowState == WindowState.Normal)
+            {
+                // Меняем размер окна на максимальный
+                WindowState = WindowState.Maximized;
+            }
+            else
+            {
+                // Меняем размер окна на обычный
+                WindowState = WindowState.Normal;
+            }
         }
     }
 }

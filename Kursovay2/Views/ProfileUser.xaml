@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.Views"
         mc:Ignorable="d"
-        Title="ProfileUser" MinHeight="450" Height="450" MinWidth="750" Width="900" 
+        Title="ProfileUser" MinHeight="450" Height="500" MinWidth="750" Width="900"  
          WindowStartupLocation="CenterScreen"
          WindowStyle="None" AllowsTransparency="True" Background="Transparent">
 

@@ -6,9 +6,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.Registr"
         mc:Ignorable="d"
-        Title="Окно для Регистрации" MaxHeight="600" 
+        Title="Окно для Регистрации"
         MouseLeftButtonDown="dragWindows"
-        MinHeight="450"  MinWidth="400" MaxWidth="450" WindowStartupLocation="CenterScreen"
+         MinHeight="450" MaxHeight="600"  MinWidth="400" MaxWidth="450" WindowStartupLocation="CenterScreen"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent">
 
 
