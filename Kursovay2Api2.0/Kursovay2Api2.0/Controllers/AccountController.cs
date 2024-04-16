@@ -374,6 +374,19 @@ namespace Kursovay2Api2._0.Controllers
            
 
         }
+
+        //[HttpGet("ComboBoxs")]
+        //public async Task<ActionResult<IEnumerable<RoflDTO>>> GetRoflsTables()
+        //{
+        //    var rofls = _memContext.Rofls
+        //        .Include(s => s.RoflGenre)
+        //        .Include(s => s.RoflStart)
+        //        .Include(s => s.RoflEnd)
+        //        .Include(s => s.RoflStatus)
+        //        .Include(s => s.Teg).ToListAsync();
+
+        //    return rofls;
+        //}
         //работает как надо
 
         //кнопки
@@ -461,7 +474,7 @@ namespace Kursovay2Api2._0.Controllers
 
 
 
-        [HttpPut("{Id}")]
+        [HttpPut("UpdatePassword/{Id}")]
         public async Task<ActionResult> UpdatePassword(int userId, [FromBody] string newPassword)
         {
             var user = await _memContext.LoginUsers.FindAsync(userId);
