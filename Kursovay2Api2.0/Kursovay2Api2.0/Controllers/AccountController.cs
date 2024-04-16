@@ -3,10 +3,12 @@ using ApiDB.DB;
 using ApiDB.DTO;
 using EmailSenderSMTP;
 using Kursovay2Api2._0.Service;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Net.Mail;
+using System.Security.Claims;
 using System.Text;
 using XAct;
 using XAct.Domain.Repositories;
@@ -367,7 +369,7 @@ namespace Kursovay2Api2._0.Controllers
         }
         //работает как надо
 
-
+        //кнопки
         [HttpPost("AddRofl")]
         public async Task<IActionResult> AddRofl(RoflDTO rofl)
         {
@@ -445,8 +447,33 @@ namespace Kursovay2Api2._0.Controllers
 
             return NoContent();
         }
-       
+        //кнопки
+
+
+
+
+
+        [HttpPut("{Id}")]
+        public async Task<ActionResult> UpdatePassword(int userId, [FromBody] string newPassword)
+        {
+            var user = await _memContext.LoginUsers.FindAsync(userId);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            user.LoginPassword = HashPassword(newPassword);
+
+            _memContext.LoginUsers.Update(user);
+            await _memContext.SaveChangesAsync();
+
+            return Ok();
+        }
+
+
     }
+
 }
     
 
