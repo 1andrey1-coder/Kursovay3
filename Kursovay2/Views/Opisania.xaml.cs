@@ -30,12 +30,34 @@ namespace Kursovay2.Views
         public Opisania()
         {
             InitializeComponent();
+            DisplayRoflInfo();
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
             timer.Tick += Timer_Tick;
 
             panelWidth = sidePanel.Width;
         }
+        private async void DisplayRoflInfo()
+        {
+
+            LoginUserDTO login1 = await Client.Instance.GetRofl(SingleProfle.user.LoginId);
+
+            if (login1 != null)
+            {
+
+                textBlockUserName.Content = login1.LoginName;
+            }
+            else
+            {
+                textBlockUserName.Content = "User not found";
+            }
+
+
+
+
+
+        }
+
         private void Timer_Tick(object sender, EventArgs e)
         {
             if (hidden)

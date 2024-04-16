@@ -380,6 +380,7 @@ namespace Kursovay2Api2._0.Controllers
         [HttpPost("AddRofl")]
         public async Task<IActionResult> AddRofl(RoflDTO rofl)
         {
+            var item = _memContext.Rofls.Include(s => s.RoflEnd).FirstOrDefault(i => i.RoflId == rofl.RoflId);
             if (rofl != null)
             {
                 // Create new Rofl object

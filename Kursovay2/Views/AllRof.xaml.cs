@@ -31,6 +31,7 @@ namespace Kursovay2.Views
         public AllRof()
         {
             InitializeComponent();
+            DisplayUserInfo();
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
             timer.Tick += Timer_Tick;
@@ -58,7 +59,26 @@ namespace Kursovay2.Views
                 }
             }
         }
+        private async void DisplayUserInfo()
+        {
 
+            LoginUserDTO login1 = await Client.Instance.GetUser(SingleProfle.user.LoginId);
+
+            if (login1 != null)
+            {
+
+                textBlockUserName.Content = login1.LoginName;
+            }
+            else
+            {
+                textBlockUserName.Content = "User not found";
+            }
+
+
+
+
+
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             timer.Start();

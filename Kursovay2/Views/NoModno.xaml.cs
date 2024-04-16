@@ -1,4 +1,5 @@
-﻿using Kursovay2.Models;
+﻿using Kursovay2.API;
+using Kursovay2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,11 +28,32 @@ namespace Kursovay2.Views
         public NoModno()
         {
             InitializeComponent();
+            DisplayUserInfo();
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
             timer.Tick += Timer_Tick;
 
             panelWidth = sidePanel.Width;
+        }
+        private async void DisplayUserInfo()
+        {
+
+            LoginUserDTO login1 = await Client.Instance.GetUser(SingleProfle.user.LoginId);
+
+            if (login1 != null)
+            {
+
+                textBlockUserName.Content = login1.LoginName;
+            }
+            else
+            {
+                textBlockUserName.Content = "User not found";
+            }
+
+
+
+
+
         }
         private void Timer_Tick(object sender, EventArgs e)
         {

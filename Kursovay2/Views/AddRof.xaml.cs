@@ -68,6 +68,41 @@ namespace Kursovay2.AddRof
                 MessageBox.Show("Failed to load data from API");
             }
         }
+
+        //public class ComboboxData
+        //{
+        //    public int SelectedId { get; set; }
+        //}
+        private async void AddName(object sender, RoutedEventArgs e)
+        {
+
+
+
+            //ComboboxData data  = new ComboboxData()
+            //{
+            //    SelectedId = (AdminComboBoxTeg.SelectedIndex + 1) ,
+            //};
+            //await Client.Instance.SendUserData(data);
+
+            //ComboboxData data = new ComboboxData { SelectedItem = AdminComboBoxTeg.SelectedItem.ToString() };
+            //int Data = Convert.ToUInt32(data);
+            //await Client.Instance.SendUserData(Data);
+
+            string selectedData1 = AdminComboBoxTeg.SelectedItem.ToString();
+            //string selectedData2 = AdminComboBoxStatus.SelectedItem.ToString();
+            //string selectedData3 = AdminComboBoxStart.SelectedItem.ToString();
+            //string selectedData4 = AdminComboBoxEnd.SelectedItem.ToString();
+
+
+            int data1 = Convert.ToInt32(selectedData1);
+
+            await Client.Instance.SendUserData(data1);
+            //await Client.Instance.SendUserData(selectedData2);
+            //await Client.Instance.SendUserData(selectedData3);
+            //await Client.Instance.SendUserData(selectedData4);
+
+        }
+
         private void ClickObratAdmin(object sender, RoutedEventArgs e)
         {
             Admin.Admin admin = new Admin.Admin();
@@ -144,14 +179,7 @@ namespace Kursovay2.AddRof
         {
 
         }
-
-        private async void AddName(object sender, RoutedEventArgs e)
-        {
-            string selectedData = AdminComboBoxTeg.SelectedItem.ToString();
-            await Client.Instance.SendUserData(selectedData);
-
-        }
-
+        
         private void btnMax_Click(object sender, RoutedEventArgs e)
         {
             Window parentWindow = Window.GetWindow(this);
