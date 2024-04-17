@@ -303,10 +303,13 @@ namespace Kursovay2.API
         {
             var Combobox= new RoflDTO
             {
+               
                 TegId = combobox,
                 RoflStartId = combobox,
                 RoflEndId = combobox,
                 RoflStatusId = combobox,
+                //RoflName = minopis,
+                //RoflMinOpisanie = minopis,
             };
             // Отправка данных в контроллер через API
             HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/AddRofl", Combobox);

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.AddRof"
         mc:Ignorable="d"
-        Title="Окно для добавления"  MinHeight="450" Height="500" MinWidth="750" Width="900"
+        Title="Окно для добавления"  MinHeight="450" Height="500" MinWidth="750" Width="1000"
       WindowStartupLocation="CenterScreen"
       WindowStyle="None" AllowsTransparency="True" Background="Transparent">
 
@@ -322,7 +322,7 @@ DisplayMemberBinding="{Binding RoflStart}" />
                         <ColumnDefinition Width="220"/>
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="100"/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="100"/>
                         
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>

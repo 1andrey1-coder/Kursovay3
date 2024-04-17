@@ -155,12 +155,13 @@ namespace Kursovay2.AddRof
 
         private async void AddName(object sender, RoutedEventArgs e)
         {
-            
+            //string miniopis = AddMinOpisania.Text;
             StatusDTO statusId = (StatusDTO)AdminComboBoxStatus.SelectedItem;
             EndDTO endId = (EndDTO)AdminComboBoxEnd.SelectedItem;
             TegDTO tegId = (TegDTO)AdminComboBoxTeg.SelectedItem;
             StartDTO startId = (StartDTO)AdminComboBoxStart.SelectedItem;
-            if (statusId != null && endId != null && tegId != null && startId !=null)
+            //miniopis != null &&
+            if ( statusId != null && endId != null && tegId != null && startId !=null )
             {
                 int selectedStatusId =  statusId.StatusId;
                 await Client.Instance.SendUserData(selectedStatusId);
