@@ -6,6 +6,7 @@ using Kursovay2Api2._0.Service;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Update.Internal;
 using System;
 using System.Net.Mail;
 using System.Security.Claims;
@@ -376,18 +377,29 @@ namespace Kursovay2Api2._0.Controllers
 
         }
 
-        //[HttpGet("ComboBoxs")]
-        //public async Task<ActionResult<IEnumerable<RoflDTO>>> GetRoflsTables()
-        //{
-        //    var rofls = _memContext.Rofls
-        //        .Include(s => s.RoflGenre)
-        //        .Include(s => s.RoflStart)
-        //        .Include(s => s.RoflEnd)
-        //        .Include(s => s.RoflStatus)
-        //        .Include(s => s.Teg).ToListAsync();
+        [HttpGet("ComboBoxs")]
+        public async Task<ActionResult<IEnumerable<RoflDTO>>> GetRoflsTables()
+        {
+            var rofls =  _memContext.Rofls
+                .Include(s => s.RoflGenre)
+                .Include(s => s.RoflStart)
+                .Include(s => s.RoflEnd)
+                .Include(s => s.RoflStatus).ToList();
 
-        //    return rofls;
-        //}
+            if(rofls == null || rofls.Count == 0)
+            {
+                return NotFound();
+            }
+            var result = rofls.Select(rofl => new RoflDTO
+            {
+                RoflGenre = rofl.RoflGenre.GenreName,
+                RoflStart = rofl.RoflStart.StartName,
+                RoflStatus = rofl.RoflStatus.StatusName,
+                RoflEnd = rofl.RoflEnd.EndName
+            });
+
+            return Ok(result);
+        }
         //работает как надо
 
         //кнопки
