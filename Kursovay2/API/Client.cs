@@ -276,8 +276,8 @@ namespace Kursovay2.API
 
         }
         //ilchenkor1135@suz-ppk.ru
-        //6qRSZY9Y Дома
-        //OHniPj3C колледж
+        //6IhtbJjM Дома
+        //6IhtbJjM колледж
     }
 
 
