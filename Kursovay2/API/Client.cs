@@ -238,7 +238,7 @@ namespace Kursovay2.API
         public async Task<List<RoflDTO>> GetComboBox()
         {
 
-            HttpResponseMessage response = await httpClient.GetAsync("Account/RoflList");
+            HttpResponseMessage response = await httpClient.GetAsync("Account/ComboBoxs");
 
             if (response.IsSuccessStatusCode)
             {
