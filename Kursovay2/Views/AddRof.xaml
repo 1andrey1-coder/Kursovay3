@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.AddRof"
         mc:Ignorable="d"
-        Title="Окно для добавления"  MinHeight="450" Height="500" MinWidth="750" Width="900" 
+        Title="Окно для добавления"  MinHeight="450" Height="500" MinWidth="750" Width="900"
       WindowStartupLocation="CenterScreen"
       WindowStyle="None" AllowsTransparency="True" Background="Transparent">
 
@@ -405,7 +405,7 @@ HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1">
                     <StackPanel HorizontalAlignment="Center" 
                             VerticalAlignment="Center"
                             Grid.Row="3" Grid.Column="2">
-                        <ComboBox Width="100" x:Name="AdminComboBoxStatus" DisplayMemberPath="RoflStatus" />
+                            <ComboBox Width="100" x:Name="AdminComboBoxStatus" SelectedItem="{Binding SelectedStatus}" DisplayMemberPath="StatusName" />
                     </StackPanel>
 
                     <!--ComboBox-->

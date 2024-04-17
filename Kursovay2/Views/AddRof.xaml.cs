@@ -34,7 +34,8 @@ namespace Kursovay2.AddRof
         private readonly LoginUserDTO user;
         private RoflDTO selectTeg;
 
-        public RoflDTO SelectRofl { get; set; }
+        public StatusDTO SelectStatus { get; set; }
+       
 
 
         public AddRof()
@@ -79,16 +80,15 @@ namespace Kursovay2.AddRof
 
         private async void FillComboBox()
         {
-            List<RoflDTO> comboBoxData = await Client.Instance.GetComboBox();
+            List<StatusDTO> comboBoxData = await Client.Instance.GetComboBoxStatus();
 
             if (comboBoxData != null)
             {
-                foreach (RoflDTO item in comboBoxData)
+                foreach (StatusDTO item in comboBoxData)
                 {
-                    AdminComboBoxTeg.Items.Add(item);
-                    AdminComboBoxStart.Items.Add(item);
-                    AdminComboBoxEnd.Items.Add(item);
+
                     AdminComboBoxStatus.Items.Add(item);
+                   
                 }
             }
         }
@@ -127,18 +127,35 @@ namespace Kursovay2.AddRof
             //int Data = Convert.ToUInt32(data);
             //await Client.Instance.SendUserData(Data);
 
-            string selectedData1 = AdminComboBoxTeg.SelectedItem.ToString();
-            string selectedData2 = AdminComboBoxStatus.SelectedItem.ToString();
-            string selectedData3 = AdminComboBoxStart.SelectedItem.ToString();
-            string selectedData4 = AdminComboBoxEnd.SelectedItem.ToString();
+            //получение 4 разных списков и отправкой обратно в контроллер
+
+            //string selectedData1 = AdminComboBoxTeg.SelectedItem.ToString();
+            //string selectedData2 = AdminComboBoxStatus.SelectedItem.ToString();
+            //string selectedData3 = AdminComboBoxStart.SelectedItem.ToString();
+            //string selectedData4 = AdminComboBoxEnd.SelectedItem.ToString();
+         
+            
+            StatusDTO selecteId = (StatusDTO)AdminComboBoxStatus.SelectedItem;
+            if (selecteId != null)
+            {
+                int statusId = selecteId.StatusId;
+            }
+
+                RoflDTO data = new RoflDTO
+                {
+                    
+                    RoflStatusId = SelectStatus.StatusId,
+
+           
+                    //TegId = AdminComboBoxTeg.SelectedIndex + 1,
+                    //RoflStartId = AdminComboBoxStart.SelectedIndex + 1,
+                    //RoflEndId = AdminComboBoxEnd.SelectedIndex + 1,
+                };
+                
+                await Client.Instance.SendUserData(data);
+          
 
 
-
-
-            await Client.Instance.SendUserData(selectedData1);
-            await Client.Instance.SendUserData(selectedData2);
-            await Client.Instance.SendUserData(selectedData3);
-            await Client.Instance.SendUserData(selectedData4);
 
         }
 

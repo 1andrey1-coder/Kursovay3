@@ -235,15 +235,15 @@ namespace Kursovay2.API
                 }
             
         }
-        public async Task<List<RoflDTO>> GetComboBox()
+        public async Task<List<StatusDTO>> GetComboBoxStatus()
         {
 
-            HttpResponseMessage response = await httpClient.GetAsync("Account/ComboBoxs");
+            HttpResponseMessage response = await httpClient.GetAsync("Account/ComboBoxStatus");
 
             if (response.IsSuccessStatusCode)
             {
                 string json = await response.Content.ReadAsStringAsync();
-                List<RoflDTO> comboBoxData = JsonConvert.DeserializeObject<List<RoflDTO>>(json);
+                List<StatusDTO> comboBoxData = JsonConvert.DeserializeObject<List<StatusDTO>>(json);
                 return comboBoxData;
             }
             else
@@ -251,14 +251,14 @@ namespace Kursovay2.API
                 return null;
             }
         }
-        public async Task<RoflDTO> SendUserData(string combobox)
+        public async Task<RoflDTO> SendUserData(RoflDTO combobox)
         {
             var Combobox= new RoflDTO
             {
-                Teg = combobox,
-                RoflStart = combobox,
-                RoflEnd = combobox,
-                RoflStatus = combobox,
+                TegId = combobox.TegId,
+                RoflStartId = combobox.RoflStartId,
+                RoflEndId = combobox.RoflEndId,
+                RoflStatusId = combobox.RoflStatusId,
             };
             // Отправка данных в контроллер через API
             HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/AddRofl", Combobox);

@@ -377,27 +377,16 @@ namespace Kursovay2Api2._0.Controllers
 
         }
 
-        [HttpGet("ComboBoxs")]
-        public async Task<ActionResult<IEnumerable<RoflDTO>>> GetRoflsTables()
+        [HttpGet("ComboBoxStatus")]
+        public async Task<ActionResult<IEnumerable<Status>>> GetStatusTable()
         {
-            var rofls =  _memContext.Rofls
-                .Include(s => s.RoflGenre)
-                .Include(s => s.RoflStart)
-                .Include(s => s.RoflEnd)
-                .Include(s => s.RoflStatus).ToList();
-
-            if(rofls == null || rofls.Count == 0)
+            
+            var data = await _memContext.Statuses.ToListAsync();
+            var result = data.Select(s => new StatusDTO
             {
-                return NotFound();
-            }
-            var result = rofls.Select(rofl => new RoflDTO
-            {
-                RoflGenre = rofl.RoflGenre.GenreName,
-                RoflStart = rofl.RoflStart.StartName,
-                RoflStatus = rofl.RoflStatus.StatusName,
-                RoflEnd = rofl.RoflEnd.EndName
+                StatusId = s.StatusId,
+                StatusName = s.StatusName,
             });
-
             return Ok(result);
         }
         //работает как надо
