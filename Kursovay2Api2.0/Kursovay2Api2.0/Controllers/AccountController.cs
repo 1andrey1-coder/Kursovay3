@@ -377,6 +377,7 @@ namespace Kursovay2Api2._0.Controllers
 
         }
 
+
         [HttpGet("ComboBoxStatus")]
         public async Task<ActionResult<IEnumerable<Status>>> GetStatusTable()
         {
@@ -386,6 +387,42 @@ namespace Kursovay2Api2._0.Controllers
             {
                 StatusId = s.StatusId,
                 StatusName = s.StatusName,
+            });
+            return Ok(result);
+        }
+        [HttpGet("ComboBoxTeg")]
+        public async Task<ActionResult<IEnumerable<Teg>>> GetTegTable()
+        {
+
+            var data = await _memContext.Tegs.ToListAsync();
+            var result = data.Select(s => new TegDTO
+            {
+                TegId = s.TegId,
+                TegName = s.TegName,
+            });
+            return Ok(result);
+        }
+        [HttpGet("ComboBoxEnd")]
+        public async Task<ActionResult<IEnumerable<End>>> GetEndTable()
+        {
+
+            var data = await _memContext.Ends.ToListAsync();
+            var result = data.Select(s => new EndDTO
+            {
+                EndId = s.EndId,
+                EndName = s.EndName,
+            });
+            return Ok(result);
+        }
+        [HttpGet("ComboBoxStart")]
+        public async Task<ActionResult<IEnumerable<Start>>> GetStartTable()
+        {
+
+            var data = await _memContext.Starts.ToListAsync();
+            var result = data.Select(s => new StartDTO
+            {
+                StartId = s.StartId,
+                StartName = s.StartName,
             });
             return Ok(result);
         }
