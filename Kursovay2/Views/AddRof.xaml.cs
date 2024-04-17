@@ -41,7 +41,10 @@ namespace Kursovay2.AddRof
         public AddRof()
         {
             InitializeComponent();
-            FillComboBox();
+            StatusComboBox();
+            EndComboBox();
+            TegComboBox();
+            StartComboBox();
             LoadData();
            
             timer = new DispatcherTimer();
@@ -78,7 +81,7 @@ namespace Kursovay2.AddRof
             timer.Start();
         }
 
-        private async void FillComboBox()
+        private async void StatusComboBox()
         {
             List<StatusDTO> comboBoxData = await Client.Instance.GetComboBoxStatus();
 
@@ -89,6 +92,48 @@ namespace Kursovay2.AddRof
 
                     AdminComboBoxStatus.Items.Add(item);
                    
+                }
+            }
+        }
+        private async void EndComboBox()
+        {
+            List<EndDTO> comboBoxData = await Client.Instance.GetComboBoxEnd();
+
+            if (comboBoxData != null)
+            {
+                foreach (EndDTO item in comboBoxData)
+                {
+
+                    AdminComboBoxEnd.Items.Add(item);
+
+                }
+            }
+        }
+        private async void TegComboBox()
+        {
+            List<TegDTO> comboBoxData = await Client.Instance.GetComboBoxTeg();
+
+            if (comboBoxData != null)
+            {
+                foreach (TegDTO item in comboBoxData)
+                {
+
+                    AdminComboBoxTeg.Items.Add(item);
+
+                }
+            }
+        }
+        private async void StartComboBox()
+        {
+            List<StartDTO> comboBoxData = await Client.Instance.GetComboBoxStart();
+
+            if (comboBoxData != null)
+            {
+                foreach (StartDTO item in comboBoxData)
+                {
+
+                    AdminComboBoxStart.Items.Add(item);
+
                 }
             }
         }
@@ -108,51 +153,47 @@ namespace Kursovay2.AddRof
             }
         }
 
-        //public class ComboboxData
-        //{
-        //    public int SelectedId { get; set; }
-        //}
         private async void AddName(object sender, RoutedEventArgs e)
         {
-
-
-
-            //ComboboxData data  = new ComboboxData()
-            //{
-            //    SelectedId = (AdminComboBoxTeg.SelectedIndex + 1) ,
-            //};
-            //await Client.Instance.SendUserData(data);
-
-            //ComboboxData data = new ComboboxData { SelectedItem = AdminComboBoxTeg.SelectedItem.ToString() };
-            //int Data = Convert.ToUInt32(data);
-            //await Client.Instance.SendUserData(Data);
-
-            //получение 4 разных списков и отправкой обратно в контроллер
-
-            //string selectedData1 = AdminComboBoxTeg.SelectedItem.ToString();
-            //string selectedData2 = AdminComboBoxStatus.SelectedItem.ToString();
-            //string selectedData3 = AdminComboBoxStart.SelectedItem.ToString();
-            //string selectedData4 = AdminComboBoxEnd.SelectedItem.ToString();
-         
             
-            StatusDTO selecteId = (StatusDTO)AdminComboBoxStatus.SelectedItem;
-            if (selecteId != null)
+            StatusDTO statusId = (StatusDTO)AdminComboBoxStatus.SelectedItem;
+            if (statusId != null)
             {
-                int statusId = selecteId.StatusId;
+                int selectedStatusId = statusId.StatusId;
+                await Client.Instance.SendUserData(selectedStatusId);
+            }
+            EndDTO endId = (EndDTO)AdminComboBoxEnd.SelectedItem;
+            if (endId != null)
+            {
+                int selectedEndID = endId.EndId;
+                await Client.Instance.SendUserData(selectedEndID);
+            }
+            TegDTO tegId = (TegDTO)AdminComboBoxTeg.SelectedItem;
+            if (tegId != null)
+            {
+                int selectedTegId = tegId.TegId;
+                await Client.Instance.SendUserData(selectedTegId);
+            }
+            StartDTO startId = (StartDTO)AdminComboBoxStart.SelectedItem;
+            if (startId != null)
+            {
+                int selectedStartId = startId.StartId;
+                await Client.Instance.SendUserData(selectedStartId);
+
             }
 
-                RoflDTO data = new RoflDTO
-                {
+                //RoflDTO data = new RoflDTO
+                //{
                     
-                    RoflStatusId = SelectStatus.StatusId,
-
+                //    RoflStatusId = SelectStatus.StatusId,
+                //    TegId = SelectStatus.StatusId,
+                //    RoflStartId = SelectStatus.StatusId,
+                //    RoflEndId = SelectStatus.StatusId,
            
-                    //TegId = AdminComboBoxTeg.SelectedIndex + 1,
-                    //RoflStartId = AdminComboBoxStart.SelectedIndex + 1,
-                    //RoflEndId = AdminComboBoxEnd.SelectedIndex + 1,
-                };
+                    
+                //};
                 
-                await Client.Instance.SendUserData(data);
+                //await Client.Instance.SendUserData(data);
           
 
 

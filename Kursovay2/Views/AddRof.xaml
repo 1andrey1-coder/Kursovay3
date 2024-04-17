@@ -386,20 +386,20 @@ HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1">
                     <StackPanel HorizontalAlignment="Center" 
                          VerticalAlignment="Center" Grid.Row="0" Grid.Column="2">
                         <ComboBox Width="100" x:Name="AdminComboBoxTeg"
-                                  DisplayMemberPath="Teg" />
+                                  DisplayMemberPath="TegName" />
                     </StackPanel>
 
                   
                     <StackPanel HorizontalAlignment="Center" 
                                 VerticalAlignment="Center"
                                 Grid.Row="1" Grid.Column="2">
-                        <ComboBox Width="100" x:Name="AdminComboBoxStart" DisplayMemberPath="RoflStart" />
+                        <ComboBox Width="100" x:Name="AdminComboBoxStart" DisplayMemberPath="StartName" />
                     </StackPanel>
 
                     <StackPanel HorizontalAlignment="Center" 
                             VerticalAlignment="Center"
                             Grid.Row="2" Grid.Column="2">
-                        <ComboBox Width="100"  x:Name="AdminComboBoxEnd" DisplayMemberPath="RoflEnd" />
+                            <ComboBox Width="100"  x:Name="AdminComboBoxEnd" DisplayMemberPath="EndName" />
                     </StackPanel>
 
                     <StackPanel HorizontalAlignment="Center" 

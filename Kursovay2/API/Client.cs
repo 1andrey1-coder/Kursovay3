@@ -251,14 +251,62 @@ namespace Kursovay2.API
                 return null;
             }
         }
-        public async Task<RoflDTO> SendUserData(RoflDTO combobox)
+        public async Task<List<EndDTO>> GetComboBoxEnd()
+        {
+
+            HttpResponseMessage response = await httpClient.GetAsync("Account/ComboBoxEnd");
+
+            if (response.IsSuccessStatusCode)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+                List<EndDTO> comboBoxData = JsonConvert.DeserializeObject<List<EndDTO>>(json);
+                return comboBoxData;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<TegDTO>> GetComboBoxTeg()
+        {
+
+            HttpResponseMessage response = await httpClient.GetAsync("Account/ComboBoxTeg");
+
+            if (response.IsSuccessStatusCode)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+                List<TegDTO> comboBoxData = JsonConvert.DeserializeObject<List<TegDTO>>(json);
+                return comboBoxData;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<List<StartDTO>> GetComboBoxStart()
+        {
+
+            HttpResponseMessage response = await httpClient.GetAsync("Account/ComboBoxStart");
+
+            if (response.IsSuccessStatusCode)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+                List<StartDTO> comboBoxData = JsonConvert.DeserializeObject<List<StartDTO>>(json);
+                return comboBoxData;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public async Task<RoflDTO> SendUserData(int combobox)
         {
             var Combobox= new RoflDTO
             {
-                TegId = combobox.TegId,
-                RoflStartId = combobox.RoflStartId,
-                RoflEndId = combobox.RoflEndId,
-                RoflStatusId = combobox.RoflStatusId,
+                TegId = combobox,
+                RoflStartId = combobox,
+                RoflEndId = combobox,
+                RoflStatusId = combobox,
             };
             // Отправка данных в контроллер через API
             HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/AddRofl", Combobox);
