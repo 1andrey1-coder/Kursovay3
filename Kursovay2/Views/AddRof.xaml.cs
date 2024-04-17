@@ -157,30 +157,30 @@ namespace Kursovay2.AddRof
         {
             
             StatusDTO statusId = (StatusDTO)AdminComboBoxStatus.SelectedItem;
-            if (statusId != null)
+            EndDTO endId = (EndDTO)AdminComboBoxEnd.SelectedItem;
+            TegDTO tegId = (TegDTO)AdminComboBoxTeg.SelectedItem;
+            StartDTO startId = (StartDTO)AdminComboBoxStart.SelectedItem;
+            if (statusId != null && endId != null && tegId != null && startId !=null)
             {
-                int selectedStatusId = statusId.StatusId;
+                int selectedStatusId =  statusId.StatusId;
                 await Client.Instance.SendUserData(selectedStatusId);
             }
-            EndDTO endId = (EndDTO)AdminComboBoxEnd.SelectedItem;
-            if (endId != null)
-            {
-                int selectedEndID = endId.EndId;
-                await Client.Instance.SendUserData(selectedEndID);
-            }
-            TegDTO tegId = (TegDTO)AdminComboBoxTeg.SelectedItem;
-            if (tegId != null)
-            {
-                int selectedTegId = tegId.TegId;
-                await Client.Instance.SendUserData(selectedTegId);
-            }
-            StartDTO startId = (StartDTO)AdminComboBoxStart.SelectedItem;
-            if (startId != null)
-            {
-                int selectedStartId = startId.StartId;
-                await Client.Instance.SendUserData(selectedStartId);
+            //if (endId != null)
+            //{
+            //    int selectedEndID = endId.EndId;
+            //    await Client.Instance.SendUserData(selectedEndID);
+            //}
+            //if (tegId != null)
+            //{
+            //    int selectedTegId = tegId.TegId;
+            //    await Client.Instance.SendUserData(selectedTegId);
+            //}
+            //if (startId != null)
+            //{
+            //    int selectedStartId = startId.StartId;
+            //    await Client.Instance.SendUserData(selectedStartId);
 
-            }
+            //}
 
                 //RoflDTO data = new RoflDTO
                 //{
