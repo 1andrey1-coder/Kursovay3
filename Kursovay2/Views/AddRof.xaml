@@ -42,9 +42,9 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="70"/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition Height="130"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition />
                 </Grid.RowDefinitions>
 
 
@@ -273,7 +273,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
 
                     <ListView Margin="0 0 0 10" x:Name="AdminListView"
 ItemsSource="{Binding Rofl}" 
-SelectedItem="{Binding SelectRofl}"  >
+SelectedItem="{Binding SelectRofl, UpdateSourceTrigger=Default}"  >
 
                        
                         <ListView.View>
@@ -309,26 +309,27 @@ DisplayMemberBinding="{Binding RoflStart}" />
                     </ListView>
                 </ScrollViewer>
 
+                <!--содержание-->
                 <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
                     
                
                 <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50"/>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="120"/>
                         <ColumnDefinition Width="30"/>
-                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="220"/>
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="100"/>
                         <ColumnDefinition/>
                         
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="100"/>
                     </Grid.RowDefinitions>
                     <!--Типы-->
 

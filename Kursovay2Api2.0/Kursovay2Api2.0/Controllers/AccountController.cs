@@ -349,10 +349,11 @@ namespace Kursovay2Api2._0.Controllers
             var rofls = _memContext.Rofls.Include(s => s.RoflGenre).Include(s => s.RoflStart).
                 Include(s => s.RoflEnd).Include(s => s.RoflStatus).Include(s => s.Teg).ToList();
 
-            
+           
 
                 var result = rofls.Select(rofl => new RoflDTO
                 {
+                    
                     RoflName = rofl.RoflName,
                     RoflId = rofl.RoflId,
                     Teg = rofl.Teg.TegName,
@@ -370,10 +371,11 @@ namespace Kursovay2Api2._0.Controllers
 
                 });
                 return Ok(result);
-            
-           
-            
-           
+                
+
+          
+
+
 
         }
 
