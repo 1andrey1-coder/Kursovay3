@@ -299,7 +299,7 @@ namespace Kursovay2.API
                 return null;
             }
         }
-        public async Task<RoflDTO> SendUserData(int combobox)
+        public async Task<RoflDTO> SendUserData(int combobox, string minopis, string name)
         {
             var Combobox= new RoflDTO
             {
@@ -308,8 +308,8 @@ namespace Kursovay2.API
                 RoflStartId = combobox,
                 RoflEndId = combobox,
                 RoflStatusId = combobox,
-                //RoflName = minopis,
-                //RoflMinOpisanie = minopis,
+                RoflName = name,
+                RoflMinOpisanie = minopis,
             };
             // Отправка данных в контроллер через API
             HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/AddRofl", Combobox);
