@@ -42,9 +42,10 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="210" />
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
 
@@ -213,7 +214,7 @@ Click="btnClose_Click">
                         <RowDefinition/>
                         <RowDefinition Height="32"/>
                     </Grid.RowDefinitions>
-                    <StackPanel Margin="0 0 0 0" VerticalAlignment="Center" Grid.Row="0" >
+                    <StackPanel Margin="10 0 0 0" VerticalAlignment="Center" Grid.Row="0" >
                         <Label FontWeight="Bold" Margin="0 0 0 5" Content="Редактировать Логин" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
                         <TextBox Width="200" x:Name="resetLogin">
                             <TextBox.Template>
@@ -262,7 +263,7 @@ Click="btnClose_Click">
                         <RowDefinition/>
                         <RowDefinition Height="32"/>
                     </Grid.RowDefinitions>
-                    <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
+                    <StackPanel Margin="5 0 0 0" Width="200" VerticalAlignment="Center" Grid.Row="0">
                         <Label FontWeight="Bold" Margin="0 0 0 5" Content="Редактировать Почту" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
                         <TextBox Width="200" x:Name="resetMail">
                             <TextBox.Template>
@@ -312,7 +313,7 @@ Click="btnClose_Click">
                     </Grid.RowDefinitions>
 
 
-                    <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
+                    <StackPanel Margin="10 0 0 5" VerticalAlignment="Center" Grid.Row="0">
                         <Label FontWeight="Bold" Margin="0 0 0 5" Content="Редактировать Пароль" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
                         <TextBox Width="200" x:Name="resetPassword" >
                             <TextBox.Template>
@@ -357,19 +358,22 @@ BorderBrush="Transparent" Foreground="White" Click="ResetPassword" Height="40">
 
                 <Grid Margin="0 20 0 0" Grid.Row="4" Grid.RowSpan="5" Grid.Column="0" >
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
                         <RowDefinition/>
 
                     </Grid.RowDefinitions>
 
+                    
+                        
                     <StackPanel Orientation="Horizontal" Grid.Row="0">
-                        <Label Content="Логин: " Foreground="White" FontWeight="Bold" />
-                        <TextBlock x:Name="textBlockUserName" Background="Transparent" Text="{Binding LoginName}"  />
+                        <Label  BorderThickness="2" Content="Логин: " FontSize="20" Foreground="White" FontWeight="Bold" />
+                        <TextBlock x:Name="textBlockUserName" FontSize="15" Background="Transparent" Margin="0 7.5 0 0" Foreground="White" Text="{Binding LoginName}"  />
                     </StackPanel>
+                    
                     <StackPanel Orientation="Horizontal" Grid.Row="1">
-                        <Label Content="Почта: " Foreground="White" FontWeight="Bold" />
-                        <TextBlock Background="Transparent" x:Name="textBlockMail" Text="{Binding Mail}" />
+                        <Label Content="Почта: " Foreground="White" FontSize="20" FontWeight="Bold" />
+                        <TextBlock Background="Transparent" FontSize="15" Margin="0 7.5 0 0" Foreground="White" x:Name="textBlockMail" Text="{Binding Mail}" />
                     </StackPanel>
 
                 </Grid>
