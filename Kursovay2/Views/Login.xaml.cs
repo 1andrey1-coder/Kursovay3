@@ -35,7 +35,7 @@ namespace Kursovay2.Views
             vm.RegisterPassBox(passwordBox);
         }
 
-       
+
 
 
 
@@ -79,10 +79,10 @@ namespace Kursovay2.Views
 
         }
 
-        private void dragWindows(object sender, MouseButtonEventArgs e)
-        {
-            //this.DragMove();
-        }
+        //private void dragWindows(object sender, MouseButtonEventArgs e)
+        //{
+        //    this.DragMove();
+        //}
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
@@ -118,5 +118,7 @@ namespace Kursovay2.Views
             Window parentWindow = Window.GetWindow(this);
             parentWindow.WindowState = WindowState.Maximized;
         }
+
+        
     }
 }

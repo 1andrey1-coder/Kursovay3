@@ -532,8 +532,8 @@ namespace Kursovay2Api2._0.Controllers
 
 
 
-        [HttpPut("UpdatePassword/{userId}")]
-        public async Task<ActionResult> UpdatePassword(int userId, [FromBody] string newPassword)
+        [HttpPut("UpdateProfile/{userId}")]
+        public async Task<ActionResult> UpdatePassword(int userId, [FromBody] LoginUserDTO newPassword)
         {
             var user = await _memContext.LoginUsers.FindAsync(userId);
 
@@ -542,7 +542,9 @@ namespace Kursovay2Api2._0.Controllers
                 return NotFound();
             }
 
-            user.LoginPassword = HashPassword(newPassword);
+            user.LoginPassword = HashPassword(newPassword.LoginPassword);
+            user.LoginName = newPassword.LoginName ;
+            user.Mail = newPassword.Mail;
 
             _memContext.LoginUsers.Update(user);
             await _memContext.SaveChangesAsync();

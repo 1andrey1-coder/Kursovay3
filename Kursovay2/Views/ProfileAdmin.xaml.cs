@@ -75,7 +75,11 @@ namespace Kursovay2.Views
         {
             int id = SingleProfle.user.LoginId;
             string newPassword = resetPassword.Text;
-            await Client.Instance.Profile(id, newPassword);
+            string newLogin = resetLogin.Text;
+            string newMail = resetMail.Text;
+            await Client.Instance.Profile(id, newPassword, newLogin, newMail);
         }
+
+       
     }
 }

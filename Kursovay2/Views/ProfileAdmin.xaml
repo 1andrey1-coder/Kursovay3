@@ -215,7 +215,7 @@ Click="btnClose_Click">
                     </Grid.RowDefinitions>
                     <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
                         <Label FontWeight="Bold" Margin="0 0 0 5" Content="Редактировать Логин" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
-                        <TextBox Width="200" >
+                        <TextBox Width="200" x:Name="resetLogin">
                             <TextBox.Template>
                                 <ControlTemplate>
                                     <Border CornerRadius="10" Height="20" Margin="0 0 0 5" BorderThickness="1" Background="White" BorderBrush="White">
@@ -228,9 +228,9 @@ Click="btnClose_Click">
                     <StackPanel  VerticalAlignment="Top" Grid.Row="1">
 
 
-                        <StackPanel Height="45" Width="150">
+                        <!--<StackPanel Height="45" Width="150">
 
-                            <Button Margin="0 0 0 5"
+                            <Button Margin="0 0 0 5" Click="resetName"
                                 BorderBrush="Transparent" Foreground="White"  Height="30">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
@@ -249,7 +249,7 @@ Click="btnClose_Click">
                                     </StackPanel>
                                 </Button.Content>
                             </Button>
-                        </StackPanel>
+                        </StackPanel>-->
 
                     </StackPanel>
 
@@ -264,7 +264,7 @@ Click="btnClose_Click">
                     </Grid.RowDefinitions>
                     <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
                         <Label FontWeight="Bold" Margin="0 0 0 5" Content="Редактировать Почту" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
-                        <TextBox Width="200" >
+                        <TextBox Width="200" x:Name="resetMail">
                             <TextBox.Template>
                                 <ControlTemplate>
                                     <Border CornerRadius="10" Height="20" Margin="0 0 0 5" BorderThickness="1" Background="White" BorderBrush="White">
@@ -277,7 +277,7 @@ Click="btnClose_Click">
                     <StackPanel  VerticalAlignment="Top" Grid.Row="1">
 
 
-                        <StackPanel Height="45" Width="150">
+                        <!--<StackPanel Height="45" Width="150">
 
                             <Button
                    BorderBrush="Transparent" Foreground="White"  Height="30">
@@ -298,7 +298,7 @@ Click="btnClose_Click">
                                     </StackPanel>
                                 </Button.Content>
                             </Button>
-                        </StackPanel>
+                        </StackPanel>-->
 
                     </StackPanel>
 
@@ -344,7 +344,7 @@ Click="btnClose_Click">
                                 <Button.Content>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="\Icons\Change.png"  Width="20" Height="20" Margin="0,0,5,0"/>
-                                        <TextBlock Text="Измененить пароль" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Измененить данные" VerticalAlignment="Center"/>
                                     </StackPanel>
                                 </Button.Content>
                             </Button>
