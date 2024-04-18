@@ -50,11 +50,11 @@
 
 
                 <Button HorizontalAlignment="Left" Height="35" Width="100" 
-                        Grid.Column="0" Grid.Row="1" Foreground="White" BorderBrush="Transparent"  >
+                        Grid.Column="0" Grid.Row="1" Foreground="White" BorderBrush="Transparent" Click="Back" >
                     <Button.Content>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="\Icons\ReturnWindow.png"  Width="20" Height="20" Margin="0,0,5,0"/>
-                            <TextBlock Text="Вернуться" VerticalAlignment="Center"/>
+                            <TextBlock Text="Вернуться" VerticalAlignment="Center" />
                         </StackPanel>
                     </Button.Content>
                     <Button.Template>
@@ -192,7 +192,7 @@ Click="btnClose_Click">
                        BorderThickness="2" Background="Transparent">
 
                     <StackPanel>
-                        <Image Source="\Images\ImageNull2png"/>
+                        <Image Source="\Images\ImageNull2png" x:Name="ImageBall"/>
                     </StackPanel>
                 </Border>
                 <!--шапка-->
@@ -232,7 +232,7 @@ Click="btnClose_Click">
                         <StackPanel Height="45" Width="150">
 
                             <Button Margin="0 0 0 5"
-                                BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
+                                BorderBrush="Transparent" Foreground="White" Height="30">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border Width="150" Height="30"
@@ -281,7 +281,7 @@ Click="btnClose_Click">
                         <StackPanel Height="45" Width="150">
 
                             <Button
-                   BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
+                   BorderBrush="Transparent" Foreground="White"  Height="30">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border Width="150" Height="30"
@@ -331,7 +331,7 @@ Click="btnClose_Click">
                         <StackPanel Height="45" Width="150">
 
                             <Button 
-   BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
+   BorderBrush="Transparent" Foreground="White" Height="30" Click="ResetPassword">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border Width="150" Height="30"

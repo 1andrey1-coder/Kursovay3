@@ -42,13 +42,13 @@ namespace Kursovay2.mvvm.VM
                     if (user.RoleId == 1)
                     {
 
-                        Admin.Admin adminWindow = new Admin.Admin();
+                        Admin.Admin adminWindow = new Admin.Admin(user);
                         adminWindow.Show();
                         Application.Current.MainWindow.Close();
                     }
                     if  (user.RoleId == 2)
                     {
-                        Users userWindow = new Users();
+                        Users userWindow = new Users(user);
                         userWindow.Show();
                         Application.Current.MainWindow.Close();
                     }

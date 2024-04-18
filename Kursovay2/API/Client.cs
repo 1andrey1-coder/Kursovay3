@@ -166,6 +166,18 @@ namespace Kursovay2.API
                 MessageBox.Show("Почты не существует", "Неудачный вход", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
+
+        public async Task? Profile(string password)
+        {
+            var resertPasswordProfile = new LoginName
+            {
+                Password = password,
+            };
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/UpdatePassword", resertPasswordProfile);
+            if (!response.IsSuccessStatusCode)
+                MessageBox.Show("Не получилось перезаписать новый пароль", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
         public async Task<LoginUserDTO>? PostSmsEmail(string mail)
         {
             var loginuUser = new LoginName

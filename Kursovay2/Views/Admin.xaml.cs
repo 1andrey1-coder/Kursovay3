@@ -30,10 +30,12 @@ namespace Kursovay2.Admin
 
         double panelWidth;
         bool hidden;
+        
+
         public ObservableCollection<RoflDTO> Rofl { get; set; }
         public RoflDTO SelectRofl {  get; set; }
 
-        public Admin()
+        public Admin(LoginUserDTO user)
         {
             InitializeComponent();
             //для отображения данных
@@ -159,7 +161,7 @@ namespace Kursovay2.Admin
         private void ClickAdminToMainWindow(object sender, RoutedEventArgs e)
         {
             
-            Admin admin = new Admin();
+            Admin admin = new Admin(SingleProfle.user);
             admin.Show();
             this.Close();
 
@@ -232,6 +234,27 @@ namespace Kursovay2.Admin
                 // Меняем размер окна на обычный
                 WindowState = WindowState.Normal;
             }
+        }
+
+        private void Profile(object sender, RoutedEventArgs e)
+        {
+            
+
+            if (SingleProfle.user.RoleId == 1)
+            {
+
+                ProfileAdmin adminWindow = new ProfileAdmin();
+                adminWindow.Show();
+                Close();
+            }
+            if (SingleProfle.user.RoleId == 2)
+            {
+                ProfileUser userWindow = new ProfileUser();
+                userWindow.Show();
+                Close();
+            }
+
+
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursovay2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,10 +37,7 @@ namespace Kursovay2.Views
             parentWindow.WindowState = WindowState.Minimized;
         }
 
-        private void ResetName(object sender, RoutedEventArgs e)
-        {
-
-        }
+      
         private void btnMax_Click(object sender, RoutedEventArgs e)
         {
             //Window parentWindow = Window.GetWindow(this);
@@ -54,6 +52,29 @@ namespace Kursovay2.Views
                 // Меняем размер окна на обычный
                 WindowState = WindowState.Normal;
             }
+        }
+
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            if (SingleProfle.user.RoleId == 1)
+            {
+
+                Admin.Admin adminWindow = new Admin.Admin(SingleProfle.user);
+                adminWindow.Show();
+                Close();
+            }
+            if (SingleProfle.user.RoleId == 2)
+            {
+                User.Users userWindow = new User.Users(SingleProfle.user);
+                userWindow.Show();
+                Close();
+            }
+
+        }
+
+        private void ResetPassword(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

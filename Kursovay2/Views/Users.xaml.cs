@@ -25,7 +25,7 @@ namespace Kursovay2.User
         DispatcherTimer timer;
         double panelWidth;
         bool hidden;
-        public Users()
+        public Users(LoginUserDTO user)
         {
             InitializeComponent();
 
@@ -93,7 +93,7 @@ namespace Kursovay2.User
         private void ClickUserToMainWindow(object sender, RoutedEventArgs e)
         {
           
-            User.Users user2 = new User.Users();
+            User.Users user2 = new User.Users(SingleProfle.user);
             //User.Users user2 = new User.Users(user);
             user2.Show();
             this.Close();

@@ -96,7 +96,7 @@ namespace Kursovay2.Views
 
         private void VernutObrat(object sender, RoutedEventArgs e)
         {
-            Users users = new Users();
+            Users users = new Users(user);
             //Users users = new Users(user);
             users.Show();
             this.Close();
