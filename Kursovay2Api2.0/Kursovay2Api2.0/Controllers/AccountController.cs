@@ -356,6 +356,7 @@ namespace Kursovay2Api2._0.Controllers
                     {
 
 
+
                         RoflName = rofl.RoflName,
                         RoflId = rofl.RoflId,
                         Teg = rofl.Teg?.TegName,
