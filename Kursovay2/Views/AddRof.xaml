@@ -288,6 +288,7 @@ DisplayMemberBinding="{Binding RoflStart}" />
                                 <!--<GridViewColumn Header="Автор" Width="110" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
                 DisplayMemberBinding="{Binding Teg}" />-->
+                                
 
                                 <GridViewColumn Header="Завершение шутки" Width="140" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
