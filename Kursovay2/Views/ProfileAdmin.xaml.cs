@@ -73,9 +73,9 @@ namespace Kursovay2.Views
 
         private async void ResetPassword(object sender, RoutedEventArgs e)
         {
-
+            int id = SingleProfle.user.LoginId;
             string newPassword = resetPassword.Text;
-            await Client.Instance.Profile(newPassword);
+            await Client.Instance.Profile(id, newPassword);
         }
     }
 }

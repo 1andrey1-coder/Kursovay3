@@ -167,13 +167,15 @@ namespace Kursovay2.API
         }
 
 
-        public async Task? Profile(string password)
+        public async Task? Profile(int id, string password)
         {
-            var resertPasswordProfile = new LoginName
+            var resertPasswordProfile = new LoginUserDTO
             {
-                Password = password,
+                LoginPassword = password,
+                LoginId = id,
+                
             };
-            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/UpdatePassword", resertPasswordProfile);
+            HttpResponseMessage response = await httpClient.PutAsJsonAsync($"Account/UpdatePassword/{id}", password);
             if (!response.IsSuccessStatusCode)
                 MessageBox.Show("Не получилось перезаписать новый пароль", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
         }
