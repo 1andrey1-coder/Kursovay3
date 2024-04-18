@@ -24,6 +24,7 @@ namespace Kursovay2.Views
         public ProfileUser()
         {
             InitializeComponent();
+            DisplayUserInfo();
         }
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
@@ -31,7 +32,29 @@ namespace Kursovay2.Views
             Close();
             //Application.Current.Shutdown();
         }
+        private async void DisplayUserInfo()
+        {
 
+            LoginUserDTO login1 = await Client.Instance.GetUser(SingleProfle.user.LoginId);
+
+            if (login1 != null)
+            {
+
+                textBlockUserName.Text = login1.LoginName;
+                textBlockMail.Text = login1.Mail;
+
+            }
+            else
+            {
+                textBlockUserName.Text = "User not found";
+                textBlockMail.Text = "User not found";
+            }
+
+
+
+
+
+        }
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
             Window parentWindow = Window.GetWindow(this);

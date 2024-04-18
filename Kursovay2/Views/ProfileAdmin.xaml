@@ -35,9 +35,9 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
-                    <RowDefinition  Height="50"/>
+                    <RowDefinition  Height="40"/>
                     <RowDefinition Height="90"/>
-                    <RowDefinition/>
+                    <RowDefinition Height="90"/>
                     <RowDefinition Height="100"/>
                     <RowDefinition />
                 </Grid.RowDefinitions>
@@ -213,7 +213,7 @@ Click="btnClose_Click">
                         <RowDefinition/>
                         <RowDefinition Height="32"/>
                     </Grid.RowDefinitions>
-                    <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
+                    <StackPanel Margin="0 0 0 0" VerticalAlignment="Center" Grid.Row="0" >
                         <Label FontWeight="Bold" Margin="0 0 0 5" Content="Редактировать Логин" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
                         <TextBox Width="200" x:Name="resetLogin">
                             <TextBox.Template>
@@ -329,30 +329,31 @@ Click="btnClose_Click">
 
                         <StackPanel Height="45" Width="150">
 
-                            <Button 
-   BorderBrush="Transparent" Foreground="White" Click="ResetPassword" Height="30">
-                                <Button.Template>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Width="150" Height="30"
-               CornerRadius="15"
-               Background="{TemplateBinding Background}">
-                                            <ContentPresenter VerticalAlignment="Center"
-                HorizontalAlignment="Center"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Button.Template>
-                                <Button.Content>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Image Source="\Icons\Change.png"  Width="20" Height="20" Margin="0,0,5,0"/>
-                                        <TextBlock Text="Измененить данные" VerticalAlignment="Center"/>
-                                    </StackPanel>
-                                </Button.Content>
-                            </Button>
+                            
                         </StackPanel>
 
                     </StackPanel>
-
+                   
                 </Grid>
+                <Button VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4"
+BorderBrush="Transparent" Foreground="White" Click="ResetPassword" Height="40">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="150" Height="40"
+            CornerRadius="15"
+            Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+             HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="\Icons\Change.png"  Width="20" Height="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Измененить данные" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
 
                 <Grid Margin="0 20 0 0" Grid.Row="4" Grid.RowSpan="5" Grid.Column="0" >
                     <Grid.RowDefinitions>
