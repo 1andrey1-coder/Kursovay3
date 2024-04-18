@@ -230,6 +230,7 @@ namespace Kursovay2Api2._0.Controllers
             LoginUser user = _memContext.LoginUsers.FirstOrDefault(u => u.LoginId == id);
 
 
+
             if (user != null)
             {
                 LoginUserDTO userDTO = new LoginUserDTO
