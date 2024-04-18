@@ -351,25 +351,21 @@ namespace Kursovay2Api2._0.Controllers
 
            
 
-                var result = rofls.Select(rofl => new RoflDTO
-                {
+                var result = rofls.Select(rofl =>
+                 new RoflDTO
+                    {
 
-                    
-                    RoflName = rofl.RoflName,
-                    RoflId = rofl.RoflId,
-                    Teg = rofl.Teg.TegName,
-                    RoflGenre = rofl.RoflGenre.GenreName,
-                    RoflStart = rofl.RoflStart.StartName,
-                    RoflStatus = rofl.RoflStatus.StatusName,
-                    RoflEnd = rofl.RoflEnd.EndName,
-                    RoflOpisanie = rofl.RoflOpisanie,
-                    RoflDateTime = rofl.RoflDateTime,
+
+                        RoflName = rofl.RoflName,
+                        RoflId = rofl.RoflId,
+                        Teg = rofl.Teg?.TegName,
+                        RoflGenre = rofl.RoflGenre?.GenreName,
+                        RoflStart = rofl.RoflStart?.StartName,
+                        RoflStatus = rofl.RoflStatus?.StatusName,
+                        RoflOpisanie = rofl.RoflOpisanie,
+                        RoflDateTime = rofl.RoflDateTime,
+                        RoflEnd = rofl.RoflEnd?.EndName
                     //RoflImage = rofl.RoflImage,
-
-
-
-
-
                 });
                 return Ok(result);
                 

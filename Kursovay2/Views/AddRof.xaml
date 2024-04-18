@@ -278,11 +278,11 @@ SelectedItem="{Binding SelectRofl, UpdateSourceTrigger=Default}"  >
                        
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Тэг" Width="35"  
+                                <GridViewColumn Header="Тэг" Width="70"  
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
                 DisplayMemberBinding="{Binding Teg}" />
                                 
-                                <GridViewColumn Header="Начало" Width="60"  
+                                <GridViewColumn Header="Начало" Width="100"  
 HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
 DisplayMemberBinding="{Binding RoflStart}" />
                                 <!--<GridViewColumn Header="Автор" Width="110" 
@@ -292,7 +292,7 @@ DisplayMemberBinding="{Binding RoflStart}" />
                                 <GridViewColumn Header="Завершение шутки" Width="140" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
                 DisplayMemberBinding="{Binding RoflEnd}" />
-
+                                
                                 <GridViewColumn Header="Название шутки/рофла" Width="150" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
                 DisplayMemberBinding="{Binding RoflName}" />
