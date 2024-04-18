@@ -1,4 +1,5 @@
-﻿using Kursovay2.Models;
+﻿using Kursovay2.API;
+using Kursovay2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,9 +73,13 @@ namespace Kursovay2.Views
 
         }
 
-        private void ResetPassword(object sender, RoutedEventArgs e)
+        private async void ResetPassword(object sender, RoutedEventArgs e)
         {
-
+            int id = SingleProfle.user.LoginId;
+            string newPassword = resetPassword.Text;
+            string newLogin = resetLogin.Text;
+            string newMail = resetMail.Text;
+            await Client.Instance.Profile(id, newPassword, newLogin, newMail);
         }
     }
 }

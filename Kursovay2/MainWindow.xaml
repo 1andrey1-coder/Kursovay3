@@ -11,6 +11,7 @@
        
         Title="MainWindow" MinHeight="450" MaxHeight="600"  MinWidth="400" MaxWidth="450" 
         WindowStartupLocation="CenterScreen"
+        MouseLeftButtonDown="dragWindows"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent">
     <Window.Resources >
         <vm:MainVM x:Key="mainVM"/>

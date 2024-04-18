@@ -167,6 +167,7 @@ namespace Kursovay2.AddRof
                 int selectedStatusId =  statusId.StatusId;
                 await Client.Instance.SendUserData(selectedStatusId, miniopis, Name);
             }
+            LoadData();
             //if (endId != null)
             //{
             //    int selectedEndID = endId.EndId;
@@ -184,19 +185,19 @@ namespace Kursovay2.AddRof
 
             //}
 
-                //RoflDTO data = new RoflDTO
-                //{
-                    
-                //    RoflStatusId = SelectStatus.StatusId,
-                //    TegId = SelectStatus.StatusId,
-                //    RoflStartId = SelectStatus.StatusId,
-                //    RoflEndId = SelectStatus.StatusId,
-           
-                    
-                //};
-                
-                //await Client.Instance.SendUserData(data);
-          
+            //RoflDTO data = new RoflDTO
+            //{
+
+            //    RoflStatusId = SelectStatus.StatusId,
+            //    TegId = SelectStatus.StatusId,
+            //    RoflStartId = SelectStatus.StatusId,
+            //    RoflEndId = SelectStatus.StatusId,
+
+
+            //};
+
+            //await Client.Instance.SendUserData(data);
+
 
 
 

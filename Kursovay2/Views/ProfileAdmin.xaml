@@ -364,11 +364,11 @@ Click="btnClose_Click">
 
                     <StackPanel Orientation="Horizontal" Grid.Row="0">
                         <Label Content="Логин: " Foreground="White" FontWeight="Bold" />
-                        <TextBlock Background="White" Text="{Binding LoginName}" />
+                        <TextBlock x:Name="textBlockUserName" Background="Transparent" Text="{Binding LoginName}"  />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="1">
                         <Label Content="Почта: " Foreground="White" FontWeight="Bold" />
-                        <TextBlock Background="White" Text="{Binding Mail}" />
+                        <TextBlock Background="Transparent" x:Name="textBlockMail" Text="{Binding Mail}" />
                     </StackPanel>
 
                 </Grid>

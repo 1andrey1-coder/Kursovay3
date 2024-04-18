@@ -10,7 +10,7 @@
       Title="Login" 
       
       MinHeight="450" MaxHeight="600"  MinWidth="400" MaxWidth="450" Background="Transparent"  >
-    <!--MouseLeftButtonDown="dragWindows"-->
+    
     <Page.Resources>
         <vm:LoginVM x:Key="loginVM"/>
     </Page.Resources>

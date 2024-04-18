@@ -273,7 +273,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
 
                     <ListView Margin="0 0 0 10" x:Name="AdminListView"
 ItemsSource="{Binding Rofl}" 
-SelectedItem="{Binding SelectRofl, UpdateSourceTrigger=Default}"  >
+SelectedItem="{Binding SelectRofl}"  >
 
                        
                         <ListView.View>

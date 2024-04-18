@@ -236,6 +236,7 @@ namespace Kursovay2Api2._0.Controllers
                 {
                     LoginId = user.LoginId,
                     LoginName = user.LoginName,
+                    Mail = user.Mail,
                     RoleId = user.RoleId,
                 };
 
