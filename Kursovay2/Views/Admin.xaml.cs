@@ -257,7 +257,7 @@ namespace Kursovay2.Admin
 
         }
 
-        private void ResetSearch()
+        private void ResetSearch(object sender, RoutedEventArgs e)
         {
 
         }

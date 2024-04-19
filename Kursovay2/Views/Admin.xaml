@@ -188,10 +188,15 @@ Click="btnClose_Click">
 
                             <StackPanel VerticalAlignment="Bottom"  Margin="0 25 0 0" 
                                         Orientation="Horizontal" HorizontalAlignment="Left">
-
+                                <Image Source="\icons\Search.png" Height="40"/>
                                 <StackPanel Margin="5" Orientation="Vertical" >
-                                    <TextBlock Text="Поиск по тегу шутки:" Foreground="White"/>
-                                    <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+
+                                    <TextBlock  Text="Поиск по тегу шутки:"  Foreground="White"/>
+                                   
+                                       
+                                    
+                                    <TextBox Text="{Binding SearchText, 
+                                         UpdateSourceTrigger=PropertyChanged}"
                                              Width="200" Height="22" >
                                         <TextBox.Template>
                                             <ControlTemplate>
@@ -203,10 +208,19 @@ Click="btnClose_Click">
                                     </TextBox>
                                              
                                 </StackPanel>
-                                <StackPanel Margin="5" Orientation="Vertical"
-  
-  Width="159"
-  >
+                                <Button Content="Сброс" Click="ResetSearch" Foreground="White" 
+                                        VerticalAlignment="Top" Margin=" 0 15 0 0" >
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Width="90" Height="25"           CornerRadius="15"
+           Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center"
+                         HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <StackPanel Margin="5" Orientation="Vertical" Width="159"  >
                                     <TextBlock HorizontalAlignment="Center" Text="Сортировка по Эпичности" Foreground="White" />
                                     <ComboBox ItemsSource="{Binding Sorting, UpdateSourceTrigger=PropertyChanged}" 
 SelectedItem="{Binding SelectedSorting, UpdateSourceTrigger=PropertyChanged}"/>
