@@ -569,6 +569,8 @@ namespace Kursovay2Api2._0.Controllers
                 search = _memContext.Rofls.Where(s => s.RoflName.Contains(searchName)).Select(s=>new RoflDTO 
                 { 
                     RoflName = s.RoflName,
+                    RoflOpisanie = s.RoflOpisanie,
+
                 });
                 //var data = _memContext.Rofls.AsQueryable();
 
