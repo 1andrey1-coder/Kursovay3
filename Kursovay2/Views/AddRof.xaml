@@ -456,7 +456,7 @@ HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1">
                     </StackPanel>-->
 
 
-                    <StackPanel Margin="0 0 0 0"  Grid.Row="0" Grid.RowSpan="3" Grid.Column="4" >
+                    <StackPanel Margin="0 0 0 0" VerticalAlignment="Center"  Grid.Row="0" Grid.RowSpan="2" Grid.Column="4" >
 
 
                             <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3">
@@ -470,10 +470,10 @@ HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1">
                                         </StackPanel>
                                     </Label.Content>
                                 </Label>
-                            <TextBox  Width="200" Height="120" x:Name="AddMinOpisania">
+                            <TextBox  Width="200" Height="25" x:Name="AddMinOpisania">
                                 <TextBox.Template>
                                     <ControlTemplate>
-                                        <Border CornerRadius="10" Height="120" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
+                                        <Border CornerRadius="10" Height="25" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
                                             <ScrollViewer Margin="0 0 0 0" x:Name="PART_ContentHost" />
                                         </Border>
                                     </ControlTemplate>
@@ -511,7 +511,7 @@ BorderBrush="Transparent" Foreground="White" Click="AddName" Height="30">
 
 
                         <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3">
-                                <Label FontWeight="Bold" Margin="0 0 0 5" 
+                                <Label FontWeight="Bold" Margin="0 0 0 10" 
                                    Foreground="White" FontSize="15" HorizontalAlignment="Center">
                                     <Label.Content>
                                         <StackPanel Orientation="Horizontal">
