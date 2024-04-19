@@ -28,6 +28,7 @@
     <None Remove="icons\Return.png" />
     <None Remove="icons\ReturnWindow.png" />
     <None Remove="icons\Rofl.png" />
+    <None Remove="icons\RoflName.png" />
     <None Remove="icons\sent.png" />
     <None Remove="icons\setting.png" />
     <None Remove="icons\spam.png" />
@@ -115,6 +116,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="icons\Rofl.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\RoflName.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="icons\sent.png">

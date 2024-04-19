@@ -511,8 +511,16 @@ BorderBrush="Transparent" Foreground="White" Click="AddName" Height="30">
 
 
                         <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3">
-                            <Label FontWeight="Bold" Margin="0 0 0 5" Content="Название шутки" 
-                                   Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
+                                <Label FontWeight="Bold" Margin="0 0 0 5" 
+                                   Foreground="White" FontSize="15" HorizontalAlignment="Center">
+                                    <Label.Content>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="\icons\RoflName.png" Height="20" Margin=" 0 3 5 0"/>
+
+                                            <TextBlock Text="Название шутки" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Label.Content>
+                                </Label>
                             <TextBox  Width="200" Height="25" x:Name="AddNameRofl">
                                 <TextBox.Template>
                                     <ControlTemplate>
