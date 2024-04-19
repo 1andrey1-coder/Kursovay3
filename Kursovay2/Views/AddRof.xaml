@@ -459,9 +459,17 @@ HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1">
                     <StackPanel Margin="0 0 0 0"  Grid.Row="0" Grid.RowSpan="3" Grid.Column="4" >
 
 
-                        <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3">
-                            <Label FontWeight="Bold" Margin="0 0 0 10" Content="Небольшое описание" 
-                                   Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
+                            <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3">
+                                <Label FontWeight="Bold" Margin="0 0 0 10"
+                                   Foreground="White" FontSize="15" HorizontalAlignment="Center">
+                                    <Label.Content>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="\icons\MinOpisani2.png" Height="20" Margin=" 0 3 5 0"/>
+                                          
+                                            <TextBlock Text="Небольшое описание" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Label.Content>
+                                </Label>
                             <TextBox  Width="200" Height="120" x:Name="AddMinOpisania">
                                 <TextBox.Template>
                                     <ControlTemplate>
