@@ -267,7 +267,7 @@ namespace Kursovay2.Admin
             if(myTextBox.Text == "Введите данные")
             {
                 myTextBox.Text = "";
-                myTextBox.Foreground = Brushes.Black;
+                myTextBox.Foreground = Brushes.Gray;
             }
         }
 
