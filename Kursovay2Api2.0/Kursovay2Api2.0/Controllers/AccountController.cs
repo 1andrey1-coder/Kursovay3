@@ -533,7 +533,7 @@ namespace Kursovay2Api2._0.Controllers
 
 
 
-
+        //Обнова пароля/логина/почты
         [HttpPut("UpdateProfile/{userId}")]
         public async Task<ActionResult> UpdatePassword(int userId, [FromBody] LoginUserDTO newPassword)
         {
@@ -554,7 +554,33 @@ namespace Kursovay2Api2._0.Controllers
             return Ok();
 
         }
+        //Обнова пароля/логина/почты
 
+        [HttpGet("SearchName")]
+        public async Task<ActionResult<IEnumerable<RoflDTO>>> Search(string searchName)
+        {
+            try
+            {
+                var rofls = await _memContext.Rofls.Include(s => s.RoflGenre).Include(s => s.RoflStart).
+                Include(s => s.RoflEnd).Include(s => s.RoflStatus).Include(s => s.Teg).ToListAsync();
+
+               
+                IQueryable<RoflDTO> search;
+                search = (IQueryable<RoflDTO>)rofls.Where(s => s.RoflName.Contains(searchName));
+                //var data = _memContext.Rofls.AsQueryable();
+
+                //var search = (IQueryable<RoflDTO>)_memContext.Rofls.Where(s => s.RoflName.Contains(searchName));
+
+
+                return Ok(search);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
+        }
 
     }
 

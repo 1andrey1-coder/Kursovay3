@@ -256,5 +256,10 @@ namespace Kursovay2.Admin
 
 
         }
+
+        private void ResetSearch()
+        {
+
+        }
     }
 }
