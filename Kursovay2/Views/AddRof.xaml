@@ -271,16 +271,30 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                 <ScrollViewer  HorizontalScrollBarVisibility="Auto"
         Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1" >
 
-                    <ListView Margin="0 0 0 10" x:Name="AdminListView"
+                    <ListView  BorderBrush="Transparent"  Margin="0 0 0 10" x:Name="AdminListView"
 ItemsSource="{Binding Rofl}" 
-SelectedItem="{Binding SelectRofl}"  >
+SelectedItem="{Binding SelectRofl}" Background="Transparent"
+          BorderThickness="0">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsSelected"
+                         Value="False">
+                                        <Setter Property="Background"
+                            Value="White"/>
+                                        <Setter Property="BorderBrush"
+                            Value="Transparent"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ListView.ItemContainerStyle>
 
-                       
                         <ListView.View>
-                            <GridView>
+                            <GridView >
                                 <GridViewColumn Header="Тэг" Width="70"  
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
-                DisplayMemberBinding="{Binding Teg}" />
+                DisplayMemberBinding="{Binding Teg}" >
+</GridViewColumn>
                                 
                                 <GridViewColumn Header="Начало" Width="100"  
 HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
@@ -487,7 +501,7 @@ HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1">
 
                         <StackPanel Height="45" Width="150" >
 
-                            <Button Margin="0 0 0 5" Content="Внести данные" 
+                            <Button Margin="0 0 0 5"
 BorderBrush="Transparent" Foreground="White" Click="AddName" Height="30">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
@@ -499,6 +513,12 @@ BorderBrush="Transparent" Foreground="White" Click="AddName" Height="30">
                                         </Border>
                                     </ControlTemplate>
                                 </Button.Template>
+                                    <Button.Content>
+                                        <StackPanel Orientation="Horizontal" >
+                                            <Image Source="\icons\DataDB.png" Height="20" Margin=" 0 0 5 0"/>
+                                            <TextBlock Text="Внести данные" VerticalAlignment="Center" />
+                                        </StackPanel>
+                                    </Button.Content>
                             </Button>
                         </StackPanel>
 
