@@ -44,6 +44,7 @@ namespace Kursovay2.AddRof
             StatusComboBox();
             EndComboBox();
             TegComboBox();
+            GenreComboBox();
             StartComboBox();
             LoadData();
            
@@ -137,20 +138,34 @@ namespace Kursovay2.AddRof
                 }
             }
         }
+        private async void GenreComboBox()
+        {
+            List<GenreDTO> comboBoxData = await Client.Instance.GetComboBoxGenre();
+
+            if (comboBoxData != null)
+            {
+                foreach (GenreDTO item in comboBoxData)
+                {
+
+                    AdminComboBoxGenre.Items.Add(item);
+
+                }
+            }
+        }
 
 
         private async void LoadData()
         {
-            List<RoflDTO> Rofl = await Client.Instance.GetListRofl();
+            //List<RoflDTO> Rofl = await Client.Instance.GetListRofl();
 
-            if (Rofl != null)
-            {
-                AdminListView.ItemsSource = Rofl;
-            }
-            else
-            {
-                MessageBox.Show("Failed to load data from API");
-            }
+            //if (Rofl != null)
+            //{
+            //    AdminListView.ItemsSource = Rofl;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Failed to load data from API");
+            //}
         }
 
         private async void AddName(object sender, RoutedEventArgs e)
@@ -161,8 +176,9 @@ namespace Kursovay2.AddRof
             EndDTO endId = (EndDTO)AdminComboBoxEnd.SelectedItem;
             TegDTO tegId = (TegDTO)AdminComboBoxTeg.SelectedItem;
             StartDTO startId = (StartDTO)AdminComboBoxStart.SelectedItem;
+            GenreDTO genreId = (GenreDTO)AdminComboBoxGenre.SelectedItem;
             //miniopis != null &&
-            if (statusId != null && endId != null && tegId != null && startId !=null )
+            if (statusId != null && endId != null && tegId != null && startId !=null && genreId != null)
             {
                 int selectedStatusId =  statusId.StatusId;
                 await Client.Instance.SendUserData(selectedStatusId, miniopis, Name);

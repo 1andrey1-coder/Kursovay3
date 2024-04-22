@@ -319,6 +319,23 @@ namespace Kursovay2.API
                 return null;
             }
         }
+        public async Task<List<GenreDTO>> GetComboBoxGenre()
+        {
+
+            HttpResponseMessage response = await httpClient.GetAsync("Account/ComboBoxGenre");
+
+            if (response.IsSuccessStatusCode)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+                List<GenreDTO> comboBoxData = JsonConvert.DeserializeObject<List<GenreDTO>>(json);
+                return comboBoxData;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        
         public async Task<RoflDTO> SendUserData(int combobox, string minopis, string name)
         {
             var Combobox= new RoflDTO
@@ -326,6 +343,7 @@ namespace Kursovay2.API
                
                 TegId = combobox,
                 RoflStartId = combobox,
+                RoflGenreId = combobox,
                 RoflEndId = combobox,
                 RoflStatusId = combobox,
                 RoflName = name,

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.AddRof"
         mc:Ignorable="d"
-        Title="Окно для добавления"  MinHeight="450" Height="500" MinWidth="750" Width="1000"
+        Title="Окно для добавления"  MinHeight="450" Height="570" MinWidth="750" Width="1000"
       WindowStartupLocation="CenterScreen"
       WindowStyle="None" AllowsTransparency="True" Background="Transparent">
 
@@ -267,15 +267,20 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
 
                     </Grid>
 
+                
                 </StackPanel>
-                <ScrollViewer  HorizontalScrollBarVisibility="Auto"
+                
+                <!--Вывод-->
+                
+                
+                <!--<ScrollViewer  HorizontalScrollBarVisibility="Auto"
         Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1" >
 
                     <ListView  BorderBrush="Transparent"  Margin="0 0 0 10" x:Name="AdminListView"
 ItemsSource="{Binding Rofl}" 
-SelectedItem="{Binding SelectRofl}" Background="Transparent"
+SelectedItem="{Binding SelectRofl}" 
           BorderThickness="0">
-                        <ListView.ItemContainerStyle>
+                        --><!--<ListView.ItemContainerStyle>
                             <Style TargetType="{x:Type ListViewItem}">
                                 <Style.Triggers>
                                     <Trigger Property="IsSelected"
@@ -287,21 +292,26 @@ SelectedItem="{Binding SelectRofl}" Background="Transparent"
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>
-                        </ListView.ItemContainerStyle>
+                        </ListView.ItemContainerStyle>--><!--
 
                         <ListView.View>
                             <GridView >
                                 <GridViewColumn Header="Тэг" Width="70"  
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
                 DisplayMemberBinding="{Binding Teg}" >
-</GridViewColumn>
+                                </GridViewColumn>
                                 
+                                <GridViewColumn Header="Жанр" Width="70"  
+                HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
+                DisplayMemberBinding="{Binding Genre}" >
+                                </GridViewColumn>
+
                                 <GridViewColumn Header="Начало" Width="100"  
 HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
 DisplayMemberBinding="{Binding RoflStart}" />
-                                <!--<GridViewColumn Header="Автор" Width="110" 
+                                --><!--<GridViewColumn Header="Автор" Width="110" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-                DisplayMemberBinding="{Binding Teg}" />-->
+                DisplayMemberBinding="{Binding Teg}" />--><!--
                                 
 
                                 <GridViewColumn Header="Завершение шутки" Width="140" 
@@ -322,8 +332,10 @@ DisplayMemberBinding="{Binding RoflStart}" />
                             </GridView>
                         </ListView.View>
                     </ListView>
-                </ScrollViewer>
+                </ScrollViewer>-->
 
+                <!--Вывод-->
+                
                 <!--содержание-->
                 <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
                     
@@ -331,7 +343,7 @@ DisplayMemberBinding="{Binding RoflStart}" />
                 <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50"/>
-                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="160"/>
                         <ColumnDefinition Width="120"/>
                         <ColumnDefinition Width="30"/>
                         <ColumnDefinition Width="220"/>
@@ -343,8 +355,9 @@ DisplayMemberBinding="{Binding RoflStart}" />
                     <Grid.RowDefinitions>
                         <RowDefinition Height="70"/>
                         <RowDefinition Height="70"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
                     </Grid.RowDefinitions>
                     <!--Типы-->
 
@@ -357,7 +370,7 @@ DisplayMemberBinding="{Binding RoflStart}" />
 VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1">
                         <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
 
-                            <TextBlock Margin="10" Foreground="White" VerticalAlignment="Center" Text="Тэг"/>
+                            <TextBlock Margin="10" Foreground="White" VerticalAlignment="Center" Text="ТЭГ"/>
                         </Border>
 
                     </StackPanel>
@@ -366,7 +379,7 @@ VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column
 VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1">
                         <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
                             
-                            <TextBlock Margin="10" Foreground="White" Text="Начало шутки" />
+                            <TextBlock Margin="10" Foreground="White" Text="НАЧАЛО ШУТКИ" />
                         </Border>
                         
                     </StackPanel>
@@ -376,7 +389,7 @@ VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column
                         <StackPanel Orientation="Horizontal">
                             <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
 
-                                <TextBlock Margin="10" Foreground="White" Text="Завершение шутки" />
+                                <TextBlock Margin="10" Foreground="White" Text="ЗАВЕРШЕНИЕ ШУТКИ" />
                             </Border>
 
 
@@ -389,15 +402,27 @@ HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1">
                         <StackPanel Orientation="Horizontal">
                             <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
 
-                                <TextBlock Margin="10" Foreground="White" Text="Выбор статуса" />
+                                <TextBlock Margin="10" Foreground="White" Text="ВЫБОР СТАТУСА" />
                             </Border>
 
 
                         </StackPanel>
 
                     </StackPanel>
+                        <StackPanel Margin="5,0,5,0" VerticalAlignment="Center" Orientation="Horizontal"
+HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1">
+                            <StackPanel Orientation="Horizontal">
+                                <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
 
-                    <!--Типы-->
+                                    <TextBlock Margin="10" Foreground="White" Text="ВЫБОР ЖАНРА" />
+                                </Border>
+
+
+                            </StackPanel>
+
+                        </StackPanel>
+
+                        <!--Типы-->
                     <!--ComboBox-->
                     <StackPanel HorizontalAlignment="Center" 
                          VerticalAlignment="Center" Grid.Row="0" Grid.Column="2">
@@ -423,8 +448,14 @@ HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1">
                             Grid.Row="3" Grid.Column="2">
                             <ComboBox Width="100" x:Name="AdminComboBoxStatus" SelectedItem="{Binding SelectedStatus}" DisplayMemberPath="StatusName" />
                     </StackPanel>
+                     <StackPanel HorizontalAlignment="Center" 
+                                VerticalAlignment="Center"
+                            Grid.Row="4" Grid.Column="2">
+                            <ComboBox Width="100" x:Name="AdminComboBoxGenre" SelectedItem="{Binding SelectedGenre}" 
+                                      DisplayMemberPath="GenreName" />
+                     </StackPanel>
 
-                    <!--ComboBox-->
+                        <!--ComboBox-->
                   
 
 
@@ -496,7 +527,7 @@ HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1">
                         </StackPanel>
                         
                     </StackPanel>
-                    <StackPanel  Grid.Row="3" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="5"  VerticalAlignment="Top" >
+                    <StackPanel  Grid.Row="2" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="5"  VerticalAlignment="Top" >
 
 
                         <StackPanel Height="45" Width="150" >

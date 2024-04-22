@@ -429,6 +429,18 @@ namespace Kursovay2Api2._0.Controllers
             });
             return Ok(result);
         }
+        [HttpGet("ComboBoxGenre")]
+        public async Task<ActionResult<IEnumerable<Genre>>> GetGenreTable()
+        {
+
+            var data = await _memContext.Genres.ToListAsync();
+            var result = data.Select(s => new GenreDTO
+            {
+                GenreId = s.GenreId,
+                GenreName = s.GenreName,
+            });
+            return Ok(result);
+        }
         //работает как надо
 
         //кнопки
