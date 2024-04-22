@@ -224,7 +224,6 @@
                     <Button x:Name="btnLogin" 
                       Command="{Binding SingIn}"
                       BorderThickness="0"
-                      Content="ВХОД"
                       Foreground="White"
                       FontSize="12"
                       FontFamily="Montserrat"
@@ -243,6 +242,12 @@
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="\icons\LOg.png" Height="20"/>
+                                <TextBlock Margin="5 0 0 0" Text="ВХОД" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button.Content>
                     </Button>
 
                     <StackPanel>

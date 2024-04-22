@@ -20,6 +20,7 @@
     <None Remove="icons\History.png" />
     <None Remove="icons\Home.png" />
     <None Remove="icons\Local.png" />
+    <None Remove="icons\LOg.png" />
     <None Remove="icons\menu.png" />
     <None Remove="icons\MinOpisani2.png" />
     <None Remove="icons\msg.png" />
@@ -94,6 +95,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="icons\Local.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\LOg.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="icons\menu.png">
