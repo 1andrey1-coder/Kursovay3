@@ -191,10 +191,12 @@ Click="btnClose_Click">
                 <Border Grid.Row="2" Grid.RowSpan="2" Grid.Column="0"  CornerRadius="120" BorderBrush="Gray" 
                        BorderThickness="2" Background="Transparent">
 
-                    <StackPanel>
-                        <Image Source="\Images\ImageNull2png"/>
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="\Images\ImageNull2png" />
                     </StackPanel>
+                    
                 </Border>
+                
                 <!--шапка-->
                 <Grid Grid.Row="1" Grid.ColumnSpan="12" Grid.Column="1">
                     <Label FontSize="22" HorizontalAlignment="Center" Foreground="White">
@@ -325,19 +327,14 @@ Click="btnClose_Click">
                             </TextBox.Template>
                         </TextBox>
                     </StackPanel>
-                    <StackPanel  VerticalAlignment="Top" Grid.Row="1">
 
 
-                        <StackPanel Height="45" Width="150">
-
-                            
-                        </StackPanel>
-
-                    </StackPanel>
-                   
                 </Grid>
-                <Button VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4"
-BorderBrush="Transparent" Foreground="White" Click="ResetPassword" Height="40">
+                
+                
+
+                    <Button VerticalAlignment="Top" Grid.Column="1"  Grid.Row="4"
+BorderBrush="Transparent" Foreground="White" Click="AddPhoto" Height="40">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border Width="150" Height="40"
@@ -355,6 +352,27 @@ BorderBrush="Transparent" Foreground="White" Click="ResetPassword" Height="40">
                         </StackPanel>
                     </Button.Content>
                 </Button>
+                    <Button  Grid.Row="4" Grid.Column="2" Height="40" Width="170"
+                            VerticalAlignment="Top" HorizontalAlignment="Center"
+                        BorderBrush="Transparent" Foreground="White"  >
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="170" Height="40"
+CornerRadius="15"
+Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+ HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="\Icons\DataDB.png"  Width="20" Height="20" Margin="0,0,5,0"/>
+                                <TextBlock Text="Добавить Фотографию" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+               
 
                 <Grid Margin="0 20 0 0" Grid.Row="4" Grid.RowSpan="5" Grid.Column="0" >
                     <Grid.RowDefinitions>
