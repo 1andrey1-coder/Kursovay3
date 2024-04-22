@@ -263,10 +263,29 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <StackPanel  Grid.Column="1" VerticalAlignment="Bottom" >
-                            <StackPanel Margin="0 0 10 10 " HorizontalAlignment="Center">
-                                
-                                <Button Background="Transparent"  BorderBrush="Transparent"
-                                        Foreground="White" Content="Профиль" Click="Profile" />
+                            <StackPanel Margin="0 0 0 10 " HorizontalAlignment="Center">
+
+                                <Button   BorderBrush="Transparent"
+                                        Foreground="White" Click="Profile" >
+
+
+
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Width="65" Height="25"
+                                  CornerRadius="15"
+                                  Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                    <Button.Content>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Профиль" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Button.Content>
+                                </Button>
                             </StackPanel>
                         </StackPanel>
                         <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Bottom"
@@ -285,6 +304,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
     VerticalAlignment="Top" Background="Transparent" 
     BorderBrush="Transparent" Click="Button_Click">
                                     <Image Source="\icons\menu.png"/>
+                                    
                                 </Button>
                                 <!--сделать вывод того кто зашел-->
                             </Grid>
