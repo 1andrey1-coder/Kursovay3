@@ -264,7 +264,7 @@ DisplayMemberPath="Type1"/>
 
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\Out.png" Height="20"
+                                            <Image Source="\icons\ReturnWindow.png" Height="20"
                    VerticalAlignment="Center" />
                                             <Button Margin="15 0 0 0" Style="{StaticResource ButtonGost}" Background="Transparent"
                     BorderBrush="Transparent"
