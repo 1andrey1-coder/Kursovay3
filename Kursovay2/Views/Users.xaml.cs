@@ -31,12 +31,26 @@ namespace Kursovay2.User
             InitializeComponent();
 
             DisplayUserInfo();
+            LoadData();
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
             timer.Tick += Timer_Tick;
 
             panelWidth = sidePanel.Width;
 
+        }
+        private async void LoadData()
+        {
+            List<RoflDTO> Rofl = await Client.Instance.GetListRofl();
+
+            if (Rofl != null)
+            {
+                AdminListView.ItemsSource = Rofl;
+            }
+            else
+            {
+                MessageBox.Show("Failed to load data from API");
+            }
         }
         private async void DisplayUserInfo()
         {
