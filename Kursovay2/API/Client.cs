@@ -349,7 +349,7 @@ namespace Kursovay2.API
 
         }
         //ilchenkor1135@suz-ppk.ru
-        //91T6Fz7h Дома
+        //BU0GiMZa Дома
         //91T6Fz7h колледж
     }
 

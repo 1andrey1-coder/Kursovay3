@@ -121,5 +121,26 @@ namespace Kursovay2.Views
                 WindowState = WindowState.Normal;
             }
         }
+        private void ResetSearch(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Focus(object sender, RoutedEventArgs e)
+        {
+            if (myTextBox.Text == "Введите данные")
+            {
+                myTextBox.Text = "";
+                myTextBox.Foreground = Brushes.Gray;
+            }
+        }
+
+        private void lastFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(myTextBox.Text))
+            {
+                myTextBox.Text = "Введите данные";
+                myTextBox.Foreground = Brushes.Gray;
+            }
+        }
     }
 }

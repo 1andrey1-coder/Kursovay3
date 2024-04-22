@@ -104,5 +104,10 @@ namespace Kursovay2.Views
             string newMail = resetMail.Text;
             await Client.Instance.Profile(id, newPassword, newLogin, newMail);
         }
+
+        private void AddPhoto(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

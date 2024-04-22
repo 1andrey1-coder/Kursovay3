@@ -4,6 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kursovay2", "Kursovay2\Kursovay2.csproj", "{0491E199-67C0-4D27-BFE8-5CED627C126D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9848F0B2-BF97-4718-97FD-75418774B097} = {9848F0B2-BF97-4718-97FD-75418774B097}
+		{C1792711-5586-4DA4-AAC1-EB924D71D8AD} = {C1792711-5586-4DA4-AAC1-EB924D71D8AD}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kursovay2Api2.0", "Kursovay2Api2.0\Kursovay2Api2.0\Kursovay2Api2.0.csproj", "{C1792711-5586-4DA4-AAC1-EB924D71D8AD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiDB", "Kursovay2Api2.0\ApiDB\ApiDB.csproj", "{9848F0B2-BF97-4718-97FD-75418774B097}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,14 @@ Global
 		{0491E199-67C0-4D27-BFE8-5CED627C126D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0491E199-67C0-4D27-BFE8-5CED627C126D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0491E199-67C0-4D27-BFE8-5CED627C126D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1792711-5586-4DA4-AAC1-EB924D71D8AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1792711-5586-4DA4-AAC1-EB924D71D8AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1792711-5586-4DA4-AAC1-EB924D71D8AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1792711-5586-4DA4-AAC1-EB924D71D8AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9848F0B2-BF97-4718-97FD-75418774B097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9848F0B2-BF97-4718-97FD-75418774B097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9848F0B2-BF97-4718-97FD-75418774B097}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9848F0B2-BF97-4718-97FD-75418774B097}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
