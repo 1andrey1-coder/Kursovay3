@@ -36,25 +36,26 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
-                    <RowDefinition  Height="50"/>
+                    <RowDefinition  Height="40"/>
                     <RowDefinition Height="90"/>
-                    <RowDefinition/>
+                    <RowDefinition Height="90"/>
                     <RowDefinition Height="100"/>
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="210" />
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
 
                 <Button HorizontalAlignment="Left" Height="35" Width="100" 
-                        Grid.Column="0" Grid.Row="1" Foreground="White" BorderBrush="Transparent" Click="Back" >
+                        Grid.Column="0" Grid.Row="1" Foreground="White" BorderBrush="Transparent" Click="Back"  >
                     <Button.Content>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="\Icons\ReturnWindow.png"  Width="20" Height="20" Margin="0,0,5,0"/>
-                            <TextBlock Text="Вернуться" VerticalAlignment="Center" />
+                            <TextBlock Text="Вернуться" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button.Content>
                     <Button.Template>
@@ -78,7 +79,7 @@
                         <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="Окно Профиля Пользователя"
+                    <TextBlock Text="Профиль Пользователя"
    Foreground="DarkGray"
    FontSize="10"
    FontFamily="Montserrat"
@@ -191,10 +192,12 @@ Click="btnClose_Click">
                 <Border Grid.Row="2" Grid.RowSpan="2" Grid.Column="0"  CornerRadius="120" BorderBrush="Gray" 
                        BorderThickness="2" Background="Transparent">
 
-                    <StackPanel>
-                        <Image Source="\Images\ImageNull2png" x:Name="ImageBall"/>
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="\Images\ImageNull2png" />
                     </StackPanel>
+
                 </Border>
+
                 <!--шапка-->
                 <Grid Grid.Row="1" Grid.ColumnSpan="12" Grid.Column="1">
                     <Label FontSize="22" HorizontalAlignment="Center" Foreground="White">
@@ -214,7 +217,7 @@ Click="btnClose_Click">
                         <RowDefinition/>
                         <RowDefinition Height="32"/>
                     </Grid.RowDefinitions>
-                    <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
+                    <StackPanel Margin="10 0 0 0" VerticalAlignment="Center" Grid.Row="0" >
                         <Label FontWeight="Bold" Margin="0 0 0 5" Content="Редактировать Логин" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
                         <TextBox Width="200" x:Name="resetLogin">
                             <TextBox.Template>
@@ -231,8 +234,8 @@ Click="btnClose_Click">
 
                         <!--<StackPanel Height="45" Width="150">
 
-                            <Button Margin="0 0 0 5"
-                                BorderBrush="Transparent" Foreground="White" Height="30">
+                            <Button Margin="0 0 0 5" Click="resetName"
+                                BorderBrush="Transparent" Foreground="White"  Height="30">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border Width="150" Height="30"
@@ -263,9 +266,9 @@ Click="btnClose_Click">
                         <RowDefinition/>
                         <RowDefinition Height="32"/>
                     </Grid.RowDefinitions>
-                    <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
+                    <StackPanel Margin="5 0 0 0" Width="200" VerticalAlignment="Center" Grid.Row="0">
                         <Label FontWeight="Bold" Margin="0 0 0 5" Content="Редактировать Почту" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
-                        <TextBox Width="200" x:Name="resetMail" >
+                        <TextBox Width="200" x:Name="resetMail">
                             <TextBox.Template>
                                 <ControlTemplate>
                                     <Border CornerRadius="10" Height="20" Margin="0 0 0 5" BorderThickness="1" Background="White" BorderBrush="White">
@@ -313,7 +316,7 @@ Click="btnClose_Click">
                     </Grid.RowDefinitions>
 
 
-                    <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0">
+                    <StackPanel Margin="10 0 0 5" VerticalAlignment="Center" Grid.Row="0">
                         <Label FontWeight="Bold" Margin="0 0 0 5" Content="Редактировать Пароль" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
                         <TextBox Width="200" x:Name="resetPassword" >
                             <TextBox.Template>
@@ -325,51 +328,71 @@ Click="btnClose_Click">
                             </TextBox.Template>
                         </TextBox>
                     </StackPanel>
-                    <StackPanel  VerticalAlignment="Top" Grid.Row="1">
 
-
-                        <StackPanel Height="45" Width="150">
-
-                            <Button 
-   BorderBrush="Transparent" Foreground="White" Height="30" Click="ResetPassword">
-                                <Button.Template>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Width="150" Height="30"
-               CornerRadius="15"
-               Background="{TemplateBinding Background}">
-                                            <ContentPresenter VerticalAlignment="Center"
-                HorizontalAlignment="Center"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Button.Template>
-                                <Button.Content>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Image Source="\Icons\Change.png"  Width="20" Height="20" Margin="0,0,5,0"/>
-                                        <TextBlock Text="Измененить данные" VerticalAlignment="Center"/>
-                                    </StackPanel>
-                                </Button.Content>
-                            </Button>
-                        </StackPanel>
-
-                    </StackPanel>
 
                 </Grid>
 
+
+
+                <Button VerticalAlignment="Top" Grid.Column="1"  Grid.Row="4"
+BorderBrush="Transparent" Foreground="White" Click="AddPhoto" Height="40">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="150" Height="40"
+            CornerRadius="15"
+            Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+             HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="\Icons\Change.png"  Width="20" Height="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Измененить данные" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+                <Button  Grid.Row="4" Grid.Column="2" Height="40" Width="170"
+                            VerticalAlignment="Top" HorizontalAlignment="Center"
+                        BorderBrush="Transparent" Foreground="White"  >
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="170" Height="40"
+CornerRadius="15"
+Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+ HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="\Icons\DataDB.png"  Width="20" Height="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Добавить Фотографию" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+
+
                 <Grid Margin="0 20 0 0" Grid.Row="4" Grid.RowSpan="5" Grid.Column="0" >
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
                         <RowDefinition/>
 
                     </Grid.RowDefinitions>
 
+
+
                     <StackPanel Orientation="Horizontal" Grid.Row="0">
-                        <Label Content="Логин: " Foreground="White" FontWeight="Bold" />
-                        <TextBlock x:Name="textBlockUserName" Background="Transparent" Text="{Binding LoginName}"  />
+                        <Label  BorderThickness="2" Content="Логин: " FontSize="20" Foreground="White" FontWeight="Bold" />
+                        <TextBlock x:Name="textBlockUserName" FontSize="15" Background="Transparent" Margin="0 7.5 0 0" Foreground="White" Text="{Binding LoginName}"  />
                     </StackPanel>
+
                     <StackPanel Orientation="Horizontal" Grid.Row="1">
-                        <Label Content="Почта: " Foreground="White" FontWeight="Bold" />
-                        <TextBlock Background="Transparent" x:Name="textBlockMail" Text="{Binding Mail}" />
+                        <Label Content="Почта: " Foreground="White" FontSize="20" FontWeight="Bold" />
+                        <TextBlock Background="Transparent" FontSize="15" Margin="0 7.5 0 0" Foreground="White" x:Name="textBlockMail" Text="{Binding Mail}" />
                     </StackPanel>
 
                 </Grid>
