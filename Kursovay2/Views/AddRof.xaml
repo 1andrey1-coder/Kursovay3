@@ -502,7 +502,7 @@ HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1">
                         <StackPanel Height="45" Width="150" >
 
                             <Button Margin="0 0 0 5"
-BorderBrush="Transparent" Foreground="White" Click="AddName" Height="30">
+BorderBrush="Transparent" Foreground="White" Click="AddName" Height="30" Cursor="">
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
                                         <Border Width="150" Height="30"

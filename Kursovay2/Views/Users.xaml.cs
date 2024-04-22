@@ -1,5 +1,6 @@
 ﻿using Kursovay2.API;
 using Kursovay2.Models;
+using Kursovay2.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -199,6 +200,23 @@ namespace Kursovay2.User
             {
                 // Меняем размер окна на обычный
                 WindowState = WindowState.Normal;
+            }
+        }
+
+        private void Profile(object sender, RoutedEventArgs e)
+        {
+            if (SingleProfle.user.RoleId == 1)
+            {
+
+                ProfileAdmin adminWindow = new ProfileAdmin();
+                adminWindow.Show();
+                Close();
+            }
+            if (SingleProfle.user.RoleId == 2)
+            {
+                ProfileUser userWindow = new ProfileUser();
+                userWindow.Show();
+                Close();
             }
         }
     }

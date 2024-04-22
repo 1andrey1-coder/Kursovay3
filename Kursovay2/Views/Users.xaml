@@ -246,6 +246,50 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
 
 
                 </StackPanel>
+
+
+
+                <!--Шапка профиля-->
+                <StackPanel Grid.Row="0" Grid.Column="0" >
+                    <Grid Height="70" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel  Grid.Column="1" VerticalAlignment="Bottom" >
+                            <StackPanel Margin="0 0 0 10 " HorizontalAlignment="Center">
+
+                                <Button   BorderBrush="Transparent"
+                         Foreground="White" Click="Profile" >
+
+
+
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Width="65" Height="25"
+                   CornerRadius="15"
+                   Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center"
+                                 HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                    <Button.Content>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="Профиль" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Button.Content>
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Bottom"
+                     HorizontalAlignment="Center">
+                            <Image  Source="\Images\ImageNull2png"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+
+
                 <StackPanel Grid.Row="1" Grid.Column="0"  >
                     <Grid x:Name="sidePanel" Background="Transparent" HorizontalAlignment="Left" Width="150">
                         <StackPanel>
