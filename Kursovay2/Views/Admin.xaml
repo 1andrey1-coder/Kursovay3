@@ -227,9 +227,9 @@ SelectedItem="{Binding SelectedSorting, UpdateSourceTrigger=PropertyChanged}"/>
 
                                 <StackPanel Margin="5" Orientation="Vertical" Width="75" >
                                     <TextBlock Text="Жанр" HorizontalAlignment="Center" Foreground="White" />
-                                    <ComboBox ItemsSource="{Binding Types, UpdateSourceTrigger=PropertyChanged}" 
-SelectedItem="{Binding SelectedType, UpdateSourceTrigger=PropertyChanged}"
-DisplayMemberPath="Type1"/>
+                                    <ComboBox ItemsSource="{Binding Genre, UpdateSourceTrigger=PropertyChanged}" 
+                                              SelectedItem="{Binding SelectedGenre, UpdateSourceTrigger=PropertyChanged}"
+x:Name="AdminComboBoxGenre"  DisplayMemberPath="GenreName"/>
                                 </StackPanel>
                             </StackPanel>
 
@@ -353,6 +353,16 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                                     Foreground="White"
                                                     BorderBrush="Transparent"
                                                     Content="Все шутки" Click="AllRof" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListViewItem>
+                                    <ListViewItem Height="30">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="\icons\library.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Margin="15 0 0 0"      
+                Background="Transparent"
+                Foreground="White"
+                BorderBrush="Transparent"
+                Content="Архив" Click="library" VerticalAlignment="Center"/>
                                         </StackPanel>
                                     </ListViewItem>
                                     <ListViewItem Height="30">

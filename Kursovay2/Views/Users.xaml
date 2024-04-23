@@ -330,6 +330,16 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                         </StackPanel>
                                     </ListViewItem>
                                     <ListViewItem Height="30">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="\icons\library.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Margin="15 0 0 0"      
+Background="Transparent"
+Foreground="White"
+BorderBrush="Transparent"
+Content="Архив" Click="library" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListViewItem>
+                                    <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="\icons\History.png" Height="20" VerticalAlignment="Center"/>
                                         <TextBlock Margin="15 0 0 0" Text="История шуток" VerticalAlignment="Center"/>

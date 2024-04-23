@@ -39,6 +39,7 @@ namespace Kursovay2.Admin
         {
             InitializeComponent();
             //для отображения данных
+            GenreComboBox();
             LoadData();
 
 
@@ -51,7 +52,20 @@ namespace Kursovay2.Admin
             panelWidth = sidePanel.Width; 
 
         }
+        private async void GenreComboBox()
+        {
+            List<GenreDTO> comboBoxData = await Client.Instance.GetComboBoxGenre();
 
+            if (comboBoxData != null)
+            {
+                foreach (GenreDTO item in comboBoxData)
+                {
+
+                    AdminComboBoxGenre.Items.Add(item);
+
+                }
+            }
+        }
 
         private async void LoadData()
         {
@@ -277,6 +291,23 @@ namespace Kursovay2.Admin
             {
                 myTextBox.Text = "Введите данные";
                 myTextBox.Foreground = Brushes.Gray;
+            }
+        }
+
+        private void library(object sender, RoutedEventArgs e)
+        {
+            if (SingleProfle.user.RoleId == 1)
+            {
+
+                Library adminWindow = new Library();
+                adminWindow.Show();
+                Close();
+            }
+            if (SingleProfle.user.RoleId == 2)
+            {
+                Library userWindow = new Library();
+                userWindow.Show();
+                Close();
             }
         }
     }

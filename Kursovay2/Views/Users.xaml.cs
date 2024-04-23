@@ -254,5 +254,22 @@ namespace Kursovay2.User
                 myTextBox.Foreground = Brushes.Gray;
             }
         }
+
+        private void library(object sender, RoutedEventArgs e)
+        {
+            if (SingleProfle.user.RoleId == 1)
+            {
+
+                Library adminWindow = new Library();
+                adminWindow.Show();
+                Close();
+            }
+            if (SingleProfle.user.RoleId == 2)
+            {
+                Library userWindow = new Library();
+                userWindow.Show();
+                Close();
+            }
+        }
     }
 }
