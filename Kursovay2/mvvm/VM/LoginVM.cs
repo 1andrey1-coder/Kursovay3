@@ -37,6 +37,17 @@ namespace Kursovay2.mvvm.VM
             {
                 try
                 {
+                    LoadingWindow loadingWindow = new LoadingWindow();
+                    loadingWindow.Show();
+
+                    Task.Delay(3000).ContinueWith(t =>
+                    {
+                        loadingWindow.Dispatcher.Invoke(() =>
+                        {
+                            loadingWindow.Close();
+                            MessageBox.Show("Действие выполнено!");
+                        });
+                    });
                     var user = await Client.Instance.UserLogin(passwordBox.Password, mail);
                     SingleProfle.user = user;
                     if (user.RoleId == 1)

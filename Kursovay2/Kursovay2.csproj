@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Gif\loader.gif" />
     <None Remove="icons\aboutpng.png" />
     <None Remove="icons\AddUser.png" />
     <None Remove="icons\allUser.png" />
@@ -65,6 +66,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Gif\loader.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="icons\aboutpng.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
