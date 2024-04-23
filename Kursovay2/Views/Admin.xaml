@@ -432,7 +432,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
 
                     <ListView x:Name="AdminListView"
 ItemsSource="{Binding Rofl}" 
-SelectedItem="{Binding SelectRofl}" Margin="5">
+SelectedItem="{Binding SelectRofl}" SelectionMode="Single" Margin="5">
 
                         <ListView.ContextMenu>
                             <ContextMenu>

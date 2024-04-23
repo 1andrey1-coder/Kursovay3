@@ -273,14 +273,14 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                 <!--Вывод-->
                 
                 
-                <!--<ScrollViewer  HorizontalScrollBarVisibility="Auto"
+                <ScrollViewer  HorizontalScrollBarVisibility="Auto"
         Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1" >
 
                     <ListView  BorderBrush="Transparent"  Margin="0 0 0 10" x:Name="AdminListView"
 ItemsSource="{Binding Rofl}" 
 SelectedItem="{Binding SelectRofl}" 
           BorderThickness="0">
-                        --><!--<ListView.ItemContainerStyle>
+                        <ListView.ItemContainerStyle>
                             <Style TargetType="{x:Type ListViewItem}">
                                 <Style.Triggers>
                                     <Trigger Property="IsSelected"
@@ -292,7 +292,7 @@ SelectedItem="{Binding SelectRofl}"
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>
-                        </ListView.ItemContainerStyle>--><!--
+                        </ListView.ItemContainerStyle>
 
                         <ListView.View>
                             <GridView >
@@ -309,9 +309,9 @@ SelectedItem="{Binding SelectRofl}"
                                 <GridViewColumn Header="Начало" Width="100"  
 HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
 DisplayMemberBinding="{Binding RoflStart}" />
-                                --><!--<GridViewColumn Header="Автор" Width="110" 
+                                <GridViewColumn Header="Автор" Width="110" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-                DisplayMemberBinding="{Binding Teg}" />--><!--
+                DisplayMemberBinding="{Binding Teg}" />
                                 
 
                                 <GridViewColumn Header="Завершение шутки" Width="140" 
@@ -332,7 +332,7 @@ DisplayMemberBinding="{Binding RoflStart}" />
                             </GridView>
                         </ListView.View>
                     </ListView>
-                </ScrollViewer>-->
+                </ScrollViewer>
 
                 <!--Вывод-->
                 

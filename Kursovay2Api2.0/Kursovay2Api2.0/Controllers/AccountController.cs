@@ -472,6 +472,7 @@ namespace Kursovay2Api2._0.Controllers
                 Rofl newRofl = new Rofl
                 {
                     RoflName = rofl.RoflName,
+                    RoflMinOpisanie = rofl.RoflMinOpisanie,
                     RoflOpisanie = rofl.RoflOpisanie,
                     RoflGenreId = rofl.RoflGenreId,
                     RoflEndId = rofl.RoflEndId,
