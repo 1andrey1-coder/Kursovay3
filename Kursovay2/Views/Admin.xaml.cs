@@ -222,9 +222,17 @@ namespace Kursovay2.Admin
             parentWindow.WindowState = WindowState.Minimized;
         }
 
-        private void ClickDeleteRof(object sender, RoutedEventArgs e)
+        private async void ClickDeleteRof(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                await Client.Instance.DeleteDataAsync();
+                MessageBox.Show("Данные успешно удалены");
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show($"Ошибка при удалении данных:{ex.Message}");
+            }
         }
 
         private void AllUser(object sender, RoutedEventArgs e)

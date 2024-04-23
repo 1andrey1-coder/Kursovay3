@@ -366,6 +366,30 @@ namespace Kursovay2.API
 
 
         }
+        public async Task<RoflDTO> DeleteDataAsync()
+        {
+            var Combobox = new RoflDTO
+            {
+
+            };
+            // Отправка данных в контроллер через API
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/DeleteRofl", Combobox);
+
+            if (response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Данные успешно добавлены в базу данных");
+            }
+            else
+            {
+                MessageBox.Show("Ошибка при добавлении данных в базу данных");
+            }
+
+            return null;
+
+
+
+        }
+        
         //ilchenkor1135@suz-ppk.ru
         //BU0GiMZa Дома
         //91T6Fz7h колледж
