@@ -354,11 +354,11 @@ namespace Kursovay2.API
 
             if (response.IsSuccessStatusCode)
             {
-                MessageBox.Show("Данные успешно добавлены в базу данных");
+                MessageBox.Show("Данные успешно добавлены в базу данных", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                MessageBox.Show("Ошибка при добавлении данных в базу данных");
+                MessageBox.Show("Ошибка при добавлении данных в базу данных", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             return null;
@@ -366,22 +366,22 @@ namespace Kursovay2.API
 
 
         }
-        public async Task<RoflDTO> DeleteDataAsync()
+        public async Task<RoflDTO> DeleteDataAsync(int deleteid)
         {
-            var Combobox = new RoflDTO
+            var deleteId = new RoflDTO
             {
-
+                RoflId = deleteid,
             };
             // Отправка данных в контроллер через API
-            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/DeleteRofl", Combobox);
+            HttpResponseMessage response = await httpClient.DeleteAsync($"Account/DeleteRofl/{deleteid}");
 
             if (response.IsSuccessStatusCode)
             {
-                MessageBox.Show("Данные успешно добавлены в базу данных");
+                MessageBox.Show("Данные успешно удалены из базы данных", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                MessageBox.Show("Ошибка при добавлении данных в базу данных");
+                MessageBox.Show("Ошибка при удаление из базы данных", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             return null;

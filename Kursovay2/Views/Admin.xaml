@@ -440,7 +440,7 @@ SelectedItem="{Binding SelectRofl}" Margin="5">
                                 <MenuItem Header="Сменить статус на: ожидает" Click="ClickStatuseAwaiting"/>
                                 <MenuItem Header="Сменить статус на: в процессе" Click="ClickStatuseInProgress"/>
                                 <MenuItem Header="Редактировать шутку" Click="ClickRedagturaRof"/>
-                                <MenuItem Header="Удалить шутку" Click="ClickDeleteRof"/>
+                                <MenuItem Header="Удалить шутку" x:Name="deletedRofl" Click="ClickDeleteRof"/>
                             </ContextMenu>
                         </ListView.ContextMenu>
                         <ListView.View>

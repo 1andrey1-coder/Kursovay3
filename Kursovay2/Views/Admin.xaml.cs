@@ -226,12 +226,23 @@ namespace Kursovay2.Admin
         {
             try
             {
-                await Client.Instance.DeleteDataAsync();
-                MessageBox.Show("Данные успешно удалены");
+
+                RoflDTO deleteid = (RoflDTO)AdminListView.SelectedItem; 
+                if(deleteid != null)
+                {
+                    int selectedDataId = deleteid.RoflId;
+                    await Client.Instance.DeleteDataAsync(selectedDataId);
+                    MessageBox.Show("Данные успешно удалены", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                //else
+                //{
+                //    MessageBox.Show($"Ошибка при удалении данных", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
+                //}
+
             }
             catch(Exception ex) 
             {
-                MessageBox.Show($"Ошибка при удалении данных:{ex.Message}");
+                MessageBox.Show($"Ошибка при удалении данных:{ex.Message}", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
