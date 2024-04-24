@@ -10,16 +10,19 @@
 
   <ItemGroup>
     <None Remove="Gif\loader.gif" />
+    <None Remove="Gif\loading.gif" />
     <None Remove="icons\aboutpng.png" />
     <None Remove="icons\AddUser.png" />
     <None Remove="icons\allUser.png" />
     <None Remove="icons\Change.png" />
     <None Remove="icons\close2.png" />
     <None Remove="icons\DataDB.png" />
+    <None Remove="icons\db.png" />
     <None Remove="icons\Diamond.png" />
     <None Remove="icons\Edit.png" />
     <None Remove="icons\History.png" />
     <None Remove="icons\Home.png" />
+    <None Remove="icons\imageDB.png" />
     <None Remove="icons\library.png" />
     <None Remove="icons\Local.png" />
     <None Remove="icons\LOg.png" />
@@ -70,6 +73,9 @@
     <EmbeddedResource Include="Gif\loader.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Gif\loading.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Resource Include="icons\aboutpng.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -88,6 +94,9 @@
     <Resource Include="icons\DataDB.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="icons\db.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="icons\Diamond.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -98,6 +107,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="icons\Home.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\imageDB.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="icons\library.png">

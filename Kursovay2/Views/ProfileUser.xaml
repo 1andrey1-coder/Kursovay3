@@ -368,7 +368,7 @@ Background="{TemplateBinding Background}">
                     </Button.Template>
                     <Button.Content>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="\Icons\DataDB.png"  Width="20" Height="20" Margin="0,0,5,0"/>
+                            <Image Source="\Icons\imageDB.png"  Width="20" Height="20" Margin="0,0,5,0"/>
                             <TextBlock Text="Добавить Фотографию" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button.Content>

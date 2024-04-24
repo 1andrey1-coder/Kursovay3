@@ -7,7 +7,7 @@
        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
         Title="LoadingWindow" Height="100" Width="100" 
-         WindowStartupLocation="CenterScreen"
+         WindowStartupLocation="CenterScreen" Background="Transparent"
          WindowStyle="None" AllowsTransparency="True">
 
         <!--xmlns:gif ="http://wpfanimatedgif.codeplex.com"-->

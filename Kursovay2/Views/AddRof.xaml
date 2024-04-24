@@ -549,7 +549,7 @@ BorderBrush="Transparent" Foreground="White" Click="AddName" Height="45" Cursor=
                                     </Button.Template>
                                     <Button.Content>
                                         <StackPanel Orientation="Horizontal"  >
-                                            <Image Source="\icons\DataDB.png" Height="20" Margin=" 0 0 5 0"/>
+                                            <Image Source="\icons\db.png" Height="20" Margin=" 0 0 5 0"/>
                                             <TextBlock Text="Внести данные" VerticalAlignment="Center" />
                                         </StackPanel>
                                     </Button.Content>
@@ -572,7 +572,7 @@ BorderBrush="Transparent" Foreground="White" Click="AddPhoto" Height="45" Cursor
                                     </Button.Template>
                                     <Button.Content>
                                         <StackPanel Orientation="Horizontal"  >
-                                            <Image Source="\icons\DataDB.png" Height="20" Margin=" 0 0 5 0"/>
+                                            <Image Source="\icons\imageDB.png" Height="20" Margin=" 0 0 5 0"/>
                                             <TextBlock Text="Выбрать картинку" VerticalAlignment="Center" />
                                         </StackPanel>
                                     </Button.Content>
