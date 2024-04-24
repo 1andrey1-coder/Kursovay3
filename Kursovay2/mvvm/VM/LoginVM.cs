@@ -45,7 +45,7 @@ namespace Kursovay2.mvvm.VM
                         loadingWindow.Dispatcher.Invoke(() =>
                         {
                             loadingWindow.Close();
-                            MessageBox.Show("Действие выполнено!");
+                         
                         });
                     });
                     var user = await Client.Instance.UserLogin(passwordBox.Password, mail);

@@ -190,7 +190,7 @@ Click="btnClose_Click">
 
 
 
-                         
+
                         </StackPanel>
 
                         <!--сделать поиск и фильтрацию-->
@@ -228,7 +228,7 @@ Click="btnClose_Click">
                                 <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"
   FontFamily="Century Gothic" FontSize="14" Foreground="White" 
   BorderBrush="Transparent" Background="Transparent" FontWeight="Bold">
-                                   
+
 
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
@@ -267,12 +267,12 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
 
                     </Grid>
 
-                
+
                 </StackPanel>
-                
+
                 <!--Вывод-->
-                
-                
+
+
                 <ScrollViewer  HorizontalScrollBarVisibility="Auto"
         Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1" >
 
@@ -300,7 +300,7 @@ SelectedItem="{Binding SelectRofl}"
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
                 DisplayMemberBinding="{Binding Teg}" >
                                 </GridViewColumn>
-                                
+
                                 <GridViewColumn Header="Жанр" Width="70"  
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
                 DisplayMemberBinding="{Binding Genre}" >
@@ -312,12 +312,12 @@ DisplayMemberBinding="{Binding RoflStart}" />
                                 <GridViewColumn Header="Автор" Width="110" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
                 DisplayMemberBinding="{Binding Teg}" />
-                                
+
 
                                 <GridViewColumn Header="Завершение шутки" Width="140" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
                 DisplayMemberBinding="{Binding RoflEnd}" />
-                                
+
                                 <GridViewColumn Header="Название шутки/рофла" Width="150" 
                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
                 DisplayMemberBinding="{Binding RoflName}" />
@@ -335,80 +335,82 @@ DisplayMemberBinding="{Binding RoflStart}" />
                 </ScrollViewer>
 
                 <!--Вывод-->
-                
+
                 <!--содержание-->
                 <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
-                    
-               
-                <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="50"/>
-                        <ColumnDefinition Width="160"/>
-                        <ColumnDefinition Width="120"/>
-                        <ColumnDefinition Width="30"/>
-                        <ColumnDefinition Width="220"/>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="100"/>
-                        
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="70"/>
-                        <RowDefinition Height="70"/>
-                        <RowDefinition Height="70"/>
-                        <RowDefinition Height="70"/>
-                        <RowDefinition Height="70"/>
-                    </Grid.RowDefinitions>
-                    <!--Типы-->
+
+
+                    <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="160"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="220"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
+                        </Grid.RowDefinitions>
+                        <!--Типы-->
 
 
 
 
 
 
-                    <StackPanel Margin="10" Orientation="Horizontal"
+                        <StackPanel Margin="10" Orientation="Horizontal"
 VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1">
-                        <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
+                            <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
 
-                            <TextBlock Margin="10" Foreground="White" VerticalAlignment="Center" Text="ТЭГ"/>
-                        </Border>
+                                <TextBlock Margin="10" Foreground="White" VerticalAlignment="Center" Text="ТЭГ"/>
+                            </Border>
 
-                    </StackPanel>
+                        </StackPanel>
 
-                    <StackPanel  Orientation="Horizontal"
+                        <StackPanel  Orientation="Horizontal"
 VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1">
-                        <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
-                            
-                            <TextBlock Margin="10" Foreground="White" Text="НАЧАЛО ШУТКИ" />
-                        </Border>
-                        
-                    </StackPanel>
-                    
-                    <StackPanel Margin="5,0,5,0" VerticalAlignment="Center" Orientation="Horizontal"
+                            <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
+
+                                <TextBlock Margin="10" Foreground="White" Text="НАЧАЛО ШУТКИ" />
+                            </Border>
+
+                        </StackPanel>
+
+                        <StackPanel Margin="5,0,5,0" VerticalAlignment="Center" Orientation="Horizontal"
              HorizontalAlignment="Center"  Grid.Row="2" Grid.Column="1">
-                        <StackPanel Orientation="Horizontal">
-                            <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
+                            <StackPanel Orientation="Horizontal">
+                                <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
 
-                                <TextBlock Margin="10" Foreground="White" Text="ЗАВЕРШЕНИЕ ШУТКИ" />
-                            </Border>
+                                    <TextBlock Margin="10" Foreground="White" Text="ЗАВЕРШЕНИЕ ШУТКИ" />
+                                </Border>
 
+
+                            </StackPanel>
 
                         </StackPanel>
 
-                    </StackPanel>
-                    
-                    <StackPanel Margin="5,0,5,0" VerticalAlignment="Center" Orientation="Horizontal"
+                        <StackPanel Margin="5,0,5,0" VerticalAlignment="Center" Orientation="Horizontal"
 HorizontalAlignment="Center"  Grid.Row="3" Grid.Column="1">
-                        <StackPanel Orientation="Horizontal">
-                            <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
+                            <StackPanel Orientation="Horizontal">
+                                <Border BorderThickness="2" CornerRadius="10"  BorderBrush="Gray">
 
-                                <TextBlock Margin="10" Foreground="White" Text="ВЫБОР СТАТУСА" />
-                            </Border>
+                                    <TextBlock Margin="10" Foreground="White" Text="ВЫБОР СТАТУСА" />
+                                </Border>
 
+
+                            </StackPanel>
 
                         </StackPanel>
-
-                    </StackPanel>
                         <StackPanel Margin="5,0,5,0" VerticalAlignment="Center" Orientation="Horizontal"
 HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1">
                             <StackPanel Orientation="Horizontal">
@@ -423,46 +425,46 @@ HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1">
                         </StackPanel>
 
                         <!--Типы-->
-                    <!--ComboBox-->
-                    <StackPanel HorizontalAlignment="Center" 
+                        <!--ComboBox-->
+                        <StackPanel HorizontalAlignment="Center" 
                          VerticalAlignment="Center" Grid.Row="0" Grid.Column="2">
-                        <ComboBox Width="100" x:Name="AdminComboBoxTeg"
+                            <ComboBox Width="100" x:Name="AdminComboBoxTeg"
                                   DisplayMemberPath="TegName" />
-                    </StackPanel>
+                        </StackPanel>
 
-                  
-                    <StackPanel HorizontalAlignment="Center" 
+
+                        <StackPanel HorizontalAlignment="Center" 
                                 VerticalAlignment="Center"
                                 Grid.Row="1" Grid.Column="2">
-                        <ComboBox Width="100" x:Name="AdminComboBoxStart" DisplayMemberPath="StartName" />
-                    </StackPanel>
+                            <ComboBox Width="100" x:Name="AdminComboBoxStart" DisplayMemberPath="StartName" />
+                        </StackPanel>
 
-                    <StackPanel HorizontalAlignment="Center" 
+                        <StackPanel HorizontalAlignment="Center" 
                             VerticalAlignment="Center"
                             Grid.Row="2" Grid.Column="2">
                             <ComboBox Width="100"  x:Name="AdminComboBoxEnd" DisplayMemberPath="EndName" />
-                    </StackPanel>
+                        </StackPanel>
 
-                    <StackPanel HorizontalAlignment="Center" 
+                        <StackPanel HorizontalAlignment="Center" 
                             VerticalAlignment="Center"
                             Grid.Row="3" Grid.Column="2">
                             <ComboBox Width="100" x:Name="AdminComboBoxStatus" SelectedItem="{Binding SelectedStatus}" DisplayMemberPath="StatusName" />
-                    </StackPanel>
-                     <StackPanel HorizontalAlignment="Center" 
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Center" 
                                 VerticalAlignment="Center"
                             Grid.Row="4" Grid.Column="2">
                             <ComboBox Width="100" x:Name="AdminComboBoxGenre" SelectedItem="{Binding SelectedGenre}" 
                                       DisplayMemberPath="GenreName" />
-                     </StackPanel>
+                        </StackPanel>
 
                         <!--ComboBox-->
-                  
 
 
 
 
-                    <!--Автор и описание-->
-                    <!--<StackPanel  Grid.Row="0" Grid.RowSpan="2" Grid.Column="3">
+
+                        <!--Автор и описание-->
+                        <!--<StackPanel  Grid.Row="0" Grid.RowSpan="2" Grid.Column="3">
                         
                     
                     <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3">
@@ -501,7 +503,7 @@ HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1">
                     </StackPanel>-->
 
 
-                    <StackPanel Margin="0 0 0 0" VerticalAlignment="Center"  Grid.Row="0" Grid.RowSpan="2" Grid.Column="4" >
+                        <StackPanel Margin="0 0 0 0" VerticalAlignment="Center"  Grid.Row="0" Grid.RowSpan="2" Grid.Column="4" >
 
 
                             <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3">
@@ -510,58 +512,84 @@ HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1">
                                     <Label.Content>
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="\icons\MinOpisani2.png" Height="20" Margin=" 0 3 5 0"/>
-                                          
+
                                             <TextBlock Text="Небольшое описание" VerticalAlignment="Center"/>
                                         </StackPanel>
                                     </Label.Content>
                                 </Label>
-                            <TextBox  Width="200" Height="25" x:Name="AddMinOpisania">
-                                <TextBox.Template>
-                                    <ControlTemplate>
-                                        <Border CornerRadius="10" Height="25" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
-                                            <ScrollViewer Margin="0 0 0 0" x:Name="PART_ContentHost" />
-                                        </Border>
-                                    </ControlTemplate>
-                                </TextBox.Template>
-                            </TextBox>
+                                <TextBox  Width="200" Height="25" x:Name="AddMinOpisania">
+                                    <TextBox.Template>
+                                        <ControlTemplate>
+                                            <Border CornerRadius="10" Height="25" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
+                                                <ScrollViewer Margin="0 0 0 0" x:Name="PART_ContentHost" />
+                                            </Border>
+                                        </ControlTemplate>
+                                    </TextBox.Template>
+                                </TextBox>
+                            </StackPanel>
+
                         </StackPanel>
-                        
-                    </StackPanel>
-                    <StackPanel  Grid.Row="2" Grid.RowSpan="3" Grid.Column="4" Grid.ColumnSpan="5"  VerticalAlignment="Top" >
+                        <StackPanel  Grid.Row="3"  Grid.Column="7" Grid.ColumnSpan="2" Width="120" HorizontalAlignment="Left"
+                                 VerticalAlignment="Center" Margin="17,0,0,0" >
 
 
-                        <StackPanel Height="45" Width="150" >
+                            <StackPanel Height="45"  >
 
-                            <Button Margin="0 0 0 5"
-BorderBrush="Transparent" Foreground="White" Click="AddName" Height="30" Cursor="">
-                                <Button.Template>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Width="150" Height="30"
+                                <Button  Margin="0 0 0 0"
+BorderBrush="Transparent" Foreground="White" Click="AddName" Height="45" Cursor="">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Height="30"
             CornerRadius="15"
             Background="{TemplateBinding Background}">
-                                            <ContentPresenter VerticalAlignment="Center"
+                                                <ContentPresenter VerticalAlignment="Center"
              HorizontalAlignment="Center"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Button.Template>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
                                     <Button.Content>
-                                        <StackPanel Orientation="Horizontal" >
+                                        <StackPanel Orientation="Horizontal"  >
                                             <Image Source="\icons\DataDB.png" Height="20" Margin=" 0 0 5 0"/>
                                             <TextBlock Text="Внести данные" VerticalAlignment="Center" />
                                         </StackPanel>
                                     </Button.Content>
-                            </Button>
+                                </Button>
+                            </StackPanel>
+
                         </StackPanel>
+                        <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                                    Grid.Column="4" Grid.Row="2" Grid.RowSpan="4" Grid.ColumnSpan="3">
+                            <Label FontWeight="Bold" Margin="0 0 0 10"
+                                   Foreground="White" FontSize="15" HorizontalAlignment="Center">
+                                <Label.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="\icons\MinOpisani2.png" Height="20" Margin=" 0 3 5 0"/>
 
-                    </StackPanel>
-                    <!--Описание-->
-                    
-                    <!--Название шутки-->
+                                        <TextBlock Text="Описание(лимит: 250 слов)" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </Label.Content>
+                            </Label>
+                            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
 
-                    <StackPanel Margin="5 0 0 0" VerticalAlignment="Center" Grid.Row="0" Grid.RowSpan="2"  Grid.Column="5" Grid.ColumnSpan="5" >
+                                <TextBox Margin="5"  x:Name="AddOpisania">
+                                    <TextBox.Template>
+                                        <ControlTemplate>
+                                            <Border CornerRadius="10" Height="150" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
+                                                <ScrollViewer Margin="0 0 0 0" x:Name="PART_ContentHost" />
+                                            </Border>
+                                        </ControlTemplate>
+                                    </TextBox.Template>
+                                </TextBox>
+                            </ScrollViewer>
+                        </StackPanel>
+                        <!--Описание-->
+
+                        <!--Название шутки-->
+
+                        <StackPanel Margin="5 0 0 0" VerticalAlignment="Center" Grid.Row="0" Grid.RowSpan="2"  Grid.Column="5" Grid.ColumnSpan="5" >
 
 
-                        <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3">
+                            <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3">
                                 <Label FontWeight="Bold" Margin="0 0 0 10" 
                                    Foreground="White" FontSize="15" HorizontalAlignment="Center">
                                     <Label.Content>
@@ -572,29 +600,29 @@ BorderBrush="Transparent" Foreground="White" Click="AddName" Height="30" Cursor=
                                         </StackPanel>
                                     </Label.Content>
                                 </Label>
-                            <TextBox  Width="200" Height="25" x:Name="AddNameRofl">
-                                <TextBox.Template>
-                                    <ControlTemplate>
-                                        <Border CornerRadius="10" Height="25" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
-                                            <ScrollViewer Margin="0 0 0 0" x:Name="PART_ContentHost" />
-                                        </Border>
-                                    </ControlTemplate>
-                                </TextBox.Template>
-                            </TextBox>
+                                <TextBox  Width="200" Height="25" x:Name="AddNameRofl">
+                                    <TextBox.Template>
+                                        <ControlTemplate>
+                                            <Border CornerRadius="10" Height="25" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
+                                                <ScrollViewer Margin="0 0 0 0" x:Name="PART_ContentHost" />
+                                            </Border>
+                                        </ControlTemplate>
+                                    </TextBox.Template>
+                                </TextBox>
+                            </StackPanel>
+
                         </StackPanel>
-                       
-                    </StackPanel>
-                    <!--Название шутки-->
-                    
-                </Grid>
+                        <!--Название шутки-->
+
+                    </Grid>
                 </Border>
             </Grid>
-       
 
 
 
 
-        <!--Старое-->
+
+            <!--Старое-->
 
 
             <!--<Border>
@@ -643,20 +671,24 @@ BorderBrush="Transparent" Foreground="White" Click="AddName" Height="30" Cursor=
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <StackPanel Margin="5" Grid.Row="0" Grid.Column="0" Grid.RowSpan="55">
-                    --><!--<StackPanel.Background>
+                    -->
+            <!--<StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#ffd700" Offset="0.1"/>
                     <GradientStop Color="Firebrick" Offset="1"/>
                 </LinearGradientBrush>
-            </StackPanel.Background>--><!--
+            </StackPanel.Background>-->
+            <!--
                 </StackPanel>
                 <StackPanel Margin="5" Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="6">
-                    --><!--<StackPanel.Background>
+                    -->
+            <!--<StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#ffd700" Offset="0.1"/>
                     <GradientStop Color="Firebrick" Offset="1"/>
                 </LinearGradientBrush>
-            </StackPanel.Background>--><!--
+            </StackPanel.Background>-->
+            <!--
                 </StackPanel>
                 <StackPanel Margin="5" VerticalAlignment="Center" Grid.Column="0">
                     <Button Content="Вернуться обратно" Click="ClickObratAdmin"/>

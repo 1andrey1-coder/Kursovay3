@@ -15,5 +15,7 @@ public partial class LoginUser
 
     public string? Mail { get; set; }
 
+    public byte[]? LoginImage { get; set; }
+
     public virtual Role? Role { get; set; }
 }

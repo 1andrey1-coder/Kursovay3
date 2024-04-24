@@ -66,9 +66,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Gif\loader.gif">
+    <EmbeddedResource Include="Gif\loader.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </EmbeddedResource>
     <Resource Include="icons\aboutpng.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

@@ -16,6 +16,7 @@ public partial class Rofl
     public string? RoflName { get; set; }
 
     public string? RoflOpisanie { get; set; }
+
     public string? RoflMinOpisanie { get; set; }
 
     public int? RoflStatusId { get; set; }
@@ -24,7 +25,7 @@ public partial class Rofl
 
     public DateTime? RoflDateTime { get; set; }
 
-    public byte[]? RoflImage { get; set; }
+    //public byte[]? RoflImage { get; set; }
 
     public virtual End? RoflEnd { get; set; }
 

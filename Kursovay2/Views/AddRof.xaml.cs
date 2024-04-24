@@ -156,21 +156,22 @@ namespace Kursovay2.AddRof
 
         private async void LoadData()
         {
-            //List<RoflDTO> Rofl = await Client.Instance.GetListRofl();
+            List<RoflDTO> Rofl = await Client.Instance.GetListRofl();
 
-            //if (Rofl != null)
-            //{
-            //    AdminListView.ItemsSource = Rofl;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Failed to load data from API");
-            //}
+            if (Rofl != null)
+            {
+                AdminListView.ItemsSource = Rofl;
+            }
+            else
+            {
+                MessageBox.Show("Failed to load data from API");
+            }
         }
 
         private async void AddName(object sender, RoutedEventArgs e)
         {
             string miniopis = AddMinOpisania.Text;
+            string opis = AddOpisania.Text;
             string Name = AddNameRofl.Text;
             StatusDTO statusId = (StatusDTO)AdminComboBoxStatus.SelectedItem;
             EndDTO endId = (EndDTO)AdminComboBoxEnd.SelectedItem;
@@ -180,8 +181,9 @@ namespace Kursovay2.AddRof
             //miniopis != null &&
             if (statusId != null && endId != null && tegId != null && startId !=null && genreId != null)
             {
-                int selectedStatusId =  statusId.StatusId;
-                await Client.Instance.SendUserData(selectedStatusId, miniopis, Name);
+                //int selectedStatusId =  statusId.StatusId;
+                await Client.Instance.SendUserData(new RoflDTO { TegId = tegId.TegId, RoflStartId = startId.StartId, 
+                    RoflStatusId = statusId.StatusId}, miniopis, Name, opis);
             }
             LoadData();
             

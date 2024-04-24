@@ -40,9 +40,7 @@ namespace Kursovay2.API
         public string? RoflEnd { get; set; }
 
         public string? RoflName { get; set; }
-
         public string? RoflOpisanie { get; set; }
-
         public string? RoflMinOpisanie { get; set; }
 
         public int? RoflStatusId { get; set; }
