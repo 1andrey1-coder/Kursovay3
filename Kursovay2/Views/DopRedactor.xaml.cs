@@ -281,10 +281,10 @@ namespace Kursovay2.Views
         }
         private async void PutName(object sender, RoutedEventArgs e)
         {
+            RoflDTO id = SelectRofl;
             string miniopis = AddMinOpisania.Text;
             string opis = AddOpisania.Text;
             string Name = AddNameRofl.Text;
-            RoflDTO id = SelectRofl;
             StatusDTO statusId = (StatusDTO)AdminComboBoxStatus.SelectedItem;
             EndDTO endId = (EndDTO)AdminComboBoxEnd.SelectedItem;
             TegDTO tegId = (TegDTO)AdminComboBoxTeg.SelectedItem;
