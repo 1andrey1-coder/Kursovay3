@@ -4,12 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.Views"
+        xmlns:gif="clr-namespace:WpfAnimatedGif;assembly=WpfAnimatedGif"
         mc:Ignorable="d"
         Title="LoadingWindow" Height="100" Width="100" 
          WindowStartupLocation="CenterScreen"
          WindowStyle="None" AllowsTransparency="True">
 
+        <!--xmlns:gif ="http://wpfanimatedgif.codeplex.com"-->
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-        <MediaElement Source="\Gif\gif12.gif" LoadedBehavior="Play" Width="100" Height="100"/>
+        <!--<MediaElement Source="\Gif\gif12.gif" Stretch="Uniform"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                LoadedBehavior="Play"
+                UnloadedBehavior="Manual"
+                Visibility="Visible"
+                Width="100" Height="100"/>-->
+        <!--<Image gif:ImageBehavior.RepeatBehavior="Forever"
+               gif:ImageBehavior.AnimatedSource="\Gif\gif12.gif"/>-->
+        <Image gif:ImageBehavior.AnimatedSource="\Gif\gif12.gif" Width="100" Height="100" />
     </StackPanel>
 </Window>
