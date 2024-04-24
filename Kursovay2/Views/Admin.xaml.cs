@@ -30,10 +30,18 @@ namespace Kursovay2.Admin
 
         double panelWidth;
         bool hidden;
-        
+        private RoflDTO selectRofl;
 
         public ObservableCollection<RoflDTO> Rofl { get; set; }
-        public RoflDTO SelectRofl {  get; set; }
+
+        public RoflDTO SelectRofl
+        {
+            get => selectRofl; 
+            set 
+                { 
+                selectRofl = value; 
+                }
+        }
 
         public Admin(LoginUserDTO user)
         {
@@ -197,9 +205,13 @@ namespace Kursovay2.Admin
             this.Close();
         }
 
+       
+
+    
         private void ClickRedagturaRof(object sender, RoutedEventArgs e)
         {
-            Views.DopRedactor dopRedactor = new Views.DopRedactor();
+            RoflDTO selectedRofl = (RoflDTO)AdminListView.SelectedItem;
+            Views.DopRedactor dopRedactor = new Views.DopRedactor(selectedRofl);
             dopRedactor.Show();
             this.Close();
         }

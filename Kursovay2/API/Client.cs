@@ -368,6 +368,41 @@ namespace Kursovay2.API
 
 
         }
+        
+        public async Task<RoflDTO> SendUserPutData(RoflDTO combobox)
+        {
+
+
+
+            //TegId = combobox.TegId,
+            //RoflStartId = combobox,
+            //RoflGenreId = combobox,
+            //RoflEndId = combobox,
+            //RoflStatusId = combobox,
+            combobox.RoflId = combobox.RoflId;
+            combobox.RoflImage = combobox.RoflImage;
+            combobox.RoflName = combobox.RoflName;
+            combobox.RoflMinOpisanie = combobox.RoflMinOpisanie;
+            combobox.RoflOpisanie = combobox.RoflOpisanie;
+
+            // Отправка данных в контроллер через API
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync($"Account/PutRofl/{combobox.RoflId}", combobox);
+
+            if (response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Данные успешно изменены в базе данных", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("Ошибка при изменении данных в базу данных", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            return null;
+
+
+
+        }
+
         public async Task<RoflDTO> DeleteDataAsync(int deleteid)
         {
             var deleteId = new RoflDTO

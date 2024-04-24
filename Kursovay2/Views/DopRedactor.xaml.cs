@@ -26,12 +26,26 @@ namespace Kursovay2.Views
 
         double panelWidth;
         bool hidden;
+        private RoflDTO selectRofl;
         private readonly LoginUserDTO user;
 
-        public DopRedactor() 
+
+        public RoflDTO SelectRofl
+        {
+            get => selectRofl; 
+            set
+            { 
+               selectRofl = value; 
+            }
+        }
+
+        public DopRedactor(RoflDTO selectRofl) 
         {
             InitializeComponent();
-       
+            SelectRofl = selectRofl;
+            LoadData();
+
+
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
             timer.Tick += Timer_Tick;
@@ -155,6 +169,148 @@ namespace Kursovay2.Views
                 // Меняем размер окна на обычный
                 WindowState = WindowState.Normal;
             }
+        }
+
+        private void ClickToAdmin(object sender, RoutedEventArgs e)
+        {
+            Admin.Admin admin = new Admin.Admin(SingleProfle.user);
+            admin.Show();
+            this.Close();
+        }
+
+        private void InputTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (AddOpisania.Text.Length > 0)
+            {
+                AddOpisania.ScrollToEnd();
+                if (AddOpisania.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Length > 250)
+                {
+                    int index = AddOpisania.Text.LastIndexOf(' ');
+                    AddOpisania.Text = AddOpisania.Text.Substring(0, index);
+                    AddOpisania.SelectionStart = AddOpisania.Text.Length;
+                }
+            }
+        }
+        private async void LoadData()
+        {
+            List<RoflDTO> Rofl = await Client.Instance.GetListRofl();
+
+            if (Rofl != null)
+            {
+                AdminListView.ItemsSource = Rofl;
+            }
+            else
+            {
+                MessageBox.Show("Failed to load data from API");
+            }
+        }
+
+        private void AddPhoto(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private async void StatusComboBox()
+        {
+            List<StatusDTO> comboBoxData = await Client.Instance.GetComboBoxStatus();
+
+            if (comboBoxData != null)
+            {
+                foreach (StatusDTO item in comboBoxData)
+                {
+
+                    AdminComboBoxStatus.Items.Add(item);
+
+                }
+            }
+        }
+        private async void EndComboBox()
+        {
+            List<EndDTO> comboBoxData = await Client.Instance.GetComboBoxEnd();
+
+            if (comboBoxData != null)
+            {
+                foreach (EndDTO item in comboBoxData)
+                {
+
+                    AdminComboBoxEnd.Items.Add(item);
+
+                }
+            }
+        }
+        private async void TegComboBox()
+        {
+            List<TegDTO> comboBoxData = await Client.Instance.GetComboBoxTeg();
+
+            if (comboBoxData != null)
+            {
+                foreach (TegDTO item in comboBoxData)
+                {
+
+                    AdminComboBoxTeg.Items.Add(item);
+
+                }
+            }
+        }
+        private async void StartComboBox()
+        {
+            List<StartDTO> comboBoxData = await Client.Instance.GetComboBoxStart();
+
+            if (comboBoxData != null)
+            {
+                foreach (StartDTO item in comboBoxData)
+                {
+
+                    AdminComboBoxStart.Items.Add(item);
+
+                }
+            }
+        }
+        private async void GenreComboBox()
+        {
+            List<GenreDTO> comboBoxData = await Client.Instance.GetComboBoxGenre();
+
+            if (comboBoxData != null)
+            {
+                foreach (GenreDTO item in comboBoxData)
+                {
+
+                    AdminComboBoxGenre.Items.Add(item);
+
+                }
+            }
+        }
+        private async void PutName(object sender, RoutedEventArgs e)
+        {
+            string miniopis = AddMinOpisania.Text;
+            string opis = AddOpisania.Text;
+            string Name = AddNameRofl.Text;
+            RoflDTO id = SelectRofl;
+            StatusDTO statusId = (StatusDTO)AdminComboBoxStatus.SelectedItem;
+            EndDTO endId = (EndDTO)AdminComboBoxEnd.SelectedItem;
+            TegDTO tegId = (TegDTO)AdminComboBoxTeg.SelectedItem;
+            StartDTO startId = (StartDTO)AdminComboBoxStart.SelectedItem;
+            GenreDTO genreId = (GenreDTO)AdminComboBoxGenre.SelectedItem;
+            //miniopis != null &&
+            if (statusId != null && endId != null && tegId != null && startId != null && genreId != null && id != null)
+            {
+                //int selectedStatusId =  statusId.StatusId;
+                await Client.Instance.SendUserPutData(new RoflDTO
+                {
+                    RoflId = id.RoflId,
+                    TegId = tegId.TegId,
+                    RoflStartId = startId.StartId,
+                    RoflStatusId = statusId.StatusId,
+                    RoflName = Name,
+                    RoflOpisanie = opis,
+                    RoflMinOpisanie = miniopis
+                });
+            }
+            LoadData();
+        }
+
+        private void Podskaska(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

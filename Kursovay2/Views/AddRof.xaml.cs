@@ -190,7 +190,7 @@ namespace Kursovay2.AddRof
             {
                 //int selectedStatusId =  statusId.StatusId;
                 await Client.Instance.SendUserData(new RoflDTO { TegId = tegId.TegId, RoflStartId = startId.StartId, 
-                    RoflStatusId = statusId.StatusId,}, miniopis, Name, opis);
+                    RoflStatusId = statusId.StatusId, RoflName = Name, RoflOpisanie = opis, RoflMinOpisanie = miniopis});
             }
             LoadData();
             
@@ -211,13 +211,13 @@ namespace Kursovay2.AddRof
 
         }
 
-        private void ClickDopRedactor(object sender, RoutedEventArgs e)
-        {
-            Views.DopRedactor dopRedactor = new Views.DopRedactor();
-            dopRedactor.Show();
-            this.Close();
+        //private void ClickDopRedactor(object sender, RoutedEventArgs e)
+        //{
+        //    Views.DopRedactor dopRedactor = new Views.DopRedactor();
+        //    dopRedactor.Show();
+        //    this.Close();
 
-        }
+        //}
 
         private void ClickDelete(object sender, RoutedEventArgs e)
         {
