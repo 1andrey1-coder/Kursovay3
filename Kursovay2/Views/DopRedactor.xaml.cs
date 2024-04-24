@@ -27,6 +27,7 @@ namespace Kursovay2.Views
         double panelWidth;
         bool hidden;
         private RoflDTO selectRofl;
+        private int id;
         private readonly LoginUserDTO user;
 
 
@@ -39,12 +40,19 @@ namespace Kursovay2.Views
             }
         }
 
-        public DopRedactor(RoflDTO selectRofl) 
+        public DopRedactor(int id) 
         {
             InitializeComponent();
             SelectRofl = selectRofl;
-            LoadData();
 
+            StatusComboBox();
+            EndComboBox();
+            TegComboBox();
+            GenreComboBox();
+            StartComboBox();
+
+            LoadData();
+            this.id = id;
 
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
@@ -52,6 +60,7 @@ namespace Kursovay2.Views
 
             panelWidth = sidePanel.Width;
         }
+
 
         private void ClickObratAddRof(object sender, RoutedEventArgs e)
         {

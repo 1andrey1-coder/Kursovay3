@@ -210,8 +210,10 @@ namespace Kursovay2.Admin
     
         private void ClickRedagturaRof(object sender, RoutedEventArgs e)
         {
-            RoflDTO selectedRofl = (RoflDTO)AdminListView.SelectedItem;
-            Views.DopRedactor dopRedactor = new Views.DopRedactor(selectedRofl);
+            int id = ((RoflDTO)AdminListView.SelectedItem).RoflId;
+
+            //RoflDTO selectedRofl = (RoflDTO)AdminListView.SelectedItem;
+            Views.DopRedactor dopRedactor = new Views.DopRedactor(id);
             dopRedactor.Show();
             this.Close();
         }
