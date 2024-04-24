@@ -1,11 +1,15 @@
 ﻿using Kursovay2.API;
 using Kursovay2.Models;
 using Kursovay2.Views;
+using Microsoft.Win32;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -33,6 +37,8 @@ namespace Kursovay2.AddRof
 
         private readonly LoginUserDTO user;
         private RoflDTO selectTeg;
+
+        public RoflDTO roflDTO { get; set; }
 
         public StatusDTO SelectStatus { get; set; }
        
@@ -170,6 +176,7 @@ namespace Kursovay2.AddRof
 
         private async void AddName(object sender, RoutedEventArgs e)
         {
+            
             string miniopis = AddMinOpisania.Text;
             string opis = AddOpisania.Text;
             string Name = AddNameRofl.Text;
@@ -183,7 +190,7 @@ namespace Kursovay2.AddRof
             {
                 //int selectedStatusId =  statusId.StatusId;
                 await Client.Instance.SendUserData(new RoflDTO { TegId = tegId.TegId, RoflStartId = startId.StartId, 
-                    RoflStatusId = statusId.StatusId}, miniopis, Name, opis);
+                    RoflStatusId = statusId.StatusId,}, miniopis, Name, opis);
             }
             LoadData();
             
@@ -278,10 +285,41 @@ namespace Kursovay2.AddRof
                 WindowState = WindowState.Normal;
             }
         }
-
-        private void AddPhoto(object sender, RoutedEventArgs e)
+        private void InputTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if(AddOpisania.Text.Length > 0)
+            {
+                AddOpisania.ScrollToEnd();
+                if (AddOpisania.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Length > 250)
+                {
+                    int index = AddOpisania.Text.LastIndexOf(' ');
+                    AddOpisania.Text = AddOpisania.Text.Substring(0, index);
+                    AddOpisania.SelectionStart = AddOpisania.Text.Length;
+                }
+            }
+        }
+        public event PropertyChangedEventHandler? PropertyChanged;
 
+        public void Signal([CallerMemberName] string prop = null) =>
+          PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+
+        private async void AddPhoto(object sender, RoutedEventArgs e)
+        {
+            //OpenFileDialog openFileDialog = new OpenFileDialog();
+            //if (openFileDialog.ShowDialog() == true)
+            //{
+            //    string filePath = openFileDialog.FileName;
+            //    byte[]? imageBytes = File.ReadAllBytes(filePath);
+            //    MemoryStream stream = new MemoryStream(imageBytes);
+
+            //    BitmapImage image = new BitmapImage();
+            //    image.BeginInit();
+            //    image.StreamSource = stream;
+            //    image.EndInit();
+
+            //    // Отправляем изображение на сервер API
+            //    await Client.Instance.SendUserData(imageBytes);
+            //}
         }
     }
 }
