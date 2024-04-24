@@ -22,6 +22,8 @@ namespace Kursovay2.Views
         public LoadingWindow()
         {
             InitializeComponent();
+            WpfAnimatedGif.ImageBehavior.SetAnimatedSource(gifImage, new BitmapImage( new Uri(Environment.CurrentDirectory + "/Gif/loader.gif", UriKind.Absolute)));
+          
         }
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {

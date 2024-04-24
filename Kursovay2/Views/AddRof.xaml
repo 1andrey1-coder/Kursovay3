@@ -529,7 +529,7 @@ HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1">
                             </StackPanel>
 
                         </StackPanel>
-                        <StackPanel  Grid.Row="3"  Grid.Column="7" Grid.ColumnSpan="2" Width="120" HorizontalAlignment="Left"
+                        <StackPanel  Grid.Row="2" Grid.RowSpan="4" Grid.Column="7" Grid.ColumnSpan="2" Width="140" HorizontalAlignment="Left"
                                  VerticalAlignment="Center" Margin="17,0,0,0" >
 
 
@@ -554,8 +554,30 @@ BorderBrush="Transparent" Foreground="White" Click="AddName" Height="45" Cursor=
                                         </StackPanel>
                                     </Button.Content>
                                 </Button>
-                            </StackPanel>
 
+                            </StackPanel>
+                            <StackPanel Height="45" Width="140"  >
+
+                                <Button  Margin="0 0 0 0" Width="140"
+BorderBrush="Transparent" Foreground="White" Click="AddPhoto" Height="45" Cursor="">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Height="30"
+            CornerRadius="15"
+            Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center"
+             HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                    <Button.Content>
+                                        <StackPanel Orientation="Horizontal"  >
+                                            <Image Source="\icons\DataDB.png" Height="20" Margin=" 0 0 5 0"/>
+                                            <TextBlock Text="Выбрать картинку" VerticalAlignment="Center" />
+                                        </StackPanel>
+                                    </Button.Content>
+                                </Button>
+                            </StackPanel>
                         </StackPanel>
                         <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
                                     Grid.Column="4" Grid.Row="2" Grid.RowSpan="4" Grid.ColumnSpan="3">

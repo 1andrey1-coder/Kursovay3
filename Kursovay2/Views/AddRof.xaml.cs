@@ -278,6 +278,11 @@ namespace Kursovay2.AddRof
                 WindowState = WindowState.Normal;
             }
         }
+
+        private void AddPhoto(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
 
