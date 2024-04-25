@@ -328,8 +328,17 @@ namespace Kursovay2.Views
 
         private async void PutName(object sender, RoutedEventArgs e)
         {
-            //RoflDTO id = ;
+            LoadingWindow loadingWindow = new LoadingWindow();
+            loadingWindow.Show();
 
+            Task.Delay(3000).ContinueWith(t =>
+            {
+                loadingWindow.Dispatcher.Invoke(() =>
+                {
+                    loadingWindow.Close();
+
+                });
+            });
             SelectRofl.RoflId = SelectRofl.RoflId;
             SelectRofl.RoflMinOpisanie = AddMinOpisania.Text;
             SelectRofl.RoflOpisanie = AddOpisania.Text;

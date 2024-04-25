@@ -86,6 +86,19 @@ namespace Kursovay2.Views
 
         private void ClickToAdmin(object sender, RoutedEventArgs e)
         {
+
+            LoadingWindow loadingWindow = new LoadingWindow();
+            loadingWindow.Show();
+
+            Task.Delay(3000).ContinueWith(t =>
+            {
+                loadingWindow.Dispatcher.Invoke(() =>
+                {
+                    loadingWindow.Close();
+
+                });
+            });
+
             SingleProfle.user = user;
             //если гость
             if (user.RoleId == 0)

@@ -219,6 +219,18 @@ namespace Kursovay2.User
 
         private void Profile(object sender, RoutedEventArgs e)
         {
+
+            LoadingWindow loadingWindow = new LoadingWindow();
+            loadingWindow.Show();
+
+            Task.Delay(3000).ContinueWith(t =>
+            {
+                loadingWindow.Dispatcher.Invoke(() =>
+                {
+                    loadingWindow.Close();
+
+                });
+            });
             if (SingleProfle.user.RoleId == 1)
             {
 
@@ -257,6 +269,19 @@ namespace Kursovay2.User
 
         private void library(object sender, RoutedEventArgs e)
         {
+
+            LoadingWindow loadingWindow = new LoadingWindow();
+            loadingWindow.Show();
+
+            Task.Delay(3000).ContinueWith(t =>
+            {
+                loadingWindow.Dispatcher.Invoke(() =>
+                {
+                    loadingWindow.Close();
+
+                });
+            });
+
             if (SingleProfle.user.RoleId == 1)
             {
 

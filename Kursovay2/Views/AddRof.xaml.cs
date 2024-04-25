@@ -184,6 +184,19 @@ namespace Kursovay2.AddRof
 
         private async void AddName(object sender, RoutedEventArgs e)
         {
+
+            LoadingWindow loadingWindow = new LoadingWindow();
+            loadingWindow.Show();
+
+            Task.Delay(3000).ContinueWith(t =>
+            {
+                loadingWindow.Dispatcher.Invoke(() =>
+                {
+                    loadingWindow.Close();
+
+                });
+            });
+
             DateTime currentDate = DateTime.Now;
             RoflDTO newRecord = new RoflDTO
             {

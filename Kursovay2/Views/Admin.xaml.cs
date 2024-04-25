@@ -208,13 +208,7 @@ namespace Kursovay2.Admin
 
 
 
-        public static readonly DependencyProperty SelectedIdProperty = DependencyProperty.Register("SelectedId", typeof(int), typeof(Admin));
-
-        public int SelectedId
-        {
-            get { return (int)GetValue(SelectedIdProperty); }
-            set { SetValue(SelectedIdProperty, value); }
-        }
+        
 
         private void ClickRedagturaRof(object sender, RoutedEventArgs e)
         {
@@ -258,10 +252,6 @@ namespace Kursovay2.Admin
                     MessageBox.Show("Данные успешно удалены", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
                     LoadData();
                 }
-                //else
-                //{
-                //    MessageBox.Show($"Ошибка при удалении данных", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
-                //}
 
             }
             catch(Exception ex) 
@@ -295,7 +285,17 @@ namespace Kursovay2.Admin
 
         private void Profile(object sender, RoutedEventArgs e)
         {
-            
+            LoadingWindow loadingWindow = new LoadingWindow();
+            loadingWindow.Show();
+
+            Task.Delay(3000).ContinueWith(t =>
+            {
+                loadingWindow.Dispatcher.Invoke(() =>
+                {
+                    loadingWindow.Close();
+
+                });
+            });
 
             if (SingleProfle.user.RoleId == 1)
             {
