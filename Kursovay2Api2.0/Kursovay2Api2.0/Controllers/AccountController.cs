@@ -528,6 +528,7 @@ namespace Kursovay2Api2._0.Controllers
                 return NotFound();
             }
 
+
             item.RoflName = updatedItem.RoflName;
             item.RoflMinOpisanie = updatedItem.RoflMinOpisanie;
             item.RoflOpisanie = updatedItem.RoflOpisanie;
