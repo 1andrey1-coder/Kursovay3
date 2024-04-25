@@ -529,6 +529,7 @@ namespace Kursovay2Api2._0.Controllers
             }
 
             item.RoflName = updatedItem.RoflName;
+            item.RoflMinOpisanie = updatedItem.RoflMinOpisanie;
             item.RoflOpisanie = updatedItem.RoflOpisanie;
             //item.RoflEndId = updatedItem.RoflEndId;
             item.RoflEnd = _memContext.Ends.FirstOrDefault(i => i.EndId == updatedItem.RoflEndId);          

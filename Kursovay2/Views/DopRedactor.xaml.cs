@@ -299,31 +299,47 @@ namespace Kursovay2.Views
         private async void PutName(object sender, RoutedEventArgs e)
         {
             //RoflDTO id = ;
+
+            SelectRofl.RoflId = SelectRofl.RoflId;
             SelectRofl.RoflMinOpisanie = AddMinOpisania.Text;
-            string miniopis = AddMinOpisania.Text;
-            string opis = AddOpisania.Text;
-            string Name = AddNameRofl.Text;
+            SelectRofl.RoflOpisanie = AddOpisania.Text;
+            SelectRofl.RoflName = AddNameRofl.Text;
+            //SelectRofl.TegId = SelectRofl.TegId;
+            //SelectRofl.RoflStatusId = SelectRofl.RoflStatusId;   
+            //SelectRofl.RoflEndId = SelectRofl.RoflEndId;
+            //SelectRofl.RoflStartId = SelectRofl.RoflStartId;
+            //SelectRofl.RoflGenreId = SelectRofl.RoflGenreId;
+
+
+
+
+            //string miniopis = AddMinOpisania.Text;
+            //string opis = AddOpisania.Text;
+            //string Name = AddNameRofl.Text;
             StatusDTO statusId = (StatusDTO)AdminComboBoxStatus.SelectedItem;
             EndDTO endId = (EndDTO)AdminComboBoxEnd.SelectedItem;
             TegDTO tegId = (TegDTO)AdminComboBoxTeg.SelectedItem;
             StartDTO startId = (StartDTO)AdminComboBoxStart.SelectedItem;
             GenreDTO genreId = (GenreDTO)AdminComboBoxGenre.SelectedItem;
             //miniopis != null &&
-            if(selectedId != null )
+            if (selectedId != null )
             {
 
-            if (statusId != null && endId != null && tegId != null && startId != null && genreId != null)
+            if (statusId != null && endId != null &&
+                   tegId != null && startId != null && genreId != null)
             {
                 //int selectedStatusId =  statusId.StatusId;
                 await Client.Instance.SendUserPutData(new RoflDTO
                 {
-                    
+                    RoflId = SelectRofl.RoflId,
                     TegId = tegId.TegId,
                     RoflStartId = startId.StartId,
                     RoflStatusId = statusId.StatusId,
-                    RoflName = Name,
-                    RoflMinOpisanie = miniopis,
-                    RoflOpisanie = opis,
+                    RoflGenreId = genreId.GenreId,
+                    RoflEndId = endId.EndId,
+                    RoflName = SelectRofl.RoflName,
+                    RoflMinOpisanie = SelectRofl.RoflMinOpisanie,
+                    RoflOpisanie = SelectRofl.RoflOpisanie,
                 });
             }
                 LoadData();

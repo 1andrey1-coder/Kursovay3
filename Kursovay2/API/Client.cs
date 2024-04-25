@@ -386,7 +386,7 @@ namespace Kursovay2.API
             combobox.RoflOpisanie = combobox.RoflOpisanie;
 
             // Отправка данных в контроллер через API
-            HttpResponseMessage response = await httpClient.PostAsJsonAsync($"Account/PutRofl/{combobox.RoflId}", combobox);
+            HttpResponseMessage response = await httpClient.PutAsJsonAsync($"Account/PutRofl/{combobox.RoflId}", combobox);
 
             if (response.IsSuccessStatusCode)
             {
