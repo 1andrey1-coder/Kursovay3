@@ -25,7 +25,7 @@ public partial class Rofl
 
     public DateTime? RoflDateTime { get; set; }
 
-    //public byte[]? RoflImage { get; set; }
+    public byte[]? RoflImage { get; set; }
 
     public virtual End? RoflEnd { get; set; }
 

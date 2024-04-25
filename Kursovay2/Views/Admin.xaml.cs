@@ -31,6 +31,7 @@ namespace Kursovay2.Admin
         double panelWidth;
         bool hidden;
         private RoflDTO selectRofl;
+        private int selectedId;
 
         public ObservableCollection<RoflDTO> Rofl { get; set; }
 
@@ -205,15 +206,23 @@ namespace Kursovay2.Admin
             this.Close();
         }
 
-       
 
-    
+
+        public static readonly DependencyProperty SelectedIdProperty = DependencyProperty.Register("SelectedId", typeof(int), typeof(Admin));
+
+        public int SelectedId
+        {
+            get { return (int)GetValue(SelectedIdProperty); }
+            set { SetValue(SelectedIdProperty, value); }
+        }
+
         private void ClickRedagturaRof(object sender, RoutedEventArgs e)
         {
-            int id = ((RoflDTO)AdminListView.SelectedItem).RoflId;
+            RoflDTO selectedId = (RoflDTO)AdminListView.SelectedItem;
 
             //RoflDTO selectedRofl = (RoflDTO)AdminListView.SelectedItem;
-            Views.DopRedactor dopRedactor = new Views.DopRedactor(id);
+            Views.DopRedactor dopRedactor = new Views.DopRedactor(selectedId);
+            //dopRedactor.SelectedId = selectedId;
             dopRedactor.Show();
             this.Close();
         }

@@ -517,7 +517,7 @@ HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1">
                                         </StackPanel>
                                     </Label.Content>
                                 </Label>
-                                <TextBox  Width="200" Height="25" Text="{Binding SelectedRofl.RoflMinOpisanie}" x:Name="AddMinOpisania">
+                                <TextBox  Width="200" Height="25" Text="{Binding SelectedId.RoflMinOpisanie}" x:Name="AddMinOpisania">
                                     <TextBox.Template>
                                         <ControlTemplate>
                                             <Border CornerRadius="10" Height="25" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">

@@ -27,10 +27,10 @@ namespace Kursovay2.Views
         double panelWidth;
         bool hidden;
         private RoflDTO selectRofl;
-        private int id;
+        private int selectedId;
         private readonly LoginUserDTO user;
 
-
+        
         public RoflDTO SelectRofl
         {
             get => selectRofl; 
@@ -40,10 +40,19 @@ namespace Kursovay2.Views
             }
         }
 
-        public DopRedactor(int id) 
+        //public static readonly DependencyProperty SelectedIdProperty = DependencyProperty.Register("SelectedId", typeof(int), typeof(Admin));
+
+        //public int SelectedId
+        //{
+        //    get { return (int)GetValue(SelectedIdProperty); }
+        //    set { SetValue(SelectedIdProperty, value); }
+        //}
+
+        public DopRedactor(RoflDTO selectedId) 
         {
             InitializeComponent();
-            SelectRofl = selectRofl;
+            //SelectRofl = selectRofl;
+            SelectRofl = selectedId;
 
             StatusComboBox();
             EndComboBox();
@@ -52,7 +61,6 @@ namespace Kursovay2.Views
             StartComboBox();
 
             LoadData();
-            this.id = id;
 
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
@@ -290,7 +298,8 @@ namespace Kursovay2.Views
         }
         private async void PutName(object sender, RoutedEventArgs e)
         {
-            RoflDTO id = SelectRofl;
+            //RoflDTO id = ;
+            SelectRofl.RoflMinOpisanie = AddMinOpisania.Text;
             string miniopis = AddMinOpisania.Text;
             string opis = AddOpisania.Text;
             string Name = AddNameRofl.Text;
@@ -300,21 +309,25 @@ namespace Kursovay2.Views
             StartDTO startId = (StartDTO)AdminComboBoxStart.SelectedItem;
             GenreDTO genreId = (GenreDTO)AdminComboBoxGenre.SelectedItem;
             //miniopis != null &&
-            if (statusId != null && endId != null && tegId != null && startId != null && genreId != null && id != null)
+            if(selectedId != null )
+            {
+
+            if (statusId != null && endId != null && tegId != null && startId != null && genreId != null)
             {
                 //int selectedStatusId =  statusId.StatusId;
                 await Client.Instance.SendUserPutData(new RoflDTO
                 {
-                    RoflId = id.RoflId,
+                    
                     TegId = tegId.TegId,
                     RoflStartId = startId.StartId,
                     RoflStatusId = statusId.StatusId,
                     RoflName = Name,
+                    RoflMinOpisanie = miniopis,
                     RoflOpisanie = opis,
-                    RoflMinOpisanie = miniopis
                 });
             }
-            LoadData();
+                LoadData();
+            }
         }
 
         private void Podskaska(object sender, RoutedEventArgs e)

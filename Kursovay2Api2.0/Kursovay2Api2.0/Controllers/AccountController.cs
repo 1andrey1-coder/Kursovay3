@@ -79,7 +79,7 @@ namespace Kursovay2Api2._0.Controllers
             var hashedPassword = HashPassword(userData.Password);
             var user = _memContext.LoginUsers.FirstOrDefault(u => u.Mail == userData.Mail
             && u.LoginPassword == hashedPassword); // предполагается, что в базе сохраняется хэшированный пароль
-
+            //LoginImage
             if (user != null)
             {
                 return new LoginUserDTO
@@ -368,9 +368,9 @@ namespace Kursovay2Api2._0.Controllers
                         RoflStatus = rofl.RoflStatus?.StatusName,
                         RoflOpisanie = rofl.RoflOpisanie,
                         RoflDateTime = rofl.RoflDateTime,
-                        RoflEnd = rofl.RoflEnd?.EndName
-                    //RoflImage = rofl.RoflImage,
-                });
+                        RoflEnd = rofl.RoflEnd?.EndName,
+                        RoflImage = rofl.RoflImage,
+                 });
                 return Ok(result);
                 
 
