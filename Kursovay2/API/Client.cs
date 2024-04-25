@@ -427,10 +427,31 @@ namespace Kursovay2.API
 
 
         }
-        
-        //ilchenkor1135@suz-ppk.ru
-        //BU0GiMZa Дома
-        //91T6Fz7h колледж
+
+        public async Task<RoflDTO> SearchApi(string search)
+        {
+            //var Search = new RoflDTO
+            //{
+            //    RoflName = search.RoflName,
+            //};
+            //HttpResponseMessage response = await httpClient.GetAsync("Account/SearchName", search);
+
+            //if (response.IsSuccessStatusCode)
+            //{
+               
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Ошибка при поиске данных", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
+            //}
+
+            return null;
+        }
+
+
+            //ilchenkor1135@suz-ppk.ru
+            //BU0GiMZa Дома
+            //91T6Fz7h колледж
     }
 
 

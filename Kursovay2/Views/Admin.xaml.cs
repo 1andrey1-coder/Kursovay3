@@ -50,6 +50,8 @@ namespace Kursovay2.Admin
             //для отображения данных
             GenreComboBox();
             LoadData();
+            SearchApi();
+
 
 
 
@@ -61,6 +63,13 @@ namespace Kursovay2.Admin
             panelWidth = sidePanel.Width; 
 
         }
+
+        public async void SearchApi()
+        {
+            string search = myTextBox.Text;
+            await Client.Instance.SearchApi(search);
+        }
+
         private async void GenreComboBox()
         {
             List<GenreDTO> comboBoxData = await Client.Instance.GetComboBoxGenre();
