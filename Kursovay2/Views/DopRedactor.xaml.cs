@@ -1,8 +1,12 @@
 ﻿using Kursovay2.API;
 using Kursovay2.Models;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -222,10 +226,7 @@ namespace Kursovay2.Views
             }
         }
 
-        private void AddPhoto(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
         private async void StatusComboBox()
         {
             List<StatusDTO> comboBoxData = await Client.Instance.GetComboBoxStatus();
@@ -296,6 +297,35 @@ namespace Kursovay2.Views
                 }
             }
         }
+
+
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        public void Signal([CallerMemberName] string prop = null) =>
+          PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+
+        private void AddPhoto(object sender, RoutedEventArgs e)
+        {
+            string dir = Environment.CurrentDirectory + @"\Images\";
+            if (!Directory.Exists(dir))
+                Directory.CreateDirectory(dir);
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Images|*.jpg;";
+            if (dlg.ShowDialog() == true)
+            {
+                var test = new BitmapImage(new Uri(dlg.FileName));
+                if (test.PixelWidth > 2000 || test.PixelHeight > 2000)
+                {
+                    MessageBox.Show("Картинка слишком большая");
+                    return;
+                }
+                string newFile = dir + new FileInfo(dlg.FileName).Name;
+                File.Copy(dlg.FileName, newFile, true);
+                SelectRofl.RoflImage = File.ReadAllBytes(newFile);
+                Signal("SelectedRofl");
+            }
+        }
+
         private async void PutName(object sender, RoutedEventArgs e)
         {
             //RoflDTO id = ;
@@ -340,6 +370,7 @@ namespace Kursovay2.Views
                     RoflName = SelectRofl.RoflName,
                     RoflMinOpisanie = SelectRofl.RoflMinOpisanie,
                     RoflOpisanie = SelectRofl.RoflOpisanie,
+                    RoflImage = SelectRofl.RoflImage,
                 });
             }
                 LoadData();
