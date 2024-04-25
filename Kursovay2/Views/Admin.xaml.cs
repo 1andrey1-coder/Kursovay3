@@ -288,7 +288,7 @@ namespace Kursovay2.Admin
             LoadingWindow loadingWindow = new LoadingWindow();
             loadingWindow.Show();
 
-            Task.Delay(3000).ContinueWith(t =>
+            Task.Delay(1000).ContinueWith(t =>
             {
                 loadingWindow.Dispatcher.Invoke(() =>
                 {
@@ -339,6 +339,18 @@ namespace Kursovay2.Admin
 
         private void library(object sender, RoutedEventArgs e)
         {
+
+            LoadingWindow loadingWindow = new LoadingWindow();
+            loadingWindow.Show();
+
+            Task.Delay(1500).ContinueWith(t =>
+            {
+                loadingWindow.Dispatcher.Invoke(() =>
+                {
+                    loadingWindow.Close();
+
+                });
+            });
             if (SingleProfle.user.RoleId == 1)
             {
 

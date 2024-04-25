@@ -198,11 +198,7 @@ namespace Kursovay2.AddRof
             });
 
             DateTime currentDate = DateTime.Now;
-            RoflDTO newRecord = new RoflDTO
-            {
-                
-                RoflDateTime = currentDate
-            };
+           
             string miniopis = AddMinOpisania.Text;
             string opis = AddOpisania.Text;
             string Name = AddNameRofl.Text;
@@ -217,7 +213,8 @@ namespace Kursovay2.AddRof
                 //int selectedStatusId =  statusId.StatusId;
                 await Client.Instance.SendUserData(new RoflDTO { TegId = tegId.TegId, RoflStartId = startId.StartId, 
                     RoflStatusId = statusId.StatusId, RoflName = Name, RoflOpisanie = opis, RoflMinOpisanie = miniopis,
-                    RoflDateTime = newRecord.RoflDateTime
+                    RoflDateTime = currentDate, RoflEndId= endId.EndId, RoflGenreId = genreId.GenreId,
+                    
                 });
             }
             LoadData();

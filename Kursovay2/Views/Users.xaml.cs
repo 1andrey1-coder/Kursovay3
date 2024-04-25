@@ -223,7 +223,7 @@ namespace Kursovay2.User
             LoadingWindow loadingWindow = new LoadingWindow();
             loadingWindow.Show();
 
-            Task.Delay(3000).ContinueWith(t =>
+            Task.Delay(1000).ContinueWith(t =>
             {
                 loadingWindow.Dispatcher.Invoke(() =>
                 {
@@ -273,7 +273,7 @@ namespace Kursovay2.User
             LoadingWindow loadingWindow = new LoadingWindow();
             loadingWindow.Show();
 
-            Task.Delay(3000).ContinueWith(t =>
+            Task.Delay(1500).ContinueWith(t =>
             {
                 loadingWindow.Dispatcher.Invoke(() =>
                 {
