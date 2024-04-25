@@ -20,6 +20,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
@@ -37,13 +38,20 @@ namespace Kursovay2.AddRof
 
         private readonly LoginUserDTO user;
         private RoflDTO selectTeg;
+        private RoflDTO selectRofl;
 
         public RoflDTO roflDTO { get; set; }
 
         public StatusDTO SelectStatus { get; set; }
-       
 
-
+        public RoflDTO SelectRofl
+        {
+            get => selectRofl;
+            set
+            {
+                selectRofl = value;
+            }
+        }
         public AddRof()
         {
             InitializeComponent();
@@ -176,7 +184,12 @@ namespace Kursovay2.AddRof
 
         private async void AddName(object sender, RoutedEventArgs e)
         {
-            
+            DateTime currentDate = DateTime.Now;
+            RoflDTO newRecord = new RoflDTO
+            {
+                
+                RoflDateTime = currentDate
+            };
             string miniopis = AddMinOpisania.Text;
             string opis = AddOpisania.Text;
             string Name = AddNameRofl.Text;
@@ -190,12 +203,40 @@ namespace Kursovay2.AddRof
             {
                 //int selectedStatusId =  statusId.StatusId;
                 await Client.Instance.SendUserData(new RoflDTO { TegId = tegId.TegId, RoflStartId = startId.StartId, 
-                    RoflStatusId = statusId.StatusId, RoflName = Name, RoflOpisanie = opis, RoflMinOpisanie = miniopis});
+                    RoflStatusId = statusId.StatusId, RoflName = Name, RoflOpisanie = opis, RoflMinOpisanie = miniopis,
+                    RoflDateTime = newRecord.RoflDateTime
+                });
             }
             LoadData();
             
 
 
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        public void Signal([CallerMemberName] string prop = null) =>
+          PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+
+        private void AddPhoto(object sender, RoutedEventArgs e)
+        {
+            string dir = Environment.CurrentDirectory + @"\Images\";
+            if (!Directory.Exists(dir))
+                Directory.CreateDirectory(dir);
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Images|*.jpg;";
+            if (dlg.ShowDialog() == true)
+            {
+                var test = new BitmapImage(new Uri(dlg.FileName));
+                if (test.PixelWidth > 2000 || test.PixelHeight > 2000)
+                {
+                    MessageBox.Show("Картинка слишком большая");
+                    return;
+                }
+                string newFile = dir + new FileInfo(dlg.FileName).Name;
+                File.Copy(dlg.FileName, newFile, true);
+                SelectRofl.RoflImage = File.ReadAllBytes(newFile);
+                Signal("SelectedRofl");
+            }
         }
 
         private void ClickObratAdmin(object sender, RoutedEventArgs e)
@@ -298,29 +339,7 @@ namespace Kursovay2.AddRof
                 }
             }
         }
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        public void Signal([CallerMemberName] string prop = null) =>
-          PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
-
-        private async void AddPhoto(object sender, RoutedEventArgs e)
-        {
-            //OpenFileDialog openFileDialog = new OpenFileDialog();
-            //if (openFileDialog.ShowDialog() == true)
-            //{
-            //    string filePath = openFileDialog.FileName;
-            //    byte[]? imageBytes = File.ReadAllBytes(filePath);
-            //    MemoryStream stream = new MemoryStream(imageBytes);
-
-            //    BitmapImage image = new BitmapImage();
-            //    image.BeginInit();
-            //    image.StreamSource = stream;
-            //    image.EndInit();
-
-            //    // Отправляем изображение на сервер API
-            //    await Client.Instance.SendUserData(imageBytes);
-            //}
-        }
+      
     }
 }
 

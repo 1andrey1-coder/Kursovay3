@@ -347,6 +347,7 @@ namespace Kursovay2.API
             //RoflEndId = combobox,
             //RoflStatusId = combobox,
                 combobox.RoflImage = combobox.RoflImage;
+                combobox.RoflDateTime = combobox.RoflDateTime;
                 combobox.RoflName = combobox.RoflName;
                 combobox.RoflMinOpisanie = combobox.RoflMinOpisanie;
                 combobox.RoflOpisanie = combobox.RoflOpisanie;

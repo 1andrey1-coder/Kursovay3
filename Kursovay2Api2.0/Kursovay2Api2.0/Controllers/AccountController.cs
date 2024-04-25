@@ -479,7 +479,7 @@ namespace Kursovay2Api2._0.Controllers
                     RoflStartId = rofl.RoflStartId,
                     RoflStatusId = rofl.RoflStatusId,
                     TegId = rofl.TegId,
-                    //RoflDateTime = rofl.RoflDateTime,
+                    RoflDateTime = rofl.RoflDateTime,
                 };
 
                 // Add the new Rofl to the database
