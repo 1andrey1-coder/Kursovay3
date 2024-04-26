@@ -31,8 +31,8 @@ namespace Kursovay2.Views
         public AllRof()
         {
             InitializeComponent();
-            LoadData();
             LoadDefaultImage();
+            LoadData();
             DisplayUserInfo();
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
@@ -40,14 +40,23 @@ namespace Kursovay2.Views
 
             panelWidth = sidePanel.Width;
         }
-
+        byte[] defaultImage;
+        private void LoadDefaultImage()
+        {
+            var stream = Application.GetResourceStream(new Uri("Images/NotImage.png", UriKind.Relative));
+            defaultImage = new byte[stream.Stream.Length];
+            stream.Stream.Read(defaultImage, 0, defaultImage.Length);
+        }
         private async void LoadData()
         {
             List<RoflDTO> Rofl = await Client.Instance.GetListRofl();
 
+           
             if (Rofl != null)
             {
+                
                 AdminListView.ItemsSource = Rofl;
+                
             }
             else
             {
@@ -186,12 +195,6 @@ namespace Kursovay2.Views
             }
         }
 
-        byte[] defaultImage;
-        private void LoadDefaultImage()
-        {
-            var stream = Application.GetResourceStream(new Uri("Images/NotImage.png", UriKind.Relative));
-            defaultImage = new byte[stream.Stream.Length];
-            stream.Stream.Read(defaultImage, 0, defaultImage.Length);
-        }
+    
     }
 }

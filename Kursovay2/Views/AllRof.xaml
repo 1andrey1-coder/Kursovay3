@@ -353,7 +353,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                                                 <StackPanel HorizontalAlignment="Right">
                                                     <TextBlock Background="Transparent"  Text="{Binding RoflName,
                                 StringFormat='Название: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
-                                                    <TextBlock Background="Transparent" Text="{Binding RoflOpisania,
+                                                        <TextBlock Background="Transparent" Text="{Binding RoflOpisanie,
                                 StringFormat='Описание: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
                                                 </StackPanel>
                                             </Border>

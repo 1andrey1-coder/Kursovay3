@@ -355,17 +355,17 @@ namespace Kursovay2Api2._0.Controllers
 
                 var result = rofls.Select(rofl =>
                  new RoflDTO
-                    {
+                 {
 
 
 
 
-                        RoflName = rofl.RoflName,
                         RoflId = rofl.RoflId,
                         Teg = rofl.Teg?.TegName,
                         RoflGenre = rofl.RoflGenre?.GenreName,
                         RoflStart = rofl.RoflStart?.StartName,
                         RoflStatus = rofl.RoflStatus?.StatusName,
+                        RoflName = rofl.RoflName,
                         RoflOpisanie = rofl.RoflOpisanie,
                         RoflMinOpisanie = rofl.RoflMinOpisanie,
                         RoflDateTime = rofl.RoflDateTime,
