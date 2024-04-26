@@ -27,6 +27,16 @@ namespace Kursovay2.Views
         DispatcherTimer timer;
         double panelWidth;
         bool hidden;
+        private RoflDTO selectedRofl = new RoflDTO();
+        public RoflDTO SelectedRofl
+        {
+            get => selectedRofl;
+            set 
+            { 
+                selectedRofl = value;
+            }
+        }
+
 
         public AllRof()
         {
@@ -41,6 +51,7 @@ namespace Kursovay2.Views
             panelWidth = sidePanel.Width;
         }
         byte[] defaultImage;
+
         private void LoadDefaultImage()
         {
             var stream = Application.GetResourceStream(new Uri("Images/NotImage.png", UriKind.Relative));

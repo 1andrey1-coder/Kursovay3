@@ -356,10 +356,6 @@ namespace Kursovay2Api2._0.Controllers
                 var result = rofls.Select(rofl =>
                  new RoflDTO
                  {
-
-
-
-
                         RoflId = rofl.RoflId,
                         Teg = rofl.Teg?.TegName,
                         RoflGenre = rofl.RoflGenre?.GenreName,

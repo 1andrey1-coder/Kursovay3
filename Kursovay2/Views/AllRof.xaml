@@ -341,23 +341,35 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                                         <Grid >
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="Auto"/>
-                                                <ColumnDefinition/>
-                                            </Grid.ColumnDefinitions>
+                                                 <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
                                             
-                                                
-                                            <Border Background="Transparent" Padding="5" Grid.Column="0" BorderBrush="Gray" BorderThickness="0.5">
-                                                <Image MaxWidth="300" Source="{Binding RoflImage}" Stretch="UniformToFill"/>
-                                            </Border>
-                                            <Border Background="Transparent" Width="300" Padding="5" BorderBrush="Gray" 
+                                           
+                                          <StackPanel Orientation="Vertical">
+
+                                                    <Border Background="Transparent" Padding="5"
+                                                    Grid.Column="0" BorderBrush="Gray" BorderThickness="0.5" >
+                                                        <Image MaxWidth="300" Source="{Binding RoflImage}" Stretch="UniformToFill"/>
+                                                    </Border>
+                                                    <Border Background="Transparent" Width="300" Padding="5" BorderBrush="Gray" 
                                                     Margin="3" HorizontalAlignment="Left" BorderThickness="0.5" Grid.Column="1">
                                                 <StackPanel HorizontalAlignment="Right">
-                                                    <TextBlock Background="Transparent"  Text="{Binding RoflName,
+                                                        <TextBlock Background="Transparent"  Text="{Binding RoflName,
                                 StringFormat='Название: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
-                                                        <TextBlock Background="Transparent" Text="{Binding RoflOpisanie,
-                                StringFormat='Описание: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
+                                                       
                                                 </StackPanel>
+
+                                            </Border>
+                                            <Border Background="Transparent" Width="150" Padding="5" BorderBrush="Gray" 
+                                                    Margin="3" HorizontalAlignment="Left" BorderThickness="0.5" Grid.Column="2">
+                                                    
+                                                    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                                                            <TextBlock Background="Transparent" Text="{Binding RoflOpisanie,
+                                                        StringFormat='Описание: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
+                                                    </StackPanel>
                                             </Border>
                                             
+                                          </StackPanel>
                                         </Grid>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
