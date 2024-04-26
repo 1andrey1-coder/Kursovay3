@@ -3,13 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Kursovay2.Views"
-        mc:Ignorable="d"
+        xmlns:local="clr-namespace:Kursovay2.Views" 
+         xmlns:convert="clr-namespace:Kursovay2.mvvm.converter"
+         mc:Ignorable="d"
         Title="Окно для всех шуток/рофлов" MinHeight="450" Height="500" MinWidth="750" Width="900" 
          WindowStartupLocation="CenterScreen"
          WindowStyle="None" AllowsTransparency="True" Background="Transparent">
 
-
+    <Window.Resources>
+        <convert:StockToBackground x:Key="converter"/>
+    </Window.Resources>
 
 
 
@@ -323,18 +326,54 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
         Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" >
 
                     <!--Сделать в виде карточек, вывод всех шуток-->
-                    
-                    
-                    
-                    
-                    
-                    
-                   
+
+                    <!--Background="{Binding ***, Converter={StaticResource converter}}"-->
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        
+                    <DataGrid x:Name="AdminListView" CanUserAddRows="False" Grid.Row="1" AutoGenerateColumns="False" Background="Transparent"
+          ItemsSource="{Binding Rofl}" SelectedItem="{Binding SelectedRofl}" SelectionMode="Single">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        
+                                      
+                                        <Grid >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            
+                                                
+                                            <Border Background="Transparent" Padding="5" Grid.Column="0" BorderBrush="Gray" BorderThickness="0.5">
+                                                <Image MaxWidth="300" Source="{Binding RoflImage}" Stretch="UniformToFill"/>
+                                            </Border>
+                                            <Border Background="Transparent" Width="300" Padding="5" BorderBrush="Gray" 
+                                                    Margin="3" HorizontalAlignment="Left" BorderThickness="0.5" Grid.Column="1">
+                                                <StackPanel HorizontalAlignment="Right">
+                                                    <TextBlock Background="Transparent"  Text="{Binding RoflName,
+                                StringFormat='Название: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
+                                                    <TextBlock Background="Transparent" Text="{Binding RoflOpisania,
+                                StringFormat='Описание: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
+                                                </StackPanel>
+                                            </Border>
+                                            
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    </ScrollViewer>
+
+
+
+
                 </ScrollViewer>
             </Grid>
         </Border>
     </Border>
-
+   
 
 
     <!--<Page.Resources>

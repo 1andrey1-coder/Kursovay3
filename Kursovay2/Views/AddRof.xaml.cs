@@ -40,7 +40,7 @@ namespace Kursovay2.AddRof
         private RoflDTO selectTeg;
         private RoflDTO selectRofl;
 
-        public RoflDTO roflDTO { get; set; }
+        public new RoflDTO roflDTO { get; set; }
 
         public StatusDTO SelectStatus { get; set; }
 
@@ -50,11 +50,18 @@ namespace Kursovay2.AddRof
             set
             {
                 selectRofl = value;
+                Signal();
             }
         }
+       
+
         public AddRof()
         {
             InitializeComponent();
+
+            SelectRofl = new RoflDTO();
+           
+
             StatusComboBox();
             EndComboBox();
             TegComboBox();
@@ -202,6 +209,7 @@ namespace Kursovay2.AddRof
             string miniopis = AddMinOpisania.Text;
             string opis = AddOpisania.Text;
             string Name = AddNameRofl.Text;
+            //byte[] image = roflDTO.RoflImage;
             StatusDTO statusId = (StatusDTO)AdminComboBoxStatus.SelectedItem;
             EndDTO endId = (EndDTO)AdminComboBoxEnd.SelectedItem;
             TegDTO tegId = (TegDTO)AdminComboBoxTeg.SelectedItem;
@@ -210,12 +218,21 @@ namespace Kursovay2.AddRof
             //miniopis != null &&
             if (statusId != null && endId != null && tegId != null && startId !=null && genreId != null)
             {
+                SelectRofl = new RoflDTO
+                {
+                    TegId = tegId.TegId,
+                    RoflStartId = startId.StartId,
+                    RoflStatusId = statusId.StatusId,
+                    RoflName = Name,
+                    RoflOpisanie = opis,
+                    RoflMinOpisanie = miniopis,
+                    RoflDateTime = currentDate,
+                    RoflEndId = endId.EndId,
+                    RoflGenreId = genreId.GenreId,
+                    RoflImage = SelectRofl.RoflImage
+                };
                 //int selectedStatusId =  statusId.StatusId;
-                await Client.Instance.SendUserData(new RoflDTO { TegId = tegId.TegId, RoflStartId = startId.StartId, 
-                    RoflStatusId = statusId.StatusId, RoflName = Name, RoflOpisanie = opis, RoflMinOpisanie = miniopis,
-                    RoflDateTime = currentDate, RoflEndId= endId.EndId, RoflGenreId = genreId.GenreId,
-                    
-                });
+                await Client.Instance.SendUserData(SelectRofl);
             }
             LoadData();
             
@@ -244,8 +261,10 @@ namespace Kursovay2.AddRof
                 }
                 string newFile = dir + new FileInfo(dlg.FileName).Name;
                 File.Copy(dlg.FileName, newFile, true);
+                //RoflDTO roflDTO = new RoflDTO();
+                //roflDTO.RoflImage = File.ReadAllBytes(newFile);
                 SelectRofl.RoflImage = File.ReadAllBytes(newFile);
-                Signal("SelectedRofl");
+                Signal("SelectRofl");
             }
         }
 

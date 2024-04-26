@@ -31,12 +31,28 @@ namespace Kursovay2.Views
         public AllRof()
         {
             InitializeComponent();
+            LoadData();
+            LoadDefaultImage();
             DisplayUserInfo();
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
             timer.Tick += Timer_Tick;
 
             panelWidth = sidePanel.Width;
+        }
+
+        private async void LoadData()
+        {
+            List<RoflDTO> Rofl = await Client.Instance.GetListRofl();
+
+            if (Rofl != null)
+            {
+                AdminListView.ItemsSource = Rofl;
+            }
+            else
+            {
+                MessageBox.Show("Failed to load data from API");
+            }
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -168,6 +184,14 @@ namespace Kursovay2.Views
                 myTextBox.Text = "Введите данные";
                 myTextBox.Foreground = Brushes.Gray;
             }
+        }
+
+        byte[] defaultImage;
+        private void LoadDefaultImage()
+        {
+            var stream = Application.GetResourceStream(new Uri("Images/NotImage.png", UriKind.Relative));
+            defaultImage = new byte[stream.Stream.Length];
+            stream.Stream.Read(defaultImage, 0, defaultImage.Length);
         }
     }
 }

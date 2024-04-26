@@ -448,12 +448,12 @@ HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1">
                         <StackPanel HorizontalAlignment="Center" 
                             VerticalAlignment="Center"
                             Grid.Row="3" Grid.Column="2">
-                            <ComboBox Width="100" x:Name="AdminComboBoxStatus" SelectedItem="{Binding SelectedStatus}" DisplayMemberPath="StatusName" />
+                            <ComboBox Width="100" x:Name="AdminComboBoxStatus"  DisplayMemberPath="StatusName" />
                         </StackPanel>
                         <StackPanel HorizontalAlignment="Center" 
                                 VerticalAlignment="Center"
                             Grid.Row="4" Grid.Column="2">
-                            <ComboBox Width="100" x:Name="AdminComboBoxGenre" SelectedItem="{Binding SelectedGenre}" 
+                            <ComboBox Width="100" x:Name="AdminComboBoxGenre" 
                                       DisplayMemberPath="GenreName" />
                         </StackPanel>
 
@@ -464,43 +464,7 @@ HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1">
 
 
                         <!--Автор и описание-->
-                        <!--<StackPanel  Grid.Row="0" Grid.RowSpan="2" Grid.Column="3">
-                        
-                    
-                    <StackPanel Margin="0 0 0 5" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3">
-                        <Label FontWeight="Bold" Margin="0 0 0 5" Content="Написать автора" Foreground="White" FontSize="15" HorizontalAlignment="Center"/>
-                        <TextBox Width="200" >
-                            <TextBox.Template>
-                                <ControlTemplate>
-                                    <Border CornerRadius="10" Height="20" Margin="0 0 0 5" BorderThickness="1" Background="White" BorderBrush="White">
-                                        <ScrollViewer Margin="0 0 0 0" x:Name="PART_ContentHost" />
-                                    </Border>
-                                </ControlTemplate>
-                            </TextBox.Template>
-                        </TextBox>
-                    </StackPanel>
-                    <StackPanel  VerticalAlignment="Top" Grid.Row="1">
-
-
-                        <StackPanel Height="45" Width="150" >
-
-                            <Button Margin="0 0 0 5" Content="Внести данные" 
-             BorderBrush="Transparent" Foreground="White" Click="ResetName" Height="30">
-                                <Button.Template>
-                                    <ControlTemplate TargetType="Button">
-                                        <Border Width="150" Height="30"
-                         CornerRadius="15"
-                         Background="{TemplateBinding Background}">
-                                            <ContentPresenter VerticalAlignment="Center"
-                          HorizontalAlignment="Center"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Button.Template>
-                            </Button>
-                        </StackPanel>
-
-                    </StackPanel>
-                    </StackPanel>-->
+                   
 
 
                         <StackPanel Margin="0 0 0 0" VerticalAlignment="Center"  Grid.Row="0" Grid.RowSpan="2" Grid.Column="4" >
@@ -517,7 +481,7 @@ HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1">
                                         </StackPanel>
                                     </Label.Content>
                                 </Label>
-                                <TextBox  Width="200" Height="25" Text="{Binding SelectedRofl.RoflMinOpisanie}" x:Name="AddMinOpisania">
+                                <TextBox  Width="200" Height="25" Text="{Binding SelectRofl.RoflMinOpisanie}" x:Name="AddMinOpisania">
                                     <TextBox.Template>
                                         <ControlTemplate>
                                             <Border CornerRadius="10" Height="25" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
@@ -594,7 +558,7 @@ BorderBrush="Transparent" Foreground="White" Click="AddPhoto" Height="45" Cursor
                             <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
 
                                 <TextBox  TextWrapping="Wrap" TextChanged="InputTextBox_TextChanged" 
-                                          Text="{Binding SelectedRofl.RoflOpisanie}" MaxLength="5000"
+                                          Text="{Binding SelectRofl.RoflOpisanie}" MaxLength="5000"
                                           AcceptsReturn="True" Margin="5"  x:Name="AddOpisania">
                                     <TextBox.Template>
                                         <ControlTemplate>
@@ -624,7 +588,7 @@ BorderBrush="Transparent" Foreground="White" Click="AddPhoto" Height="45" Cursor
                                         </StackPanel>
                                     </Label.Content>
                                 </Label>
-                                <TextBox  Width="200" Height="25" Text="{Binding SelectedRofl.RoflName}" x:Name="AddNameRofl">
+                                <TextBox  Width="200" Height="25" Text="{Binding SelectRofl.RoflName}" x:Name="AddNameRofl">
                                     <TextBox.Template>
                                         <ControlTemplate>
                                             <Border CornerRadius="10" Height="25" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">

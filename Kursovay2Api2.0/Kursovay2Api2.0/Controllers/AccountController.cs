@@ -367,6 +367,7 @@ namespace Kursovay2Api2._0.Controllers
                         RoflStart = rofl.RoflStart?.StartName,
                         RoflStatus = rofl.RoflStatus?.StatusName,
                         RoflOpisanie = rofl.RoflOpisanie,
+                        RoflMinOpisanie = rofl.RoflMinOpisanie,
                         RoflDateTime = rofl.RoflDateTime,
                         RoflEnd = rofl.RoflEnd?.EndName,
                         RoflImage = rofl.RoflImage,
@@ -480,6 +481,7 @@ namespace Kursovay2Api2._0.Controllers
                     RoflStatusId = rofl.RoflStatusId,
                     TegId = rofl.TegId,
                     RoflDateTime = rofl.RoflDateTime,
+                    RoflImage = rofl.RoflImage,
                 };
 
                 // Add the new Rofl to the database
@@ -572,7 +574,7 @@ namespace Kursovay2Api2._0.Controllers
         }
         //Обнова пароля/логина/почты
 
-        [HttpGet("SearchName")]
+        [HttpPost("SearchName")]
         public async Task<ActionResult<IEnumerable<RoflDTO>>> Search(string searchName)
         {
             try

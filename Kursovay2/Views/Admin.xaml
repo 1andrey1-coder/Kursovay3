@@ -460,7 +460,7 @@ SelectedItem="{Binding SelectRofl}" SelectionMode="Single" Margin="5">
                                 
                                 <GridViewColumn Header="Небольшое описание" Width="150" 
                                                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-                                                DisplayMemberBinding="{Binding RoflOpisanie}" />
+                                                DisplayMemberBinding="{Binding RoflMinOpisanie}" />
                                 
                                 <GridViewColumn Header="Статус" Width="100" 
                                                 HeaderContainerStyle="{StaticResource GreyHeaderStyle}"

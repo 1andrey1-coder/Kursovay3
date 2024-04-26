@@ -434,16 +434,16 @@ namespace Kursovay2.API
             //{
             //    RoflName = search.RoflName,
             //};
-            //HttpResponseMessage response = await httpClient.GetAsync("Account/SearchName", search);
+            HttpResponseMessage response = await httpClient.GetAsync("Account/SearchName");
 
-            //if (response.IsSuccessStatusCode)
-            //{
-               
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Ошибка при поиске данных", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
-            //}
+            if (response.IsSuccessStatusCode)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Ошибка при поиске данных", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
             return null;
         }

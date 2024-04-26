@@ -344,6 +344,7 @@ namespace Kursovay2.Admin
                 myTextBox.Text = "Введите данные";
                 myTextBox.Foreground = Brushes.Gray;
             }
+
         }
 
         private void library(object sender, RoutedEventArgs e)

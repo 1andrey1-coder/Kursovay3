@@ -30,7 +30,7 @@ namespace Kursovay2.Views
 
         double panelWidth;
         bool hidden;
-        private RoflDTO selectRofl;
+        private RoflDTO selectRofl = new RoflDTO();
         private int selectedId;
         private readonly LoginUserDTO user;
 
@@ -55,8 +55,15 @@ namespace Kursovay2.Views
         public DopRedactor(RoflDTO selectedId) 
         {
             InitializeComponent();
+            DataContext = this;
             //SelectRofl = selectRofl;
+
             SelectRofl = selectedId;
+            if (selectedId == null)
+                selectedId = new RoflDTO();
+            SelectRofl = selectedId;
+
+            Signal(nameof(SelectRofl));
 
             StatusComboBox();
             EndComboBox();
