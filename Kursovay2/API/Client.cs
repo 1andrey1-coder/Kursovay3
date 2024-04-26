@@ -428,7 +428,7 @@ namespace Kursovay2.API
 
         }
 
-        public async Task<RoflDTO> SearchApi(string search)
+        public async Task<List<RoflDTO>> SearchApi()
         {
             //var Search = new RoflDTO
             //{
@@ -436,9 +436,14 @@ namespace Kursovay2.API
             //};
             HttpResponseMessage response = await httpClient.GetAsync("Account/SearchName");
 
+          
             if (response.IsSuccessStatusCode)
             {
+                string json = await response.Content.ReadAsStringAsync();
+                List<RoflDTO> searchResults = JsonConvert.DeserializeObject<List<RoflDTO>>(json);
 
+                return searchResults;
+                
             }
             else
             {

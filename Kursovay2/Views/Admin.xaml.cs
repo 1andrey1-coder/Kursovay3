@@ -50,7 +50,7 @@ namespace Kursovay2.Admin
             //для отображения данных
             GenreComboBox();
             LoadData();
-            SearchApi();
+            //SearchApi();
 
 
 
@@ -64,11 +64,11 @@ namespace Kursovay2.Admin
 
         }
 
-        public async void SearchApi()
-        {
-            string search = myTextBox.Text;
-            await Client.Instance.SearchApi(search);
-        }
+        //public async void SearchApi()
+        //{
+        //    string search = myTextBox.Text;
+        //    await Client.Instance.SearchApi(search);
+        //}
 
         private async void GenreComboBox()
         {
@@ -88,6 +88,19 @@ namespace Kursovay2.Admin
         private async void LoadData()
         {
             List<RoflDTO> Rofl = await Client.Instance.GetListRofl();
+
+            if (Rofl != null)
+            {
+                AdminListView.ItemsSource = Rofl;
+            }
+            else
+            {
+                MessageBox.Show("Failed to load data from API");
+            }
+        }
+        private async void DataSearch()
+        {
+            List<RoflDTO> Rofl = await Client.Instance.SearchApi();
 
             if (Rofl != null)
             {
@@ -155,40 +168,7 @@ namespace Kursovay2.Admin
                 DragMove();
             }
         }
-        private void ClickAddNewRof(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ClickEditRof(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ClickHistoryRof(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ClickStatuseDone(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ClickStatuseAwaiting(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ClickStatuseInProgress(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonCheckAllRof(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
 
         private void ClickAdminToMainWindow(object sender, RoutedEventArgs e)
         {
@@ -328,23 +308,27 @@ namespace Kursovay2.Admin
 
         }
 
-        private void Focus(object sender, RoutedEventArgs e)
+        private async void Focus(object sender, RoutedEventArgs e)
         {
-            if(myTextBox.Text == "Введите данные")
+            string search = myTextBox.Text;
+            await Client.Instance.SearchApi();
+
+            if (myTextBox.Text == "Введите данные")
             {
                 myTextBox.Text = "";
                 myTextBox.Foreground = Brushes.Gray;
+         
             }
         }
 
-        private void lastFocus(object sender, RoutedEventArgs e)
+        private async void lastFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(myTextBox.Text))
             {
                 myTextBox.Text = "Введите данные";
                 myTextBox.Foreground = Brushes.Gray;
             }
-
+            
         }
 
         private void library(object sender, RoutedEventArgs e)
