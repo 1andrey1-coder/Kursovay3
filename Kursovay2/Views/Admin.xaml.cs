@@ -310,8 +310,8 @@ namespace Kursovay2.Admin
 
         private async void Focus(object sender, RoutedEventArgs e)
         {
-            string search = myTextBox.Text;
-            await Client.Instance.SearchApi();
+            //string search = myTextBox.Text;
+            //await Client.Instance.SearchApi();
 
             if (myTextBox.Text == "Введите данные")
             {
