@@ -329,38 +329,41 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
 
                     <!--Background="{Binding ***, Converter={StaticResource converter}}"-->
                     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                        
-                    <DataGrid x:Name="AdminListView" CanUserAddRows="False" Grid.Row="1" AutoGenerateColumns="False" Background="Transparent"
+                        <DataGrid x:Name="AdminListView" CanUserAddRows="False" Grid.Row="1" AutoGenerateColumns="False" Background="Transparent"
           ItemsSource="{Binding Rofl}" SelectedItem="{Binding SelectedRofl}" SelectionMode="Single">
                         <DataGrid.Columns>
                             <DataGridTemplateColumn>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        
-                                      
-                                        <Grid >
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto"/>
-                                                 <ColumnDefinition/>
+                                        <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition/>
                                                 </Grid.ColumnDefinitions>
-                                            
-                                           
-                                          <StackPanel Orientation="Vertical">
 
-                                                    <Border Background="Transparent" Padding="5"
-                                                    Grid.Column="0" BorderBrush="Gray" BorderThickness="0.5" >
+                                                <StackPanel Grid.Column="0">
+                                                    <Border  Background="Transparent" Padding="5"
+                                                            Grid.Column="0" BorderBrush="Transparent" BorderThickness="0.5" >
                                                         <Image MaxWidth="300" Source="{Binding RoflImage}" Stretch="UniformToFill"/>
                                                     </Border>
-                                                    <Border Background="Transparent" Width="300" Padding="5" BorderBrush="Gray" 
-                                                    Margin="3" HorizontalAlignment="Left" BorderThickness="0.5" Grid.Column="1">
-                                                <StackPanel HorizontalAlignment="Right">
-                                                        <TextBlock Background="Transparent"  Text="{Binding RoflName,
-                                StringFormat='Название: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
-                                                       
                                                 </StackPanel>
+                                            
+                                                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+                                                    
+                                                    
+                                                    <Border Background="Transparent" Width="300" Padding="5" BorderBrush="Transparent" 
+                                                    Margin="3" HorizontalAlignment="Left" BorderThickness="0.5" Grid.Column="1">
+                                                        <Border>
+                                                            <StackPanel HorizontalAlignment="Right">
+                                                                <TextBlock Background="Transparent"  Text="{Binding RoflName,
+                                                                StringFormat='Название: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
+                       
+                                                            </StackPanel>   
+                                                        </Border>
+                                                
 
-                                            </Border>
-                                            <Border Background="Transparent" Width="150" Padding="5" BorderBrush="Gray" 
+                                                    </Border>
+                                                    <Border Background="Transparent" Width="150" Padding="5" BorderBrush="Transparent"
                                                     Margin="3" HorizontalAlignment="Left" BorderThickness="0.5" Grid.Column="2">
                                                     
                                                     <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
@@ -376,7 +379,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                             </DataGridTemplateColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                    </ScrollViewer>
+                </ScrollViewer>
 
 
 

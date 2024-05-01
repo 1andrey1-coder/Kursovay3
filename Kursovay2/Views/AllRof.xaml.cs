@@ -54,7 +54,7 @@ namespace Kursovay2.Views
 
         private void LoadDefaultImage()
         {
-            var stream = Application.GetResourceStream(new Uri("Images/NotImage.png", UriKind.Relative));
+            var stream = Application.GetResourceStream(new Uri("Images\\NotImage.png", UriKind.Relative));
             defaultImage = new byte[stream.Stream.Length];
             stream.Stream.Read(defaultImage, 0, defaultImage.Length);
         }
