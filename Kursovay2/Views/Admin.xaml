@@ -219,9 +219,9 @@ Click="btnClose_Click">
                                         </ControlTemplate>
                                     </Button.Template>
                                 </Button>
-                                <StackPanel Margin="5" Orientation="Vertical" Width="159"  >
-                                    <TextBlock HorizontalAlignment="Center" Text="Сортировка по Эпичности" Foreground="White" />
-                                    <ComboBox ItemsSource="{Binding Sorting, UpdateSourceTrigger=PropertyChanged}" 
+                                <StackPanel Margin="5" Orientation="Vertical" Width="100"  >
+                                    <TextBlock HorizontalAlignment="Center" Text="Гэг" Foreground="White" />
+                                    <ComboBox x:Name="AdminComboBoxTeg" ItemsSource="{Binding Teg, UpdateSourceTrigger=PropertyChanged}" 
 SelectedItem="{Binding SelectedSorting, UpdateSourceTrigger=PropertyChanged}"/>
                                 </StackPanel>
 

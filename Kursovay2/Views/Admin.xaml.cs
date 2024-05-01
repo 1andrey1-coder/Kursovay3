@@ -309,8 +309,9 @@ namespace Kursovay2.Admin
 
         private async void ResetSearch(object sender, RoutedEventArgs e)
         {
-            string search = myTextBox.Text;
-            search.Remove(search.Length - 1);
+             myTextBox.Text= string.Empty;
+            AdminComboBoxTeg .SelectedIndex = -1;
+            AdminComboBoxGenre .SelectedIndex = -1;
 
            
 
