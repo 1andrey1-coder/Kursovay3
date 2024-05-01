@@ -193,7 +193,7 @@ Click="btnClose_Click">
                        BorderThickness="2" Background="Transparent">
 
                     <StackPanel Orientation="Vertical">
-                        <Image Source="\Images\ImageNull2png" />
+                        <Image Source="{Binding LoginImage}" Stretch="UniformToFill"/>
                     </StackPanel>
 
                 </Border>

@@ -18,6 +18,8 @@ namespace Kursovay2.API
 
         public int RoleId { get; set; }
 
+        public byte[]? LoginImage { get; set; }
+
 
     }
 }

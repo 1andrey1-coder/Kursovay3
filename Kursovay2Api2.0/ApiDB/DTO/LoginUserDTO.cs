@@ -11,9 +11,11 @@ public class LoginUserDTO
 
     public string? LoginPassword { get; set; }
 
-    public string? Mail { get; set; }
-
     public int? RoleId { get; set; }
 
-    
+    public string? Mail { get; set; }
+
+    public byte[]? LoginImage { get; set; }
+
+
 }
