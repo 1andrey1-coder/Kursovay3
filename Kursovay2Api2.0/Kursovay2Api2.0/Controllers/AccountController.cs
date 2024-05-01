@@ -345,6 +345,15 @@ namespace Kursovay2Api2._0.Controllers
 
         //работает как надо
 
+
+        [HttpGet("SlangOldList")]
+        public async Task<ActionResult<IEnumerable<SlangAndOld>>> SlangList()
+        {
+            return await _memContext.SlangAndOlds.ToListAsync();
+        }
+
+
+
         [HttpGet("RoflList")]
         public async Task<ActionResult<IEnumerable<RoflDTO>>> RoflList()
         {

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using ApiDB.DB;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApiDB.DB;
+namespace ApiDB;
 
 public partial class MemContext : DbContext
 {
@@ -24,6 +25,8 @@ public partial class MemContext : DbContext
     public virtual DbSet<Rofl> Rofls { get; set; }
 
     public virtual DbSet<Role> Roles { get; set; }
+
+    public virtual DbSet<SlangAndOld> SlangAndOlds { get; set; }
 
     public virtual DbSet<Start> Starts { get; set; }
 
@@ -98,6 +101,13 @@ public partial class MemContext : DbContext
             entity.Property(e => e.Role1)
                 .HasMaxLength(50)
                 .HasColumnName("Role");
+        });
+
+        modelBuilder.Entity<SlangAndOld>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("SlangAndOld");
         });
 
         modelBuilder.Entity<Start>(entity =>

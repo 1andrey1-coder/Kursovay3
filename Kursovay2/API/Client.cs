@@ -38,7 +38,7 @@ namespace Kursovay2.API
 
         //private readonly HttpClient _httpClient;
 
-        
+
         public async Task<LoginUserDTO> UserLogin(string password, string mail)
         {
             var loginuUser = new LoginName
@@ -174,13 +174,13 @@ namespace Kursovay2.API
                 LoginPassword = password,
                 LoginName = name,
                 Mail = mail,
-                
-                
+
+
             };
-            HttpResponseMessage response = await httpClient.PutAsJsonAsync($"Account/UpdateProfile/{id}",resertPasswordProfile);
+            HttpResponseMessage response = await httpClient.PutAsJsonAsync($"Account/UpdateProfile/{id}", resertPasswordProfile);
             if (!response.IsSuccessStatusCode)
                 MessageBox.Show("Не получилось перезаписать новый пароль", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
-            if(response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
             {
                 MessageBox.Show("Данные изменены", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
             }
@@ -203,7 +203,7 @@ namespace Kursovay2.API
 
             return null;
         }
-     
+
         //Failed to load data from API
         public async Task<List<RoflDTO>> GetListRofl()
         {
@@ -220,40 +220,40 @@ namespace Kursovay2.API
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            
-          
+
+
 
             return null;
         }
 
         public async Task<bool> VerifyCode(string email, string code)
         {
-            
-                var verificationData = new ResetDTO
-                {
-                    Mail = email,
-                    Code = code
-                };
+
+            var verificationData = new ResetDTO
+            {
+                Mail = email,
+                Code = code
+            };
 
             //var json = JsonConvert.SerializeObject(verificationData);
             //var data = new StringContent(json, Encoding.UTF8, "application/json");
 
             var response = await httpClient.PostAsJsonAsync("Account/VerifyCode", verificationData);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    return true;
-                }
-                else
-                {
-                    // Обработка случаев, когда проверка не прошла
-                    return false;
-                }
-            
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                // Обработка случаев, когда проверка не прошла
+                return false;
+            }
+
         }
         public async Task<List<StatusDTO>> GetComboBoxStatus()
         {
@@ -346,12 +346,12 @@ namespace Kursovay2.API
             //RoflGenreId = combobox,
             //RoflEndId = combobox,
             //RoflStatusId = combobox,
-                combobox.RoflImage = combobox.RoflImage;
-                combobox.RoflDateTime = combobox.RoflDateTime;
-                combobox.RoflName = combobox.RoflName;
-                combobox.RoflMinOpisanie = combobox.RoflMinOpisanie;
-                combobox.RoflOpisanie = combobox.RoflOpisanie;
-            
+            combobox.RoflImage = combobox.RoflImage;
+            combobox.RoflDateTime = combobox.RoflDateTime;
+            combobox.RoflName = combobox.RoflName;
+            combobox.RoflMinOpisanie = combobox.RoflMinOpisanie;
+            combobox.RoflOpisanie = combobox.RoflOpisanie;
+
             // Отправка данных в контроллер через API
             HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/AddRofl", combobox);
 
@@ -369,7 +369,7 @@ namespace Kursovay2.API
 
 
         }
-        
+
         public async Task<RoflDTO> SendUserPutData(RoflDTO combobox)
         {
 
@@ -428,22 +428,22 @@ namespace Kursovay2.API
 
         }
 
-        public async Task<List<RoflDTO>> SearchApi()
+        public async Task<List<RoflDTO>> SearchApi(string search)
         {
             //var Search = new RoflDTO
             //{
             //    RoflName = search.RoflName,
             //};
-            HttpResponseMessage response = await httpClient.GetAsync("Account/SearchName");
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/SearchName", search);
 
-          
+
             if (response.IsSuccessStatusCode)
             {
                 string json = await response.Content.ReadAsStringAsync();
                 List<RoflDTO> searchResults = JsonConvert.DeserializeObject<List<RoflDTO>>(json);
 
                 return searchResults;
-                
+
             }
             else
             {
@@ -454,12 +454,31 @@ namespace Kursovay2.API
         }
 
 
-            //ilchenkor1135@suz-ppk.ru
-            //BU0GiMZa Дома
-            //91T6Fz7h колледж
+        public async Task<List<SlangAndOldDTO>> GetSlangOld()
+        {
+            HttpResponseMessage response = await httpClient.GetAsync("Account/SlangOldList");
+
+            if (response.IsSuccessStatusCode)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+            List<SlangAndOldDTO> getSlang = JsonConvert.DeserializeObject<List<SlangAndOldDTO>>(json);
+                return getSlang;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
+    //ilchenkor1135@suz-ppk.ru
+    //BU0GiMZa Дома
+    //91T6Fz7h колледж
 
 
 
-} 
+}
+
+
+
+
 

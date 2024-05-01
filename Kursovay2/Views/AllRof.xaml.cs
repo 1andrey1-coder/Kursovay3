@@ -41,8 +41,8 @@ namespace Kursovay2.Views
         public AllRof()
         {
             InitializeComponent();
-            LoadDefaultImage();
             LoadData();
+            LoadDefaultImage();
             DisplayUserInfo();
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);

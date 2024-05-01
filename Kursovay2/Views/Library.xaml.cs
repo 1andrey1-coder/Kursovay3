@@ -1,6 +1,8 @@
-﻿using Kursovay2.Models;
+﻿using Kursovay2.API;
+using Kursovay2.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +22,83 @@ namespace Kursovay2.Views
     /// </summary>
     public partial class Library : Window
     {
+        private SlangAndOldDTO selectSlang;
+
+        public SlangAndOldDTO SelectSlang
+        {
+            get => selectSlang;
+            set
+            {
+                selectSlang = value;
+            }
+        }
+
+        public ObservableCollection<SlangAndOldDTO> Slang { get; set; }
+
         public Library()
         {
             InitializeComponent();
+            GetSlangOlds();
+            DisplayUserInfo();
+        }
+        private async void DisplayUserInfo()
+        {
+
+            LoginUserDTO login1 = await Client.Instance.GetUser(SingleProfle.user.LoginId);
+
+            if (login1 != null)
+            {
+
+                textBlockUserName.Content = login1.LoginName;
+            }
+            else
+            {
+                textBlockUserName.Content = "User not found";
+            }
+
+
+
+
+
+        }
+        public async void GetSlangOlds()
+        {
+            List<SlangAndOldDTO> getSlang = await Client.Instance.GetSlangOld();
+
+            if (getSlang != null)
+            {
+                foreach (SlangAndOldDTO item in getSlang)
+                {
+
+                    SlangView.Items.Add(item);
+
+                }
+            }
+        }
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow.WindowState = WindowState.Minimized;
+        }
+        private void btnMax_Click(object sender, RoutedEventArgs e)
+        {
+            //Window parentWindow = Window.GetWindow(this);
+            //parentWindow.WindowState = WindowState.Maximized;
+            if (WindowState == WindowState.Normal)
+            {
+                // Меняем размер окна на максимальный
+                WindowState = WindowState.Maximized;
+            }
+            else
+            {
+                // Меняем размер окна на обычный
+                WindowState = WindowState.Normal;
+            }
         }
 
         private void ClickToMainWindow(object sender, RoutedEventArgs e)
@@ -67,19 +143,5 @@ namespace Kursovay2.Views
 
         }
 
-        private void btnMinimize_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnMax_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using ApiDB.DB;
 
-namespace ApiDB.DB;
+namespace ApiDB;
 
 public partial class LoginUser
 {

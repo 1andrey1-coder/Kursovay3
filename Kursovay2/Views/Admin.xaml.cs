@@ -32,6 +32,7 @@ namespace Kursovay2.Admin
         bool hidden;
         private RoflDTO selectRofl;
         private int selectedId;
+        private string searchText = "";
 
         public ObservableCollection<RoflDTO> Rofl { get; set; }
 
@@ -44,14 +45,37 @@ namespace Kursovay2.Admin
                 }
         }
 
+        public string SearchText
+        {
+            get => searchText;
+            set 
+            { 
+                searchText = value;
+                Search();
+            }
+        }
+        private void Search()
+        {
+            try
+            {
+                string search = myTextBox.Text;
+                Client.Instance.SearchApi(search);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         public Admin(LoginUserDTO user)
         {
             InitializeComponent();
             //для отображения данных
             GenreComboBox();
             LoadData();
+            //Search();
             //SearchApi();
-
+         
 
 
 
@@ -63,12 +87,6 @@ namespace Kursovay2.Admin
             panelWidth = sidePanel.Width; 
 
         }
-
-        //public async void SearchApi()
-        //{
-        //    string search = myTextBox.Text;
-        //    await Client.Instance.SearchApi(search);
-        //}
 
         private async void GenreComboBox()
         {
@@ -98,19 +116,19 @@ namespace Kursovay2.Admin
                 MessageBox.Show("Failed to load data from API");
             }
         }
-        private async void DataSearch()
-        {
-            List<RoflDTO> Rofl = await Client.Instance.SearchApi();
+        //private async void DataSearch()
+        //{
+        //    List<RoflDTO> Rofl = await Client.Instance.SearchApi();
 
-            if (Rofl != null)
-            {
-                AdminListView.ItemsSource = Rofl;
-            }
-            else
-            {
-                MessageBox.Show("Failed to load data from API");
-            }
-        }
+        //    if (Rofl != null)
+        //    {
+        //        AdminListView.ItemsSource = Rofl;
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Failed to load data from API");
+        //    }
+        //}
 
 
         private async void DisplayUserInfo()
@@ -308,28 +326,27 @@ namespace Kursovay2.Admin
 
         }
 
-        private async void Focus(object sender, RoutedEventArgs e)
-        {
-            //string search = myTextBox.Text;
-            //await Client.Instance.SearchApi();
+        //private async void Focus(object sender, RoutedEventArgs e)
+        //{
+          
 
-            if (myTextBox.Text == "Введите данные")
-            {
-                myTextBox.Text = "";
-                myTextBox.Foreground = Brushes.Gray;
+        //    if (myTextBox.Text == "Введите данные")
+        //    {
+        //        myTextBox.Text = "";
+        //        myTextBox.Foreground = Brushes.Gray;
          
-            }
-        }
+        //    }
+        //}
 
-        private async void lastFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(myTextBox.Text))
-            {
-                myTextBox.Text = "Введите данные";
-                myTextBox.Foreground = Brushes.Gray;
-            }
+        //private async void lastFocus(object sender, RoutedEventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(myTextBox.Text))
+        //    {
+        //        myTextBox.Text = "Введите данные";
+        //        myTextBox.Foreground = Brushes.Gray;
+        //    }
             
-        }
+        //}
 
         private void library(object sender, RoutedEventArgs e)
         {
