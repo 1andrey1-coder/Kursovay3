@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -58,8 +59,8 @@ namespace Kursovay2.Admin
         {
             try
             {
-                string search = myTextBox.Text;
-                Client.Instance.SearchApi(search);
+                //string search = myTextBox.Text;
+                //Client.Instance.SearchApi(search);
             }
             catch (Exception ex)
             {
@@ -320,10 +321,12 @@ namespace Kursovay2.Admin
 
 
         }
+      
 
-        private void ResetSearch(object sender, RoutedEventArgs e)
+        private async void ResetSearch(object sender, RoutedEventArgs e)
         {
-
+           
+              
         }
 
         //private async void Focus(object sender, RoutedEventArgs e)

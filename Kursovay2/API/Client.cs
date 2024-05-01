@@ -428,13 +428,13 @@ namespace Kursovay2.API
 
         }
 
-        public async Task<List<RoflDTO>> SearchApi(string search)
+        public async Task<List<RoflDTO>> SearchApi()
         {
             //var Search = new RoflDTO
             //{
             //    RoflName = search.RoflName,
             //};
-            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/SearchName", search);
+            HttpResponseMessage response = await httpClient.GetAsync("Account/SearchName");
 
 
             if (response.IsSuccessStatusCode)
@@ -491,7 +491,7 @@ namespace Kursovay2.API
 
     }
 
-
+    
 
     //ilchenkor1135@suz-ppk.ru
     //BU0GiMZa Дома

@@ -585,7 +585,7 @@ namespace Kursovay2Api2._0.Controllers
         }
         //Обнова пароля/логина/почты
 
-        [HttpPost("SearchName")]
+        [HttpGet("SearchName")]
         public async Task<ActionResult<IEnumerable<RoflDTO>>> Search(string searchName)
         {
             try
