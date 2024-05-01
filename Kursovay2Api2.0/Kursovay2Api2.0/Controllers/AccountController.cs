@@ -352,6 +352,12 @@ namespace Kursovay2Api2._0.Controllers
             return await _memContext.SlangAndOlds.ToListAsync();
         }
 
+        [HttpGet("ListUserAdmin")]
+        public async Task<ActionResult<IEnumerable<LoginUser>>> ListUserAdmins()
+        {
+            return await _memContext.LoginUsers.ToListAsync();
+        }
+
 
 
         [HttpGet("RoflList")]

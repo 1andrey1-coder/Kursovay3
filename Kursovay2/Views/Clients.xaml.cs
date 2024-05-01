@@ -2,6 +2,7 @@
 using Kursovay2.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,16 +27,45 @@ namespace Kursovay2.Views
         DispatcherTimer timer;
         double panelWidth;
         bool hidden;
+        private LoginUserDTO selectedClients;
 
+        public LoginUserDTO SelectedClients
+        {
+            get => selectedClients;
+            set 
+            { 
+                selectedClients = value;
+            }
+        }
+        
         public Clients()
         {
             InitializeComponent();
+            LoadData();
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
             timer.Tick += Timer_Tick;
 
             panelWidth = sidePanel.Width;
         }
+
+        private async void LoadData()
+        {
+            List<LoginUserDTO> Rofl = await Client.Instance.ListUserAdmin();
+
+
+            if (Rofl != null)
+            {
+
+                AdminListView.ItemsSource = Rofl;
+
+            }
+            else
+            {
+                MessageBox.Show("Failed to load data from API");
+            }
+        }
+
         private void Timer_Tick(object sender, EventArgs e)
         {
             if (hidden)

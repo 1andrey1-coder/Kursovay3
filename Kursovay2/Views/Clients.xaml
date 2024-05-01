@@ -298,53 +298,67 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
 
                         </StackPanel>
 
+
+                      
+
                     </Grid>
 
                 </StackPanel>
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
-        Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" >
+Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="2" >
 
                     <!--Сделать в виде карточек, вывод всех шуток-->
 
+                    <!--Background="{Binding ***, Converter={StaticResource converter}}"-->
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        <DataGrid x:Name="AdminListView" CanUserAddRows="False" Grid.Row="1" AutoGenerateColumns="False" Background="Transparent"
+  ItemsSource="{Binding Client}" SelectedItem="{Binding SelectedClients}" SelectionMode="Single">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <StackPanel Grid.Column="0">
+                                                    <Border  Background="Transparent" Padding="5"
+                                                    Grid.Column="0" BorderBrush="Transparent" BorderThickness="0.5" >
+                                                        <Image MaxWidth="300" Source="{Binding LoginImage}" Stretch="UniformToFill"/>
+                                                    </Border>
+                                                </StackPanel>
+
+                                                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+
+
+                                                    <Border Background="Transparent" Width="300" Padding="5" BorderBrush="Transparent" 
+                                            Margin="3" HorizontalAlignment="Left" BorderThickness="0.5" Grid.Column="1">
+                                                        <Border>
+                                                            <StackPanel HorizontalAlignment="Right">
+                                                                <TextBlock Background="Transparent"  Text="{Binding LoginName,
+                                                        StringFormat='Название: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
+
+                                                            </StackPanel>
+                                                        </Border>
+
+
+                                                    </Border>
+                                                  
+
+                                                </StackPanel>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </ScrollViewer>
 
 
 
 
-
-
-                    <!--<ListView 
-ItemsSource="{Binding stagesRof}" 
-SelectedItem="{Binding SelectedStage}" Margin="5">
-
-                        <ListView.ContextMenu>
-                            <ContextMenu>
-                                <MenuItem Header="Описания шутки" Click="ClickOpisaniaRof"/>
-                            </ContextMenu>
-                        </ListView.ContextMenu>
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Header="Тэг" Width="35"  
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
-                              />
-
-                                <GridViewColumn Header="Автор" Width="110" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
-                                <GridViewColumn Header="Завершение шутки" Width="140" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
-                                <GridViewColumn Header="Название шутки/рофла" Width="150" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-DisplayMemberBinding="{Binding Title}"/>
-                                <GridViewColumn Header="Небольшое описание" Width="150" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
-                                <GridViewColumn Header="Статус" Width="100" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>-->
                 </ScrollViewer>
             </Grid>
         </Border>

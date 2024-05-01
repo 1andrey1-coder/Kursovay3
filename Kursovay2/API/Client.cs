@@ -470,7 +470,29 @@ namespace Kursovay2.API
             }
 
         }
+      
+
+        public async Task<List<LoginUserDTO>> ListUserAdmin()
+        {
+            HttpResponseMessage response = await httpClient.GetAsync("Account/ListUserAdmin");
+
+            if (response.IsSuccessStatusCode)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+                List<LoginUserDTO> getSlang = JsonConvert.DeserializeObject<List<LoginUserDTO>>(json);
+                return getSlang;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
     }
+
+
+
     //ilchenkor1135@suz-ppk.ru
     //BU0GiMZa Дома
     //91T6Fz7h колледж
