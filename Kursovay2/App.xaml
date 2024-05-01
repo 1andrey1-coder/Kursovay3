@@ -7,7 +7,7 @@
         <Style x:Key="Grid" TargetType="Grid">
             <Setter Property="Grid.Background" Value="#6195c9"/>
         </Style>
-
+      
 
         <!--<Style TargetType="DataGridCell">
             <Setter Property="Background" Value="Transparent"/>

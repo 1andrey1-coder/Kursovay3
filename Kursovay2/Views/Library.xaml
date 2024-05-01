@@ -279,7 +279,13 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
 
                     <ListView x:Name="SlangView"  ItemsSource="{Binding Slang}" 
 SelectedItem="{Binding SelectSlang}">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
                         <ListView.View>
+                            
                             <GridView>
                                 <GridViewColumn Header="Молодежный Слэнг" Width="350"  
                                     HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
