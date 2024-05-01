@@ -331,6 +331,7 @@ namespace Kursovay2.API
                 List<GenreDTO> comboBoxData = JsonConvert.DeserializeObject<List<GenreDTO>>(json);
                 return comboBoxData;
             }
+
             else
             {
                 return null;
