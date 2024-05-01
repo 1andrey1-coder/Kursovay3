@@ -310,22 +310,9 @@ namespace Kursovay2.Admin
         private async void ResetSearch(object sender, RoutedEventArgs e)
         {
             string search = myTextBox.Text;
-            await Client.Instance.SearchApi(search);
+            search.Remove(search.Length - 1);
 
-            if (search != null)
-            {
-
-                List<RoflDTO> Rofl = await Client.Instance.SearchApi(search);
-
-                if (Rofl != null)
-                {
-                    AdminListView.ItemsSource = Rofl;
-                }
-                else
-                {
-                    MessageBox.Show("Failed to load data from API");
-                }
-            }
+           
 
         }
 
