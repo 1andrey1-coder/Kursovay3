@@ -344,7 +344,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                                                 <StackPanel Grid.Column="0">
                                                     <Border  Background="Transparent" Padding="5"
                                                             Grid.Column="0" BorderBrush="Transparent" BorderThickness="0.5" >
-                                                        <Image MaxWidth="300" Source="{Binding RoflImage}" Stretch="UniformToFill"/>
+                                                        <Image MaxWidth="300" Source="{Binding RoflImage}"  Stretch="UniformToFill"/>
                                                     </Border>
                                                 </StackPanel>
                                             

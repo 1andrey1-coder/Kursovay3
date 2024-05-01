@@ -585,8 +585,8 @@ namespace Kursovay2Api2._0.Controllers
         }
         //Обнова пароля/логина/почты
 
-        [HttpGet("SearchName")]
-        public async Task<ActionResult<IEnumerable<RoflDTO>>> Search(string searchName)
+        [HttpPost("SearchName")]
+        public async Task<ActionResult<IEnumerable<RoflDTO>>> Search([FromBody]string searchName)
         {
             try
             {
@@ -595,10 +595,22 @@ namespace Kursovay2Api2._0.Controllers
 
                
                 IQueryable<RoflDTO> search;
-                search = _memContext.Rofls.Where(s => s.RoflName.Contains(searchName)).Select(s=>new RoflDTO 
-                { 
+                search = _memContext.Rofls.Where(s => s.RoflName.Contains(searchName)).
+                Select(s => new RoflDTO 
+                {
+
+                    Teg = s.Teg.TegName,
+
                     RoflName = s.RoflName,
                     RoflOpisanie = s.RoflOpisanie,
+                    RoflDateTime = s.RoflDateTime,
+                    RoflEnd = s.RoflEnd.EndName,
+                    RoflGenre = s.RoflGenre.GenreName,
+                    RoflMinOpisanie = s.RoflMinOpisanie,
+                    RoflStart = s.RoflStart.StartName,
+                    RoflStatus = s.RoflStatus.StatusName,
+                  
+
 
                 });
                 //var data = _memContext.Rofls.AsQueryable();

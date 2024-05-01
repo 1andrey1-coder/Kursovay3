@@ -55,12 +55,11 @@ namespace Kursovay2.Admin
                 Search();
             }
         }
-        private void Search()
+        private async void Search()
         {
             try
             {
-                //string search = myTextBox.Text;
-                //Client.Instance.SearchApi(search);
+                
             }
             catch (Exception ex)
             {
@@ -74,9 +73,7 @@ namespace Kursovay2.Admin
             //для отображения данных
             GenreComboBox();
             LoadData();
-            //Search();
             //SearchApi();
-         
 
 
 
@@ -117,19 +114,6 @@ namespace Kursovay2.Admin
                 MessageBox.Show("Failed to load data from API");
             }
         }
-        //private async void DataSearch()
-        //{
-        //    List<RoflDTO> Rofl = await Client.Instance.SearchApi();
-
-        //    if (Rofl != null)
-        //    {
-        //        AdminListView.ItemsSource = Rofl;
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Failed to load data from API");
-        //    }
-        //}
 
 
         private async void DisplayUserInfo()
@@ -325,19 +309,38 @@ namespace Kursovay2.Admin
 
         private async void ResetSearch(object sender, RoutedEventArgs e)
         {
-           
-              
+            string search = myTextBox.Text;
+            await Client.Instance.SearchApi(search);
+
+            if (search != null)
+            {
+
+                List<RoflDTO> Rofl = await Client.Instance.SearchApi(search);
+
+                if (Rofl != null)
+                {
+                    AdminListView.ItemsSource = Rofl;
+                }
+                else
+                {
+                    MessageBox.Show("Failed to load data from API");
+                }
+            }
+
         }
+
+       
+
 
         //private async void Focus(object sender, RoutedEventArgs e)
         //{
-          
+
 
         //    if (myTextBox.Text == "Введите данные")
         //    {
         //        myTextBox.Text = "";
         //        myTextBox.Foreground = Brushes.Gray;
-         
+
         //    }
         //}
 
@@ -348,7 +351,7 @@ namespace Kursovay2.Admin
         //        myTextBox.Text = "Введите данные";
         //        myTextBox.Foreground = Brushes.Gray;
         //    }
-            
+
         //}
 
         private void library(object sender, RoutedEventArgs e)
@@ -377,6 +380,24 @@ namespace Kursovay2.Admin
                 Library userWindow = new Library();
                 userWindow.Show();
                 Close();
+            }
+        }
+
+        private async void TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string search = myTextBox.Text;
+            await Client.Instance.SearchApi(search);
+
+            if (search != null)
+            {
+
+                List<RoflDTO> Rofl = await Client.Instance.SearchApi(search);
+
+                if (Rofl != null)
+                {
+                    AdminListView.ItemsSource = Rofl;
+                }
+
             }
         }
     }

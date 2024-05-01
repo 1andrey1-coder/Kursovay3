@@ -1,6 +1,7 @@
 ﻿using Kursovay2.Views;
 using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -428,13 +429,13 @@ namespace Kursovay2.API
 
         }
 
-        public async Task<List<RoflDTO>> SearchApi()
+        public async Task<List<RoflDTO>> SearchApi(string searchName)
         {
             //var Search = new RoflDTO
             //{
             //    RoflName = search.RoflName,
             //};
-            HttpResponseMessage response = await httpClient.GetAsync("Account/SearchName");
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/SearchName", searchName);
 
 
             if (response.IsSuccessStatusCode)
