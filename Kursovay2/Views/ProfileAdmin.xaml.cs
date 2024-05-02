@@ -1,18 +1,14 @@
 ﻿using Kursovay2.API;
 using Kursovay2.Models;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Kursovay2.Views
 {
@@ -24,8 +20,10 @@ namespace Kursovay2.Views
         public ProfileAdmin()
         {
             InitializeComponent();
-            DisplayUserInfo();
+            SelectedProfile = new LoginUserDTO();
+
             LoadDefaultImage();
+            DisplayUserInfo();
         }
 
 
@@ -33,14 +31,23 @@ namespace Kursovay2.Views
         private async void DisplayUserInfo()
         {
 
-            LoginUserDTO login1 = await Client.Instance.GetUser(SingleProfle.user.LoginId);
+            LoginUserDTO login = await Client.Instance.GetUser(SingleProfle.user.LoginId);
+            //List<LoginUserDTO> image = await Client.Instance.GetAdminUser(SingleProfle.user.LoginId);
 
-            if (login1 != null)
+            //foreach (var d in login)
+            //    if (d.LoginImage == null)
+            //        d.LoginImage = defaultImage;
+
+
+
+            if (login != null)
             {
-
-                textBlockUserName.Text = login1.LoginName;
-                textBlockMail.Text = login1.Mail;
-
+                
+                textBlockUserName.Text = login.LoginName;
+                textBlockMail.Text = login.Mail;
+                //imageText.ItemsSource = login.LoginImage;
+                
+              
             }
             else
             {
@@ -54,6 +61,8 @@ namespace Kursovay2.Views
 
         }
         byte[] defaultImage;
+        private LoginUserDTO selectedProfile;
+
         private void LoadDefaultImage()
         {
             var stream = Application.GetResourceStream(new Uri("Images\\ImageNull2png", UriKind.Relative));
@@ -109,16 +118,66 @@ namespace Kursovay2.Views
 
         private async void ResetPassword(object sender, RoutedEventArgs e)
         {
+            
             int id = SingleProfle.user.LoginId;
             string newPassword = resetPassword.Text;
             string newLogin = resetLogin.Text;
             string newMail = resetMail.Text;
-            await Client.Instance.Profile(id, newPassword, newLogin, newMail);
+            //byte[] image = SelectedProfile.LoginImage;
+
+            if (newPassword != null && newLogin != null && newMail != null )
+            {
+                SelectedProfile = new LoginUserDTO
+                {
+                    LoginId = id,
+                    LoginName = newLogin,
+                    LoginPassword = newPassword,
+                    Mail = newMail,
+                    LoginImage = SelectedProfile.LoginImage
+                };
+                //int selectedStatusId =  statusId.StatusId;
+              
+            }
+            //await Client.Instance.Profile(id, newPassword, newLogin, newMail);
+            await Client.Instance.Profile(SelectedProfile);
         }
 
+        public LoginUserDTO SelectedProfile
+        {
+            get => selectedProfile;
+            set
+            {
+                selectedProfile = value;
+                Signal();
+            }
+        }
+
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        public void Signal([CallerMemberName] string prop = null) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         private void AddPhoto(object sender, RoutedEventArgs e)
         {
+            string dir = Environment.CurrentDirectory + @"\Images\";
+            if (!Directory.Exists(dir))
+                Directory.CreateDirectory(dir);
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Images|*.jpg;";
+            if (dlg.ShowDialog() == true)
+            {
+                var test = new BitmapImage(new Uri(dlg.FileName));
+                if (test.PixelWidth > 2000 || test.PixelHeight > 2000)
+                {
+                    MessageBox.Show("Картинка слишком большая");
+                    return;
+                }
+                string newFile = dir + new FileInfo(dlg.FileName).Name;
+                File.Copy(dlg.FileName, newFile, true);
+                SelectedProfile.LoginImage = File.ReadAllBytes(newFile);
+                Signal("SelectedProfile");
+            }
 
+            
         }
     }
 }

@@ -188,14 +188,20 @@ Click="btnClose_Click">
                     </Button>
                 </Grid>
 
-                <Border Grid.Row="2" Grid.RowSpan="2" Grid.Column="0"  CornerRadius="120" BorderBrush="Gray" 
+               
+                    
+                <Border  Grid.Row="2" Grid.RowSpan="2" Grid.Column="0"  CornerRadius="120" BorderBrush="Gray" 
                        BorderThickness="2" Background="Transparent">
 
                     <StackPanel Orientation="Vertical">
-                        <Image Source="{Binding LoginImage}" Stretch="UniformToFill"/>
+                        
+                           
+                            <Image  Source="{Binding LoginImage}"  Stretch="UniformToFill"/>
+                        
                     </StackPanel>
                     
                 </Border>
+               
                 
                 <!--шапка-->
                 <Grid Grid.Row="1" Grid.ColumnSpan="12" Grid.Column="1">
@@ -352,7 +358,7 @@ BorderBrush="Transparent" Foreground="White" Click="ResetPassword" Height="40">
                         </StackPanel>
                     </Button.Content>
                 </Button>
-                    <Button  Grid.Row="4" Grid.Column="2" Height="40" Width="170"
+                    <Button Click="AddPhoto"  Grid.Row="4" Grid.Column="2" Height="40" Width="170"
                             VerticalAlignment="Top" HorizontalAlignment="Center"
                         BorderBrush="Transparent" Foreground="White"  >
                         <Button.Template>

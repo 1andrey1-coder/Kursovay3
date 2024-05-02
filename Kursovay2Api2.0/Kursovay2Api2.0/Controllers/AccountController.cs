@@ -237,6 +237,7 @@ namespace Kursovay2Api2._0.Controllers
                 {
                     LoginId = user.LoginId,
                     LoginName = user.LoginName,
+                    LoginImage = user.LoginImage,
                     Mail = user.Mail,
                     RoleId = user.RoleId,
                 };
@@ -564,9 +565,9 @@ namespace Kursovay2Api2._0.Controllers
 
         //Обнова пароля/логина/почты
         [HttpPut("UpdateProfile/{userId}")]
-        public async Task<ActionResult> UpdatePassword(int userId, [FromBody] LoginUserDTO newPassword)
+        public async Task<ActionResult> UpdatePassword( [FromBody] LoginUserDTO newPassword)
         {
-            var user = await _memContext.LoginUsers.FindAsync(userId);
+            var user = await _memContext.LoginUsers.FindAsync(newPassword.LoginId);
 
             if (user == null)
             {
@@ -576,6 +577,7 @@ namespace Kursovay2Api2._0.Controllers
             user.LoginPassword = HashPassword(newPassword.LoginPassword);
             user.LoginName = newPassword.LoginName ;
             user.Mail = newPassword.Mail;
+            user.LoginImage = newPassword.LoginImage;
 
             _memContext.LoginUsers.Update(user);
             await _memContext.SaveChangesAsync();

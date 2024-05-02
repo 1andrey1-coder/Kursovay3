@@ -91,6 +91,21 @@ namespace Kursovay2.API
             return userAnswer;
         }
 
+        public async Task<List<LoginUserDTO>> GetAdminUser(int id)
+        {
+            var response = await httpClient.GetAsync($"Account/Login/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<LoginUserDTO>>(content);
+            }
+            else
+            {
+
+            }
+            return null; 
+        }
+
 
         public async Task<LoginUserDTO> GetUser(int id)
         {
@@ -168,17 +183,37 @@ namespace Kursovay2.API
         }
 
 
-        public async Task? Profile(int id, string password, string name, string mail)
+        //public async Task? Profile(int id, string password, string name, string mail, LoginUserDTO image)
+        //{
+        //    var resertPasswordProfile = new LoginUserDTO
+        //    {
+        //        LoginPassword = password,
+        //        LoginName = name,
+        //        Mail = mail,
+
+
+        //    };
+        //    HttpResponseMessage response = await httpClient.PutAsJsonAsync($"Account/UpdateProfile/{id}", resertPasswordProfile);
+        //    if (!response.IsSuccessStatusCode)
+        //        MessageBox.Show("Не получилось перезаписать новый пароль", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        MessageBox.Show("Данные изменены", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
+        //    }
+        //}
+        public async Task? Profile(LoginUserDTO data)
         {
             var resertPasswordProfile = new LoginUserDTO
             {
-                LoginPassword = password,
-                LoginName = name,
-                Mail = mail,
+                LoginId = data.LoginId,
+                LoginPassword = data.LoginPassword,
+                LoginName = data.LoginName,
+                Mail = data.Mail,
+                LoginImage = data.LoginImage,
 
 
             };
-            HttpResponseMessage response = await httpClient.PutAsJsonAsync($"Account/UpdateProfile/{id}", resertPasswordProfile);
+            HttpResponseMessage response = await httpClient.PutAsJsonAsync($"Account/UpdateProfile/{data.LoginId}", resertPasswordProfile);
             if (!response.IsSuccessStatusCode)
                 MessageBox.Show("Не получилось перезаписать новый пароль", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
             if (response.IsSuccessStatusCode)
@@ -186,7 +221,6 @@ namespace Kursovay2.API
                 MessageBox.Show("Данные изменены", "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
-
         public async Task<LoginUserDTO>? PostSmsEmail(string mail)
         {
             var loginuUser = new LoginName
@@ -493,11 +527,11 @@ namespace Kursovay2.API
 
     }
 
-    
+
 
     //ilchenkor1135@suz-ppk.ru
     //BU0GiMZa Дома
-    //91T6Fz7h колледж
+    //1 колледж(a4ayc/80/OGda4BO/1o/V0etpOqiLx1JwB5S3beHW0s=)
 
 
 

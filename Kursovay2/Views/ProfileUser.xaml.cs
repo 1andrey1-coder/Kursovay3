@@ -110,7 +110,7 @@ namespace Kursovay2.Views
             string newPassword = resetPassword.Text;
             string newLogin = resetLogin.Text;
             string newMail = resetMail.Text;
-            await Client.Instance.Profile(id, newPassword, newLogin, newMail);
+            //await Client.Instance.Profile(id, newPassword, newLogin, newMail);
         }
 
         private void AddPhoto(object sender, RoutedEventArgs e)
