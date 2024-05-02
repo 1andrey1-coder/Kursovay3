@@ -48,7 +48,11 @@ namespace Kursovay2.Views
                 textBlockMail.Text = login.Mail;
                 if (login.LoginImage != null)
                 {
-                   
+                    BitmapImage bitmapImage = new BitmapImage();
+                    bitmapImage.BeginInit();
+                    bitmapImage.UriSource = new Uri(Convert.ToBase64String(login.LoginImage));
+                    bitmapImage.EndInit();
+                    imageText.Source = bitmapImage;
                    
                   
                 }

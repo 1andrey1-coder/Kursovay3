@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using ApiDB.DB;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApiDB.DB;
+namespace ApiDB;
 
 public partial class MemContext : DbContext
 {
-    public MemContext()
+    public User43ConMemContexttext()
     {
     }
 

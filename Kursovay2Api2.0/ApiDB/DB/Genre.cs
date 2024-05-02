@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using ApiDB.DB;
 
-namespace ApiDB;
+namespace ApiDB.DB;
 
 public partial class Genre
 {
