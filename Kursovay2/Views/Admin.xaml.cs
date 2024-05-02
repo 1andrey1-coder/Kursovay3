@@ -75,7 +75,7 @@ namespace Kursovay2.Admin
                 foreach (GenreDTO item in comboBoxData)
                 {
 
-                    AdminComboBoxGenre.Items.Add(item);
+                    //AdminComboBoxGenre.Items.Add(item);
 
                 }
             }
@@ -318,7 +318,7 @@ namespace Kursovay2.Admin
         {
              myTextBox.Text= string.Empty;
             AdminComboBoxTeg .SelectedIndex = -1;
-            AdminComboBoxGenre .SelectedIndex = -1;
+            //AdminComboBoxGenre .SelectedIndex = -1;
 
            
 

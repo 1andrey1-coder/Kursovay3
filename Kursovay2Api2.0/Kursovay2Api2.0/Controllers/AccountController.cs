@@ -588,7 +588,7 @@ namespace Kursovay2Api2._0.Controllers
         //Обнова пароля/логина/почты
 
         [HttpPost("SearchName")]
-        public async Task<ActionResult<IEnumerable<RoflDTO>>> Search([FromBody]string searchName)
+        public async Task<ActionResult<IEnumerable<RoflDTO>>> Search([FromBody]string searchName, string comboBoxValue)
         {
             try
             {
@@ -596,8 +596,9 @@ namespace Kursovay2Api2._0.Controllers
                 Include(s => s.RoflEnd).Include(s => s.RoflStatus).Include(s => s.Teg).ToListAsync();
 
                
+
                 IQueryable<RoflDTO> search;
-                search = _memContext.Rofls.Where(s => s.RoflName.Contains(searchName)).
+                search = _memContext.Rofls.Where(s => s.RoflName.Contains(searchName) && s.Teg.TegName == comboBoxValue).
                 Select(s => new RoflDTO 
                 {
 
