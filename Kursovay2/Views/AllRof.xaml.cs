@@ -2,6 +2,8 @@
 using Kursovay2.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,8 +33,8 @@ namespace Kursovay2.Views
         public RoflDTO SelectedRofl
         {
             get => selectedRofl;
-            set 
-            { 
+            set
+            {
                 selectedRofl = value;
             }
         }
@@ -41,15 +43,35 @@ namespace Kursovay2.Views
         public AllRof()
         {
             InitializeComponent();
-            LoadData();
-            LoadDefaultImage();
             DisplayUserInfo();
+            LoadDefaultImage();
+            Test();
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
             timer.Tick += Timer_Tick;
 
             panelWidth = sidePanel.Width;
         }
+
+        private void Test()
+        {
+            var t = new Task(async () =>
+            {
+                await LoadData();
+            });
+            t.ContinueWith(s =>
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Rofl)));
+                });
+            });
+            t.Start();
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        public List<RoflDTO> Rofl { get; set; }
+
         byte[] defaultImage;
 
         private void LoadDefaultImage()
@@ -57,22 +79,25 @@ namespace Kursovay2.Views
             var stream = Application.GetResourceStream(new Uri("Images\\NotImage.png", UriKind.Relative));
             defaultImage = new byte[stream.Stream.Length];
             stream.Stream.Read(defaultImage, 0, defaultImage.Length);
+
         }
-        private async void LoadData()
+        private async Task LoadData()
         {
             List<RoflDTO> Rofl = await Client.Instance.GetListRofl();
-
-           
-            if (Rofl != null)
+            foreach (var d in Rofl)
+                if (d.RoflImage == null)
+                    d.RoflImage = defaultImage;
+            Dispatcher.Invoke(() =>
             {
-                
-                AdminListView.ItemsSource = Rofl;
-                
-            }
-            else
-            {
-                MessageBox.Show("Failed to load data from API");
-            }
+                if (Rofl != null)
+                {
+                    AdminListView.ItemsSource = Rofl;
+                }
+                else
+                {
+                    MessageBox.Show("Failed to load data from API");
+                }
+            });
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -142,7 +167,7 @@ namespace Kursovay2.Views
 
         private void ClickToAdminWindow(object sender, RoutedEventArgs e)
         {
-            Admin.Admin admin = new Admin.Admin(SingleProfle.user);    
+            Admin.Admin admin = new Admin.Admin(SingleProfle.user);
             admin.Show();
             this.Close();
         }
@@ -206,6 +231,6 @@ namespace Kursovay2.Views
             }
         }
 
-    
+
     }
 }

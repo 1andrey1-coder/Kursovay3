@@ -335,7 +335,7 @@ Click="btnClose_Click">
 
 
                 <Button VerticalAlignment="Top" Grid.Column="1"  Grid.Row="4"
-BorderBrush="Transparent" Foreground="White" Click="AddPhoto" Height="40">
+BorderBrush="Transparent" Foreground="White" Click="ResetPassword" Height="40">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border Width="150" Height="40"

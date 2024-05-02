@@ -4,15 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.Views" 
-         xmlns:convert="clr-namespace:Kursovay2.mvvm.converter"
+       
          mc:Ignorable="d"
         Title="Окно для всех шуток/рофлов" MinHeight="450" Height="500" MinWidth="750" Width="900" 
          WindowStartupLocation="CenterScreen"
          WindowStyle="None" AllowsTransparency="True" Background="Transparent">
 
-    <Window.Resources>
-        <convert:StockToBackground x:Key="converter"/>
-    </Window.Resources>
 
 
 
@@ -344,7 +341,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                                                 <StackPanel Grid.Column="0">
                                                     <Border  Background="Transparent" Padding="5"
                                                             Grid.Column="0" BorderBrush="Transparent" BorderThickness="0.5" >
-                                                        <Image MaxWidth="300" Source="{Binding RoflImage}"  Stretch="UniformToFill"/>
+                                                        <Image x:Name="image" MaxWidth="300" Source="{Binding RoflImage}"  Stretch="UniformToFill"/>
                                                     </Border>
                                                 </StackPanel>
                                             

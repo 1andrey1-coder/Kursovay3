@@ -18,7 +18,7 @@ namespace Kursovay2.API
     {
         HttpClient httpClient = new HttpClient();
 
-        private Client()
+        public Client()
         {
             httpClient.BaseAddress = new Uri(@"https://localhost:7189/api/");
         }
