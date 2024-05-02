@@ -290,7 +290,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                         </StackPanel>
                         <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Bottom"
                                     HorizontalAlignment="Center">
-                            <Image  Source="\Images\ImageNull2png"/>
+                            <Image  Source="\Images\ImageNull2.png"/>
                         </StackPanel>
                     </Grid>
                 </StackPanel>

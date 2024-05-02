@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
 namespace Kursovay2.Views
@@ -42,12 +43,24 @@ namespace Kursovay2.Views
 
             if (login != null)
             {
-                
+
                 textBlockUserName.Text = login.LoginName;
                 textBlockMail.Text = login.Mail;
-                //imageText.ItemsSource = login.LoginImage;
-                
-              
+                if (login.LoginImage != null)
+                {
+                   
+                   
+                  
+                }
+                else
+                {
+
+                    Uri uri = new Uri(Environment.CurrentDirectory + "\\Images\\ImageNull2.png", UriKind.Absolute);
+                    BitmapImage img = new BitmapImage(uri);
+                    imageText.Source = img;
+                }
+
+
             }
             else
             {
@@ -60,15 +73,25 @@ namespace Kursovay2.Views
 
 
         }
+
+        private void PanelHeader_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
         byte[] defaultImage;
         private LoginUserDTO selectedProfile;
 
         private void LoadDefaultImage()
         {
-            var stream = Application.GetResourceStream(new Uri("Images\\ImageNull2png", UriKind.Relative));
-            defaultImage = new byte[stream.Stream.Length];
-            stream.Stream.Read(defaultImage, 0, defaultImage.Length);
+            //var stream = Application.GetResourceStream(new Uri("\\Images\\ImageNull2.png", UriKind.Relative));
+            //defaultImage = new byte[stream.Stream.Length];
+            //stream.Stream.Read(defaultImage, 0, defaultImage.Length);
         }
+
+
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
@@ -82,7 +105,7 @@ namespace Kursovay2.Views
             Window parentWindow = Window.GetWindow(this);
             parentWindow.WindowState = WindowState.Minimized;
         }
-        
+
         private void btnMax_Click(object sender, RoutedEventArgs e)
         {
             //Window parentWindow = Window.GetWindow(this);
@@ -118,14 +141,14 @@ namespace Kursovay2.Views
 
         private async void ResetPassword(object sender, RoutedEventArgs e)
         {
-            
+
             int id = SingleProfle.user.LoginId;
             string newPassword = resetPassword.Text;
             string newLogin = resetLogin.Text;
             string newMail = resetMail.Text;
             //byte[] image = SelectedProfile.LoginImage;
 
-            if (newPassword != null && newLogin != null && newMail != null )
+            if (newPassword != null && newLogin != null && newMail != null)
             {
                 SelectedProfile = new LoginUserDTO
                 {
@@ -136,7 +159,7 @@ namespace Kursovay2.Views
                     LoginImage = SelectedProfile.LoginImage
                 };
                 //int selectedStatusId =  statusId.StatusId;
-              
+
             }
             //await Client.Instance.Profile(id, newPassword, newLogin, newMail);
             await Client.Instance.Profile(SelectedProfile);
@@ -177,7 +200,7 @@ namespace Kursovay2.Views
                 Signal("SelectedProfile");
             }
 
-            
+
         }
     }
 }

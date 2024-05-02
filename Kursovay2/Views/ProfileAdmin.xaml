@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Профиль Админа" MinHeight="450" Height="500" MinWidth="750" Width="900" 
          WindowStartupLocation="CenterScreen"
-         WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+         WindowStyle="None" AllowsTransparency="True" Background="Transparent"  MouseDown="PanelHeader_MouseDown">
 
     <Border CornerRadius="10">
         <Border.Background>
@@ -194,9 +194,9 @@ Click="btnClose_Click">
                        BorderThickness="2" Background="Transparent">
 
                     <StackPanel Orientation="Vertical">
-                        
-                           
-                            <Image  Source="{Binding LoginImage}"  Stretch="UniformToFill"/>
+
+
+                        <Image x:Name="imageText" Source="{Binding LoginImage}"  Stretch="UniformToFill"/>
                         
                     </StackPanel>
                     

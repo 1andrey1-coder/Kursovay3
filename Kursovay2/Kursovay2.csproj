@@ -45,7 +45,6 @@
     <None Remove="Images\back-image.jpg" />
     <None Remove="Images\gmail.png" />
     <None Remove="Images\ImageNull.png" />
-    <None Remove="Images\ImageNull2png" />
     <None Remove="Images\key-icon.png" />
     <None Remove="Images\key.png" />
     <None Remove="Images\logo.png" />
@@ -176,9 +175,6 @@
     <Resource Include="Images\gmail.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\ImageNull2png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Images\key-icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -207,6 +203,9 @@
 
   <ItemGroup>
     <None Update="Gif\gif12.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\ImageNull2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
