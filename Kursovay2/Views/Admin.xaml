@@ -225,12 +225,12 @@ Click="btnClose_Click">
 SelectedItem="{Binding SelectedGenre, UpdateSourceTrigger=PropertyChanged}"/>
                                 </StackPanel>
 
-                                <StackPanel Margin="5" Orientation="Vertical" Width="75" >
+                                <!--<StackPanel Margin="5" Orientation="Vertical" Width="75" >
                                     <TextBlock Text="Жанр" HorizontalAlignment="Center" Foreground="White" />
                                     <ComboBox  ItemsSource="{Binding Genre, UpdateSourceTrigger=PropertyChanged}" 
                                               SelectedItem="{Binding SelectedGenre, UpdateSourceTrigger=PropertyChanged}"
 x:Name="AdminComboBoxGenre"  DisplayMemberPath="GenreName"/>
-                                </StackPanel>
+                                </StackPanel>-->
                             </StackPanel>
 
 

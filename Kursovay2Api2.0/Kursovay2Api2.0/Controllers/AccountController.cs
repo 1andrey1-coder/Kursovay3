@@ -602,7 +602,6 @@ namespace Kursovay2Api2._0.Controllers
                 {
 
                     Teg = s.Teg.TegName,
-
                     RoflName = s.RoflName,
                     RoflOpisanie = s.RoflOpisanie,
                     RoflDateTime = s.RoflDateTime,
