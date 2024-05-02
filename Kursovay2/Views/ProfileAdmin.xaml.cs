@@ -44,6 +44,7 @@ namespace Kursovay2.Views
             if (login != null)
             {
 
+
                 textBlockUserName.Text = login.LoginName;
                 textBlockMail.Text = login.Mail;
                 if (login.LoginImage != null)
