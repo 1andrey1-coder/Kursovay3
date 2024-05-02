@@ -131,9 +131,9 @@ namespace Kursovay2.User
 
         private void ClickAdmini(object sender, RoutedEventArgs e)
         {
-            Views.Admini_We_ admini_We_ = new Views.Admini_We_();
-            admini_We_.Show();
-            this.Close();
+            //Views.Admini_We_ admini_We_ = new Views.Admini_We_();
+            //admini_We_.Show();
+            //this.Close();
         }
 
         //private void ClickGey(object sender, RoutedEventArgs e)

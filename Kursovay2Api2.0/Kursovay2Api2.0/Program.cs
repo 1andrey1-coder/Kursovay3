@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 //база данных
 builder.Services.AddSingleton<MailService>();
 builder.Services.AddSingleton<CodeRequest>();
-builder.Services.AddDbContext<MemContext>();
+builder.Services.AddDbContext<ApiDB.DB.MemContext>();
 
 var app = builder.Build();
 

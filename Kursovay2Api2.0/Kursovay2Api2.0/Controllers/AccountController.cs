@@ -24,11 +24,11 @@ namespace Kursovay2Api2._0.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
-        private readonly MemContext _memContext;
+        private readonly ApiDB.DB.MemContext _memContext;
         private readonly MailService mail;
         private readonly CodeRequest codeRequest;
 
-        public AccountController(MemContext userService, MailService mail, CodeRequest code)
+        public AccountController(ApiDB.DB.MemContext userService, MailService mail, CodeRequest code)
         {
             //MemContext.OnConfigurate(userService);
             _memContext = userService;
