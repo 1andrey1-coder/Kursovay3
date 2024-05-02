@@ -208,9 +208,22 @@ namespace Kursovay2.Admin
 
         private void AllRof(object sender, RoutedEventArgs e)
         {
-            AllRof allRof = new AllRof();
-            allRof.Show();
-            this.Close();
+            if (SingleProfle.user.RoleId == 1)
+            {
+
+                AllRof allRof = new AllRof();
+                allRof.Show();
+                this.Close();
+            }
+            if (SingleProfle.user.RoleId == 2)
+            {
+                AllRof allRof = new AllRof();
+                allRof.Show();
+                this.Close();
+            }
+            //AllRof allRof = new AllRof();
+            //allRof.Show();
+            //this.Close();
         }
 
 

@@ -199,7 +199,19 @@ namespace Kursovay2.User
 
         private void AllRof(object sender, RoutedEventArgs e)
         {
+            if (SingleProfle.user.RoleId == 1)
+            {
 
+                AllRof allRof = new AllRof();
+                allRof.Show();
+                this.Close();
+            }
+            if (SingleProfle.user.RoleId == 2)
+            {
+                AllRof allRof = new AllRof();
+                allRof.Show();
+                this.Close();
+            }
         }
         private void btnMax_Click(object sender, RoutedEventArgs e)
         {

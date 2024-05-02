@@ -422,25 +422,29 @@ SelectedItem="{Binding SelectedStage}" Margin="5">
                         </ListView.ContextMenu>
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Тэг" Width="35"  
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
-                              />
+                                <GridViewColumn Header="Тэг" Width="75"  
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
+                                                DisplayMemberBinding="{Binding Teg}" />
 
-                                <GridViewColumn Header="Автор" Width="110" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
+                                <!--<GridViewColumn Header="Автор" Width="110" 
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+                                                DisplayMemberBinding="{Binding Teg}" />-->
+
                                 <GridViewColumn Header="Завершение шутки" Width="140" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+                                                DisplayMemberBinding="{Binding RoflEnd}" />
+
                                 <GridViewColumn Header="Название шутки/рофла" Width="150" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-DisplayMemberBinding="{Binding Title}"/>
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+                                                DisplayMemberBinding="{Binding RoflName}" />
+
                                 <GridViewColumn Header="Небольшое описание" Width="150" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+                                                DisplayMemberBinding="{Binding RoflMinOpisanie}" />
+
                                 <GridViewColumn Header="Статус" Width="100" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+                                                DisplayMemberBinding="{Binding RoflStatus}" />
                             </GridView>
                         </ListView.View>
                     </ListView>

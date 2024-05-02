@@ -192,9 +192,23 @@ namespace Kursovay2.Views
 
         private void ClickToAdmiWindow(object sender, RoutedEventArgs e)
         {
-            Admin.Admin admin = new Admin.Admin(SingleProfle.user);
-            admin.Show();
-            this.Close();
+            if (SingleProfle.user.RoleId == 1)
+            {
+
+                Admin.Admin adminWindow = new Admin.Admin(SingleProfle.user);
+                adminWindow.Show();
+                Close();
+            }
+            if (SingleProfle.user.RoleId == 2)
+            {
+                User.Users userWindow = new User.Users(user);
+                userWindow.Show();
+                Close();
+            }
+
+            //Admin.Admin admin = new Admin.Admin(SingleProfle.user);
+            //admin.Show();
+            //this.Close();
         }
         private void btnMax_Click(object sender, RoutedEventArgs e)
         {
