@@ -72,6 +72,7 @@ namespace Kursovay2.Admin
             InitializeComponent();
             //для отображения данных
             GenreComboBox();
+            TegComboBox();
             LoadData();
             //SearchApi();
 
@@ -96,6 +97,20 @@ namespace Kursovay2.Admin
                 {
 
                     AdminComboBoxGenre.Items.Add(item);
+
+                }
+            }
+        }
+        private async void TegComboBox()
+        {
+            List<TegDTO> comboBoxData = await Client.Instance.GetComboBoxTeg();
+
+            if (comboBoxData != null)
+            {
+                foreach (TegDTO item in comboBoxData)
+                {
+
+                    AdminComboBoxTeg.Items.Add(item);
 
                 }
             }
@@ -374,6 +389,18 @@ namespace Kursovay2.Admin
         private async void TextChanged(object sender, TextChangedEventArgs e)
         {
             string search = myTextBox.Text;
+            //GenreDTO genre = (GenreDTO)AdminComboBoxGenre.SelectedItem;
+            //TegDTO teg = (TegDTO)AdminComboBoxTeg.SelectedItem;
+            //if (genre!=null && teg !=null)
+            //{
+            //    SelectRofl = new RoflDTO
+            //    {
+            //        Teg = teg.TegName,
+            //        RoflGenre = genre.GenreName,
+            //    };
+            //}
+
+
             await Client.Instance.SearchApi(search);
 
             if (search != null)
