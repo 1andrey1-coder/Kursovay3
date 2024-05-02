@@ -151,7 +151,8 @@ namespace Kursovay2.Gost
 
         private void Podskaska(object sender, RoutedEventArgs e)
         {
-
+            GostPodskaska gostPodskaska = new GostPodskaska();
+            gostPodskaska.Show();
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

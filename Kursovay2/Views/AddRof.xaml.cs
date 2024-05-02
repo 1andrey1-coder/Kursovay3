@@ -315,6 +315,8 @@ namespace Kursovay2.AddRof
 
         private void Podskaska(object sender, RoutedEventArgs e)
         {
+            AddRofPodskaska addRofPodskaska = new AddRofPodskaska();
+            addRofPodskaska.Show();
 
         }
 

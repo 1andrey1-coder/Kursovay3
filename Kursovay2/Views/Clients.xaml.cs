@@ -117,7 +117,8 @@ namespace Kursovay2.Views
 
         private void Podskaska(object sender, RoutedEventArgs e)
         {
-
+            ClientsPodskaska clientsPodskaska = new ClientsPodskaska(); 
+            clientsPodskaska.Show();
         }
 
         private void ClickGostWindow(object sender, RoutedEventArgs e)

@@ -7,7 +7,7 @@ namespace ApiDB;
 
 public partial class MemContext : DbContext
 {
-    public User43ConMemContexttext()
+    public MemContext()
     {
     }
 

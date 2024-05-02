@@ -395,7 +395,8 @@ namespace Kursovay2.Views
 
         private void Podskaska(object sender, RoutedEventArgs e)
         {
-
+            DopRedactorPodskaska dopRedactorPodskaska = new DopRedactorPodskaska();
+            dopRedactorPodskaska.Show();
         }
     }
 }

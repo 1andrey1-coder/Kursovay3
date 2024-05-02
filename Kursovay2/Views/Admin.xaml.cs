@@ -415,5 +415,11 @@ namespace Kursovay2.Admin
 
             }
         }
+
+        private void Podskaska(object sender, RoutedEventArgs e)
+        {
+            AdminPodskaska adminPodskaska = new AdminPodskaska();
+            adminPodskaska.Show();
+        }
     }
 }

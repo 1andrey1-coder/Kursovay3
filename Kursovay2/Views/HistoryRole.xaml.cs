@@ -109,7 +109,8 @@ namespace Kursovay2.Views
 
         private void Podskaska(object sender, RoutedEventArgs e)
         {
-
+            HistoryRolePodskaska historyRolePodskaska = new HistoryRolePodskaska();
+            historyRolePodskaska.Show();
         }
 
         private void ClickGostWindow(object sender, RoutedEventArgs e)
