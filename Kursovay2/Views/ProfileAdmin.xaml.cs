@@ -33,40 +33,7 @@ namespace Kursovay2.Views
         {
 
             LoginUserDTO login = await Client.Instance.GetUser(SingleProfle.user.LoginId);
-            //List<LoginUserDTO> image = await Client.Instance.GetAdminUser(SingleProfle.user.LoginId);
-
-            //foreach (var d in login)
-            //    if (d.LoginImage == null)
-            //        d.LoginImage = defaultImage;
-
-
-
-            //if (login != null)
-            //{
-
-
-            //    textBlockUserName.Text = login.LoginName;
-            //    textBlockMail.Text = login.Mail;
-            //    if (login.LoginImage != null)
-            //    {
-            //        BitmapImage bitmapImage = new BitmapImage();
-            //        bitmapImage.BeginInit();
-            //        bitmapImage.UriSource = new Uri(Convert.ToBase64String(login.LoginImage));
-            //        bitmapImage.EndInit();
-            //        imageText.Source = bitmapImage;
-                   
-                  
-            //    }
-            //    else
-            //    {
-
-            //        Uri uri = new Uri(Environment.CurrentDirectory + "\\Images\\ImageNull2.png", UriKind.Absolute);
-            //        BitmapImage img = new BitmapImage(uri);
-            //        imageText.Source = img;
-            //    }
-
-
-            //}
+            
             if (login != null)
             {
                 textBlockUserName.Text = login.LoginName;

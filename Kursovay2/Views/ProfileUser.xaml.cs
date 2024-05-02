@@ -2,6 +2,7 @@
 using Kursovay2.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,21 +44,32 @@ namespace Kursovay2.Views
         private async void DisplayUserInfo()
         {
 
-            LoginUserDTO login1 = await Client.Instance.GetUser(SingleProfle.user.LoginId);
+            LoginUserDTO login = await Client.Instance.GetUser(SingleProfle.user.LoginId);
 
-            if (login1 != null)
+            if (login != null)
             {
-
-                textBlockUserName.Text = login1.LoginName;
-                textBlockMail.Text = login1.Mail;
-
+                textBlockUserName.Text = login.LoginName;
+                textBlockMail.Text = login.Mail;
+                if (login.LoginImage != null)
+                {
+                    BitmapImage bitmapImage = new BitmapImage();
+                    bitmapImage.BeginInit();
+                    bitmapImage.StreamSource = new MemoryStream(login.LoginImage);
+                    bitmapImage.EndInit();
+                    imageText.Source = bitmapImage;
+                }
+                else
+                {
+                    Uri uri = new Uri(Environment.CurrentDirectory + "\\Images\\ImageNull2.png", UriKind.Absolute);
+                    BitmapImage img = new BitmapImage(uri);
+                    imageText.Source = img;
+                }
             }
             else
             {
                 textBlockUserName.Text = "User not found";
                 textBlockMail.Text = "User not found";
             }
-
 
 
 

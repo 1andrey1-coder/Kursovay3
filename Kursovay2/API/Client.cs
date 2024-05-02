@@ -91,21 +91,7 @@ namespace Kursovay2.API
             return userAnswer;
         }
 
-        public async Task<List<LoginUserDTO>> GetAdminUser(int id)
-        {
-            var response = await httpClient.GetAsync($"Account/Login/{id}");
-            if (response.IsSuccessStatusCode)
-            {
-                var content = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<List<LoginUserDTO>>(content);
-            }
-            else
-            {
-
-            }
-            return null; 
-        }
-
+        
 
         public async Task<LoginUserDTO> GetUser(int id)
         {
