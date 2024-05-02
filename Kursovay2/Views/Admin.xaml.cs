@@ -413,5 +413,13 @@ namespace Kursovay2.Admin
             AdminPodskaska adminPodskaska = new AdminPodskaska();
             adminPodskaska.Show();
         }
+
+        private void ClickOpisania(object sender, RoutedEventArgs e)
+        {
+            RoflDTO selectedItem = (RoflDTO)AdminListView.SelectedItem;
+            Opisania opisania = new Opisania(selectedItem);
+            opisania.Show();
+            
+        }
     }
 }

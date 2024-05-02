@@ -120,6 +120,8 @@ namespace Kursovay2.Views
 
         private void Podskaska(object sender, RoutedEventArgs e)
         {
+            LibraryPodskaska libraryPodskaska = new LibraryPodskaska();
+            libraryPodskaska.Show();
 
         }
 

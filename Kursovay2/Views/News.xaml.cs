@@ -130,7 +130,8 @@ namespace Kursovay2.Views
 
         private void Podskaska(object sender, RoutedEventArgs e)
         {
-
+            NewsPodskaska newsPodskaska = new NewsPodskaska();
+            newsPodskaska.Show();
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

@@ -111,7 +111,8 @@ namespace Kursovay2.Views
 
         private void Podskaska(object sender, RoutedEventArgs e)
         {
-
+            ModnoPodskaska modnoPodskaska = new ModnoPodskaska();
+            modnoPodskaska.Show();
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

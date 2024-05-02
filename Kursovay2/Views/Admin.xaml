@@ -443,6 +443,7 @@ SelectedItem="{Binding SelectRofl}" SelectionMode="Single" Margin="5">
 
                         <ListView.ContextMenu>
                             <ContextMenu>
+                                <MenuItem Header="Описание шутки" Click="ClickOpisania"/>
                                 <MenuItem Header="Редактировать шутку" Click="ClickRedagturaRof"/>
                                 <MenuItem Header="Удалить шутку" x:Name="deletedRofl" Click="ClickDeleteRof"/>
                             </ContextMenu>

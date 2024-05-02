@@ -265,7 +265,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
   FontFamily="Century Gothic" FontSize="14" Foreground="White" 
   BorderBrush="Transparent" Background="Transparent" FontWeight="Bold">
 
-                                    
+
 
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
@@ -310,11 +310,52 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
         Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" >
 
                     <!--Сделать в виде карточек, вывод всех шуток-->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition />
+                            <RowDefinition Height="100"/>
+                        </Grid.RowDefinitions>
 
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1">
+                            <Border CornerRadius="100" BorderBrush="Gray" 
+                       BorderThickness="1" Background="Transparent">
+                                <Image Height="180" Width="200" x:Name="imageText"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Width="300" Height="280" VerticalAlignment="Top" 
+                                    HorizontalAlignment="Left" Margin="10 0 0 0 " Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
 
+                            <Label FontWeight="Bold" Margin="0 0 0 10"
+        Foreground="White" FontSize="15" HorizontalAlignment="Center">
+                                <Label.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="\icons\MinOpisani2.png" Height="20" Margin=" 0 3 5 0"/>
 
+                                        <TextBlock Text="Описание" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </Label.Content>
+                            </Label>
+                            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
 
+                                <TextBox  Height="190"  TextWrapping="Wrap" TextChanged="InputTextBox_TextChanged" MaxLength="5000"
+               AcceptsReturn="True" Margin="5"  x:Name="AddOpisania">
+                                    <TextBox.Template>
+                                        <ControlTemplate>
+                                            <Border CornerRadius="10" Height="190" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
+                                                <ScrollViewer Margin="0 0 0 0" x:Name="PART_ContentHost" />
+                                            </Border>
+                                        </ControlTemplate>
+                                    </TextBox.Template>
+                                </TextBox>
+                            </ScrollViewer>
 
+                        </StackPanel>
+                    </Grid>
 
 
                 </ScrollViewer>
@@ -404,12 +445,14 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                     <TextBlock  Text="{Binding Title}"/>
                 </StackPanel>
                 <StackPanel Margin="5" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3">
-                    --><!--<StackPanel.Background>
+                    -->
+    <!--<StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#ffd700" Offset="0.1"/>
                     <GradientStop Color="Firebrick" Offset="1"/>
                 </LinearGradientBrush>
-            </StackPanel.Background>--><!--
+            </StackPanel.Background>-->
+    <!--
                 </StackPanel>
 
 

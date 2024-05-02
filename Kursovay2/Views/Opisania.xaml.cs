@@ -27,7 +27,7 @@ namespace Kursovay2.Views
         DispatcherTimer timer;
         double panelWidth;
         bool hidden;
-        public Opisania()
+        public Opisania(RoflDTO selectedItem)
         {
             InitializeComponent();
             DisplayRoflInfo();
@@ -37,6 +37,10 @@ namespace Kursovay2.Views
 
             panelWidth = sidePanel.Width;
         }
+
+
+
+
         private async void DisplayRoflInfo()
         {
 
@@ -105,7 +109,8 @@ namespace Kursovay2.Views
 
         private void Podskaska(object sender, RoutedEventArgs e)
         {
-
+            OpisaniaPodskaska opisaniaPodskaska = new OpisaniaPodskaska();
+            opisaniaPodskaska.Show();
         }
         private void ClickObrat(object sender, RoutedEventArgs e)
         {
@@ -161,5 +166,18 @@ namespace Kursovay2.Views
             }
         }
 
+        private void InputTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (AddOpisania.Text.Length > 0)
+            {
+                AddOpisania.ScrollToEnd();
+                if (AddOpisania.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Length > 250)
+                {
+                    int index = AddOpisania.Text.LastIndexOf(' ');
+                    AddOpisania.Text = AddOpisania.Text.Substring(0, index);
+                    AddOpisania.SelectionStart = AddOpisania.Text.Length;
+                }
+            }
+        }
     }
 }

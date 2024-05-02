@@ -92,7 +92,8 @@ namespace Kursovay2.Views
 
         private void Podskaska(object sender, RoutedEventArgs e)
         {
-
+            LokInfPodskaska lokInfPodskaska = new LokInfPodskaska();
+            lokInfPodskaska.Show();
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
