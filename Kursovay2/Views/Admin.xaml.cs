@@ -33,7 +33,7 @@ namespace Kursovay2.Admin
         bool hidden;
         private RoflDTO selectRofl;
         private int selectedId;
-        private string searchText = "";
+        
 
         public ObservableCollection<RoflDTO> Rofl { get; set; }
 
@@ -44,27 +44,6 @@ namespace Kursovay2.Admin
                 { 
                 selectRofl = value; 
                 }
-        }
-
-        public string SearchText
-        {
-            get => searchText;
-            set 
-            { 
-                searchText = value;
-                Search();
-            }
-        }
-        private async void Search()
-        {
-            try
-            {
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         public Admin(LoginUserDTO user)

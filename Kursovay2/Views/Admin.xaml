@@ -221,13 +221,13 @@ Click="btnClose_Click">
                                 </Button>
                                 <StackPanel Margin="5" Orientation="Vertical" Width="100"  >
                                     <TextBlock HorizontalAlignment="Center" Text="Гэг" Foreground="White" />
-                                    <ComboBox x:Name="AdminComboBoxTeg" ItemsSource="{Binding Teg, UpdateSourceTrigger=PropertyChanged}" 
-SelectedItem="{Binding SelectedSorting, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <ComboBox x:Name="AdminComboBoxTeg"  DisplayMemberPath="TegName" ItemsSource="{Binding Teg, UpdateSourceTrigger=PropertyChanged}" 
+SelectedItem="{Binding SelectedGenre, UpdateSourceTrigger=PropertyChanged}"/>
                                 </StackPanel>
 
                                 <StackPanel Margin="5" Orientation="Vertical" Width="75" >
                                     <TextBlock Text="Жанр" HorizontalAlignment="Center" Foreground="White" />
-                                    <ComboBox ItemsSource="{Binding Genre, UpdateSourceTrigger=PropertyChanged}" 
+                                    <ComboBox  ItemsSource="{Binding Genre, UpdateSourceTrigger=PropertyChanged}" 
                                               SelectedItem="{Binding SelectedGenre, UpdateSourceTrigger=PropertyChanged}"
 x:Name="AdminComboBoxGenre"  DisplayMemberPath="GenreName"/>
                                 </StackPanel>
