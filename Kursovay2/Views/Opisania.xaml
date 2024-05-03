@@ -279,7 +279,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
 
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Margin="0 0 0 0 ">
                             <Label Content="Название: " Foreground="White" FontWeight="Bold" FontSize="20" />
-                            <TextBlock x:Name="nameText" Margin="0 20 0 0" FontWeight="Bold" FontSize="15" Foreground="White" />
+                            <TextBlock x:Name="nameText" Margin="0 10 0 0" FontWeight="Bold" FontSize="15" Foreground="White" />
                         </StackPanel>
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1">
                             <Label FontWeight="Bold" Margin="0 0 0 10"
