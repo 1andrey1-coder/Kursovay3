@@ -598,7 +598,7 @@ namespace Kursovay2Api2._0.Controllers
                
 
                 IQueryable<RoflDTO> search;
-                search = _memContext.Rofls.Where(s => s.RoflName.Contains(searchName) && s.Teg.TegName == comboBoxValue).
+                search = _memContext.Rofls.Where(s => s.RoflName.Contains(searchName) || s.Teg.TegName == comboBoxValue).
                 Select(s => new RoflDTO 
                 {
 

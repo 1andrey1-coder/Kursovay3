@@ -1,7 +1,9 @@
 ﻿using Kursovay2.API;
 using Kursovay2.Models;
+using Kursovay2.User;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,9 +29,22 @@ namespace Kursovay2.Views
         DispatcherTimer timer;
         double panelWidth;
         bool hidden;
+        private RoflDTO selectedRofl;
+
+        public RoflDTO SelectedRofl
+        {
+            get => selectedRofl;
+            set
+            {
+                selectedRofl = value;
+
+            }
+        }
         public Opisania(RoflDTO selectedItem)
         {
             InitializeComponent();
+            SelectedRofl = selectedItem;
+            DataRofl(selectedItem);
             DisplayRoflInfo();
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
@@ -38,7 +53,17 @@ namespace Kursovay2.Views
             panelWidth = sidePanel.Width;
         }
 
-
+        private async void DataRofl(RoflDTO selectedItem)
+        {
+            if (selectedItem != null)
+            {
+                AddOpisania.Text = selectedItem.RoflOpisanie;
+            }
+            else
+            {
+                MessageBox.Show("Ошибка загрузки описания");
+            }
+        }
 
 
         private async void DisplayRoflInfo()
@@ -50,6 +75,7 @@ namespace Kursovay2.Views
             {
 
                 textBlockUserName.Content = login1.LoginName;
+
             }
             else
             {
@@ -96,9 +122,35 @@ namespace Kursovay2.Views
                 DragMove();
             }
         }
-
+       
         private void ClickToAdmin(object sender, RoutedEventArgs e)
         {
+            LoadingWindow loadingWindow = new LoadingWindow();
+            loadingWindow.Show();
+
+            Task.Delay(1500).ContinueWith(t =>
+            {
+                loadingWindow.Dispatcher.Invoke(() =>
+                {
+                    loadingWindow.Close();
+
+                });
+            });
+
+
+            if (SingleProfle.user.RoleId == 1)
+            {
+
+                Admin.Admin adminWindow = new Admin.Admin(SingleProfle.user);
+                adminWindow.Show();
+                Close();
+            }
+            if (SingleProfle.user.RoleId == 2)
+            {
+                User.Users userWindow = new User.Users(SingleProfle.user);
+                userWindow.Show();
+                Close();
+            }
             //смотрит если роль админ то в админку если клиент то в клиента
         }
 

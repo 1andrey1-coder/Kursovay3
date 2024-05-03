@@ -33,17 +33,17 @@ namespace Kursovay2.Admin
         bool hidden;
         private RoflDTO selectRofl;
         private int selectedId;
-        
+
 
         public ObservableCollection<RoflDTO> Rofl { get; set; }
 
         public RoflDTO SelectRofl
         {
-            get => selectRofl; 
-            set 
-                { 
-                selectRofl = value; 
-                }
+            get => selectRofl;
+            set
+            {
+                selectRofl = value;
+            }
         }
 
         public Admin(LoginUserDTO user)
@@ -62,7 +62,7 @@ namespace Kursovay2.Admin
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
             timer.Tick += Timer_Tick;
 
-            panelWidth = sidePanel.Width; 
+            panelWidth = sidePanel.Width;
 
         }
 
@@ -112,7 +112,7 @@ namespace Kursovay2.Admin
 
         private async void DisplayUserInfo()
         {
-         
+
             LoginUserDTO login1 = await Client.Instance.GetUser(SingleProfle.user.LoginId);
 
             if (login1 != null)
@@ -165,11 +165,11 @@ namespace Kursovay2.Admin
                 DragMove();
             }
         }
-        
+
 
         private void ClickAdminToMainWindow(object sender, RoutedEventArgs e)
         {
-            
+
             Admin admin = new Admin(SingleProfle.user);
             admin.Show();
             this.Close();
@@ -207,7 +207,7 @@ namespace Kursovay2.Admin
 
 
 
-        
+
 
         private void ClickRedagturaRof(object sender, RoutedEventArgs e)
         {
@@ -243,8 +243,8 @@ namespace Kursovay2.Admin
             try
             {
 
-                RoflDTO deleteid = (RoflDTO)AdminListView.SelectedItem; 
-                if(deleteid != null)
+                RoflDTO deleteid = (RoflDTO)AdminListView.SelectedItem;
+                if (deleteid != null)
                 {
                     int selectedDataId = deleteid.RoflId;
                     await Client.Instance.DeleteDataAsync(selectedDataId);
@@ -253,7 +253,7 @@ namespace Kursovay2.Admin
                 }
 
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show($"Ошибка при удалении данных:{ex.Message}", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -312,19 +312,19 @@ namespace Kursovay2.Admin
 
 
         }
-      
+
 
         private async void ResetSearch(object sender, RoutedEventArgs e)
         {
-             myTextBox.Text= string.Empty;
-            AdminComboBoxTeg .SelectedIndex = -1;
+            myTextBox.Text = string.Empty;
+            AdminComboBoxTeg.SelectedIndex = -1;
             //AdminComboBoxGenre .SelectedIndex = -1;
 
-           
+
 
         }
 
-       
+
 
 
         //private async void Focus(object sender, RoutedEventArgs e)
@@ -419,7 +419,7 @@ namespace Kursovay2.Admin
             RoflDTO selectedItem = (RoflDTO)AdminListView.SelectedItem;
             Opisania opisania = new Opisania(selectedItem);
             opisania.Show();
-            
+
         }
     }
 }

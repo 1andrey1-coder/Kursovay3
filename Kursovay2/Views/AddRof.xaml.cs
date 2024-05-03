@@ -301,7 +301,7 @@ namespace Kursovay2.AddRof
 
         private void Opisania(object sender, RoutedEventArgs e)
         {
-            Views.Opisania opisania = new Views.Opisania();
+            Views.Opisania opisania = new Views.Opisania(SelectRofl);
             opisania.Show();
             this.Close();
         }
