@@ -1,8 +1,6 @@
-﻿using Kursovay2.API;
-using Kursovay2.Models;
+﻿using Kursovay2.Models;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,71 +17,25 @@ using System.Windows.Threading;
 namespace Kursovay2.Views
 {
     /// <summary>
-    /// Логика взаимодействия для Library.xaml
+    /// Логика взаимодействия для TransletSlangOld.xaml
     /// </summary>
-    public partial class Library : Window
+    public partial class TransletSlangOld : Window
     {
-        private SlangAndOldDTO selectSlang;
-
-        public SlangAndOldDTO SelectSlang
-        {
-            get => selectSlang;
-            set
-            {
-                selectSlang = value;
-            }
-        }
         DispatcherTimer timer;
 
         double panelWidth;
         bool hidden;
-        public ObservableCollection<SlangAndOldDTO> Slang { get; set; }
-
-        public Library()
+        public TransletSlangOld()
         {
             InitializeComponent();
-            GetSlangOlds();
-            DisplayUserInfo();
+
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
             timer.Tick += Timer_Tick;
 
             panelWidth = sidePanel.Width;
         }
-        private async void DisplayUserInfo()
-        {
 
-            LoginUserDTO login1 = await Client.Instance.GetUser(SingleProfle.user.LoginId);
-
-            if (login1 != null)
-            {
-
-                textBlockUserName.Content = login1.LoginName;
-            }
-            else
-            {
-                textBlockUserName.Content = "User not found";
-            }
-
-
-
-
-
-        }
-        public async void GetSlangOlds()
-        {
-            List<SlangAndOldDTO> getSlang = await Client.Instance.GetSlangOld();
-
-            if (getSlang != null)
-            {
-                foreach (SlangAndOldDTO item in getSlang)
-                {
-
-                    SlangView.Items.Add(item);
-
-                }
-            }
-        }
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -127,26 +79,17 @@ namespace Kursovay2.Views
             }
         }
 
-        private void Podskaska(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            LibraryPodskaska libraryPodskaska = new LibraryPodskaska();
-            libraryPodskaska.Show();
-
-        }
-
-        private void Focus(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void lastFocus(object sender, RoutedEventArgs e)
-        {
-
+            timer.Start();
         }
 
         private void PanelHeader_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -169,12 +112,38 @@ namespace Kursovay2.Views
                 }
             }
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void InputTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            timer.Start();
+            if (yourText.Text.Length > 0)
+            {
+                yourText.ScrollToEnd();
+                if (yourText.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Length > 250)
+                {
+                    int index = yourText.Text.LastIndexOf(' ');
+                    yourText.Text = yourText.Text.Substring(0, index);
+                    yourText.SelectionStart = yourText.Text.Length;
+                }
+            }
         }
 
-        
+        private void InputTextBox_TextChanged2(object sender, TextChangedEventArgs e)
+        {
+            if (transletText.Text.Length > 0)
+            {
+                transletText.ScrollToEnd();
+                if (transletText.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Length > 250)
+                {
+                    int index = transletText.Text.LastIndexOf(' ');
+                    transletText.Text = transletText.Text.Substring(0, index);
+                    transletText.SelectionStart = transletText.Text.Length;
+                }
+            }
+        }
 
+        private void Podskaska(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

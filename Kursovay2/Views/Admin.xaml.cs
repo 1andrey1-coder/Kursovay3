@@ -316,7 +316,7 @@ namespace Kursovay2.Admin
 
         private async void ResetSearch(object sender, RoutedEventArgs e)
         {
-            myTextBox.Text = string.Empty;
+            //myTextBox.Text = string.Empty;
             AdminComboBoxTeg.SelectedIndex = -1;
             //AdminComboBoxGenre .SelectedIndex = -1;
 
@@ -382,16 +382,6 @@ namespace Kursovay2.Admin
         {
             string search = myTextBox.Text;
             string comboboxTeg = AdminComboBoxTeg.Text;
-            //GenreDTO genre = (GenreDTO)AdminComboBoxGenre.SelectedItem;
-            //TegDTO teg = (TegDTO)AdminComboBoxTeg.SelectedItem;
-            //if (genre!=null && teg !=null)
-            //{
-            //    SelectRofl = new RoflDTO
-            //    {
-            //        Teg = teg.TegName,
-            //        RoflGenre = genre.GenreName,
-            //    };
-            //}
 
 
             await Client.Instance.SearchApi(search, comboboxTeg);

@@ -588,40 +588,97 @@ namespace Kursovay2Api2._0.Controllers
         //Обнова пароля/логина/почты
 
         [HttpPost("SearchName")]
-        public async Task<ActionResult<IEnumerable<RoflDTO>>> Search([FromBody]string searchName, string comboBoxValue)
+        public async Task<ActionResult<IEnumerable<RoflDTO>>> Search([FromBody]RoflDTO rofl)
         {
             try
             {
                 var rofls = await _memContext.Rofls.Include(s => s.RoflGenre).Include(s => s.RoflStart).
                 Include(s => s.RoflEnd).Include(s => s.RoflStatus).Include(s => s.Teg).ToListAsync();
 
-               
-
-
                 IQueryable<RoflDTO> search;
-                search = _memContext.Rofls.Where(s => s.RoflName.Contains(searchName) || s.Teg.TegName == comboBoxValue).
-                Select(s => new RoflDTO 
+                if (!string.IsNullOrEmpty(rofl.RoflName) && !string.IsNullOrEmpty(rofl.Teg))
                 {
+                    search = _memContext.Rofls
+                        .Where(s => s.RoflName.Contains(rofl.RoflName) && s.Teg.TegName.Contains(rofl.Teg))
+                        .Select(s => new RoflDTO
+                        {
+                            Teg = s.Teg.TegName,
+                            RoflName = s.RoflName,
+                            RoflOpisanie = s.RoflOpisanie,
+                            RoflDateTime = s.RoflDateTime,
+                            RoflEnd = s.RoflEnd.EndName,
+                            RoflGenre = s.RoflGenre.GenreName,
+                            RoflMinOpisanie = s.RoflMinOpisanie,
+                            RoflStart = s.RoflStart.StartName,
+                            RoflStatus = s.RoflStatus.StatusName,
+                        });
+                }
+                else if (!string.IsNullOrEmpty(rofl.RoflName))
+                {
+                    search = _memContext.Rofls
+                        .Where(s => s.RoflName.Contains(rofl.RoflName))
+                        .Select(s => new RoflDTO
+                        {
+                            Teg = s.Teg.TegName,
+                            RoflName = s.RoflName,
+                            RoflOpisanie = s.RoflOpisanie,
+                            RoflDateTime = s.RoflDateTime,
+                            RoflEnd = s.RoflEnd.EndName,
+                            RoflGenre = s.RoflGenre.GenreName,
+                            RoflMinOpisanie = s.RoflMinOpisanie,
+                            RoflStart = s.RoflStart.StartName,
+                            RoflStatus = s.RoflStatus.StatusName,
+                        });
+                }
+                else if (!string.IsNullOrEmpty(rofl.Teg))
+                {
+                    search = _memContext.Rofls
+                        .Where(s => s.Teg.TegName.Contains(rofl.Teg))
+                        .Select(s => new RoflDTO
+                        {
+                            Teg = s.Teg.TegName,
+                            RoflName = s.RoflName,
+                            RoflOpisanie = s.RoflOpisanie,
+                            RoflDateTime = s.RoflDateTime,
+                            RoflEnd = s.RoflEnd.EndName,
+                            RoflGenre = s.RoflGenre.GenreName,
+                            RoflMinOpisanie = s.RoflMinOpisanie,
+                            RoflStart = s.RoflStart.StartName,
+                            RoflStatus = s.RoflStatus.StatusName,
+                        });
+                }
+                else
+                {
+                    // Handle case when no search criteria provided
+                    search = Enumerable.Empty<RoflDTO>().AsQueryable();
+                }
 
-                    Teg = s.Teg.TegName,
-                    RoflName = s.RoflName,
-                    RoflOpisanie = s.RoflOpisanie,
-                    RoflDateTime = s.RoflDateTime,
-                    RoflEnd = s.RoflEnd.EndName,
-                    RoflGenre = s.RoflGenre.GenreName,
-                    RoflMinOpisanie = s.RoflMinOpisanie,
-                    RoflStart = s.RoflStart.StartName,
-                    RoflStatus = s.RoflStatus.StatusName,
+                return Ok(search);
+
+                //IQueryable<RoflDTO> search;
+                //search = _memContext.Rofls.Where(s => s.RoflName.Contains(searchName)).
+                //Select(s => new RoflDTO 
+                //{
+
+                //Teg = s.Teg.TegName,
+                //    RoflName = s.RoflName,
+                //    RoflOpisanie = s.RoflOpisanie,
+                //    RoflDateTime = s.RoflDateTime,
+                //    RoflEnd = s.RoflEnd.EndName,
+                //    RoflGenre = s.RoflGenre.GenreName,
+                //    RoflMinOpisanie = s.RoflMinOpisanie,
+                //    RoflStart = s.RoflStart.StartName,
+                //    RoflStatus = s.RoflStatus.StatusName,
                   
 
 
-                });
+                //});
                 //var data = _memContext.Rofls.AsQueryable();
 
                 //var search = (IQueryable<RoflDTO>)_memContext.Rofls.Where(s => s.RoflName.Contains(searchName));
 
 
-                return Ok(search);
+                //return Ok(search);
 
             }
             catch (Exception ex)
