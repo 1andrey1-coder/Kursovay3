@@ -239,6 +239,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
             <TextBlock Margin="15 0 0 0" Text="Spam" VerticalAlignment="Center"/>
         </StackPanel>
     </ListViewItem>-->
+                                    
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="\icons\setting.png" Height="20" VerticalAlignment="Center"/>
