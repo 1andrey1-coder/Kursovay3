@@ -381,6 +381,7 @@ namespace Kursovay2.Admin
         private async void TextChanged(object sender, TextChangedEventArgs e)
         {
             string search = myTextBox.Text;
+            string comboboxTeg = AdminComboBoxTeg.Text;
             //GenreDTO genre = (GenreDTO)AdminComboBoxGenre.SelectedItem;
             //TegDTO teg = (TegDTO)AdminComboBoxTeg.SelectedItem;
             //if (genre!=null && teg !=null)
@@ -393,12 +394,12 @@ namespace Kursovay2.Admin
             //}
 
 
-            await Client.Instance.SearchApi(search);
+            await Client.Instance.SearchApi(search, comboboxTeg);
 
             if (search != null)
             {
 
-                List<RoflDTO> Rofl = await Client.Instance.SearchApi(search);
+                List<RoflDTO> Rofl = await Client.Instance.SearchApi(search, comboboxTeg);
 
                 if (Rofl != null)
                 {

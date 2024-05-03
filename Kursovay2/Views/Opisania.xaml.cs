@@ -1,9 +1,11 @@
 ﻿using Kursovay2.API;
 using Kursovay2.Models;
+using Kursovay2.mvvm.VM;
 using Kursovay2.User;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,6 +64,31 @@ namespace Kursovay2.Views
             else
             {
                 MessageBox.Show("Ошибка загрузки описания");
+            }
+
+            if (selectedItem != null)
+            {
+                AddOpisania.Text = selectedItem.RoflOpisanie;
+
+                if (selectedItem.RoflImage != null)
+                {
+                    BitmapImage bitmapImage = new BitmapImage();
+                    bitmapImage.BeginInit();
+                    bitmapImage.StreamSource = new MemoryStream(selectedItem.RoflImage);
+                    bitmapImage.EndInit();
+                    imageText.Source = bitmapImage;
+                }
+                else
+                {
+                    Uri uri = new Uri(Environment.CurrentDirectory + "\\Images\\ImageNull2.png", UriKind.Absolute);
+                    BitmapImage img = new BitmapImage(uri);
+                    imageText.Source = img;
+                }
+            }
+            else
+            {
+                AddOpisania.Text = "Описание не найдено";
+                
             }
         }
 

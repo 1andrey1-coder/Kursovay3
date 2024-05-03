@@ -450,13 +450,14 @@ namespace Kursovay2.API
 
         }
 
-        public async Task<List<RoflDTO>> SearchApi(string searchName)
+        public async Task<List<RoflDTO>> SearchApi(string searchName, string comboboxTeg)
         {
-            //var Search = new RoflDTO
-            //{
-            //    RoflName = search.RoflName,
-            //};
-            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/SearchName", searchName);
+            var Search = new RoflDTO
+            {
+                RoflName = searchName,
+                Teg = comboboxTeg,
+            };
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/SearchName", Search);
 
 
             if (response.IsSuccessStatusCode)

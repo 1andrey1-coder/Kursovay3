@@ -181,52 +181,7 @@ Click="btnClose_Click">
 
 
 
-                            <StackPanel VerticalAlignment="Bottom"  Margin="0 25 0 0" 
-                                        Orientation="Horizontal" HorizontalAlignment="Left">
-                                <Image Source="\icons\Search.png" Height="40"/>
-                                <StackPanel Margin="5" Orientation="Vertical" >
-
-                                    <TextBlock  Text="Поиск по тегу шутки:"  Foreground="White"/>
-
-
-
-                                    <TextBox x:Name="myTextBox" GotFocus="Focus" LostFocus="lastFocus" Text="Введите данные" 
-                                             Width="200" Height="22" >
-                                        <TextBox.Template>
-                                            <ControlTemplate>
-                                                <Border CornerRadius="10" Height="20" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
-                                                    <ScrollViewer Margin="0 0 0 0" x:Name="PART_ContentHost" />
-                                                </Border>
-                                            </ControlTemplate>
-                                        </TextBox.Template>
-                                    </TextBox>
-
-                                </StackPanel>
-                                <Button Content="Сброс" Click="ResetSearch" Foreground="White" 
-                                        VerticalAlignment="Top" Margin=" 0 15 0 0" >
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <Border Width="90" Height="25"           CornerRadius="15"
-           Background="{TemplateBinding Background}">
-                                                <ContentPresenter VerticalAlignment="Center"
-                         HorizontalAlignment="Center"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                                <StackPanel Margin="5" Orientation="Vertical" Width="159"  >
-                                    <TextBlock HorizontalAlignment="Center" Text="Сортировка по Эпичности" Foreground="White" />
-                                    <ComboBox ItemsSource="{Binding Sorting, UpdateSourceTrigger=PropertyChanged}" 
-SelectedItem="{Binding SelectedSorting, UpdateSourceTrigger=PropertyChanged}"/>
-                                </StackPanel>
-
-                                <StackPanel Margin="5" Orientation="Vertical" Width="75" >
-                                    <TextBlock Text="Жанр" HorizontalAlignment="Center" Foreground="White" />
-                                    <ComboBox ItemsSource="{Binding Types, UpdateSourceTrigger=PropertyChanged}" 
-SelectedItem="{Binding SelectedType, UpdateSourceTrigger=PropertyChanged}"
-DisplayMemberPath="Type1"/>
-                                </StackPanel>
-                            </StackPanel>
+                          
 
 
 
@@ -271,7 +226,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="\icons\ReturnWindow.png" Height="20"
                    VerticalAlignment="Center" />
-                                            <Button Margin="15 0 0 0" Style="{StaticResource ButtonGost}" Background="Transparent"
+                                            <Button Margin="15 0 0 0" Style="{StaticResource ButtonGost}" FontWeight="Bold" Background="Transparent"
                     BorderBrush="Transparent"
                     Content="Вернуться"
                     VerticalAlignment="Center"
@@ -287,7 +242,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="\icons\setting.png" Height="20" VerticalAlignment="Center"/>
-                                            <TextBlock Margin="15 0 0 0" Text="Настройки" VerticalAlignment="Center"/>
+                                            <TextBlock Margin="15 0 0 0" Text="Настройки" FontWeight="Bold" VerticalAlignment="Center"/>
                                         </StackPanel>
                                     </ListViewItem>
                                     <ListViewItem Height="30">
@@ -322,9 +277,33 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                         </Grid.RowDefinitions>
 
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1">
+                            <Label FontWeight="Bold" Margin="0 0 0 10"
+                                Foreground="White" FontSize="15" HorizontalAlignment="Center">
+                                <Label.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="\icons\imageDB.png" Height="20" Margin=" 0 3 5 0"/>
+
+                                        <TextBlock Text="КАРТИНКА" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </Label.Content>
+                            </Label>
                             <Border CornerRadius="100" BorderBrush="Gray" 
                        BorderThickness="1" Background="Transparent">
-                                <Image Height="180" Width="200" x:Name="imageText"/>
+                                <Image VerticalAlignment="Top" Height="200" Width="200" x:Name="imageText" Stretch="Fill">
+                                    <Image.Style>
+                                        <Style TargetType="Image">
+                                            <Setter Property="Width"  Value="200"/>
+                                            <Setter Property="Height" Value="200"/>
+                                            <Setter Property="Clip" >
+                                                <Setter.Value>
+                                                    <EllipseGeometry RadiusX="100" RadiusY="100"
+                                                                         Center="100,100"/>
+                                                </Setter.Value>
+                                            </Setter>
+
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
                             </Border>
                         </StackPanel>
                         <StackPanel Width="300" Height="280" VerticalAlignment="Top" 
@@ -336,7 +315,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="\icons\MinOpisani2.png" Height="20" Margin=" 0 3 5 0"/>
 
-                                        <TextBlock Text="Описание" VerticalAlignment="Center"/>
+                                        <TextBlock Text="ОПИСАНИЕ" VerticalAlignment="Center"/>
                                     </StackPanel>
                                 </Label.Content>
                             </Label>
