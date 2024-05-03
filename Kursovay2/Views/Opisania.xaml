@@ -277,6 +277,10 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                             <RowDefinition Height="100"/>
                         </Grid.RowDefinitions>
 
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Margin="0 0 0 0 ">
+                            <Label Content="Название: " Foreground="White" FontWeight="Bold" FontSize="20" /> 
+                            <TextBlock x:Name="nameText" FontWeight="Bold" FontSize="15" Foreground="White" />
+                        </StackPanel>
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1">
                             <Label FontWeight="Bold" Margin="0 0 0 10"
                                 Foreground="White" FontSize="15" HorizontalAlignment="Center">

@@ -69,6 +69,7 @@ namespace Kursovay2.Views
             if (selectedItem != null)
             {
                 AddOpisania.Text = selectedItem.RoflOpisanie;
+                nameText.Text = selectedItem.RoflName;
 
                 if (selectedItem.RoflImage != null)
                 {
@@ -227,23 +228,23 @@ namespace Kursovay2.Views
         {
 
         }
-        private void Focus(object sender, RoutedEventArgs e)
-        {
-            if (myTextBox.Text == "Введите данные")
-            {
-                myTextBox.Text = "";
-                myTextBox.Foreground = Brushes.Gray;
-            }
-        }
+        //private void Focus(object sender, RoutedEventArgs e)
+        //{
+        //    if (myTextBox.Text == "Введите данные")
+        //    {
+        //        myTextBox.Text = "";
+        //        myTextBox.Foreground = Brushes.Gray;
+        //    }
+        //}
 
-        private void lastFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(myTextBox.Text))
-            {
-                myTextBox.Text = "Введите данные";
-                myTextBox.Foreground = Brushes.Gray;
-            }
-        }
+        //private void lastFocus(object sender, RoutedEventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(myTextBox.Text))
+        //    {
+        //        myTextBox.Text = "Введите данные";
+        //        myTextBox.Foreground = Brushes.Gray;
+        //    }
+        //}
 
         private void InputTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
