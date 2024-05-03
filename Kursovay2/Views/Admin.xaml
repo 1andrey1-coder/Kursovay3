@@ -195,7 +195,7 @@ Click="btnClose_Click">
 
 
 
-                                    <TextBox x:Name="myTextBox" TextChanged="TextChanged"
+                                    <TextBox GotFocus="Focus" LostFocus="lastFocus" x:Name="myTextBox" TextChanged="TextChanged"
                                              Width="200" Height="22" >
                                         <TextBox.Template>
                                             <ControlTemplate>

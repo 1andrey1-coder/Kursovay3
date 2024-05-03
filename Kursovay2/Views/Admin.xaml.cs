@@ -327,27 +327,27 @@ namespace Kursovay2.Admin
 
 
 
-        //private async void Focus(object sender, RoutedEventArgs e)
-        //{
+        private async void Focus(object sender, RoutedEventArgs e)
+        {
 
 
-        //    if (myTextBox.Text == "Введите данные")
-        //    {
-        //        myTextBox.Text = "";
-        //        myTextBox.Foreground = Brushes.Gray;
+            if (myTextBox.Text == "Введите данные")
+            {
+                myTextBox.Text = "";
+                myTextBox.Foreground = Brushes.Black;
 
-        //    }
-        //}
+            }
+        }
 
-        //private async void lastFocus(object sender, RoutedEventArgs e)
-        //{
-        //    if (string.IsNullOrWhiteSpace(myTextBox.Text))
-        //    {
-        //        myTextBox.Text = "Введите данные";
-        //        myTextBox.Foreground = Brushes.Gray;
-        //    }
+        private async void lastFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(myTextBox.Text))
+            {
+                myTextBox.Text = "Введите данные";
+                myTextBox.Foreground = Brushes.Gray;
+            }
 
-        //}
+        }
 
         private void library(object sender, RoutedEventArgs e)
         {
