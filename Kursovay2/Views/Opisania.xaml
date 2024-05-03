@@ -181,7 +181,7 @@ Click="btnClose_Click">
 
 
 
-                          
+
 
 
 
@@ -239,7 +239,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
             <TextBlock Margin="15 0 0 0" Text="Spam" VerticalAlignment="Center"/>
         </StackPanel>
     </ListViewItem>-->
-                                    
+
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="\icons\setting.png" Height="20" VerticalAlignment="Center"/>
@@ -278,8 +278,8 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                         </Grid.RowDefinitions>
 
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Margin="0 0 0 0 ">
-                            <Label Content="Название: " Foreground="White" FontWeight="Bold" FontSize="20" /> 
-                            <TextBlock x:Name="nameText" FontWeight="Bold" FontSize="15" Foreground="White" />
+                            <Label Content="Название: " Foreground="White" FontWeight="Bold" FontSize="20" />
+                            <TextBlock x:Name="nameText" Margin="0 20 0 0" FontWeight="Bold" FontSize="15" Foreground="White" />
                         </StackPanel>
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1">
                             <Label FontWeight="Bold" Margin="0 0 0 10"
@@ -320,7 +320,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="\icons\MinOpisani2.png" Height="20" Margin=" 0 3 5 0"/>
 
-                                        <TextBlock Text="ОПИСАНИЕ" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Описание" VerticalAlignment="Center"/>
                                     </StackPanel>
                                 </Label.Content>
                             </Label>
@@ -339,9 +339,31 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                             </ScrollViewer>
 
                         </StackPanel>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1">
+                            <Label FontWeight="Bold" FontSize="20" 
+Foreground="White"  HorizontalAlignment="Left">
+                                <Label.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="\icons\MinOpisani2.png" Height="20" Margin=" 0 3 5 0"/>
+
+                                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="Мини-описание: " />
+                                    </StackPanel>
+                                </Label.Content>
+                            </Label>
+                            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                <TextBox  Height="50"  TextWrapping="Wrap" TextChanged="InputTextBox_TextChanged2" MaxLength="5000"
+AcceptsReturn="True" Margin="5"  x:Name="AddMiniOpisania">
+                                    <TextBox.Template>
+                                        <ControlTemplate>
+                                            <Border CornerRadius="10" Height="50" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
+                                                <ScrollViewer Margin="0 0 0 0" x:Name="PART_ContentHost" />
+                                            </Border>
+                                        </ControlTemplate>
+                                    </TextBox.Template>
+                                </TextBox>
+                            </ScrollViewer>
+                        </StackPanel>
                     </Grid>
-
-
                 </ScrollViewer>
             </Grid>
         </Border>

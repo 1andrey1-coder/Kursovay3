@@ -70,6 +70,7 @@ namespace Kursovay2.Views
             {
                 AddOpisania.Text = selectedItem.RoflOpisanie;
                 nameText.Text = selectedItem.RoflName;
+                AddMiniOpisania.Text = selectedItem.RoflMinOpisanie;
 
                 if (selectedItem.RoflImage != null)
                 {
@@ -256,6 +257,20 @@ namespace Kursovay2.Views
                     int index = AddOpisania.Text.LastIndexOf(' ');
                     AddOpisania.Text = AddOpisania.Text.Substring(0, index);
                     AddOpisania.SelectionStart = AddOpisania.Text.Length;
+                }
+            }
+        }
+
+        private void InputTextBox_TextChanged2(object sender, TextChangedEventArgs e)
+        {
+            if (AddMiniOpisania.Text.Length > 0)
+            {
+                AddMiniOpisania.ScrollToEnd();
+                if (AddMiniOpisania.Text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Length > 100)
+                {
+                    int index = AddMiniOpisania.Text.LastIndexOf(' ');
+                    AddMiniOpisania.Text = AddMiniOpisania.Text.Substring(0, index);
+                    AddMiniOpisania.SelectionStart = AddMiniOpisania.Text.Length;
                 }
             }
         }
