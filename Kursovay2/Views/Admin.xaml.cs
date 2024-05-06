@@ -413,9 +413,13 @@ namespace Kursovay2.Admin
 
         private void ClickOpisania(object sender, RoutedEventArgs e)
         {
-            RoflDTO selectedItem = (RoflDTO)AdminListView.SelectedItem;
-            Opisania opisania = new Opisania(selectedItem);
-            opisania.Show();
+            if (SingleProfle.user.RoleId == 1)
+            {
+                RoflDTO selectedItem = (RoflDTO)AdminListView.SelectedItem;
+                Opisania opisania = new Opisania(selectedItem);
+                opisania.Show();
+            }
+               
 
         }
 

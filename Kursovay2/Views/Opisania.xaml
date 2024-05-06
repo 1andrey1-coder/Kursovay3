@@ -364,6 +364,15 @@ AcceptsReturn="True" Margin="5"  x:Name="AddMiniOpisania">
                                 </TextBox>
                             </ScrollViewer>
                         </StackPanel>
+
+                        <StackPanel Width="100"  Orientation="Vertical" Grid.Row="1" Grid.Column="2">
+                            <Label Content="Время выхода" Foreground="White" FontWeight="Bold" />
+                            <Border Width="100" CornerRadius="5" Background="Gray" Padding="5">
+
+                                <TextBlock  x:Name="time" Background="White"/>
+                            </Border>
+
+                        </StackPanel>
                     </Grid>
                 </ScrollViewer>
             </Grid>

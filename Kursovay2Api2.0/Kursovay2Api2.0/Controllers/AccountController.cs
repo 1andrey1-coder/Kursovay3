@@ -367,27 +367,27 @@ namespace Kursovay2Api2._0.Controllers
             var rofls = _memContext.Rofls.Include(s => s.RoflGenre).Include(s => s.RoflStart).
                 Include(s => s.RoflEnd).Include(s => s.RoflStatus).Include(s => s.Teg).ToList();
 
-           
 
-                var result = rofls.Select(rofl =>
-                 new RoflDTO
-                 {
-                        RoflId = rofl.RoflId,
-                        Teg = rofl.Teg?.TegName,
-                        RoflGenre = rofl.RoflGenre?.GenreName,
-                        RoflStart = rofl.RoflStart?.StartName,
-                        RoflStatus = rofl.RoflStatus?.StatusName,
-                        RoflName = rofl.RoflName,
-                        RoflOpisanie = rofl.RoflOpisanie,
-                        RoflMinOpisanie = rofl.RoflMinOpisanie,
-                        RoflDateTime = rofl.RoflDateTime,
-                        RoflEnd = rofl.RoflEnd?.EndName,
-                        RoflImage = rofl.RoflImage,
-                 });
-                return Ok(result);
-                
 
-          
+            var result = rofls.Select(rofl =>
+             new RoflDTO
+             {
+                 RoflId = rofl.RoflId,
+                 Teg = rofl.Teg?.TegName,
+                 RoflGenre = rofl.RoflGenre?.GenreName,
+                 RoflStart = rofl.RoflStart?.StartName,
+                 RoflStatus = rofl.RoflStatus?.StatusName,
+                 RoflName = rofl.RoflName,
+                 RoflOpisanie = rofl.RoflOpisanie,
+                 RoflMinOpisanie = rofl.RoflMinOpisanie,
+                 RoflDateTime = rofl.RoflDateTime,
+                 RoflEnd = rofl.RoflEnd?.EndName,
+                 RoflImage = rofl.RoflImage,
+             });
+            return Ok(result);
+
+
+
 
 
 
@@ -397,7 +397,7 @@ namespace Kursovay2Api2._0.Controllers
         [HttpGet("ComboBoxStatus")]
         public async Task<ActionResult<IEnumerable<Status>>> GetStatusTable()
         {
-            
+
             var data = await _memContext.Statuses.ToListAsync();
             var result = data.Select(s => new StatusDTO
             {
@@ -535,7 +535,7 @@ namespace Kursovay2Api2._0.Controllers
         [HttpPut("PutRofl/{id}")]
         public IActionResult UpdateItem(int id, [FromBody] RoflDTO updatedItem)
         {
-            var item = _memContext.Rofls.Include(s=>s.RoflEnd).FirstOrDefault(i => i.RoflId == id);
+            var item = _memContext.Rofls.Include(s => s.RoflEnd).FirstOrDefault(i => i.RoflId == id);
 
             if (item == null)
             {
@@ -548,9 +548,9 @@ namespace Kursovay2Api2._0.Controllers
             item.RoflOpisanie = updatedItem.RoflOpisanie;
             item.RoflImage = updatedItem.RoflImage;
             //item.RoflEndId = updatedItem.RoflEndId;
-            item.RoflEnd = _memContext.Ends.FirstOrDefault(i => i.EndId == updatedItem.RoflEndId);          
-            item.RoflGenre = _memContext.Genres.FirstOrDefault(i => i.GenreId == updatedItem.RoflGenreId);          
-            item.RoflStatus = _memContext.Statuses.FirstOrDefault(i => i.StatusId == updatedItem.RoflStatusId);          
+            item.RoflEnd = _memContext.Ends.FirstOrDefault(i => i.EndId == updatedItem.RoflEndId);
+            item.RoflGenre = _memContext.Genres.FirstOrDefault(i => i.GenreId == updatedItem.RoflGenreId);
+            item.RoflStatus = _memContext.Statuses.FirstOrDefault(i => i.StatusId == updatedItem.RoflStatusId);
             item.RoflStart = _memContext.Starts.FirstOrDefault(i => i.StartId == updatedItem.RoflStartId);
             item.Teg = _memContext.Tegs.FirstOrDefault(i => i.TegId == updatedItem.TegId);
             item.RoflDateTime = updatedItem.RoflDateTime;
@@ -565,7 +565,7 @@ namespace Kursovay2Api2._0.Controllers
 
         //Обнова пароля/логина/почты
         [HttpPut("UpdateProfile/{userId}")]
-        public async Task<ActionResult> UpdatePassword( [FromBody] LoginUserDTO newPassword)
+        public async Task<ActionResult> UpdatePassword([FromBody] LoginUserDTO newPassword)
         {
             var user = await _memContext.LoginUsers.FindAsync(newPassword.LoginId);
 
@@ -575,7 +575,7 @@ namespace Kursovay2Api2._0.Controllers
             }
 
             user.LoginPassword = HashPassword(newPassword.LoginPassword);
-            user.LoginName = newPassword.LoginName ;
+            user.LoginName = newPassword.LoginName;
             user.Mail = newPassword.Mail;
             user.LoginImage = newPassword.LoginImage;
 
@@ -588,7 +588,7 @@ namespace Kursovay2Api2._0.Controllers
         //Обнова пароля/логина/почты
 
         [HttpPost("SearchName")]
-        public async Task<ActionResult<IEnumerable<RoflDTO>>> Search([FromBody]RoflDTO rofl)
+        public async Task<ActionResult<IEnumerable<RoflDTO>>> Search([FromBody] RoflDTO rofl)
         {
             try
             {
@@ -688,7 +688,7 @@ namespace Kursovay2Api2._0.Controllers
                 //    RoflMinOpisanie = s.RoflMinOpisanie,
                 //    RoflStart = s.RoflStart.StartName,
                 //    RoflStatus = s.RoflStatus.StatusName,
-                  
+
 
 
                 //});
@@ -704,37 +704,43 @@ namespace Kursovay2Api2._0.Controllers
             {
                 return BadRequest(ex.Message);
             }
-            
+
         }
 
 
         [HttpPost("TransletOldSlang")]
         public IActionResult ProcessText([FromBody] string inputText)
         {
-            
+
             List<SlangAndOld> slangText = _memContext.SlangAndOlds.ToList();
 
             foreach (SlangAndOld slang in slangText)
             {
-                
-                    inputText = inputText.Replace(slang.Slang, slang.OldSlang);
-              
+
+                inputText = inputText.Replace(slang.Slang, slang.OldSlang);
+
 
             }
             return Ok(inputText);
         }
 
-        private string NormalizeString (string input1, string input2, bool toLower)
+        private string NormalizeString(string input1, string input2, bool toLower)
         {
-            if(toLower)
+            if (toLower)
             {
                 return input1.ToLower();
             }
             return input1.ToUpper();
         }
 
-    }
+        //[HttpPost("Date")]
+        //public IEnumerable<RoflDTO> PostDate([FromQuery] RoflDTO date)
+        //{
+        //    var dates = _memContext.Rofls.Where(s => s.RoflDateTime == date).ToList();
+        //    return Ok(dates);
 
+        //}
+    }
 }
     
 

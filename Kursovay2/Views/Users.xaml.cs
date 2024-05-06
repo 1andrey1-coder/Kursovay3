@@ -178,7 +178,13 @@ namespace Kursovay2.User
 
         private void ClickOpisaniaRof(object sender, RoutedEventArgs e)
         {
-
+            if (SingleProfle.user.RoleId == 2)
+            {
+                RoflDTO selectedItem = (RoflDTO)AdminListView.SelectedItem;
+                Opisania opisania = new Opisania(selectedItem);
+                opisania.Show();
+            }
+              
         }
 
         private void Podskaska(object sender, RoutedEventArgs e)

@@ -71,6 +71,7 @@ namespace Kursovay2.Views
                 AddOpisania.Text = selectedItem.RoflOpisanie;
                 nameText.Text = selectedItem.RoflName;
                 AddMiniOpisania.Text = selectedItem.RoflMinOpisanie;
+                time.Text = selectedItem.RoflDateTime.ToString();
 
                 if (selectedItem.RoflImage != null)
                 {
