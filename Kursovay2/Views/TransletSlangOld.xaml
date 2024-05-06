@@ -257,6 +257,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                         <Label Content="ВАШ ТЕКСТ(лимит 250 букв): " Margin="5" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="19"/>
                         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
 
+                            
                             <TextBox x:Name="yourText" TextChanged="InputTextBox_TextChanged" Height="270" Width="300" Padding="10">
                                 <TextBox.Template>
                                     <ControlTemplate>
