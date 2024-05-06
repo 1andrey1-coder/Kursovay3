@@ -380,9 +380,11 @@ namespace Kursovay2.Admin
 
         private async void TextChanged(object sender, TextChangedEventArgs e)
         {
+
+
+
             string search = myTextBox.Text;
             string comboboxTeg = AdminComboBoxTeg.Text;
-
 
             await Client.Instance.SearchApi(search, comboboxTeg);
 
@@ -395,8 +397,12 @@ namespace Kursovay2.Admin
                 {
                     AdminListView.ItemsSource = Rofl;
                 }
+               
 
+                   
+                
             }
+
         }
 
         private void Podskaska(object sender, RoutedEventArgs e)

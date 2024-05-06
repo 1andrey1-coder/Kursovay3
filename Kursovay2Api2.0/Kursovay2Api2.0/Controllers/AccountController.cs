@@ -650,7 +650,19 @@ namespace Kursovay2Api2._0.Controllers
                 else
                 {
                     // Handle case when no search criteria provided
-                    search = Enumerable.Empty<RoflDTO>().AsQueryable();
+                    //    search = Enumerable.Empty<RoflDTO>().AsQueryable();
+                    return Ok(rofls.Select(s => new RoflDTO
+                    {
+                        Teg = s.Teg.TegName,
+                        RoflName = s.RoflName,
+                        RoflOpisanie = s.RoflOpisanie,
+                        RoflDateTime = s.RoflDateTime,
+                        RoflEnd = s.RoflEnd.EndName,
+                        RoflGenre = s.RoflGenre.GenreName,
+                        RoflMinOpisanie = s.RoflMinOpisanie,
+                        RoflStart = s.RoflStart.StartName,
+                        RoflStatus = s.RoflStatus.StatusName,
+                    }));
                 }
 
                 return Ok(search);

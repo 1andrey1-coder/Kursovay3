@@ -116,7 +116,7 @@ namespace Kursovay2.Views
             }
         }
 
-        private async void InputTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void InputTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (yourText.Text.Length > 0)
             {
@@ -131,7 +131,7 @@ namespace Kursovay2.Views
 
         }
 
-        private async void InputTextBox_TextChanged2(object sender, TextChangedEventArgs e)
+        private void InputTextBox_TextChanged2(object sender, TextChangedEventArgs e)
         {
             if (transletText.Text.Length > 0)
             {

@@ -277,7 +277,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
 
                     <!--Сделать в виде карточек, вывод всех шуток-->
 
-                    <ListView x:Name="SlangView"  ItemsSource="{Binding Slang}" 
+                    <ListView x:Name="SlangView"  ItemsSource="{Binding Slang}"  Width="800"
 SelectedItem="{Binding SelectSlang}">
                         <ListView.ItemContainerStyle>
                             <Style TargetType="ListViewItem">
@@ -287,10 +287,10 @@ SelectedItem="{Binding SelectSlang}">
                         <ListView.View>
                             
                             <GridView>
-                                <GridViewColumn Header="Молодежный Слэнг" Width="350"  
+                                <GridViewColumn Header="Молодежный Слэнг" Width="400"  
                                     HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
                                     DisplayMemberBinding="{Binding Slang}" />
-                                <GridViewColumn Header="Старшее Поколение" Width="350"  
+                                <GridViewColumn Header="Старшее Поколение" Width="400"  
                                         HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
                                         DisplayMemberBinding="{Binding OldSlang}" />
                             </GridView>
