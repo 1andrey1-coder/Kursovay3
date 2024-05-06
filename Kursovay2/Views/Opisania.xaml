@@ -266,23 +266,24 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
         Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" >
 
                     <!--Сделать в виде карточек, вывод всех шуток-->
-                    <Grid>
+                    <Grid >
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="300"/>
                             <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="100"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="20"/>
-                            <RowDefinition />
+                            <RowDefinition Height="auto"/>
                             <RowDefinition Height="100"/>
                         </Grid.RowDefinitions>
 
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Margin="0 0 0 0 ">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Margin="0 25 0 0 ">
                             <Label Content="Название: " Foreground="White" FontWeight="Bold" FontSize="20" />
                             <TextBlock x:Name="nameText" Margin="0 10 0 0" FontWeight="Bold" FontSize="15" Foreground="White" />
                         </StackPanel>
                         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1">
-                            <Label FontWeight="Bold" Margin="0 0 0 10"
+                            <Label FontWeight="Bold" Margin="0 0 0 30"
                                 Foreground="White" FontSize="15" HorizontalAlignment="Center">
                                 <Label.Content>
                                     <StackPanel Orientation="Horizontal">
@@ -292,7 +293,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                                     </StackPanel>
                                 </Label.Content>
                             </Label>
-                            <Border CornerRadius="100" BorderBrush="Gray" 
+                            <Border  CornerRadius="100" BorderBrush="Gray" 
                        BorderThickness="1" Background="Transparent">
                                 <Image VerticalAlignment="Top" Height="200" Width="200" x:Name="imageText" Stretch="Fill">
                                     <Image.Style>

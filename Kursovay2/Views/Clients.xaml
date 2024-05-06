@@ -259,7 +259,7 @@ DisplayMemberPath="Type1"/>
                                 <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"
   FontFamily="Century Gothic" FontSize="14" Foreground="White" 
   BorderBrush="Transparent" Background="Transparent" FontWeight="Bold">
-                                    
+
 
 
                                     <ListViewItem Height="30">
@@ -299,7 +299,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                         </StackPanel>
 
 
-                      
+
 
                     </Grid>
 
@@ -311,6 +311,7 @@ Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="2" >
 
                     <!--Background="{Binding ***, Converter={StaticResource converter}}"-->
                     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+
                         <DataGrid x:Name="AdminListView" CanUserAddRows="False" Grid.Row="1" AutoGenerateColumns="False" Background="Transparent"
   ItemsSource="{Binding Client}" SelectedItem="{Binding SelectedClients}" SelectionMode="Single">
                             <DataGrid.Columns>
@@ -318,6 +319,8 @@ Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="2" >
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Grid>
+
+
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="Auto"/>
                                                     <ColumnDefinition/>
@@ -325,8 +328,8 @@ Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="2" >
 
                                                 <StackPanel Grid.Column="0">
                                                     <Border  Background="Transparent" Padding="5"
-                                                    Grid.Column="0" BorderBrush="Transparent" BorderThickness="0.5" >
-                                                        <Image MaxWidth="300" Source="{Binding LoginImage}" Stretch="UniformToFill"/>
+                  Grid.Column="0" BorderBrush="Transparent" BorderThickness="0.5" >
+                                                        <Image x:Name="image" MaxWidth="300" Source="{Binding LoginImage}"  Stretch="UniformToFill"/>
                                                     </Border>
                                                 </StackPanel>
 
@@ -334,18 +337,17 @@ Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="2" >
 
 
                                                     <Border Background="Transparent" Width="300" Padding="5" BorderBrush="Transparent" 
-                                            Margin="3" HorizontalAlignment="Left" BorderThickness="0.5" Grid.Column="1">
+          Margin="3" HorizontalAlignment="Left" BorderThickness="0.5" Grid.Column="1">
                                                         <Border>
                                                             <StackPanel HorizontalAlignment="Right">
                                                                 <TextBlock Background="Transparent"  Text="{Binding LoginName,
-                                                        StringFormat='Название: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
+                      StringFormat='Название: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
 
                                                             </StackPanel>
                                                         </Border>
 
 
                                                     </Border>
-                                                  
 
                                                 </StackPanel>
                                             </Grid>
@@ -415,13 +417,16 @@ Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="2" >
                     <Border Padding="5" Grid.Column="2" BorderThickness="1" BorderBrush="Black" Margin="3">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="{Binding ProductQuantityInStock, StringFormat=Кол-во {0}}"/>
-                            --><!--<TextBlock Text="{Binding ProductUnit}"/>--><!--
+                            -->
+    <!--<TextBlock Text="{Binding ProductUnit}"/>-->
+    <!--
                         </StackPanel>
                     </Border>
                 </Grid>
             </Border>
         </DataTemplate>
-    --><!--</Page.Resources>-->
+    -->
+    <!--</Page.Resources>-->
     <!--<Border>
 
         <Border.Background>
@@ -456,12 +461,14 @@ Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="2" >
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <StackPanel Margin="5" Grid.Row="0" Grid.Column="0" Grid.RowSpan="55">
-                    --><!--<StackPanel.Background>
+                    -->
+    <!--<StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#ffd700" Offset="0.1"/>
                     <GradientStop Color="Firebrick" Offset="1"/>
                 </LinearGradientBrush>
-            </StackPanel.Background>--><!--
+            </StackPanel.Background>-->
+    <!--
                 </StackPanel>
 
                 <StackPanel Margin="5" VerticalAlignment="Bottom" Grid.Column="0">

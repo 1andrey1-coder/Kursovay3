@@ -319,7 +319,7 @@ SelectedItem="{Binding SelectRofl}" SelectionMode="Single" >
 
                     <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="160"/>
                             <ColumnDefinition Width="120"/>
                             <ColumnDefinition Width="30"/>
@@ -327,7 +327,7 @@ SelectedItem="{Binding SelectRofl}" SelectionMode="Single" >
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition MaxWidth="100"/>
                             <ColumnDefinition Width="100"/>
-                            <ColumnDefinition />
+                            <ColumnDefinition Width="auto" />
 
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
