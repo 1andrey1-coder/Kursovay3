@@ -381,7 +381,7 @@ Content="Перевод" Click="translet" VerticalAlignment="Center"/>
                                         <TextBlock Margin="15 0 0 0" Text="История шуток" VerticalAlignment="Center"/>
                                     </StackPanel>
                                 </ListViewItem>
-                                <ListViewItem Height="30">
+                                <!--<ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="\icons\Local.png" Height="20" VerticalAlignment="Center"/>
                                         <TextBlock Margin="15 0 0 0" Text="Локальные шутки" VerticalAlignment="Center"/>
@@ -404,7 +404,7 @@ Content="Перевод" Click="translet" VerticalAlignment="Center"/>
                                             <Image Source="\icons\Diamond.png" Height="20" VerticalAlignment="Center"/>
                                             <TextBlock Margin="15 0 0 0" Text="Легенды" VerticalAlignment="Center"/>
                                         </StackPanel>
-                                    </ListViewItem>
+                                    </ListViewItem>-->
                                     <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="\icons\Out.png" Height="20"

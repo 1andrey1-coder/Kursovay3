@@ -190,7 +190,7 @@ Click="btnClose_Click">
 
 
 
-                                    <TextBox x:Name="myTextBox" GotFocus="Focus" LostFocus="lastFocus" Text="Введите данные" 
+                                    <TextBox GotFocus="Focus" LostFocus="lastFocus" x:Name="myTextBox" TextChanged="TextChanged"
                                              Width="200" Height="22" >
                                         <TextBox.Template>
                                             <ControlTemplate>
@@ -203,7 +203,7 @@ Click="btnClose_Click">
 
                                 </StackPanel>
                                 <Button Content="Сброс" Click="ResetSearch" Foreground="White" 
-                                        VerticalAlignment="Top" Margin=" 0 15 0 0" >
+                                        VerticalAlignment="Top" Margin=" 0 20 0 0" >
                                     <Button.Template>
                                         <ControlTemplate TargetType="Button">
                                             <Border Width="90" Height="25"           CornerRadius="15"
@@ -214,18 +214,18 @@ Click="btnClose_Click">
                                         </ControlTemplate>
                                     </Button.Template>
                                 </Button>
-                                <StackPanel Margin="5" Orientation="Vertical" Width="159"  >
-                                    <TextBlock HorizontalAlignment="Center" Text="Сортировка по Эпичности" Foreground="White" />
-                                    <ComboBox ItemsSource="{Binding Sorting, UpdateSourceTrigger=PropertyChanged}" 
-SelectedItem="{Binding SelectedSorting, UpdateSourceTrigger=PropertyChanged}"/>
+                                <StackPanel Margin="5" Orientation="Vertical" Width="100"  >
+                                    <TextBlock HorizontalAlignment="Center" Text="Гэг" Foreground="White" />
+                                    <ComboBox x:Name="AdminComboBoxTeg"  DisplayMemberPath="TegName" ItemsSource="{Binding Teg, UpdateSourceTrigger=PropertyChanged}" 
+SelectedItem="{Binding SelectedGenre, UpdateSourceTrigger=PropertyChanged}"/>
                                 </StackPanel>
 
-                                <StackPanel Margin="5" Orientation="Vertical" Width="75" >
+                                <!--<StackPanel Margin="5" Orientation="Vertical" Width="75" >
                                     <TextBlock Text="Жанр" HorizontalAlignment="Center" Foreground="White" />
-                                    <ComboBox ItemsSource="{Binding Types, UpdateSourceTrigger=PropertyChanged}" 
-SelectedItem="{Binding SelectedType, UpdateSourceTrigger=PropertyChanged}"
-DisplayMemberPath="Type1"/>
-                                </StackPanel>
+                                    <ComboBox  ItemsSource="{Binding Genre, UpdateSourceTrigger=PropertyChanged}" 
+                                              SelectedItem="{Binding SelectedGenre, UpdateSourceTrigger=PropertyChanged}"
+x:Name="AdminComboBoxGenre"  DisplayMemberPath="GenreName"/>
+                                </StackPanel>-->
                             </StackPanel>
 
 
@@ -345,7 +345,7 @@ Content="Архив" Click="library" VerticalAlignment="Center"/>
                                         <TextBlock Margin="15 0 0 0" Text="История шуток" VerticalAlignment="Center"/>
                                     </StackPanel>
                                 </ListViewItem>
-                                    <ListViewItem Height="30">
+                                    <!--<ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="\icons\Local.png" Height="20" VerticalAlignment="Center"/>
                                             <TextBlock Margin="15 0 0 0" Text="Локальные шутки" VerticalAlignment="Center"/>
@@ -368,7 +368,7 @@ Content="Архив" Click="library" VerticalAlignment="Center"/>
                                             <Image Source="\icons\Diamond.png" Height="20" VerticalAlignment="Center"/>
                                             <TextBlock Margin="15 0 0 0" Text="Легенды" VerticalAlignment="Center"/>
                                         </StackPanel>
-                                    </ListViewItem>
+                                    </ListViewItem>-->
                                     <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="\icons\Out.png" Height="20"

@@ -261,22 +261,27 @@ namespace Kursovay2.User
         {
 
         }
-        private void Focus(object sender, RoutedEventArgs e)
+
+        private async void Focus(object sender, RoutedEventArgs e)
         {
+
+
             if (myTextBox.Text == "Введите данные")
             {
                 myTextBox.Text = "";
-                myTextBox.Foreground = Brushes.Gray;
+                myTextBox.Foreground = Brushes.Black;
+
             }
         }
 
-        private void lastFocus(object sender, RoutedEventArgs e)
+        private async void lastFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(myTextBox.Text))
             {
                 myTextBox.Text = "Введите данные";
                 myTextBox.Foreground = Brushes.Gray;
             }
+
         }
 
         private void library(object sender, RoutedEventArgs e)
@@ -307,6 +312,30 @@ namespace Kursovay2.User
                 userWindow.Show();
                 Close();
             }
+        }
+        private async void TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            string search = myTextBox.Text;
+            string comboboxTeg = AdminComboBoxTeg.Text;
+
+            await Client.Instance.SearchApi(search, comboboxTeg);
+
+            if (search != null)
+            {
+
+                List<RoflDTO> Rofl = await Client.Instance.SearchApi(search, comboboxTeg);
+
+                if (Rofl != null)
+                {
+                    AdminListView.ItemsSource = Rofl;
+                }
+
+
+
+
+            }
+
         }
     }
 }
