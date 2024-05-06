@@ -1,4 +1,5 @@
-﻿using Kursovay2.Models;
+﻿using Kursovay2.API;
+using Kursovay2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,8 @@ namespace Kursovay2.Views
 
             panelWidth = sidePanel.Width;
         }
+
+        
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
@@ -113,7 +116,7 @@ namespace Kursovay2.Views
             }
         }
 
-        private void InputTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private async void InputTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (yourText.Text.Length > 0)
             {
@@ -125,9 +128,10 @@ namespace Kursovay2.Views
                     yourText.SelectionStart = yourText.Text.Length;
                 }
             }
+
         }
 
-        private void InputTextBox_TextChanged2(object sender, TextChangedEventArgs e)
+        private async void InputTextBox_TextChanged2(object sender, TextChangedEventArgs e)
         {
             if (transletText.Text.Length > 0)
             {
@@ -139,11 +143,34 @@ namespace Kursovay2.Views
                     transletText.SelectionStart = transletText.Text.Length;
                 }
             }
+
+            
+
         }
 
         private void Podskaska(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private async void Trans(object sender, RoutedEventArgs e)
+        {
+            string textUser = yourText.Text;
+            await Client.Instance.TransletOldSlang(textUser);
+
+        
+          
+            if (textUser != null)
+            {
+
+                string textGet = await Client.Instance.TransletOldSlang(textUser);
+
+                if (textGet != null)
+                {
+                    transletText.Text = textGet;
+                }
+
+            }
         }
     }
 }

@@ -688,6 +688,32 @@ namespace Kursovay2Api2._0.Controllers
             
         }
 
+
+        [HttpPost("TransletOldSlang")]
+        public IActionResult ProcessText([FromBody] string inputText)
+        {
+            
+            List<SlangAndOld> slangText = _memContext.SlangAndOlds.ToList();
+
+            foreach (SlangAndOld slang in slangText)
+            {
+                
+                    inputText = inputText.Replace(slang.Slang, slang.OldSlang);
+              
+
+            }
+            return Ok(inputText);
+        }
+
+        private string NormalizeString (string input1, string input2, bool toLower)
+        {
+            if(toLower)
+            {
+                return input1.ToLower();
+            }
+            return input1.ToUpper();
+        }
+
     }
 
 }

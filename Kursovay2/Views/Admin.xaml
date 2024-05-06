@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.Admin"
         mc:Ignorable="d"
-        Title="Окно для Админа" MinHeight="450" Height="500" MinWidth="750" Width="900" 
+        Title="Окно для Админа" MinHeight="450" Height="580" MinWidth="750" Width="900" 
          WindowStartupLocation="CenterScreen"
          WindowStyle="None" AllowsTransparency="True" Background="Transparent">
     
@@ -364,6 +364,16 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                 BorderBrush="Transparent"
                 Content="Архив" Click="library" VerticalAlignment="Center"/>
                                         </StackPanel>
+                                    </ListViewItem>
+                                    <ListViewItem Height="30">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="\icons\library.png" Height="20" VerticalAlignment="Center"/>
+                                        <Button Margin="15 0 0 0"      
+Background="Transparent"
+Foreground="White"
+BorderBrush="Transparent"
+Content="Перевод" Click="translet" VerticalAlignment="Center"/>
+                                    </StackPanel>
                                     </ListViewItem>
                                     <ListViewItem Height="30">
                                     <StackPanel Orientation="Horizontal">

@@ -511,9 +511,28 @@ namespace Kursovay2.API
             }
 
         }
+        
+        public async Task<string> TransletOldSlang(string textUser)
+        {
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/TransletOldSlang", textUser);
+
+            if (response.IsSuccessStatusCode)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+                //string getSlang = JsonConvert.DeserializeObject<string>(json);
+                return json;
+            }
+            else
+            {
+                return null;
+            }
+            //return null;
+        }
+        
 
     }
-
+    
+   
 
 
     //ilchenkor1135@suz-ppk.ru

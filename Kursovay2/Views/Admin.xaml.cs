@@ -412,5 +412,12 @@ namespace Kursovay2.Admin
             opisania.Show();
 
         }
+
+        private void translet(object sender, RoutedEventArgs e)
+        {
+            TransletSlangOld transletSlangOld = new TransletSlangOld();
+            transletSlangOld.Show();
+
+        }
     }
 }
