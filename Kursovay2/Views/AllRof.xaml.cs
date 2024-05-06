@@ -45,6 +45,7 @@ namespace Kursovay2.Views
             InitializeComponent();
             DisplayUserInfo();
             LoadDefaultImage();
+            LoadData();
             Test();
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
@@ -229,24 +230,58 @@ namespace Kursovay2.Views
         {
 
         }
-        private void Focus(object sender, RoutedEventArgs e)
+        private async void Focus(object sender, RoutedEventArgs e)
         {
+
+
             if (myTextBox.Text == "Введите данные")
             {
                 myTextBox.Text = "";
-                myTextBox.Foreground = Brushes.Gray;
+                myTextBox.Foreground = Brushes.Black;
+
             }
         }
 
-        private void lastFocus(object sender, RoutedEventArgs e)
+        private async void lastFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(myTextBox.Text))
             {
                 myTextBox.Text = "Введите данные";
                 myTextBox.Foreground = Brushes.Gray;
             }
+
         }
 
+        private async void TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string search = myTextBox.Text;
 
+            await Client.Instance.SearchApiNotComboBox(search);
+
+            if (search != null)
+            {
+
+                List<RoflDTO> Rofl = await Client.Instance.SearchApiNotComboBox(search);
+
+                foreach (var d in Rofl)
+                    if (d.RoflImage == null)
+                        d.RoflImage = defaultImage;
+                Dispatcher.Invoke(() =>
+                {
+                    if (Rofl != null)
+                    {
+                        AdminListView.ItemsSource = Rofl;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to load data from API");
+                    }
+                });
+
+
+
+
+            }
+        }
     }
 }

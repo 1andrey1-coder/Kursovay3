@@ -476,6 +476,31 @@ namespace Kursovay2.API
             return null;
         }
 
+        public async Task<List<RoflDTO>> SearchApiNotComboBox(string searchName)
+        {
+            var Search = new RoflDTO
+            {
+                RoflName = searchName,
+            };
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/SearchName", Search);
+
+
+            if (response.IsSuccessStatusCode)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+                List<RoflDTO> searchResults = JsonConvert.DeserializeObject<List<RoflDTO>>(json);
+
+                return searchResults;
+
+            }
+            else
+            {
+                MessageBox.Show("Ошибка при поиске данных", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            return null;
+        }
+
 
         public async Task<List<SlangAndOldDTO>> GetSlangOld()
         {

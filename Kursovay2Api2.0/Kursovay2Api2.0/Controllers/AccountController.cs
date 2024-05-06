@@ -611,6 +611,8 @@ namespace Kursovay2Api2._0.Controllers
                             RoflMinOpisanie = s.RoflMinOpisanie,
                             RoflStart = s.RoflStart.StartName,
                             RoflStatus = s.RoflStatus.StatusName,
+                            RoflImage = s.RoflImage,
+
                         });
                 }
                 else if (!string.IsNullOrEmpty(rofl.RoflName))
@@ -628,6 +630,8 @@ namespace Kursovay2Api2._0.Controllers
                             RoflMinOpisanie = s.RoflMinOpisanie,
                             RoflStart = s.RoflStart.StartName,
                             RoflStatus = s.RoflStatus.StatusName,
+                            RoflImage = s.RoflImage,
+
                         });
                 }
                 else if (!string.IsNullOrEmpty(rofl.Teg))
@@ -645,6 +649,8 @@ namespace Kursovay2Api2._0.Controllers
                             RoflMinOpisanie = s.RoflMinOpisanie,
                             RoflStart = s.RoflStart.StartName,
                             RoflStatus = s.RoflStatus.StatusName,
+                            RoflImage = s.RoflImage,
+
                         });
                 }
                 else
@@ -662,6 +668,7 @@ namespace Kursovay2Api2._0.Controllers
                         RoflMinOpisanie = s.RoflMinOpisanie,
                         RoflStart = s.RoflStart.StartName,
                         RoflStatus = s.RoflStatus.StatusName,
+                        RoflImage = s.RoflImage,
                     }));
                 }
 
