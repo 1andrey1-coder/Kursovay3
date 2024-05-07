@@ -32,12 +32,18 @@ namespace Kursovay2.Views
         {
             InitializeComponent();
             DisplayUserInfo();
+
+            datePicker.SelectedDate = DateTime.Now;
+
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
             timer.Tick += Timer_Tick;
 
             panelWidth = sidePanel.Width;
         }
+
+       
+
         private async void DisplayUserInfo()
         {
 
@@ -52,10 +58,6 @@ namespace Kursovay2.Views
             {
                 textBlockUserName.Content = "User not found";
             }
-
-
-
-
 
         }
 
@@ -178,6 +180,15 @@ namespace Kursovay2.Views
                 myTextBox.Text = "Введите данные";
                 myTextBox.Foreground = Brushes.Gray;
             }
+        }
+
+        private async void DatePickerChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            DatePicker selectedDate = (DatePicker)sender;
+            DateTime dateTime = datePicker.SelectedDate ?? DateTime.Now;
+            await Client.Instance.DateTimePicker(dateTime);
+
+
         }
     }
 }

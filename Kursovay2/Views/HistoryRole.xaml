@@ -315,8 +315,70 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Grid.Column="0" >
-                            <DatePicker />
+                            <DatePicker FontWeight="Bold" x:Name="datePicker" DataContextChanged="DatePickerChanged" />
                         </StackPanel>
+
+                    
+                            <!--Сделать в виде карточек, вывод всех шуток-->
+
+                            <!--Background="{Binding ***, Converter={StaticResource converter}}"-->
+                            <ScrollViewer Width="500" Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                <DataGrid x:Name="AdminListView" CanUserAddRows="False" Grid.Row="1" BorderBrush="Transparent" AutoGenerateColumns="False" Background="Transparent"
+  ItemsSource="{Binding Rofl}" SelectedItem="{Binding SelectedRofl}" SelectionMode="Single">
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                            <ColumnDefinition/>
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <StackPanel Grid.Column="0">
+                                                            <Border  Background="Transparent" Padding="5"
+                                                    Grid.Column="0" BorderBrush="Transparent" BorderThickness="0.5" >
+                                                                <Image x:Name="image" MaxWidth="300" Source="{Binding RoflImage}"  Stretch="UniformToFill"/>
+                                                            </Border>
+                                                        </StackPanel>
+
+                                                        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+
+
+                                                            <Border Background="Transparent" Width="300" Padding="5" BorderBrush="Transparent" 
+                                            Margin="3" HorizontalAlignment="Left" BorderThickness="0.5" Grid.Column="1">
+                                                                <Border>
+                                                                    <StackPanel HorizontalAlignment="Right">
+                                                                        <TextBlock Background="Transparent"  Text="{Binding RoflName,
+                                                        StringFormat='Название: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
+
+                                                                    </StackPanel>
+                                                                </Border>
+
+
+                                                            </Border>
+                                                            <Border Background="Transparent" Width="150" Padding="5" BorderBrush="Transparent"
+                                            Margin="3" HorizontalAlignment="Left" BorderThickness="0.5" Grid.Column="2">
+
+                                                                <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                                                                    <TextBlock Background="Transparent" Text="{Binding RoflOpisanie,
+                                                StringFormat='Описание: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
+                                                                </StackPanel>
+                                                            </Border>
+
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </ScrollViewer>
+
+
+
+
+                      
                     </Grid>
                 </ScrollViewer>
             </Grid>

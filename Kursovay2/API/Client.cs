@@ -91,7 +91,7 @@ namespace Kursovay2.API
             return userAnswer;
         }
 
-        
+
 
         public async Task<LoginUserDTO> GetUser(int id)
         {
@@ -509,7 +509,7 @@ namespace Kursovay2.API
             if (response.IsSuccessStatusCode)
             {
                 string json = await response.Content.ReadAsStringAsync();
-            List<SlangAndOldDTO> getSlang = JsonConvert.DeserializeObject<List<SlangAndOldDTO>>(json);
+                List<SlangAndOldDTO> getSlang = JsonConvert.DeserializeObject<List<SlangAndOldDTO>>(json);
                 return getSlang;
             }
             else
@@ -518,7 +518,7 @@ namespace Kursovay2.API
             }
 
         }
-      
+
 
         public async Task<List<LoginUserDTO>> ListUserAdmin()
         {
@@ -536,7 +536,7 @@ namespace Kursovay2.API
             }
 
         }
-        
+
         public async Task<string> TransletOldSlang(string textUser)
         {
             HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/TransletOldSlang", textUser);
@@ -553,11 +553,27 @@ namespace Kursovay2.API
             }
             //return null;
         }
-        
 
+
+        public async Task<RoflDTO> DateTimePicker(DateTime date)
+        {
+            //HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/Date", date);
+
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    List<RoflDTO> json = await response.Content.ReadAsStringAsync();
+            //    //string getSlang = JsonConvert.DeserializeObject<string>(json);
+            //    return json;
+            //}
+            //else
+            //{
+            //    return null;
+            //}
+            return null;
+        }
     }
-    
-   
+
+
 
 
     //ilchenkor1135@suz-ppk.ru
