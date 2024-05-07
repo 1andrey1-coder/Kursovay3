@@ -115,13 +115,7 @@ namespace Kursovay2.User
         }
 
 
-        private void ClickLokInf(object sender, RoutedEventArgs e)
-        {
-            Views.LokInf lokInf = new Views.LokInf();
-            lokInf.Show();
-            this.Close();
-        }
-
+     
         private void ClickHistoryRole(object sender, RoutedEventArgs e)
         {
             Views.HistoryRole historyRole = new Views.HistoryRole();

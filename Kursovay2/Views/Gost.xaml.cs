@@ -74,62 +74,6 @@ namespace Kursovay2.Gost
         }
 
 
-
-        private void ClickModno(object sender, RoutedEventArgs e)
-        {
-            Views.Modno modno = new Views.Modno();
-            modno.Show();
-            this.Close();
-        }
-
-        private void ClickNoModno(object sender, RoutedEventArgs e)
-        {
-            Views.NoModno modnono = new Views.NoModno();
-            modnono.Show();
-            this.Close();
-        }
-
-        private void ClickLegend(object sender, RoutedEventArgs e)
-        {
-            Views.Legend legend = new Views.Legend();
-            legend.Show();
-            this.Close();
-        }
-
-        private void ClickGostToMainWindow(object sender, RoutedEventArgs e)
-        {
-           
-            MainWindow mainWindow  = new MainWindow();
-            //mainWindow.Show();
-            this.Close();
-        }
-
-        //private void ClickNewMemNow(object sender, RoutedEventArgs e)
-        //{
-        //    Views.NewMemNow newMemNow = new Views.NewMemNow();
-        //    newMemNow.Show();
-        //    this.Close();
-        //}
-
-        //private void ClickNewsGost(object sender, RoutedEventArgs e)
-        //{
-        //    Views.NewsGost news = new Views.NewsGost();
-        //    news.Show();
-        //    this.Close();
-        //}
-
-        //private void ClickNostal(object sender, RoutedEventArgs e)
-        //{
-        //    Views.Nostal nostal = new Views.Nostal();
-        //    nostal.Show();
-        //    this.Close();
-        //}
-
-        private void ClickMebl(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void ClickGostWindow(object sender, RoutedEventArgs e)
         {
             Gost gost = new Gost();
@@ -175,8 +119,7 @@ namespace Kursovay2.Gost
         }
         private void btnMax_Click(object sender, RoutedEventArgs e)
         {
-            //Window parentWindow = Window.GetWindow(this);
-            //parentWindow.WindowState = WindowState.Maximized;
+           
             if (WindowState == WindowState.Normal)
             {
                 // Меняем размер окна на максимальный

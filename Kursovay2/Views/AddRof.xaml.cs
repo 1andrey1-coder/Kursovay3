@@ -266,6 +266,7 @@ namespace Kursovay2.AddRof
                 SelectRofl.RoflImage = File.ReadAllBytes(newFile);
                 Signal("SelectRofl");
             }
+            MessageBox.Show("Картинка выбрана, можете добавлять в базу данных");
         }
 
         private void ClickObratAdmin(object sender, RoutedEventArgs e)
