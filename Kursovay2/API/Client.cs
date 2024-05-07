@@ -574,23 +574,39 @@ namespace Kursovay2.API
 
 
 
-        public async Task<LoginUserDTO> promote(int userAdmin)
+        public async Task<LoginUserDTO> promote(LoginUserDTO userAdmin)
         {
             HttpResponseMessage response = await httpClient.PostAsJsonAsync($"Account/promote/{userAdmin}", userAdmin);
 
             if (response.IsSuccessStatusCode)
             {
-                MessageBox.Show("Роль теперь Админа");
+                MessageBox.Show($"{userAdmin.LoginName} теперь Админа");
                 
             }
             else
             {
-                MessageBox.Show("Роль не удалось изменить на Админа");
+                MessageBox.Show($"{userAdmin.LoginName} имеет роль Админа");
             }
             return null;
         }
 
-        
+        public async Task<LoginUserDTO> demote(LoginUserDTO userAdmin)
+        {
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync($"Account/demote/{userAdmin}", userAdmin);
+
+            if (response.IsSuccessStatusCode)
+            {
+                MessageBox.Show($"{userAdmin.LoginName} теперь Пользователь");
+
+            }
+            else
+            {
+                MessageBox.Show($"{userAdmin.LoginName} имеет роль Пользователь");
+            }
+            return null;
+        }
+
+
     }
 
 

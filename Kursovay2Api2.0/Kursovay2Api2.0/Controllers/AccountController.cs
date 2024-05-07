@@ -758,9 +758,9 @@ namespace Kursovay2Api2._0.Controllers
         }
 
         [HttpPost("promote/{userId}")]
-        public async Task<ActionResult> PromoteAdmin(int userId)
+        public async Task<ActionResult> PromoteAdmin(LoginUserDTO userId)
         {
-            var user = await _memContext.LoginUsers.FindAsync(userId);
+            var user = await _memContext.LoginUsers.FindAsync(userId.LoginId);
 
             if (user == null)
             {
@@ -776,9 +776,9 @@ namespace Kursovay2Api2._0.Controllers
         }
 
         [HttpPost("demote/{userId}")]
-        public async Task<ActionResult> DemoteAdmin(int userId)
+        public async Task<ActionResult> DemoteAdmin(LoginUserDTO userId)
         {
-            var user = await _memContext.LoginUsers.FindAsync(userId);
+            var user = await _memContext.LoginUsers.FindAsync(userId.LoginId);
 
             if (user == null)
             {

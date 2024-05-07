@@ -215,7 +215,9 @@ namespace Kursovay2.Views
 
         private void ClickResetRoleUser(object sender, RoutedEventArgs e)
         {
-
+            LoginUserDTO selectedId = (LoginUserDTO)AdminListView.SelectedItem;
+            Client.Instance.demote(selectedId);
+            
         }
 
         private async void TextChanged(object sender, TextChangedEventArgs e)
