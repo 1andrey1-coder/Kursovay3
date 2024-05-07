@@ -189,11 +189,11 @@ Click="btnClose_Click">
                                 <Image Source="\icons\Search.png" Height="40"/>
                                 <StackPanel Margin="5" Orientation="Vertical" >
 
-                                    <TextBlock  Text="Поиск по тегу шутки:"  Foreground="White"/>
+                                    <TextBlock  Text="Поиск по Логину пользаветеля:"  Foreground="White"/>
 
 
 
-                                    <TextBox x:Name="myTextBox" GotFocus="Focus" LostFocus="lastFocus" Text="Введите данные" 
+                                    <TextBox GotFocus="Focus" LostFocus="lastFocus" x:Name="myTextBox" TextChanged="TextChanged"
                                              Width="200" Height="22" >
                                         <TextBox.Template>
                                             <ControlTemplate>
@@ -205,37 +205,12 @@ Click="btnClose_Click">
                                     </TextBox>
 
                                 </StackPanel>
-                                <Button Content="Сброс" Click="ResetSearch" Foreground="White" 
-                                        VerticalAlignment="Top" Margin=" 0 15 0 0" >
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <Border Width="90" Height="25"           CornerRadius="15"
-           Background="{TemplateBinding Background}">
-                                                <ContentPresenter VerticalAlignment="Center"
-                         HorizontalAlignment="Center"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                                <StackPanel Margin="5" Orientation="Vertical" Width="159"  >
-                                    <TextBlock HorizontalAlignment="Center" Text="Сортировка по Эпичности" Foreground="White" />
-                                    <ComboBox ItemsSource="{Binding Sorting, UpdateSourceTrigger=PropertyChanged}" 
-SelectedItem="{Binding SelectedSorting, UpdateSourceTrigger=PropertyChanged}"/>
-                                </StackPanel>
-
-                                <StackPanel Margin="5" Orientation="Vertical" Width="75" >
-                                    <TextBlock Text="Жанр" HorizontalAlignment="Center" Foreground="White" />
-                                    <ComboBox ItemsSource="{Binding Types, UpdateSourceTrigger=PropertyChanged}" 
-SelectedItem="{Binding SelectedType, UpdateSourceTrigger=PropertyChanged}"
-DisplayMemberPath="Type1"/>
-                                </StackPanel>
                             </StackPanel>
 
 
 
 
                         </StackPanel>
-
                         <!--сделать поиск и фильтрацию-->
                     </Grid>
 
@@ -355,6 +330,13 @@ Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="2" >
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                             </DataGrid.Columns>
+
+                            <DataGrid.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Изменить роль на админа" Click="ClickResetRole"/>
+                                    <MenuItem Header="Изменить роль на пользователя" Click="ClickResetRoleUser"/>
+                                </ContextMenu>
+                            </DataGrid.ContextMenu>
                         </DataGrid>
                     </ScrollViewer>
 

@@ -571,6 +571,26 @@ namespace Kursovay2.API
             //}
             return null;
         }
+
+
+
+        public async Task<LoginUserDTO> promote(int userAdmin)
+        {
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync($"Account/promote/{userAdmin}", userAdmin);
+
+            if (response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Роль теперь Админа");
+                
+            }
+            else
+            {
+                MessageBox.Show("Роль не удалось изменить на Админа");
+            }
+            return null;
+        }
+
+        
     }
 
 

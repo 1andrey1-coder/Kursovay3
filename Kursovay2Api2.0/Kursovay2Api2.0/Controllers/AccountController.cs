@@ -756,6 +756,42 @@ namespace Kursovay2Api2._0.Controllers
             }));
 
         }
+
+        [HttpPost("promote/{userId}")]
+        public async Task<ActionResult> PromoteAdmin(int userId)
+        {
+            var user = await _memContext.LoginUsers.FindAsync(userId);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            // Заменяю роль пользователя на администратора
+            user.RoleId = 1;
+
+            await _memContext.SaveChangesAsync();
+
+            return Ok();
+        }
+
+        [HttpPost("demote/{userId}")]
+        public async Task<ActionResult> DemoteAdmin(int userId)
+        {
+            var user = await _memContext.LoginUsers.FindAsync(userId);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            // Заменяю роль пользователя на обычного пользователя
+            user.RoleId = 2;
+
+            await _memContext.SaveChangesAsync();
+
+            return Ok();
+        }
     }
 }
     

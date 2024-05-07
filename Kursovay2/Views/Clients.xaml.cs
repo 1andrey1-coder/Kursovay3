@@ -205,5 +205,42 @@ namespace Kursovay2.Views
                 myTextBox.Foreground = Brushes.Gray;
             }
         }
+
+        private void ClickResetRole(object sender, RoutedEventArgs e)
+        {
+            LoginUserDTO selectedId = (LoginUserDTO)AdminListView.SelectedItem;
+            Client.Instance.promote(selectedId);
+
+        }
+
+        private void ClickResetRoleUser(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private async void TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            string search = myTextBox.Text;
+            string comboboxTeg = "";
+            if (search == "Введите данные")
+                search = null;
+
+
+            if (search != null)
+            {
+
+                List<RoflDTO> Rofl = await Client.Instance.SearchApi(search, comboboxTeg);
+
+                if (Rofl != null)
+                {
+                    AdminListView.ItemsSource = Rofl;
+                }
+            }
+            else
+                AdminListView.ItemsSource = await Client.Instance.SearchApi("", "");
+        }
+
+        
     }
 }
