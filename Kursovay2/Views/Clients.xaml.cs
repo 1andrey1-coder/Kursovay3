@@ -223,23 +223,23 @@ namespace Kursovay2.Views
         private async void TextChanged(object sender, TextChangedEventArgs e)
         {
 
-            //string search = myTextBox.Text;
-            //if (search == "Введите данные")
-            //    search = null;
+            string search = myTextBox.Text;
+            if (search == "Введите данные")
+                search = null;
 
 
-            //if (search != null)
-            //{
+            if (search != null)
+            {
 
-            //    List<RoflDTO> Rofl = await Client.Instance.SearchApiClients(search);
+                List<LoginUserDTO> Rofl = await Client.Instance.SearchApiClients(search);
 
-            //    if (Rofl != null)
-            //    {
-            //        AdminListView.ItemsSource = Rofl;
-            //    }
-            //}
-            //else
-            //    AdminListView.ItemsSource = await Client.Instance.SearchApi("", "");
+                if (Rofl != null)
+                {
+                    AdminListView.ItemsSource = Rofl;
+                }
+            }
+            else
+                AdminListView.ItemsSource = await Client.Instance.SearchApiClients("");
         }
 
         

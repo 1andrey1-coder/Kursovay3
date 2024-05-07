@@ -479,21 +479,21 @@ namespace Kursovay2.API
         public async Task<List<LoginUserDTO>> SearchApiClients(string searchName)
         {
 
-            //HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/SearchNameClients", searchName);
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/SearchNameClients", searchName);
 
 
-            //if (response.IsSuccessStatusCode)
-            //{
-            //    string json = await response.Content.ReadAsStringAsync();
-            //    List<LoginUserDTO> searchResults = JsonConvert.DeserializeObject<List<LoginUserDTO>>(json);
+            if (response.IsSuccessStatusCode)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+                List<LoginUserDTO> searchResults = JsonConvert.DeserializeObject<List<LoginUserDTO>>(json);
 
-            //    return searchResults;
+                return searchResults;
 
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Ошибка при поиске данных", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
-            //}
+            }
+            else
+            {
+                MessageBox.Show("Ошибка при поиске данных", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
             return null;
         }
