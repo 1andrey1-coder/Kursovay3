@@ -80,6 +80,7 @@ namespace Kursovay2.Views
                 userWindow.Show();
                 Close();
             }
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

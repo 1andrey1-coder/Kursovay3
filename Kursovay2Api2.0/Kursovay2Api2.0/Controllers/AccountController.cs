@@ -733,13 +733,29 @@ namespace Kursovay2Api2._0.Controllers
             return input1.ToUpper();
         }
 
-        //[HttpPost("Date")]
-        //public IEnumerable<RoflDTO> PostDate([FromQuery] RoflDTO date)
-        //{
-        //    var dates = _memContext.Rofls.Where(s => s.RoflDateTime == date).ToList();
-        //    return Ok(dates);
+        [HttpPost("Date")]
+        public async Task<ActionResult<IEnumerable<RoflDTO>>> PostDate([FromQuery] DateTime date)
+        {
 
-        //}
+            var rofls = await _memContext.Rofls.Include(s => s.RoflGenre).Include(s => s.RoflStart).
+               Include(s => s.RoflEnd).Include(s => s.RoflStatus).Include(s => s.Teg).ToListAsync();
+
+            var dates = _memContext.Rofls.Where(s => s.RoflDateTime == date).ToList();
+            return Ok(rofls.Select(s => new RoflDTO
+            {
+                Teg = s.Teg.TegName,
+                RoflName = s.RoflName,
+                RoflOpisanie = s.RoflOpisanie,
+                RoflDateTime = s.RoflDateTime,
+                RoflEnd = s.RoflEnd.EndName,
+                RoflGenre = s.RoflGenre.GenreName,
+                RoflMinOpisanie = s.RoflMinOpisanie,
+                RoflStart = s.RoflStart.StartName,
+                RoflStatus = s.RoflStatus.StatusName,
+                RoflImage = s.RoflImage,
+            }));
+
+        }
     }
 }
     

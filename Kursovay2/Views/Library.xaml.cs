@@ -146,7 +146,10 @@ namespace Kursovay2.Views
 
         private void PanelHeader_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
         private void Timer_Tick(object sender, EventArgs e)
         {

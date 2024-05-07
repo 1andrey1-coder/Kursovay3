@@ -316,10 +316,12 @@ namespace Kursovay2.User
         private async void TextChanged(object sender, TextChangedEventArgs e)
         {
 
+
             string search = myTextBox.Text;
             string comboboxTeg = AdminComboBoxTeg.Text;
+            if (search == "Введите данные")
+                search = null;
 
-            await Client.Instance.SearchApi(search, comboboxTeg);
 
             if (search != null)
             {
@@ -330,11 +332,9 @@ namespace Kursovay2.User
                 {
                     AdminListView.ItemsSource = Rofl;
                 }
-
-
-
-
             }
+            else
+                AdminListView.ItemsSource = await Client.Instance.SearchApi("", "");
 
         }
     }

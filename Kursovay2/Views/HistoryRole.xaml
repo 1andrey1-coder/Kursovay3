@@ -8,10 +8,10 @@
         Title="Окно для истории шуток/рофлов" MinHeight="450" Height="500" MinWidth="750" Width="900" 
          WindowStartupLocation="CenterScreen"
          WindowStyle="None" AllowsTransparency="True" Background="Transparent">
-    
-    
-    
-        <Border CornerRadius="10">
+
+
+
+    <Border CornerRadius="10">
         <Border.Background>
             <ImageBrush ImageSource="/Images/дед.jpg"
              Stretch="Fill"/>
@@ -262,7 +262,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
   FontFamily="Century Gothic" FontSize="14" Foreground="White" 
   BorderBrush="Transparent" Background="Transparent" FontWeight="Bold">
 
-                                    
+
 
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
@@ -307,82 +307,19 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
         Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" >
 
                     <!--Сделать в виде карточек, вывод всех шуток-->
+                    <Grid>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
 
-
-
-
-
-
-
-                    <!--<ListView 
-ItemsSource="{Binding stagesRof}" 
-SelectedItem="{Binding SelectedStage}" Margin="5">
-
-                        <ListView.ContextMenu>
-                            <ContextMenu>
-                                <MenuItem Header="Описания шутки" Click="ClickOpisaniaRof"/>
-                            </ContextMenu>
-                        </ListView.ContextMenu>
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Header="Тэг" Width="35"  
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
-                              />
-
-                                <GridViewColumn Header="Автор" Width="110" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
-                                <GridViewColumn Header="Завершение шутки" Width="140" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
-                                <GridViewColumn Header="Название шутки/рофла" Width="150" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-DisplayMemberBinding="{Binding Title}"/>
-                                <GridViewColumn Header="Небольшое описание" Width="150" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
-                                <GridViewColumn Header="Статус" Width="100" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>-->
+                        <StackPanel Grid.Column="0" >
+                            <DatePicker />
+                        </StackPanel>
+                    </Grid>
                 </ScrollViewer>
             </Grid>
         </Border>
     </Border>
-    
-    
-    
-    <!--<Border>
-
-        <Border.Background>
-            <ImageBrush ImageSource="/Images/дед.jpg"
-                     Stretch="Fill"/>
-        </Border.Background>
-        <Border  CornerRadius="10"                    
- BorderThickness="2"
- Opacity="0.95">
-            <Border.BorderBrush>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#462AD8" Offset="0"/>
-                    <GradientStop Color="#DA34AE" Offset="0.75"/>
-                    <GradientStop Color="#8A16C1" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.BorderBrush>
-
-            <Border.Background>
-                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                    <GradientStop Color="#060531" Offset="0"/>
-                    <GradientStop Color="#1B1448" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.Background>
-            <Grid >
-
-                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"  Width="130">
-                    <Button Height="30" Content="Вернуться обратно" Click="VernutObrat" />
-                </StackPanel>
-            </Grid>
-        </Border>
-    </Border>-->
 </Window>

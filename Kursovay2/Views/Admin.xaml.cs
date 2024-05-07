@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -156,6 +157,7 @@ namespace Kursovay2.Admin
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             timer.Start();
+            //LoadData();
         }
 
         private void PanelHeader_MouseDown(object sender, MouseButtonEventArgs e)
@@ -385,8 +387,9 @@ namespace Kursovay2.Admin
 
             string search = myTextBox.Text;
             string comboboxTeg = AdminComboBoxTeg.Text;
+            if (search == "Введите данные")
+                search = null;
 
-            await Client.Instance.SearchApi(search, comboboxTeg);
 
             if (search != null)
             {
@@ -397,12 +400,9 @@ namespace Kursovay2.Admin
                 {
                     AdminListView.ItemsSource = Rofl;
                 }
-               
-
-                   
-                
             }
-
+            else
+                AdminListView.ItemsSource = await Client.Instance.SearchApi("", "");
         }
 
         private void Podskaska(object sender, RoutedEventArgs e)
@@ -419,7 +419,7 @@ namespace Kursovay2.Admin
                 Opisania opisania = new Opisania(selectedItem);
                 opisania.Show();
             }
-               
+
 
         }
 
@@ -427,6 +427,19 @@ namespace Kursovay2.Admin
         {
             TransletSlangOld transletSlangOld = new TransletSlangOld();
             transletSlangOld.Show();
+            Close();
+
+        }
+
+        private void calendar(object sender, RoutedEventArgs e)
+        {
+            if (SingleProfle.user.RoleId == 1)
+            {
+
+                HistoryRole role = new HistoryRole();
+                role.Show();
+                Close();
+            }
 
         }
     }
