@@ -224,7 +224,6 @@ namespace Kursovay2.Views
         {
 
             string search = myTextBox.Text;
-            string comboboxTeg = "";
             if (search == "Введите данные")
                 search = null;
 
@@ -232,7 +231,7 @@ namespace Kursovay2.Views
             if (search != null)
             {
 
-                List<RoflDTO> Rofl = await Client.Instance.SearchApi(search, comboboxTeg);
+                List<RoflDTO> Rofl = await Client.Instance.SearchApiClients(search);
 
                 if (Rofl != null)
                 {

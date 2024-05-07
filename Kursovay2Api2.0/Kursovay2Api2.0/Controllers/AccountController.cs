@@ -587,6 +587,44 @@ namespace Kursovay2Api2._0.Controllers
         }
         //Обнова пароля/логина/почты
 
+
+
+
+
+        [HttpPost("SearchNameClients")]
+        public async Task<ActionResult<IEnumerable<LoginUserDTO>>> Search([FromBody] LoginUserDTO rofl)
+        {
+            try
+            {
+
+                //var user = _memContext.LoginUsers.FindAsync(rofl.LoginName);
+
+                //if (user == null)
+                //{
+                //    return BadRequest("Invalid credentials");
+                //}
+
+                //// Можно возвращать только определенные данные пользователя
+                //var userResponse = new LoginUserDTO
+                //{
+                //    LoginId = user,
+                //    LoginName = user.Username,
+                //    LoginImage = user.Email,
+                //    LoginPassword = user
+                //    // Добавить другие поля по необходимости
+                //};
+
+                //return Ok(userResponse);
+
+
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
         [HttpPost("SearchName")]
         public async Task<ActionResult<IEnumerable<RoflDTO>>> Search([FromBody] RoflDTO rofl)
         {
@@ -794,15 +832,15 @@ namespace Kursovay2Api2._0.Controllers
         }
     }
 }
-    
-
-
-
-   
 
 
 
 
 
-    
+
+
+
+
+
+
 

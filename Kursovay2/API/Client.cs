@@ -476,6 +476,27 @@ namespace Kursovay2.API
             return null;
         }
 
+        public async Task<List<LoginUserDTO>> SearchApiClients(LoginUserDTO searchName)
+        {
+
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/SearchNameClients", searchName.LoginName);
+
+
+            if (response.IsSuccessStatusCode)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+                List<LoginUserDTO> searchResults = JsonConvert.DeserializeObject<List<LoginUserDTO>>(json);
+
+                return searchResults;
+
+            }
+            else
+            {
+                MessageBox.Show("Ошибка при поиске данных", "Неудача", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            return null;
+        }
         public async Task<List<RoflDTO>> SearchApiNotComboBox(string searchName)
         {
             var Search = new RoflDTO
@@ -581,7 +602,7 @@ namespace Kursovay2.API
             if (response.IsSuccessStatusCode)
             {
                 MessageBox.Show($"{userAdmin.LoginName} теперь Админа");
-                
+
             }
             else
             {
