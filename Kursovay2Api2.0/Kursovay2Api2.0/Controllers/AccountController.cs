@@ -592,18 +592,28 @@ namespace Kursovay2Api2._0.Controllers
 
 
         [HttpPost("SearchNameClients")]
-        public async Task<ActionResult<IEnumerable<LoginUserDTO>>> Search([FromBody] LoginUserDTO rofl)
+        public async Task<ActionResult<LoginUserDTO>> Search(int rofl)
         {
             try
             {
 
-                //var user = _memContext.LoginUsers.FindAsync(rofl.LoginName);
+                var user = _memContext.LoginUsers.FindAsync(rofl);
 
-                //if (user == null)
+                if (user == null)
+                {
+                    return BadRequest("Ошибка");
+                }
+
+                //var userResponse = _memContext.LoginUsers.FindAsync(new LoginUserDTO
                 //{
-                //    return BadRequest("Invalid credentials");
-                //}
+                //    LoginId = rofl.LoginId,
+                //    LoginName = rofl.LoginName,
+                //    LoginPassword = rofl.LoginPassword,
+                //    LoginImage = rofl.LoginImage,
+                //});
 
+
+                return Ok(user);
                 //// Можно возвращать только определенные данные пользователя
                 //var userResponse = new LoginUserDTO
                 //{
