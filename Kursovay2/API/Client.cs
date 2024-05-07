@@ -479,7 +479,11 @@ namespace Kursovay2.API
         public async Task<List<LoginUserDTO>> SearchApiClients(string searchName)
         {
 
-            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/SearchNameClients", searchName);
+            var search = new LoginUserDTO
+            {
+                LoginName = searchName,
+            };
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/SearchNameClients", search); ;
 
 
             if (response.IsSuccessStatusCode)

@@ -592,13 +592,37 @@ namespace Kursovay2Api2._0.Controllers
 
 
         [HttpPost("SearchNameClients")]
-        public async Task<ActionResult<LoginUserDTO>> Search([FromBody]string rofl)
+        public async Task<ActionResult<IEnumerable<LoginUserDTO>>> Search([FromBody] LoginUserDTO rofl)
         {
             try
             {
-                var users = _memContext.LoginUsers.Where(s=>s.LoginName == rofl).ToList();
+                //var users = _memContext.LoginUsers.Where(s => s.LoginName == rofl.LoginName).ToListAsync();
+                var users = _memContext.LoginUsers.Where(s => s.LoginName == rofl.LoginName).ToList();
                 //var user = _memContext.LoginUsers.FindAsync(rofl);
 
+                IQueryable<LoginUserDTO> search;
+                if (!string.IsNullOrEmpty(rofl.LoginName))
+                {
+                    search = _memContext.LoginUsers
+                        .Where(s => s.LoginName.Contains(rofl.LoginName))
+                        .Select(s => new LoginUserDTO
+                        {
+                            LoginId = s.LoginId,
+                            LoginImage = s.LoginImage,
+                            LoginName = s.LoginName,
+                            LoginPassword = s.LoginPassword,
+                        });
+                }
+                else if (rofl.LoginName == "")
+                {
+                    return Ok(users.Select(s => new LoginUserDTO
+                    {
+                        LoginId = s.LoginId,
+                        LoginImage = s.LoginImage,
+                        LoginName = s.LoginName,
+                        LoginPassword = s.LoginPassword,
+                    }));
+                }
                 if (users == null)
                 {
                     return BadRequest("Ошибка");
@@ -611,6 +635,8 @@ namespace Kursovay2Api2._0.Controllers
                 //    LoginPassword = rofl.LoginPassword,
                 //    LoginImage = rofl.LoginImage,
                 //});
+
+
 
 
                 return Ok(users);

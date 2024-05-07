@@ -226,6 +226,8 @@ namespace Kursovay2.Views
             string search = myTextBox.Text;
             if (search == "Введите данные")
                 search = null;
+            else if(search == "")
+                search = null;
 
 
             if (search != null)
@@ -233,10 +235,21 @@ namespace Kursovay2.Views
 
                 List<LoginUserDTO> Rofl = await Client.Instance.SearchApiClients(search);
 
-                if (Rofl != null)
+
+                foreach (var d in Rofl)
+                    if (d.LoginImage == null)
+                        d.LoginImage = defaultImage;
+                Dispatcher.Invoke(() =>
                 {
-                    AdminListView.ItemsSource = Rofl;
-                }
+                    if (Rofl != null)
+                    {
+                        AdminListView.ItemsSource = Rofl;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to load data from API");
+                    }
+                });
             }
             else
                 AdminListView.ItemsSource = await Client.Instance.SearchApiClients("");
