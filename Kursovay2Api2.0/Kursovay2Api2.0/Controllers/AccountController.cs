@@ -615,19 +615,19 @@ namespace Kursovay2Api2._0.Controllers
                 }
                 else if (rofl.LoginName == "")
                 {
-                    return Ok(users.Select(s => new LoginUserDTO
-                    {
-                        LoginId = s.LoginId,
-                        LoginImage = s.LoginImage,
-                        LoginName = s.LoginName,
-                        LoginPassword = s.LoginPassword,
-                    }));
-                }
-                if (users == null)
-                {
-                    return BadRequest("Ошибка");
-                }
 
+
+                    var use = _memContext.LoginUsers.ToList();
+                    return Ok(use);
+                    //return Ok(users.Select(s => new LoginUserDTO
+                    //{
+                    //    LoginId = s.LoginId,
+                    //    LoginImage = s.LoginImage,
+                    //    LoginName = s.LoginName,
+                    //    LoginPassword = s.LoginPassword,
+                    //}));
+                }
+                
                 //var userResponse = _memContext.LoginUsers.FindAsync(new LoginUserDTO
                 //{
                 //    LoginId = rofl.LoginId,
