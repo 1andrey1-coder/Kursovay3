@@ -224,10 +224,11 @@ namespace Kursovay2.Views
         {
 
             string search = myTextBox.Text;
+           
             if (search == "Введите данные")
                 search = null;
-            else if(search == "")
-                search = null;
+            //else if(search == "")
+            //    search = null;
 
 
             if (search != null)
