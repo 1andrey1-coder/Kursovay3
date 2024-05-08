@@ -592,14 +592,12 @@ namespace Kursovay2Api2._0.Controllers
 
 
         [HttpPost("SearchNameClients")]
-        public async Task<ActionResult<IEnumerable<LoginUserDTO>>> Search([FromBody] LoginUserDTO rofl)
+        public async Task<ActionResult<IEnumerable<LoginUserDTO>>> SearchClients([FromBody] LoginUserDTO rofl)
         {
             try
             {
-                //var users = _memContext.LoginUsers.Where(s => s.LoginName == rofl.LoginName).ToListAsync();
                 var users = _memContext.LoginUsers.Where(s => s.LoginName == rofl.LoginName).ToList();
-                //var user = _memContext.LoginUsers.FindAsync(rofl);
-
+                
                 IQueryable<LoginUserDTO> search;
                 if (!string.IsNullOrEmpty(rofl.LoginName))
                 {
@@ -615,30 +613,54 @@ namespace Kursovay2Api2._0.Controllers
                 }
                 else if (rofl.LoginName == "")
                 {
-
-
                     var use = _memContext.LoginUsers.ToList();
                     return Ok(use);
-                    //return Ok(users.Select(s => new LoginUserDTO
-                    //{
-                    //    LoginId = s.LoginId,
-                    //    LoginImage = s.LoginImage,
-                    //    LoginName = s.LoginName,
-                    //    LoginPassword = s.LoginPassword,
-                    //}));
+                   
                 }
-                
-                //var userResponse = _memContext.LoginUsers.FindAsync(new LoginUserDTO
-                //{
-                //    LoginId = rofl.LoginId,
-                //    LoginName = rofl.LoginName,
-                //    LoginPassword = rofl.LoginPassword,
-                //    LoginImage = rofl.LoginImage,
-                //});
+                return Ok(users);
 
 
 
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
+        }
+        [HttpPost("SearchNameAllRofl")]
+        public async Task<ActionResult<IEnumerable<RoflDTO>>> SearchAllRofl([FromBody] RoflDTO rofl)
+        {
+            try
+            {
+                var users = _memContext.Rofls.Where(s => s.RoflName == rofl.RoflName).ToList();
+
+                IQueryable<RoflDTO> search;
+                if (!string.IsNullOrEmpty(rofl.RoflName))
+                {
+                    search = _memContext.Rofls
+                        .Where(s => s.RoflName.Contains(rofl.RoflName))
+                        .Select(s => new RoflDTO
+                        {
+                            Teg = s.Teg.TegName,
+                            RoflName = s.RoflName,
+                            RoflOpisanie = s.RoflOpisanie,
+                            RoflDateTime = s.RoflDateTime,
+                            RoflEnd = s.RoflEnd.EndName,
+                            RoflGenre = s.RoflGenre.GenreName,
+                            RoflMinOpisanie = s.RoflMinOpisanie,
+                            RoflStart = s.RoflStart.StartName,
+                            RoflStatus = s.RoflStatus.StatusName,
+                            RoflImage = s.RoflImage,
+
+                        });
+                }
+                if (rofl.RoflName == "")
+                {
+                    var use = _memContext.Rofls.ToList();
+                    return Ok(use);
+
+                }
                 return Ok(users);
 
 

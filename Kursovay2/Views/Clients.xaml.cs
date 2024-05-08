@@ -227,8 +227,6 @@ namespace Kursovay2.Views
            
             if (search == "Введите данные")
                 search = null;
-            //else if(search == "")
-            //    search = null;
 
 
             if (search != null)

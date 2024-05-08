@@ -507,7 +507,7 @@ namespace Kursovay2.API
             {
                 RoflName = searchName,
             };
-            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/SearchName", Search);
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/SearchNameAllRofl", Search);
 
 
             if (response.IsSuccessStatusCode)

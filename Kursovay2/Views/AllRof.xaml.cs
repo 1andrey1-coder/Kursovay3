@@ -255,8 +255,9 @@ namespace Kursovay2.Views
         private async void TextChanged(object sender, TextChangedEventArgs e)
         {
             string search = myTextBox.Text;
-
-            await Client.Instance.SearchApiNotComboBox(search);
+            if (search == "Введите данные")
+                search = null;
+          
 
             if (search != null)
             {
@@ -282,6 +283,8 @@ namespace Kursovay2.Views
 
 
             }
+            else
+                AdminListView.ItemsSource = await Client.Instance.SearchApiNotComboBox("");
         }
     }
 }
