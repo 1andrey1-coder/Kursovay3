@@ -337,5 +337,26 @@ namespace Kursovay2.User
                 AdminListView.ItemsSource = await Client.Instance.SearchApi("", "");
 
         }
+
+        private void translet(object sender, RoutedEventArgs e)
+        {
+            if (SingleProfle.user.RoleId == 2)
+            {
+                TransletSlangOld transletSlangOld = new TransletSlangOld();
+                transletSlangOld.Show();
+                Close();
+            }
+        }
+
+        private void calendar(object sender, RoutedEventArgs e)
+        {
+            if (SingleProfle.user.RoleId == 2)
+            {
+
+                HistoryRole role = new HistoryRole();
+                role.Show();
+                Close();
+            }
+        }
     }
 }

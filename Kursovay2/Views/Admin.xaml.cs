@@ -425,9 +425,12 @@ namespace Kursovay2.Admin
 
         private void translet(object sender, RoutedEventArgs e)
         {
-            TransletSlangOld transletSlangOld = new TransletSlangOld();
-            transletSlangOld.Show();
-            Close();
+            if (SingleProfle.user.RoleId == 1)
+            {
+                TransletSlangOld transletSlangOld = new TransletSlangOld();
+                transletSlangOld.Show();
+                Close();
+            }
 
         }
 

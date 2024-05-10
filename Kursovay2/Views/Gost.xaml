@@ -200,7 +200,7 @@ Click="btnClose_Click">
 
 
 
-                                    <TextBox x:Name="myTextBox" GotFocus="Focus" LostFocus="lastFocus" Text="Введите данные" 
+                                    <TextBox GotFocus="Focus" LostFocus="lastFocus" x:Name="myTextBox" TextChanged="TextChanged"
                                              Width="200" Height="22" >
                                         <TextBox.Template>
                                             <ControlTemplate>
@@ -212,11 +212,11 @@ Click="btnClose_Click">
                                     </TextBox>
 
                                 </StackPanel>
-                                <Button Content="Сброс" Click="ResetSearch" Foreground="White" 
-                                        VerticalAlignment="Top" Margin=" 0 15 0 0" >
+                                <Button Content="СБРОС ТЭГА" Click="ResetSearch" Foreground="White" 
+                                        VerticalAlignment="Top" Margin=" 0 20 0 0" >
                                     <Button.Template>
                                         <ControlTemplate TargetType="Button">
-                                            <Border Width="90" Height="25"           CornerRadius="15"
+                                            <Border Width="90" Height="25"           CornerRadius="10"
            Background="{TemplateBinding Background}">
                                                 <ContentPresenter VerticalAlignment="Center"
                          HorizontalAlignment="Center"/>
@@ -224,18 +224,18 @@ Click="btnClose_Click">
                                         </ControlTemplate>
                                     </Button.Template>
                                 </Button>
-                                <StackPanel Margin="5" Orientation="Vertical" Width="159"  >
-                                    <TextBlock HorizontalAlignment="Center" Text="Сортировка по Эпичности" Foreground="White" />
-                                    <ComboBox ItemsSource="{Binding Sorting, UpdateSourceTrigger=PropertyChanged}" 
-SelectedItem="{Binding SelectedSorting, UpdateSourceTrigger=PropertyChanged}"/>
+                                <StackPanel Margin="5" Orientation="Vertical" Width="100"  >
+                                    <TextBlock HorizontalAlignment="Center" Text="Гэг" Foreground="White" />
+                                    <ComboBox x:Name="AdminComboBoxTeg"  DisplayMemberPath="TegName" ItemsSource="{Binding Teg, UpdateSourceTrigger=PropertyChanged}" 
+SelectedItem="{Binding SelectedGenre, UpdateSourceTrigger=PropertyChanged}"/>
                                 </StackPanel>
 
-                                <StackPanel Margin="5" Orientation="Vertical" Width="75" >
+                                <!--<StackPanel Margin="5" Orientation="Vertical" Width="75" >
                                     <TextBlock Text="Жанр" HorizontalAlignment="Center" Foreground="White" />
-                                    <ComboBox ItemsSource="{Binding Types, UpdateSourceTrigger=PropertyChanged}" 
-SelectedItem="{Binding SelectedType, UpdateSourceTrigger=PropertyChanged}"
-DisplayMemberPath="Type1"/>
-                                </StackPanel>
+                                    <ComboBox  ItemsSource="{Binding Genre, UpdateSourceTrigger=PropertyChanged}" 
+                                              SelectedItem="{Binding SelectedGenre, UpdateSourceTrigger=PropertyChanged}"
+x:Name="AdminComboBoxGenre"  DisplayMemberPath="GenreName"/>
+                                </StackPanel>-->
                             </StackPanel>
 
 
@@ -334,39 +334,39 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                     </Grid>
 
                 </StackPanel>
-                <ScrollViewer Margin="0 0 5 5" HorizontalScrollBarVisibility="Auto"
+                <ScrollViewer HorizontalScrollBarVisibility="Auto"
         Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" >
 
-                    <ListView 
-ItemsSource="{Binding stagesRof}" 
-SelectedItem="{Binding SelectedStage}" Margin="5">
+                    <ListView x:Name="AdminListView"
+ItemsSource="{Binding Rofl}" 
+SelectedItem="{Binding SelectRofl}" SelectionMode="Single" Margin="5">
 
-                        <ListView.ContextMenu>
-                            <ContextMenu>
-                                <MenuItem Header="Описания шутки" Click="ClickOpisaniaRof"/>
-                            </ContextMenu>
-                        </ListView.ContextMenu>
+                     
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Тэг" Width="35"  
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
-                              />
+                                <GridViewColumn Header="Тэг" Width="75"  
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}" 
+                                                DisplayMemberBinding="{Binding Teg}" />
 
-                                <GridViewColumn Header="Автор" Width="110" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
+                                <!--<GridViewColumn Header="Автор" Width="110" 
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+                                                DisplayMemberBinding="{Binding Teg}" />-->
+
                                 <GridViewColumn Header="Завершение шутки" Width="140" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+                                                DisplayMemberBinding="{Binding RoflEnd}" />
+
                                 <GridViewColumn Header="Название шутки/рофла" Width="150" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-DisplayMemberBinding="{Binding Title}"/>
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+                                                DisplayMemberBinding="{Binding RoflName}" />
+
                                 <GridViewColumn Header="Небольшое описание" Width="150" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+                                                DisplayMemberBinding="{Binding RoflMinOpisanie}" />
+
                                 <GridViewColumn Header="Статус" Width="100" 
-                              HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
-/>
+                                                HeaderContainerStyle="{StaticResource GreyHeaderStyle}"
+                                                DisplayMemberBinding="{Binding RoflStatus}" />
                             </GridView>
                         </ListView.View>
                     </ListView>

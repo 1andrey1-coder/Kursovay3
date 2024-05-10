@@ -207,11 +207,11 @@ Click="btnClose_Click">
                                     </TextBox>
                                              
                                 </StackPanel>
-                                <Button Content="Сброс" Click="ResetSearch" Foreground="White" 
+                                <Button Content="СБРОС ТЭГА" Click="ResetSearch" Foreground="White" 
                                         VerticalAlignment="Top" Margin=" 0 20 0 0" >
                                     <Button.Template>
                                         <ControlTemplate TargetType="Button">
-                                            <Border Width="90" Height="25"           CornerRadius="15"
+                                            <Border Width="90" Height="25"           CornerRadius="10"
            Background="{TemplateBinding Background}">
                                                 <ContentPresenter VerticalAlignment="Center"
                          HorizontalAlignment="Center"/>

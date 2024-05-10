@@ -1,4 +1,5 @@
-﻿using Kursovay2.Models;
+﻿using Kursovay2.API;
+using Kursovay2.Models;
 using Kursovay2.User;
 using Kursovay2.Views;
 using System;
@@ -137,22 +138,50 @@ namespace Kursovay2.Gost
         {
 
         }
-        private void Focus(object sender, RoutedEventArgs e)
+        private async void Focus(object sender, RoutedEventArgs e)
         {
+
+
             if (myTextBox.Text == "Введите данные")
             {
                 myTextBox.Text = "";
-                myTextBox.Foreground = Brushes.Gray;
+                myTextBox.Foreground = Brushes.Black;
+
             }
         }
 
-        private void lastFocus(object sender, RoutedEventArgs e)
+        private async void lastFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(myTextBox.Text))
             {
                 myTextBox.Text = "Введите данные";
                 myTextBox.Foreground = Brushes.Gray;
             }
+
+        }
+        private async void TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+
+
+            string search = myTextBox.Text;
+            string comboboxTeg = AdminComboBoxTeg.Text;
+            if (search == "Введите данные")
+                search = null;
+
+
+            if (search != null)
+            {
+
+                List<RoflDTO> Rofl = await Client.Instance.SearchApi(search, comboboxTeg);
+
+                if (Rofl != null)
+                {
+                    AdminListView.ItemsSource = Rofl;
+                }
+            }
+            else
+                AdminListView.ItemsSource = await Client.Instance.SearchApi("", "");
         }
     }
 }

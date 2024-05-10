@@ -31,6 +31,7 @@ namespace Kursovay2.Views
         public HistoryRole()
         {
             InitializeComponent();
+            LoadDefaultImage();
             DisplayUserInfo();
 
             datePicker.SelectedDate = DateTime.Now;
@@ -164,24 +165,71 @@ namespace Kursovay2.Views
         {
 
         }
-        private void Focus(object sender, RoutedEventArgs e)
+
+        private async void Focus(object sender, RoutedEventArgs e)
         {
+
+
             if (myTextBox.Text == "Введите данные")
             {
                 myTextBox.Text = "";
-                myTextBox.Foreground = Brushes.Gray;
+                myTextBox.Foreground = Brushes.Black;
+
             }
         }
 
-        private void lastFocus(object sender, RoutedEventArgs e)
+        private async void lastFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(myTextBox.Text))
             {
                 myTextBox.Text = "Введите данные";
                 myTextBox.Foreground = Brushes.Gray;
             }
-        }
 
+        }
+        byte[] defaultImage;
+
+        private void LoadDefaultImage()
+        {
+            var stream = Application.GetResourceStream(new Uri("Images\\NotImage.png", UriKind.Relative));
+            defaultImage = new byte[stream.Stream.Length];
+            stream.Stream.Read(defaultImage, 0, defaultImage.Length);
+
+        }
+        private async void TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+
+
+            string search = myTextBox.Text;
+            if (search == "Введите данные")
+                search = null;
+
+
+            if (search != null)
+            {
+
+                List<RoflDTO> Rofl = await Client.Instance.SearchApiNotComboBox(search);
+
+                foreach (var d in Rofl)
+                    if (d.RoflImage == null)
+                        d.RoflImage = defaultImage;
+                Dispatcher.Invoke(() =>
+                {
+                    if (Rofl != null)
+                    {
+                        AdminListView.ItemsSource = Rofl;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to load data from API");
+                    }
+                });
+
+            }
+            else
+                AdminListView.ItemsSource = await Client.Instance.SearchApiNotComboBox("");
+        }
         private async void DatePickerChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             DatePicker selectedDate = (DatePicker)sender;
