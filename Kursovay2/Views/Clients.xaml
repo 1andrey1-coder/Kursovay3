@@ -60,7 +60,7 @@
                                 <ColumnDefinition Width="5"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="Окно Всех пользователей"
+                            <TextBlock Padding="10" Text="ВСЕ ПОЛЬЗОВАТЕЛИ"
    Foreground="DarkGray"
    FontSize="10"
    FontFamily="Montserrat"
