@@ -25,7 +25,7 @@ namespace Kursovay2.API
 
         //public string? RoflGenreId { get; set; }
 
-        public DateTime? RoflDateTime { get; set; }
+        public DateTime RoflDateTime { get; set; }
 
         public byte[]? RoflImage { get; set; }
 
