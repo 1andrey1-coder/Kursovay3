@@ -59,7 +59,7 @@
                                 <ColumnDefinition Width="5"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="Окно Истории шуток"
+                            <TextBlock Padding="10" Text="ВЫХОД ШУТКИ"
    Foreground="DarkGray"
    FontSize="10"
    FontFamily="Montserrat"

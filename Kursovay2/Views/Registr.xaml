@@ -55,7 +55,7 @@
                         <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="РЕГИСТРАЦИЯ"
+                    <TextBlock Padding="10" Text="РЕГИСТРАЦИЯ"
                          Foreground="DarkGray"
                          FontSize="10"
                          FontFamily="Montserrat"

@@ -79,7 +79,7 @@
                         <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="Профиль Пользователя"
+                    <TextBlock Padding="10" Text="ПРОФИЛЬ ПОЛЬЗОВАТЕЛЯ"
    Foreground="DarkGray"
    FontSize="10"
    FontFamily="Montserrat"

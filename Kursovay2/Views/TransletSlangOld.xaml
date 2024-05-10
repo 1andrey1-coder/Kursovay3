@@ -55,7 +55,7 @@
                                 <ColumnDefinition Width="5"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="АРХИВ"
+                            <TextBlock Padding="10" Text="ПЕРЕВОД МОЛОДЕЖНЫХ СЛОВ"
    Foreground="DarkGray"
    FontSize="10"
    FontFamily="Montserrat"

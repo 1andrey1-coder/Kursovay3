@@ -69,7 +69,7 @@
                                 <ColumnDefinition Width="5"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="Окно Гостя"
+                            <TextBlock Padding="10" Text="ОКНО ГОСТЯ"
    Foreground="DarkGray"
    FontSize="10"
    FontFamily="Montserrat"
