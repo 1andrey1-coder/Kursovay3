@@ -287,14 +287,16 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                     </ListViewItem>
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\New.png" Height="20" VerticalAlignment="Center"/>
-                                            <Button Margin="15 0 0 0" Content="Новости" Click="ClickNew"   Background="Transparent"
-                    BorderBrush="Transparent" Foreground="White"
-                                                    VerticalAlignment="Center"/>
+                                            <Image Source="\icons\library.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Margin="15 0 0 0"      
+Background="Transparent"
+Foreground="White"
+BorderBrush="Transparent"
+Content="Перевод" Click="translet" VerticalAlignment="Center"/>
                                         </StackPanel>
                                     </ListViewItem>
-                                   
-                                    
+
+
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
                                             <Image Source="\icons\Out.png" Height="20"

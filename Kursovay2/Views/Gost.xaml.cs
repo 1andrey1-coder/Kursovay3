@@ -183,5 +183,13 @@ namespace Kursovay2.Gost
             else
                 AdminListView.ItemsSource = await Client.Instance.SearchApi("", "");
         }
+
+        private void translet(object sender, RoutedEventArgs e)
+        {
+            TransletSlangOld transletSlangOld = new TransletSlangOld();
+                transletSlangOld.Show();
+                Close();
+            
+        }
     }
 }

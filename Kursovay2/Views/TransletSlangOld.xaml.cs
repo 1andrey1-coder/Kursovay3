@@ -80,6 +80,12 @@ namespace Kursovay2.Views
                 userWindow.Show();
                 Close();
             }
+            else
+            {
+                Gost.Gost gost = new Gost.Gost();
+                gost.Show();
+                Close();
+            }
             
         }
 
