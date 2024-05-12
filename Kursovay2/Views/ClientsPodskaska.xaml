@@ -5,8 +5,159 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.Views"
         mc:Ignorable="d"
-        Title="ClientsPodskaska" Height="450" Width="800">
+        Title="ClientsPodskaska" Height="750" Width="810" Background="#060531">
+
+
     <Grid>
-        
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="480"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Margin="0 10 0 0" Grid.Row="1">
+
+            <Image  Stretch="UniformToFill" Source="\Podskaski\AllClientsPodskaska.png" />
+        </StackPanel>
+
+        <StackPanel Margin="0 10 0 0" VerticalAlignment="Top"  Grid.Row="2" Grid.RowSpan="3">
+            <TextBlock Foreground="White" FontSize="30"  Text="1 - Кнопки для помощи в приложени "/>
+            <TextBlock Foreground="White" FontSize="30"  Text="2 - Вывод данных"/>
+            <TextBlock Foreground="White" FontSize="30"  Text="3 - Изменение роли пользователя"/>
+            <TextBlock Foreground="White" FontSize="30"  Text="4 - Кнопки для уменьшения/увеличивание/закрытие окна"/>
+            <TextBlock Foreground="White" FontSize="30"  Text="5 - Фильтрация пользователей"/>
+        </StackPanel>
+        <StackPanel  Grid.Column="1" Grid.Row="0">
+            <Grid Margin="0 0 0 0"  x:Name="panelHeader" VerticalAlignment="Top" 
+                   Background="Transparent"
+          MouseDown="PanelHeader_MouseDown">
+
+
+
+
+                <Grid  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Padding="10" Text="ПОДЗКАЗКА ПО ДОБАВЛЕНИЮ"
+   Foreground="DarkGray"
+   FontSize="10"
+   FontFamily="Montserrat"
+   Grid.Column="0"
+   VerticalAlignment="Center"
+   Margin="10,0,0,0"/>
+
+                    <Button x:Name="btnMinimize"                           
+BorderThickness="0"
+Content="-"
+Foreground="White"
+FontSize="16"
+FontFamily="Montserrat"
+Cursor="Hand"
+Grid.Column="1"
+Click="btnMinimize_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#28AEED"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+            CornerRadius="9"
+            Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+                    <Button x:Name="btnMaximized"                           
+BorderThickness="0"
+Content="▢"
+Foreground="White"
+FontSize="16"
+FontFamily="Montserrat"
+Cursor="Hand"
+Grid.Column="2"
+Click="btnMax_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#28AEED"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+            CornerRadius="9"
+            Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                    <Button x:Name="btnClose"                          
+BorderThickness="0"
+Content="X"
+Foreground="White"
+FontSize="12"
+FontFamily="Montserrat"
+Cursor="Hand"
+Grid.Column="3"
+Click="btnClose_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#DA34AE"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#C62DAE"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+            CornerRadius="9"
+            Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                          HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </Grid>
+
+
+        </StackPanel>
     </Grid>
 </Window>
