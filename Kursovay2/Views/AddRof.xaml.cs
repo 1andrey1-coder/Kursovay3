@@ -340,7 +340,10 @@ namespace Kursovay2.AddRof
 
         private void PanelHeader_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
 
         private void btnMax_Click(object sender, RoutedEventArgs e)

@@ -53,6 +53,14 @@
     <None Remove="Images\NotImage.png" />
     <None Remove="Images\user-icon.png" />
     <None Remove="Images\дед.jpg" />
+    <None Remove="Podskaski\AddRoflPodskaska.png" />
+    <None Remove="Podskaski\AdminPodskaska.png" />
+    <None Remove="Podskaski\AllClientsPodskaska.png" />
+    <None Remove="Podskaski\AllRoflPodskaska.png" />
+    <None Remove="Podskaski\LibraryPodskaska.png" />
+    <None Remove="Podskaski\LoginPodskaska.png" />
+    <None Remove="Podskaski\ProfilePodskaska.png" />
+    <None Remove="Podskaski\TransletPodskaska.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -197,6 +205,30 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\дед.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Podskaski\AddRoflPodskaska.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Podskaski\AdminPodskaska.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Podskaski\AllClientsPodskaska.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Podskaski\AllRoflPodskaska.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Podskaski\LibraryPodskaska.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Podskaski\LoginPodskaska.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Podskaski\ProfilePodskaska.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Podskaski\TransletPodskaska.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
