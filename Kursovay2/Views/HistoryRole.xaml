@@ -281,6 +281,18 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
 
                         <StackPanel Grid.Column="0" >
                             <DatePicker FontWeight="Bold" x:Name="datePicker" DataContextChanged="DatePickerChanged" />
+                            <Button Margin="0 10 0 0" Foreground="White" Content="Поиск по дате" Click="Searchte" >
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="150" Height="40"
+CornerRadius="15"
+Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+ HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
                         </StackPanel>
 
                     

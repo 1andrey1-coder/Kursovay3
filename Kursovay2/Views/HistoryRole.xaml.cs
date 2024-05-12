@@ -232,19 +232,26 @@ namespace Kursovay2.Views
         }
         private async void DatePickerChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            //if (DataContext is DateTime selectedDate)
-            //{
-            //    await Client.Instance.DateTimePicker(selectedDate);
-            //}
-            //DatePicker selectedDate = (DatePicker)sender;
-            //DateTime dateTime = datePicker.SelectedDate ?? DateTime.Now;
-            //await Client.Instance.DateTimePicker(dateTime);
-            if (DataContext is RoflDTO dateModel)
-            {
-                // Отправка выбранной даты на сервер API при изменении DataContext
-                await Client.Instance.DateTimePicker(dateModel.RoflDateTime);
-            }
+            
 
+        }
+
+        private void SearchDate(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private async void Searchte(object sender, RoutedEventArgs e)
+        {
+            DateTime selectedDate = datePicker.SelectedDate ?? DateTime.Now;
+            await Client.Instance.DateTimePicker(selectedDate);
+
+            List<RoflDTO> Rofl = await Client.Instance.DateTimePicker(selectedDate);
+            if (selectedDate != null)
+            {
+                AdminListView.ItemsSource = Rofl;
+
+            }
         }
     }
 }

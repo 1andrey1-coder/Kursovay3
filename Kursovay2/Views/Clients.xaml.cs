@@ -251,7 +251,8 @@ namespace Kursovay2.Views
                 });
             }
             else
-                AdminListView.ItemsSource = await Client.Instance.SearchApiClients("");
+                //AdminListView.ItemsSource = await Client.Instance.SearchApiClients("");
+                LoadData();
         }
 
         

@@ -582,19 +582,19 @@ namespace Kursovay2.API
 
         public async Task<List<RoflDTO>> DateTimePicker(DateTime date)
         {
-            //HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/Date", date);
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/Date", date.ToString("yyyy-MM-dd"));
 
-            //if (response.IsSuccessStatusCode)
-            //{
-            //    List<RoflDTO> json = await response.Content.ReadAsStringAsync();
-            //    string getSlang = JsonConvert.DeserializeObject<List<RoflDTO>>(json);
-            //    return json;
-            //}
-            //else
-            //{
-            //    return null;
-            //}
-            return null;
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<RoflDTO>>(json);
+                
+            }
+            else
+            {
+                return null;
+            }
+            //return null;
         }
 
 

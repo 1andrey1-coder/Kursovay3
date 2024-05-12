@@ -459,20 +459,6 @@ namespace Kursovay2Api2._0.Controllers
         //кнопки
 
 
-        //[HttpPost]
-        //public async Task<ActionResult> PostImage([FromBody] Rofl image)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    _memContext.Rofls.Add(image);
-        //    await _memContext.SaveChangesAsync();
-
-        //    return CreatedAtAction("GetImage", new { id = image.RoflImage }, image);
-        //}
-
 
 
         [HttpPost("AddRofl")]
@@ -802,7 +788,7 @@ namespace Kursovay2Api2._0.Controllers
             foreach (SlangAndOld slang in slangText)
             {
 
-                inputText = inputText.Replace(slang.Slang, slang.OldSlang);
+                inputText = inputText.ToLower().Replace(slang.Slang.ToLower(), slang.OldSlang.ToLower());
 
 
             }
@@ -819,14 +805,15 @@ namespace Kursovay2Api2._0.Controllers
         }
 
         [HttpPost("Date")]
-        public async Task<ActionResult<IEnumerable<RoflDTO>>> PostDate([FromQuery] DateTime date)
+        public async Task<ActionResult<IEnumerable<RoflDTO>>> PostDate([FromBody] DateTime date)
         {
 
             var rofls = await _memContext.Rofls.Include(s => s.RoflGenre).Include(s => s.RoflStart).
                Include(s => s.RoflEnd).Include(s => s.RoflStatus).Include(s => s.Teg).ToListAsync();
 
             var dates = _memContext.Rofls.Where(s => s.RoflDateTime == date).ToList();
-            return Ok(rofls.Select(s => new RoflDTO
+
+            return Ok(dates.Select(s => new RoflDTO
             {
                 Teg = s.Teg.TegName,
                 RoflName = s.RoflName,

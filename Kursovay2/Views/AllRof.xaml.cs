@@ -284,7 +284,8 @@ namespace Kursovay2.Views
 
             }
             else
-                AdminListView.ItemsSource = await Client.Instance.SearchApiNotComboBox("");
+                //AdminListView.ItemsSource = await Client.Instance.SearchApiNotComboBox("");
+                LoadData();
         }
     }
 }
