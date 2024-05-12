@@ -177,7 +177,9 @@ namespace Kursovay2.Views
             timer.Start();
         }
 
-        
+        private void TextChanged(object sender, TextChangedEventArgs e)
+        {
 
+        }
     }
 }

@@ -111,13 +111,13 @@ namespace Kursovay2.Gost
             parentWindow.WindowState = WindowState.Minimized;
         }
 
-        private void ClickNew(object sender, RoutedEventArgs e)
-        {
+        //private void ClickNew(object sender, RoutedEventArgs e)
+        //{
             
-            News news = new News();
-            news.Show();
-            this.Close();
-        }
+        //    News news = new News();
+        //    news.Show();
+        //    this.Close();
+        //}
         private void btnMax_Click(object sender, RoutedEventArgs e)
         {
            

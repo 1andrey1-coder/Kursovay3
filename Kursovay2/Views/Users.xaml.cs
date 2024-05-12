@@ -144,12 +144,12 @@ namespace Kursovay2.User
         //    this.Close();
         //}
 
-        private void ClickNews(object sender, RoutedEventArgs e)
-        {
-            Views.News news = new Views.News();
-            news.Show();
-            this.Close();
-        }
+        //private void ClickNews(object sender, RoutedEventArgs e)
+        //{
+        //    Views.News news = new Views.News();
+        //    news.Show();
+        //    this.Close();
+        //}
 
         //private void ClickNostal(object sender, RoutedEventArgs e)
         //{
