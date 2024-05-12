@@ -193,5 +193,12 @@ namespace Kursovay2.Views
 
 
         }
+
+        private void podskaska(object sender, RoutedEventArgs e)
+        {
+            ProfileAdminPodskaska profileAdminPodskaska = new ProfileAdminPodskaska();
+            profileAdminPodskaska.Show();
+
+        }
     }
 }

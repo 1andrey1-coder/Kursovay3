@@ -68,6 +68,26 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
+                <Button HorizontalAlignment="Right" Height="35" Width="100" 
+          Grid.Column="0" Grid.Row="1" Foreground="White" BorderBrush="Transparent" Click="podskaska"  >
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="\icons\aboutpng.png"  Width="20" Height="20" Margin="0,0,5,0"/>
+                            <TextBlock Text="Подсказка" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button.Content>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" Height="35"
+CornerRadius="15"
+Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+ HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
                 <Grid  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="12" VerticalAlignment="Top">
 
                     <Grid.ColumnDefinitions>

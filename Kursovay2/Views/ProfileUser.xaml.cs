@@ -1,9 +1,12 @@
 ﻿using Kursovay2.API;
 using Kursovay2.Models;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,6 +28,7 @@ namespace Kursovay2.Views
         public ProfileUser()
         {
             InitializeComponent();
+            SelectedProfile = new LoginUserDTO();
             DisplayUserInfo();
             LoadDefaultImage();
         }
@@ -124,9 +128,51 @@ namespace Kursovay2.Views
             string newMail = resetMail.Text;
             //await Client.Instance.Profile(id, newPassword, newLogin, newMail);
         }
+       
+        private LoginUserDTO selectedProfile;
+        public LoginUserDTO SelectedProfile
+        {
+            get => selectedProfile;
+            set
+            {
+                selectedProfile = value;
+                Signal();
+            }
+        }
 
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        public void Signal([CallerMemberName] string prop = null) =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         private void AddPhoto(object sender, RoutedEventArgs e)
         {
+            string dir = Environment.CurrentDirectory + @"\Images\";
+            if (!Directory.Exists(dir))
+                Directory.CreateDirectory(dir);
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Images|*.jpg;";
+            if (dlg.ShowDialog() == true)
+            {
+                var test = new BitmapImage(new Uri(dlg.FileName));
+                if (test.PixelWidth > 2000 || test.PixelHeight > 2000)
+                {
+                    MessageBox.Show("Картинка слишком большая");
+                    return;
+                }
+                string newFile = dir + new FileInfo(dlg.FileName).Name;
+                File.Copy(dlg.FileName, newFile, true);
+                SelectedProfile.LoginImage = File.ReadAllBytes(newFile);
+                Signal("SelectedProfile");
+            }
+
+
+        }
+
+
+        private void podskaska(object sender, RoutedEventArgs e)
+        {
+            ProfileUserPodskaska profileAdminPodskaska = new ProfileUserPodskaska();
+            profileAdminPodskaska.Show();
 
         }
     }
