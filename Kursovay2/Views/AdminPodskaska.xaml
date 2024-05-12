@@ -24,7 +24,7 @@
 
         <StackPanel Margin="0 10 0 0" VerticalAlignment="Top"  Grid.Row="2" Grid.RowSpan="3">
             <TextBlock Foreground="White" FontSize="30"  Text="1 - Кнопки для помощи в приложени "/>
-            <TextBlock Foreground="White" FontSize="30"  Text="2 - Фильтрация данных"/>
+            <TextBlock Foreground="White" FontSize="30"  Text="2 - Фильтрация данных по названию"/>
             <TextBlock Foreground="White" FontSize="30"  Text="3 - Вывод данных"/>
             <TextBlock Foreground="White" FontSize="30"  Text="4 - Ваш профиль и кнопка перехода в него"/>
             <TextBlock Foreground="White" FontSize="30"  Text="5 - Кнопки для уменьшения/увеличивание/закрытие окна"/>
@@ -47,7 +47,7 @@
                         <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Padding="10" Text="ПОДЗКАЗКА ПО ДОБАВЛЕНИЮ"
+                    <TextBlock Padding="10" Text="ПОДЗКАЗКА ПО АДМИНКЕ"
    Foreground="DarkGray"
    FontSize="10"
    FontFamily="Montserrat"

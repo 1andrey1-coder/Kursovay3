@@ -47,7 +47,7 @@
                         <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Padding="10" Text="ПОДЗКАЗКА ПО ДОБАВЛЕНИЮ"
+                    <TextBlock Padding="10" Text="ПОДЗКАЗКА ПО ВСЕМ КЛИЕНТАМ"
    Foreground="DarkGray"
    FontSize="10"
    FontFamily="Montserrat"

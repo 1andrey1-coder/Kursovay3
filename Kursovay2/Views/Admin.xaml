@@ -191,7 +191,7 @@ Click="btnClose_Click">
                                 <Image Source="\icons\Search.png" Height="40"/>
                                 <StackPanel Margin="5" Orientation="Vertical" >
 
-                                    <TextBlock  Text="Поиск по тегу шутки:"  Foreground="White"/>
+                                    <TextBlock  Text="Поиск по названию шутки:"  Foreground="White"/>
 
 
 
