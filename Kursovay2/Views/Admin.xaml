@@ -290,7 +290,7 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                         </StackPanel>
                         <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Bottom"
                                     HorizontalAlignment="Center">
-                            <Image  Source="\Images\ImageNull2.png"/>
+                            <Image  x:Name="imageText" Source="{Binding LoginImage}"  Stretch="UniformToFill"/>
                         </StackPanel>
                     </Grid>
                 </StackPanel>
@@ -315,9 +315,14 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
   FontFamily="Century Gothic" FontSize="14" Foreground="White" 
   BorderBrush="Transparent" Background="Transparent" FontWeight="Bold">
                                 <ListViewItem Height="30">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Image Source="\icons\Home.png" Height="20" VerticalAlignment="Center"/>
-                                        <Button Margin="15 0 0 0" Content="Админка" 
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button  Click="ClickAdminToMainWindow"  Background="Transparent"
+ BorderBrush="Transparent">
+                                                <Button.Content>
+                                                    <Image Source="\icons\Home.png" Height="20" VerticalAlignment="Center" />
+                                                </Button.Content>
+                                            </Button>
+                                            <Button Margin="15 0 0 0" Content="Админка" 
                                                 Style="{StaticResource ButtonGost}"
                                                 VerticalAlignment="Center"
                                                 Background="Transparent"
