@@ -394,6 +394,41 @@ namespace Kursovay2Api2._0.Controllers
         }
 
 
+        [HttpPost("ListSlangAndOld")]
+        public async Task<ActionResult<IEnumerable<SlangAndOld>>> ListSlangAndOld([FromBody] SlangAndOld rofl)
+        {
+            try
+            {
+                var users = _memContext.SlangAndOlds.Where(s => s.Slang == rofl.Slang).ToList();
+
+                IQueryable<SlangAndOldDTO> search;
+                if (!string.IsNullOrEmpty(rofl.Slang))
+                {
+                    search = _memContext.SlangAndOlds
+                        .Where(s => s.Slang.Contains(rofl.Slang))
+                        .Select(s => new SlangAndOldDTO
+                        {
+                            Slang = s.Slang,
+                            OldSlang = s.OldSlang,
+                        });
+                }
+                if (rofl.Slang == "")
+                {
+                    var use = _memContext.SlangAndOlds.ToList();
+                    return Ok(use);
+
+                }
+                return Ok(users);
+
+
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
         [HttpGet("ComboBoxStatus")]
         public async Task<ActionResult<IEnumerable<Status>>> GetStatusTable()
         {
@@ -583,7 +618,7 @@ namespace Kursovay2Api2._0.Controllers
             try
             {
                 var users = _memContext.LoginUsers.Where(s => s.LoginName == rofl.LoginName).ToList();
-                
+
                 IQueryable<LoginUserDTO> search;
                 if (!string.IsNullOrEmpty(rofl.LoginName))
                 {
@@ -601,7 +636,7 @@ namespace Kursovay2Api2._0.Controllers
                 {
                     var use = _memContext.LoginUsers.ToList();
                     return Ok(use);
-                   
+
                 }
                 return Ok(users);
 

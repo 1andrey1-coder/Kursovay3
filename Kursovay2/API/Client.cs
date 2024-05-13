@@ -562,6 +562,29 @@ namespace Kursovay2.API
 
         }
 
+
+        public async Task<List<SlangAndOldDTO>> SearchApiLibrary(string searchName)
+        {
+
+            var search = new SlangAndOldDTO
+            {
+                Slang = searchName,
+            };
+
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/ListSlangAndOld", search);
+
+            if (response.IsSuccessStatusCode)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+                List<SlangAndOldDTO> getSlang = JsonConvert.DeserializeObject<List<SlangAndOldDTO>>(json);
+                return getSlang;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
         public async Task<string> TransletOldSlang(string textUser)
         {
             HttpResponseMessage response = await httpClient.PostAsJsonAsync("Account/TransletOldSlang", textUser);
@@ -588,7 +611,7 @@ namespace Kursovay2.API
             {
                 var json = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<List<RoflDTO>>(json);
-                
+
             }
             else
             {

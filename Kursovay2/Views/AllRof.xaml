@@ -196,9 +196,6 @@ Click="btnClose_Click">
                                 <StackPanel Margin="5" Orientation="Vertical" >
 
                                     <TextBlock  Text="Поиск по названию шутки:"  Foreground="White"/>
-
-
-
                                     <TextBox GotFocus="Focus" LostFocus="lastFocus" x:Name="myTextBox" TextChanged="TextChanged"
                                              Width="200" Height="22" >
                                         <TextBox.Template>

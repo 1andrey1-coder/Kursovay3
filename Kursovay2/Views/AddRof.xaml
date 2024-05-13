@@ -564,7 +564,7 @@ BorderBrush="Transparent" Foreground="White" Click="AddPhoto" Height="45" Cursor
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="\icons\MinOpisani2.png" Height="20" Margin=" 0 3 5 0"/>
 
-                                        <TextBlock Text="Описание(лимит: 250 слов)" VerticalAlignment="Center"/>
+                                        <TextBlock Text="Описание(лимит: 250 букв)" VerticalAlignment="Center"/>
                                     </StackPanel>
                                 </Label.Content>
                             </Label>

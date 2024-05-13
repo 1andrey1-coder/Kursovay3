@@ -177,9 +177,35 @@ namespace Kursovay2.Views
             timer.Start();
         }
 
-        private void TextChanged(object sender, TextChangedEventArgs e)
+        private async void TextChanged(object sender, TextChangedEventArgs e)
         {
+            string search = myTextBox.Text;
+
+            if (search == "Введите данные")
+                search = null;
+
+
+            if (search != null)
+            {
+
+                List<SlangAndOldDTO> Rofl = await Client.Instance.SearchApiLibrary(search);
+
+
+
+                if (Rofl != null)
+                {
+                    SlangView.ItemsSource = Rofl;
+                }
+                else
+                {
+                    MessageBox.Show("Failed to load data from API");
+                }
+            }
+            else
+                SlangView.ItemsSource = await Client.Instance.SearchApiLibrary("");
 
         }
+
+      
     }
 }
