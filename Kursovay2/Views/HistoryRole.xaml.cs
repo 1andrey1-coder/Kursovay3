@@ -1,6 +1,7 @@
 ﻿using Kursovay2.API;
 using Kursovay2.Models;
 using Kursovay2.User;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,7 @@ namespace Kursovay2.Views
         {
             InitializeComponent();
             LoadDefaultImage();
+            LoadData();
             DisplayUserInfo();
 
             datePicker.SelectedDate = DateTime.Now;
@@ -43,7 +45,24 @@ namespace Kursovay2.Views
             panelWidth = sidePanel.Width;
         }
 
-       
+        private async void LoadData()
+        {
+            List<RoflDTO> Rofl = await Client.Instance.GetListRofl();
+            foreach (var d in Rofl)
+                if (d.RoflImage == null)
+                    d.RoflImage = defaultImage;
+            Dispatcher.Invoke(() =>
+            {
+                if (Rofl != null)
+                {
+                    AdminListView.ItemsSource = Rofl;
+                }
+                else
+                {
+                    MessageBox.Show("Failed to load data from API");
+                }
+            });
+        }
 
         private async void DisplayUserInfo()
         {
@@ -228,7 +247,8 @@ namespace Kursovay2.Views
 
             }
             else
-                AdminListView.ItemsSource = await Client.Instance.SearchApiNotComboBox("");
+                //AdminListView.ItemsSource = await Client.Instance.SearchApiNotComboBox("");
+                LoadData();
         }
         private async void DatePickerChanged(object sender, DependencyPropertyChangedEventArgs e)
         {

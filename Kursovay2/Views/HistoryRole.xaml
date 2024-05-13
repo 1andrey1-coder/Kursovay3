@@ -177,7 +177,7 @@ Click="btnClose_Click">
                             <Image Source="\icons\Search.png" Height="40"/>
                             <StackPanel Margin="5" Orientation="Vertical" >
 
-                                <TextBlock  Text="Поиск по тегу шутки:"  Foreground="White"/>
+                                <TextBlock  Text="Поиск по названию шутки:"  Foreground="White"/>
 
 
 
@@ -299,7 +299,7 @@ Background="{TemplateBinding Background}">
                             <!--Сделать в виде карточек, вывод всех шуток-->
 
                             <!--Background="{Binding ***, Converter={StaticResource converter}}"-->
-                            <ScrollViewer Width="500" Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                            <ScrollViewer Width="750" Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                                 <DataGrid x:Name="AdminListView" CanUserAddRows="False" Grid.Row="1" BorderBrush="Transparent" AutoGenerateColumns="False" Background="Transparent"
   ItemsSource="{Binding Rofl}" SelectedItem="{Binding SelectedRofl}" SelectionMode="Single">
                                     <DataGrid.Columns>
