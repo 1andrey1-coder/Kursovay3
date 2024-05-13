@@ -162,7 +162,9 @@ namespace Kursovay2.Views
 
         private void Podskaska(object sender, RoutedEventArgs e)
         {
-
+            TransletSlangOldPodskaska transletSlangOldPodskaska = new TransletSlangOldPodskaska();
+            transletSlangOldPodskaska.Show();
+            
         }
 
         private async void Trans(object sender, RoutedEventArgs e)

@@ -175,12 +175,13 @@ namespace Kursovay2.Views
                 adminWindow.Show();
                 Close();
             }
-            if (SingleProfle.User.RoleId == 2)
+            else if (SingleProfle.User.RoleId == 2)
             {
                 User.Users userWindow = new User.Users(SingleProfle.User);
                 userWindow.Show();
                 Close();
             }
+            Close();
             //смотрит если роль админ то в админку если клиент то в клиента
         }
 

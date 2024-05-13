@@ -55,8 +55,12 @@
     <None Remove="Images\дед.jpg" />
     <None Remove="Podskaski\AddRoflPodskaska.png" />
     <None Remove="Podskaski\AdminPodskaska.png" />
+    <None Remove="Podskaski\AdminPodskaska2.png" />
     <None Remove="Podskaski\AllClientsPodskaska.png" />
     <None Remove="Podskaski\AllRoflPodskaska.png" />
+    <None Remove="Podskaski\CalendarPodskaska.png" />
+    <None Remove="Podskaski\CalendarPodskaska2.png" />
+    <None Remove="Podskaski\EditPodskaska.png" />
     <None Remove="Podskaski\LibraryPodskaska.png" />
     <None Remove="Podskaski\LoginPodskaska.png" />
     <None Remove="Podskaski\ProfilePodskaska.png" />
@@ -210,13 +214,22 @@
     <Resource Include="Podskaski\AddRoflPodskaska.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Podskaski\AdminPodskaska.png">
+    <Resource Include="Podskaski\AdminPodskaska2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Podskaski\AllClientsPodskaska.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Podskaski\AllRoflPodskaska.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Podskaski\CalendarPodskaska.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Podskaski\CalendarPodskaska2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Podskaski\EditPodskaska.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Podskaski\LibraryPodskaska.png">

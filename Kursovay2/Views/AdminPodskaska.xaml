@@ -19,7 +19,7 @@
         </Grid.RowDefinitions>
         <StackPanel Margin="0 10 0 0" Grid.Row="1">
 
-            <Image Height="500" Source="\Podskaski\AdminPodskaska.png" />
+            <Image Height="500" Source="\Podskaski\AdminPodskaska2.png" />
         </StackPanel>
 
         <StackPanel Margin="5 10 5 0" VerticalAlignment="Top"  Grid.Row="2" Grid.RowSpan="3">

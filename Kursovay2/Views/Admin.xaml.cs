@@ -441,6 +441,7 @@ namespace Kursovay2.Admin
                 RoflDTO selectedItem = (RoflDTO)AdminListView.SelectedItem;
                 Opisania opisania = new Opisania(selectedItem);
                 opisania.Show();
+                Close();
             }
 
 
