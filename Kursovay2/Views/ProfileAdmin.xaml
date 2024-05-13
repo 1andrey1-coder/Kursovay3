@@ -210,14 +210,15 @@ Click="btnClose_Click">
 
                
                     
-                <Border  Grid.Row="2" Grid.RowSpan="2" Grid.Column="0"  CornerRadius="120" BorderBrush="Gray" 
+                <Border  Grid.Row="2" Grid.RowSpan="2" Grid.Column="0"  CornerRadius="120" BorderBrush="Transparent" 
                        BorderThickness="2" Background="Transparent">
 
                     <StackPanel Orientation="Vertical">
 
 
-                        <Image x:Name="imageText" Source="{Binding LoginImage}"  Stretch="UniformToFill"/>
-                        
+                        <Image VerticalAlignment="Top" Height="180" 
+                               x:Name="imageText" Source="{Binding LoginImage}"  Stretch="Uniform"/>
+
                     </StackPanel>
                     
                 </Border>
