@@ -302,7 +302,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                                             <Setter Property="Height" Value="200"/>
                                             <Setter Property="Clip" >
                                                 <Setter.Value>
-                                                    <EllipseGeometry RadiusX="100" RadiusY="100"
+                                                    <EllipseGeometry RadiusX="200" RadiusY="100"
                                                                          Center="100,100"/>
                                                 </Setter.Value>
                                             </Setter>
