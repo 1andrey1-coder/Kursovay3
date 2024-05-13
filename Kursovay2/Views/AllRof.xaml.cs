@@ -124,7 +124,7 @@ namespace Kursovay2.Views
         private async void DisplayUserInfo()
         {
 
-            LoginUserDTO login1 = await Client.Instance.GetUser(SingleProfle.user.LoginId);
+            LoginUserDTO login1 = await Client.Instance.GetUser(SingleProfle.User.LoginId);
 
             if (login1 != null)
             {
@@ -155,7 +155,7 @@ namespace Kursovay2.Views
         }
         private void ClickObrat(object sender, RoutedEventArgs e)
         {
-            Admin.Admin admin = new Admin.Admin(SingleProfle.user);
+            Admin.Admin admin = new Admin.Admin(SingleProfle.User);
             //Admin.Admin admin = new Admin.Admin(user);
             admin.Show();
             this.Close();
@@ -168,7 +168,7 @@ namespace Kursovay2.Views
 
         private void ClickToAdminWindow(object sender, RoutedEventArgs e)
         {
-            Admin.Admin admin = new Admin.Admin(SingleProfle.user);
+            Admin.Admin admin = new Admin.Admin(SingleProfle.User);
             admin.Show();
             this.Close();
         }
@@ -193,14 +193,14 @@ namespace Kursovay2.Views
 
         private void ClickToAdmiWindow(object sender, RoutedEventArgs e)
         {
-            if (SingleProfle.user.RoleId == 1)
+            if (SingleProfle.User.RoleId == 1)
             {
 
-                Admin.Admin adminWindow = new Admin.Admin(SingleProfle.user);
+                Admin.Admin adminWindow = new Admin.Admin(SingleProfle.User);
                 adminWindow.Show();
                 Close();
             }
-            if (SingleProfle.user.RoleId == 2)
+            if (SingleProfle.User.RoleId == 2)
             {
                 User.Users userWindow = new User.Users(user);
                 userWindow.Show();

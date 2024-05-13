@@ -100,7 +100,7 @@ namespace Kursovay2.Views
 
         private void AdminWindow(object sender, RoutedEventArgs e)
         {
-            Admin.Admin admin = new Admin.Admin(SingleProfle.user);
+            Admin.Admin admin = new Admin.Admin(SingleProfle.User);
             //Admin.Admin admin = new Admin.Admin(user);
             admin.Show();
             Close();
@@ -143,7 +143,7 @@ namespace Kursovay2.Views
 
         private void ClickAdminToMainWindow(object sender, RoutedEventArgs e)
         {
-            Admin.Admin admin = new Admin.Admin(SingleProfle.user);
+            Admin.Admin admin = new Admin.Admin(SingleProfle.User);
             admin.Show();
             Close();
         }
@@ -201,7 +201,7 @@ namespace Kursovay2.Views
 
         private void ClickToAdmin(object sender, RoutedEventArgs e)
         {
-            Admin.Admin admin = new Admin.Admin(SingleProfle.user);
+            Admin.Admin admin = new Admin.Admin(SingleProfle.User);
             admin.Show();
             this.Close();
         }

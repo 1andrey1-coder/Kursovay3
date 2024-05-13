@@ -271,7 +271,7 @@ namespace Kursovay2.AddRof
 
         private void ClickObratAdmin(object sender, RoutedEventArgs e)
         {
-            Admin.Admin admin = new Admin.Admin(SingleProfle.user);
+            Admin.Admin admin = new Admin.Admin(SingleProfle.User);
             //Admin.Admin admin = new Admin.Admin(user);
             admin.Show();
             this.Close();
@@ -309,7 +309,7 @@ namespace Kursovay2.AddRof
 
         private void ClickToAdmin(object sender, RoutedEventArgs e)
         {
-            Admin.Admin admin = new Admin.Admin(SingleProfle.user);
+            Admin.Admin admin = new Admin.Admin(SingleProfle.User);
             admin.Show();
             this.Close();
         }

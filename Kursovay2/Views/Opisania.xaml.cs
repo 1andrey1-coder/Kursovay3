@@ -99,7 +99,7 @@ namespace Kursovay2.Views
         private async void DisplayRoflInfo()
         {
 
-            LoginUserDTO login1 = await Client.Instance.GetRofl(SingleProfle.user.LoginId);
+            LoginUserDTO login1 = await Client.Instance.GetRofl(SingleProfle.User.LoginId);
 
             if (login1 != null)
             {
@@ -168,16 +168,16 @@ namespace Kursovay2.Views
             });
 
 
-            if (SingleProfle.user.RoleId == 1)
+            if (SingleProfle.User.RoleId == 1)
             {
 
-                Admin.Admin adminWindow = new Admin.Admin(SingleProfle.user);
+                Admin.Admin adminWindow = new Admin.Admin(SingleProfle.User);
                 adminWindow.Show();
                 Close();
             }
-            if (SingleProfle.user.RoleId == 2)
+            if (SingleProfle.User.RoleId == 2)
             {
-                User.Users userWindow = new User.Users(SingleProfle.user);
+                User.Users userWindow = new User.Users(SingleProfle.User);
                 userWindow.Show();
                 Close();
             }

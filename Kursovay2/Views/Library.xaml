@@ -282,7 +282,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                     <!--Сделать в виде карточек, вывод всех шуток-->
 
                     <ListView x:Name="SlangView"  ItemsSource="{Binding Slang}"  Width="800"
-SelectedItem="{Binding SelectSlang}">
+>
                         <ListView.ItemContainerStyle>
                             <Style TargetType="ListViewItem">
                                 <Setter Property="HorizontalContentAlignment" Value="Center"/>

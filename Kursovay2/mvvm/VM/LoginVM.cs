@@ -49,7 +49,7 @@ namespace Kursovay2.mvvm.VM
                         });
                     });
                     var user = await Client.Instance.UserLogin(passwordBox.Password, mail);
-                    SingleProfle.user = user;
+                    SingleProfle.User = user;
                     if (user.RoleId == 1)
                     {
 

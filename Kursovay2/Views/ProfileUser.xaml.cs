@@ -48,7 +48,7 @@ namespace Kursovay2.Views
         private async void DisplayUserInfo()
         {
 
-            LoginUserDTO login = await Client.Instance.GetUser(SingleProfle.user.LoginId);
+            LoginUserDTO login = await Client.Instance.GetUser(SingleProfle.User.LoginId);
 
             if (login != null)
             {
@@ -104,16 +104,16 @@ namespace Kursovay2.Views
 
         private void Back(object sender, RoutedEventArgs e)
         {
-            if (SingleProfle.user.RoleId == 1)
+            if (SingleProfle.User.RoleId == 1)
             {
 
-                Admin.Admin adminWindow = new Admin.Admin(SingleProfle.user);
+                Admin.Admin adminWindow = new Admin.Admin(SingleProfle.User);
                 adminWindow.Show();
                 Close();
             }
-            if (SingleProfle.user.RoleId == 2)
+            if (SingleProfle.User.RoleId == 2)
             {
-                User.Users userWindow = new User.Users(SingleProfle.user);
+                User.Users userWindow = new User.Users(SingleProfle.User);
                 userWindow.Show();
                 Close();
             }
@@ -122,7 +122,7 @@ namespace Kursovay2.Views
 
         private async void ResetPassword(object sender, RoutedEventArgs e)
         {
-            int id = SingleProfle.user.LoginId;
+            int id = SingleProfle.User.LoginId;
             string newPassword = resetPassword.Text;
             string newLogin = resetLogin.Text;
             string newMail = resetMail.Text;

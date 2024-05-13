@@ -126,7 +126,7 @@ namespace Kursovay2.Admin
             //{
             //    textBlockUserName.Content = "User not found";
             //}
-            LoginUserDTO login = await Client.Instance.GetUser(SingleProfle.user.LoginId);
+            LoginUserDTO login = await Client.Instance.GetUser(SingleProfle.User.LoginId);
 
             if (login != null)
             {
@@ -195,7 +195,7 @@ namespace Kursovay2.Admin
         private void ClickAdminToMainWindow(object sender, RoutedEventArgs e)
         {
 
-            Admin admin = new Admin(SingleProfle.user);
+            Admin admin = new Admin(SingleProfle.User);
             admin.Show();
             this.Close();
 
@@ -212,14 +212,14 @@ namespace Kursovay2.Admin
 
         private void AllRof(object sender, RoutedEventArgs e)
         {
-            if (SingleProfle.user.RoleId == 1)
+            if (SingleProfle.User.RoleId == 1)
             {
 
                 AllRof allRof = new AllRof();
                 allRof.Show();
                 this.Close();
             }
-            if (SingleProfle.user.RoleId == 2)
+            if (SingleProfle.User.RoleId == 2)
             {
                 AllRof allRof = new AllRof();
                 allRof.Show();
@@ -321,14 +321,14 @@ namespace Kursovay2.Admin
                 });
             });
 
-            if (SingleProfle.user.RoleId == 1)
+            if (SingleProfle.User.RoleId == 1)
             {
 
                 ProfileAdmin adminWindow = new ProfileAdmin();
                 adminWindow.Show();
                 Close();
             }
-            if (SingleProfle.user.RoleId == 2)
+            if (SingleProfle.User.RoleId == 2)
             {
                 ProfileUser userWindow = new ProfileUser();
                 userWindow.Show();
@@ -388,14 +388,14 @@ namespace Kursovay2.Admin
 
                 });
             });
-            if (SingleProfle.user.RoleId == 1)
+            if (SingleProfle.User.RoleId == 1)
             {
 
                 Library adminWindow = new Library();
                 adminWindow.Show();
                 Close();
             }
-            if (SingleProfle.user.RoleId == 2)
+            if (SingleProfle.User.RoleId == 2)
             {
                 Library userWindow = new Library();
                 userWindow.Show();
@@ -436,7 +436,7 @@ namespace Kursovay2.Admin
 
         private void ClickOpisania(object sender, RoutedEventArgs e)
         {
-            if (SingleProfle.user.RoleId == 1)
+            if (SingleProfle.User.RoleId == 1)
             {
                 RoflDTO selectedItem = (RoflDTO)AdminListView.SelectedItem;
                 Opisania opisania = new Opisania(selectedItem);
@@ -448,7 +448,7 @@ namespace Kursovay2.Admin
 
         private void translet(object sender, RoutedEventArgs e)
         {
-            if (SingleProfle.user.RoleId == 1)
+            if (SingleProfle.User.RoleId == 1)
             {
                 TransletSlangOld transletSlangOld = new TransletSlangOld();
                 transletSlangOld.Show();
@@ -459,7 +459,7 @@ namespace Kursovay2.Admin
 
         private void calendar(object sender, RoutedEventArgs e)
         {
-            if (SingleProfle.user.RoleId == 1)
+            if (SingleProfle.User.RoleId == 1)
             {
 
                 HistoryRole role = new HistoryRole();

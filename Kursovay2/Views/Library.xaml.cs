@@ -53,7 +53,7 @@ namespace Kursovay2.Views
         private async void DisplayUserInfo()
         {
 
-            LoginUserDTO login1 = await Client.Instance.GetUser(SingleProfle.user.LoginId);
+            LoginUserDTO login1 = await Client.Instance.GetUser(SingleProfle.User.LoginId);
 
             if (login1 != null)
             {
@@ -68,7 +68,8 @@ namespace Kursovay2.Views
 
 
 
-
+           
+            
         }
         public async void GetSlangOlds()
         {
@@ -76,12 +77,14 @@ namespace Kursovay2.Views
 
             if (getSlang != null)
             {
-                foreach (SlangAndOldDTO item in getSlang)
-                {
 
-                    SlangView.Items.Add(item);
+               SlangView.ItemsSource= getSlang;
 
-                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Failed to load data from API");
             }
         }
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -112,16 +115,16 @@ namespace Kursovay2.Views
 
         private void ClickToMainWindow(object sender, RoutedEventArgs e)
         {
-            if (SingleProfle.user.RoleId == 1)
+            if (SingleProfle.User.RoleId == 1)
             {
 
-                Admin.Admin adminWindow = new Admin.Admin(SingleProfle.user);
+                Admin.Admin adminWindow = new Admin.Admin(SingleProfle.User);
                 adminWindow.Show();
                 Close();
             }
-            if (SingleProfle.user.RoleId == 2)
+            if (SingleProfle.User.RoleId == 2)
             {
-                User.Users userWindow = new User.Users(SingleProfle.user);
+                User.Users userWindow = new User.Users(SingleProfle.User);
                 userWindow.Show();
                 Close();
             }
@@ -134,13 +137,25 @@ namespace Kursovay2.Views
 
         }
 
-        private void Focus(object sender, RoutedEventArgs e)
+        private async void Focus(object sender, RoutedEventArgs e)
         {
 
+
+            if (myTextBox.Text == "Введите данные")
+            {
+                myTextBox.Text = "";
+                myTextBox.Foreground = Brushes.Black;
+
+            }
         }
 
-        private void lastFocus(object sender, RoutedEventArgs e)
+        private async void lastFocus(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(myTextBox.Text))
+            {
+                myTextBox.Text = "Введите данные";
+                myTextBox.Foreground = Brushes.Gray;
+            }
 
         }
 
@@ -191,7 +206,7 @@ namespace Kursovay2.Views
                 List<SlangAndOldDTO> Rofl = await Client.Instance.SearchApiLibrary(search);
 
 
-
+               
                 if (Rofl != null)
                 {
                     SlangView.ItemsSource = Rofl;

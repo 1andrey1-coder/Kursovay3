@@ -24,11 +24,11 @@ namespace Kursovay2.Gost
     /// </summary>
     public partial class Gost : Window
     {
-        
+
         DispatcherTimer timer;
         double panelWidth;
         bool hidden;
-        public Gost() 
+        public Gost()
         {
             InitializeComponent();
             timer = new DispatcherTimer();
@@ -113,14 +113,14 @@ namespace Kursovay2.Gost
 
         //private void ClickNew(object sender, RoutedEventArgs e)
         //{
-            
+
         //    News news = new News();
         //    news.Show();
         //    this.Close();
         //}
         private void btnMax_Click(object sender, RoutedEventArgs e)
         {
-           
+
             if (WindowState == WindowState.Normal)
             {
                 // Меняем размер окна на максимальный
@@ -186,10 +186,11 @@ namespace Kursovay2.Gost
 
         private void translet(object sender, RoutedEventArgs e)
         {
+
             TransletSlangOld transletSlangOld = new TransletSlangOld();
-                transletSlangOld.Show();
-                Close();
-            
+            transletSlangOld.Show();
+            Close();
+
         }
     }
 }

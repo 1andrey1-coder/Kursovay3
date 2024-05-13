@@ -9,6 +9,8 @@ namespace Kursovay2.Models
 {
     public class SingleProfle
     {
-        static public LoginUserDTO user;
+        private static LoginUserDTO _user;
+
+        public static LoginUserDTO User { get => _user; set => _user = value; }
     }
 }

@@ -54,7 +54,7 @@ namespace Kursovay2.User
         }
         private async void DisplayUserInfo()
         {
-            LoginUserDTO login1 = await Client.Instance.GetUser(SingleProfle.user.LoginId);
+            LoginUserDTO login1 = await Client.Instance.GetUser(SingleProfle.User.LoginId);
 
             if (login1 != null)
             {
@@ -108,7 +108,7 @@ namespace Kursovay2.User
         private void ClickUserToMainWindow(object sender, RoutedEventArgs e)
         {
           
-            User.Users user2 = new User.Users(SingleProfle.user);
+            User.Users user2 = new User.Users(SingleProfle.User);
             //User.Users user2 = new User.Users(user);
             user2.Show();
             this.Close();
@@ -172,7 +172,7 @@ namespace Kursovay2.User
 
         private void ClickOpisaniaRof(object sender, RoutedEventArgs e)
         {
-            if (SingleProfle.user.RoleId == 2)
+            if (SingleProfle.User.RoleId == 2)
             {
                 RoflDTO selectedItem = (RoflDTO)AdminListView.SelectedItem;
                 Opisania opisania = new Opisania(selectedItem);
@@ -199,14 +199,14 @@ namespace Kursovay2.User
 
         private void AllRof(object sender, RoutedEventArgs e)
         {
-            if (SingleProfle.user.RoleId == 1)
+            if (SingleProfle.User.RoleId == 1)
             {
 
                 AllRof allRof = new AllRof();
                 allRof.Show();
                 this.Close();
             }
-            if (SingleProfle.user.RoleId == 2)
+            if (SingleProfle.User.RoleId == 2)
             {
                 AllRof allRof = new AllRof();
                 allRof.Show();
@@ -243,14 +243,14 @@ namespace Kursovay2.User
 
                 });
             });
-            if (SingleProfle.user.RoleId == 1)
+            if (SingleProfle.User.RoleId == 1)
             {
 
                 ProfileAdmin adminWindow = new ProfileAdmin();
                 adminWindow.Show();
                 Close();
             }
-            if (SingleProfle.user.RoleId == 2)
+            if (SingleProfle.User.RoleId == 2)
             {
                 ProfileUser userWindow = new ProfileUser();
                 userWindow.Show();
@@ -299,14 +299,14 @@ namespace Kursovay2.User
                 });
             });
 
-            if (SingleProfle.user.RoleId == 1)
+            if (SingleProfle.User.RoleId == 1)
             {
 
                 Library adminWindow = new Library();
                 adminWindow.Show();
                 Close();
             }
-            if (SingleProfle.user.RoleId == 2)
+            if (SingleProfle.User.RoleId == 2)
             {
                 Library userWindow = new Library();
                 userWindow.Show();
@@ -340,7 +340,7 @@ namespace Kursovay2.User
 
         private void translet(object sender, RoutedEventArgs e)
         {
-            if (SingleProfle.user.RoleId == 2)
+            if (SingleProfle.User.RoleId == 2)
             {
                 TransletSlangOld transletSlangOld = new TransletSlangOld();
                 transletSlangOld.Show();
@@ -350,7 +350,7 @@ namespace Kursovay2.User
 
         private void calendar(object sender, RoutedEventArgs e)
         {
-            if (SingleProfle.user.RoleId == 2)
+            if (SingleProfle.User.RoleId == 2)
             {
 
                 HistoryRole role = new HistoryRole();

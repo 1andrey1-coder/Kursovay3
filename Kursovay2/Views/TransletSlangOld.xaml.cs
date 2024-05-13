@@ -2,6 +2,7 @@
 using Kursovay2.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,7 +38,7 @@ namespace Kursovay2.Views
             panelWidth = sidePanel.Width;
         }
 
-        
+
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
@@ -67,26 +68,30 @@ namespace Kursovay2.Views
 
         private void ClickToMainWindow(object sender, RoutedEventArgs e)
         {
-            if (SingleProfle.user.RoleId == 1)
-            {
+           
+                if( SingleProfle.User == null)
+                {
+                    Gost.Gost gost = new Gost.Gost();
+                    gost.Show();
+                    Close();
+                }
+                else if (SingleProfle.User.RoleId == 1)
+                {
 
-                Admin.Admin adminWindow = new Admin.Admin(SingleProfle.user);
-                adminWindow.Show();
-                Close();
-            }
-            if (SingleProfle.user.RoleId == 2)
-            {
-                User.Users userWindow = new User.Users(SingleProfle.user);
-                userWindow.Show();
-                Close();
-            }
-            else
-            {
-                Gost.Gost gost = new Gost.Gost();
-                gost.Show();
-                Close();
-            }
+                    Admin.Admin adminWindow = new Admin.Admin(SingleProfle.User);
+                    adminWindow.Show();
+                    Close();
+                }
+                else if (SingleProfle.User.RoleId == 2)
+                {
+                    User.Users userWindow = new User.Users(SingleProfle.User);
+                    userWindow.Show();
+                    Close();
+                }
+           
             
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -151,7 +156,7 @@ namespace Kursovay2.Views
                 }
             }
 
-            
+
 
         }
 
@@ -165,8 +170,8 @@ namespace Kursovay2.Views
             string textUser = yourText.Text;
             await Client.Instance.TransletOldSlang(textUser);
 
-        
-          
+
+
             if (textUser != null)
             {
 
