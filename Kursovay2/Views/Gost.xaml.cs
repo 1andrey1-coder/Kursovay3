@@ -31,6 +31,8 @@ namespace Kursovay2.Gost
         public Gost()
         {
             InitializeComponent();
+            TegComboBox();
+            LoadData();
             timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 0, 0, 0);
             timer.Tick += Timer_Tick;
@@ -38,7 +40,33 @@ namespace Kursovay2.Gost
             panelWidth = sidePanel.Width;
 
         }
+        private async void TegComboBox()
+        {
+            List<TegDTO> comboBoxData = await Client.Instance.GetComboBoxTeg();
 
+            if (comboBoxData != null)
+            {
+                foreach (TegDTO item in comboBoxData)
+                {
+
+                    AdminComboBoxTeg.Items.Add(item);
+
+                }
+            }
+        }
+        private async void LoadData()
+        {
+            List<RoflDTO> Rofl = await Client.Instance.GetListRofl();
+
+            if (Rofl != null)
+            {
+                AdminListView.ItemsSource = Rofl;
+            }
+            else
+            {
+                MessageBox.Show("Failed to load data from API");
+            }
+        }
         private void Timer_Tick(object sender, EventArgs e)
         {
             if (hidden)
@@ -136,7 +164,7 @@ namespace Kursovay2.Gost
         }
         private void ResetSearch(object sender, RoutedEventArgs e)
         {
-
+            AdminComboBoxTeg.SelectedIndex = -1;
         }
         private async void Focus(object sender, RoutedEventArgs e)
         {
