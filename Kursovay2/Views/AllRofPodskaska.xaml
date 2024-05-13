@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.Views"
         mc:Ignorable="d"
-        Title="AllRofPodskaska" Height="750" Width="810" Background="#060531">
+        Title="AllRofPodskaska" Height="750" Width="860" Background="#060531"  WindowStartupLocation="CenterScreen"
+ WindowStyle="None" AllowsTransparency="True">
 
 
     <Grid>
@@ -19,7 +20,7 @@
         </Grid.RowDefinitions>
         <StackPanel Margin="0 10 0 0" Grid.Row="1">
 
-            <Image  Stretch="UniformToFill" Source="\Podskaski\AllRoflPodskaska.png" />
+            <Image  Height="450" Source="\Podskaski\AllRoflPodskaska.png" />
         </StackPanel>
 
         <StackPanel Margin="0 10 0 0" VerticalAlignment="Top"  Grid.Row="2" Grid.RowSpan="3">
