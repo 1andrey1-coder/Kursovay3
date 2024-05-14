@@ -70,7 +70,7 @@ Opacity="0.95">
                                 <ColumnDefinition Width="5"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Padding="10" Text="ПОДЗКАЗКА ОКНУ ГОСТЮ"
+                            <TextBlock Padding="10" Text="ПОДЗКАЗКА К ОКНУ С ВЫХОДОМ ШУТКИ"
    Foreground="DarkGray"
    FontSize="10"
    FontFamily="Montserrat"
