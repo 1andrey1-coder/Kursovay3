@@ -378,7 +378,7 @@ AcceptsReturn="True" Margin="5"  x:Name="AddMiniOpisania">
                         </StackPanel>
 
                         <StackPanel Width="100"  Orientation="Vertical" Grid.Row="1" Grid.Column="2">
-                            <Label Content="Время выхода" Foreground="White" FontWeight="Bold" />
+                            <Label Content="Время выхода шутки" Foreground="White" FontWeight="Bold" />
                             <Border Width="70" Height="30" HorizontalAlignment="Left" CornerRadius="5" Background="Gray" Padding="5">
 
                                 <TextBlock FontWeight="Bold"  x:Name="time" Background="White"/>

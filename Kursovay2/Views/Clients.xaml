@@ -189,7 +189,7 @@ Click="btnClose_Click">
                                 <Image Source="\icons\Search.png" Height="40"/>
                                 <StackPanel Margin="5" Orientation="Vertical" >
 
-                                    <TextBlock  Text="Поиск по Логину пользаветеля:"  Foreground="White"/>
+                                    <TextBlock  Text="Поиск по имени пользаветеля:"  Foreground="White"/>
 
 
 
@@ -328,7 +328,7 @@ Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="2" >
                                                         <Border>
                                                             <StackPanel HorizontalAlignment="Right">
                                                                 <TextBlock Background="Transparent"  Text="{Binding LoginName,
-                      StringFormat='Название: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
+                      StringFormat='Имя: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
 
                                                             </StackPanel>
                                                         </Border>

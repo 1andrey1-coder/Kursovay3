@@ -215,7 +215,7 @@ Click="btnClose_Click">
                                     </Button.Template>
                                 </Button>
                                 <StackPanel Margin="5" Orientation="Vertical" Width="100"  >
-                                    <TextBlock HorizontalAlignment="Center" Text="Гэг" Foreground="White" />
+                                    <TextBlock HorizontalAlignment="Center" Text="Тег" Foreground="White" />
                                     <ComboBox x:Name="AdminComboBoxTeg"  DisplayMemberPath="TegName" ItemsSource="{Binding Teg, UpdateSourceTrigger=PropertyChanged}" 
 SelectedItem="{Binding SelectedGenre, UpdateSourceTrigger=PropertyChanged}"/>
                                 </StackPanel>
