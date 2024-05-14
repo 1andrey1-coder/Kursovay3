@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovay2.Views"
         mc:Ignorable="d"
-        Title="AdminPodskaska" Height="800" Width="810" Background="#060531">
+        Title="AdminPodskaska" MinHeight="800"  MaxHeight="800" MaxWidth="850" MinWidth="850"   WindowStartupLocation="CenterScreen"
+  WindowStyle="None" AllowsTransparency="True" Background="#060531">
 
 
     <Grid>
@@ -19,10 +20,10 @@
         </Grid.RowDefinitions>
         <StackPanel Margin="0 10 0 0" Grid.Row="1">
 
-            <Image Height="500" Source="\Podskaski\AdminPodskaska2.png" />
+            <Image Height="500" Stretch="Uniform" Source="\Podskaski\AdminPodskaska2.png" />
         </StackPanel>
 
-        <StackPanel Margin="5 10 5 0" VerticalAlignment="Top"  Grid.Row="2" Grid.RowSpan="3">
+        <StackPanel Margin="10 10 0 0" VerticalAlignment="Top"  Grid.Row="2" Grid.RowSpan="3">
             <TextBlock Foreground="White" FontSize="30"  Text="1 - Кнопки для помощи в приложени "/>
             <TextBlock Foreground="White" FontSize="30"  Text="2 - Фильтрация данных по названию"/>
             <TextBlock Foreground="White" FontSize="30"  Text="3 - Вывод данных"/>
