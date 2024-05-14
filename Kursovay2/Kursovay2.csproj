@@ -61,8 +61,10 @@
     <None Remove="Podskaski\CalendarPodskaska.png" />
     <None Remove="Podskaski\CalendarPodskaska2.png" />
     <None Remove="Podskaski\EditPodskaska.png" />
+    <None Remove="Podskaski\GostPodskaska.png" />
     <None Remove="Podskaski\LibraryPodskaska.png" />
     <None Remove="Podskaski\LoginPodskaska.png" />
+    <None Remove="Podskaski\OpisaniaPodskaska.png" />
     <None Remove="Podskaski\ProfilePodskaska.png" />
     <None Remove="Podskaski\TransletPodskaska.png" />
   </ItemGroup>
@@ -232,10 +234,16 @@
     <Resource Include="Podskaski\EditPodskaska.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Podskaski\GostPodskaska.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Podskaski\LibraryPodskaska.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Podskaski\LoginPodskaska.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Podskaski\OpisaniaPodskaska.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Podskaski\ProfilePodskaska.png">

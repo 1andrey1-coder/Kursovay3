@@ -302,7 +302,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                                             <Setter Property="Height" Value="200"/>
                                             <Setter Property="Clip" >
                                                 <Setter.Value>
-                                                    <EllipseGeometry RadiusX="200" RadiusY="100"
+                                                    <EllipseGeometry RadiusX="220" RadiusY="220"
                                                                          Center="100,100"/>
                                                 </Setter.Value>
                                             </Setter>
@@ -327,7 +327,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                             </Label>
                             <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
 
-                                <TextBox  Height="190"  TextWrapping="Wrap" TextChanged="InputTextBox_TextChanged" MaxLength="5000"
+                                <TextBox Padding="10"  Height="190"  TextWrapping="Wrap" TextChanged="InputTextBox_TextChanged" MaxLength="5000"
                AcceptsReturn="True" Margin="5"  x:Name="AddOpisania">
                                     <TextBox.Template>
                                         <ControlTemplate>
@@ -352,7 +352,7 @@ Foreground="White"  HorizontalAlignment="Left">
                                 </Label.Content>
                             </Label>
                             <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                                <TextBox  Height="50"  TextWrapping="Wrap" TextChanged="InputTextBox_TextChanged2" MaxLength="5000"
+                                <TextBox Padding="10" Height="50"  TextWrapping="Wrap" TextChanged="InputTextBox_TextChanged2" MaxLength="5000"
 AcceptsReturn="True" Margin="5"  x:Name="AddMiniOpisania">
                                     <TextBox.Template>
                                         <ControlTemplate>
@@ -367,9 +367,9 @@ AcceptsReturn="True" Margin="5"  x:Name="AddMiniOpisania">
 
                         <StackPanel Width="100"  Orientation="Vertical" Grid.Row="1" Grid.Column="2">
                             <Label Content="Время выхода" Foreground="White" FontWeight="Bold" />
-                            <Border Width="100" CornerRadius="5" Background="Gray" Padding="5">
+                            <Border Width="70" Height="30" HorizontalAlignment="Left" CornerRadius="5" Background="Gray" Padding="5">
 
-                                <TextBlock  x:Name="time" Background="White"/>
+                                <TextBlock FontWeight="Bold"  x:Name="time" Background="White"/>
                             </Border>
 
                         </StackPanel>
