@@ -135,7 +135,7 @@ namespace Kursovay2.Admin
                     imageText.Source = img;
                 }
             }
-           
+
 
         }
 
@@ -251,13 +251,18 @@ namespace Kursovay2.Admin
         {
             try
             {
-
-                RoflDTO deleteid = (RoflDTO)AdminListView.SelectedItem;
-                if (deleteid != null)
+                MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите удалить эту запись?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
                 {
-                    int selectedDataId = deleteid.RoflId;
-                    await Client.Instance.DeleteDataAsync(selectedDataId);
-                    LoadData();
+
+
+                    RoflDTO deleteid = (RoflDTO)AdminListView.SelectedItem;
+                    if (deleteid != null)
+                    {
+                        int selectedDataId = deleteid.RoflId;
+                        await Client.Instance.DeleteDataAsync(selectedDataId);
+                        LoadData();
+                    }
                 }
 
             }
