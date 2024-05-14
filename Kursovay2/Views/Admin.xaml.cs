@@ -115,17 +115,6 @@ namespace Kursovay2.Admin
         private async void DisplayUserInfo()
         {
 
-            //LoginUserDTO login1 = await Client.Instance.GetUser(SingleProfle.user.LoginId);
-
-            //if (login1 != null)
-            //{
-
-            //    textBlockUserName.Content = login1.LoginName;
-            //}
-            //else
-            //{
-            //    textBlockUserName.Content = "User not found";
-            //}
             LoginUserDTO login = await Client.Instance.GetUser(SingleProfle.User.LoginId);
 
             if (login != null)
@@ -147,11 +136,6 @@ namespace Kursovay2.Admin
                 }
             }
            
-
-
-
-
-
 
         }
 

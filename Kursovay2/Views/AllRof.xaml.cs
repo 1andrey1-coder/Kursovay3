@@ -175,6 +175,8 @@ namespace Kursovay2.Views
 
         private void Podskaska(object sender, RoutedEventArgs e)
         {
+            //AddRofPodskaska addRofPodskaska = new AddRofPodskaska();
+            //addRofPodskaska.Show();
             AddRofPodskaska addRofPodskaska = new AddRofPodskaska();
             addRofPodskaska.Show();
             

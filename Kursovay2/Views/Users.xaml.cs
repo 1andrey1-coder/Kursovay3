@@ -3,6 +3,7 @@ using Kursovay2.Models;
 using Kursovay2.Views;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,7 @@ namespace Kursovay2.User
         public Users(LoginUserDTO user)
         {
             InitializeComponent();
-
+            TegComboBox();
             DisplayUserInfo();
             LoadData();
             timer = new DispatcherTimer();
@@ -38,6 +39,20 @@ namespace Kursovay2.User
 
             panelWidth = sidePanel.Width;
 
+        }
+        private async void TegComboBox()
+        {
+            List<TegDTO> comboBoxData = await Client.Instance.GetComboBoxTeg();
+
+            if (comboBoxData != null)
+            {
+                foreach (TegDTO item in comboBoxData)
+                {
+
+                    AdminComboBoxTeg.Items.Add(item);
+
+                }
+            }
         }
         private async void LoadData()
         {
@@ -54,18 +69,26 @@ namespace Kursovay2.User
         }
         private async void DisplayUserInfo()
         {
-            LoginUserDTO login1 = await Client.Instance.GetUser(SingleProfle.User.LoginId);
+            LoginUserDTO login = await Client.Instance.GetUser(SingleProfle.User.LoginId);
 
-            if (login1 != null)
+            if (login != null)
             {
-
-                labelUser.Content = login1.LoginName;
+                labelUser.Content = login.LoginName;
+                if (login.LoginImage != null)
+                {
+                    BitmapImage bitmapImage = new BitmapImage();
+                    bitmapImage.BeginInit();
+                    bitmapImage.StreamSource = new MemoryStream(login.LoginImage);
+                    bitmapImage.EndInit();
+                    imageText.Source = bitmapImage;
+                }
+                else
+                {
+                    Uri uri = new Uri(Environment.CurrentDirectory + "\\Images\\ImageNull2.png", UriKind.Absolute);
+                    BitmapImage img = new BitmapImage(uri);
+                    imageText.Source = img;
+                }
             }
-            else
-            {
-                labelUser.Content = "User not found";
-            }
-
 
 
 
@@ -123,40 +146,7 @@ namespace Kursovay2.User
             this.Close();
         }
 
-        private void ClickAdmini(object sender, RoutedEventArgs e)
-        {
-            //Views.Admini_We_ admini_We_ = new Views.Admini_We_();
-            //admini_We_.Show();
-            //this.Close();
-        }
-
-        //private void ClickGey(object sender, RoutedEventArgs e)
-        //{
-        //    Views.Gey gey = new Views.Gey();
-        //    gey.Show();
-        //    this.Close();
-        //}
-
-        //private void ClickNewMemNow(object sender, RoutedEventArgs e)
-        //{
-        //    Views.NewMemNow newMemNow = new Views.NewMemNow();
-        //    newMemNow.Show();
-        //    this.Close();
-        //}
-
-        //private void ClickNews(object sender, RoutedEventArgs e)
-        //{
-        //    Views.News news = new Views.News();
-        //    news.Show();
-        //    this.Close();
-        //}
-
-        //private void ClickNostal(object sender, RoutedEventArgs e)
-        //{
-        //    Views.Nostal nostal = new Views.Nostal();
-        //    nostal.Show();
-        //    this.Close();
-        //}
+    
 
         private void ClickMebl(object sender, RoutedEventArgs e)
         {
@@ -183,7 +173,8 @@ namespace Kursovay2.User
 
         private void Podskaska(object sender, RoutedEventArgs e)
         {
-
+            UserPodskaska userPodskaska = new UserPodskaska();
+            userPodskaska.Show();
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

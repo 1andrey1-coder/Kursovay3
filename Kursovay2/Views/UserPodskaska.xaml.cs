@@ -15,13 +15,14 @@ using System.Windows.Shapes;
 namespace Kursovay2.Views
 {
     /// <summary>
-    /// Логика взаимодействия для LibraryPodskaska.xaml
+    /// Логика взаимодействия для UserPodskaska.xaml
     /// </summary>
-    public partial class LibraryPodskaska : Window
+    public partial class UserPodskaska : Window
     {
-        public LibraryPodskaska()
+        public UserPodskaska()
         {
             InitializeComponent();
+
         }
         private void PanelHeader_MouseDown(object sender, MouseButtonEventArgs e)
         {

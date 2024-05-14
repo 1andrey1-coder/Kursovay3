@@ -13,12 +13,12 @@
 
 
     <Border CornerRadius="10">
-        
+
         <Border.Background >
             <ImageBrush  ImageSource="/Images/дед.jpg"
              Stretch="Fill"/>
         </Border.Background>
-        
+
         <Border  CornerRadius="10"                    
  BorderThickness="2"
  Opacity="0.95">
@@ -186,7 +186,7 @@ Click="btnClose_Click">
                                 <Image Source="\icons\Search.png" Height="40"/>
                                 <StackPanel Margin="5" Orientation="Vertical" >
 
-                                    <TextBlock  Text="Поиск по тегу шутки:"  Foreground="White"/>
+                                    <TextBlock  Text="Поиск по названию шутки:"  Foreground="White"/>
 
 
 
@@ -283,8 +283,8 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                             </StackPanel>
                         </StackPanel>
                         <StackPanel Grid.Column="0" Orientation="Vertical" VerticalAlignment="Bottom"
-                     HorizontalAlignment="Center">
-                            <Image  Source="\Images\ImageNull2png"/>
+            HorizontalAlignment="Center">
+                            <Image  x:Name="imageText" Source="{Binding LoginImage}"  Stretch="UniformToFill"/>
                         </StackPanel>
                     </Grid>
                 </StackPanel>
@@ -304,24 +304,38 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                             </Grid>
 
                             <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                                
-                            <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+
+                                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"
   FontFamily="Century Gothic" FontSize="14" Foreground="White" 
   BorderBrush="Transparent" Background="Transparent" FontWeight="Bold">
-                                <ListViewItem Height="30">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Image Source="\icons\home.png" Height="20" VerticalAlignment="Center"/>
-                                        <Button Margin="15 0 0 0" Content="Главная" 
+                                    <ListViewItem Height="30">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button  Background="Transparent"
+ BorderBrush="Transparent"
+ Click="ClickUserToMainWindow">
+                                                <Button.Content>
+
+                                                    <Image Source="\icons\home.png" Height="20" VerticalAlignment="Center"/>
+                                                </Button.Content>
+                                            </Button>
+                                            <Button Margin="15 0 0 0" Content="Главная" 
                                                 Style="{StaticResource ButtonGost}"
                                                 VerticalAlignment="Center"
                                                 Background="Transparent"
                                                 BorderBrush="Transparent"
                                                 Click="ClickUserToMainWindow"/>
-                                    </StackPanel>
-                                </ListViewItem>
+                                        </StackPanel>
+                                    </ListViewItem>
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\Rofl.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Click="AllRof" Background="Transparent"
+Foreground="White"
+BorderBrush="Transparent">
+                                                <Button.Content>
+                                                    <Image Source="\icons\Rofl.png" Height="20" VerticalAlignment="Center"/>
+
+                                                </Button.Content>
+                                            </Button>
                                             <Button Margin="15 0 0 0"      
                 Background="Transparent"
                 Foreground="White"
@@ -331,7 +345,14 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                     </ListViewItem>
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\library.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Click="library" Background="Transparent"
+Foreground="White"
+BorderBrush="Transparent">
+                                                <Button.Content>
+                                                    <Image Source="\icons\library.png" Height="20" VerticalAlignment="Center"/>
+
+                                                </Button.Content>
+                                            </Button>
                                             <Button Margin="15 0 0 0"      
 Background="Transparent"
 Foreground="White"
@@ -341,7 +362,14 @@ Content="Архив" Click="library" VerticalAlignment="Center"/>
                                     </ListViewItem>
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\library.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Click="translet" Background="Transparent"
+Foreground="White"
+BorderBrush="Transparent">
+                                                <Button.Content>
+
+                                                    <Image Source="\icons\library.png" Height="20" VerticalAlignment="Center"/>
+                                                </Button.Content>
+                                            </Button>
                                             <Button Margin="15 0 0 0"      
 Background="Transparent"
 Foreground="White"
@@ -351,7 +379,14 @@ Content="Перевод" Click="translet" VerticalAlignment="Center"/>
                                     </ListViewItem>
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\History.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Click="calendar" Background="Transparent"
+Foreground="White"
+BorderBrush="Transparent">
+                                                <Button.Content>
+
+                                                    <Image Source="\icons\History.png" Height="20" VerticalAlignment="Center"/>
+                                                </Button.Content>
+                                            </Button>
                                             <Button Margin="15 0 0 0"      
 Background="Transparent"
 Foreground="White"
@@ -384,31 +419,44 @@ Content="Календарь" Click="calendar" VerticalAlignment="Center"/>
                                         </StackPanel>
                                     </ListViewItem>-->
                                     <ListViewItem Height="30">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Image Source="\icons\Out.png" Height="20"
-                   VerticalAlignment="Center" />
-                                        <Button Margin="15 0 0 0" Style="{StaticResource ButtonGost}" Background="Transparent"
+                                        <StackPanel Orientation="Horizontal">
+
+                                            <Button 
+                    Click="ClickToMainWindow" Background="Transparent"
+                    BorderBrush="Transparent">
+                                                <Button.Content>
+                                                    <Image Source="\icons\Out.png" Height="20"
+VerticalAlignment="Center" />
+                                                </Button.Content>
+                                            </Button>
+                                            <Button Margin="15 0 0 0" Style="{StaticResource ButtonGost}" Background="Transparent"
                     BorderBrush="Transparent"
                     Content="Выйти"
                     VerticalAlignment="Center"
                     Click="ClickToMainWindow"/>
-                                    </StackPanel>
-                                </ListViewItem>
-                                <!--<ListViewItem Height="30">
+                                        </StackPanel>
+                                    </ListViewItem>
+                                    <!--<ListViewItem Height="30">
         <StackPanel Orientation="Horizontal">
             <Image Source="D:\GitHub\Kursovay2\icons\spam.png" Height="20" VerticalAlignment="Center"/>
             <TextBlock Margin="15 0 0 0" Text="Spam" VerticalAlignment="Center"/>
         </StackPanel>
     </ListViewItem>-->
-                                <ListViewItem Height="30">
-                                    <StackPanel Orientation="Horizontal">
-                                        <Image Source="\icons\setting.png" Height="20" VerticalAlignment="Center"/>
-                                        <TextBlock Margin="15 0 0 0" Text="Настройки" VerticalAlignment="Center"/>
-                                    </StackPanel>
-                                </ListViewItem>
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\aboutpng.png" Height="20" VerticalAlignment="Center"/>
+                                            <Image Source="\icons\setting.png" Height="20" VerticalAlignment="Center"/>
+                                            <TextBlock Margin="15 0 0 0" Text="Настройки" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </ListViewItem>
+                                    <ListViewItem Height="30">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Background="Transparent"
+                BorderBrush="Transparent"  Click="Podskaska"> 
+                                                <Button.Content>
+
+                                                    <Image Source="\icons\aboutpng.png" Height="20" VerticalAlignment="Center"/>
+                                                </Button.Content>
+                                            </Button>
                                             <Button Margin="15 0 0 0" Foreground="White" Background="Transparent"
                 BorderBrush="Transparent"
                 Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
@@ -525,16 +573,20 @@ Opacity="0.95">
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                --><!--шапка--><!--
+                -->
+    <!--шапка-->
+    <!--
                 <StackPanel Grid.Column="0" Grid.RowSpan="3"
            Margin="5" Orientation="Vertical">
-                    --><!--<StackPanel.Background>
+                    -->
+    <!--<StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#ffd700" Offset="0.1"/>
                     <GradientStop Color="Firebrick" Offset="1"/>
                 </LinearGradientBrush>
             </StackPanel.Background>-->
-                    <!--Имя пользователя--><!--
+    <!--Имя пользователя-->
+    <!--
                     <StackPanel Margin="5">
 
                         <TextBlock Text="{Binding p.UserName}" HorizontalAlignment="Center" FontSize="16"/>
@@ -543,7 +595,9 @@ Opacity="0.95">
                         <Button  Content="Выйти на залуп экран вход" 
            Click="ClickUserToMainWindow"/>
                     </StackPanel>
-                    --><!--Имя пользователя--><!--
+                    -->
+    <!--Имя пользователя-->
+    <!--
                     <Menu>
                         <MenuItem Header="Меню"  >
                             <MenuItem Header="Мемы" Click="ClickNewMemNow"/>
@@ -562,12 +616,14 @@ Opacity="0.95">
                 <StackPanel  Grid.Row="0" Orientation="Horizontal"
             Grid.ColumnSpan="2" Grid.Column="1"
             Margin="5">
-                    --><!--<StackPanel.Background>
+                    -->
+    <!--<StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#ffd700" Offset="0.3"/>
                     <GradientStop Color="Firebrick" Offset="1"/>
                 </LinearGradientBrush>
-            </StackPanel.Background>--><!--
+            </StackPanel.Background>-->
+    <!--
                     <StackPanel Margin="5" Orientation="Vertical">
                         <TextBlock Text="Поиск по тегу шутки:" Foreground="White"/>
                         <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Width="200" Height="22" />
