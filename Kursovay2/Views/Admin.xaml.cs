@@ -273,7 +273,6 @@ namespace Kursovay2.Admin
                 {
                     int selectedDataId = deleteid.RoflId;
                     await Client.Instance.DeleteDataAsync(selectedDataId);
-                    MessageBox.Show("Данные успешно удалены", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
                     LoadData();
                 }
 
