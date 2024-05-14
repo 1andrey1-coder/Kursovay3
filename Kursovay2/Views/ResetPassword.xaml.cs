@@ -23,15 +23,11 @@ namespace Kursovay2.Views
     public partial class ResetPassword : Window
     {
         public string Mail { get; set; }
-
         public ResetPassword()
         {
             InitializeComponent();
            
         }
-       
-
-
         private async void Reset(object sender, RoutedEventArgs e)
         {
             try
@@ -40,60 +36,45 @@ namespace Kursovay2.Views
 
                 CodeСonfirmation codeСonfirmation = new CodeСonfirmation(txtMail.Text);
                 codeСonfirmation.ShowDialog();
-               
-
-
                 if (codeСonfirmation.Success)
                 {
                     await Client.Instance.UserReset(txtMail.Text);
-                    //MessageBox.Show("Вы сбросили пароль для вашей почты", "Новый пароль отправлен вам на почту",
-                    //MessageBoxButton.OK, MessageBoxImage.Information);
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
                     Close(); 
                 }
-
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void Back(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Close();
         }
-
         private void dragWindows(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
         }
-
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
-
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
         private void btnMax_Click(object sender, RoutedEventArgs e)
         {
-            //Window parentWindow = Window.GetWindow(this);
-            //parentWindow.WindowState = WindowState.Maximized;
             if (WindowState == WindowState.Normal)
             {
-                // Меняем размер окна на максимальный
                 WindowState = WindowState.Maximized;
             }
             else
             {
-                // Меняем размер окна на обычный
                 WindowState = WindowState.Normal;
             }
         }

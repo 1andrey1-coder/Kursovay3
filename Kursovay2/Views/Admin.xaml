@@ -241,7 +241,7 @@ x:Name="AdminComboBoxGenre"  DisplayMemberPath="GenreName"/>
 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  VerticalAlignment="Top">
 
-                            <TextBlock  Text="Словарь Слэнг:" HorizontalAlignment="Center" 
+                            <TextBlock  Text="Словарь Сленг:" HorizontalAlignment="Center" 
         VerticalAlignment="Center" FontFamily="Century Gothic"
 FontSize="20" FontWeight="Bold" Foreground="White"/>
                             <Label x:Name="textBlockUserName" Content="{Binding LoginName}" HorizontalAlignment="Center" 

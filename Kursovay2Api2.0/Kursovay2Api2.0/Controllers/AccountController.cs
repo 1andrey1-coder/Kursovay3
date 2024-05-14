@@ -110,12 +110,10 @@ namespace Kursovay2Api2._0.Controllers
                 // Проверка наличия пользователя с таким логином
                 var ProverkaUser = await _memContext.LoginUsers.
                     FirstOrDefaultAsync(u => u.Mail == registerUser.Mail);
-
                 if (ProverkaUser != null)
                 {
                     return BadRequest("Пользователь с такой почтой уже существует");
                 }
-
                 var user = new LoginUser
                 {
                     LoginId = registerUser.Id,
@@ -123,12 +121,8 @@ namespace Kursovay2Api2._0.Controllers
                     Mail = registerUser.Mail,
                     RoleId = 2
                 };
-
-
                 var password = GenerateRandomPassword();
-
-                user.LoginPassword = HashPassword(password); // Хэшируем пароль перед сохранением в базу данных
-
+                user.LoginPassword = HashPassword(password);
                 _memContext.LoginUsers.Add(user);
                 _memContext.SaveChanges();
                 //Возвращаем созданный объект в виде DTO для отправки ответа клиенту
@@ -140,33 +134,20 @@ namespace Kursovay2Api2._0.Controllers
                     Mail = registerUser.Mail,
                     RoleId = user.RoleId
                 };
-
-
-                // Отправляем пароль на почту
-                //СингТон
-
-
-                //MailMessage message = EmailMessageService.sender.CreateMailMessageBodyIsText
-                //    ("Словарь сленга", registerUser.Mail, "Регистрация", $"Ваш пароль: {password}");
-                //EmailMessageService.sender.SendMail(message);
-
                 await mail.Send(registerUser.Mail, "Регистрация в Словаре сленга"
                     , $"Ваш пароль: {password}");
 
                 return Ok(loginUserDTO);
-
-
-
             }
             catch (Exception ex)
             {
 
                 return StatusCode(500, "Произошла ошибка при регистрации пользователя");
             }
-
-
-            //return null;
         }
+
+
+
         [HttpPost("RegisterToAdmin")]
         public async Task<ActionResult<LoginUserDTO>> GetActionRegisterAdmin(RegisterDTO registerUser)
         {

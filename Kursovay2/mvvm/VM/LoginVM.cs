@@ -16,30 +16,21 @@ namespace Kursovay2.mvvm.VM
     public class LoginVM:BaseVM
     {
         public string mail { get; set; }
-        //public string login { get; set; }
-
         PasswordBox passwordBox;
-
-
         internal void RegisterPassBox(PasswordBox passwordBox)
         {
             this.passwordBox = passwordBox;
-          
         }
-
         public CommandVM SingIn { get; set; }
         public CommandVM SingUp { get; set; }
-      
         public LoginVM()
         {
-
             SingIn = new CommandVM(async () =>
             {
                 try
                 {
                     LoadingWindow loadingWindow = new LoadingWindow();
                     loadingWindow.Show();
-
                     Task.Delay(3000).ContinueWith(t =>
                     {
                         loadingWindow.Dispatcher.Invoke(() =>
@@ -52,7 +43,6 @@ namespace Kursovay2.mvvm.VM
                     SingleProfle.User = user;
                     if (user.RoleId == 1)
                     {
-
                         Admin.Admin adminWindow = new Admin.Admin(user);
                         adminWindow.Show();
                         Application.Current.MainWindow.Close();
@@ -63,24 +53,11 @@ namespace Kursovay2.mvvm.VM
                         userWindow.Show();
                         Application.Current.MainWindow.Close();
                     }
-                    //Admin.Admin adminWindow = new Admin.Admin();
-                    //adminWindow.Show();
-                   
-                    //else
-                    //{
-                    //    MessageBox.Show("Логин/пароль неправильный", "Неудачный вход",
-                    //        MessageBoxButton.OK, MessageBoxImage.Error);
-                    //}
-
-
-
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-
-
             });
             SingUp = new CommandVM(() =>
             {
