@@ -6,49 +6,71 @@
         xmlns:local="clr-namespace:Kursovay2.Views"
         mc:Ignorable="d"
         Title="AdminPodskaska" MinHeight="800"  MaxHeight="800" MaxWidth="850" MinWidth="850"   WindowStartupLocation="CenterScreen"
-  WindowStyle="None" AllowsTransparency="True" Background="#060531">
+  WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+
+    <Border CornerRadius="10">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/дед.jpg"
+            Stretch="Fill"/>
+        </Border.Background>
+        <Border  CornerRadius="10"                    
+BorderThickness="2"
+Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#060531" Offset="0"/>
+                    <GradientStop Color="#1B1448" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
 
 
-    <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="525"/>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <StackPanel Margin="0 10 0 0" Grid.Row="1">
 
+                    <Image Height="500" Stretch="Uniform" Source="\Podskaski\AdminPodskaska2.png" />
+                </StackPanel>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="525"/>
-            <RowDefinition Height="90"/>
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <StackPanel Margin="0 10 0 0" Grid.Row="1">
-
-            <Image Height="500" Stretch="Uniform" Source="\Podskaski\AdminPodskaska2.png" />
-        </StackPanel>
-
-        <StackPanel Margin="10 10 0 0" VerticalAlignment="Top"  Grid.Row="2" Grid.RowSpan="3">
-            <TextBlock Foreground="White" FontSize="30"  Text="1 - Кнопки для помощи в приложени "/>
-            <TextBlock Foreground="White" FontSize="30"  Text="2 - Фильтрация данных по названию"/>
-            <TextBlock Foreground="White" FontSize="30"  Text="3 - Вывод данных"/>
-            <TextBlock Foreground="White" FontSize="30"  Text="4 - Ваш профиль и кнопка перехода в него"/>
-            <TextBlock Foreground="White" FontSize="30"  Text="5 - Кнопки для уменьшения/увеличивание/закрытие окна"/>
-        </StackPanel>
-        <StackPanel  Grid.Column="1" Grid.Row="0">
-            <Grid Margin="0 0 0 0"  x:Name="panelHeader" VerticalAlignment="Top" 
+                <StackPanel Margin="10 10 0 0" VerticalAlignment="Top"  Grid.Row="2" Grid.RowSpan="3">
+                    <TextBlock Foreground="White" FontSize="30"  Text="1 - Кнопки для помощи в приложени "/>
+                    <TextBlock Foreground="White" FontSize="30"  Text="2 - Фильтрация данных по названию"/>
+                    <TextBlock Foreground="White" FontSize="30"  Text="3 - Вывод данных"/>
+                    <TextBlock Foreground="White" FontSize="30"  Text="4 - Ваш профиль и кнопка перехода в него"/>
+                    <TextBlock Foreground="White" FontSize="30"  Text="5 - Кнопки для уменьшения/увеличивание/закрытие окна"/>
+                </StackPanel>
+                <StackPanel  Grid.Column="1" Grid.Row="0">
+                    <Grid Margin="0 0 0 0"  x:Name="panelHeader" VerticalAlignment="Top" 
                    Background="Transparent"
           MouseDown="PanelHeader_MouseDown">
 
 
 
 
-                <Grid  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top">
+                        <Grid  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Top">
 
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="25"/>
-                        <ColumnDefinition Width="5"/>
-                    </Grid.ColumnDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition Width="5"/>
+                            </Grid.ColumnDefinitions>
 
-                    <TextBlock Padding="10" Text="ПОДЗКАЗКА ПО АДМИНКЕ"
+                            <TextBlock Padding="10" Text="ПОДЗКАЗКА ПО АДМИНКЕ"
    Foreground="DarkGray"
    FontSize="10"
    FontFamily="Montserrat"
@@ -56,7 +78,7 @@
    VerticalAlignment="Center"
    Margin="10,0,0,0"/>
 
-                    <Button x:Name="btnMinimize"                           
+                            <Button x:Name="btnMinimize"                           
 BorderThickness="0"
 Content="-"
 Foreground="White"
@@ -66,30 +88,30 @@ Cursor="Hand"
 Grid.Column="1"
 Click="btnMinimize_Click">
 
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#28AEED"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#278BEF"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#28AEED"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#278BEF"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
 
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="18" Height="18"
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="18" Height="18"
             CornerRadius="9"
             Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
+                                            <ContentPresenter VerticalAlignment="Center"
                           HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
 
-                    </Button>
-                    <Button x:Name="btnMaximized"                           
+                            </Button>
+                            <Button x:Name="btnMaximized"                           
 BorderThickness="0"
 Content="▢"
 Foreground="White"
@@ -99,31 +121,31 @@ Cursor="Hand"
 Grid.Column="2"
 Click="btnMax_Click">
 
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#28AEED"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#278BEF"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#28AEED"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#278BEF"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
 
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="18" Height="18"
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="18" Height="18"
             CornerRadius="9"
             Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
+                                            <ContentPresenter VerticalAlignment="Center"
                           HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
 
-                    </Button>
+                            </Button>
 
-                    <Button x:Name="btnClose"                          
+                            <Button x:Name="btnClose"                          
 BorderThickness="0"
 Content="X"
 Foreground="White"
@@ -133,32 +155,34 @@ Cursor="Hand"
 Grid.Column="3"
 Click="btnClose_Click">
 
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#DA34AE"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#C62DAE"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#DA34AE"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#C62DAE"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
 
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="18" Height="18"
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Width="18" Height="18"
             CornerRadius="9"
             Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
+                                            <ContentPresenter VerticalAlignment="Center"
                           HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </Grid>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </Grid>
+                    </Grid>
+
+
+                </StackPanel>
             </Grid>
-
-
-        </StackPanel>
-    </Grid>
+        </Border>
+    </Border>
 </Window>

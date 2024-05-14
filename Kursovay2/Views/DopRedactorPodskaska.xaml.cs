@@ -23,5 +23,38 @@ namespace Kursovay2.Views
         {
             InitializeComponent();
         }
+        private void PanelHeader_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            Window parentWindow = Window.GetWindow(this);
+            parentWindow.WindowState = WindowState.Minimized;
+
+        }
+        private void btnMax_Click(object sender, RoutedEventArgs e)
+        {
+            //Window parentWindow = Window.GetWindow(this);
+            //parentWindow.WindowState = WindowState.Maximized;
+            if (WindowState == WindowState.Normal)
+            {
+                // Меняем размер окна на максимальный
+                WindowState = WindowState.Maximized;
+            }
+            else
+            {
+                // Меняем размер окна на обычный
+                WindowState = WindowState.Normal;
+            }
+        }
     }
 }
