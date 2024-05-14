@@ -232,8 +232,14 @@ Click="btnClose_Click">
 
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\ReturnWindow.png" Height="20"
-                   VerticalAlignment="Center" />
+
+                                            <Button  Background="Transparent"
+                    BorderBrush="Transparent"  Click="ClickToAdmin">
+                                                <Button.Content>
+                                                    <Image Source="\icons\ReturnWindow.png" Height="20"
+VerticalAlignment="Center" />
+                                                </Button.Content>
+                                            </Button>
                                             <Button Margin="15 0 0 0" Style="{StaticResource ButtonGost}" Background="Transparent"
                     BorderBrush="Transparent"
                     Content="Вернуться"
@@ -255,7 +261,13 @@ Click="btnClose_Click">
                                     </ListViewItem>
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\aboutpng.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Background="Transparent"
+BorderBrush="Transparent" Click="Podskaska">
+                                                <Button.Content>
+                                                    <Image Source="\icons\aboutpng.png" Height="20" VerticalAlignment="Center"/>
+
+                                                </Button.Content>
+                                            </Button>
                                             <Button Margin="15 0 0 0" Foreground="White" Background="Transparent"
 BorderBrush="Transparent"
 Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
@@ -464,7 +476,7 @@ HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1">
 
 
                         <!--Автор и описание-->
-                   
+
 
 
                         <StackPanel Margin="0 0 0 0" VerticalAlignment="Center"  Grid.Row="0" Grid.RowSpan="2" Grid.Column="4" >

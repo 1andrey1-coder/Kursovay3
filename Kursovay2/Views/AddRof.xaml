@@ -232,8 +232,13 @@ Click="btnClose_Click">
 
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\ReturnWindow.png" Height="20"
-                   VerticalAlignment="Center" />
+                                            <Button Background="Transparent"
+                    BorderBrush="Transparent"  Click="ClickToAdmin">
+                                                <Button.Content>
+
+                                                    <Image Source="\icons\ReturnWindow.png" Height="20" VerticalAlignment="Center" />
+                                                </Button.Content>
+                                            </Button>
                                             <Button Margin="15 0 0 0" Style="{StaticResource ButtonGost}" Background="Transparent"
                     BorderBrush="Transparent"
                     Content="Вернуться"
@@ -255,7 +260,13 @@ Click="btnClose_Click">
                                     </ListViewItem>
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\aboutpng.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Click="Podskaska" Background="Transparent"
+BorderBrush="Transparent">
+                                                <Button.Content>
+
+                                                    <Image Source="\icons\aboutpng.png" Height="20" VerticalAlignment="Center"/>
+                                                </Button.Content>
+                                            </Button>
                                             <Button Margin="15 0 0 0" Foreground="White" Background="Transparent"
 BorderBrush="Transparent"
 Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
@@ -280,7 +291,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
 ItemsSource="{Binding Rofl}" 
 SelectedItem="{Binding SelectRofl}" SelectionMode="Single" >
 
-                        
+
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Тэг" Width="75"  

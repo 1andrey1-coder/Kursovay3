@@ -49,7 +49,7 @@
                 </Grid.RowDefinitions>
 
                 <!--Шапка-->
-            
+
 
 
 
@@ -276,7 +276,14 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
   BorderBrush="Transparent" Background="Transparent" FontWeight="Bold">
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\home.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button  Background="Transparent"
+ BorderBrush="Transparent"
+ Click="ClickGostWindow">
+                                                <Button.Content>
+
+                                                    <Image Source="\icons\home.png" Height="20" VerticalAlignment="Center"/>
+                                                </Button.Content>
+                                            </Button>
                                             <Button Margin="15 0 0 0" Content="Главная" 
                                                 Style="{StaticResource ButtonGost}"
                                                 VerticalAlignment="Center"
@@ -287,7 +294,13 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                     </ListViewItem>
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\library.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Background="Transparent" Click="translet"
+Foreground="White">
+                                                <Button.Content>
+                                                    <Image Source="\icons\library.png" Height="20" VerticalAlignment="Center"/>
+
+                                                </Button.Content>
+                                            </Button>
                                             <Button Margin="15 0 0 0"      
 Background="Transparent"
 Foreground="White"
@@ -299,8 +312,13 @@ Content="Перевод" Click="translet" VerticalAlignment="Center"/>
 
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\Out.png" Height="20"
-                   VerticalAlignment="Center" />
+                                            <Button Background="Transparent"
+                    BorderBrush="Transparent" Click="ClickToMainWindow">
+                                                <Button.Content>
+                                                    <Image Source="\icons\Out.png" Height="20" VerticalAlignment="Center" />
+
+                                                </Button.Content>
+                                            </Button>
                                             <Button Margin="15 0 0 0" Style="{StaticResource ButtonGost}" Background="Transparent"
                     BorderBrush="Transparent"
                     Content="Выйти"
@@ -322,7 +340,13 @@ Content="Перевод" Click="translet" VerticalAlignment="Center"/>
                                     </ListViewItem>
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\aboutpng.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button  Click="Podskaska"  Background="Transparent"
+BorderBrush="Transparent">
+                                                <Button.Content>
+
+                                                    <Image Source="\icons\aboutpng.png" Height="20" VerticalAlignment="Center"/>
+                                                </Button.Content>
+                                            </Button>
                                             <Button Margin="15 0 0 0" Foreground="White" Background="Transparent"
 BorderBrush="Transparent"
 Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
@@ -343,7 +367,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
 ItemsSource="{Binding Rofl}" 
 SelectedItem="{Binding SelectRofl}" SelectionMode="Single" Margin="5">
 
-                     
+
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Тэг" Width="75"  
@@ -415,22 +439,28 @@ SelectedItem="{Binding SelectRofl}" SelectionMode="Single" Margin="5">
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                --><!--шапка--><!--
+                -->
+    <!--шапка-->
+    <!--
                 <StackPanel Grid.Column="0" Grid.RowSpan="3"
        Margin="5" Orientation="Vertical">
-                    --><!--<StackPanel.Background>
+                    -->
+    <!--<StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#ffd700" Offset="0.1"/>
                     <GradientStop Color="Firebrick" Offset="1"/>
                 </LinearGradientBrush>
             </StackPanel.Background>-->
-                    <!--Имя гостя--><!--
+    <!--Имя гостя-->
+    <!--
                     <StackPanel Margin="5" Orientation="Vertical"  >
                         <TextBlock Margin="5" HorizontalAlignment="Center" Text="Гость " Foreground="White" />
                         <Button Content="Выйти  на залуп экран вход" 
                       Click="ClickGostToMainWindow"/>
                     </StackPanel>
-                    --><!--Имя гостя--><!--
+                    -->
+    <!--Имя гостя-->
+    <!--
                     <Menu>
                         <MenuItem Header="Меню"  >
                             <MenuItem Header="Мемы" Click="ClickNewMemNow"/>
@@ -448,12 +478,14 @@ SelectedItem="{Binding SelectRofl}" SelectionMode="Single" Margin="5">
                 <StackPanel Grid.Row="0" Orientation="Horizontal"
         Grid.ColumnSpan="2" Grid.Column="1"
         Margin="5">
-                    --><!--<StackPanel.Background>
+                    -->
+    <!--<StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#ffd700" Offset="0.3"/>
                     <GradientStop Color="Firebrick" Offset="1"/>
                 </LinearGradientBrush>
-            </StackPanel.Background>--><!--
+            </StackPanel.Background>-->
+    <!--
                     <StackPanel Margin="5" Orientation="Vertical">
                         <TextBlock  Text="Поиск по тегу шутки:" Foreground="White"/>
                         <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Width="200" Height="22" />
