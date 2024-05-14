@@ -250,14 +250,20 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                 <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"
   FontFamily="Century Gothic" FontSize="14" Foreground="White" 
   BorderBrush="Transparent" Background="Transparent" FontWeight="Bold">
-                                    
-                                 
+
+
 
 
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\ReturnWindow.png" Height="20"
-                   VerticalAlignment="Center" />
+
+                                            <Button  Click="ClickToAdmiWindow" Background="Transparent"
+                    BorderBrush="Transparent">
+                                                <Button.Content>
+                                                    <Image Source="\icons\ReturnWindow.png" Height="20"
+VerticalAlignment="Center" />
+                                                </Button.Content>
+                                            </Button>
                                             <Button Margin="15 0 0 0" Style="{StaticResource ButtonGost}" Background="Transparent"
                     BorderBrush="Transparent"
                     Content="Вернуться"
@@ -279,7 +285,13 @@ FontSize="20" FontWeight="Bold" Foreground="White"/>
                                     </ListViewItem>
                                     <ListViewItem Height="30">
                                         <StackPanel Orientation="Horizontal">
-                                            <Image Source="\icons\aboutpng.png" Height="20" VerticalAlignment="Center"/>
+                                            <Button Click="Podskaska" Background="Transparent"
+BorderBrush="Transparent">
+                                                <Button.Content>
+
+                                                    <Image Source="\icons\aboutpng.png" Height="20" VerticalAlignment="Center"/>
+                                                </Button.Content>
+                                            </Button>
                                             <Button Margin="15 0 0 0" Foreground="White" Background="Transparent"
 BorderBrush="Transparent"
 Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
@@ -302,11 +314,11 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                         <DataGrid x:Name="AdminListView" CanUserAddRows="False" Grid.Row="1" AutoGenerateColumns="False" Background="Transparent"
           ItemsSource="{Binding Rofl}" SelectedItem="{Binding SelectedRofl}" SelectionMode="Single">
-                        <DataGrid.Columns>
-                            <DataGridTemplateColumn>
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <Grid>
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid>
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="Auto"/>
                                                     <ColumnDefinition/>
@@ -318,39 +330,39 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                                                         <Image x:Name="image" MaxWidth="300" Source="{Binding RoflImage}"  Stretch="UniformToFill"/>
                                                     </Border>
                                                 </StackPanel>
-                                            
+
                                                 <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical">
-                                                    
-                                                    
+
+
                                                     <Border Background="Transparent" Width="300" Padding="5" BorderBrush="Transparent" 
                                                     Margin="3" HorizontalAlignment="Left" BorderThickness="0.5" Grid.Column="1">
                                                         <Border>
                                                             <StackPanel HorizontalAlignment="Right">
                                                                 <TextBlock Background="Transparent"  Text="{Binding RoflName,
                                                                 StringFormat='Название: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
-                       
-                                                            </StackPanel>   
+
+                                                            </StackPanel>
                                                         </Border>
-                                                
+
 
                                                     </Border>
                                                     <Border Background="Transparent" Width="150" Padding="5" BorderBrush="Transparent"
                                                     Margin="3" HorizontalAlignment="Left" BorderThickness="0.5" Grid.Column="2">
-                                                    
-                                                    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+
+                                                        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
                                                             <TextBlock Background="Transparent" Text="{Binding RoflOpisanie,
                                                         StringFormat='Описание: {0}'}" TextWrapping="Wrap" FontWeight="Bold"/>
-                                                    </StackPanel>
-                                            </Border>
-                                            
-                                          </StackPanel>
-                                        </Grid>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </ScrollViewer>
+                                                        </StackPanel>
+                                                    </Border>
+
+                                                </StackPanel>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </ScrollViewer>
 
 
 
@@ -359,7 +371,7 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
             </Grid>
         </Border>
     </Border>
-   
+
 
 
     <!--<Page.Resources>
@@ -384,7 +396,9 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                         <Border Padding="5" Grid.Column="2" BorderThickness="1" BorderBrush="Black" Margin="3">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding ProductQuantityInStock, StringFormat=Кол-во {0}}"/>
-                                --><!--<TextBlock Text="{Binding ProductUnit}"/>--><!--
+                                -->
+    <!--<TextBlock Text="{Binding ProductUnit}"/>-->
+    <!--
                             </StackPanel>
                         </Border>
                     </Grid>
@@ -425,12 +439,14 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <StackPanel Margin="5" Grid.Row="0" Grid.Column="0" Grid.RowSpan="55">
-                    --><!--<StackPanel.Background>
+                    -->
+    <!--<StackPanel.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#ffd700" Offset="0.1"/>
                         <GradientStop Color="Firebrick" Offset="1"/>
                     </LinearGradientBrush>
-                </StackPanel.Background>--><!--
+                </StackPanel.Background>-->
+    <!--
                 </StackPanel>
 
                 <StackPanel Margin="5" VerticalAlignment="Bottom" Grid.Column="0">
