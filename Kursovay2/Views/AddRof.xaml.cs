@@ -234,6 +234,14 @@ namespace Kursovay2.AddRof
                 //int selectedStatusId =  statusId.StatusId;
                 await Client.Instance.SendUserData(SelectRofl);
             }
+            AddMinOpisania.Text = "";
+            AddOpisania.Text = "";
+            AddNameRofl.Text = "";
+            AdminComboBoxStatus.SelectedIndex = -1;
+            AdminComboBoxEnd.SelectedIndex = -1;
+            AdminComboBoxTeg.SelectedIndex = -1;
+            AdminComboBoxStart.SelectedIndex = -1;
+            AdminComboBoxGenre.SelectedIndex = -1;
             LoadData();
             
 

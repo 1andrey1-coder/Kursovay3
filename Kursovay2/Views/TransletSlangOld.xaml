@@ -258,7 +258,8 @@ Content="Подсказка" Click="Podskaska" VerticalAlignment="Center"/>
                         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
 
 
-                            <TextBox TextWrapping="Wrap" AcceptsReturn="True" x:Name="yourText" TextChanged="InputTextBox_TextChanged" Height="270" Width="300" Padding="10"  >
+                            <TextBox  Padding="10"  TextWrapping="Wrap" AcceptsReturn="True" x:Name="yourText" TextChanged="InputTextBox_TextChanged" Height="270" Width="300" 
+                                     >
                                 <TextBox.Template>
                                     <ControlTemplate>
                                         <Border CornerRadius="20" Height="270" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">

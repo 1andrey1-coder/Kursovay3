@@ -117,6 +117,7 @@ namespace Kursovay2.Views
                     hidden = false;
                 }
             }
+            
             else
             {
                 sidePanel.Width -= 1;
@@ -126,7 +127,7 @@ namespace Kursovay2.Views
                     hidden = true;
                 }
             }
-        }
+        } 
 
         private void InputTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {

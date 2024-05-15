@@ -505,7 +505,7 @@ HorizontalAlignment="Center"  Grid.Row="4" Grid.Column="1">
                                         </StackPanel>
                                     </Label.Content>
                                 </Label>
-                                <TextBox  Width="200" Height="25" x:Name="AddMinOpisania">
+                                <TextBox Padding="10"  Width="200" Height="25" x:Name="AddMinOpisania">
                                     <TextBox.Template>
                                         <ControlTemplate>
                                             <Border CornerRadius="10" Height="25" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
@@ -581,7 +581,7 @@ BorderBrush="Transparent" Foreground="White" Click="AddPhoto" Height="45" Cursor
                             </Label>
                             <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
 
-                                <TextBox  TextWrapping="Wrap" TextChanged="InputTextBox_TextChanged" MaxLength="5000"
+                                <TextBox  Padding="10"  TextWrapping="Wrap" TextChanged="InputTextBox_TextChanged" MaxLength="5000"
                                           AcceptsReturn="True" Margin="5"  x:Name="AddOpisania">
                                     <TextBox.Template>
                                         <ControlTemplate>
@@ -611,7 +611,7 @@ BorderBrush="Transparent" Foreground="White" Click="AddPhoto" Height="45" Cursor
                                         </StackPanel>
                                     </Label.Content>
                                 </Label>
-                                <TextBox  Width="200" Height="25" x:Name="AddNameRofl">
+                                <TextBox  Padding="10"  Width="200" Height="25" x:Name="AddNameRofl">
                                     <TextBox.Template>
                                         <ControlTemplate>
                                             <Border CornerRadius="10" Height="25" Margin="0 0 0 0" BorderThickness="1" Background="White" BorderBrush="White">
